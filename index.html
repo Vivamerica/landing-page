@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lançamentos Imobiliários em Indaiatuba SP | Imóveis Viva América</title>
+  <meta name="description" content="Conheça os melhores lançamentos imobiliários em Indaiatuba SP. Loteamentos fechados, condomínios e lotes a partir de R$ 225 mil. Atendimento especializado Imóveis Viva América.">
+  <meta name="keywords" content="lançamentos imobiliários indaiatuba, loteamentos indaiatuba, condomínio fechado indaiatuba, lotes indaiatuba sp, comprar lote indaiatuba">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Lançamentos Imobiliários em Indaiatuba SP | Imóveis Viva América">
+  <meta property="og:description" content="Os melhores lançamentos de loteamentos em Indaiatuba SP. Condomínios fechados com lazer completo a partir de R$ 225 mil.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero.jpg">
+  <link rel="canonical" href="https://lancamentos.imoveisvivamerica.com.br/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Imóveis Viva América",
+    "description": "Especialista em lançamentos imobiliários em Indaiatuba SP. Loteamentos fechados, condomínios e lotes com as melhores condições de pagamento.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indaiatuba",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Indaiatuba"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --verde: #c9a84c;
+      --verde-escuro: #1a2b3c;
+      --dourado: #c9a84c;
+      --cinza-bg: #f5f5f5;
+      --texto: #1a1a1a;
+      --texto-claro: #555;
+      --radius: 12px;
+    }
+    body { font-family: "Segoe UI", Arial, sans-serif; color: var(--texto); background: #fff; line-height: 1.6; }
+    header {
+      background: var(--verde-escuro);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-text { color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 700; text-decoration: none; }
+    nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: var(--dourado); }
+    .hero {
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d4a5e 60%, #3d6070 100%);
+      color: #fff;
+      text-align: center;
+      padding: clamp(60px, 10vw, 100px) 5% clamp(50px, 8vw, 80px);
+    }
+    .hero h1 { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 800; max-width: 800px; margin: 0 auto 1rem; line-height: 1.2; }
+    .hero p { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 600px; margin: 0 auto 2rem; opacity: 0.9; }
+    .btn-hero {
+      display: inline-block;
+      background: var(--dourado);
+      color: #1a1a1a;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    .stats { background: var(--dourado); display: flex; justify-content: center; flex-wrap: wrap; }
+    .stat { flex: 1 1 150px; text-align: center; padding: 1.2rem 1rem; border-right: 1px solid rgba(0,0,0,0.1); }
+    .stat:last-child { border-right: none; }
+    .stat strong { display: block; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--verde-escuro); }
+    .stat span { font-size: 0.8rem; color: #333; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .section { max-width: 1200px; margin: 0 auto; padding: clamp(40px, 7vw, 80px) 5%; }
+    .section-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--verde-escuro); margin-bottom: 0.5rem; }
+    .section-sub { color: var(--texto-claro); margin-bottom: 2rem; font-size: 1.05rem; }
+    .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+    .listing-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .listing-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.14); }
+    .listing-card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .card-badge { display: inline-block; background: var(--verde); color: #1a1a1a; font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.7rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.7rem; }
+    .card-body h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .card-body p { font-size: 0.9rem; color: var(--texto-claro); flex: 1; margin-bottom: 1rem; }
+    .card-price { font-size: 1rem; font-weight: 700; color: var(--verde); margin-bottom: 1rem; }
+    .btn-card { display: block; background: var(--verde-escuro); color: #fff; text-align: center; padding: 0.7rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+    .btn-card:hover { background: #0d1c28; }
+    .pillars-bg { background: var(--cinza-bg); }
+    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+    .pillar-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s, box-shadow 0.25s;
+      border-top: 4px solid var(--verde);
+    }
+    .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.13); }
+    .pillar-icon { font-size: 2.4rem; display: block; margin-bottom: 0.8rem; }
+    .pillar-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--verde-escuro); margin-bottom: 0.5rem; }
+    .pillar-card p { font-size: 0.85rem; color: var(--texto-claro); }
+    .cta-section {
+      background: linear-gradient(135deg, var(--verde-escuro), #2d4a5e);
+
+      color: #fff;
+      text-align: center;
+      padding: clamp(50px, 8vw, 80px) 5%;
+    }
+    .cta-section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: 1rem; }
+    .cta-section p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-wpp { display: inline-flex; align-items: center; gap: 0.6rem; background: #25d366; color: #fff; font-weight: 700; padding: 1rem 2.4rem; border-radius: 50px; text-decoration: none; font-size: 1.05rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-wpp:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    footer { background: var(--verde-escuro); color: rgba(255,255,255,0.75); text-align: center; padding: 2.5rem 5%; font-size: 0.85rem; }
+    footer a { color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 0.7rem; }
+    footer a:hover { color: var(--dourado); }
+    .footer-links { margin-bottom: 1rem; }
+    @media (max-width: 600px) { nav { display: none; } .stat { flex: 1 1 45%; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo-text" href="/">Imóveis Viva América</a>
+    <nav>
+      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
+      <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
+      <a href="/lancamentos-indaiatuba/">Lançamentos</a>
+      <a href="#lancamentos">Empreendimentos</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Lançamentos Imobiliários em Indaiatuba SP</h1>
+    <p>Encontre o loteamento ideal entre os melhores empreendimentos de Indaiatuba. Lotes a partir de 150m² com lazer completo e ótimas condições.</p>
+    <a href="#lancamentos" class="btn-hero">Ver Lançamentos</a>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><strong>7</strong><span>Empreendimentos</span></div>
+    <div class="stat"><strong>3.000+</strong><span>Lotes no Portfólio</span></div>
+    <div class="stat"><strong>150m²</strong><span>Lotes a partir de</span></div>
+    <div class="stat"><strong>R$145mil</strong><span>A partir de</span></div>
+  </div>
+
+  <div id="lancamentos" class="section">
+    <h2 class="section-title">Lançamentos em Destaque</h2>
+    <p class="section-sub">Conheça nossos empreendimentos em Indaiatuba com infraestrutura completa e lazer resort</p>
+
+    <div class="listings-grid">
+
+      <a href="/terras-de-san-marino-indaiatuba/" class="listing-card">
+        <img src="images/hero.jpg" alt="Terras de San Marino Indaiatuba portaria">
+        <div class="card-body">
+          <span class="card-badge">Condomínio Fechado</span>
+          <h2>Terras de San Marino</h2>
+          <p>546 lotes a partir de 150m² com 16.164m² de lazer resort: piscina, tênis, pickleball, food truck park e muito mais.</p>
+          <div class="card-price">A partir de R$ 225.000</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/alpnach-indaiatuba/" class="listing-card">
+        <img src="alpnach-indaiatuba/images/hero.jpg" alt="Alpnach Residence Indaiatuba portaria">
+        <div class="card-body">
+          <span class="card-badge">Condomínio Fechado</span>
+          <h2>Alpnach Residence</h2>
+          <p>322 lotes a partir de 300m² com lazer completo: piscina coberta, coworking, mini mercado 24h, pet place e muito mais.</p>
+          <div class="card-price">A partir de R$ 480.000</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/residencial-ravello-indaiatuba/" class="listing-card">
+        <img src="residencial-ravello-indaiatuba/images/hero.jpg" alt="Residencial Ravello Indaiatuba portaria">
+        <div class="card-body">
+          <span class="card-badge">Condomínio Fechado</span>
+          <h2>Residencial Ravello</h2>
+          <p>710 lotes a partir de 420m² com 27 itens de lazer: SPA, Espaço Wine, Fire Pit, piscina, campo de futebol e muito mais.</p>
+          <div class="card-price">A partir de R$ 714.000</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/di-italia-indaiatuba/" class="listing-card">
+        <img src="di-italia-indaiatuba/images/lifestyle.jpg" alt="Di Itália Indaiatuba loteamento">
+        <div class="card-body">
+          <span class="card-badge" style="background:#c0392b;">Últimas Unidades</span>
+          <h2>Di Itália</h2>
+          <p>Apenas 59 lotes disponíveis. Loteamento aberto com lotes residenciais e mistos a partir de 150m² em localização privilegiada.</p>
+          <div class="card-price">A partir de R$ 180.000</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/monte-carmelo-indaiatuba/" class="listing-card">
+        <img src="monte-carmelo-indaiatuba/images/hero2.jpg" alt="Monte Carmelo Indaiatuba loteamento">
+        <div class="card-body">
+          <span class="card-badge" style="background:#d4520a;">O Mais Acessível</span>
+          <h2>Monte Carmelo</h2>
+          <p>O loteamento mais acessível de Indaiatuba. 1.051 lotes a partir de 150m² com entrada a partir de R$ 16.000 e até 96 parcelas.</p>
+          <div class="card-price">A partir de R$ 145.000</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/uni-residencial-indaiatuba/" class="listing-card">
+        <img src="uni-residencial-indaiatuba/images/piscina.jpg" alt="Uni Residencial Indaiatuba apartamento MCMV">
+        <div class="card-body">
+          <span class="card-badge" style="background: linear-gradient(135deg,#E8195A,#8B3D9B);">Breve Lançamento</span>
+          <h2>Uni Residencial</h2>
+          <p>O único apartamento MCMV ao lado do Parque Ecológico. 2 dorms c/ suíte, sacada, vaga coberta e lazer completo.</p>
+          <div class="card-price">A partir de R$ 279.990</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/gran-vic-canario-indaiatuba/" class="listing-card">
+        <img src="gran-vic-canario-indaiatuba/images/lazer-aereo.jpg" alt="Gran Vic Canário Indaiatuba apartamento VIC Engenharia">
+        <div class="card-body">
+          <span class="card-badge" style="background:#C8A44A; color:#2C1A08;">Lançamento · MCMV</span>
+          <h2>Gran Vic Canário</h2>
+          <p>296 apartamentos, 5 torres, 17 itens de lazer entregues decorados. Parque dos Pássaros, Indaiatuba.</p>
+          <div class="card-price" style="color:#C8A44A;">A partir de R$ 340.162</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/gran-vic-tangara-indaiatuba/" class="listing-card">
+        <img src="gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará Indaiatuba MCMV Faixa 3">
+        <div class="card-body">
+          <span class="card-badge" style="background:#1565C0; color:#fff;">MCMV Faixa 3</span>
+          <h2>Gran Vic Tangará</h2>
+          <p>2 dorms com varanda, 47,22m². 16 itens de lazer decorados. Parque dos Pássaros. Financiamento Caixa.</p>
+          <div class="card-price" style="color:#1565C0;">A partir de R$ 302.464</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/gran-vic-colibri-indaiatuba/" class="listing-card">
+        <img src="gran-vic-colibri-indaiatuba/images/hero.jpg" alt="Gran Vic Colibri Indaiatuba MCMV com suíte">
+        <div class="card-body">
+          <span class="card-badge" style="background:#1565C0; color:#fff;">MCMV Faixa 3 · Suíte</span>
+          <h2>Gran Vic Colibri</h2>
+          <p>256 apts 2 dorms com suíte, 51,42m². 15 itens lazer decorados. Parque dos Pássaros, Indaiatuba.</p>
+          <div class="card-price" style="color:#1565C0;">A partir de R$ 340.162</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+      <a href="/gran-vic-andorinha-indaiatuba/" class="listing-card">
+        <img src="gran-vic-andorinha-indaiatuba/images/hero.jpg" alt="Gran Vic Andorinha Indaiatuba">
+        <div class="card-body">
+          <span class="card-badge" style="background:#b71c1c; color:#fff;">100% Vendido</span>
+          <h2>Gran Vic Andorinha</h2>
+          <p>324 apts, 5 torres. Parque dos Pássaros. Conheça os empreendimentos disponíveis do mesmo complexo.</p>
+          <div class="card-price" style="color:#b71c1c;">Esgotado</div>
+          <span class="btn-card">Ver Alternativas</span>
+        </div>
+      </a>
+
+      <a href="/helade-indaiatuba/" class="listing-card">
+        <img src="helade-indaiatuba/images/hero.jpg" alt="Hélade Park Meraki Indaiatuba alto padrão">
+        <div class="card-body">
+          <span class="card-badge" style="background:#0C0C0C; color:#C8A44A;">Alto Padrão</span>
+          <h2>Hélade — Park Meraki</h2>
+          <p>100 apts, 3 suítes, 120,18m². 29 pavimentos. Portela Arquitetos + Tellini Vontobel. PERPLAN.</p>
+          <div class="card-price" style="color:#8B6914;">A partir de R$ 1.300.668</div>
+          <span class="btn-card">Ver Detalhes</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="pillars-bg">
+    <div class="section">
+      <h2 class="section-title">Guias e Informações</h2>
+      <p class="section-sub">Tudo o que você precisa saber sobre o mercado imobiliário de Indaiatuba</p>
+
+      <div class="pillars-grid">
+        <a href="/loteamentos-em-indaiatuba/" class="pillar-card">
+          <span class="pillar-icon">🏡</span>
+          <h3>Loteamentos em Indaiatuba</h3>
+          <p>Guia completo sobre loteamentos abertos e fechados disponíveis em Indaiatuba SP</p>
+        </a>
+        <a href="/condominios-fechados-indaiatuba/" class="pillar-card">
+          <span class="pillar-icon">🔐</span>
+          <h3>Condomínios Fechados</h3>
+          <p>Segurança, infraestrutura e qualidade de vida nos melhores condomínios fechados da cidade</p>
+        </a>
+        <a href="/lancamentos-indaiatuba/" class="pillar-card">
+          <span class="pillar-icon">🚀</span>
+          <h3>Novos Lançamentos</h3>
+          <p>Os empreendimentos mais recentes de Indaiatuba com as melhores condições de pré-lançamento</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Pronto para investir em Indaiatuba?</h2>
+    <p>Fale agora com um especialista e encontre o lote ideal para você e sua família.</p>
+    <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20os%20lan%C3%A7amentos%20em%20Indaiatuba%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="btn-wpp">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Início</a>
+      <a href="/loteamentos-em-indaiatuba/">Loteamentos em Indaiatuba</a>
+      <a href="/condominios-fechados-indaiatuba/">Condomínios Fechados</a>
+      <a href="/lancamentos-indaiatuba/">Lançamentos 2026</a>
+    </div>
+    <div class="footer-links">
+      <a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a>
+      <a href="/alpnach-indaiatuba/">Alpnach Residence</a>
+      <a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a>
+      <a href="/di-italia-indaiatuba/">Di Itália</a>
+      <a href="/monte-carmelo-indaiatuba/">Monte Carmelo</a>
+      <a href="/uni-residencial-indaiatuba/">Uni Residencial</a>
+      <a href="/gran-vic-canario-indaiatuba/">Gran Vic Canário</a>
+      <a href="/gran-vic-andorinha-indaiatuba/">Gran Vic Andorinha</a>
+      <a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a>
+      <a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a>
+      <a href="/helade-indaiatuba/">Hélade</a>
+    </div>
+    <p>© 2026 Imóveis Viva América · Especialistas em lançamentos imobiliários em Indaiatuba SP</p>
+  </footer>
+
+</body>
+</html>
