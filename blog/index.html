@@ -76,6 +76,20 @@
     footer a{color:rgba(255,255,255,0.8);text-decoration:none;}
     footer a:hover{color:var(--gold);}
   </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-40C0379NPR');
+    // Rastrear cliques no WhatsApp como conversao
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('a[href*="wa.me"]');
+      if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
+    });
+  </script>
 </head>
 <body>
   <header>
