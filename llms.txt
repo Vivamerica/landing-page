@@ -46,10 +46,21 @@ Contato (WhatsApp): +55 19 98976-9457
 - [Melhores bairros para morar em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/melhores-bairros-para-morar-indaiatuba/): Perfil de cada região e lançamentos por bairro.
 - [Apartamento ou lote em Indaiatuba: qual o melhor investimento](https://lancamentos.imoveisvivamerica.com.br/blog/apartamento-ou-lote-indaiatuba/): Comparativo de vantagens, custos e valorização.
 
-### Cluster "Financiamento e MCMV"
+### Cluster "FGTS" (pilar + satélites)
 
-- [Como usar o FGTS para comprar imóvel em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/como-usar-fgts-comprar-imovel-indaiatuba/): Quem pode usar, para o que serve (entrada, amortização, prestações) e requisitos.
-- [Minha Casa Minha Vida em Indaiatuba: como funciona](https://lancamentos.imoveisvivamerica.com.br/blog/minha-casa-minha-vida-indaiatuba/): Como funciona o programa, quem tem direito e empreendimentos MCMV na cidade.
+- [Como usar o FGTS para comprar imóvel em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/como-usar-fgts-comprar-imovel-indaiatuba/) **[PILAR]**: Guia completo do FGTS — quem pode usar, para o que serve (entrada, amortização, prestações), requisitos dos 3 anos e passo a passo.
+  - [FGTS como entrada em apartamento em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/fgts-como-entrada-apartamento-indaiatuba/): Simulações reais de FGTS abatendo na parcela (Gran Vic Tangará R$ 302.464, Uni Residencial R$ 279.990). Casal juntando FGTS.
+  - [FGTS para comprar imóvel na planta em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/fgts-imovel-na-planta-indaiatuba/): 5 fases da obra e quando o FGTS entra. Você não precisa dos 3 anos AGORA se comprar planta.
+  - [FGTS para comprar imóvel à vista](https://lancamentos.imoveisvivamerica.com.br/blog/fgts-imovel-a-vista/): Passo a passo, quando vale a pena, comparativo à vista vs financiar MCMV.
+  - [Como comprar apartamento sem FGTS em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/como-comprar-apartamento-sem-fgts-indaiatuba/): 5 estratégias para quem não tem FGTS — recursos próprios, parcelar entrada na obra, loteamento direto, FGTS do cônjuge.
+
+### Cluster "Minha Casa Minha Vida" (pilar + satélites)
+
+- [Minha Casa Minha Vida em Indaiatuba: como funciona](https://lancamentos.imoveisvivamerica.com.br/blog/minha-casa-minha-vida-indaiatuba/) **[PILAR]**: Guia completo do MCMV — faixas 1/2/3, subsídios, quem tem direito, apartamentos MCMV na cidade.
+  - [Quem tem direito ao Minha Casa Minha Vida em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/quem-tem-direito-minha-casa-minha-vida-indaiatuba/): Checklist de elegibilidade + casos específicos (CLT, autônomo/MEI, casal, solteiro, aposentado, divorciado, herdeiro).
+  - [Minha Casa Minha Vida Faixa 3 em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/mcmv-faixa-3-indaiatuba/): Renda até R$ 12.000. Comparativo Faixa 3 vs financiamento tradicional e apartamentos elegíveis.
+  - [Como se inscrever no Minha Casa Minha Vida em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/como-se-inscrever-minha-casa-minha-vida-indaiatuba/): Desmistifica "inscrição prévia" — o processo real em 6 passos numerados.
+  - [Minha Casa Minha Vida Caixa em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/minha-casa-minha-vida-caixa-indaiatuba/): Papel da Caixa, comparativo Caixa x Banco do Brasil, documentos e dicas para acelerar aprovação.
 
 ## Observações para uso por IA
 
