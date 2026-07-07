@@ -95,6 +95,12 @@
     .tabela tr:nth-child(even){background:#f7f7f5;}
     .destaque-link{display:block;background:var(--bg);border:1px solid #e6e6e6;border-radius:12px;padding:1.1rem 1.3rem;margin:1.5rem 0;text-decoration:none;color:var(--navy);font-weight:700;}
     .destaque-link:hover{border-color:var(--gold);}
+    figure.artigo{margin:2rem 0;padding:0;}
+    figure.artigo img{width:100%;height:auto;border-radius:14px;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+    figure.artigo figcaption{text-align:center;font-size:0.83rem;color:#777;margin-top:0.6rem;font-style:italic;}
+    .svg-chart{margin:2rem 0;padding:1.4rem 1.2rem;background:#fdfaf2;border:1px solid #eadfc4;border-radius:14px;}
+    .svg-chart h4{color:var(--navy);font-size:0.95rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px;text-align:center;}
+    .svg-chart svg{display:block;margin:0 auto;max-width:100%;height:auto;}
     .cluster{background:#fdfaf2;border:1px solid #eadfc4;border-radius:14px;padding:1.4rem 1.4rem 1rem;margin:2rem 0;}
     .cluster h3{margin-top:0;color:var(--navy);font-size:1.05rem;text-transform:uppercase;letter-spacing:1px;font-weight:800;}
     .cluster ul{list-style:none;margin:0;padding:0;}
@@ -183,6 +189,11 @@
       <li><strong>Gestão urbana bem cuidada:</strong> infraestrutura de saneamento, iluminação, parques e áreas verdes acima da média do interior.</li>
     </ul>
 
+    <figure class="artigo">
+      <img src="/residencial-ravello-indaiatuba/images/aerea.jpg" alt="Vista aérea de um condomínio fechado residencial em Indaiatuba, SP — planejamento urbano e áreas verdes característicos da cidade" loading="lazy">
+      <figcaption>Indaiatuba se destaca no interior paulista pelo planejamento urbano — condomínios residenciais e áreas verdes bem integrados. Imagem: bairro residencial em Indaiatuba.</figcaption>
+    </figure>
+
     <h2 id="vale-pena">2. Vale a pena morar em Indaiatuba?</h2>
     <p><strong>Resposta direta: sim, especialmente para famílias e para quem trabalha na região de Campinas.</strong> Se você prioriza segurança, escolas, saúde e qualidade de vida, Indaiatuba é uma das melhores escolhas do interior paulista. Se prioriza ampla vida noturna e comércio 24h de grande cidade, uma capital ainda vai atender melhor.</p>
     <p>A cidade também é boa opção para:</p>
@@ -237,6 +248,64 @@
     </table>
     <p><strong>Resumo:</strong> Indaiatuba brilha em segurança, tranquilidade e qualidade de vida para famílias. Sorocaba e Campinas ganham em oferta de serviços e transporte. Jundiaí é a mais parecida em perfil (também alta qualidade de vida), mas é mais próxima de São Paulo, o que a torna geralmente mais cara.</p>
 
+    <div class="svg-chart">
+      <h4>Custo mensal família 3 pessoas (2026) · valores em R$ mil</h4>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-label="Gráfico comparativo do custo mensal aproximado de morar em 5 cidades: Sorocaba, Indaiatuba, Campinas, Jundiaí e São Paulo. Sorocaba: R$ 4.800 a R$ 7.500. Indaiatuba: R$ 5.500 a R$ 8.500. Campinas: R$ 6.500 a R$ 10.500. Jundiaí: R$ 6.500 a R$ 10.000. São Paulo: R$ 8.000 a R$ 13.500.">
+        <defs>
+          <linearGradient id="barLow" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9a84c"/><stop offset="1" stop-color="#a68536"/></linearGradient>
+          <linearGradient id="barHigh" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1a2b3c"/><stop offset="1" stop-color="#2c4a6b"/></linearGradient>
+        </defs>
+        <!-- eixo Y grid -->
+        <g stroke="#e0d9c1" stroke-width="1">
+          <line x1="60" y1="40"  x2="620" y2="40"/>
+          <line x1="60" y1="90"  x2="620" y2="90"/>
+          <line x1="60" y1="140" x2="620" y2="140"/>
+          <line x1="60" y1="190" x2="620" y2="190"/>
+          <line x1="60" y1="240" x2="620" y2="240"/>
+        </g>
+        <g fill="#666" font-family="Segoe UI, Arial" font-size="11" text-anchor="end">
+          <text x="52" y="44">14k</text>
+          <text x="52" y="94">10k</text>
+          <text x="52" y="144">7k</text>
+          <text x="52" y="194">4k</text>
+          <text x="52" y="244">0</text>
+        </g>
+        <!-- barras (valor "de" claro + "até" escuro empilhado) -->
+        <!-- Sorocaba: 4.8-7.5 -->
+        <g><rect x="80"  y="152" width="70" height="88" fill="url(#barLow)"/><rect x="80"  y="115" width="70" height="37" fill="url(#barHigh)" opacity=".85"/></g>
+        <!-- Indaiatuba: 5.5-8.5 -->
+        <g><rect x="180" y="144" width="70" height="96" fill="url(#barLow)"/><rect x="180" y="102" width="70" height="42" fill="url(#barHigh)" opacity=".85"/></g>
+        <!-- Campinas: 6.5-10.5 -->
+        <g><rect x="280" y="132" width="70" height="108" fill="url(#barLow)"/><rect x="280" y="82"  width="70" height="50" fill="url(#barHigh)" opacity=".85"/></g>
+        <!-- Jundiaí: 6.5-10 -->
+        <g><rect x="380" y="132" width="70" height="108" fill="url(#barLow)"/><rect x="380" y="88"  width="70" height="44" fill="url(#barHigh)" opacity=".85"/></g>
+        <!-- São Paulo: 8.0-13.5 -->
+        <g><rect x="480" y="115" width="70" height="125" fill="url(#barLow)"/><rect x="480" y="45"  width="70" height="70" fill="url(#barHigh)" opacity=".85"/></g>
+        <!-- eixo X labels + valores -->
+        <g fill="#333" font-family="Segoe UI, Arial" font-size="12" font-weight="700" text-anchor="middle">
+          <text x="115" y="262">Sorocaba</text>
+          <text x="215" y="262">Indaiatuba</text>
+          <text x="315" y="262">Campinas</text>
+          <text x="415" y="262">Jundiaí</text>
+          <text x="515" y="262">São Paulo</text>
+        </g>
+        <g fill="#888" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle">
+          <text x="115" y="277">4,8 – 7,5</text>
+          <text x="215" y="277">5,5 – 8,5</text>
+          <text x="315" y="277">6,5 – 10,5</text>
+          <text x="415" y="277">6,5 – 10,0</text>
+          <text x="515" y="277">8,0 – 13,5</text>
+        </g>
+        <!-- legenda -->
+        <g transform="translate(60,295)" font-family="Segoe UI, Arial" font-size="11" fill="#555">
+          <rect x="0"   y="0" width="14" height="10" fill="url(#barLow)"/>
+          <text x="20"  y="9">custo mínimo</text>
+          <rect x="130" y="0" width="14" height="10" fill="url(#barHigh)" opacity=".85"/>
+          <text x="150" y="9">custo máximo (padrão médio-alto)</text>
+        </g>
+      </svg>
+    </div>
+
     <h2 id="sp">7. Morar em Indaiatuba e trabalhar em São Paulo</h2>
     <p>É possível e comum, mas exige planejamento. A distância é ~100 km pelas rodovias Bandeirantes/Anhanguera; o tempo real varia entre 1h15 e 2h dependendo do horário e do trecho de destino em São Paulo.</p>
     <p>Vale a pena se:</p>
@@ -267,6 +336,11 @@
       <li><strong>Lote em loteamento aberto (mais acessível):</strong> <a href="/monte-carmelo-indaiatuba/">Monte Carmelo</a> (R$ 145.000) e <a href="/di-italia-indaiatuba/">Jardim Di Italia</a> (R$ 180.000).</li>
     </ul>
     <a class="destaque-link" href="/lancamentos-indaiatuba/">🏠 Ver todos os lançamentos em Indaiatuba →</a>
+
+    <figure class="artigo">
+      <img src="/uni-residencial-indaiatuba/images/parque-ecologico.jpg" alt="Área verde do Parque Ecológico de Indaiatuba com pessoas caminhando e paisagem urbana ao fundo" loading="lazy">
+      <figcaption>O Parque Ecológico de Indaiatuba é um dos maiores atrativos de qualidade de vida da cidade, ao lado de empreendimentos como o Uni Residencial.</figcaption>
+    </figure>
 
     <section class="cluster">
       <h3>Continue lendo — cluster "Morar em Indaiatuba"</h3>
