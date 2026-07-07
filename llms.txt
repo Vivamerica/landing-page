@@ -34,10 +34,18 @@ Contato (WhatsApp): +55 19 98976-9457
 
 ## Blog (conteúdo educativo)
 
-- [Como usar o FGTS para comprar imóvel em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/como-usar-fgts-comprar-imovel-indaiatuba/): Quem pode usar, para o que serve (entrada, amortização, prestações) e requisitos.
-- [Minha Casa Minha Vida em Indaiatuba: como funciona](https://lancamentos.imoveisvivamerica.com.br/blog/minha-casa-minha-vida-indaiatuba/): Como funciona o programa, quem tem direito e empreendimentos MCMV na cidade.
+### Cluster "Morar em Indaiatuba" (pilar + satélites)
+
+- [Morar em Indaiatuba: guia completo 2026](https://lancamentos.imoveisvivamerica.com.br/blog/morar-em-indaiatuba/) **[PILAR]**: Guia definitivo — vale a pena, custo, segurança, melhores bairros, comparativo com Sorocaba/Campinas/Jundiaí e onde comprar imóvel.
+- [Morar em Indaiatuba é bom? Vantagens e desvantagens honestas](https://lancamentos.imoveisvivamerica.com.br/blog/morar-em-indaiatuba-e-bom/): Resposta direta sobre para quem a cidade combina — e para quem não é a melhor escolha.
+- [Quanto custa morar em Indaiatuba: planilha 2026](https://lancamentos.imoveisvivamerica.com.br/blog/quanto-custa-morar-em-indaiatuba/): Custo mensal realista por perfil (solteiro, casal, família), aluguel, contas, mercado, transporte, escola. Comparativo com cidades vizinhas.
 - [Melhores bairros para morar em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/melhores-bairros-para-morar-indaiatuba/): Perfil de cada região e lançamentos por bairro.
 - [Apartamento ou lote em Indaiatuba: qual o melhor investimento](https://lancamentos.imoveisvivamerica.com.br/blog/apartamento-ou-lote-indaiatuba/): Comparativo de vantagens, custos e valorização.
+
+### Cluster "Financiamento e MCMV"
+
+- [Como usar o FGTS para comprar imóvel em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/blog/como-usar-fgts-comprar-imovel-indaiatuba/): Quem pode usar, para o que serve (entrada, amortização, prestações) e requisitos.
+- [Minha Casa Minha Vida em Indaiatuba: como funciona](https://lancamentos.imoveisvivamerica.com.br/blog/minha-casa-minha-vida-indaiatuba/): Como funciona o programa, quem tem direito e empreendimentos MCMV na cidade.
 
 ## Observações para uso por IA
 
