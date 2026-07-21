@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uni Residencial Indaiatuba | MCMV · 2 Dorms Suíte · Parque Ecológico · R$ 279.990</title>
-  <meta name="description" content="Uni Residencial: único MCMV ao lado do Parque Ecológico de Indaiatuba. 2 dorms com suíte, sacada e vaga coberta. Use FGTS, financie pela Caixa. A partir de R$ 279.990.">
-  <meta name="keywords" content="uni residencial indaiatuba, minha casa minha vida indaiatuba, mcmv indaiatuba, apartamento parque ecológico indaiatuba, usar fgts comprar apartamento indaiatuba, financiamento caixa indaiatuba, masotti construtora indaiatuba, apartamento 2 quartos suíte indaiatuba, apartamento mcmv suíte indaiatuba">
+  <title>Uni Residencial Indaiatuba | MCMV · 42-48 m² 2 Dorms Suíte · Parque Ecológico</title>
+  <meta name="description" content="Uni Residencial Masotti: 4 torres, 1.656 aptos MCMV ao lado do Parque Ecológico de Indaiatuba. 42,85 a 47,82 m², 2 dorms com suíte, sacada, vaga coberta e 33 áreas de lazer. Use FGTS. Condições de pré-lançamento — solicite a tabela oficial.">
+  <meta name="keywords" content="uni residencial indaiatuba, uni masotti indaiatuba, minha casa minha vida indaiatuba, mcmv indaiatuba, apartamento parque ecológico indaiatuba, planta uni residencial, uni residencial 42 metros, uni residencial 47 metros, garden uni indaiatuba, terraço uni indaiatuba, usar fgts comprar apartamento indaiatuba, financiamento caixa indaiatuba, masotti construtora indaiatuba, apartamento 2 quartos suíte indaiatuba, apartamento mcmv suíte indaiatuba, jorge camacho arquitetura, grupo rl realize paisagismo">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Uni Residencial Indaiatuba | Único MCMV ao lado do Parque Ecológico">
   <meta property="og:description" content="2 dorms com suíte, sacada e vaga coberta. Use FGTS, financie pela Caixa. Ao lado do Parque Ecológico, Indaiatuba SP. R$ 279.990.">
@@ -29,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
     "name": "Uni Residencial",
-    "description": "Apartamentos Minha Casa Minha Vida ao lado do Parque Ecológico de Indaiatuba SP. 2 dormitórios com suíte, sacada, vaga coberta e lazer completo.",
+    "description": "Uni Residencial pela Masotti: 4 torres com 1.656 apartamentos Minha Casa Minha Vida ao lado do Parque Ecológico de Indaiatuba/SP. Plantas de 42,85 m² a 47,82 m² com 2 dormitórios e suíte, sacada ou garden, vaga coberta e 33 áreas de lazer. Arquitetura Jorge Camacho, paisagismo Grupo RL Realize, decoração Catherine Trevisan.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/uni-residencial-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/uni-residencial-indaiatuba/images/piscina.jpg",
     "address": {
@@ -39,12 +39,21 @@
       "addressCountry": "BR"
     },
     "numberOfRooms": 2,
+    "floorSize": { "@type": "QuantitativeValue", "minValue": 42.85, "maxValue": 47.82, "unitCode": "MTK" },
     "offers": {
       "@type": "Offer",
       "priceCurrency": "BRL",
-      "price": "279990",
       "availability": "https://schema.org/PreOrder",
-      "priceValidUntil": "2026-12-31"
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "description": "Condições especiais de pré-lançamento — valores sujeitos a reajuste após lançamento oficial em 2026. Solicite a tabela atualizada."
+      }
+    },
+    "broker": {
+      "@type": "RealEstateAgent",
+      "name": "Imobiliária Viv'América",
+      "telephone": "+5519989769457",
+      "url": "https://lancamentos.imoveisvivamerica.com.br/"
     }
   }
   </script>
@@ -321,12 +330,127 @@
       50%      { box-shadow: 0 4px 32px rgba(37,211,102,.9); }
     }
 
+    /* PLANTAS */
+    .plantas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.3rem;
+      margin-top: 2rem;
+    }
+    .planta-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 3px 16px rgba(139,61,155,0.08);
+      border: 1px solid rgba(139,61,155,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .planta-card:hover { transform: translateY(-3px); box-shadow: 0 8px 26px rgba(139,61,155,0.16); }
+    .planta-card img { width: 100%; height: 220px; object-fit: contain; background: #f0e8f7; display: block; }
+    .planta-body { padding: 1.2rem 1.3rem 1.4rem; }
+    .planta-area { font-size: 1.4rem; font-weight: 800; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .planta-nome { font-size: 0.98rem; font-weight: 700; color: var(--texto); margin: 0.15rem 0 0.4rem; }
+    .planta-desc { font-size: 0.83rem; color: var(--texto-claro); margin: 0; }
+
+    /* FICHA TÉCNICA */
+    .ficha-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .ficha-item {
+      background: var(--cinza-bg);
+      border-left: 3px solid var(--rosa);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+    }
+    .ficha-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--texto-claro); font-weight: 700; }
+    .ficha-valor { font-size: 1.15rem; font-weight: 800; color: var(--texto); margin-top: 0.3rem; }
+
+    /* IMPLANTAÇÃO */
+    .implantacao-wrap { margin-top: 2rem; text-align: center; }
+    .implantacao-wrap img { max-width: 100%; height: auto; border-radius: var(--radius); box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
+    .implantacao-legenda { margin-top: 1.5rem; text-align: left; font-size: 0.85rem; color: var(--texto-claro); }
+
+    /* LAZER COMPLETO */
+    .lazer-lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.6rem 1.2rem;
+      margin-top: 2rem;
+      list-style: none; padding: 0;
+    }
+    .lazer-lista li {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-size: 0.9rem; color: var(--texto);
+      padding: 0.35rem 0;
+    }
+    .lazer-lista li::before {
+      content: "●"; color: var(--rosa); font-size: 0.75rem;
+    }
+
+    /* DIFERENCIAIS VALORATIVOS */
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .dif-card {
+      background: var(--dark);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 1.3rem 1.3rem 1.3rem 3.2rem;
+      position: relative;
+      border: 1px solid rgba(232,25,90,0.18);
+    }
+    .dif-card::before {
+      content: "✓";
+      position: absolute; left: 1.1rem; top: 1.2rem;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--grad); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem;
+    }
+    .dif-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; color: #fff; }
+    .dif-card p { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin: 0; }
+
+    /* ASSINATURAS */
+    .assinaturas {
+      background: var(--cinza-bg);
+      padding: clamp(50px,7vw,80px) 5%;
+    }
+    .assinaturas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.4rem; margin-top: 2rem;
+      max-width: 1000px; margin-left: auto; margin-right: auto;
+    }
+    .assinatura {
+      background: #fff; border-radius: var(--radius);
+      padding: 1.6rem 1.5rem; text-align: center;
+      border-top: 3px solid var(--roxo);
+    }
+    .assinatura-role { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--roxo); font-weight: 700; }
+    .assinatura-nome { font-size: 1.15rem; font-weight: 800; color: var(--texto); margin: 0.4rem 0 0.3rem; }
+    .assinatura-desc { font-size: 0.82rem; color: var(--texto-claro); margin: 0; }
+
+    /* DISCLAIMER PREÇO */
+    .preco-disclaimer {
+      background: #fff4e5; border-left: 3px solid #d68910;
+      color: #6b4a0e; font-size: 0.78rem; line-height: 1.5;
+      padding: 0.7rem 1rem; border-radius: 6px;
+      margin-top: 1rem; text-align: left;
+    }
+
     @media (max-width: 768px) {
       nav { display: none; }
       .renders-grid { grid-template-columns: 1fr; }
       .render-item.wide { grid-column: span 1; }
       .localizacao-inner { grid-template-columns: 1fr; }
       .stat { flex: 1 1 45%; }
+      .planta-card img { height: 180px; }
     }
   </style>
   <!-- Google Analytics GA4 -->
@@ -398,10 +522,10 @@
 
 <!-- STATS -->
 <div class="stats">
-  <div class="stat"><strong>R$ 279.990</strong><span>A partir de</span></div>
-  <div class="stat"><strong>2 Dorms.</strong><span>Com suíte</span></div>
-  <div class="stat"><strong>Sacada</strong><span>Inclusa</span></div>
-  <div class="stat"><strong>Vaga</strong><span>Coberta</span></div>
+  <div class="stat"><strong>4 Torres</strong><span>Térreo + 25/26 pav.</span></div>
+  <div class="stat"><strong>1.656</strong><span>Apartamentos</span></div>
+  <div class="stat"><strong>42–48 m²</strong><span>2 dorms c/ suíte</span></div>
+  <div class="stat"><strong>33</strong><span>Áreas de lazer</span></div>
   <div class="stat"><strong>MCMV</strong><span>Financiamento</span></div>
 </div>
 
@@ -459,16 +583,123 @@
   </div>
 </section>
 
+<!-- PLANTAS -->
+<section class="section" style="background:var(--cinza-bg);">
+  <div class="container-wide">
+    <p class="sec-label">Escolha a sua planta</p>
+    <h2>6 opções de planta com <em>2 dormitórios e suíte</em></h2>
+    <p class="lead">Todas as tipologias com ponto para ar-condicionado (sala e suíte), infra para aquecedor a gás, revestimento cerâmico no box até o teto e ventilação natural nos banheiros.</p>
+    <div class="plantas-grid">
+      <div class="planta-card">
+        <img src="images/planta-canto.jpg" alt="Planta Canto Uni Residencial 42,85 m² — 2 dormitórios e 1 suíte">
+        <div class="planta-body">
+          <div class="planta-area">42,85 m²</div>
+          <div class="planta-nome">Planta Canto</div>
+          <p class="planta-desc">2 dormitórios · 1 suíte · sala integrada</p>
+        </div>
+      </div>
+      <div class="planta-card">
+        <img src="images/planta-meio.jpg" alt="Planta Meio Uni Residencial 42,85 m² — 2 dormitórios e 1 suíte">
+        <div class="planta-body">
+          <div class="planta-area">42,85 m²</div>
+          <div class="planta-nome">Planta Meio</div>
+          <p class="planta-desc">2 dormitórios · 1 suíte · aptos no meio do andar</p>
+        </div>
+      </div>
+      <div class="planta-card">
+        <img src="images/planta-canto-garden.jpg" alt="Planta Canto Garden Uni Residencial 47,82 m² — 2 dormitórios e 1 suíte com jardim privativo">
+        <div class="planta-body">
+          <div class="planta-area">47,82 m²</div>
+          <div class="planta-nome">Canto Garden</div>
+          <p class="planta-desc">2 dormitórios · 1 suíte · jardim privativo no térreo</p>
+        </div>
+      </div>
+      <div class="planta-card">
+        <img src="images/planta-meio-garden.jpg" alt="Planta Meio Garden Uni Residencial 47,82 m² — 2 dormitórios e 1 suíte com jardim privativo">
+        <div class="planta-body">
+          <div class="planta-area">47,82 m²</div>
+          <div class="planta-nome">Meio Garden</div>
+          <p class="planta-desc">2 dormitórios · 1 suíte · jardim privativo no térreo</p>
+        </div>
+      </div>
+      <div class="planta-card">
+        <img src="images/planta-canto-terraco-sala.jpg" alt="Planta Canto Terraço Sala Uni Residencial 42,85 m²">
+        <div class="planta-body">
+          <div class="planta-area">42,85 m²</div>
+          <div class="planta-nome">Canto Terraço Sala</div>
+          <p class="planta-desc">Sala com terraço integrado — ambientes ampliados</p>
+        </div>
+      </div>
+      <div class="planta-card">
+        <img src="images/planta-canto-terraco-suite.jpg" alt="Planta Canto Terraço Suíte Uni Residencial 42,85 m²">
+        <div class="planta-body">
+          <div class="planta-area">42,85 m²</div>
+          <div class="planta-nome">Canto Terraço Suíte</div>
+          <p class="planta-desc">Terraço saindo da suíte master</p>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:2rem; font-size:0.85rem; color:var(--texto-claro);">Áreas privativas oficiais. Fale com a Viv'América para receber a planta em PDF e conferir a disponibilidade em cada torre.</p>
+  </div>
+</section>
+
+<!-- FICHA TÉCNICA -->
+<section class="section" style="background:#fff;">
+  <div class="container-wide">
+    <p class="sec-label">Ficha técnica oficial</p>
+    <h2>Uni Residencial em <em>números</em></h2>
+    <p class="lead">Um dos maiores empreendimentos MCMV de Indaiatuba, projetado com padrão de médio-alto padrão.</p>
+    <div class="ficha-grid">
+      <div class="ficha-item">
+        <div class="ficha-label">Área do terreno</div>
+        <div class="ficha-valor">19.234,12 m²</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Área permeável</div>
+        <div class="ficha-valor">3.962,07 m²</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Área construída</div>
+        <div class="ficha-valor">117.048,63 m²</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Torres</div>
+        <div class="ficha-valor">4</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Pavimentos</div>
+        <div class="ficha-valor">Térreo + 25 (3 torres) / Térreo + 26 (1 torre)</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Elevadores por torre</div>
+        <div class="ficha-valor">3</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Aptos por pavimento</div>
+        <div class="ficha-valor">16</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Total de unidades</div>
+        <div class="ficha-valor">1.656</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Vagas de garagem</div>
+        <div class="ficha-valor">1 por apto · 85% cobertas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RENDERS GALLERY -->
 <section id="lazer" class="section gallery-bg">
   <div class="container-wide">
     <p class="sec-label">Lazer que UNE toda a família</p>
-    <h2>Um lazer <em>único</em> em Indaiatuba</h2>
-    <p class="lead">Espaços pensados para cada momento do dia — do treino ao descanso, da família ao encontro com amigos.</p>
+    <h2>33 áreas de lazer <em>equipadas e decoradas</em></h2>
+    <p class="lead">Um dos pacotes de lazer mais completos do MCMV em Indaiatuba. Áreas comuns entregues equipadas e decoradas, seguindo projeto de arquiteto renomado.</p>
     <div class="renders-grid">
       <div class="render-item wide">
-        <img src="images/piscina.jpg" alt="Piscina Uni Residencial Indaiatuba">
-        <div class="render-label">🏊 Piscina com paisagismo tropical</div>
+        <img src="images/piscina.jpg" alt="Complexo de piscinas Uni Residencial Indaiatuba">
+        <div class="render-label">🏊 Complexo de piscinas com paisagismo tropical</div>
       </div>
       <div class="render-item">
         <img src="images/beach-tennis.jpg" alt="Beach Tennis Uni Residencial Indaiatuba">
@@ -479,8 +710,128 @@
         <div class="render-label">🛋️ Lounge Beach</div>
       </div>
       <div class="render-item wide">
-        <img src="images/casa-de-campo.jpg" alt="Casa de Campo Uni Residencial Indaiatuba">
+        <img src="images/casa-de-campo.jpg" alt="Casa de Campo com piscina privativa Uni Residencial Indaiatuba">
         <div class="render-label">🏡 Casa de Campo — espaço gourmet e convivência</div>
+      </div>
+    </div>
+
+    <p class="sec-label" style="margin-top:3rem;">Lista completa das 33 áreas</p>
+    <ul class="lazer-lista">
+      <li>Complexo de piscinas</li>
+      <li>Quadra de beach tennis</li>
+      <li>Lounge beach</li>
+      <li>Quadra de vôlei de areia</li>
+      <li>Quadra poliesportiva</li>
+      <li>Casa de campo</li>
+      <li>Sauna úmida</li>
+      <li>Sauna seca</li>
+      <li>Academia</li>
+      <li>Crossfit</li>
+      <li>Espaço Zen</li>
+      <li>Salão de festas</li>
+      <li>Lounge festas</li>
+      <li>Salão de jogos</li>
+      <li>Brinquedoteca</li>
+      <li>Playground</li>
+      <li>Pet place</li>
+      <li>Praça dos jogos</li>
+      <li>Fireplace</li>
+      <li>Churrasqueira dupla</li>
+      <li>Redário</li>
+      <li>Pergolado</li>
+      <li>Coworking</li>
+      <li>Market</li>
+      <li>Deck market</li>
+      <li>Lavanderia</li>
+      <li>Bicicletário</li>
+      <li>Portaria + delivery</li>
+      <li>Portaria de veículos</li>
+      <li>Administrativo</li>
+      <li>Estacionamento visitantes</li>
+      <li>Edifício garagem</li>
+      <li>Lixeira reciclável</li>
+    </ul>
+
+    <div class="implantacao-wrap">
+      <p class="sec-label" style="margin-top:2rem;">Implantação oficial</p>
+      <h2 style="margin-bottom:1.5rem;">Todos os <em>33 pontos</em> no mapa</h2>
+      <img src="images/implantacao-33-pontos.jpg" alt="Implantação Uni Residencial com 33 áreas de lazer numeradas — 4 torres, edifício garagem, portaria de veículos e portaria social">
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS VALORATIVOS -->
+<section class="section" style="background:var(--dark2); color:#fff;">
+  <div class="container-wide">
+    <p class="sec-label">Valorização e sustentabilidade</p>
+    <h2 style="color:#fff;">Diferenciais que <em>geram valor</em> para o seu futuro</h2>
+    <p class="lead" style="color:rgba(255,255,255,0.7);">Escolhas de projeto que reduzem o condomínio mensal, valorizam o imóvel na revenda e cuidam do meio ambiente.</p>
+    <div class="diferenciais-grid">
+      <div class="dif-card">
+        <h4>Preparação para placas fotovoltaicas</h4>
+        <p>Infra pronta para instalação de energia solar nas áreas comuns.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Iluminação LED nas áreas comuns</h4>
+        <p>Consumo elétrico reduzido e menor manutenção.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Sensores de presença</h4>
+        <p>Halls das torres e circulações da área de lazer com acendimento automático.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Pisos intertravados na área comum</h4>
+        <p>Permitem drenagem natural e reduzem o escoamento superficial.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Árvores nativas + paisagismo assinado</h4>
+        <p>Projeto paisagístico do Grupo RL Realize com espécies nativas.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Espaços para coleta seletiva</h4>
+        <p>Lixeiras dedicadas para reciclagem em pontos estratégicos.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Áreas comuns equipadas e decoradas</h4>
+        <p>Você entra com a mobília, o resto já vem pronto seguindo projeto de arquiteto renomado.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Ponto para ar-condicionado</h4>
+        <p>Sala e suíte com infra pronta para instalação split.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Aquecimento a gás</h4>
+        <p>Infra preparada para aquecedor a gás e ponto de chuveiro a gás.</p>
+      </div>
+      <div class="dif-card">
+        <h4>Revestimento cerâmico até o teto</h4>
+        <p>Box dos banheiros revestido do piso até o teto — acabamento superior.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSINATURAS -->
+<section class="assinaturas">
+  <div class="container-wide" style="text-align:center;">
+    <p class="sec-label">Assinaturas do projeto</p>
+    <h2>Um time de <em>arquitetos renomados</em></h2>
+    <p class="lead">Fachada, áreas comuns, paisagismo e decoração assinados por profissionais de referência — algo raro no segmento MCMV.</p>
+    <div class="assinaturas-grid">
+      <div class="assinatura">
+        <div class="assinatura-role">Arquitetura · Fachada + Áreas comuns</div>
+        <div class="assinatura-nome">Jorge Camacho</div>
+        <p class="assinatura-desc">Assinatura contemporânea para as 4 torres e todo o pavimento de lazer.</p>
+      </div>
+      <div class="assinatura">
+        <div class="assinatura-role">Paisagismo</div>
+        <div class="assinatura-nome">Grupo RL Realize</div>
+        <p class="assinatura-desc">Projeto com árvores nativas, praças e áreas verdes integradas.</p>
+      </div>
+      <div class="assinatura">
+        <div class="assinatura-role">Design de interiores</div>
+        <div class="assinatura-nome">Catherine Trevisan</div>
+        <p class="assinatura-desc">Áreas comuns entregues equipadas e decoradas seguindo o projeto da arquiteta.</p>
       </div>
     </div>
   </div>
@@ -513,19 +864,20 @@
     <h2>Condições de <em>pré-lançamento</em></h2>
     <p class="lead">Reserve agora e garanta as melhores condições antes do lançamento oficial.</p>
     <div class="preco-card">
-      <span class="preco-tipo">Uni Residencial · Apartamento</span>
+      <span class="preco-tipo">Uni Residencial · Apartamento MCMV</span>
       <div class="mcmv-badge">
         <img src="images/logo-mcmv.png" alt="MCMV" style="width:20px;height:20px;object-fit:contain;">
         Financiamento Minha Casa Minha Vida
       </div>
-      <div class="preco-valor">R$ 279.990 <span>a partir de</span></div>
-      <p class="preco-desc">2 dormitórios com suíte · Sacada · Vaga coberta · Lazer completo</p>
+      <div class="preco-valor">R$ 279.990 <span>de pré-lançamento</span></div>
+      <p class="preco-desc">Fluxo padrão: <strong>2% no ato</strong> · <strong>36x mensais</strong> corrigidas pelo INCC · <strong>3 anuais opcionais</strong> (Dez/26, Dez/27, Dez/28) · saldo pelo financiamento MCMV Caixa.</p>
       <div class="preco-features">
+        <span class="pf">42–48 m²</span>
         <span class="pf">2 Dorms c/ Suíte</span>
-        <span class="pf">Sacada</span>
         <span class="pf">Vaga Coberta</span>
-        <span class="pf">Lazer</span>
+        <span class="pf">Use FGTS</span>
       </div>
+      <p class="preco-disclaimer">⚠️ Valor de pré-lançamento sujeito a reajuste após o lançamento oficial em 2026. Solicite a tabela atualizada e a simulação personalizada com a Viv'América — condições especiais para as primeiras reservas.</p>
       <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20fazer%20minha%20reserva%20no%20Uni%20Residencial%20Indaiatuba%20e%20saber%20as%20condi%C3%A7%C3%B5es!" class="btn-reservar" style="width:100%;justify-content:center;border-radius:10px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Quero minha reserva agora
@@ -559,19 +911,37 @@
     <h2 class="faq-h2">Perguntas frequentes sobre o Uni Residencial</h2>
 
     <details><summary>Qual o preço do Uni Residencial?</summary>
-      <p>O Uni Residencial tem apartamentos a partir de R$ 279.990, com 2 dormitórios (sendo um suíte), sacada e vaga coberta, em Indaiatuba/SP.</p></details>
+      <p>O Uni Residencial está em fase de pré-lançamento com condições especiais a partir de R$ 279.990 para os apartamentos de 42,85 m² com 2 dormitórios e suíte. Esses valores são de pré-lançamento e estão sujeitos a reajuste após o lançamento oficial em 2026. Fale com a Viv'América para receber a tabela atualizada em primeira mão.</p></details>
+
+    <details><summary>Quantos apartamentos e torres tem o Uni Residencial?</summary>
+      <p>O Uni Residencial tem 4 torres (3 com Térreo + 25 pavimentos e 1 com Térreo + 26 pavimentos), somando 1.656 apartamentos e 16 unidades por pavimento, com 3 elevadores por torre. É um dos maiores empreendimentos Minha Casa Minha Vida em execução em Indaiatuba/SP.</p></details>
+
+    <details><summary>Quais são as plantas disponíveis no Uni Residencial?</summary>
+      <p>São 6 opções de planta, todas com 2 dormitórios e 1 suíte: Planta Canto e Meio de 42,85 m², Canto Garden e Meio Garden de 47,82 m² (com jardim privativo no térreo), Canto Terraço Sala e Canto Terraço Suíte de 42,85 m². Todas contam com ponto para ar-condicionado na sala e na suíte, infra para aquecedor a gás, ponto para chuveiro a gás e revestimento cerâmico no box até o teto.</p></details>
+
+    <details><summary>Quais são as áreas de lazer do Uni Residencial?</summary>
+      <p>São 33 áreas de lazer entregues equipadas e decoradas: complexo de piscinas, quadra de beach tennis, vôlei de areia, poliesportiva, casa de campo, sauna úmida e seca, academia, crossfit, espaço zen, salão de festas, lounge festas, salão de jogos, brinquedoteca, playground, pet place, praça dos jogos, fireplace, churrasqueira dupla, redário, pergolado, coworking, market, deck market, lavanderia, bicicletário, portaria + delivery, entre outros. Um dos pacotes de lazer mais completos do MCMV em Indaiatuba.</p></details>
+
+    <details><summary>Qual o valor do condomínio no Uni Residencial?</summary>
+      <p>O condomínio do Uni Residencial foi projetado para ser competitivo mesmo com o pacote de lazer completo, graças a decisões como iluminação LED nas áreas comuns, sensores de presença nos halls, preparação para placas fotovoltaicas e áreas comuns entregues equipadas e decoradas (o condomínio não paga a mobília depois). O valor final é informado pela Masotti mais próximo da entrega — fale com a Viv'América para receber a última estimativa.</p></details>
 
     <details><summary>Posso usar o FGTS para comprar o Uni Residencial?</summary>
-      <p>Sim. O Uni Residencial é um empreendimento Minha Casa Minha Vida (MCMV), o que permite usar o saldo do FGTS como entrada ou abatimento e financiar pela Caixa Econômica Federal com as condições do programa.</p></details>
+      <p>Sim. O Uni Residencial é um empreendimento Minha Casa Minha Vida (MCMV), o que permite usar o saldo do FGTS como entrada, abatimento ou amortização das parcelas — e financiar pela Caixa Econômica Federal com juros reduzidos do programa (varia por faixa de renda familiar).</p></details>
+
+    <details><summary>Como funciona o fluxo de pagamento durante a obra?</summary>
+      <p>O fluxo padrão de pré-lançamento é: 2% no ato da assinatura do contrato, 36 parcelas mensais corrigidas pelo INCC durante a obra, e 3 parcelas anuais opcionais em Dez/26, Dez/27 e Dez/28. Na entrega, o saldo é liquidado pelo financiamento MCMV via Caixa Econômica Federal.</p></details>
 
     <details><summary>Qual o diferencial de localização do Uni Residencial?</summary>
-      <p>O Uni Residencial é o único MCMV ao lado do Parque Ecológico de Indaiatuba, unindo o benefício do programa habitacional à qualidade de vida de morar próximo a uma grande área verde.</p></details>
+      <p>O Uni Residencial é o único empreendimento MCMV em Indaiatuba localizado ao lado do Parque Ecológico, unindo o benefício do programa habitacional à qualidade de vida de morar próximo à maior área verde da cidade — algo raro no segmento.</p></details>
 
-    <details><summary>Quantos dormitórios têm os apartamentos?</summary>
-      <p>Cada apartamento do Uni Residencial tem 2 dormitórios, sendo um suíte, além de sacada e vaga de garagem coberta.</p></details>
+    <details><summary>Quem assina o projeto de arquitetura e paisagismo?</summary>
+      <p>A arquitetura da fachada e das áreas comuns é assinada por Jorge Camacho. O paisagismo é do Grupo RL Realize, com plantio de árvores nativas. As áreas comuns são entregues equipadas e decoradas com projeto de interiores de Catherine Trevisan — algo raro num empreendimento MCMV.</p></details>
+
+    <details><summary>O Uni Residencial tem patrimônio de afetação?</summary>
+      <p>Sim. Todos os empreendimentos da Masotti Investimentos são registrados com patrimônio de afetação, garantindo que os recursos pagos pelos compradores sejam usados exclusivamente na obra do Uni Residencial, com a proteção jurídica prevista na Lei 10.931/2004.</p></details>
 
     <details><summary>Quem é a construtora do Uni Residencial?</summary>
-      <p>O Uni Residencial é construído pela Masotti, em Indaiatuba/SP. Fale com a Imobiliária Viv'América para receber a planta, a tabela completa e a simulação de financiamento.</p></details>
+      <p>O Uni Residencial é incorporado e construído pela Masotti Investimentos, com mais de 456.000 m² de área construída, 5.256 unidades entregues e 1,2 milhão de m² de área urbanizada em seu portfólio. Fale com a Imobiliária Viv'América para receber a planta, a ficha técnica e a simulação de financiamento.</p></details>
   </div>
 </section>
 
@@ -580,11 +950,17 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Qual o preço do Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"O Uni Residencial tem apartamentos a partir de R$ 279.990, com 2 dormitórios (sendo um suíte), sacada e vaga coberta, em Indaiatuba/SP."}},
-    {"@type":"Question","name":"Posso usar o FGTS para comprar o Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"Sim. O Uni Residencial é um empreendimento Minha Casa Minha Vida (MCMV), o que permite usar o saldo do FGTS como entrada ou abatimento e financiar pela Caixa Econômica Federal com as condições do programa."}},
-    {"@type":"Question","name":"Qual o diferencial de localização do Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"O Uni Residencial é o único MCMV ao lado do Parque Ecológico de Indaiatuba, unindo o benefício do programa habitacional à qualidade de vida de morar próximo a uma grande área verde."}},
-    {"@type":"Question","name":"Quantos dormitórios têm os apartamentos?","acceptedAnswer":{"@type":"Answer","text":"Cada apartamento do Uni Residencial tem 2 dormitórios, sendo um suíte, além de sacada e vaga de garagem coberta."}},
-    {"@type":"Question","name":"Quem é a construtora do Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"O Uni Residencial é construído pela Masotti, em Indaiatuba/SP. Fale com a Imobiliária Viv'América para receber a planta, a tabela completa e a simulação de financiamento."}}
+    {"@type":"Question","name":"Qual o preço do Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"O Uni Residencial está em fase de pré-lançamento com condições especiais a partir de R$ 279.990 para os apartamentos de 42,85 m² com 2 dormitórios e suíte. Esses valores são de pré-lançamento e estão sujeitos a reajuste após o lançamento oficial em 2026. Fale com a Viv'América para receber a tabela atualizada em primeira mão."}},
+    {"@type":"Question","name":"Quantos apartamentos e torres tem o Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"O Uni Residencial tem 4 torres (3 com Térreo + 25 pavimentos e 1 com Térreo + 26 pavimentos), somando 1.656 apartamentos e 16 unidades por pavimento, com 3 elevadores por torre. É um dos maiores empreendimentos Minha Casa Minha Vida em execução em Indaiatuba/SP."}},
+    {"@type":"Question","name":"Quais são as plantas disponíveis no Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"São 6 opções de planta, todas com 2 dormitórios e 1 suíte: Planta Canto e Meio de 42,85 m², Canto Garden e Meio Garden de 47,82 m² (com jardim privativo no térreo), Canto Terraço Sala e Canto Terraço Suíte de 42,85 m². Todas contam com ponto para ar-condicionado na sala e na suíte, infra para aquecedor a gás, ponto para chuveiro a gás e revestimento cerâmico no box até o teto."}},
+    {"@type":"Question","name":"Quais são as áreas de lazer do Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"São 33 áreas de lazer entregues equipadas e decoradas: complexo de piscinas, quadra de beach tennis, vôlei de areia, poliesportiva, casa de campo, sauna úmida e seca, academia, crossfit, espaço zen, salão de festas, lounge festas, salão de jogos, brinquedoteca, playground, pet place, praça dos jogos, fireplace, churrasqueira dupla, redário, pergolado, coworking, market, deck market, lavanderia, bicicletário, portaria + delivery, entre outros."}},
+    {"@type":"Question","name":"Qual o valor do condomínio no Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"O condomínio do Uni Residencial foi projetado para ser competitivo mesmo com o pacote de lazer completo, graças a iluminação LED nas áreas comuns, sensores de presença nos halls, preparação para placas fotovoltaicas e áreas comuns entregues equipadas e decoradas. O valor final é informado pela Masotti mais próximo da entrega."}},
+    {"@type":"Question","name":"Posso usar o FGTS para comprar o Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"Sim. O Uni Residencial é um empreendimento Minha Casa Minha Vida (MCMV), o que permite usar o saldo do FGTS como entrada, abatimento ou amortização das parcelas, e financiar pela Caixa Econômica Federal com juros reduzidos do programa."}},
+    {"@type":"Question","name":"Como funciona o fluxo de pagamento durante a obra?","acceptedAnswer":{"@type":"Answer","text":"O fluxo padrão de pré-lançamento é: 2% no ato da assinatura do contrato, 36 parcelas mensais corrigidas pelo INCC durante a obra, e 3 parcelas anuais opcionais em Dez/26, Dez/27 e Dez/28. Na entrega, o saldo é liquidado pelo financiamento MCMV via Caixa Econômica Federal."}},
+    {"@type":"Question","name":"Qual o diferencial de localização do Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"O Uni Residencial é o único empreendimento MCMV em Indaiatuba localizado ao lado do Parque Ecológico, unindo o benefício do programa habitacional à qualidade de vida de morar próximo à maior área verde da cidade."}},
+    {"@type":"Question","name":"Quem assina o projeto de arquitetura e paisagismo?","acceptedAnswer":{"@type":"Answer","text":"A arquitetura da fachada e das áreas comuns é assinada por Jorge Camacho. O paisagismo é do Grupo RL Realize, com plantio de árvores nativas. As áreas comuns são entregues equipadas e decoradas com projeto de interiores de Catherine Trevisan."}},
+    {"@type":"Question","name":"O Uni Residencial tem patrimônio de afetação?","acceptedAnswer":{"@type":"Answer","text":"Sim. Todos os empreendimentos da Masotti Investimentos são registrados com patrimônio de afetação, garantindo que os recursos pagos pelos compradores sejam usados exclusivamente na obra do Uni Residencial, com a proteção jurídica prevista na Lei 10.931/2004."}},
+    {"@type":"Question","name":"Quem é a construtora do Uni Residencial?","acceptedAnswer":{"@type":"Answer","text":"O Uni Residencial é incorporado e construído pela Masotti Investimentos, com mais de 456.000 m² de área construída, 5.256 unidades entregues e 1,2 milhão de m² de área urbanizada em seu portfólio."}}
   ]
 }
 </script>
