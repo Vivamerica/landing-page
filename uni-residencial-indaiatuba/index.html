@@ -469,6 +469,36 @@
 </head>
 <body>
 
+<!-- LIGHTBOX -->
+<style>
+.lb-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+.lb-overlay.open{display:flex;animation:lb-fade .2s}
+.lb-overlay img{max-width:96vw;max-height:96vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6);border-radius:8px;cursor:default}
+.lb-close{position:fixed;top:20px;right:24px;color:#fff;font-size:2.5rem;background:none;border:none;cursor:pointer;font-weight:200;line-height:1;z-index:10000}
+@keyframes lb-fade{from{opacity:0}to{opacity:1}}
+img.lb-click{cursor:zoom-in;transition:transform .2s}
+img.lb-click:hover{filter:brightness(1.05)}
+</style>
+<div class="lb-overlay" id="lb" onclick="closeLB(event)"><button class="lb-close" onclick="closeLB(event)" aria-label="Fechar (Esc)">×</button><img id="lb-img" alt="" onclick="event.stopPropagation()"></div>
+<script>
+(function(){
+  var sels='.render-item img,.planta-card img,.implantacao-wrap img';
+  document.querySelectorAll(sels).forEach(function(img){
+    img.classList.add('lb-click');
+    img.addEventListener('click',function(e){
+      if(img.closest('a')){e.preventDefault();}
+      var l=document.getElementById('lb');
+      document.getElementById('lb-img').src=img.src;
+      document.getElementById('lb-img').alt=img.alt||'';
+      l.classList.add('open');
+      document.body.style.overflow='hidden';
+    });
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB()});
+})();
+function closeLB(e){if(e)e.stopPropagation();document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
+</script>
+
 <!-- WA FLOAT -->
 <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Uni%20Residencial%20em%20Indaiatuba.%20Quero%20fazer%20minha%20reserva!"
    class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
