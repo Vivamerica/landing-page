@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Folheto Lançamentos Indaiatuba · Viv'América</title>
+<style>
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; font-size: 10pt; line-height: 1.4; }
+
+  :root {
+    --navy: #1a2b3c;
+    --gold: #c9a84c;
+    --terra: #A15E2C;
+    --gray: #6b6660;
+    --border: #dcd6c8;
+    --cream: #f8f4ea;
+  }
+
+  /* ═════════ CAPA ═════════ */
+  .cover {
+    height: 273mm;
+    page-break-after: always;
+    display: flex; flex-direction: column;
+    background: linear-gradient(135deg, #0f1c29 0%, #1a2b3c 55%, #2d4a5e 100%);
+    color: #fff; padding: 20mm 15mm;
+    position: relative; overflow: hidden;
+  }
+  .cover::before {
+    content: ''; position: absolute; right: -50mm; top: -50mm;
+    width: 200mm; height: 200mm;
+    background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 60%);
+  }
+  .cover-brand {
+    font-size: 11pt; letter-spacing: 4pt; font-weight: 300;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 6mm;
+  }
+  .cover-brand strong { font-weight: 800; letter-spacing: 3pt; }
+  .cover h1 {
+    font-size: 44pt; font-weight: 800; line-height: 1.05;
+    margin-bottom: 8mm; position: relative;
+  }
+  .cover h1 span { color: var(--gold); }
+  .cover-sub {
+    font-size: 13pt; opacity: .82; max-width: 130mm;
+    line-height: 1.55; margin-bottom: 14mm;
+  }
+  .cover-stats {
+    display: flex; gap: 12mm; margin-bottom: auto; padding: 8mm 0;
+    border-top: 1px solid rgba(201,168,76,0.35);
+    border-bottom: 1px solid rgba(201,168,76,0.35);
+  }
+  .cover-stat strong {
+    display: block; font-size: 26pt; color: var(--gold);
+    font-weight: 800; line-height: 1;
+  }
+  .cover-stat span {
+    display: block; font-size: 8pt; letter-spacing: 1.5pt;
+    text-transform: uppercase; opacity: .75; margin-top: 2mm;
+  }
+  .cover-tag {
+    font-size: 9pt; letter-spacing: 1pt; opacity: .55; text-transform: uppercase;
+    margin-top: 10mm;
+  }
+  .cover-footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 8mm; border-top: 1px solid rgba(201,168,76,0.35);
+    font-size: 9pt;
+  }
+  .cover-footer .brand-imob {
+    font-size: 14pt; font-weight: 800; letter-spacing: 1pt;
+  }
+  .cover-footer .brand-imob small {
+    display: block; font-size: 8pt; font-weight: 400; letter-spacing: 3pt;
+    opacity: .7; margin-top: 1mm;
+  }
+  .cover-contact { text-align: right; }
+  .cover-contact strong { color: var(--gold); font-size: 12pt; letter-spacing: 1pt; }
+
+  /* ═════════ ÍNDICE ═════════ */
+  .toc { page-break-after: always; padding: 5mm 0; }
+  .toc-label {
+    font-size: 8pt; letter-spacing: 3pt; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 3mm;
+  }
+  .toc h2 {
+    font-size: 22pt; color: var(--navy); font-weight: 800;
+    padding-bottom: 4mm; margin-bottom: 6mm;
+    border-bottom: 2pt solid var(--navy);
+  }
+  .toc-section { margin-bottom: 8mm; }
+  .toc-section h3 {
+    font-size: 12pt; color: var(--navy); text-transform: uppercase;
+    letter-spacing: 1.5pt; font-weight: 800; margin-bottom: 3mm;
+  }
+  .toc-group { margin-bottom: 4mm; }
+  .toc-group-header {
+    display: flex; align-items: center; gap: 3mm; padding: 1.5mm 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .toc-group-name {
+    font-weight: 700; color: var(--navy); font-size: 10pt;
+    letter-spacing: 1pt; text-transform: uppercase;
+    min-width: 32mm;
+  }
+  .toc-items { font-size: 9.5pt; color: var(--gray); flex: 1; }
+  .toc-items strong { color: var(--navy); }
+
+  /* ═════════ PÁGINAS DE CARDS ═════════ */
+  .section-page { page-break-before: always; padding-top: 2mm; }
+  .section-page:first-of-type { page-break-before: always; }
+  .section-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 3mm; margin-bottom: 5mm;
+    border-bottom: 2.5pt solid var(--navy);
+  }
+  .section-header h2 {
+    font-size: 20pt; color: var(--navy); font-weight: 800;
+  }
+  .section-header .section-count {
+    font-size: 9pt; color: var(--gray); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1pt;
+  }
+
+  .constr-block { margin-bottom: 6mm; page-break-inside: avoid; }
+  .constr-header {
+    display: flex; align-items: center; gap: 3mm;
+    background: var(--cream); padding: 3mm 4mm;
+    border-left: 3pt solid var(--gold); margin-bottom: 3mm;
+  }
+  .constr-name {
+    font-size: 11pt; font-weight: 800; letter-spacing: 2pt;
+    color: var(--navy); text-transform: uppercase;
+  }
+  .constr-tag {
+    font-size: 8pt; color: var(--gray); font-weight: 500;
+  }
+
+  .card {
+    display: grid; grid-template-columns: 55mm 1fr;
+    gap: 4mm; border: 1px solid var(--border); border-radius: 3mm;
+    padding: 3mm; margin-bottom: 3mm; page-break-inside: avoid;
+    background: #fff;
+  }
+  .card-img {
+    width: 100%; height: 38mm; object-fit: cover;
+    border-radius: 2mm; display: block;
+  }
+  .card-body { padding: 1mm 1mm 1mm 0; display: flex; flex-direction: column; }
+  .card-status {
+    display: inline-block; align-self: flex-start;
+    font-size: 7pt; font-weight: 700; letter-spacing: 1pt;
+    text-transform: uppercase; padding: 1mm 2mm; border-radius: 1mm;
+    margin-bottom: 2mm;
+  }
+  .card-status.new { background: #1a2b3c; color: var(--gold); }
+  .card-status.pre { background: var(--terra); color: #fff; }
+  .card-status.hot { background: #c0392b; color: #fff; }
+  .card-status.last { background: #d4520a; color: #fff; }
+  .card-status.reg { background: var(--gold); color: var(--navy); }
+
+  .card-title {
+    font-size: 13pt; font-weight: 800; color: var(--navy);
+    line-height: 1.15; margin-bottom: 1.5mm;
+  }
+  .card-desc {
+    font-size: 8.5pt; color: var(--gray); line-height: 1.4;
+    margin-bottom: 2mm; flex: 1;
+  }
+  .card-footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-top: 2mm; border-top: 1px dashed var(--border);
+  }
+  .card-price {
+    font-size: 12pt; font-weight: 800; color: var(--navy);
+    line-height: 1;
+  }
+  .card-price small {
+    display: block; font-size: 7pt; font-weight: 400; color: var(--gray);
+    margin-top: 1mm; letter-spacing: 0.5pt; text-transform: uppercase;
+  }
+  .card-price.consult { color: var(--terra); font-size: 10pt; }
+  .card-url {
+    font-size: 7.5pt; color: var(--gray); text-align: right;
+    line-height: 1.3;
+  }
+  .card-url strong { color: var(--navy); }
+
+  /* ═════════ RODAPÉ DE PÁGINA ═════════ */
+  .page-footer {
+    position: fixed; bottom: 5mm; left: 10mm; right: 10mm;
+    display: flex; justify-content: space-between;
+    font-size: 7pt; color: var(--gray);
+    padding-top: 2mm; border-top: 1px solid var(--border);
+  }
+
+  /* ═════════ PÁGINA CONTATO FINAL ═════════ */
+  .contact-page {
+    page-break-before: always;
+    height: 268mm; display: flex; flex-direction: column;
+    background: linear-gradient(180deg, #fff 0%, var(--cream) 100%);
+    padding: 15mm 12mm;
+  }
+  .contact-page h2 {
+    font-size: 32pt; color: var(--navy); font-weight: 800;
+    margin-bottom: 6mm; line-height: 1.05;
+  }
+  .contact-page h2 span { color: var(--gold); }
+  .contact-tagline {
+    font-size: 13pt; color: var(--gray); max-width: 130mm;
+    line-height: 1.5; margin-bottom: 14mm;
+  }
+  .contact-boxes {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8mm;
+    margin-bottom: auto;
+  }
+  .contact-box {
+    background: #fff; border: 1px solid var(--border); border-radius: 3mm;
+    padding: 8mm; text-align: center;
+  }
+  .contact-box .ico { font-size: 24pt; margin-bottom: 3mm; display: block; }
+  .contact-box h3 {
+    font-size: 11pt; color: var(--navy); font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.5pt; margin-bottom: 3mm;
+  }
+  .contact-box p {
+    font-size: 10pt; color: var(--gray); line-height: 1.5;
+  }
+  .contact-box strong {
+    color: var(--navy); font-size: 12pt; display: block; margin-top: 2mm;
+  }
+  .contact-final {
+    text-align: center; padding-top: 10mm; border-top: 2pt solid var(--gold);
+    margin-top: 10mm;
+  }
+  .contact-final .imob {
+    font-size: 18pt; font-weight: 800; color: var(--navy); letter-spacing: 2pt;
+  }
+  .contact-final small {
+    display: block; font-size: 8pt; color: var(--gray);
+    margin-top: 2mm; letter-spacing: 2pt; text-transform: uppercase;
+  }
+  .contact-final p {
+    font-size: 9pt; color: var(--gray); margin-top: 4mm;
+    max-width: 130mm; margin-left: auto; margin-right: auto;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ PÁGINA 1 · CAPA ═══════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-brand">Imobiliária <strong>Viv'América</strong></div>
+  <h1>Lançamentos<br><span>Indaiatuba</span></h1>
+  <p class="cover-sub">
+    Portfólio completo dos empreendimentos disponíveis em Indaiatuba SP —
+    apartamentos alto padrão, MCMV, condomínios fechados e loteamentos abertos.
+    Todos com condições atualizadas em julho/2026.
+  </p>
+
+  <div class="cover-stats">
+    <div class="cover-stat">
+      <strong>17</strong>
+      <span>Empreendimentos</span>
+    </div>
+    <div class="cover-stat">
+      <strong>7</strong>
+      <span>Construtoras</span>
+    </div>
+    <div class="cover-stat">
+      <strong>R$ 145k</strong>
+      <span>Entrada mínima</span>
+    </div>
+    <div class="cover-stat">
+      <strong>R$ 1,3M</strong>
+      <span>Alto padrão</span>
+    </div>
+  </div>
+
+  <p class="cover-tag">Julho · 2026 · Edição atualizada</p>
+
+  <div class="cover-footer">
+    <div>
+      <div class="brand-imob">VIV'AMÉRICA<small>IMOBILIÁRIA</small></div>
+    </div>
+    <div class="cover-contact">
+      <strong>(19) 98976-9457</strong><br>
+      imoveisvivamerica.com.br<br>
+      lancamentos.imoveisvivamerica.com.br
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ PÁGINA 2 · ÍNDICE ═══════════════════════════════════ -->
+<section class="toc">
+  <p class="toc-label">Índice</p>
+  <h2>Empreendimentos por Categoria</h2>
+
+  <div class="toc-section">
+    <h3>🏢 Apartamentos · 10 empreendimentos</h3>
+
+    <div class="toc-group">
+      <div class="toc-group-header">
+        <span class="toc-group-name">Congesa</span>
+        <span class="toc-items"><strong>Seasons</strong> · <strong>Storia</strong> (R$ 981.000)</span>
+      </div>
+    </div>
+    <div class="toc-group">
+      <div class="toc-group-header">
+        <span class="toc-group-name">Masotti</span>
+        <span class="toc-items"><strong>Uni Residencial</strong> (R$ 279.990) · <strong>Manai Bosque</strong> · <strong>Aurora</strong> (R$ 758.850)</span>
+      </div>
+    </div>
+    <div class="toc-group">
+      <div class="toc-group-header">
+        <span class="toc-group-name">Zarin</span>
+        <span class="toc-items"><strong>Itamaracá</strong> · <strong>Spazio Italia</strong></span>
+      </div>
+    </div>
+    <div class="toc-group">
+      <div class="toc-group-header">
+        <span class="toc-group-name">VIC Engenharia</span>
+        <span class="toc-items"><strong>Gran Vic Tangará</strong> (R$ 302.464) · <strong>Gran Vic Colibri</strong> (R$ 340.162)</span>
+      </div>
+    </div>
+    <div class="toc-group">
+      <div class="toc-group-header">
+        <span class="toc-group-name">PERPLAN</span>
+        <span class="toc-items"><strong>Hélade</strong> — Park Meraki (R$ 1.300.668)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toc-section">
+    <h3>🏞️ Lotes e Condomínios · 7 empreendimentos</h3>
+
+    <div class="toc-group">
+      <div class="toc-group-header">
+        <span class="toc-group-name">Dominium</span>
+        <span class="toc-items"><strong>Monte Carmelo</strong> (R$ 145.000) · <strong>Di Italia</strong> (R$ 180.000) · <strong>San Marino</strong> (R$ 247.500) · <strong>Alpnach</strong> (R$ 480.000) · <strong>Ravello</strong> (R$ 714.000)</span>
+      </div>
+    </div>
+    <div class="toc-group">
+      <div class="toc-group-header">
+        <span class="toc-group-name">Zarin</span>
+        <span class="toc-items"><strong>Parque Zarah</strong> (R$ 249.123) · <strong>Reserva Botânica</strong> (R$ 391.682)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ APARTAMENTOS ═══════════════════════════════════ -->
+<section class="section-page">
+  <div class="section-header">
+    <h2>🏢 Apartamentos</h2>
+    <span class="section-count">10 empreendimentos · 5 construtoras</span>
+  </div>
+
+  <!-- CONGESA -->
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">Congesa</span>
+      <span class="constr-tag">32 anos em Indaiatuba · PBQP-H · ISO 9001 · Selo NDT/Caixa</span>
+    </div>
+
+    <div class="card">
+      <img src="seasons-indaiatuba/images/hero.jpg" class="card-img" alt="Seasons">
+      <div class="card-body">
+        <span class="card-status pre">Pré-Lançamento</span>
+        <h3 class="card-title">Congesa Seasons Natural Wellness</h3>
+        <p class="card-desc">3 blocos · 4 tipologias (3 dorm, 3 suítes, Penthouse com piscina, Maison com jardim) · Fitness Companhia Athlética · Paisagismo Wellness biofílico · Villa dos Pinheiros.</p>
+        <div class="card-footer">
+          <div class="card-price consult">Consulte tabela<small>Solicite em primeira mão</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>seasons-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="storia-congesa-indaiatuba/images/hero.jpg" class="card-img" alt="Storia">
+      <div class="card-body">
+        <span class="card-status new">Entrega Dez/2026</span>
+        <h3 class="card-title">Storia Congesa</h3>
+        <p class="card-desc">2 torres · 186 apts 2 dorm 70m² e 3 suítes 114m² · 2-3 vagas + hobby box em todas · sauna com cascata, espelho d'água no lobby, fitness · Av. Conceição.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 981.000<small>2 dorm · 70m²</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>storia-congesa-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MASOTTI -->
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">Masotti</span>
+      <span class="constr-tag">CNPJ 21.551.241/0001-07 · Patrimônio de afetação · Arq. Anderson Leite</span>
+    </div>
+
+    <div class="card">
+      <img src="uni-residencial-indaiatuba/images/hero.jpg" class="card-img" alt="Uni Residencial">
+      <div class="card-body">
+        <span class="card-status reg">MCMV · Aceita FGTS</span>
+        <h3 class="card-title">Uni Residencial</h3>
+        <p class="card-desc">Único MCMV ao lado do Parque Ecológico de Indaiatuba · 2 dorms com suíte · sacada e vaga coberta · financiamento pela Caixa Econômica.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 279.990<small>MCMV · 2 dorm suíte</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>uni-residencial-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="manai-bosque-indaiatuba/images/hero-3-torres.jpg" class="card-img" alt="Manai Bosque">
+      <div class="card-body">
+        <span class="card-status pre">Breve Lançamento</span>
+        <h3 class="card-title">Manai Bosque</h3>
+        <p class="card-desc">3 torres · 480 apts 65-91m² · piscina raia 25m, prainha, hidro, sauna úmida+seca · casa de campo com piscina privativa · 36 áreas de lazer · Cidade Nova II.</p>
+        <div class="card-footer">
+          <div class="card-price consult">Consulte tabela<small>Pré-lançamento</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>manai-bosque-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Página seguinte: continuação Apartamentos -->
+<section class="section-page">
+  <div class="section-header">
+    <h2>🏢 Apartamentos <span style="font-size:11pt;font-weight:400;color:var(--gray);">(continuação)</span></h2>
+    <span class="section-count">Masotti · Zarin · VIC · PERPLAN</span>
+  </div>
+
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">Masotti</span>
+      <span class="constr-tag">Alto padrão · Park Meraki</span>
+    </div>
+
+    <div class="card">
+      <img src="aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" class="card-img" alt="Aurora">
+      <div class="card-body">
+        <span class="card-status new">Breve Lançamento · Park Meraki</span>
+        <h3 class="card-title">Aurora — Park Meraki</h3>
+        <p class="card-desc">4 torres · 461 apts 101-152m² · casa de campo com piscina privativa · 32 áreas de lazer decoradas · arquitetura Anderson Leite, paisagismo Edu Leal · Alvará 1697/2025.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 758.850<small>Alto padrão · 101m²</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>aurora-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZARIN APTOS -->
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">Zarin</span>
+      <span class="constr-tag">Top 100 INTEC Brasil 2024</span>
+    </div>
+
+    <div class="card">
+      <img src="itamaraca-indaiatuba/images/hero.jpg" class="card-img" alt="Itamaracá">
+      <div class="card-body">
+        <span class="card-status reg">MCMV · Aceita FGTS</span>
+        <h3 class="card-title">Itamaracá Residencial</h3>
+        <p class="card-desc">2 torres T+12 · 206 apts 48-54m² (Canto com suíte) · Rua Tupinambás 780 · 1 min da Av. Conceição · Alvará 25/2026 · financiamento Caixa.</p>
+        <div class="card-footer">
+          <div class="card-price consult">Consulte tabela<small>MCMV · Sob consulta</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>itamaraca-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="spazio-italia-indaiatuba/images/hero.jpg" class="card-img" alt="Spazio Italia">
+      <div class="card-body">
+        <span class="card-status new">Residencial Clube</span>
+        <h3 class="card-title">Spazio Italia Residencial Clube</h3>
+        <p class="card-desc">4 torres T+13 · 424 apts · 2 dorms com 1 suíte + varanda gourmet · 59-63m² · 25+ itens de lazer premium entregues mobiliados e decorados.</p>
+        <div class="card-footer">
+          <div class="card-price consult">Consulte tabela<small>Residencial Clube</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>spazio-italia-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-page">
+  <div class="section-header">
+    <h2>🏢 Apartamentos <span style="font-size:11pt;font-weight:400;color:var(--gray);">(continuação)</span></h2>
+    <span class="section-count">VIC Engenharia · PERPLAN</span>
+  </div>
+
+  <!-- VIC -->
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">VIC Engenharia</span>
+      <span class="constr-tag">Parque dos Pássaros · MCMV Faixa 3</span>
+    </div>
+
+    <div class="card">
+      <img src="gran-vic-tangara-indaiatuba/images/hero.jpg" class="card-img" alt="Gran Vic Tangará">
+      <div class="card-body">
+        <span class="card-status hot">🔥 60% Vendido · Últimas 40%</span>
+        <h3 class="card-title">Gran Vic Tangará</h3>
+        <p class="card-desc">MCMV Faixa 3 · 2 dorms sem suíte · 47,22m² com varanda · 16 itens de lazer decorados · financiamento Caixa · aceita FGTS · Parque dos Pássaros.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 302.464<small>MCMV · 2 dorm</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>gran-vic-tangara-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gran-vic-colibri-indaiatuba/images/hero.jpg" class="card-img" alt="Gran Vic Colibri">
+      <div class="card-body">
+        <span class="card-status hot">🔥 Único MCMV c/ Suíte</span>
+        <h3 class="card-title">Gran Vic Colibri</h3>
+        <p class="card-desc">MCMV Faixa 3 · único MCMV com suíte da região · 2 dorms 51,42m² · 15 itens lazer decorados · aceita FGTS · Parque dos Pássaros.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 340.162<small>MCMV · 2 dorm suíte</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>gran-vic-colibri-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERPLAN -->
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">PERPLAN</span>
+      <span class="constr-tag">Portela Arquitetos + Tellini Vontobel · Alto padrão</span>
+    </div>
+
+    <div class="card">
+      <img src="helade-indaiatuba/images/hero.jpg" class="card-img" alt="Hélade">
+      <div class="card-body">
+        <span class="card-status new">Alto Padrão · Park Meraki</span>
+        <h3 class="card-title">Hélade — Park Meraki</h3>
+        <p class="card-desc">100 apts alto padrão · 3 suítes 120,18m² · 3 vagas · torre de 29 pavimentos · Portela Arquitetos + Tellini Vontobel · entrega março/2027.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 1.300.668<small>3 suítes · 120m²</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>helade-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ LOTES E CONDOMÍNIOS ═══════════════════════════════════ -->
+<section class="section-page">
+  <div class="section-header">
+    <h2>🏞️ Lotes e Condomínios Fechados</h2>
+    <span class="section-count">7 empreendimentos · 2 loteadoras</span>
+  </div>
+
+  <!-- DOMINIUM · 5 empreendimentos -->
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">Dominium</span>
+      <span class="constr-tag">25+ anos loteando Indaiatuba</span>
+    </div>
+
+    <div class="card">
+      <img src="monte-carmelo-indaiatuba/images/hero.jpg" class="card-img" alt="Monte Carmelo">
+      <div class="card-body">
+        <span class="card-status last">O Mais Acessível</span>
+        <h3 class="card-title">Residencial Monte Carmelo</h3>
+        <p class="card-desc">Loteamento aberto · 1.051 lotes a partir de 150m² · entrada a partir de R$ 16.000 · até 96 parcelas · parcelas a partir de R$ 2.340/mês.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 145.000<small>Loteamento · 150m²+</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>monte-carmelo-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="di-italia-indaiatuba/images/lifestyle.jpg" class="card-img" alt="Di Italia">
+      <div class="card-body">
+        <span class="card-status hot">🔥 Últimas 59 Unidades</span>
+        <h3 class="card-title">Jardim Di Italia</h3>
+        <p class="card-desc">Loteamento aberto · 404 lotes residenciais e mistos a partir de 150m² · infraestrutura pronta para construir · localização privilegiada.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 180.000<small>Loteamento · Últimas</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>di-italia-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/hero.jpg" class="card-img" alt="Terras de San Marino">
+      <div class="card-body">
+        <span class="card-status new">Condomínio Fechado · Novo Preço</span>
+        <h3 class="card-title">Terras de San Marino</h3>
+        <p class="card-desc">Condomínio fechado · 546 lotes a partir de 150m² · 16.164m² de lazer resort: piscina, tênis, pickleball, food truck park · tabela julho/2026.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 247.500<small>R$ 1.650/m² à vista</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>terras-de-san-marino-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-page">
+  <div class="section-header">
+    <h2>🏞️ Lotes e Condomínios <span style="font-size:11pt;font-weight:400;color:var(--gray);">(continuação)</span></h2>
+    <span class="section-count">Dominium · Zarin</span>
+  </div>
+
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">Dominium</span>
+      <span class="constr-tag">Condomínios de alto padrão</span>
+    </div>
+
+    <div class="card">
+      <img src="alpnach-indaiatuba/images/hero.jpg" class="card-img" alt="Alpnach">
+      <div class="card-body">
+        <span class="card-status reg">Condomínio Fechado</span>
+        <h3 class="card-title">Alpnach Residence</h3>
+        <p class="card-desc">Condomínio fechado alto padrão · 322 lotes a partir de 300m² · o maior complexo de lazer da região: piscina coberta, coworking, mini mercado 24h, pet place, sauna.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 480.000<small>Alto padrão · 300m²+</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>alpnach-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="residencial-ravello-indaiatuba/images/hero.jpg" class="card-img" alt="Ravello">
+      <div class="card-body">
+        <span class="card-status reg">Condomínio Fechado</span>
+        <h3 class="card-title">Residencial Ravello</h3>
+        <p class="card-desc">Condomínio fechado alto padrão · 710 lotes a partir de 420m² · 27 itens de lazer: SPA, Wine Bar, Fire Pit, piscina, campo society, sauna.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 714.000<small>Alto padrão · 420m²+</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>residencial-ravello-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="constr-block">
+    <div class="constr-header">
+      <span class="constr-name">Zarin</span>
+      <span class="constr-tag">Loteamentos fechados com lazer completo</span>
+    </div>
+
+    <div class="card">
+      <img src="parque-zarah-indaiatuba/images/hero.jpg" class="card-img" alt="Parque Zarah">
+      <div class="card-body">
+        <span class="card-status new">Condomínio Fechado</span>
+        <h3 class="card-title">Parque Zarah</h3>
+        <p class="card-desc">Condomínio fechado inspiração persa · lotes 150-344m² · 15+ áreas de lazer: pool house, piscina, beach tennis, quadra, brinquedoteca · fase 1 em obras, entrega 2026.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 249.123<small>150m²+ · Entrega 2026</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>parque-zarah-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="reserva-botanica-indaiatuba/images/hero.jpg" class="card-img" alt="Reserva Botânica">
+      <div class="card-body">
+        <span class="card-status hot">🔥 Últimas Unidades</span>
+        <h3 class="card-title">Residencial Reserva Botânica</h3>
+        <p class="card-desc">Loteamento fechado · lotes 250-456m² · portaria 24h · quadras de tênis, beach tennis e poliesportiva · obras aceleradas · registro CRI Indaiatuba.</p>
+        <div class="card-footer">
+          <div class="card-price">A partir de<br>R$ 391.682<small>250m²+ · Últimas</small></div>
+          <div class="card-url">lancamentos.imoveisvivamerica<br>.com.br/<strong>reserva-botanica-indaiatuba</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ CONTATO FINAL ═══════════════════════════════════ -->
+<section class="contact-page">
+  <h2>Fale com quem <span>vende</span><br>o melhor de Indaiatuba.</h2>
+  <p class="contact-tagline">
+    A Imobiliária Viv'América é a representante oficial dos principais lançamentos
+    imobiliários de Indaiatuba SP — apartamentos MCMV e alto padrão, condomínios
+    fechados de lotes e loteamentos abertos. Simulação de financiamento gratuita
+    pela Caixa Econômica Federal com uso de FGTS.
+  </p>
+
+  <div class="contact-boxes">
+    <div class="contact-box">
+      <span class="ico">💬</span>
+      <h3>WhatsApp Direto</h3>
+      <p>Fale agora com um especialista e receba tabelas atualizadas em minutos.</p>
+      <strong>(19) 98976-9457</strong>
+    </div>
+    <div class="contact-box">
+      <span class="ico">🌐</span>
+      <h3>Site com Todos os Detalhes</h3>
+      <p>Landing pages completas com plantas, tabelas, fotos e FAQ de cada empreendimento.</p>
+      <strong>lancamentos<br>.imoveisvivamerica.com.br</strong>
+    </div>
+    <div class="contact-box">
+      <span class="ico">📊</span>
+      <h3>Simulação Gratuita</h3>
+      <p>Financiamento Caixa Econômica com uso de FGTS · MCMV Faixas 1, 2 e 3.</p>
+      <strong>Análise em 24h</strong>
+    </div>
+    <div class="contact-box">
+      <span class="ico">📍</span>
+      <h3>Atendimento Local</h3>
+      <p>Corretores em Indaiatuba SP com visitas guiadas aos decorados e stands de venda.</p>
+      <strong>Indaiatuba · SP</strong>
+    </div>
+  </div>
+
+  <div class="contact-final">
+    <div class="imob">VIV'AMÉRICA</div>
+    <small>Imobiliária · Especialistas em Lançamentos Indaiatuba</small>
+    <p>
+      Este folheto é meramente informativo. Preços, condições, plantas, áreas privativas
+      e características construtivas estão sujeitos a alteração sem aviso prévio pelas
+      respectivas incorporadoras. Consulte sempre a tabela vigente e a matrícula do
+      empreendimento. Edição julho/2026.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
