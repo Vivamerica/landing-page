@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><title>Teste do QR com leitor real</title>
+<style>
+ body{font-family:system-ui,sans-serif;padding:24px;background:#f5f5f5}
+ #saida{font-family:ui-monospace,monospace;font-size:14px;background:#111;color:#0f0;padding:16px;border-radius:8px;white-space:pre-wrap;line-height:1.6}
+ img{max-width:340px;border:1px solid #ccc;background:#fff}
+</style></head>
+<body>
+<h1>Teste do QR com BarcodeDetector (leitor nativo do navegador)</h1>
+<img id="qr" src="qr-vivamerica-2058px.png" alt="QR">
+<div id="saida">carregando…</div>
+<script>
+const log = [];
+const out = m => { log.push(m); document.getElementById('saida').textContent = log.join('\n'); };
+
+(async () => {
+  out('BarcodeDetector disponivel? ' + ('BarcodeDetector' in window));
+  if (!('BarcodeDetector' in window)) { out('>>> API indisponivel neste navegador'); window.__res = {erro:'sem BarcodeDetector'}; return; }
+
+  try {
+    const fmts = await BarcodeDetector.getSupportedFormats();
+    out('Formatos suportados: ' + fmts.join(', '));
+    if (!fmts.includes('qr_code')) { out('>>> qr_code NAO suportado'); window.__res={erro:'qr_code nao suportado'}; return; }
+
+    const det = new BarcodeDetector({ formats: ['qr_code'] });
+    const img = document.getElementById('qr');
+    await img.decode();
+    out('Imagem carregada: ' + img.naturalWidth + 'x' + img.naturalHeight);
+
+    // testa em varias escalas, como uma camera veria de longe
+    const escalas = [2058, 1024, 512, 256, 128];
+    const resultados = [];
+    for (const px of escalas) {
+      const cv = document.createElement('canvas');
+      cv.width = cv.height = px;
+      const cx = cv.getContext('2d');
+      cx.imageSmoothingEnabled = true;
+      cx.drawImage(img, 0, 0, px, px);
+      let r = [];
+      try { r = await det.detect(cv); } catch(e) { out('erro em '+px+': '+e.message); }
+      const val = r.length ? r[0].rawValue : null;
+      resultados.push({ px, lido: !!r.length, valor: val });
+      out(`  ${String(px).padStart(4)}px -> ${r.length ? 'LEU: ' + val : 'nao leu'}`);
+    }
+    const ok = resultados.filter(r => r.lido).length;
+    out('');
+    out(ok ? `>>> LEITOR REAL CONSEGUIU LER em ${ok}/${escalas.length} escalas` : '>>> LEITOR REAL NAO CONSEGUIU LER EM NENHUMA ESCALA');
+    window.__res = { total: escalas.length, ok, resultados };
+  } catch (e) {
+    out('EXCECAO: ' + e.message);
+    window.__res = { erro: e.message };
+  }
+})();
+</script>
+</body></html>
