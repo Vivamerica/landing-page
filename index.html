@@ -356,7 +356,7 @@
       color:#fff;font-size:1rem;font-family:inherit;margin-bottom:14px}
     .qm-box input:focus,.qm-box select:focus{outline:none;border-color:#E8B84B}
     .qm-box input::placeholder{color:#4A4A50}
-    .qm-box select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A8A8F' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+    .qm-box select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%2230%22%20viewBox%3D%220%200%20150%2030%22%3E%3Cpath%20d%3D%22M0%204%20Q37%2011%2075%204%20T150%204%22%20stroke%3D%22%236B3F1D%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M2%204.6%20L26%206.6%20L14%2027%20Z%22%20fill%3D%22%23E63946%22%2F%3E%3Cpath%20d%3D%22M32%206.9%20L56%208.2%20L44%2028.5%20Z%22%20fill%3D%22%23F9C74F%22%2F%3E%3Cpath%20d%3D%22M62%208.3%20L86%207.7%20L74%2028.5%20Z%22%20fill%3D%22%2343AA8B%22%2F%3E%3Cpath%20d%3D%22M92%207.5%20L116%205.6%20L104%2026.5%20Z%22%20fill%3D%22%234D96FF%22%2F%3E%3Cpath%20d%3D%22M122%205.2%20L146%203.4%20L134%2024%20Z%22%20fill%3D%22%23F3722C%22%2F%3E%3C%2Fsvg%3E");background-repeat:no-repeat;background-position:right 14px center}
     .qm-cons{display:flex;gap:10px;align-items:flex-start;margin:2px 0 16px}
     .qm-cons input{margin-top:3px;width:16px;height:16px;accent-color:#E8B84B;flex-shrink:0}
     .qm-cons label{font-size:.72rem;color:#8A8A8F;text-transform:none;letter-spacing:0;
@@ -404,6 +404,41 @@
       #qm-banner.on .qm-b-cta,
       #qm-banner.on .qm-b-cta::after{animation:none!important}
       #qm-confete{display:none!important}
+    }
+
+    /* ═══ CAMPANHA: bandeirinhas de quermesse nos cards ═══ */
+    body.qm-ativo .listing-card{position:relative}
+    body.qm-ativo .listing-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:30px;z-index:4;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%2230%22%20viewBox%3D%220%200%20150%2030%22%3E%3Cpath%20d%3D%22M0%204%20Q37%2011%2075%204%20T150%204%22%20stroke%3D%22%236B3F1D%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M2%204.6%20L26%206.6%20L14%2027%20Z%22%20fill%3D%22%23E63946%22%2F%3E%3Cpath%20d%3D%22M32%206.9%20L56%208.2%20L44%2028.5%20Z%22%20fill%3D%22%23F9C74F%22%2F%3E%3Cpath%20d%3D%22M62%208.3%20L86%207.7%20L74%2028.5%20Z%22%20fill%3D%22%2343AA8B%22%2F%3E%3Cpath%20d%3D%22M92%207.5%20L116%205.6%20L104%2026.5%20Z%22%20fill%3D%22%234D96FF%22%2F%3E%3Cpath%20d%3D%22M122%205.2%20L146%203.4%20L134%2024%20Z%22%20fill%3D%22%23F3722C%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat:repeat-x;
+      background-size:auto 30px;
+      filter:drop-shadow(0 1px 1px rgba(0,0,0,.35));
+    }
+    /* a foto desce um pouco para o fio nao encostar no topo da imagem */
+    body.qm-ativo .listing-card .card-img-link{padding-top:6px;background:#0f1c29}
+
+    /* bandeirinhas tambem no topo do modal, para casar */
+    body.qm-ativo #qm-modal .qm-box{overflow:hidden}
+    #qm-modal .qm-box::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:30px;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%2230%22%20viewBox%3D%220%200%20150%2030%22%3E%3Cpath%20d%3D%22M0%204%20Q37%2011%2075%204%20T150%204%22%20stroke%3D%22%236B3F1D%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M2%204.6%20L26%206.6%20L14%2027%20Z%22%20fill%3D%22%23E63946%22%2F%3E%3Cpath%20d%3D%22M32%206.9%20L56%208.2%20L44%2028.5%20Z%22%20fill%3D%22%23F9C74F%22%2F%3E%3Cpath%20d%3D%22M62%208.3%20L86%207.7%20L74%2028.5%20Z%22%20fill%3D%22%2343AA8B%22%2F%3E%3Cpath%20d%3D%22M92%207.5%20L116%205.6%20L104%2026.5%20Z%22%20fill%3D%22%234D96FF%22%2F%3E%3Cpath%20d%3D%22M122%205.2%20L146%203.4%20L134%2024%20Z%22%20fill%3D%22%23F3722C%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat:repeat-x;background-size:auto 30px;
+      filter:drop-shadow(0 1px 1px rgba(0,0,0,.4));
+    }
+    #qm-modal .qm-box{padding-top:46px}
+
+    @keyframes qmVento{
+      0%,100%{transform:translateX(0)}
+      50%    {transform:translateX(-7px)}
+    }
+    body.qm-ativo .listing-card::before{animation:qmVento 5s ease-in-out infinite}
+    body.qm-ativo .listing-card:nth-child(3n)::before  {animation-duration:6.2s;animation-delay:-1.4s}
+    body.qm-ativo .listing-card:nth-child(3n+1)::before{animation-duration:5.5s;animation-delay:-2.8s}
+    @media (prefers-reduced-motion: reduce){
+      body.qm-ativo .listing-card::before{animation:none!important}
     }
   </style>
   <!-- Google Analytics GA4 -->
