@@ -11,7 +11,7 @@
  * Nunca derruba a pagina: em qualquer erro responde 200 com enviados = null.
  */
 
-const LIMITE       = 95;
+const LIMITE       = 100;
 const FORM_NAME    = 'cupom-quermesse';
 const ABRE_EM_UTC  = 1786762800000; // 15/08/2026 00:00 BRT
 const FECHA_EM_UTC = 1786935599000; // 16/08/2026 23:59:59 BRT

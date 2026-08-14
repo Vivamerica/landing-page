@@ -1211,7 +1211,7 @@
     <p class="qm-eyebrow">Viv'América · Patrocinadora oficial</p>
     <p class="qm-val"><small>R$</small>3.000</p>
     <p class="qm-h" id="qm-titulo">de desconto no seu imóvel</p>
-    <p class="qm-sub">Todos que se cadastrarem recebem o cupom. Leva 20 segundos.</p>
+    <p class="qm-sub">Os <strong>100 primeiros</strong> cadastros garantem o cupom. Leva 20 segundos.</p>
     <p class="qm-vagas" id="qm-vagas"></p>
 
     <form name="cupom-quermesse" method="POST" data-netlify="true" netlify-honeypot="empresa" action="/quermesse/obrigado/">
@@ -1253,7 +1253,7 @@
 (function(){
   var ABRE  = 1786762800000;  // 15/08/2026 00:00 (horario de Brasilia)
   var FECHA = 1786935599000;  // 16/08/2026 23:59:59
-  var LIMITE = 95;
+  var LIMITE = 100;
   var KEY_FECHADO = 'vivamerica_qm_banner_fechado';
   var KEY_JA_ENVIOU = 'vivamerica_cupom_quermesse';
 
@@ -1426,18 +1426,18 @@
     .then(function(d){
       if (d && d.aberto === false) { esconderTudo(); return; }   // esgotou ou fechou
 
-      var txtB = '', txtM = 'Cupom garantido para todos os cadastrados.';
+      var txtB = '', txtM = 'Os 100 primeiros garantem o cupom.';
       if (d && typeof d.restantes === 'number') {
         if (d.restantes <= 0) { esconderTudo(); return; }
         txtB = '· <b>' + d.restantes + '</b> restantes';
-        txtM = 'Restam <strong>' + d.restantes + '</strong> de ' + LIMITE + ' cupons.';
+        txtM = 'Restam <strong>' + d.restantes + '</strong> dos ' + LIMITE + ' cupons.';
       }
       document.getElementById('qm-vagas').innerHTML = txtM;
       mostrarBanner(txtB);
     })
     .catch(function(){
       // function indisponivel: mantem so o controle por tempo
-      document.getElementById('qm-vagas').textContent = 'Cupom garantido para todos os cadastrados.';
+      document.getElementById('qm-vagas').textContent = 'Os 100 primeiros garantem o cupom.';
       mostrarBanner('');
     });
 })();
