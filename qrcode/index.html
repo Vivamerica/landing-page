@@ -4,122 +4,96 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Teste de QR Code · Viv'América</title>
+<title>QR Code · Viv'América</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#f4f2ec;color:#1a2b3c;padding:28px 20px 60px;line-height:1.5}
-  .wrap{max-width:1200px;margin:0 auto}
-  h1{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:.4rem}
-  .sub{color:#6b6559;margin-bottom:1.6rem;font-size:.98rem}
-  .aviso{background:#fff8e1;border-left:4px solid #c9a84c;padding:1rem 1.2rem;border-radius:0 10px 10px 0;margin-bottom:2rem;font-size:.95rem}
-  .aviso strong{display:block;margin-bottom:.3rem}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem}
-  .card{background:#fff;border-radius:14px;padding:1.4rem;box-shadow:0 2px 14px rgba(0,0,0,.08);text-align:center}
-  .card h2{font-size:1.05rem;margin-bottom:.15rem}
-  .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
-       padding:.25rem .7rem;border-radius:50px;margin-bottom:.9rem}
-  .t-rec{background:#1b5e20;color:#fff}
+  body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#f4f2ec;color:#1a2b3c;padding:28px 20px 60px;line-height:1.55}
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:.3rem}
+  .sub{color:#6b6559;margin-bottom:1.5rem}
+  .fix{background:#e8f5e9;border-left:4px solid #2e7d32;padding:1.1rem 1.3rem;border-radius:0 10px 10px 0;margin-bottom:2rem}
+  .fix strong{display:block;margin-bottom:.35rem;color:#1b5e20}
+  .fix p{font-size:.93rem;color:#33502f;margin-bottom:.5rem}
+  .fix p:last-child{margin-bottom:0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.6rem;margin-bottom:2rem}
+  .card{background:#fff;border-radius:14px;padding:1.5rem;box-shadow:0 2px 14px rgba(0,0,0,.08);text-align:center}
+  .card.primary{border:3px solid #2e7d32}
+  .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .8rem;border-radius:50px;margin-bottom:.8rem}
+  .t-rec{background:#2e7d32;color:#fff}
   .t-alt{background:#1a2b3c;color:#fff}
-  .t-diag{background:#8a8272;color:#fff}
-  .card img{width:100%;max-width:290px;height:auto;image-rendering:pixelated;border:1px solid #eee;background:#fff}
-  .meta{font-size:.82rem;color:#6b6559;margin-top:.8rem;line-height:1.6}
+  .card h2{font-size:1.1rem;margin-bottom:1rem}
+  .card img{width:100%;max-width:330px;height:auto;border:1px solid #eee;background:#fff}
+  .meta{font-size:.85rem;color:#6b6559;margin-top:1rem}
   .meta b{color:#1a2b3c}
-  .destino{font-family:ui-monospace,monospace;font-size:.76rem;color:#1a2b3c;background:#f4f2ec;
-           padding:.4rem .6rem;border-radius:6px;margin-top:.6rem;word-break:break-all}
-  .telao{background:#1a2b3c;color:#fff;border-radius:14px;padding:1.5rem;margin-top:2.2rem}
-  .telao h3{font-size:1.05rem;margin-bottom:.7rem;color:#c9a84c}
-  .telao p{font-size:.92rem;opacity:.9;margin-bottom:.5rem}
-  .telao table{width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.88rem}
-  .telao td{padding:.45rem .5rem;border-bottom:1px solid rgba(255,255,255,.12)}
-  .telao td:first-child{opacity:.75}
-  .telao td:last-child{text-align:right;font-weight:700;color:#e2c98a}
+  .big{font-size:1.45rem;font-weight:800;color:#2e7d32;margin:.5rem 0}
+  .dl{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
+  .dl a{font-size:.78rem;font-weight:700;padding:.45rem .8rem;border-radius:6px;background:#f0ece0;color:#1a2b3c;text-decoration:none}
+  .dl a:hover{background:#e2dcc8}
+  .nota{background:#fff;border-radius:14px;padding:1.4rem 1.6rem;box-shadow:0 2px 14px rgba(0,0,0,.08)}
+  .nota h3{font-size:1rem;margin-bottom:.7rem;color:#1a2b3c}
+  .nota ul{margin-left:1.1rem;font-size:.9rem;color:#5a5346}
+  .nota li{margin-bottom:.4rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>Teste de QR Code</h1>
-  <p class="sub">Aponte a câmera do celular para cada um e me diga <b>quais abriram o site</b>.</p>
+  <h1>QR Code · Lançamentos Viv'América</h1>
+  <p class="sub">Corrigido. Teste os dois com a câmera do celular.</p>
 
-  <div class="aviso">
-    <strong>Por que 5 códigos?</strong>
-    Todos apontam para o mesmo site e todos passaram na validação técnica. O que muda é a
-    <b>densidade</b>: menos quadradinhos = mais fácil de ler, principalmente de longe.
-    Se o primeiro (HELLO) ler e os outros não, o problema é densidade — não o código.
+  <div class="fix">
+    <strong>✅ O bug foi encontrado e corrigido</strong>
+    <p>Os 15 bits do <em>format info</em> — o cabeçalho que diz ao leitor qual máscara foi usada —
+       estavam gravados em <b>ordem invertida</b>. Os dados sempre estiveram corretos; o leitor
+       apenas não conseguia descobrir como desembaralhá-los, e desistia antes de chegar neles.</p>
+    <p>Agora o cabeçalho gravado bate exatamente com a tabela oficial da norma ISO/IEC 18004
+       (entrada <code>H7</code>), nas duas cópias.</p>
   </div>
 
   <div class="grid">
-
-    <div class="card">
-      <span class="tag t-diag">Diagnóstico</span>
-      <h2>A · Teste mínimo</h2>
-      <img src="teste-a-hello-branco.svg" alt="QR de teste HELLO">
-      <p class="meta">
-        Versão 1 · <b>21×21</b> módulos · correção H<br>
-        O menor QR que existe.
-      </p>
-      <div class="destino">não abre site — mostra o texto "HELLO"</div>
-    </div>
-
-    <div class="card">
+    <div class="card primary">
       <span class="tag t-rec">Recomendado p/ telão</span>
-      <h2>C · URL completa, correção L</h2>
-      <img src="teste-c-nivelL-branco.svg" alt="QR do site nível L">
-      <p class="meta">
-        Versão 3 · <b>29×29</b> módulos · correção L (7%)<br>
-        Em 2×2 m: <b>54 mm por quadradinho</b>
-      </p>
-      <div class="destino">lancamentos.imoveisvivamerica.com.br</div>
+      <h2>Correção L · menos denso</h2>
+      <img src="qr-vivamerica-L-2048.png" alt="QR do site, correção L">
+      <p class="meta">Versão 3 · <b>29×29</b> módulos</p>
+      <p class="big">54 mm por quadradinho</p>
+      <p class="meta">em um telão de 2 × 2 m</p>
+      <div class="dl">
+        <a href="qr-vivamerica-L-2048.png" download>2048px</a>
+        <a href="qr-vivamerica-L-4096.png" download>4096px</a>
+        <a href="qr-vivamerica-L-8192.png" download>8192px</a>
+        <a href="teste-c-nivelL-branco.svg" download>SVG</a>
+        <a href="qr-vivamerica-L-4096-transparente.png" download>PNG transparente</a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="tag t-alt">Alternativa</span>
-      <h2>B · Endereço curto</h2>
-      <img src="teste-b-curto-branco.svg" alt="QR endereço curto">
-      <p class="meta">
-        Versão 3 · <b>29×29</b> módulos · correção L<br>
-        Sem "https://" — o celular completa sozinho.
-      </p>
-      <div class="destino">lancamentos.imoveisvivamerica.com.br</div>
+      <span class="tag t-alt">Mais resistente</span>
+      <h2>Correção H · 30% de redundância</h2>
+      <img src="qr-vivamerica-2048.png" alt="QR do site, correção H">
+      <p class="meta">Versão 6 · <b>41×41</b> módulos</p>
+      <p class="big" style="color:#1a2b3c">41 mm por quadradinho</p>
+      <p class="meta">sobrevive a sujeira, reflexo ou logo por cima</p>
+      <div class="dl">
+        <a href="qr-vivamerica-2048.png" download>2048px</a>
+        <a href="qr-vivamerica-4096.png" download>4096px</a>
+        <a href="qr-vivamerica-8192.png" download>8192px</a>
+        <a href="qr-vivamerica-branco.svg" download>SVG</a>
+        <a href="qr-vivamerica-4096-transparente.png" download>PNG transparente</a>
+      </div>
     </div>
-
-    <div class="card">
-      <span class="tag t-alt">Alternativa</span>
-      <h2>D · URL completa, correção M</h2>
-      <img src="teste-d-nivelM-branco.svg" alt="QR do site nível M">
-      <p class="meta">
-        Versão 4 · <b>33×33</b> módulos · correção M (15%)<br>
-        Equilíbrio entre tamanho e tolerância a falha.
-      </p>
-      <div class="destino">lancamentos.imoveisvivamerica.com.br</div>
-    </div>
-
-    <div class="card">
-      <span class="tag t-diag">O que enviei antes</span>
-      <h2>E · Correção máxima</h2>
-      <img src="qr-vivamerica-branco.svg" alt="QR do site nível H">
-      <p class="meta">
-        Versão 6 · <b>41×41</b> módulos · correção H (30%)<br>
-        O mais denso — e o que não funcionou para você.
-      </p>
-      <div class="destino">lancamentos.imoveisvivamerica.com.br</div>
-    </div>
-
   </div>
 
-  <div class="telao">
-    <h3>📐 Tamanho do quadradinho num telão de 2 × 2 metros</h3>
-    <p>Quanto maior o quadradinho, de mais longe a câmera lê. Regra prática: dá para ler
-       a uma distância de até <b>10× a largura do código</b> — ou seja, cerca de 20 metros em qualquer um destes.</p>
-    <table>
-      <tr><td>A · 21×21 (+ margem) = 29 módulos</td><td>69 mm</td></tr>
-      <tr><td>C e B · 29×29 (+ margem) = 37 módulos</td><td>54 mm</td></tr>
-      <tr><td>D · 33×33 (+ margem) = 41 módulos</td><td>49 mm</td></tr>
-      <tr><td>E · 41×41 (+ margem) = 49 módulos</td><td>41 mm</td></tr>
-    </table>
-    <p style="margin-top:1rem;font-size:.86rem;opacity:.75">
-      A margem branca ao redor faz parte do código e <b>não pode ser removida</b> na arte —
-      sem ela, muitos leitores não encontram o código.
-    </p>
+  <div class="nota">
+    <h3>Para a arte do telão</h3>
+    <ul>
+      <li>Use o <b>SVG</b> se o programa aceitar — ele é vetorial e fica nítido em qualquer tamanho.</li>
+      <li>A <b>margem branca</b> ao redor faz parte do código. Não corte, não encoste elemento nela.</li>
+      <li>Mantenha <b>escuro sobre claro</b>. Não inverta as cores e não use fundo texturizado.</li>
+      <li>Se colocar sobre foto, use o PNG transparente <b>sobre uma área bem clara e lisa</b> —
+          ou melhor, mantenha o fundo branco.</li>
+      <li>Ambos leem de até <b>~20 metros</b> em um telão de 2 m. O de correção L lê um pouco mais longe;
+          o de correção H perdoa mais imperfeição.</li>
+    </ul>
   </div>
 </div>
 </body>
