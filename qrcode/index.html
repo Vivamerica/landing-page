@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Teste de QR Code · Viv'América</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#f4f2ec;color:#1a2b3c;padding:28px 20px 60px;line-height:1.5}
+  .wrap{max-width:1200px;margin:0 auto}
+  h1{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:.4rem}
+  .sub{color:#6b6559;margin-bottom:1.6rem;font-size:.98rem}
+  .aviso{background:#fff8e1;border-left:4px solid #c9a84c;padding:1rem 1.2rem;border-radius:0 10px 10px 0;margin-bottom:2rem;font-size:.95rem}
+  .aviso strong{display:block;margin-bottom:.3rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem}
+  .card{background:#fff;border-radius:14px;padding:1.4rem;box-shadow:0 2px 14px rgba(0,0,0,.08);text-align:center}
+  .card h2{font-size:1.05rem;margin-bottom:.15rem}
+  .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+       padding:.25rem .7rem;border-radius:50px;margin-bottom:.9rem}
+  .t-rec{background:#1b5e20;color:#fff}
+  .t-alt{background:#1a2b3c;color:#fff}
+  .t-diag{background:#8a8272;color:#fff}
+  .card img{width:100%;max-width:290px;height:auto;image-rendering:pixelated;border:1px solid #eee;background:#fff}
+  .meta{font-size:.82rem;color:#6b6559;margin-top:.8rem;line-height:1.6}
+  .meta b{color:#1a2b3c}
+  .destino{font-family:ui-monospace,monospace;font-size:.76rem;color:#1a2b3c;background:#f4f2ec;
+           padding:.4rem .6rem;border-radius:6px;margin-top:.6rem;word-break:break-all}
+  .telao{background:#1a2b3c;color:#fff;border-radius:14px;padding:1.5rem;margin-top:2.2rem}
+  .telao h3{font-size:1.05rem;margin-bottom:.7rem;color:#c9a84c}
+  .telao p{font-size:.92rem;opacity:.9;margin-bottom:.5rem}
+  .telao table{width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.88rem}
+  .telao td{padding:.45rem .5rem;border-bottom:1px solid rgba(255,255,255,.12)}
+  .telao td:first-child{opacity:.75}
+  .telao td:last-child{text-align:right;font-weight:700;color:#e2c98a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Teste de QR Code</h1>
+  <p class="sub">Aponte a câmera do celular para cada um e me diga <b>quais abriram o site</b>.</p>
+
+  <div class="aviso">
+    <strong>Por que 5 códigos?</strong>
+    Todos apontam para o mesmo site e todos passaram na validação técnica. O que muda é a
+    <b>densidade</b>: menos quadradinhos = mais fácil de ler, principalmente de longe.
+    Se o primeiro (HELLO) ler e os outros não, o problema é densidade — não o código.
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag t-diag">Diagnóstico</span>
+      <h2>A · Teste mínimo</h2>
+      <img src="teste-a-hello-branco.svg" alt="QR de teste HELLO">
+      <p class="meta">
+        Versão 1 · <b>21×21</b> módulos · correção H<br>
+        O menor QR que existe.
+      </p>
+      <div class="destino">não abre site — mostra o texto "HELLO"</div>
+    </div>
+
+    <div class="card">
+      <span class="tag t-rec">Recomendado p/ telão</span>
+      <h2>C · URL completa, correção L</h2>
+      <img src="teste-c-nivelL-branco.svg" alt="QR do site nível L">
+      <p class="meta">
+        Versão 3 · <b>29×29</b> módulos · correção L (7%)<br>
+        Em 2×2 m: <b>54 mm por quadradinho</b>
+      </p>
+      <div class="destino">lancamentos.imoveisvivamerica.com.br</div>
+    </div>
+
+    <div class="card">
+      <span class="tag t-alt">Alternativa</span>
+      <h2>B · Endereço curto</h2>
+      <img src="teste-b-curto-branco.svg" alt="QR endereço curto">
+      <p class="meta">
+        Versão 3 · <b>29×29</b> módulos · correção L<br>
+        Sem "https://" — o celular completa sozinho.
+      </p>
+      <div class="destino">lancamentos.imoveisvivamerica.com.br</div>
+    </div>
+
+    <div class="card">
+      <span class="tag t-alt">Alternativa</span>
+      <h2>D · URL completa, correção M</h2>
+      <img src="teste-d-nivelM-branco.svg" alt="QR do site nível M">
+      <p class="meta">
+        Versão 4 · <b>33×33</b> módulos · correção M (15%)<br>
+        Equilíbrio entre tamanho e tolerância a falha.
+      </p>
+      <div class="destino">lancamentos.imoveisvivamerica.com.br</div>
+    </div>
+
+    <div class="card">
+      <span class="tag t-diag">O que enviei antes</span>
+      <h2>E · Correção máxima</h2>
+      <img src="qr-vivamerica-branco.svg" alt="QR do site nível H">
+      <p class="meta">
+        Versão 6 · <b>41×41</b> módulos · correção H (30%)<br>
+        O mais denso — e o que não funcionou para você.
+      </p>
+      <div class="destino">lancamentos.imoveisvivamerica.com.br</div>
+    </div>
+
+  </div>
+
+  <div class="telao">
+    <h3>📐 Tamanho do quadradinho num telão de 2 × 2 metros</h3>
+    <p>Quanto maior o quadradinho, de mais longe a câmera lê. Regra prática: dá para ler
+       a uma distância de até <b>10× a largura do código</b> — ou seja, cerca de 20 metros em qualquer um destes.</p>
+    <table>
+      <tr><td>A · 21×21 (+ margem) = 29 módulos</td><td>69 mm</td></tr>
+      <tr><td>C e B · 29×29 (+ margem) = 37 módulos</td><td>54 mm</td></tr>
+      <tr><td>D · 33×33 (+ margem) = 41 módulos</td><td>49 mm</td></tr>
+      <tr><td>E · 41×41 (+ margem) = 49 módulos</td><td>41 mm</td></tr>
+    </table>
+    <p style="margin-top:1rem;font-size:.86rem;opacity:.75">
+      A margem branca ao redor faz parte do código e <b>não pode ser removida</b> na arte —
+      sem ela, muitos leitores não encontram o código.
+    </p>
+  </div>
+</div>
+</body>
+</html>
