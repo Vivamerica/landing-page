@@ -14,6 +14,8 @@ const APTOS = [
     s:'70 a 114 m² · 2-3 vagas + hobby box · dez/2026', t:'Alto padrão', slug:'storia-congesa-indaiatuba' },
   { n:'Hélade — Park Meraki', c:'PERPLAN', p:1300668, img:'helade-indaiatuba/images/hero.jpg',
     s:'3 suítes · 120,18 m² · 3 vagas · mar/2027', t:'Alto padrão', slug:'helade-indaiatuba' },
+  { n:'Areté Home', c:'PERPLAN', p:null, img:'arete-home-indaiatuba/images/hero.jpg',
+    s:'Torre única · 2 e 3 suítes · varanda nivelada · vagas cobertas', t:'Pré-lançamento', slug:'arete-home-indaiatuba' },
   { n:'Viva Parque Aura', c:'Pinheiro · RDZ · iBen', p:null, img:'viva-parque-aura-indaiatuba/images/hero.jpg',
     s:'47 a 85 m² · 7.000 m² parque · +30 itens lazer', t:'Pré-lançamento', slug:'viva-parque-aura-indaiatuba' },
   { n:'Manai Bosque', c:'Masotti', p:null, img:'manai-bosque-indaiatuba/images/hero-3-torres.jpg',
