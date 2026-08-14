@@ -37,6 +37,8 @@ const LOTES = [
     s:'546 lotes · 16.164 m² de lazer resort', t:'Cond. fechado', slug:'terras-de-san-marino-indaiatuba' },
   { n:'Parque Zarah', c:'Zarin', p:249123, m2:150, img:'parque-zarah-indaiatuba/images/hero.jpg',
     s:'Inspiração persa · 15+ áreas de lazer · 2026', t:'Cond. fechado', slug:'parque-zarah-indaiatuba' },
+  { n:'Residencial Vila Fahl', c:'Vila Fahl · iBen', p:273750, m2:150, img:'vila-fahl-indaiatuba/images/hero.jpg',
+    s:'Residencial e comercial · 5 min do Parque Ecológico · até 96x · 15 itens de lazer', t:'Loteamento', slug:'vila-fahl-indaiatuba' },
   { n:'Reserva Botânica', c:'Zarin', p:391682, m2:250, img:'reserva-botanica-indaiatuba/images/hero.jpg',
     s:'250 a 456 m² · portaria 24h · 3 quadras', t:'Cond. fechado', slug:'reserva-botanica-indaiatuba' },
   { n:'Alpnach Residence', c:'Dominium', p:480000, m2:300, img:'alpnach-indaiatuba/images/hero.jpg',
@@ -230,7 +232,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
 <!-- ═══ LOTES ═══ -->
 <section class="pg">
   <div class="hd"><h2>🏞️ <span>Lotes e Condomínios Fechados</span></h2><span class="cnt">do menor ao maior investimento</span></div>
-  <div class="grid">${LOTES.map(e => card(e, true)).join('')}${cardContato}</div>
+  <div class="grid">${LOTES.map(e => card(e, true)).join('')}${LOTES.length < 8 ? cardContato : ''}</div>
   <div class="pe">
     <span>Imagens ilustrativas. Preços e condições sujeitos a alteração sem aviso prévio.</span>
     <span>Edição <b>agosto/2026</b></span>
