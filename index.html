@@ -367,6 +367,44 @@
     .qm-box button[type=submit]:disabled{opacity:.5;cursor:not-allowed}
     .qm-nota{text-align:center;font-size:.68rem;color:#5A5A60;margin-top:12px;line-height:1.6}
     .qm-nota a{color:#8A8A8F}
+
+    /* ═══ CAMPANHA: confete + pulso ═══ */
+    #qm-confete{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2500;display:none}
+    #qm-confete.on{display:block}
+
+    /* pulso do selo "Patrocinio" */
+    @keyframes qmSelo{
+      0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(232,184,75,.55)}
+      50%    {transform:scale(1.06);box-shadow:0 0 0 7px rgba(232,184,75,0)}
+    }
+    #qm-banner.on .qm-b-tag{animation:qmSelo 2.1s ease-in-out infinite}
+
+    /* pulso do CTA "Quero meu cupom" + brilho que atravessa */
+    @keyframes qmCta{
+      0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(232,184,75,.5)}
+      50%    {transform:scale(1.045);box-shadow:0 0 18px 4px rgba(232,184,75,.32)}
+    }
+    @keyframes qmShine{ 0%{left:-140%} 55%,100%{left:140%} }
+    #qm-banner.on .qm-b-cta{
+      animation:qmCta 2.1s ease-in-out infinite;
+      position:relative;overflow:hidden}
+    #qm-banner.on .qm-b-cta::after{
+      content:'';position:absolute;top:0;left:-140%;width:55%;height:100%;
+      background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);
+      animation:qmShine 3.1s ease-in-out infinite;animation-delay:.7s}
+
+    /* entrada do banner */
+    @keyframes qmDescer{from{transform:translateY(-100%)}to{transform:none}}
+    #qm-banner.on{animation:qmDescer .5s cubic-bezier(.2,.9,.3,1.1)}
+
+    /* quem pediu menos movimento no sistema nao recebe animacao nenhuma */
+    @media (prefers-reduced-motion: reduce){
+      #qm-banner.on,
+      #qm-banner.on .qm-b-tag,
+      #qm-banner.on .qm-b-cta,
+      #qm-banner.on .qm-b-cta::after{animation:none!important}
+      #qm-confete{display:none!important}
+    }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
@@ -1122,6 +1160,7 @@
 </script>
 
 <!-- ═══ CAMPANHA QUERMESSE ═══ -->
+<canvas id="qm-confete" aria-hidden="true"></canvas>
 <div id="qm-banner" role="button" tabindex="0" aria-label="Abrir cadastro do cupom">
   <div class="qm-b-in">
     <span class="qm-b-tag">Patrocínio</span>
@@ -1189,6 +1228,96 @@
 
   function naJanela(){ var t = Date.now(); return t >= ABRE && t <= FECHA; }
 
+
+  // ── confete: canvas puro, sem biblioteca ──
+  function soltarConfete(){
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (sessionStorage.getItem('vivamerica_qm_confete') === '1') return;  // uma vez por sessao
+    sessionStorage.setItem('vivamerica_qm_confete','1');
+
+    var cv = document.getElementById('qm-confete');
+    if (!cv) return;
+    var ctx = cv.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var L, A;
+
+    function medir(){
+      L = window.innerWidth; A = window.innerHeight;
+      cv.width = L * dpr; cv.height = A * dpr;
+      cv.style.width = L + 'px'; cv.style.height = A + 'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    medir();
+    window.addEventListener('resize', medir);
+
+    var CORES = ['#E8B84B','#F7D77E','#B8891F','#FFFFFF','#D4A017','#FFF3D1'];
+    var QTD = L < 640 ? 70 : 130;
+    var pecas = [];
+
+    for (var i = 0; i < QTD; i++){
+      pecas.push({
+        x: Math.random() * L,
+        y: -20 - Math.random() * A * 0.6,        // escalonado: cai em levas
+        w: 6 + Math.random() * 7,
+        h: 9 + Math.random() * 9,
+        cor: CORES[(Math.random() * CORES.length) | 0],
+        vy: 1.9 + Math.random() * 2.6,
+        vx: -0.7 + Math.random() * 1.4,
+        rot: Math.random() * Math.PI * 2,
+        vr: -0.12 + Math.random() * 0.24,
+        balanco: Math.random() * Math.PI * 2,
+        vbal: 0.02 + Math.random() * 0.04,
+        fita: Math.random() < 0.35                // algumas viram fitinha
+      });
+    }
+
+    cv.classList.add('on');
+    var t0 = performance.now();
+    var DURACAO = 5200;   // ~5s e some
+
+    function quadro(agora){
+      var passou = agora - t0;
+      ctx.clearRect(0,0,L,A);
+
+      // some suavemente no ultimo segundo
+      var fade = passou > DURACAO - 1000 ? Math.max(0, (DURACAO - passou) / 1000) : 1;
+      var vivos = 0;
+
+      for (var i = 0; i < pecas.length; i++){
+        var p = pecas[i];
+        p.y += p.vy;
+        p.balanco += p.vbal;
+        p.x += p.vx + Math.sin(p.balanco) * 1.1;
+        p.rot += p.vr;
+
+        if (p.y < A + 40) vivos++;
+
+        ctx.save();
+        ctx.globalAlpha = fade;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.cor;
+        if (p.fita){
+          ctx.fillRect(-p.w/2, -p.h/2, p.w * 0.42, p.h * 1.5);
+        } else {
+          // "vira" a peca conforme gira — da sensacao de papel caindo
+          var esc = Math.abs(Math.cos(p.balanco));
+          ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h * (0.35 + esc * 0.65));
+        }
+        ctx.restore();
+      }
+
+      if (passou < DURACAO && vivos > 0){
+        requestAnimationFrame(quadro);
+      } else {
+        ctx.clearRect(0,0,L,A);
+        cv.classList.remove('on');
+        window.removeEventListener('resize', medir);
+      }
+    }
+    requestAnimationFrame(quadro);
+  }
+
   function ajustarOffset(){
     if (!banner.classList.contains('on')) return;
     var alt = Math.ceil(banner.getBoundingClientRect().height);
@@ -1201,6 +1330,7 @@
     document.body.classList.add('qm-ativo');
     ajustarOffset();
     window.addEventListener('resize', ajustarOffset);
+    setTimeout(soltarConfete, 450);   // deixa o banner descer primeiro
   }
   function esconderTudo(){
     banner.classList.remove('on');
