@@ -227,6 +227,85 @@
     footer a:hover { color: var(--dourado); }
     .footer-links { margin-bottom: 1rem; }
     @media (max-width: 600px) { nav { display: none; } .stat { flex: 1 1 45%; } }
+
+    /* ═══ HERO CTA PAR ═══ */
+    .hero-cta-pair { display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; }
+    .btn-hero-alt { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.5); }
+    .btn-hero-alt:hover { background:rgba(255,255,255,.12); }
+
+    /* ═══ FILTROS ═══ */
+    .filtros { background:#fff; border:1px solid #e6e0d0; border-radius:14px; padding:1.2rem 1.4rem; margin-bottom:2.5rem;
+               display:flex; flex-wrap:wrap; gap:1.4rem 2rem; align-items:flex-start; position:sticky; top:70px; z-index:50;
+               box-shadow:0 2px 14px rgba(0,0,0,.06); }
+    .filtro-grupo { display:flex; flex-direction:column; gap:.5rem; }
+    .filtro-label { font-size:.68rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; color:#8a8272; }
+    .filtro-chips { display:flex; flex-wrap:wrap; gap:.4rem; }
+    .chip { font:inherit; font-size:.82rem; font-weight:600; padding:.4rem .85rem; border-radius:50px; cursor:pointer;
+            border:1px solid #ddd6c4; background:#faf8f2; color:#5a5346; transition:all .15s; white-space:nowrap; }
+    .chip:hover { border-color:#c9a84c; color:#1a2b3c; }
+    .chip.is-on { background:#1a2b3c; border-color:#1a2b3c; color:#fff; }
+    .filtro-resultado { width:100%; margin:0; font-size:.82rem; color:#7a7365; font-weight:600; }
+    .vazio-msg { text-align:center; padding:3rem 1rem; color:#7a7365; font-size:1rem; }
+
+    /* ═══ CABECALHOS ═══ */
+    .cat-header { margin:3.5rem 0 1.5rem; padding-bottom:.7rem; border-bottom:3px solid #1a2b3c;
+                  display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap; scroll-margin-top:120px; }
+    .cat-header h2 { font-size:clamp(1.5rem,3.2vw,2.1rem); font-weight:800; color:#1a2b3c; margin:0; }
+    .cat-header .cat-count { font-size:.86rem; color:#7a7365; font-weight:600; }
+    .sub-header { margin:2.8rem 0 1.2rem; padding-left:.9rem; border-left:4px solid #c9a84c; }
+    .sub-header h3 { font-size:1.1rem; font-weight:800; color:#1a2b3c; margin:0 0 .2rem; }
+    .sub-header p { font-size:.86rem; color:#7a7365; margin:0; }
+
+    /* ═══ CARDS ═══ */
+    .listing-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,.08);
+                    display:flex; flex-direction:column; transition:transform .25s, box-shadow .25s; }
+    .listing-card:hover { transform:translateY(-5px); box-shadow:0 8px 30px rgba(0,0,0,.14); }
+    .listing-card[hidden] { display:none; }
+    .card-img-link { display:block; }
+    .listing-card img { width:100%; height:200px; object-fit:cover; display:block; }
+    .card-constr { font-size:.66rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+                   color:#a8935c; margin:0 0 .3rem; }
+    .card-body h3 { font-size:1.18rem; font-weight:700; margin:0 0 .35rem; line-height:1.25; }
+    .card-body h3 a { color:#1a1a1a; text-decoration:none; }
+    .card-body h3 a:hover { color:#1a2b3c; }
+    .card-meta { font-size:.85rem; color:#5a5346; margin:0 0 .5rem; font-weight:600; }
+    .card-meta .pm2 { color:#1a2b3c; }
+    .card-desc { font-size:.87rem; color:#666; line-height:1.5; flex:1; margin:0 0 .9rem; }
+    .card-price { font-size:.9rem; color:#7a7365; margin-bottom:.9rem; }
+    .card-price strong { font-size:1.15rem; color:#1a2b3c; font-weight:800; display:block; margin-top:.1rem; }
+    .card-price-consult { color:#a15e2c; font-weight:700; font-size:1rem; }
+    .card-actions { display:grid; grid-template-columns:1fr 1.15fr; gap:.5rem; }
+    .btn-card { display:block; background:#f0ece0; color:#1a2b3c; text-align:center; padding:.72rem .4rem;
+                border-radius:8px; font-weight:700; font-size:.85rem; text-decoration:none; transition:background .2s; }
+    .btn-card:hover { background:#e2dcc8; }
+    .btn-card-wa { display:inline-flex; align-items:center; justify-content:center; gap:.4rem; background:#25d366;
+                   color:#fff; padding:.72rem .4rem; border-radius:8px; font-weight:700; font-size:.85rem;
+                   text-decoration:none; transition:background .2s; }
+    .btn-card-wa:hover { background:#1eb855; }
+
+    /* ═══ WHATSAPP FLUTUANTE ═══ */
+    .wa-float-home { position:fixed; bottom:22px; right:22px; z-index:999; background:#25d366; color:#fff;
+                     width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+                     text-decoration:none; box-shadow:0 4px 20px rgba(37,211,102,.55); animation:wapulse 2.5s infinite; }
+    .wa-float-home svg { width:33px; height:33px; }
+    @keyframes wapulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.55);} 50%{box-shadow:0 4px 32px rgba(37,211,102,.9);} }
+
+    /* ═══ MENU MOBILE ═══ */
+    .menu-toggle { display:none; background:none; border:none; color:#fff; font-size:1.7rem; cursor:pointer; padding:.2rem .5rem; line-height:1; }
+
+    @media (max-width: 900px) {
+      .filtros { position:static; padding:1rem; gap:1rem 1.2rem; }
+      .card-actions { grid-template-columns:1fr; }
+    }
+    @media (max-width: 600px) {
+      .menu-toggle { display:block; }
+      header nav { display:none; position:absolute; top:70px; left:0; right:0; background:#1a2b3c;
+                   flex-direction:column; padding:.5rem 5% 1rem; box-shadow:0 8px 20px rgba(0,0,0,.25); }
+      header nav.is-open { display:flex; }
+      header nav a { margin:0; padding:.75rem 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:.95rem; }
+      .chip { font-size:.78rem; padding:.35rem .7rem; }
+      .listing-card img { height:170px; }
+    }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
@@ -246,6 +325,7 @@
 
   <header>
     <a class="logo-text" href="/">Imobiliária Viv'América</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <nav>
       <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
       <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
@@ -257,341 +337,477 @@
 
   <section class="hero">
     <h1>Lançamentos Imobiliários em Indaiatuba SP</h1>
-    <p>Encontre o loteamento ideal entre os melhores empreendimentos de Indaiatuba. Lotes a partir de 150m² com lazer completo e ótimas condições.</p>
-    <a href="#lancamentos" class="btn-hero">Ver Lançamentos</a>
+    <p>Apartamentos e lotes em condomínio nos melhores empreendimentos da cidade. De Minha Casa Minha Vida ao alto padrão — com as condições de quem compra no lançamento.</p>
+    <div class="hero-cta-pair">
+      <a href="#apartamentos" class="btn-hero">🏢 Ver Apartamentos</a>
+      <a href="#lotes" class="btn-hero btn-hero-alt">🏞️ Ver Lotes</a>
+    </div>
   </section>
 
   <div class="stats">
-    <div class="stat"><strong>7</strong><span>Empreendimentos</span></div>
-    <div class="stat"><strong>3.000+</strong><span>Lotes no Portfólio</span></div>
-    <div class="stat"><strong>150m²</strong><span>Lotes a partir de</span></div>
-    <div class="stat"><strong>R$145mil</strong><span>A partir de</span></div>
+    <div class="stat"><strong>18</strong><span>Empreendimentos</span></div>
+    <div class="stat"><strong>6</strong><span>Construtoras</span></div>
+    <div class="stat"><strong>R$ 145 mil</strong><span>Menor investimento</span></div>
+    <div class="stat"><strong>R$ 1,68 mi</strong><span>Alto padrão</span></div>
   </div>
 
   <div id="lancamentos" class="section">
-    <h2 class="section-title">Lançamentos em Indaiatuba</h2>
-    <p class="section-sub">Portfólio completo · agrupado por construtora, ordenado do menor ao maior investimento</p>
 
-    <style>
-      .cat-header{margin:3rem 0 1rem;padding-bottom:.6rem;border-bottom:3px solid var(--verde-escuro);display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;}
-      .cat-header h3{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--verde-escuro);margin:0;}
-      .cat-header .cat-count{font-size:.9rem;color:var(--texto-claro);font-weight:600;}
-      .constr-group{margin-bottom:2.5rem;}
-      .constr-header{display:flex;align-items:center;gap:1rem;margin:1.5rem 0 1rem;padding-left:.5rem;border-left:4px solid var(--dourado);}
-      .constr-header .constr-name{font-size:1.15rem;font-weight:800;color:var(--verde-escuro);letter-spacing:.02em;}
-      .constr-header .constr-tag{font-size:.78rem;background:#f0ede0;color:var(--texto-claro);padding:.2rem .7rem;border-radius:50px;font-weight:600;}
-      .card-constr-label{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--dourado);margin-bottom:.3rem;}
-    </style>
-
-    <!-- ═══════ APARTAMENTOS ═══════ -->
-    <div class="cat-header">
-      <h3>🏢 Apartamentos</h3>
-      <span class="cat-count">11 empreendimentos · 6 construtoras</span>
+    <!-- ════════ FILTROS ════════ -->
+    <div class="filtros" id="filtros">
+      <div class="filtro-grupo">
+        <span class="filtro-label">Investimento</span>
+        <div class="filtro-chips" data-filtro="faixa">
+          <button class="chip is-on" data-v="">Todos</button>
+          <button class="chip" data-v="a">até R$ 300 mil</button>
+          <button class="chip" data-v="b">R$ 300–600 mil</button>
+          <button class="chip" data-v="c">R$ 600 mil–1 mi</button>
+          <button class="chip" data-v="d">acima de R$ 1 mi</button>
+        </div>
+      </div>
+      <div class="filtro-grupo">
+        <span class="filtro-label">Situação</span>
+        <div class="filtro-chips" data-filtro="status">
+          <button class="chip is-on" data-v="">Todas</button>
+          <button class="chip" data-v="lancamento">Em lançamento</button>
+          <button class="chip" data-v="obras">Em obras</button>
+          <button class="chip" data-v="pre">Pré-lançamento</button>
+        </div>
+      </div>
+      <div class="filtro-grupo">
+        <span class="filtro-label">Filtros rápidos</span>
+        <div class="filtro-chips" data-filtro="flag">
+          <button class="chip is-on" data-v="">Todos</button>
+          <button class="chip" data-v="mcmv">Minha Casa Minha Vida</button>
+          <button class="chip" data-v="fechado">Condomínio fechado</button>
+        </div>
+      </div>
+      <p class="filtro-resultado" id="filtro-resultado" aria-live="polite"></p>
     </div>
 
-    <!-- VIVA PARQUE (Consórcio Pinheiro + RDZ + iBen) -->
-    <div class="constr-group">
-      <div class="constr-header">
-        <span class="constr-name">VIVA PARQUE</span>
-        <span class="constr-tag">Consórcio Pinheiro (+40 anos) · RDZ · iBen (6.022 unidades)</span>
-      </div>
-      <div class="listings-grid">
-
-        <a href="/viva-parque-aura-indaiatuba/" class="listing-card">
-          <img src="viva-parque-aura-indaiatuba/images/hero.jpg" alt="Viva Parque Aura Indaiatuba pré-lançamento samambaia identidade">
-          <div class="card-body">
-            <p class="card-constr-label">Viva Parque · Pinheiro + RDZ + iBen</p>
-            <span class="card-badge" style="background:#2C4032; color:#C9A78A;">Breve Lançamento · Novo Eixo Indaiatuba</span>
-            <h2>Viva Parque Aura</h2>
-            <p>4 torres · 9 plantas 47-85m² (2 dorm c/ suíte, varanda gourmet) · 7.000m² parque privativo · +30 itens lazer entregues equipados e decorados · Rua Octacílio Groff.</p>
-            <div class="card-price" style="color:#A88767;">Consulte tabela · Pré-lançamento</div>
-            <span class="btn-card">Solicitar Tabela</span>
-          </div>
-        </a>
-
-      </div>
+    <!-- ════════ APARTAMENTOS ════════ -->
+    <div class="cat-header" id="apartamentos">
+      <h2>🏢 Apartamentos</h2>
+      <span class="cat-count">11 empreendimentos · do menor ao maior investimento</span>
     </div>
 
-    <!-- CONGESA -->
-    <div class="constr-group">
-      <div class="constr-header">
-        <span class="constr-name">CONGESA</span>
-        <span class="constr-tag">32 anos em Indaiatuba · PBQP-H · ISO 9001</span>
-      </div>
-      <div class="listings-grid">
+    <div class="listings-grid" data-secao="apartamento">
 
-        <a href="/seasons-indaiatuba/" class="listing-card">
-          <img src="seasons-indaiatuba/images/hero.jpg" alt="Congesa Seasons Natural Wellness Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Congesa</p>
-            <h2>Congesa Seasons Natural Wellness</h2>
-            <p>3 blocos · 4 tipologias (3 dorm, 3 suítes, Penthouse e Maison) · Companhia Athlética · Villa dos Pinheiros.</p>
-            <div class="card-price" style="color:#A15E2C;">Consulte tabela · Pré-lançamento</div>
-            <span class="btn-card">Solicitar Tabela</span>
-          </div>
+      <article class="listing-card" data-tipo="apartamento" data-preco="279990" data-faixa="a"
+               data-dorms="2" data-mcmv="1" data-status="lancamento" data-constr="Masotti">
+        <a href="/uni-residencial-indaiatuba/" class="card-img-link">
+          <img src="uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial Indaiatuba" loading="lazy" width="400" height="200">
         </a>
-
-        <a href="/storia-congesa-indaiatuba/" class="listing-card">
-          <img src="storia-congesa-indaiatuba/images/hero.jpg" alt="Storia Congesa Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Congesa</p>
-            <h2>Storia Congesa</h2>
-            <p>2 torres · 186 apts 2 dorm 70m² e 3 suítes 114m² · 2-3 vagas + hobby box · Entrega dez/2026.</p>
-            <div class="card-price">A partir de R$ 981.000</div>
-            <span class="btn-card">Ver Detalhes</span>
+        <div class="card-body">
+          <span class="card-badge" style="background:#1565C0;color:#fff;">MCMV · Aceita FGTS</span>
+          <p class="card-constr">Masotti</p>
+          <h3><a href="/uni-residencial-indaiatuba/">Uni Residencial</a></h3>
+          <p class="card-meta">2 dorm c/ suíte</p>
+          <p class="card-desc">Único MCMV ao lado do Parque Ecológico. 2 dorms com suíte, sacada e vaga coberta. Financiamento Caixa.</p>
+          <div class="card-price">A partir de <strong>R$ 279.990</strong></div>
+          <div class="card-actions">
+            <a href="/uni-residencial-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Uni%20Residencial%20(a%20partir%20de%20R%24%20279.990).%20Pode%20me%20passar%20as%20condi%C3%A7%C3%B5es%20e%20o%20valor%20da%20parcela%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Uni Residencial">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Simular parcela
+            </a>
           </div>
-        </a>
+        </div>
+      </article>
 
-      </div>
+      <article class="listing-card" data-tipo="apartamento" data-preco="302464" data-faixa="b"
+               data-dorms="2" data-mcmv="1" data-status="lancamento" data-constr="VIC Engenharia">
+        <a href="/gran-vic-tangara-indaiatuba/" class="card-img-link">
+          <img src="gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#c0392b;color:#fff;">🔥 60% Vendido · MCMV</span>
+          <p class="card-constr">VIC Engenharia</p>
+          <h3><a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a></h3>
+          <p class="card-meta">47,22 m²</p>
+          <p class="card-desc">MCMV Faixa 3 · 2 dorms com varanda · 16 itens de lazer decorados · aceita FGTS. Últimas 40%.</p>
+          <div class="card-price">A partir de <strong>R$ 302.464</strong></div>
+          <div class="card-actions">
+            <a href="/gran-vic-tangara-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Gran%20Vic%20Tangar%C3%A1%20(a%20partir%20de%20R%24%20302.464).%20Pode%20me%20passar%20as%20condi%C3%A7%C3%B5es%20e%20o%20valor%20da%20parcela%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Gran Vic Tangará">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Simular parcela
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="apartamento" data-preco="340162" data-faixa="b"
+               data-dorms="2" data-mcmv="1" data-status="lancamento" data-constr="VIC Engenharia">
+        <a href="/gran-vic-colibri-indaiatuba/" class="card-img-link">
+          <img src="gran-vic-colibri-indaiatuba/images/hero.jpg" alt="Gran Vic Colibri Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#c0392b;color:#fff;">🔥 Único MCMV c/ Suíte</span>
+          <p class="card-constr">VIC Engenharia</p>
+          <h3><a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a></h3>
+          <p class="card-meta">51,42 m²</p>
+          <p class="card-desc">Único MCMV com suíte da região · 51,42 m² · 15 itens de lazer decorados · aceita FGTS.</p>
+          <div class="card-price">A partir de <strong>R$ 340.162</strong></div>
+          <div class="card-actions">
+            <a href="/gran-vic-colibri-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Gran%20Vic%20Colibri%20(a%20partir%20de%20R%24%20340.162).%20Pode%20me%20passar%20as%20condi%C3%A7%C3%B5es%20e%20o%20valor%20da%20parcela%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Gran Vic Colibri">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Simular parcela
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="apartamento" data-preco="758850" data-faixa="c"
+               data-dorms="3" data-mcmv="0" data-status="breve" data-constr="Masotti">
+        <a href="/aurora-indaiatuba/" class="card-img-link">
+          <img src="aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#0a1929;color:#d4a962;">Breve Lançamento · Alto Padrão</span>
+          <p class="card-constr">Masotti</p>
+          <h3><a href="/aurora-indaiatuba/">Aurora — Park Meraki</a></h3>
+          <p class="card-meta">101 a 152 m²</p>
+          <p class="card-desc">4 torres · 461 apts 101-152 m² · casa de campo com piscina privativa · 32 áreas de lazer decoradas.</p>
+          <div class="card-price">A partir de <strong>R$ 758.850</strong></div>
+          <div class="card-actions">
+            <a href="/aurora-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Aurora%20%E2%80%94%20Park%20Meraki%20(a%20partir%20de%20R%24%20758.850).%20Pode%20me%20passar%20as%20condi%C3%A7%C3%B5es%20e%20o%20valor%20da%20parcela%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Aurora — Park Meraki">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Simular parcela
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="apartamento" data-preco="981000" data-faixa="c"
+               data-dorms="2" data-mcmv="0" data-status="obras" data-constr="Congesa">
+        <a href="/storia-congesa-indaiatuba/" class="card-img-link">
+          <img src="storia-congesa-indaiatuba/images/hero.jpg" alt="Storia Congesa Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#1A1611;color:#C9A96A;">Entrega Dez/2026</span>
+          <p class="card-constr">Congesa</p>
+          <h3><a href="/storia-congesa-indaiatuba/">Storia Congesa</a></h3>
+          <p class="card-meta">70 a 114 m²</p>
+          <p class="card-desc">2 torres · 2 dorm 70 m² e 3 suítes 114 m² · 2-3 vagas + hobby box · sauna, coworking · Av. Conceição.</p>
+          <div class="card-price">A partir de <strong>R$ 981.000</strong></div>
+          <div class="card-actions">
+            <a href="/storia-congesa-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Storia%20Congesa%20(a%20partir%20de%20R%24%20981.000).%20Pode%20me%20passar%20as%20condi%C3%A7%C3%B5es%20e%20o%20valor%20da%20parcela%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Storia Congesa">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Simular parcela
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="apartamento" data-preco="1300668" data-faixa="d"
+               data-dorms="3" data-mcmv="0" data-status="obras" data-constr="PERPLAN">
+        <a href="/helade-indaiatuba/" class="card-img-link">
+          <img src="helade-indaiatuba/images/hero.jpg" alt="Hélade — Park Meraki Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#0C0C0C;color:#C8A44A;">Alto Padrão · Entrega Mar/2027</span>
+          <p class="card-constr">PERPLAN</p>
+          <h3><a href="/helade-indaiatuba/">Hélade — Park Meraki</a></h3>
+          <p class="card-meta">120,18 m²</p>
+          <p class="card-desc">100 apts · 3 suítes 120,18 m² · 3 vagas · 29 pavimentos · Portela Arquitetos + Tellini Vontobel.</p>
+          <div class="card-price">A partir de <strong>R$ 1.300.668</strong></div>
+          <div class="card-actions">
+            <a href="/helade-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20H%C3%A9lade%20%E2%80%94%20Park%20Meraki%20(a%20partir%20de%20R%24%201.300.668).%20Pode%20me%20passar%20as%20condi%C3%A7%C3%B5es%20e%20o%20valor%20da%20parcela%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Hélade — Park Meraki">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Simular parcela
+            </a>
+          </div>
+        </div>
+      </article>
     </div>
 
-    <!-- MASOTTI -->
-    <div class="constr-group">
-      <div class="constr-header">
-        <span class="constr-name">MASOTTI</span>
-        <span class="constr-tag">CNPJ 21.551.241/0001-07 · Patrimônio de afetação</span>
-      </div>
-      <div class="listings-grid">
-
-        <a href="/uni-residencial-indaiatuba/" class="listing-card">
-          <img src="uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial Indaiatuba MCMV Masotti">
-          <div class="card-body">
-            <p class="card-constr-label">Masotti</p>
-            <h2>Uni Residencial</h2>
-            <p>MCMV 2 dorms com suíte · único MCMV ao lado do Parque Ecológico · sacada e vaga coberta · aceita FGTS.</p>
-            <div class="card-price">A partir de R$ 279.990</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-        <a href="/manai-bosque-indaiatuba/" class="listing-card">
-          <img src="manai-bosque-indaiatuba/images/hero-3-torres.jpg" alt="Manai Bosque Cidade Nova II Masotti">
-          <div class="card-body">
-            <p class="card-constr-label">Masotti</p>
-            <h2>Manai Bosque</h2>
-            <p>Breve lançamento · 3 torres · 480 apts 65-91m² · piscina raia 25m · casa de campo · Cidade Nova II.</p>
-            <div class="card-price" style="color:#8B6914;">Consulte tabela · Pré-lançamento</div>
-            <span class="btn-card">Solicitar Tabela</span>
-          </div>
-        </a>
-
-        <a href="/aurora-indaiatuba/" class="listing-card">
-          <img src="aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora Park Meraki Masotti Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Masotti</p>
-            <h2>Aurora — Park Meraki</h2>
-            <p>Breve lançamento · 4 torres · 461 apts 101-152m² · casa de campo com piscina privativa · 32 áreas de lazer.</p>
-            <div class="card-price">A partir de R$ 758.850</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-      </div>
+    <div class="sub-header">
+      <h3>Pré-lançamentos · tabela sob consulta</h3>
+      <p>As melhores unidades saem antes do preço ser publicado. Peça a tabela em primeira mão.</p>
     </div>
 
-    <!-- ZARIN -->
-    <div class="constr-group">
-      <div class="constr-header">
-        <span class="constr-name">ZARIN</span>
-        <span class="constr-tag">Top 100 INTEC Brasil 2024</span>
-      </div>
-      <div class="listings-grid">
+    <div class="listings-grid" data-secao="apartamento">
 
-        <a href="/itamaraca-indaiatuba/" class="listing-card">
-          <img src="itamaraca-indaiatuba/images/hero.jpg" alt="Itamaracá Residencial MCMV Zarin Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Zarin</p>
-            <h2>Itamaracá Residencial</h2>
-            <p>MCMV · 2 torres · 206 apts 48-54m² · Rua Tupinambás 780 · 1 min da Av. Conceição · aceita FGTS.</p>
-            <div class="card-price" style="color:#8B6914;">Consulte tabela</div>
-            <span class="btn-card">Solicitar Tabela</span>
-          </div>
+      <article class="listing-card" data-tipo="apartamento" data-preco="" data-faixa="consulte"
+               data-dorms="2" data-mcmv="0" data-status="pre" data-constr="Pinheiro · RDZ · iBen">
+        <a href="/viva-parque-aura-indaiatuba/" class="card-img-link">
+          <img src="viva-parque-aura-indaiatuba/images/hero.jpg" alt="Viva Parque Aura Indaiatuba" loading="lazy" width="400" height="200">
         </a>
-
-        <a href="/spazio-italia-indaiatuba/" class="listing-card">
-          <img src="spazio-italia-indaiatuba/images/hero.jpg" alt="Spazio Italia Residencial Clube Zarin Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Zarin</p>
-            <h2>Spazio Italia Residencial Clube</h2>
-            <p>4 torres · 424 apts 2 dorms com suíte · varanda gourmet · 25+ itens de lazer entregues mobiliados.</p>
-            <div class="card-price" style="color:#8B6914;">Consulte tabela</div>
-            <span class="btn-card">Solicitar Tabela</span>
+        <div class="card-body">
+          <span class="card-badge" style="background:#2C4032;color:#C9A78A;">Pré-Lançamento</span>
+          <p class="card-constr">Pinheiro · RDZ · iBen</p>
+          <h3><a href="/viva-parque-aura-indaiatuba/">Viva Parque Aura</a></h3>
+          <p class="card-meta">47 a 85 m²</p>
+          <p class="card-desc">4 torres · 9 plantas 47-85 m² · 2 dorm c/ suíte · 7.000 m² de parque privativo · +30 itens de lazer.</p>
+          <div class="card-price card-price-consult">Tabela sob consulta</div>
+          <div class="card-actions">
+            <a href="/viva-parque-aura-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20receber%20a%20tabela%20do%20Viva%20Parque%20Aura%20em%20primeira%20m%C3%A3o%2C%20antes%20do%20lan%C3%A7amento%20oficial." class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Viva Parque Aura">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Pedir tabela
+            </a>
           </div>
-        </a>
+        </div>
+      </article>
 
-      </div>
+      <article class="listing-card" data-tipo="apartamento" data-preco="" data-faixa="consulte"
+               data-dorms="3" data-mcmv="0" data-status="pre" data-constr="Masotti">
+        <a href="/manai-bosque-indaiatuba/" class="card-img-link">
+          <img src="manai-bosque-indaiatuba/images/hero-3-torres.jpg" alt="Manai Bosque Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#1a3a1f;color:#d4a962;">Pré-Lançamento</span>
+          <p class="card-constr">Masotti</p>
+          <h3><a href="/manai-bosque-indaiatuba/">Manai Bosque</a></h3>
+          <p class="card-meta">65 a 91 m²</p>
+          <p class="card-desc">3 torres · 480 apts 65-91 m² · piscina raia 25m · casa de campo com piscina privativa · 36 áreas de lazer.</p>
+          <div class="card-price card-price-consult">Tabela sob consulta</div>
+          <div class="card-actions">
+            <a href="/manai-bosque-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20receber%20a%20tabela%20do%20Manai%20Bosque%20em%20primeira%20m%C3%A3o%2C%20antes%20do%20lan%C3%A7amento%20oficial." class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Manai Bosque">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Pedir tabela
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="apartamento" data-preco="" data-faixa="consulte"
+               data-dorms="2" data-mcmv="1" data-status="pre" data-constr="Zarin">
+        <a href="/itamaraca-indaiatuba/" class="card-img-link">
+          <img src="itamaraca-indaiatuba/images/hero.jpg" alt="Itamaracá Residencial Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#1e4025;color:#d97542;">Pré-Lançamento · MCMV</span>
+          <p class="card-constr">Zarin</p>
+          <h3><a href="/itamaraca-indaiatuba/">Itamaracá Residencial</a></h3>
+          <p class="card-meta">48 a 54 m²</p>
+          <p class="card-desc">2 torres · 206 apts 48-54 m² · Rua Tupinambás 780, a 1 min da Av. Conceição · aceita FGTS.</p>
+          <div class="card-price card-price-consult">Tabela sob consulta</div>
+          <div class="card-actions">
+            <a href="/itamaraca-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20receber%20a%20tabela%20do%20Itamarac%C3%A1%20Residencial%20em%20primeira%20m%C3%A3o%2C%20antes%20do%20lan%C3%A7amento%20oficial." class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Itamaracá Residencial">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Pedir tabela
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="apartamento" data-preco="" data-faixa="consulte"
+               data-dorms="2" data-mcmv="0" data-status="pre" data-constr="Zarin">
+        <a href="/spazio-italia-indaiatuba/" class="card-img-link">
+          <img src="spazio-italia-indaiatuba/images/hero.jpg" alt="Spazio Italia Residencial Clube Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#1e4028;color:#b93646;">Pré-Lançamento · Clube</span>
+          <p class="card-constr">Zarin</p>
+          <h3><a href="/spazio-italia-indaiatuba/">Spazio Italia Residencial Clube</a></h3>
+          <p class="card-meta">59 a 63 m²</p>
+          <p class="card-desc">4 torres · 424 apts 2 dorm c/ suíte + varanda gourmet · 25+ itens de lazer entregues mobiliados.</p>
+          <div class="card-price card-price-consult">Tabela sob consulta</div>
+          <div class="card-actions">
+            <a href="/spazio-italia-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20receber%20a%20tabela%20do%20Spazio%20Italia%20Residencial%20Clube%20em%20primeira%20m%C3%A3o%2C%20antes%20do%20lan%C3%A7amento%20oficial." class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Spazio Italia Residencial Clube">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Pedir tabela
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="apartamento" data-preco="" data-faixa="consulte"
+               data-dorms="3" data-mcmv="0" data-status="pre" data-constr="Congesa">
+        <a href="/seasons-indaiatuba/" class="card-img-link">
+          <img src="seasons-indaiatuba/images/hero.jpg" alt="Congesa Seasons Natural Wellness Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#A15E2C;color:#fff;">Pré-Lançamento</span>
+          <p class="card-constr">Congesa</p>
+          <h3><a href="/seasons-indaiatuba/">Congesa Seasons Natural Wellness</a></h3>
+          <p class="card-meta">3 dorm a Penthouse</p>
+          <p class="card-desc">3 blocos · 4 tipologias (3 dorm, 3 suítes, Penthouse, Maison) · Fitness Companhia Athlética · Villa dos Pinheiros.</p>
+          <div class="card-price card-price-consult">Tabela sob consulta</div>
+          <div class="card-actions">
+            <a href="/seasons-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20receber%20a%20tabela%20do%20Congesa%20Seasons%20Natural%20Wellness%20em%20primeira%20m%C3%A3o%2C%20antes%20do%20lan%C3%A7amento%20oficial." class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Congesa Seasons Natural Wellness">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Pedir tabela
+            </a>
+          </div>
+        </div>
+      </article>
     </div>
 
-    <!-- VIC ENGENHARIA -->
-    <div class="constr-group">
-      <div class="constr-header">
-        <span class="constr-name">VIC ENGENHARIA</span>
-        <span class="constr-tag">Parque dos Pássaros · MCMV Faixa 3</span>
-      </div>
-      <div class="listings-grid">
-
-        <a href="/gran-vic-tangara-indaiatuba/" class="listing-card">
-          <img src="gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará MCMV Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">VIC Engenharia</p>
-            <span class="card-badge" style="background:#c0392b; color:#fff;">🔥 60% Vendido</span>
-            <h2>Gran Vic Tangará</h2>
-            <p>MCMV Faixa 3 · 2 dorms sem suíte · 47,22m² com varanda · 16 itens lazer · financiamento Caixa · aceita FGTS.</p>
-            <div class="card-price">A partir de R$ 302.464</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-        <a href="/gran-vic-colibri-indaiatuba/" class="listing-card">
-          <img src="gran-vic-colibri-indaiatuba/images/hero.jpg" alt="Gran Vic Colibri MCMV com suíte Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">VIC Engenharia</p>
-            <span class="card-badge" style="background:#c0392b; color:#fff;">🔥 Único MCMV c/ Suíte</span>
-            <h2>Gran Vic Colibri</h2>
-            <p>MCMV Faixa 3 · único com suíte · 2 dorms 51,42m² · 15 itens lazer decorados · aceita FGTS.</p>
-            <div class="card-price">A partir de R$ 340.162</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-      </div>
+    <!-- ════════ LOTES ════════ -->
+    <div class="cat-header" id="lotes">
+      <h2>🏞️ Lotes e Condomínios Fechados</h2>
+      <span class="cat-count">7 empreendimentos · do menor ao maior investimento</span>
     </div>
 
-    <!-- PERPLAN -->
-    <div class="constr-group">
-      <div class="constr-header">
-        <span class="constr-name">PERPLAN</span>
-        <span class="constr-tag">Portela Arquitetos + Tellini Vontobel · Alto padrão</span>
-      </div>
-      <div class="listings-grid">
+    <div class="listings-grid" data-secao="lote">
 
-        <a href="/helade-indaiatuba/" class="listing-card">
-          <img src="helade-indaiatuba/images/hero.jpg" alt="Hélade Park Meraki PERPLAN Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">PERPLAN</p>
-            <span class="card-badge" style="background:#0C0C0C; color:#C8A44A;">Alto Padrão</span>
-            <h2>Hélade — Park Meraki</h2>
-            <p>100 apts alto padrão · 3 suítes 120,18m² · 3 vagas · 29 pavimentos · entrega mar/2027.</p>
-            <div class="card-price" style="color:#8B6914;">A partir de R$ 1.300.668</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
+      <article class="listing-card" data-tipo="lote" data-preco="145000" data-faixa="a"
+               data-lote="aberto" data-status="lancamento" data-constr="Dominium" data-pm2="967">
+        <a href="/monte-carmelo-indaiatuba/" class="card-img-link">
+          <img src="monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo Indaiatuba" loading="lazy" width="400" height="200">
         </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#d4520a;color:#fff;">O Mais Acessível</span>
+          <p class="card-constr">Dominium</p>
+          <h3><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a></h3>
+          <p class="card-meta">A partir de 150 m² · <strong class="pm2">R$ 967/m²</strong></p>
+          <p class="card-desc">Loteamento aberto · 1.051 lotes a partir de 150 m² · entrada a partir de R$ 16.000 · até 96 parcelas.</p>
+          <div class="card-price">A partir de <strong>R$ 145.000</strong></div>
+          <div class="card-actions">
+            <a href="/monte-carmelo-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Residencial%20Monte%20Carmelo%20(a%20partir%20de%20R%24%20145.000%2C%20150%20m%C2%B2).%20Pode%20me%20enviar%20a%20tabela%20com%20os%20lotes%20dispon%C3%ADveis%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Residencial Monte Carmelo">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Ver disponíveis
+            </a>
+          </div>
+        </div>
+      </article>
 
-      </div>
+      <article class="listing-card" data-tipo="lote" data-preco="180000" data-faixa="a"
+               data-lote="aberto" data-status="lancamento" data-constr="Dominium" data-pm2="1200">
+        <a href="/di-italia-indaiatuba/" class="card-img-link">
+          <img src="di-italia-indaiatuba/images/hero.jpg" alt="Jardim Di Italia Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#c0392b;color:#fff;">🔥 Últimas 59 Unidades</span>
+          <p class="card-constr">Dominium</p>
+          <h3><a href="/di-italia-indaiatuba/">Jardim Di Italia</a></h3>
+          <p class="card-meta">A partir de 150 m² · <strong class="pm2">R$ 1.200/m²</strong></p>
+          <p class="card-desc">Loteamento aberto · lotes residenciais e mistos a partir de 150 m² · infraestrutura concluída.</p>
+          <div class="card-price">A partir de <strong>R$ 180.000</strong></div>
+          <div class="card-actions">
+            <a href="/di-italia-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Jardim%20Di%20Italia%20(a%20partir%20de%20R%24%20180.000%2C%20150%20m%C2%B2).%20Pode%20me%20enviar%20a%20tabela%20com%20os%20lotes%20dispon%C3%ADveis%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Jardim Di Italia">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Ver disponíveis
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="lote" data-preco="247500" data-faixa="a"
+               data-lote="fechado" data-status="lancamento" data-constr="Dominium" data-pm2="1650">
+        <a href="/terras-de-san-marino-indaiatuba/" class="card-img-link">
+          <img src="images/hero.jpg" alt="Terras de San Marino Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#c9a84c;color:#1a1a1a;">Condomínio Fechado</span>
+          <p class="card-constr">Dominium</p>
+          <h3><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a></h3>
+          <p class="card-meta">A partir de 150 m² · <strong class="pm2">R$ 1.650/m²</strong></p>
+          <p class="card-desc">546 lotes a partir de 150 m² · 16.164 m² de lazer resort: piscina, tênis, pickleball, food truck park.</p>
+          <div class="card-price">A partir de <strong>R$ 247.500</strong></div>
+          <div class="card-actions">
+            <a href="/terras-de-san-marino-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Terras%20de%20San%20Marino%20(a%20partir%20de%20R%24%20247.500%2C%20150%20m%C2%B2).%20Pode%20me%20enviar%20a%20tabela%20com%20os%20lotes%20dispon%C3%ADveis%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Terras de San Marino">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Ver disponíveis
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="lote" data-preco="249123" data-faixa="a"
+               data-lote="fechado" data-status="obras" data-constr="Zarin" data-pm2="1661">
+        <a href="/parque-zarah-indaiatuba/" class="card-img-link">
+          <img src="parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#1a3a2a;color:#c8a45a;">Cond. Fechado · Fase 1 em obras</span>
+          <p class="card-constr">Zarin</p>
+          <h3><a href="/parque-zarah-indaiatuba/">Parque Zarah</a></h3>
+          <p class="card-meta">A partir de 150 m² · <strong class="pm2">R$ 1.661/m²</strong></p>
+          <p class="card-desc">Inspiração persa · lotes 150-344 m² · 15+ áreas de lazer, pool house · entrega prevista 2026.</p>
+          <div class="card-price">A partir de <strong>R$ 249.123</strong></div>
+          <div class="card-actions">
+            <a href="/parque-zarah-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Parque%20Zarah%20(a%20partir%20de%20R%24%20249.123%2C%20150%20m%C2%B2).%20Pode%20me%20enviar%20a%20tabela%20com%20os%20lotes%20dispon%C3%ADveis%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Parque Zarah">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Ver disponíveis
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="lote" data-preco="391682" data-faixa="b"
+               data-lote="fechado" data-status="obras" data-constr="Zarin" data-pm2="1567">
+        <a href="/reserva-botanica-indaiatuba/" class="card-img-link">
+          <img src="reserva-botanica-indaiatuba/images/hero.jpg" alt="Residencial Reserva Botânica Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#b8672f;color:#fff;">🔥 Últimas Unidades</span>
+          <p class="card-constr">Zarin</p>
+          <h3><a href="/reserva-botanica-indaiatuba/">Residencial Reserva Botânica</a></h3>
+          <p class="card-meta">A partir de 250 m² · <strong class="pm2">R$ 1.567/m²</strong></p>
+          <p class="card-desc">Loteamento fechado · lotes 250-456 m² · portaria 24h · tênis, beach tennis e poliesportiva · registro R.11/132.786.</p>
+          <div class="card-price">A partir de <strong>R$ 391.682</strong></div>
+          <div class="card-actions">
+            <a href="/reserva-botanica-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Residencial%20Reserva%20Bot%C3%A2nica%20(a%20partir%20de%20R%24%20391.682%2C%20250%20m%C2%B2).%20Pode%20me%20enviar%20a%20tabela%20com%20os%20lotes%20dispon%C3%ADveis%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Residencial Reserva Botânica">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Ver disponíveis
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="lote" data-preco="480000" data-faixa="b"
+               data-lote="fechado" data-status="lancamento" data-constr="Dominium" data-pm2="1600">
+        <a href="/alpnach-indaiatuba/" class="card-img-link">
+          <img src="alpnach-indaiatuba/images/hero.jpg" alt="Alpnach Residence Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#c9a84c;color:#1a1a1a;">Condomínio Fechado</span>
+          <p class="card-constr">Dominium</p>
+          <h3><a href="/alpnach-indaiatuba/">Alpnach Residence</a></h3>
+          <p class="card-meta">A partir de 300 m² · <strong class="pm2">R$ 1.600/m²</strong></p>
+          <p class="card-desc">322 lotes a partir de 300 m² · o maior complexo de lazer da região: piscina coberta, coworking, mini mercado 24h.</p>
+          <div class="card-price">A partir de <strong>R$ 480.000</strong></div>
+          <div class="card-actions">
+            <a href="/alpnach-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Alpnach%20Residence%20(a%20partir%20de%20R%24%20480.000%2C%20300%20m%C2%B2).%20Pode%20me%20enviar%20a%20tabela%20com%20os%20lotes%20dispon%C3%ADveis%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Alpnach Residence">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Ver disponíveis
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="listing-card" data-tipo="lote" data-preco="714000" data-faixa="c"
+               data-lote="fechado" data-status="lancamento" data-constr="Dominium" data-pm2="1700">
+        <a href="/residencial-ravello-indaiatuba/" class="card-img-link">
+          <img src="residencial-ravello-indaiatuba/images/hero.jpg" alt="Residencial Ravello Indaiatuba" loading="lazy" width="400" height="200">
+        </a>
+        <div class="card-body">
+          <span class="card-badge" style="background:#c9a84c;color:#1a1a1a;">Condomínio Fechado</span>
+          <p class="card-constr">Dominium</p>
+          <h3><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a></h3>
+          <p class="card-meta">A partir de 420 m² · <strong class="pm2">R$ 1.700/m²</strong></p>
+          <p class="card-desc">710 lotes a partir de 420 m² · 27 itens de lazer: SPA, Wine Bar, Fire Pit, piscina, campo society.</p>
+          <div class="card-price">A partir de <strong>R$ 714.000</strong></div>
+          <div class="card-actions">
+            <a href="/residencial-ravello-indaiatuba/" class="btn-card">Ver detalhes</a>
+            <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Residencial%20Ravello%20(a%20partir%20de%20R%24%20714.000%2C%20420%20m%C2%B2).%20Pode%20me%20enviar%20a%20tabela%20com%20os%20lotes%20dispon%C3%ADveis%3F" class="btn-card-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre Residencial Ravello">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Ver disponíveis
+            </a>
+          </div>
+        </div>
+      </article>
     </div>
 
-    <!-- ═══════ LOTES E CONDOMÍNIOS ═══════ -->
-    <div class="cat-header">
-      <h3>🏞️ Lotes e Condomínios Fechados</h3>
-      <span class="cat-count">7 empreendimentos · 2 loteadoras</span>
-    </div>
-
-    <!-- DOMINIUM -->
-    <div class="constr-group">
-      <div class="constr-header">
-        <span class="constr-name">DOMINIUM</span>
-        <span class="constr-tag">25+ anos loteando Indaiatuba</span>
-      </div>
-      <div class="listings-grid">
-
-        <a href="/monte-carmelo-indaiatuba/" class="listing-card">
-          <img src="monte-carmelo-indaiatuba/images/hero.jpg" alt="Monte Carmelo loteamento aberto Dominium Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Dominium</p>
-            <span class="card-badge" style="background:#d4520a; color:#fff;">O Mais Acessível</span>
-            <h2>Residencial Monte Carmelo</h2>
-            <p>Loteamento aberto · 1.051 lotes a partir de 150m² · entrada a partir de R$ 16.000 · até 96 parcelas.</p>
-            <div class="card-price">A partir de R$ 145.000</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-        <a href="/di-italia-indaiatuba/" class="listing-card">
-          <img src="di-italia-indaiatuba/images/lifestyle.jpg" alt="Jardim Di Italia loteamento aberto Dominium">
-          <div class="card-body">
-            <p class="card-constr-label">Dominium</p>
-            <span class="card-badge" style="background:#c0392b;">Últimas 59 Unidades</span>
-            <h2>Jardim Di Italia</h2>
-            <p>Loteamento aberto · lotes residenciais e mistos a partir de 150m² · localização privilegiada.</p>
-            <div class="card-price">A partir de R$ 180.000</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-        <a href="/terras-de-san-marino-indaiatuba/" class="listing-card">
-          <img src="images/hero.jpg" alt="Terras de San Marino condomínio fechado Dominium Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Dominium</p>
-            <span class="card-badge">Condomínio Fechado · Novo Preço</span>
-            <h2>Terras de San Marino</h2>
-            <p>Condomínio fechado · 546 lotes a partir de 150m² · 16.164m² lazer resort · piscina, tênis, pickleball, food truck park. Tabela julho/2026.</p>
-            <div class="card-price">A partir de R$ 247.500 · R$ 1.650/m²</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-        <a href="/alpnach-indaiatuba/" class="listing-card">
-          <img src="alpnach-indaiatuba/images/hero.jpg" alt="Alpnach Residence condomínio fechado Dominium">
-          <div class="card-body">
-            <p class="card-constr-label">Dominium</p>
-            <span class="card-badge">Condomínio Fechado</span>
-            <h2>Alpnach Residence</h2>
-            <p>Condomínio fechado alto padrão · 322 lotes a partir de 300m² · piscina coberta, coworking, mini mercado 24h, pet place.</p>
-            <div class="card-price">A partir de R$ 480.000</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-        <a href="/residencial-ravello-indaiatuba/" class="listing-card">
-          <img src="residencial-ravello-indaiatuba/images/hero.jpg" alt="Residencial Ravello condomínio fechado Dominium">
-          <div class="card-body">
-            <p class="card-constr-label">Dominium</p>
-            <span class="card-badge">Condomínio Fechado</span>
-            <h2>Residencial Ravello</h2>
-            <p>Condomínio fechado alto padrão · 710 lotes a partir de 420m² · 27 itens de lazer: SPA, Espaço Wine, Fire Pit, piscina, campo society.</p>
-            <div class="card-price">A partir de R$ 714.000</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- ZARIN LOTES -->
-    <div class="constr-group">
-      <div class="constr-header">
-        <span class="constr-name">ZARIN</span>
-        <span class="constr-tag">Loteamentos fechados com lazer completo</span>
-      </div>
-      <div class="listings-grid">
-
-        <a href="/parque-zarah-indaiatuba/" class="listing-card">
-          <img src="parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah condomínio fechado Zarin Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Zarin</p>
-            <span class="card-badge">Condomínio Fechado</span>
-            <h2>Parque Zarah</h2>
-            <p>Condomínio fechado inspiração persa · lotes 150-344m² · 15+ áreas de lazer (pool house, piscina, beach tennis, quadra) · fase 1 em obras, entrega 2026.</p>
-            <div class="card-price">A partir de R$ 249.123</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-        <a href="/reserva-botanica-indaiatuba/" class="listing-card">
-          <img src="reserva-botanica-indaiatuba/images/hero.jpg" alt="Reserva Botânica loteamento fechado Zarin Indaiatuba">
-          <div class="card-body">
-            <p class="card-constr-label">Zarin</p>
-            <span class="card-badge" style="background:#c0392b;">Últimas Unidades</span>
-            <h2>Residencial Reserva Botânica</h2>
-            <p>Loteamento fechado · lotes 250-456m² · portaria 24h, quadras de tênis, beach tennis e poliesportiva · obras aceleradas.</p>
-            <div class="card-price">A partir de R$ 391.682</div>
-            <span class="btn-card">Ver Detalhes</span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-
+    <p class="vazio-msg" id="vazio-msg" hidden>Nenhum empreendimento com esses filtros. <button class="chip" onclick="limparFiltros()">Limpar filtros</button></p>
   </div>
 
   <div class="pillars-bg">
@@ -719,5 +935,85 @@
     <p>© 2026 Imobiliária Viv'América · Especialistas em lançamentos imobiliários em Indaiatuba SP</p>
   </footer>
 
+
+<a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20os%20lan%C3%A7amentos%20de%20Indaiatuba%20no%20site%20e%20gostaria%20de%20saber%20quais%20cabem%20no%20meu%20perfil.%20Pode%20me%20ajudar%3F" class="wa-float-home" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function(){
+  var mt = document.getElementById('menu-toggle');
+  var nav = document.querySelector('header nav');
+  if (mt && nav) mt.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    mt.setAttribute('aria-expanded', open);
+    mt.textContent = open ? '\u2715' : '\u2630';
+  });
+
+  var estado = { faixa:'', status:'', flag:'' };
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.listing-card'));
+  var saida = document.getElementById('filtro-resultado');
+  var vazio = document.getElementById('vazio-msg');
+
+  function aplicar(){
+    var n = 0;
+    cards.forEach(function(c){
+      var ok = true;
+      if (estado.faixa && c.dataset.faixa !== estado.faixa) ok = false;
+      if (estado.status && c.dataset.status !== estado.status) ok = false;
+      if (estado.flag === 'mcmv'    && c.dataset.mcmv !== '1')       ok = false;
+      if (estado.flag === 'fechado' && c.dataset.lote !== 'fechado') ok = false;
+      c.hidden = !ok;
+      if (ok) n++;
+    });
+    // esconde cabecalho de secao que ficou sem nenhum card visivel
+    document.querySelectorAll('.listings-grid').forEach(function(g){
+      var vis = g.querySelectorAll('.listing-card:not([hidden])').length;
+      g.hidden = vis === 0;
+    });
+    ['apartamentos','lotes'].forEach(function(id){
+      var h = document.getElementById(id);
+      if (!h) return;
+      var grids = [], el = h.nextElementSibling;
+      while (el && !el.classList.contains('cat-header')) {
+        if (el.classList.contains('listings-grid')) grids.push(el);
+        el = el.nextElementSibling;
+      }
+      var algum = grids.some(function(g){ return !g.hidden; });
+      h.hidden = !algum;
+      var sub = h.parentNode.querySelectorAll('.sub-header');
+    });
+    document.querySelectorAll('.sub-header').forEach(function(s){
+      var g = s.nextElementSibling;
+      s.hidden = !g || g.hidden;
+    });
+    var filtrando = estado.faixa || estado.status || estado.flag;
+    saida.textContent = filtrando ? n + (n === 1 ? ' empreendimento encontrado' : ' empreendimentos encontrados') : '';
+    vazio.hidden = n > 0;
+    if (window.gtag && filtrando) gtag('event','filtro_usado',{event_category:'navegacao',event_label:JSON.stringify(estado)});
+  }
+
+  document.querySelectorAll('.filtro-chips').forEach(function(grp){
+    var chave = grp.dataset.filtro;
+    grp.addEventListener('click', function(ev){
+      var b = ev.target.closest('.chip');
+      if (!b) return;
+      grp.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('is-on'); });
+      b.classList.add('is-on');
+      estado[chave] = b.dataset.v;
+      aplicar();
+    });
+  });
+
+  window.limparFiltros = function(){
+    estado = { faixa:'', status:'', flag:'' };
+    document.querySelectorAll('.filtro-chips').forEach(function(grp){
+      grp.querySelectorAll('.chip').forEach(function(x,i){ x.classList.toggle('is-on', i===0); });
+    });
+    aplicar();
+    document.getElementById('filtros').scrollIntoView({behavior:'smooth',block:'center'});
+  };
+})();
+</script>
 </body>
 </html>
