@@ -31,7 +31,7 @@ const APTOS = [
 const LOTES = [
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, img:'monte-carmelo-indaiatuba/images/hero.jpg',
     s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', slug:'monte-carmelo-indaiatuba' },
-  { n:'Jardim Di Italia', c:'Dominium', p:180000, m2:150, img:'di-italia-indaiatuba/images/hero.jpg',
+  { n:'Jardim Di Italia', c:'Dominium', p:188000, m2:150, img:'di-italia-indaiatuba/images/hero.jpg',
     s:'Loteamento aberto · infraestrutura concluída', t:'Loteamento', slug:'di-italia-indaiatuba' },
   { n:'Terras de San Marino', c:'Dominium', p:247500, m2:150, img:'images/hero.jpg',
     s:'546 lotes · 16.164 m² de lazer resort', t:'Cond. fechado', slug:'terras-de-san-marino-indaiatuba' },
@@ -43,7 +43,7 @@ const LOTES = [
     s:'250 a 456 m² · portaria 24h · 3 quadras', t:'Cond. fechado', slug:'reserva-botanica-indaiatuba' },
   { n:'Alpnach Residence', c:'Dominium', p:480000, m2:300, img:'alpnach-indaiatuba/images/hero.jpg',
     s:'322 lotes · piscina coberta · mini mercado 24h', t:'Cond. fechado', slug:'alpnach-indaiatuba' },
-  { n:'Residencial Ravello', c:'Dominium', p:714000, m2:420, img:'residencial-ravello-indaiatuba/images/hero.jpg',
+  { n:'Residencial Ravello', c:'Dominium', p:672000, m2:420, img:'residencial-ravello-indaiatuba/images/hero.jpg',
     s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', slug:'residencial-ravello-indaiatuba' },
 ];
 
