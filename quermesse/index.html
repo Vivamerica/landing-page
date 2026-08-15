@@ -37,6 +37,11 @@
   .faixas i{color:var(--gold);font-style:normal}
   .faixas-nota{text-align:center;font-size:.76rem;color:var(--gray);margin-bottom:30px}
 
+  .tabela{display:flex;gap:10px;margin-bottom:10px}
+  .tabela .fx{flex:1;background:#141416;border:1px solid var(--border);border-radius:12px;
+    padding:14px 8px 12px;text-align:center}
+  .tabela .fx b{display:block;font-size:1.16rem;font-weight:900;color:var(--gold);letter-spacing:-.01em}
+  .tabela .fx span{display:block;font-size:.7rem;color:var(--gray);margin-top:5px;line-height:1.4}
   .card{background:var(--ink2);border:1px solid var(--border);border-radius:16px;padding:26px 22px 24px}
   .card h2{font-size:1.06rem;font-weight:700;margin-bottom:4px}
   .card .sub{font-size:.84rem;color:var(--gray);margin-bottom:20px}
@@ -91,8 +96,12 @@
   <p class="valor"><small>R$</small>3.000</p>
   <h1 class="sub">de desconto no seu imóvel</h1>
 
-  <p class="faixas">R$ 1.000 <i>◆</i> R$ 2.000 <i>◆</i> R$ 3.000</p>
-  <p class="faixas-nota">O valor do seu cupom depende da faixa do imóvel escolhido</p>
+  <div class="tabela">
+    <div class="fx"><b>R$ 1.000</b><span>imóvel até<br>R$ 300 mil</span></div>
+    <div class="fx"><b>R$ 2.000</b><span>de R$ 300 mil<br>a R$ 600 mil</span></div>
+    <div class="fx"><b>R$ 3.000</b><span>acima de<br>R$ 600 mil</span></div>
+  </div>
+  <p class="faixas-nota">O valor do cupom segue o preço do imóvel escolhido</p>
 
   <div class="card">
     <h2>Cadastro rápido</h2>
@@ -150,7 +159,11 @@
     <summary>Como funciona o cupom</summary>
     <ol>
       <li>Os <strong>20 primeiros</strong> cadastros feitos nesta página durante a quermesse recebem o cupom — por ordem de chegada. Não é sorteio e não depende de sorte.</li>
-      <li>O valor do desconto varia conforme a faixa do imóvel: <strong>R$ 1.000</strong>, <strong>R$ 2.000</strong> ou <strong>R$ 3.000</strong>. A faixa aplicável é informada no atendimento.</li>
+      <li>O valor do cupom segue o preço do imóvel escolhido:
+        <strong>R$ 1.000</strong> para imóveis de até R$ 300 mil,
+        <strong>R$ 2.000</strong> de R$ 300 mil a R$ 600 mil e
+        <strong>R$ 3.000</strong> acima de R$ 600 mil.
+        Nos empreendimentos sem preço publicado, vale o valor da unidade efetivamente negociada.</li>
       <li>O cupom é pessoal e intransferível, válido para uma única compra intermediada pela Imobiliária Viv'América.</li>
       <li>O desconto incide sobre a parcela de intermediação imobiliária e é aplicado no fechamento do negócio.</li>
       <li>Não é cumulativo com outras campanhas e não pode ser convertido em dinheiro.</li>
@@ -195,6 +208,25 @@
 // mascara de telefone
 (function(){
   var t = document.getElementById('whatsapp');
+  function normalizaTel(bruto){
+    var v = String(bruto || '').replace(/\D/g,'');
+    if (v.length > 11 && v.slice(0,2) === '55') v = v.slice(2);   // veio com o +55 do pais
+    if (v.length > 11 && v.charAt(0) === '0')   v = v.slice(1);   // veio com o 0 de operadora
+    v = v.slice(0,11);
+    if (v.length > 10)     v = '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
+    else if (v.length > 6) v = '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);
+    else if (v.length > 2) v = '('+v.slice(0,2)+') '+v.slice(2);
+    else if (v.length > 0) v = '('+v;
+    return v;
+  }
+  function aplicaTel(){
+    t.value = normalizaTel(t.value);
+    var d = t.value.replace(/\D/g,'');
+    t.setCustomValidity(d.length >= 10 ? '' : 'Digite o DDD e o número completo.');
+  }
+  // autofill do navegador nem sempre dispara 'input'
+  t.addEventListener('change', aplicaTel);
+  t.addEventListener('blur', aplicaTel);
   t.addEventListener('input', function(){
     var v = t.value.replace(/\D/g,'');
     if (v.length > 11 && v.slice(0,2) === '55') v = v.slice(2);   // digitou com o +55 do pais
@@ -211,6 +243,7 @@
   // evita duplo envio
   var f = document.querySelector('form');
   f.addEventListener('submit', function(){
+    aplicaTel();   // autofill pode ter driblado os eventos
     var b = f.querySelector('button');
     b.disabled = true; b.textContent = 'Enviando…';
   });
