@@ -1403,12 +1403,17 @@
   // mascara de telefone
   var tel = document.getElementById('qm-wa');
   tel.addEventListener('input', function(){
-    var v = tel.value.replace(/\D/g,'').slice(0,11);
+    var v = tel.value.replace(/\D/g,'');
+    if (v.length > 11 && v.slice(0,2) === '55') v = v.slice(2);   // digitou com o +55 do pais
+    if (v.length > 11 && v.charAt(0) === '0')   v = v.slice(1);   // digitou o 0 de operadora
+    v = v.slice(0,11);
     if (v.length > 10)     v = '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
     else if (v.length > 6) v = '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);
     else if (v.length > 2) v = '('+v.slice(0,2)+') '+v.slice(2);
     else if (v.length > 0) v = '('+v;
     tel.value = v;
+    var dig = v.replace(/D/g,'');
+    tel.setCustomValidity(dig.length >= 10 ? '' : 'Digite o DDD e o numero completo.');
   });
 
   var form = modal.querySelector('form');
