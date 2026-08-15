@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  @page{size:214mm 152mm;margin:0}
+  html,body{width:214mm;height:152mm}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  /* folha inteira COM sangria; o corte cai 2mm para dentro */
+  .folha{width:214mm;height:152mm;display:flex;position:relative;overflow:hidden}
+  .painel{width:107mm;height:152mm;position:relative;overflow:hidden}
+
+  /* área segura: 2mm de sangria + 5mm de respiro = 7mm da borda física */
+  .seg{position:absolute;top:7mm;bottom:7mm;left:7mm;right:7mm;display:flex;flex-direction:column}
+  .painel.esq .seg{right:6mm}   /* lado da dobra respira um pouco menos */
+  .painel.dir .seg{left:6mm}
+
+  .navy{background:#0f1c29;color:#fff}
+  .creme{background:#fbfaf6}
+
+  /* ── capa (p1) ── */
+  .capa-hero{position:absolute;inset:0;background:url('aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg') center/cover}
+  .capa-hero::after{content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(15,28,41,.62) 0%,rgba(15,28,41,.28) 38%,rgba(15,28,41,.94) 78%,#0f1c29 100%)}
+  .capa-cont{z-index:2;display:flex;flex-direction:column}
+  .marca{font-size:6.4pt;letter-spacing:.4em;text-transform:uppercase;color:#c9a84c;font-weight:700}
+  .marca b{display:block;font-size:12.5pt;letter-spacing:1.2pt;color:#fff;font-weight:800;margin-top:1.2mm}
+  .capa-tit{margin-top:auto}
+  .capa-tit h1{font-size:26pt;line-height:.97;font-weight:800;letter-spacing:-.6pt}
+  .capa-tit h1 em{font-style:normal;color:#c9a84c;display:block}
+  .capa-sub{font-size:7.6pt;line-height:1.55;opacity:.9;margin-top:3.4mm}
+  .capa-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm;
+    border-top:.7pt solid rgba(201,168,76,.35);margin-top:5mm;padding-top:3.6mm}
+  .capa-nums strong{display:block;font-size:13pt;color:#c9a84c;font-weight:800;line-height:1}
+  .capa-nums span{display:block;font-size:5.2pt;letter-spacing:.09em;text-transform:uppercase;opacity:.7;margin-top:1mm}
+
+  /* ── contracapa (p4) ── */
+  .cc{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .cc-marca{font-size:6.2pt;letter-spacing:.4em;text-transform:uppercase;color:#c9a84c;font-weight:700}
+  .cc-marca b{display:block;font-size:15pt;letter-spacing:1.4pt;color:#fff;font-weight:800;margin-top:1.4mm}
+  .cc-fio{width:14mm;height:.7pt;background:rgba(201,168,76,.5);margin:4.5mm 0}
+  .cc-cham{font-size:9.2pt;line-height:1.5;font-weight:600;max-width:78mm}
+  .cc-cham em{font-style:normal;color:#c9a84c}
+  .cc-qr{width:33mm;height:33mm;background:#fff;padding:2mm;border-radius:2mm;margin:5mm 0 2.6mm}
+  .cc-qr svg{display:block;width:100%;height:100%}
+  .cc-qrleg{font-size:5.4pt;letter-spacing:.16em;text-transform:uppercase;color:#c9a84c;font-weight:700}
+  .cc-site{font-size:7.2pt;opacity:.82;margin-top:1.6mm;word-break:break-all}
+  .cc-pe{margin-top:auto;width:100%;border-top:.7pt solid rgba(255,255,255,.14);padding-top:4mm}
+  .cc-tel{font-size:14pt;font-weight:800;color:#c9a84c;letter-spacing:-.3pt}
+  .cc-end{font-size:6.6pt;line-height:1.65;opacity:.72;margin-top:1.6mm}
+
+  /* ── miolo (p2 e p3) ── */
+  .hd{border-bottom:1.1pt solid #0f1c29;padding-bottom:2.2mm;margin-bottom:3.2mm}
+  .hd h2{font-size:12.5pt;font-weight:800;letter-spacing:-.3pt;line-height:1}
+  .hd h2 span{color:#c9a84c}
+  .hd p{font-size:5.9pt;color:#7a7365;font-weight:600;letter-spacing:.05em;margin-top:1.3mm;text-transform:uppercase}
+
+  .lista{display:flex;flex-direction:column;flex:1}
+  .it{display:flex;align-items:baseline;gap:2mm;padding:1.55mm 0;border-bottom:.5pt dotted #ddd6c4}
+  .it:last-child{border-bottom:none}
+  .it .txt{flex:1;min-width:0}
+  .it .n{font-size:7.5pt;font-weight:700;line-height:1.12;letter-spacing:-.15pt}
+  .it .c{font-size:5.5pt;color:#8d8676;text-transform:uppercase;letter-spacing:.07em;margin-top:.5mm}
+  .it .p{font-size:7.6pt;font-weight:800;color:#0f1c29;white-space:nowrap;text-align:right;line-height:1.1}
+  .it .p small{display:block;font-size:4.9pt;font-weight:600;color:#a09781;text-transform:uppercase;
+    letter-spacing:.07em;margin-bottom:.3mm}
+  .it .p .sc{font-size:6.4pt;color:#8d8676;font-weight:700}
+
+  .nota{margin-top:auto;border-top:.7pt solid #e3ddcd;padding-top:2.4mm;
+    font-size:5.4pt;color:#8d8676;line-height:1.5}
+  .nota b{color:#0f1c29}
+
+  .faixa{background:#0f1c29;color:#fff;border-radius:1.8mm;padding:2.8mm 3mm;margin-bottom:3mm}
+  .faixa strong{display:block;font-size:7.4pt;font-weight:800;color:#c9a84c;letter-spacing:.04em}
+  .faixa span{display:block;font-size:5.8pt;line-height:1.5;opacity:.88;margin-top:1mm}
+</style></head>
+<body><div class="folha">
+<div class="painel esq navy">
+  <div class="seg">
+    <div class="cc">
+      <div class="cc-marca">Imobiliária<b>VIV'AMÉRICA</b></div>
+      <div class="cc-fio"></div>
+      <p class="cc-cham">Escolha pelo <em>bairro</em>, pela <em>planta</em> ou pelo <em>valor da parcela</em> — e fale com quem conhece Indaiatuba.</p>
+      <div class="cc-qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49 49" width="100%" height="100%" shape-rendering="crispEdges">
+<rect width="49" height="49" fill="#FFFFFF"/>
+<path d="M4 4h7v1h-7zM12 4h1v1h-1zM16 4h2v1h-2zM19 4h1v1h-1zM22 4h1v1h-1zM25 4h1v1h-1zM28 4h2v1h-2zM31 4h1v1h-1zM34 4h2v1h-2zM38 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h2v1h-2zM17 5h1v1h-1zM19 5h4v1h-4zM24 5h2v1h-2zM28 5h6v1h-6zM38 5h1v1h-1zM44 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM14 6h1v1h-1zM16 6h7v1h-7zM27 6h1v1h-1zM29 6h1v1h-1zM31 6h3v1h-3zM35 6h2v1h-2zM38 6h1v1h-1zM40 6h3v1h-3zM44 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h1v1h-1zM15 7h1v1h-1zM22 7h1v1h-1zM26 7h1v1h-1zM28 7h4v1h-4zM33 7h1v1h-1zM36 7h1v1h-1zM38 7h1v1h-1zM40 7h3v1h-3zM44 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM19 8h1v1h-1zM21 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM30 8h4v1h-4zM38 8h1v1h-1zM40 8h3v1h-3zM44 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h3v1h-3zM17 9h5v1h-5zM25 9h2v1h-2zM28 9h1v1h-1zM30 9h2v1h-2zM34 9h2v1h-2zM38 9h1v1h-1zM44 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM38 10h7v1h-7zM13 11h1v1h-1zM19 11h1v1h-1zM23 11h2v1h-2zM27 11h4v1h-4zM33 11h1v1h-1zM35 11h2v1h-2zM7 12h1v1h-1zM10 12h1v1h-1zM13 12h3v1h-3zM19 12h2v1h-2zM23 12h1v1h-1zM26 12h2v1h-2zM29 12h1v1h-1zM32 12h1v1h-1zM35 12h1v1h-1zM39 12h3v1h-3zM43 12h2v1h-2zM4 13h1v1h-1zM7 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM16 13h4v1h-4zM21 13h2v1h-2zM25 13h4v1h-4zM30 13h1v1h-1zM32 13h2v1h-2zM36 13h3v1h-3zM41 13h3v1h-3zM5 14h8v1h-8zM15 14h2v1h-2zM18 14h4v1h-4zM23 14h2v1h-2zM28 14h2v1h-2zM32 14h2v1h-2zM35 14h1v1h-1zM41 14h2v1h-2zM4 15h1v1h-1zM6 15h3v1h-3zM12 15h3v1h-3zM21 15h1v1h-1zM26 15h6v1h-6zM42 15h1v1h-1zM44 15h1v1h-1zM4 16h1v1h-1zM7 16h1v1h-1zM10 16h1v1h-1zM13 16h1v1h-1zM15 16h3v1h-3zM19 16h1v1h-1zM21 16h2v1h-2zM25 16h1v1h-1zM27 16h1v1h-1zM33 16h1v1h-1zM35 16h2v1h-2zM38 16h1v1h-1zM41 16h1v1h-1zM43 16h1v1h-1zM4 17h3v1h-3zM8 17h1v1h-1zM13 17h1v1h-1zM15 17h2v1h-2zM18 17h2v1h-2zM22 17h1v1h-1zM24 17h1v1h-1zM29 17h1v1h-1zM31 17h3v1h-3zM36 17h1v1h-1zM38 17h2v1h-2zM41 17h3v1h-3zM6 18h1v1h-1zM9 18h2v1h-2zM13 18h2v1h-2zM16 18h1v1h-1zM19 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM34 18h2v1h-2zM38 18h1v1h-1zM42 18h3v1h-3zM4 19h6v1h-6zM17 19h1v1h-1zM19 19h1v1h-1zM21 19h1v1h-1zM24 19h4v1h-4zM29 19h3v1h-3zM33 19h2v1h-2zM36 19h1v1h-1zM38 19h2v1h-2zM43 19h2v1h-2zM6 20h1v1h-1zM8 20h1v1h-1zM10 20h1v1h-1zM12 20h1v1h-1zM16 20h2v1h-2zM19 20h1v1h-1zM21 20h1v1h-1zM24 20h1v1h-1zM28 20h3v1h-3zM33 20h1v1h-1zM36 20h1v1h-1zM39 20h1v1h-1zM43 20h1v1h-1zM5 21h1v1h-1zM7 21h2v1h-2zM13 21h1v1h-1zM16 21h1v1h-1zM20 21h5v1h-5zM32 21h2v1h-2zM36 21h1v1h-1zM38 21h2v1h-2zM41 21h4v1h-4zM5 22h3v1h-3zM10 22h1v1h-1zM12 22h5v1h-5zM21 22h3v1h-3zM27 22h1v1h-1zM29 22h2v1h-2zM32 22h2v1h-2zM37 22h1v1h-1zM40 22h5v1h-5zM4 23h3v1h-3zM9 23h1v1h-1zM11 23h2v1h-2zM14 23h1v1h-1zM16 23h1v1h-1zM18 23h4v1h-4zM23 23h3v1h-3zM27 23h1v1h-1zM30 23h1v1h-1zM37 23h1v1h-1zM39 23h1v1h-1zM41 23h1v1h-1zM44 23h1v1h-1zM4 24h2v1h-2zM8 24h1v1h-1zM10 24h2v1h-2zM14 24h2v1h-2zM17 24h1v1h-1zM22 24h5v1h-5zM28 24h4v1h-4zM33 24h1v1h-1zM37 24h4v1h-4zM42 24h3v1h-3zM4 25h1v1h-1zM6 25h2v1h-2zM18 25h4v1h-4zM23 25h1v1h-1zM29 25h2v1h-2zM32 25h2v1h-2zM36 25h3v1h-3zM40 25h1v1h-1zM42 25h3v1h-3zM4 26h2v1h-2zM7 26h1v1h-1zM10 26h2v1h-2zM13 26h1v1h-1zM16 26h2v1h-2zM20 26h1v1h-1zM23 26h1v1h-1zM32 26h1v1h-1zM34 26h2v1h-2zM38 26h1v1h-1zM41 26h1v1h-1zM43 26h1v1h-1zM6 27h1v1h-1zM8 27h2v1h-2zM14 27h2v1h-2zM17 27h1v1h-1zM21 27h1v1h-1zM24 27h1v1h-1zM26 27h3v1h-3zM30 27h1v1h-1zM34 27h2v1h-2zM39 27h2v1h-2zM5 28h1v1h-1zM8 28h3v1h-3zM12 28h2v1h-2zM15 28h3v1h-3zM21 28h1v1h-1zM24 28h5v1h-5zM30 28h1v1h-1zM32 28h2v1h-2zM35 28h5v1h-5zM42 28h2v1h-2zM4 29h4v1h-4zM9 29h1v1h-1zM12 29h1v1h-1zM15 29h1v1h-1zM18 29h3v1h-3zM23 29h2v1h-2zM27 29h4v1h-4zM33 29h1v1h-1zM35 29h1v1h-1zM37 29h1v1h-1zM41 29h1v1h-1zM43 29h1v1h-1zM6 30h2v1h-2zM10 30h2v1h-2zM13 30h1v1h-1zM15 30h2v1h-2zM21 30h1v1h-1zM23 30h2v1h-2zM33 30h1v1h-1zM36 30h2v1h-2zM40 30h1v1h-1zM44 30h1v1h-1zM7 31h3v1h-3zM11 31h1v1h-1zM13 31h3v1h-3zM18 31h1v1h-1zM20 31h1v1h-1zM22 31h5v1h-5zM30 31h1v1h-1zM33 31h2v1h-2zM36 31h3v1h-3zM43 31h2v1h-2zM4 32h5v1h-5zM10 32h1v1h-1zM14 32h1v1h-1zM16 32h2v1h-2zM19 32h1v1h-1zM24 32h2v1h-2zM33 32h1v1h-1zM37 32h3v1h-3zM5 33h1v1h-1zM9 33h1v1h-1zM13 33h1v1h-1zM15 33h2v1h-2zM18 33h2v1h-2zM21 33h2v1h-2zM24 33h1v1h-1zM28 33h1v1h-1zM30 33h4v1h-4zM35 33h3v1h-3zM39 33h1v1h-1zM42 33h1v1h-1zM44 33h1v1h-1zM4 34h1v1h-1zM6 34h1v1h-1zM8 34h1v1h-1zM10 34h1v1h-1zM14 34h2v1h-2zM18 34h1v1h-1zM21 34h1v1h-1zM24 34h5v1h-5zM30 34h4v1h-4zM39 34h1v1h-1zM42 34h3v1h-3zM6 35h1v1h-1zM9 35h1v1h-1zM15 35h1v1h-1zM19 35h3v1h-3zM24 35h1v1h-1zM26 35h2v1h-2zM30 35h1v1h-1zM33 35h2v1h-2zM37 35h1v1h-1zM40 35h2v1h-2zM44 35h1v1h-1zM4 36h1v1h-1zM6 36h2v1h-2zM10 36h1v1h-1zM13 36h3v1h-3zM17 36h5v1h-5zM25 36h1v1h-1zM29 36h1v1h-1zM31 36h2v1h-2zM36 36h5v1h-5zM42 36h1v1h-1zM12 37h2v1h-2zM16 37h2v1h-2zM21 37h3v1h-3zM25 37h1v1h-1zM28 37h3v1h-3zM33 37h1v1h-1zM35 37h2v1h-2zM40 37h1v1h-1zM42 37h3v1h-3zM4 38h7v1h-7zM13 38h1v1h-1zM16 38h1v1h-1zM19 38h1v1h-1zM22 38h3v1h-3zM29 38h2v1h-2zM32 38h1v1h-1zM34 38h1v1h-1zM36 38h1v1h-1zM38 38h1v1h-1zM40 38h1v1h-1zM42 38h2v1h-2zM4 39h1v1h-1zM10 39h1v1h-1zM13 39h1v1h-1zM15 39h2v1h-2zM19 39h1v1h-1zM22 39h1v1h-1zM24 39h1v1h-1zM26 39h1v1h-1zM31 39h2v1h-2zM34 39h1v1h-1zM36 39h1v1h-1zM40 39h1v1h-1zM42 39h1v1h-1zM4 40h1v1h-1zM6 40h3v1h-3zM10 40h1v1h-1zM13 40h2v1h-2zM16 40h1v1h-1zM20 40h2v1h-2zM23 40h3v1h-3zM27 40h5v1h-5zM34 40h1v1h-1zM36 40h5v1h-5zM43 40h1v1h-1zM4 41h1v1h-1zM6 41h3v1h-3zM10 41h1v1h-1zM12 41h1v1h-1zM17 41h4v1h-4zM22 41h2v1h-2zM25 41h3v1h-3zM34 41h5v1h-5zM40 41h1v1h-1zM43 41h1v1h-1zM4 42h1v1h-1zM6 42h3v1h-3zM10 42h1v1h-1zM13 42h3v1h-3zM17 42h1v1h-1zM20 42h2v1h-2zM23 42h4v1h-4zM28 42h1v1h-1zM40 42h2v1h-2zM44 42h1v1h-1zM4 43h1v1h-1zM10 43h1v1h-1zM13 43h1v1h-1zM15 43h2v1h-2zM18 43h2v1h-2zM22 43h4v1h-4zM27 43h1v1h-1zM29 43h1v1h-1zM31 43h1v1h-1zM33 43h1v1h-1zM35 43h5v1h-5zM41 43h1v1h-1zM43 43h1v1h-1zM4 44h7v1h-7zM13 44h1v1h-1zM15 44h4v1h-4zM20 44h7v1h-7zM31 44h1v1h-1zM33 44h1v1h-1zM36 44h2v1h-2zM39 44h2v1h-2zM42 44h2v1h-2z" fill="#000000"/>
+</svg></div>
+      <div class="cc-qrleg">Aponte a câmera</div>
+      <div class="cc-site">lancamentos.imoveisvivamerica.com.br</div>
+      <div class="cc-pe">
+        <div class="cc-tel">(19) 98976-9457</div>
+        <div class="cc-end">Atendimento também por WhatsApp<br>Indaiatuba · São Paulo</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="painel dir navy">
+  <div class="capa-hero"></div>
+  <div class="capa-cont seg">
+    <div class="marca">Imobiliária<b>VIV'AMÉRICA</b></div>
+    <div class="capa-tit">
+      <h1>Lançamentos<em>Indaiatuba</em></h1>
+      <p class="capa-sub">Os 20 empreendimentos que estão saindo do papel na cidade — apartamentos, loteamentos e condomínios fechados, reunidos em um só lugar.</p>
+      <div class="capa-nums">
+        <div><strong>20</strong><span>Empreendimentos</span></div>
+        <div><strong>6</strong><span>Construtoras</span></div>
+        <div><strong>145<small style="font-size:.62em"> mil</small></strong><span>A partir de R$</span></div>
+      </div>
+    </div>
+  </div>
+</div></div></body></html>
