@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, follow">
 <title>Cupom de até R$ 3.000 de desconto no seu imóvel | Imobiliária Viv'América</title>
-<meta name="description" content="Os 100 primeiros cadastros garantem cupom de até R$ 3.000 de desconto na compra do seu imóvel com a Imobiliária Viv'América, patrocinadora oficial da quermesse.">
+<meta name="description" content="Os 20 primeiros cadastros garantem cupom de até R$ 3.000 de desconto na compra do seu imóvel com a Imobiliária Viv'América, patrocinadora oficial da quermesse.">
 <meta property="og:title" content="Garanta até R$ 3.000 de desconto no seu imóvel">
-<meta property="og:description" content="Cadastro rápido. Os 100 primeiros garantem o cupom. Imobiliária Viv'América, patrocinadora oficial.">
+<meta property="og:description" content="Cadastro rápido. Os 20 primeiros garantem o cupom. Imobiliária Viv'América, patrocinadora oficial.">
 <meta property="og:image" content="https://lancamentos.imoveisvivamerica.com.br/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg">
 <meta property="og:url" content="https://lancamentos.imoveisvivamerica.com.br/quermesse/">
 <meta property="og:locale" content="pt_BR">
@@ -96,7 +96,7 @@
 
   <div class="card">
     <h2>Cadastro rápido</h2>
-    <p class="sub">Os <strong style="color:#E8B84B">100 primeiros</strong> cadastros garantem o cupom. Leva 20 segundos.</p>
+    <p class="sub">Os <strong style="color:#E8B84B">20 primeiros</strong> cadastros garantem o cupom. Leva 20 segundos.</p>
 
     <form name="cupom-quermesse" method="POST" data-netlify="true" netlify-honeypot="empresa" action="/quermesse/obrigado/">
       <input type="hidden" name="form-name" value="cupom-quermesse">
@@ -134,10 +134,22 @@
     </form>
   </div>
 
+
+  <div class="card" id="qm-esgotado" style="display:none;text-align:center">
+    <h2 style="font-size:1.3rem;margin-bottom:10px">Os cupons desta rodada acabaram</h2>
+    <p class="sub" style="margin-bottom:22px">Foram 20 e saíram rápido. Mas nem tudo está perdido:
+      fale com a gente que a equipe verifica se ainda dá para encaixar você
+      — e avisamos primeiro se abrirmos uma nova rodada.</p>
+    <a href="https://wa.me/5519989769457?text=Vim%20da%20quermesse%20e%20os%20cupons%20acabaram.%20Ainda%20d%C3%A1%20para%20conseguir%3F"
+       style="display:block;background:var(--gold);color:var(--ink);border-radius:10px;padding:17px;
+              font-size:1.02rem;font-weight:800;text-decoration:none">Falar no WhatsApp</a>
+    <p class="seguro" style="margin-top:15px">Ou <a href="/" style="color:var(--gold)">veja os 20 lançamentos</a> enquanto isso.</p>
+  </div>
+
   <details class="regras">
     <summary>Como funciona o cupom</summary>
     <ol>
-      <li>Os <strong>100 primeiros</strong> cadastros feitos nesta página durante a quermesse recebem o cupom — por ordem de chegada. Não é sorteio e não depende de sorte.</li>
+      <li>Os <strong>20 primeiros</strong> cadastros feitos nesta página durante a quermesse recebem o cupom — por ordem de chegada. Não é sorteio e não depende de sorte.</li>
       <li>O valor do desconto varia conforme a faixa do imóvel: <strong>R$ 1.000</strong>, <strong>R$ 2.000</strong> ou <strong>R$ 3.000</strong>. A faixa aplicável é informada no atendimento.</li>
       <li>O cupom é pessoal e intransferível, válido para uma única compra intermediada pela Imobiliária Viv'América.</li>
       <li>O desconto incide sobre a parcela de intermediação imobiliária e é aplicado no fechamento do negócio.</li>
@@ -158,6 +170,28 @@
 </div>
 
 <script>
+
+// contador: fecha o formulario quando os cupons acabarem
+(function(){
+  var form = document.querySelector('.card'), fim = document.getElementById('qm-esgotado');
+  if (!form || !fim) return;
+  fetch('/api/vagas', {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (!d) return;                                   // sem resposta: mantem o formulario
+      if (d.restantes === null) return;                 // sem contagem: mantem o formulario
+      if (d.restantes > 0) {
+        var s = document.querySelector('.card .sub');
+        if (s) s.innerHTML = 'Restam <strong style="color:#E8B84B">' + d.restantes +
+                             '</strong> dos ' + d.limite + ' cupons. Leva 20 segundos.';
+        return;
+      }
+      form.style.display = 'none';
+      fim.style.display = '';
+    })
+    .catch(function(){});   // erro de rede nunca tira o formulario do ar
+})();
+
 // mascara de telefone
 (function(){
   var t = document.getElementById('whatsapp');
