@@ -4,9 +4,9 @@ const OUT = 'C:/Users/Usuario/Desktop/landing-page/folheto-lancamentos.html';
 const APTOS = [
   { n:'Uni Residencial', c:'Masotti', p:279990, img:'uni-residencial-indaiatuba/images/hero.jpg',
     s:'2 dorm c/ suíte · sacada · vaga coberta', t:'MCMV · FGTS', slug:'uni-residencial-indaiatuba' },
-  { n:'Gran Vic Tangará', c:'VIC Engenharia', p:302464, img:'gran-vic-tangara-indaiatuba/images/hero.jpg',
+  { n:'Gran Vic Tangará', c:'VIC Engenharia', p:331737, img:'gran-vic-tangara-indaiatuba/images/hero.jpg',
     s:'2 dorm · 47,22 m² · varanda · 16 itens lazer', t:'MCMV · FGTS', slug:'gran-vic-tangara-indaiatuba' },
-  { n:'Gran Vic Colibri', c:'VIC Engenharia', p:340162, img:'gran-vic-colibri-indaiatuba/images/hero.jpg',
+  { n:'Gran Vic Colibri', c:'VIC Engenharia', p:332450, img:'gran-vic-colibri-indaiatuba/images/hero.jpg',
     s:'2 dorm c/ suíte · 51,42 m² · 15 itens lazer', t:'MCMV · FGTS', slug:'gran-vic-colibri-indaiatuba' },
   { n:'Aurora — Park Meraki', c:'Masotti', p:758850, img:'aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg',
     s:'101 a 152 m² · 4 torres · 32 áreas de lazer', t:'Alto padrão', slug:'aurora-indaiatuba' },
