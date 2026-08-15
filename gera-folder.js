@@ -5,19 +5,18 @@
      aberto  210 × 148 mm (A5 deitado)
      sangria 2 mm por lado  →  arquivo final 214 × 152 mm
      dobrado 105 × 148 mm (A6)
-   Imposição pedida:
-     FRENTE = página 4 (esquerda) | página 1 (direita)
-     VERSO  = página 2 (esquerda) | página 3 (direita)
-   Ao dobrar ao meio, a página 1 fica sendo a capa.
+   Imposição:
+     FRENTE = página 4 (contracapa) | página 1 (capa)
+     VERSO  = página 2 (apartamentos) | página 3 (lotes)
 
-   Os dados vêm do gera-folheto.js — fonte única, para o impresso nunca
-   divergir do site.
+   Mantém o MESMO desenho de card do folheto A4 aprovado — foto no topo,
+   selo de tipo, construtora, nome, specs e preço — apenas reduzido para
+   o painel A6. Dados e estilos vêm do gera-folheto.js: fonte única.
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
 const R = __dirname + '/';
 
-// ─── dados: extraídos do gerador do folheto A4 ───
 const fonte = fs.readFileSync(R + 'gera-folheto.js', 'utf8');
 function extrair(nome) {
   const ini = fonte.indexOf('const ' + nome + ' = [');
@@ -31,9 +30,14 @@ const LOTES = extrair('LOTES');
 const brl = n => n.toLocaleString('pt-BR');
 const qr = fs.readFileSync(R + 'qrcode/qr-vivamerica-branco.svg', 'utf8')
   .replace(/width="\d+" height="\d+"/, 'width="100%" height="100%"');
-
-// hero da capa: usa a imagem do Aurora, a mesma do folheto A4
 const HERO = 'aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg';
+
+// mesma regra de cor de selo do folheto A4
+const tipoClasse = t =>
+  /MCMV/i.test(t)          ? 'b-mcmv' :
+  /Alto Padrão/i.test(t)   ? 'b-alto' :
+  /Pré|Breve/i.test(t)     ? 'b-pre'  :
+  /Cond/i.test(t)          ? 'b-cond' : 'b-lote';
 
 const CSS = `
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -42,15 +46,12 @@ const CSS = `
   body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;
     -webkit-print-color-adjust:exact;print-color-adjust:exact}
 
-  /* folha inteira COM sangria; o corte cai 2mm para dentro */
   .folha{width:214mm;height:152mm;display:flex;position:relative;overflow:hidden}
   .painel{width:107mm;height:152mm;position:relative;overflow:hidden}
-
-  /* área segura: 2mm de sangria + 5mm de respiro = 7mm da borda física */
+  /* 2mm de sangria + 5mm de respiro = 7mm da borda física */
   .seg{position:absolute;top:7mm;bottom:7mm;left:7mm;right:7mm;display:flex;flex-direction:column}
-  .painel.esq .seg{right:6mm}   /* lado da dobra respira um pouco menos */
+  .painel.esq .seg{right:6mm}
   .painel.dir .seg{left:6mm}
-
   .navy{background:#0f1c29;color:#fff}
   .creme{background:#fbfaf6}
 
@@ -85,42 +86,60 @@ const CSS = `
   .cc-tel{font-size:14pt;font-weight:800;color:#c9a84c;letter-spacing:-.3pt}
   .cc-end{font-size:6.6pt;line-height:1.65;opacity:.72;margin-top:1.6mm}
 
-  /* ── miolo (p2 e p3) ── */
-  .hd{border-bottom:1.1pt solid #0f1c29;padding-bottom:2.2mm;margin-bottom:3.2mm}
-  .hd h2{font-size:12.5pt;font-weight:800;letter-spacing:-.3pt;line-height:1}
+  /* ── miolo: MESMO card do A4, reduzido ── */
+  .hd{display:flex;justify-content:space-between;align-items:baseline;
+      border-bottom:1.1pt solid #0f1c29;padding-bottom:1.8mm;margin-bottom:2.6mm}
+  .hd h2{font-size:11pt;font-weight:800;letter-spacing:-.3pt;line-height:1}
   .hd h2 span{color:#c9a84c}
-  .hd p{font-size:5.9pt;color:#7a7365;font-weight:600;letter-spacing:.05em;margin-top:1.3mm;text-transform:uppercase}
+  .hd .cnt{font-size:5.2pt;color:#7a7365;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 
-  .lista{display:flex;flex-direction:column;flex:1}
-  .it{display:flex;align-items:baseline;gap:2mm;padding:1.55mm 0;border-bottom:.5pt dotted #ddd6c4}
-  .it:last-child{border-bottom:none}
-  .it .txt{flex:1;min-width:0}
-  .it .n{font-size:7.5pt;font-weight:700;line-height:1.12;letter-spacing:-.15pt}
-  .it .c{font-size:5.5pt;color:#8d8676;text-transform:uppercase;letter-spacing:.07em;margin-top:.5mm}
-  .it .p{font-size:7.6pt;font-weight:800;color:#0f1c29;white-space:nowrap;text-align:right;line-height:1.1}
-  .it .p small{display:block;font-size:4.9pt;font-weight:600;color:#a09781;text-transform:uppercase;
-    letter-spacing:.07em;margin-bottom:.3mm}
-  .it .p .sc{font-size:6.4pt;color:#8d8676;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.9mm;flex:1;min-height:0}
+  .card{border:.6pt solid #e3ddcd;border-radius:1.7mm;overflow:hidden;
+        display:flex;flex-direction:column;background:#fff}
+  .card-img{background-size:cover;background-position:center;background-color:#e8e4d8;
+            position:relative;flex-shrink:0}
+  .badge{position:absolute;top:.8mm;left:.8mm;font-size:3.2pt;font-weight:800;letter-spacing:.06em;
+         text-transform:uppercase;padding:.6mm 1.2mm;border-radius:4mm;color:#fff;line-height:1.15}
+  .b-mcmv{background:#1565c0}.b-alto{background:#0c0c0c;color:#c8a44a}.b-pre{background:#a15e2c}
+  .b-lote{background:#d4520a}.b-cond{background:#1a6b4a}
 
-  .nota{margin-top:auto;border-top:.7pt solid #e3ddcd;padding-top:2.4mm;
-    font-size:5.4pt;color:#8d8676;line-height:1.5}
-  .nota b{color:#0f1c29}
+  .card-b{padding:1.1mm 1.5mm 1.2mm;display:flex;flex-direction:column;flex:1}
+  .constr{font-size:3.5pt;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#a8935c}
+  .card-b h3{font-size:5.9pt;font-weight:800;line-height:1.08;margin-top:.35mm;letter-spacing:-.1pt}
+  .specs{font-size:4pt;color:#6b6559;line-height:1.25;margin-top:.5mm;flex:1;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .preco{border-top:.6pt dashed #e3ddcd;padding-top:.7mm;margin-top:auto}
+  .preco span{display:block;font-size:3.4pt;color:#8a8272;text-transform:uppercase;letter-spacing:.08em}
+  .preco strong{display:block;font-size:7.4pt;font-weight:800;color:#1a2b3c;line-height:1.05;margin-top:.2mm}
+  .preco em{display:block;font-style:normal;font-size:3.6pt;color:#8a8272;margin-top:.3mm}
+  .preco-consulte strong{color:#a15e2c;font-size:6.4pt}
 
-  .faixa{background:#0f1c29;color:#fff;border-radius:1.8mm;padding:2.8mm 3mm;margin-bottom:3mm}
-  .faixa strong{display:block;font-size:7.4pt;font-weight:800;color:#c9a84c;letter-spacing:.04em}
-  .faixa span{display:block;font-size:5.8pt;line-height:1.5;opacity:.88;margin-top:1mm}
+  /* apartamentos: 12 cards, foto mais baixa. lotes: 8 cards, foto maior */
+  .g-aptos{grid-template-rows:repeat(6,1fr)} .g-aptos .card-img{height:6mm}
+  .g-lotes{grid-template-rows:repeat(4,1fr)} .g-lotes .card-img{height:11mm}
+
+  .pe{margin-top:2.4mm;border-top:.6pt solid #e3ddcd;padding-top:1.8mm;
+      font-size:4.4pt;color:#8d8676;line-height:1.45}
+  .pe b{color:#0f1c29}
 `;
 
-const item = e => `
-  <div class="it">
-    <div class="txt">
-      <div class="n">${e.n}</div>
-      <div class="c">${e.c}</div>
-    </div>
-    <div class="p">${e.p ? `<small>a partir de</small>R$ ${brl(e.p)}` : `<span class="sc">sob consulta</span>`}</div>
-  </div>`;
+function card(e, isLote) {
+  const preco = e.p
+    ? `<div class="preco"><span>a partir de</span><strong>R$ ${brl(e.p)}</strong>${isLote ? `<em>R$ ${brl(Math.round(e.p / e.m2))}/m² · ${e.m2} m²</em>` : ''}</div>`
+    : `<div class="preco preco-consulte"><span>tabela</span><strong>Sob consulta</strong></div>`;
+  return `
+    <article class="card">
+      <div class="card-img" style="background-image:url('${e.img}')">
+        <span class="badge ${tipoClasse(e.t)}">${e.t}</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">${e.c}</p>
+        <h3>${e.n}</h3>
+        ${isLote ? `<p class="specs">${e.s}</p>` : ''}
+        ${preco}
+      </div>
+    </article>`;
+}
 
-// ─── página 1 — capa ───
 const p1 = `
 <div class="painel dir navy">
   <div class="capa-hero"></div>
@@ -138,7 +157,6 @@ const p1 = `
   </div>
 </div>`;
 
-// ─── página 4 — contracapa ───
 const p4 = `
 <div class="painel esq navy">
   <div class="seg">
@@ -157,33 +175,21 @@ const p4 = `
   </div>
 </div>`;
 
-// ─── página 2 — apartamentos ───
 const p2 = `
 <div class="painel esq creme">
   <div class="seg">
-    <div class="hd">
-      <h2>🏢 <span>Apartamentos</span></h2>
-      <p>${APTOS.length} empreendimentos · do menor ao maior investimento</p>
-    </div>
-    <div class="lista">${APTOS.map(item).join('')}</div>
-    <div class="nota"><b>MCMV Faixa 3:</b> parte dos empreendimentos aceita FGTS como entrada e subsídio do governo. Consulte a renda familiar e simule a parcela com um consultor.</div>
+    <div class="hd"><h2>🏢 <span>Apartamentos</span></h2><span class="cnt">${APTOS.length} · menor ao maior</span></div>
+    <div class="grid g-aptos">${APTOS.map(e => card(e, false)).join('')}</div>
+    <div class="pe"><b>MCMV Faixa 3:</b> parte dos empreendimentos aceita FGTS como entrada e subsídio do governo.</div>
   </div>
 </div>`;
 
-// ─── página 3 — lotes ───
 const p3 = `
 <div class="painel dir creme">
   <div class="seg">
-    <div class="hd">
-      <h2>🏞️ <span>Lotes e Condomínios</span></h2>
-      <p>${LOTES.length} loteamentos · do menor ao maior investimento</p>
-    </div>
-    <div class="faixa">
-      <strong>Construa no seu tempo</strong>
-      <span>Lotes a partir de 150 m², com parcelamento direto e sem juros durante a obra em parte dos empreendimentos.</span>
-    </div>
-    <div class="lista">${LOTES.map(item).join('')}</div>
-    <div class="nota">Imagens ilustrativas. Preços e disponibilidade sujeitos a alteração sem aviso prévio. <b>Edição agosto/2026.</b></div>
+    <div class="hd"><h2>🏞️ <span>Lotes e Condomínios</span></h2><span class="cnt">${LOTES.length} · menor ao maior</span></div>
+    <div class="grid g-lotes">${LOTES.map(e => card(e, true)).join('')}</div>
+    <div class="pe">Imagens ilustrativas. Preços e disponibilidade sujeitos a alteração sem aviso prévio. <b>Edição agosto/2026.</b></div>
   </div>
 </div>`;
 
@@ -192,9 +198,9 @@ const pagina = (a, b) => `<!DOCTYPE html>
 <body><div class="folha">${a}${b}</div></body></html>`;
 
 fs.writeFileSync(R + 'folder-frente.html', pagina(p4, p1), 'utf8');
-fs.writeFileSync(R + 'folder-verso.html',  pagina(p2, p3), 'utf8');
+fs.writeFileSync(R + 'folder-verso.html', pagina(p2, p3), 'utf8');
 
 console.log('Folder gerado — 214 × 152 mm (210 × 148 aberto + 2 mm de sangria)');
-console.log('  folder-frente.html  =  p4 (contracapa)  |  p1 (capa)');
-console.log('  folder-verso.html   =  p2 (' + APTOS.length + ' aptos)  |  p3 (' + LOTES.length + ' lotes)');
-console.log('  total de empreendimentos: ' + (APTOS.length + LOTES.length));
+console.log('  frente = p4 contracapa | p1 capa');
+console.log('  verso  = p2 ' + APTOS.length + ' apartamentos | p3 ' + LOTES.length + ' lotes');
+console.log('  cards de 44 mm em grade 2 colunas, mesmo desenho do folheto A4');
