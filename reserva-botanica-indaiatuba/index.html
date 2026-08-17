@@ -31,6 +31,12 @@
     "description": "Loteamento fechado Zarin em Indaiatuba/SP com portaria 24h, quadras de tênis, beach tennis e poliesportiva. Últimas unidades disponíveis com lotes a partir de 250 m². Registro R.11/132.786 CRI Indaiatuba.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/reserva-botanica-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/reserva-botanica-indaiatuba/images/hero-reserva.jpg",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.052166,
+      "longitude": -47.227642
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=-23.052166,-47.227642",
     "address": {"@type":"PostalAddress","addressLocality":"Indaiatuba","addressRegion":"SP","addressCountry":"BR"},
     "floorSize": {"@type":"QuantitativeValue","minValue":250,"maxValue":456.70,"unitCode":"MTK"},
     "offers": {"@type":"Offer","priceCurrency":"BRL","price":"391682","availability":"https://schema.org/LimitedAvailability","priceSpecification":{"@type":"PriceSpecification","description":"Últimas unidades. Lotes a partir de R$ 391.682 (250m²) com entrada + parcelamento em 36x/60x/120x pela Tabela Price (juros 1%) corrigidos pelo IPCA. Tabela sujeita a alteração sem aviso prévio."}},
@@ -338,6 +344,67 @@
     </div>
   </div>
 </section>
+
+<style>
+/* ─── localização com mapa sob demanda ─── */
+.mapa-sec{padding:3.4rem 0;background:#f7f5ef}
+.mapa-wrap{max-width:1100px;margin:0 auto;padding:0 1.2rem}
+.mapa-wrap h2{font-size:1.75rem;font-weight:800;color:#0f1c29;margin:0 0 .35rem;letter-spacing:-.01em}
+.mapa-end{font-size:.95rem;color:#6b6559;margin:0 0 1.4rem}
+.mapa-box{position:relative;width:100%;aspect-ratio:16/9;max-height:460px;border-radius:14px;
+  overflow:hidden;background:#e8e4d8;border:1px solid #ddd6c4;cursor:pointer}
+.mapa-box iframe{width:100%;height:100%;border:0;display:block}
+.mapa-btn{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
+  background:
+    repeating-linear-gradient(45deg,#efece2 0 14px,#eae6da 14px 28px);
+  font-family:inherit;transition:background .2s}
+.mapa-btn:hover{background:repeating-linear-gradient(45deg,#e9e5d8 0 14px,#e3ded0 14px 28px)}
+.mapa-ic{font-size:2.1rem;line-height:1}
+.mapa-t{font-size:1.05rem;font-weight:800;color:#0f1c29;
+  background:#c9a84c;padding:.7rem 1.6rem;border-radius:8px}
+.mapa-s{font-size:.78rem;color:#7a7365;max-width:30ch;text-align:center;line-height:1.45}
+.mapa-rota{display:inline-block;margin-top:1rem;font-size:.92rem;font-weight:700;
+  color:#0f1c29;text-decoration:none;border-bottom:2px solid #c9a84c;padding-bottom:2px}
+.mapa-rota:hover{color:#c9a84c}
+@media(max-width:640px){.mapa-wrap h2{font-size:1.4rem}.mapa-box{aspect-ratio:4/3}}
+</style>
+<section class="mapa-sec" id="localizacao">
+  <div class="mapa-wrap">
+    <h2>Onde fica o Residencial Reserva Botânica</h2>
+    <p class="mapa-end">Indaiatuba · São Paulo</p>
+    <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4039.304914581739!2d-47.22764168864594!3d-23.052165742996824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b3005e1f3029%3A0xe4ed47e22066c319!2sReserva%20Bot%C3%A2nica!5e1!3m2!1spt-BR!2sbr!4v1786996780255!5m2!1spt-BR!2sbr">
+      <button class="mapa-btn" type="button" aria-label="Carregar o mapa de localização">
+        <span class="mapa-ic" aria-hidden="true">📍</span>
+        <span class="mapa-t">Ver no mapa</span>
+        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
+      </button>
+    </div>
+    <a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=-23.052166,-47.227642"
+       target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a>
+  </div>
+</section>
+
+<script>
+// o iframe do Google só nasce no clique: nada sai daqui antes disso
+(function(){
+  var cx = document.querySelectorAll('.mapa-box');
+  for (var i = 0; i < cx.length; i++) {
+    cx[i].addEventListener('click', function(){
+      if (this.dataset.pronto) return;
+      this.dataset.pronto = '1';
+      var f = document.createElement('iframe');
+      f.src = this.dataset.src;
+      f.title = 'Mapa de localização';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      this.innerHTML = '';
+      this.appendChild(f);
+    }, { once: true });
+  }
+})();
+</script>
 <footer>
   <div class="footer-links">
     <a href="/">Início</a>

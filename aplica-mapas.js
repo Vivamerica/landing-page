@@ -49,6 +49,21 @@ const PONTOS = [
   { d:'helade-indaiatuba',           n:'Hélade — Park Meraki', lat:-23.083487, lng:-47.192866, pb:null },
   { d:'arete-home-indaiatuba',       n:'Areté Home',        lat:-23.083609, lng:-47.193628, pb:null },
   { d:'aurora-indaiatuba',           n:'Aurora — Park Meraki', lat:-23.081421, lng:-47.188091, pb:null },
+  // ── lote 2, coordenadas de 16/08/2026 ──
+  { d:'storia-congesa-indaiatuba', n:'Storia Congesa', lat:-23.076835, lng:-47.208054,
+    pb:'!1m18!1m12!1m3!1d809.813003799738!2d-47.208053505560244!3d-23.0768352037406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b5007dfa81c3%3A0xfded51bc20b760bf!2sStoria%20Congesa!5e1!3m2!1spt-BR!2sbr!4v1786996620556!5m2!1spt-BR!2sbr' },
+  { d:'seasons-indaiatuba', n:'Congesa Seasons Natural Wellness', lat:-23.068817, lng:-47.201208,
+    pb:'!1m18!1m12!1m3!1d1145.3168775228664!2d-47.20120776187008!3d-23.06881698631473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b500459fb837%3A0x1298eb1cba8a1b63!2sCongesa%20Seasons!5e1!3m2!1spt-BR!2sbr!4v1786996701761!5m2!1spt-BR!2sbr' },
+  { d:'itamaraca-indaiatuba', n:'Itamaracá Residencial', lat:-23.075570, lng:-47.200887,
+    pb:'!1m18!1m12!1m3!1d4038.602442445237!2d-47.200887488645314!3d-23.07556954383886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b582e101fb3d%3A0x9e2908cec0c37541!2sItamarac%C3%A1%20Residencial!5e1!3m2!1spt-BR!2sbr!4v1786996728450!5m2!1spt-BR!2sbr' },
+  { d:'viva-parque-aura-indaiatuba', n:'Viva Parque Aura', lat:-23.050530, lng:-47.237322,
+    pb:'!1m18!1m12!1m3!1d3883.3625389219683!2d-47.237321555587776!3d-23.050529535497926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b35db83bd82b%3A0x1e45c6eca5811465!2sViva%20Parque%20Aura!5e1!3m2!1spt-BR!2sbr!4v1786996760683!5m2!1spt-BR!2sbr' },
+  { d:'reserva-botanica-indaiatuba', n:'Residencial Reserva Botânica', lat:-23.052166, lng:-47.227642,
+    pb:'!1m18!1m12!1m3!1d4039.304914581739!2d-47.22764168864594!3d-23.052165742996824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b3005e1f3029%3A0xe4ed47e22066c319!2sReserva%20Bot%C3%A2nica!5e1!3m2!1spt-BR!2sbr!4v1786996780255!5m2!1spt-BR!2sbr' },
+  { d:'vila-fahl-indaiatuba', n:'Residencial Vila Fahl', lat:-23.088206, lng:-47.251356,
+    pb:'!1m18!1m12!1m3!1d4038.22287467155!2d-47.251356442135965!3d-23.088206019626295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b307a8843f23%3A0xeccb931a01c615f!2sVila%20Fahl!5e1!3m2!1spt-BR!2sbr!4v1786996803466!5m2!1spt-BR!2sbr' },
+  // busca por nome em vez de identificador: usa o alfinete da coordenada, que e exata
+  { d:'uni-residencial-indaiatuba', n:'Uni Residencial', lat:-23.107198, lng:-47.235537, pb:null },
 ];
 
 const CSS = `
