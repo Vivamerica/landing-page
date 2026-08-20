@@ -23,6 +23,7 @@ const EDICAO = { mes: 'Agosto', ano: 2026, iso: '2026-08', lastmod: '2026-08-20'
 
 // mudanças de preço do mês, conferidas nas tabelas oficiais das construtoras
 const MOVIMENTOS = [
+  { n: 'Terras de San Marino', c: 'Dominium',       de: 225000, para: 247500, fonte: 'tabela San Marino de 29/07/2026, piso confirmado no espelho de 13/08' },
   { n: 'Gran Vic Tangará',    c: 'VIC Engenharia', de: 302464, para: 331737, fonte: 'tabela VIC de 15/08/2026' },
   { n: 'Jardim Di Italia',    c: 'Dominium',       de: 180000, para: 188000, fonte: 'relatório de estoque de 14/08/2026' },
 ];
@@ -225,7 +226,7 @@ const HTML = `<!DOCTYPE html>
 
 <div class="wrap">
 
-  <h2>Movimentação do mês <small>quem mudou de preço em ${EDICAO.mes.toLowerCase()}</small></h2>
+  <h2>Movimentação do mês <small>o que mudou entre as duas últimas tabelas de cada empreendimento</small></h2>
   <p class="sub">Só entram aqui variações confirmadas entre duas tabelas oficiais <b>do mesmo tipo</b> —
   quando a fonte de dados muda (book parcial → relatório de estoque completo), o piso pode
   mudar sem o preço ter mudado, e isso não é movimentação.</p>
