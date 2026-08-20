@@ -25,8 +25,6 @@ const EDICAO = { mes: 'Agosto', ano: 2026, iso: '2026-08', lastmod: '2026-08-20'
 const MOVIMENTOS = [
   { n: 'Gran Vic Tangará',    c: 'VIC Engenharia', de: 302464, para: 331737, fonte: 'tabela VIC de 15/08/2026' },
   { n: 'Jardim Di Italia',    c: 'Dominium',       de: 180000, para: 188000, fonte: 'relatório de estoque de 14/08/2026' },
-  { n: 'Gran Vic Colibri',    c: 'VIC Engenharia', de: 340162, para: 332450, fonte: 'tabela VIC de 15/08/2026' },
-  { n: 'Residencial Ravello', c: 'Dominium',       de: 714000, para: 672000, fonte: 'relatório de estoque de 14/08/2026' },
 ];
 
 // ─── dados: mesma fonte do folheto ───
@@ -228,8 +226,9 @@ const HTML = `<!DOCTYPE html>
 <div class="wrap">
 
   <h2>Movimentação do mês <small>quem mudou de preço em ${EDICAO.mes.toLowerCase()}</small></h2>
-  <p class="sub">Comparação entre a tabela anterior e a vigente de cada construtora.
-  Tabela de lançamento muda sem aviso — o que está aqui foi conferido documento a documento.</p>
+  <p class="sub">Só entram aqui variações confirmadas entre duas tabelas oficiais <b>do mesmo tipo</b> —
+  quando a fonte de dados muda (book parcial → relatório de estoque completo), o piso pode
+  mudar sem o preço ter mudado, e isso não é movimentação.</p>
   <div class="tabela-wrap">
     <table>
       <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Antes</th><th>Agora</th><th>Variação</th></tr></thead>
