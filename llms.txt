@@ -1,5 +1,9 @@
 # Imobiliária Viv'América — Lançamentos Imobiliários em Indaiatuba/SP
 
+## Observatório de Preços (dados mensais)
+- [Preços de lançamentos em Indaiatuba — tabela de agosto/2026](https://lancamentos.imoveisvivamerica.com.br/precos-lancamentos-indaiatuba/): os 20 empreendimentos com preço "a partir de", preço por m² dos lotes (média R$ 1.515/m²), e a variação mensal de preços conferida nas tabelas oficiais das construtoras. Atualização mensal.
+
+
 > Imobiliária especializada em lançamentos imobiliários em Indaiatuba, São Paulo. Representa apartamentos Minha Casa Minha Vida (MCMV), apartamentos de alto padrão, condomínios fechados de lotes e loteamentos abertos. Atendimento e simulação de financiamento (Caixa Econômica Federal, uso de FGTS) via WhatsApp (19) 98976-9457.
 
 Site oficial: https://lancamentos.imoveisvivamerica.com.br/
