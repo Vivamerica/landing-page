@@ -1,5 +1,4 @@
-    return "Olá! Vi o " + nome + " no site da Viv'América e "
-         + "quero mais informações.";/* ═══════════════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════════════════
    ATRIBUIÇÃO DE ORIGEM — lancamentos.imoveisvivamerica.com.br
    Salvar como:  landing-page/atrib.js   (na RAIZ do repositório)
    ───────────────────────────────────────────────────────────────────────────
