@@ -145,11 +145,11 @@
 
 
   <div class="card" id="qm-esgotado" style="display:none;text-align:center">
-    <h2 style="font-size:1.3rem;margin-bottom:10px">Os cupons desta rodada acabaram</h2>
-    <p class="sub" style="margin-bottom:22px">Foram 20 e saíram rápido. Mas nem tudo está perdido:
-      fale com a gente que a equipe verifica se ainda dá para encaixar você
-      — e avisamos primeiro se abrirmos uma nova rodada.</p>
-    <a href="https://wa.me/5519989769457?text=Vim%20da%20quermesse%20e%20os%20cupons%20acabaram.%20Ainda%20d%C3%A1%20para%20conseguir%3F"
+    <h2 style="font-size:1.3rem;margin-bottom:10px">A campanha da quermesse encerrou</h2>
+    <p class="sub" style="margin-bottom:22px">O cadastro valeu durante o evento (15 e 16/08).
+      Mas chame a gente mesmo assim: a equipe verifica o que dá para fazer por você
+      — e você fica na frente se abrirmos uma nova campanha.</p>
+    <a href="https://wa.me/5519989769457?text=Vim%20da%20quermesse%20mas%20a%20campanha%20encerrou.%20O%20que%20d%C3%A1%20para%20fazer%3F"
        style="display:block;background:var(--gold);color:var(--ink);border-radius:10px;padding:17px;
               font-size:1.02rem;font-weight:800;text-decoration:none">Falar no WhatsApp</a>
     <p class="seguro" style="margin-top:15px">Ou <a href="/" style="color:var(--gold)">veja os 20 lançamentos</a> enquanto isso.</p>
@@ -184,14 +184,22 @@
 
 <script>
 
-// contador: fecha o formulario quando os cupons acabarem
+// fecha o formulario quando a campanha encerra (por data OU por cupons)
 (function(){
+  var FECHA = 1786935599000;   // 16/08/2026 23:59:59 BRT — mesma constante do servidor
   var form = document.querySelector('.card'), fim = document.getElementById('qm-esgotado');
   if (!form || !fim) return;
+  function fechar(){ form.style.display = 'none'; fim.style.display = ''; }
+
+  // data e conhecida aqui: fora da janela, fecha sem depender de rede nenhuma
+  if (Date.now() > FECHA) { fechar(); return; }
+
   fetch('/api/vagas', {cache:'no-store'})
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(d){
       if (!d) return;                                   // sem resposta: mantem o formulario
+      // veredito do servidor (junta janela + cupons) — mesmo campo que a home le
+      if (d.aberto === false) { fechar(); return; }
       if (d.restantes === null) return;                 // sem contagem: mantem o formulario
       if (d.restantes > 0) {
         var s = document.querySelector('.card .sub');
@@ -199,10 +207,9 @@
                              '</strong> dos ' + d.limite + ' cupons. Leva 20 segundos.';
         return;
       }
-      form.style.display = 'none';
-      fim.style.display = '';
+      fechar();
     })
-    .catch(function(){});   // erro de rede nunca tira o formulario do ar
+    .catch(function(){});   // erro de rede dentro da janela nunca tira o formulario do ar
 })();
 
 // mascara de telefone
