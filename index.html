@@ -205,7 +205,7 @@
     .section { max-width: 1200px; margin: 0 auto; padding: clamp(40px, 7vw, 80px) 5%; }
     .section-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--verde-escuro); margin-bottom: 0.5rem; }
     .section-sub { color: var(--texto-claro); margin-bottom: 2rem; font-size: 1.05rem; }
-    .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+    .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1.8rem; }
     .listing-card {
       background: #fff;
       border-radius: var(--radius);
@@ -227,7 +227,7 @@
     .btn-card { display: block; background: var(--verde-escuro); color: #fff; text-align: center; padding: 0.7rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
     .btn-card:hover { background: #0d1c28; }
     .pillars-bg { background: var(--cinza-bg); }
-    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: 1.5rem; }
     .pillar-card {
       background: #fff;
       border-radius: var(--radius);
