@@ -23,9 +23,9 @@ const EDICAO = { mes: 'Agosto', ano: 2026, iso: '2026-08', lastmod: '2026-08-20'
 
 // mudanças de preço do mês, conferidas nas tabelas oficiais das construtoras
 const MOVIMENTOS = [
-  { n: 'Terras de San Marino', c: 'Dominium',       de: 225000, para: 247500, fonte: 'tabela San Marino de 29/07/2026, piso confirmado no espelho de 13/08' },
-  { n: 'Gran Vic Tangará',    c: 'VIC Engenharia', de: 302464, para: 331737, fonte: 'tabela VIC de 15/08/2026' },
-  { n: 'Jardim Di Italia',    c: 'Dominium',       de: 180000, para: 188000, fonte: 'relatório de estoque de 14/08/2026' },
+  { n: 'Terras de San Marino', c: 'Dominium',       de: 225000, para: 247500, causa: 'reajuste na tabela da loteadora', fonte: 'tabela de 29/07/2026, piso confirmado no espelho de 13/08' },
+  { n: 'Gran Vic Tangará',    c: 'VIC Engenharia', de: 302464, para: 331737, causa: 'reajuste na tabela da construtora', fonte: 'tabela VIC de 15/08/2026' },
+  { n: 'Jardim Di Italia',    c: 'Dominium',       de: 180000, para: 188000, causa: 'os lotes mais baratos foram vendidos — o preço de entrada subiu', fonte: 'relatório de estoque de 14/08/2026' },
 ];
 
 // ─── dados: mesma fonte do folheto ───
@@ -75,7 +75,7 @@ const linhaMov = m => {
   const seta = pct > 0 ? '▲' : '▼';
   return `
       <tr>
-        <td>${m.n}</td>
+        <td>${m.n}<br><small style="color:#8a8272;font-size:.78em">${m.causa}</small></td>
         <td>${m.c}</td>
         <td class="num">${brl(m.de)}</td>
         <td class="num"><strong>${brl(m.para)}</strong></td>
@@ -226,10 +226,10 @@ const HTML = `<!DOCTYPE html>
 
 <div class="wrap">
 
-  <h2>Movimentação do mês <small>o que mudou entre as duas últimas tabelas de cada empreendimento</small></h2>
+  <h2>Preço de entrada: o que mudou <small>entre as duas últimas tabelas de cada empreendimento</small></h2>
   <p class="sub">Só entram aqui variações confirmadas entre duas tabelas oficiais <b>do mesmo tipo</b> —
-  quando a fonte de dados muda (book parcial → relatório de estoque completo), o piso pode
-  mudar sem o preço ter mudado, e isso não é movimentação.</p>
+  o valor acompanhado é o <b>preço de entrada</b> ("a partir de") — ele sobe por reajuste
+  de tabela ou porque as unidades mais baratas foram vendidas, e a causa está dita em cada linha.</p>
   <div class="tabela-wrap">
     <table>
       <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Antes</th><th>Agora</th><th>Variação</th></tr></thead>
