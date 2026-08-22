@@ -114,7 +114,7 @@ const CSS = `
   .preco-consulte strong{color:#a15e2c;font-size:6.4pt}
 
   /* apartamentos: 12 cards, foto mais baixa. lotes: 8 cards, foto maior */
-  .g-aptos{grid-template-rows:repeat(6,1fr)} .g-aptos .card-img{height:6mm}
+  .g-aptos{grid-template-rows:repeat(${Math.ceil(APTOS.length/2)},1fr)} .g-aptos .card-img{height:${APTOS.length>12?5:6}mm}
   .g-lotes{grid-template-rows:repeat(4,1fr)} .g-lotes .card-img{height:11mm}
 
   .pe{margin-top:2.4mm;border-top:.6pt solid #e3ddcd;padding-top:1.8mm;
