@@ -62,6 +62,8 @@ const PONTOS = [
     pb:'!1m18!1m12!1m3!1d4039.304914581739!2d-47.22764168864594!3d-23.052165742996824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b3005e1f3029%3A0xe4ed47e22066c319!2sReserva%20Bot%C3%A2nica!5e1!3m2!1spt-BR!2sbr!4v1786996780255!5m2!1spt-BR!2sbr' },
   { d:'vila-fahl-indaiatuba', n:'Residencial Vila Fahl', lat:-23.088206, lng:-47.251356,
     pb:'!1m18!1m12!1m3!1d4038.22287467155!2d-47.251356442135965!3d-23.088206019626295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b307a8843f23%3A0xeccb931a01c615f!2sVila%20Fahl!5e1!3m2!1spt-BR!2sbr!4v1786996803466!5m2!1spt-BR!2sbr' },
+  { d:'vivere-indaiatuba', n:'Vívere Residencial', lat:-23.097087, lng:-47.259027,
+    pb:'!1m18!1m12!1m3!1d4931.562824596831!2d-47.259026899999995!3d-23.097086999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf4b0c11fa9875%3A0xc5418e7d3900149a!2sV%C3%ADvere%20Residencial!5e1!3m2!1spt-BR!2sbr!4v1787427065696!5m2!1spt-BR!2sbr' },
   // busca por nome em vez de identificador: usa o alfinete da coordenada, que e exata
   { d:'uni-residencial-indaiatuba', n:'Uni Residencial', lat:-23.107198, lng:-47.235537, pb:null },
 ];
