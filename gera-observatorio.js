@@ -21,6 +21,14 @@ const R = __dirname + '/';
 
 const EDICAO = { mes: 'Agosto', ano: 2026, iso: '2026-08', lastmod: '2026-08-20' };
 
+// estoque do mês ANTERIOR, para o "antes e depois" (vendidos = anterior - atual;
+// o atual vem do campo est da fonte única). null = primeira medição.
+const ESTOQUE_ANTERIOR = {
+  'di-italia-indaiatuba':   { n: 59,  data: 'jul/2026', fonte: 'material Dominium' },
+  'vivere-indaiatuba':      { n: 7,   data: '22/08/2026', fonte: 'arte da Masotti — 2 reservas na mesma semana' },
+  // demais: primeira medição em agosto; a série começa em setembro
+};
+
 // mudanças de preço do mês, conferidas nas tabelas oficiais das construtoras
 const MOVIMENTOS = [
   { n: 'Terras de San Marino', c: 'Dominium',       de: 225000, para: 247500, causa: 'reajuste na tabela da loteadora', fonte: 'tabela de 29/07/2026, piso confirmado no espelho de 13/08' },
@@ -69,6 +77,20 @@ const linhaLote = e => `
         <td class="num">${brl(Math.round(e.p / e.m2))}/m²</td>
       </tr>`;
 
+const comEst = APTOS.concat(LOTES).filter(e => typeof e.est === 'number');
+const linhaEst = e => {
+  const ant = ESTOQUE_ANTERIOR[e.slug];
+  const vend = ant ? ant.n - e.est : null;
+  return `
+      <tr>
+        <td><a href="/${e.slug}/">${e.n}</a></td>
+        <td>${e.c}</td>
+        <td class="num"><strong>${e.est}</strong> unidade${e.est === 1 ? '' : 's'}</td>
+        <td class="num">${ant ? ant.n + ' <small style="color:#8a8272">(' + ant.data + ')</small>' : '<span style="color:#8a8272">1ª medição</span>'}</td>
+        <td class="num">${vend !== null ? '<strong class="desce">' + vend + ' vendida' + (vend === 1 ? '' : 's') + '</strong>' : '—'}</td>
+      </tr>`;
+};
+
 const linhaMov = m => {
   const pct = ((m.para - m.de) / m.de * 100);
   const cls = pct > 0 ? 'sobe' : 'desce';
@@ -107,7 +129,9 @@ const jsonDataset = JSON.stringify({
   url: URL,
   temporalCoverage: EDICAO.iso,
   spatialCoverage: { '@type': 'Place', name: 'Indaiatuba, São Paulo, Brasil' },
-  creator: { '@type': 'RealEstateAgent', name: "Imobiliária Viv'América", url: 'https://lancamentos.imoveisvivamerica.com.br/', telephone: '+55-19-98976-9457' },
+  creator: { '@type': 'Organization', name: "Imobiliária Viv'América", url: 'https://lancamentos.imoveisvivamerica.com.br/' },
+  license: 'https://creativecommons.org/licenses/by/4.0/deed.pt-br',
+  isAccessibleForFree: true,
   dateModified: EDICAO.lastmod,
 });
 
@@ -234,6 +258,18 @@ const HTML = `<!DOCTYPE html>
     <table>
       <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Antes</th><th>Agora</th><th>Variação</th></tr></thead>
       <tbody>${MOVIMENTOS.map(linhaMov).join('')}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Estoque e ritmo de vendas <small>unidades disponíveis nos empreendimentos com relatório oficial de estoque</small></h2>
+  <p class="sub">O "antes e depois" que mostra a velocidade do mercado: quantas unidades cada
+  empreendimento tinha, quantas tem agora e quantas saíram no período. Agosto é a primeira
+  medição da maioria — a série mês a mês fecha o ciclo em setembro.</p>
+  <div class="tabela-wrap">
+    <table>
+      <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Estoque atual</th><th>Medição anterior</th><th>Vendidas</th></tr></thead>
+      <tbody>${comEst.sort((a, b) => a.est - b.est).map(linhaEst).join('')}
       </tbody>
     </table>
   </div>

@@ -9,7 +9,7 @@ const APTOS = [
   { n:'Gran Vic Colibri', c:'VIC Engenharia', p:332450, img:'gran-vic-colibri-indaiatuba/images/hero.jpg',
     s:'2 dorm c/ suíte · 51,42 m² · 15 itens lazer', t:'MCMV · FGTS', slug:'gran-vic-colibri-indaiatuba' },
   { n:'Vívere Residencial', c:'Masotti', p:352552, img:'vivere-indaiatuba/images/hero.jpg',
-    s:'2 dorm · 46 a 50 m² · pronto para morar · últimas 5 unidades', t:'MCMV · Pronto', slug:'vivere-indaiatuba' },
+    s:'2 dorm · 46 a 50 m² · pronto para morar · últimas 5 unidades', t:'MCMV · Pronto', est:5, slug:'vivere-indaiatuba' },
   { n:'Aurora — Park Meraki', c:'Masotti', p:758850, img:'aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg',
     s:'101 a 152 m² · 4 torres · 32 áreas de lazer', t:'Alto padrão', slug:'aurora-indaiatuba' },
   { n:'Storia Congesa', c:'Congesa', p:981000, img:'storia-congesa-indaiatuba/images/hero.jpg',
@@ -32,11 +32,11 @@ const APTOS = [
 
 const LOTES = [
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, img:'monte-carmelo-indaiatuba/images/hero.jpg',
-    s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', slug:'monte-carmelo-indaiatuba' },
+    s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:587, slug:'monte-carmelo-indaiatuba' },
   { n:'Jardim Di Italia', c:'Dominium', p:188000, m2:150, img:'di-italia-indaiatuba/images/hero.jpg',
-    s:'Loteamento aberto · infraestrutura concluída', t:'Loteamento', slug:'di-italia-indaiatuba' },
+    s:'Loteamento aberto · infraestrutura concluída', t:'Loteamento', est:43, slug:'di-italia-indaiatuba' },
   { n:'Terras de San Marino', c:'Dominium', p:247500, m2:150, img:'images/hero.jpg',
-    s:'546 lotes · 16.164 m² de lazer resort', t:'Cond. fechado', slug:'terras-de-san-marino-indaiatuba' },
+    s:'546 lotes · 16.164 m² de lazer resort', t:'Cond. fechado', est:4, slug:'terras-de-san-marino-indaiatuba' },
   { n:'Parque Zarah', c:'Zarin', p:249123, m2:150, img:'parque-zarah-indaiatuba/images/hero.jpg',
     s:'Inspiração persa · 15+ áreas de lazer · 2026', t:'Cond. fechado', slug:'parque-zarah-indaiatuba' },
   { n:'Residencial Vila Fahl', c:'Vila Fahl · iBen', p:273750, m2:150, img:'vila-fahl-indaiatuba/images/hero.jpg',
@@ -44,9 +44,9 @@ const LOTES = [
   { n:'Reserva Botânica', c:'Zarin', p:391682, m2:250, img:'reserva-botanica-indaiatuba/images/hero.jpg',
     s:'250 a 456 m² · portaria 24h · 3 quadras', t:'Cond. fechado', slug:'reserva-botanica-indaiatuba' },
   { n:'Alpnach Residence', c:'Dominium', p:480000, m2:300, img:'alpnach-indaiatuba/images/hero.jpg',
-    s:'322 lotes · piscina coberta · mini mercado 24h', t:'Cond. fechado', slug:'alpnach-indaiatuba' },
+    s:'322 lotes · piscina coberta · mini mercado 24h', t:'Cond. fechado', est:35, slug:'alpnach-indaiatuba' },
   { n:'Residencial Ravello', c:'Dominium', p:672000, m2:420, img:'residencial-ravello-indaiatuba/images/hero.jpg',
-    s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', slug:'residencial-ravello-indaiatuba' },
+    s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:197, slug:'residencial-ravello-indaiatuba' },
 ];
 
 const brl = n => n.toLocaleString('pt-BR');

@@ -31,7 +31,7 @@ function extrairDe(arquivo, nome) {
   const fim = src.indexOf('\n];', ini) + 2;
   const fimObj = src.indexOf('};', ini) + 1;
   if (ini < 0) throw new Error(nome + ' nao achado em ' + arquivo);
-  const corpo = (nome === 'EDICAO')
+  const corpo = (nome === 'EDICAO' || nome === 'ESTOQUE_ANTERIOR')
     ? src.slice(ini + ('const ' + nome + ' = ').length, fimObj + 1)
     : src.slice(ini + ('const ' + nome + ' = ').length, fim);
   return eval('(' + corpo.replace(/;\s*$/, '') + ')');
@@ -39,6 +39,7 @@ function extrairDe(arquivo, nome) {
 const APTOS = extrairDe('gera-folheto.js', 'APTOS');
 const LOTES = extrairDe('gera-folheto.js', 'LOTES');
 const MOVIMENTOS = extrairDe('gera-observatorio.js', 'MOVIMENTOS');
+const ESTOQUE_ANTERIOR = extrairDe('gera-observatorio.js', 'ESTOQUE_ANTERIOR');
 const EDICAO = extrairDe('gera-observatorio.js', 'EDICAO');
 
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
@@ -107,6 +108,86 @@ todos.forEach(e => {
   precosOk++;
 });
 feitos.push('precos em ' + precosOk + ' cards');
+
+// ─── 4. estoque: "Últimas N" sincronizado nos cards da home ───
+let estHome = 0;
+todos.forEach(e => {
+  if (typeof e.est !== 'number' || !e.slug) return;
+  const i = h.indexOf('href="/' + e.slug + '/" class="card-img-link"');
+  if (i < 0) return;
+  const ini = h.lastIndexOf('<article', i);
+  const fim = h.indexOf('</article>', i);
+  let card = h.slice(ini, fim);
+  const novo = card.replace(/Últimas \d+(\s*·| Unidades| unidades)/, 'Últimas ' + e.est + '$1');
+  if (novo !== card) { h = h.slice(0, ini) + novo + h.slice(fim); estHome++; }
+});
+feitos.push('estoque em ' + estHome + ' badges da home');
+
+// ─── 5. estoque nas LANDINGS: padrões seguros, casados por pasta ───
+let estLand = 0;
+todos.forEach(e => {
+  if (typeof e.est !== 'number' || !e.slug) return;
+  const arq = R + e.slug + '/index.html';
+  if (!fs.existsSync(arq)) return;
+  // SÓ troca número igual à medição ANTERIOR registrada — nunca um
+  // subconjunto (ex.: "Últimas 3 unidades" dos Lotes Especiais do Di Italia,
+  // que o padrão guloso quase estampou com o total 43)
+  const ant = ESTOQUE_ANTERIOR[e.slug];
+  if (!ant) return;
+  const A = String(ant.n);
+  let s = fs.readFileSync(arq, 'utf8');
+  const antes = s;
+  s = s.replace(/Últimas (\d+) [Uu]nidades/g, (m0, d) => d === A ? m0.replace(d, e.est) : m0);
+  s = s.replace(/[Rr]estam( apenas)? (\d+) (lotes|unidades)/g, (m0, ap, d) => d === A ? m0.replace(d, e.est) : m0);
+  s = s.replace(/[Aa]penas (\d+) lotes (restantes|disponíveis)/g, (m0, d) => d === A ? m0.replace(d, e.est) : m0);
+  if (s !== antes) { fs.writeFileSync(arq, s, 'utf8'); estLand++; }
+});
+feitos.push('estoque em ' + estLand + ' landings');
+
+// ─── 6. grade do hub gerada da fonte única ───
+const HUB = R + 'lancamentos-indaiatuba/index.html';
+if (fs.existsSync(HUB)) {
+  let hub = fs.readFileSync(HUB, 'utf8');
+  const cardHub = e => {
+    const preco = e.p
+      ? 'A partir de ' + brl(e.p) + (e.m2 ? ' · ' + brl(Math.round(e.p / e.m2)) + '/m²' : '')
+      : 'Tabela sob consulta';
+    const badge = (typeof e.est === 'number' && e.est <= 60)
+      ? '🔥 Últimas ' + e.est + ' unidades'
+      : e.t;
+    const bStyle = (typeof e.est === 'number' && e.est <= 60)
+      ? 'background:#C62828;color:#fff;' : 'background:#0f1c29;color:#c9a84c;';
+    return `
+      <a href="/${e.slug}/" class="listing-card">
+        <img loading="lazy" decoding="async" src="../${e.img}" alt="${e.n} Indaiatuba">
+        <div class="card-body">
+          <span class="card-badge" style="${bStyle}">${badge}</span>
+          <h3>${e.n}</h3>
+          <p>${e.c} · ${e.s}</p>
+          <div class="card-price">${preco}</div>
+          <span class="btn-card">${e.p ? 'Ver detalhes e preços' : 'Solicitar tabela'}</span>
+        </div>
+      </a>`;
+  };
+  const a = '<!--GEN:hubgrid-->', b = '<!--/GEN:hubgrid-->';
+  const ia = hub.indexOf(a), ib = hub.indexOf(b);
+  if (ia >= 0 && ib > ia) {
+    const porPreco = arr => arr.slice().sort((x, y) => (x.p || 9e9) - (y.p || 9e9));
+    const grade = `
+      <h3 class="hub-tipo">🏢 Apartamentos <small>${APTOS.length}</small></h3>
+      <div class="listings-grid">${porPreco(APTOS).map(cardHub).join('')}
+      </div>
+      <h3 class="hub-tipo">🏞️ Lotes e condomínios <small>${LOTES.length}</small></h3>
+      <div class="listings-grid">${porPreco(LOTES).map(cardHub).join('')}
+      </div>
+    `;
+    hub = hub.slice(0, ia + a.length) + grade + hub.slice(ib);
+    fs.writeFileSync(HUB, hub, 'utf8');
+    feitos.push('grade do hub gerada (' + (APTOS.length + LOTES.length) + ' cards)');
+  } else {
+    feitos.push('hub SEM marcadores GEN — grade nao gerada');
+  }
+}
 
 fs.writeFileSync(R + 'index.html', h, 'utf8');
 console.log('gera-home: ' + feitos.join(' · '));
