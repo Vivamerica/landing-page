@@ -1159,12 +1159,12 @@
     painel.scrollIntoView({ behavior: suave, block: 'start' });
   });
   document.body.appendChild(volta);
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(entradas){
-      var fora = !entradas[0].isIntersecting && entradas[0].boundingClientRect.top < 0;
-      volta.classList.toggle('is-on', fora);
-    }).observe(painel);
+  function atualizaVolta(){
+    var r = painel.getBoundingClientRect();
+    volta.classList.toggle('is-on', r.bottom < 0);
   }
+  window.addEventListener('scroll', atualizaVolta, { passive: true });
+  atualizaVolta();
 })();
 </script>
 
