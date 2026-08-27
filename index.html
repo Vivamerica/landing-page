@@ -267,8 +267,16 @@
 
     /* ═══ FILTROS ═══ */
     .filtros { background:#fff; border:1px solid #e6e0d0; border-radius:14px; padding:1.2rem 1.4rem; margin-bottom:2.5rem;
-               display:flex; flex-wrap:wrap; gap:1.4rem 2rem; align-items:flex-start; position:sticky; top:70px; z-index:50;
-               box-shadow:0 2px 14px rgba(0,0,0,.06); }
+               display:flex; flex-wrap:wrap; gap:1.4rem 2rem; align-items:flex-start;
+               box-shadow:0 2px 14px rgba(0,0,0,.06); scroll-margin-top:86px; }
+    /* atalho flutuante de volta aos filtros — aparece só depois que o painel sai da tela */
+    .volta-filtros { position:fixed; bottom:24px; left:24px; z-index:90; display:none;
+                     align-items:center; gap:.45rem; min-height:44px; padding:.6rem 1.15rem;
+                     background:#1a2b3c; color:#fff; font:inherit; font-size:.86rem; font-weight:700;
+                     border:1px solid rgba(201,168,76,.55); border-radius:50px; cursor:pointer;
+                     box-shadow:0 4px 16px rgba(0,0,0,.25); }
+    .volta-filtros.is-on { display:inline-flex; }
+    .volta-filtros:hover { background:#c9a84c; color:#1a2b3c; }
     .filtro-grupo { display:flex; flex-direction:column; gap:.5rem; }
     .filtro-label { font-size:.68rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; color:#8a8272; }
     .filtro-chips { display:flex; flex-wrap:wrap; gap:.4rem; }
@@ -1138,6 +1146,25 @@
     aplicar();
     document.getElementById('filtros').scrollIntoView({behavior:'smooth',block:'center'});
   };
+
+  // atalho flutuante: aparece quando o painel de filtros sai da tela
+  var suave = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  var painel = document.getElementById('filtros');
+  var volta = document.createElement('button');
+  volta.type = 'button';
+  volta.className = 'volta-filtros';
+  volta.setAttribute('aria-label', 'Voltar aos filtros');
+  volta.innerHTML = '⇡ Filtros';
+  volta.addEventListener('click', function(){
+    painel.scrollIntoView({ behavior: suave, block: 'start' });
+  });
+  document.body.appendChild(volta);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entradas){
+      var fora = !entradas[0].isIntersecting && entradas[0].boundingClientRect.top < 0;
+      volta.classList.toggle('is-on', fora);
+    }).observe(painel);
+  }
 })();
 </script>
 
