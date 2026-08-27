@@ -121,6 +121,54 @@
       if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
     });
   </script>
+  <style id="bo-estilo">
+    /* Ofertas no blog — geradas por gera-blog-ofertas.js */
+    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
+      grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
+    .blog-layout > article{max-width:none;margin:0;padding:0;}
+    .bo-aside{position:sticky;top:90px;display:flex;flex-direction:column;gap:1rem;}
+    .bo-aside-titulo{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;
+      color:#c9a84c;font-weight:800;margin-bottom:.2rem;}
+    .bo-card{display:block;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;
+      background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
+    .bo-card:hover{border-color:#c9a84c;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+    .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
+    .bo-corpo{padding:.8rem .9rem 1rem;}
+    .bo-selo{display:inline-block;background:#0f1c29;color:#c9a84c;font-size:.66rem;font-weight:800;
+      text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:50px;}
+    .bo-selo.bo-urg{background:#C62828;color:#fff;}
+    .bo-corpo h4{font-size:1rem;color:#1a2b3c;font-weight:800;margin:.5rem 0 .25rem;line-height:1.25;}
+    .bo-spec{font-size:.8rem;color:#666;margin:0 0 .4rem;line-height:1.45;}
+    .bo-preco{font-size:.9rem;color:#1a2b3c;margin:0 0 .6rem;}
+    .bo-preco b{color:#a8862e;font-size:1.02rem;}
+    .bo-btn{font-size:.82rem;font-weight:800;color:#1565C0;}
+    /* card dentro do texto */
+    .bo-inline{display:flex;gap:1.1rem;background:#faf7ef;border:1px solid #e8dcbb;
+      border-radius:14px;padding:1rem;margin:2rem 0;align-items:center;}
+    .bo-inline img{width:150px;height:115px;object-fit:cover;border-radius:10px;flex-shrink:0;}
+    .bo-inline-txt{min-width:0;}
+    .bo-eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;color:#a8862e;font-weight:800;}
+    .bo-inline-txt h4{font-size:1.15rem;color:#1a2b3c;font-weight:800;margin:.25rem 0 .3rem;}
+    .bo-acoes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem;}
+    /* 44px de altura minima: area de toque confortavel no celular */
+    .bo-btn-primario,.bo-btn-wpp{font-size:.84rem;font-weight:800;text-decoration:none;
+      padding:.7rem 1.2rem;border-radius:50px;display:inline-flex;align-items:center;
+      min-height:44px;}
+    .bo-btn-primario{background:#1a2b3c;color:#fff;}
+    .bo-btn-wpp{background:#25D366;color:#fff;}
+    .bo-btn-primario:hover,.bo-btn-wpp:hover{opacity:.9;}
+    @media(max-width:1100px){
+      .blog-layout{grid-template-columns:1fr;max-width:780px;gap:1.5rem;}
+      .bo-aside{position:static;flex-direction:row;overflow-x:auto;padding-bottom:.5rem;
+        scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+      .bo-aside .bo-card{min-width:230px;scroll-snap-align:start;}
+      .bo-aside-titulo{display:none;}
+    }
+    @media(max-width:560px){
+      .bo-inline{flex-direction:column;align-items:flex-start;}
+      .bo-inline img{width:100%;height:150px;}
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -150,7 +198,8 @@
     </div>
   </div>
 
-  <article>
+  <div class="blog-layout">
+<article>
     <p class="resumo">O melhor bairro de Indaiatuba depende do seu perfil: para apartamentos com lazer completo e bom custo-benefício, a região do Parque dos Pássaros se destaca; para alto padrão, o Park Meraki; e para lotes em condomínio fechado, as áreas de expansão da cidade. Indaiatuba é uma das cidades com melhor qualidade de vida do interior de São Paulo.</p>
 
     <p>Indaiatuba aparece repetidamente entre as cidades com melhor qualidade de vida do interior paulista — alto IDH, segurança acima da média, polo industrial forte e acesso rápido pelas rodovias Anhanguera e Bandeirantes e ao Aeroporto de Viracopos. Mas dentro da cidade, cada região tem um perfil. Veja onde estão os principais lançamentos.</p>
@@ -169,6 +218,21 @@
       <li><a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a> — único MCMV com suíte da região.</li>
     </ul>
 
+    <!--GEN:oferta-->
+      <div class="bo-inline">
+        <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
+        <div class="bo-inline-txt">
+          <span class="bo-eyebrow">Disponível agora em Indaiatuba</span>
+          <h4>Uni Residencial</h4>
+          <p class="bo-spec">2 dorm c/ suíte · sacada · vaga coberta · Masotti</p>
+          <p class="bo-preco">A partir de <b>R$ 279.990</b></p>
+          <div class="bo-acoes">
+            <a class="bo-btn-primario" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">Ver o empreendimento</a>
+            <a class="bo-btn-wpp" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20o%20Uni%20Residencial%20no%20blog%20da%20Viv'Am%C3%A9rica%20e%20quero%20saber%20mais." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    <!--/GEN:oferta-->
     <h2>Park Meraki — alto padrão</h2>
     <p>Para quem procura apartamento de alto padrão, o Park Meraki é uma das regiões mais valorizadas da cidade. Ali está o <a href="/helade-indaiatuba/">Hélade</a>, com apartamentos de 3 suítes e 120m², projeto da PERPLAN com Portela Arquitetos.</p>
 
@@ -190,6 +254,47 @@
 
     <p class="aviso">Este conteúdo tem caráter informativo e reflete os empreendimentos representados pela Imobiliária Viv'América em Indaiatuba. Disponibilidade e preços podem variar — consulte a tabela atualizada.</p>
   </article>
+      <aside class="bo-aside">
+<!--GEN:aside-->
+        <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
+        <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
+          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
+          <div class="bo-corpo">
+            <span class="bo-selo">Loteamento</span>
+            <h4>Residencial Monte Carmelo</h4>
+            <p class="bo-spec">Loteamento aberto · entrada de R$ 16.000 · 96x</p>
+            <p class="bo-preco">A partir de <b>R$ 145.000</b></p>
+            <span class="bo-btn">Ver detalhes →</span>
+          </div>
+        </a>
+        <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
+          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki — Indaiatuba">
+          <div class="bo-corpo">
+            <span class="bo-selo">Alto padrão</span>
+            <h4>Aurora — Park Meraki</h4>
+            <p class="bo-spec">101 a 152 m² · 4 torres · 32 áreas de lazer</p>
+            <p class="bo-preco">A partir de <b>R$ 758.850</b></p>
+            <span class="bo-btn">Ver detalhes →</span>
+          </div>
+        </a>
+        <a class="bo-card" href="/gran-vic-tangara-indaiatuba/" data-emp="gran-vic-tangara-indaiatuba">
+          <img loading="lazy" decoding="async" src="/gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará — Indaiatuba">
+          <div class="bo-corpo">
+            <span class="bo-selo">MCMV · FGTS</span>
+            <h4>Gran Vic Tangará</h4>
+            <p class="bo-spec">2 dorm · 47,22 m² · varanda · 16 itens lazer</p>
+            <p class="bo-preco">A partir de <b>R$ 331.737</b></p>
+            <span class="bo-btn">Ver detalhes →</span>
+          </div>
+        </a>
+        <a class="bo-card" href="/precos-lancamentos-indaiatuba/" data-emp="observatorio">
+          <div class="bo-corpo"><span class="bo-selo">📊 Observatório</span>
+          <h4>Tabela de preços de Indaiatuba</h4>
+          <p class="bo-spec">Todos os lançamentos com preço aberto, sem cadastro.</p>
+          <span class="bo-btn">Ver a tabela →</span></div></a>
+      <!--/GEN:aside-->
+      </aside>
+    </div>
 
   <section class="faq-geo">
     <h2 class="faq-h2">Perguntas frequentes sobre morar em Indaiatuba</h2>
@@ -219,5 +324,18 @@
     </div>
     <p>© 2026 Imobiliária Viv'América · Especialistas em lançamentos imobiliários em Indaiatuba SP</p>
   </footer>
+  <script id="bo-rastreio">
+    // mede se a oferta no blog vale a pena
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('[data-emp]');
+      if (a && typeof gtag === 'function') {
+        gtag('event', 'blog_card_click', {
+          event_category: 'blog_oferta',
+          event_label: a.getAttribute('data-emp'),
+          artigo: document.title
+        });
+      }
+    });
+  </script>
 </body>
 </html>

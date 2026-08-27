@@ -18,3 +18,8 @@ desktop.ini
 
 # Claude Code
 .claude/
+
+# Pesquisa de SEO — fica só na máquina.
+# A pasta seria servida pelo Netlify e entregaria nossa lista de
+# palavras-chave e a leitura de concorrência para quem pedisse a URL.
+seo/
