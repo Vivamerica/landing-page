@@ -64,16 +64,18 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{--navy:#1a2b3c;--gold:#c9a84c;--bg:#f7f7f5;--texto:#1f1f1f;--texto-claro:#555;--radius:14px;}
+    :root{--navy:#161616;--gold:#C9A227;--bg:#F7F5F0;--texto:#1f1f1f;--texto-claro:#555;--radius:14px;}
     body{font-family:"Segoe UI",Arial,sans-serif;color:var(--texto);background:#fff;line-height:1.7;}
     header{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;position:sticky;top:0;z-index:100;}
     .logo-text{color:#fff;font-size:clamp(0.95rem,2.2vw,1.15rem);font-weight:700;text-decoration:none;}
     nav a{color:rgba(255,255,255,0.85);text-decoration:none;margin-left:1.5rem;font-size:0.88rem;}
     nav a:hover{color:var(--gold);}
     @media(max-width:680px){nav{display:none;}}
-    .article-hero{background:linear-gradient(135deg,var(--navy),#24405c);color:#fff;padding:clamp(2.5rem,6vw,4rem) 5% clamp(2rem,4vw,3rem);}
+    .article-hero{background:#161616;color:#fff;padding:clamp(2.5rem,6vw,4rem) 5% clamp(2rem,4vw,3rem);}
     .article-hero .wrap{max-width:820px;margin:0 auto;}
     .article-hero .tag{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.75rem;font-weight:800;padding:0.3rem 0.8rem;border-radius:50px;text-transform:uppercase;letter-spacing:0.5px;}
     .article-hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;margin:0.8rem 0 0.6rem;line-height:1.2;}
@@ -82,7 +84,7 @@
     .breadcrumb a{color:var(--texto-claro);text-decoration:none;}
     .breadcrumb a:hover{color:var(--gold);}
     article{max-width:820px;margin:2rem auto 3rem;padding:0 5%;}
-    article .resumo{background:#f3ecd8;border-left:4px solid var(--gold);padding:1.1rem 1.3rem;border-radius:8px;font-size:1.05rem;margin-bottom:2rem;}
+    article .resumo{background:#F5EFDF;border-left:4px solid var(--gold);padding:1.1rem 1.3rem;border-radius:8px;font-size:1.05rem;margin-bottom:2rem;}
     article h2{font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--navy);font-weight:800;margin:2.2rem 0 0.8rem;}
     article h3{font-size:1.1rem;color:var(--navy);font-weight:700;margin:1.5rem 0 0.5rem;}
     article p{margin-bottom:1rem;color:#333;}
@@ -93,21 +95,21 @@
     .tabela{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.94rem;}
     .tabela th,.tabela td{border:1px solid #e2e2e2;padding:0.7rem 0.9rem;text-align:left;vertical-align:top;}
     .tabela th{background:var(--navy);color:#fff;font-weight:700;}
-    .tabela tr:nth-child(even){background:#f7f7f5;}
+    .tabela tr:nth-child(even){background:#F7F5F0;}
     .tabela .good{color:#15803d;font-weight:700;}
     .tabela .bad{color:#b91c1c;font-weight:700;}
     figure.artigo{margin:2rem 0;padding:0;}
     figure.artigo img{width:100%;height:auto;border-radius:14px;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
     figure.artigo figcaption{text-align:center;font-size:0.83rem;color:#777;margin-top:0.6rem;font-style:italic;}
-    .svg-map{margin:2rem 0;padding:1.4rem 1.2rem;background:#fdfaf2;border:1px solid #eadfc4;border-radius:14px;}
+    .svg-map{margin:2rem 0;padding:1.4rem 1.2rem;background:#FBF8F0;border:1px solid #eadfc4;border-radius:14px;}
     .svg-map h4{color:var(--navy);font-size:0.95rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px;text-align:center;}
     .svg-map svg{display:block;margin:0 auto;max-width:100%;height:auto;}
     .destaque-link{display:block;background:var(--bg);border:1px solid #e6e6e6;border-radius:12px;padding:1.1rem 1.3rem;margin:1.5rem 0;text-decoration:none;color:var(--navy);font-weight:700;}
     .destaque-link:hover{border-color:var(--gold);}
-    .pilar-link{background:#fdfaf2;border:2px solid var(--gold);border-radius:14px;padding:1.2rem 1.4rem;margin:1.6rem 0;}
+    .pilar-link{background:#FBF8F0;border:2px solid var(--gold);border-radius:14px;padding:1.2rem 1.4rem;margin:1.6rem 0;}
     .pilar-link .label{font-size:0.72rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:800;}
     .pilar-link a{color:var(--navy);font-size:1.05rem;font-weight:700;text-decoration:none;display:block;margin-top:0.3rem;}
-    .box{background:#f7f7f5;border-left:4px solid var(--gold);border-radius:8px;padding:1rem 1.2rem;margin:1.4rem 0;}
+    .box{background:#F7F5F0;border-left:4px solid var(--gold);border-radius:8px;padding:1rem 1.2rem;margin:1.4rem 0;}
     .box h3{margin-top:0;color:var(--navy);font-size:1.05rem;}
     .faq-geo{max-width:820px;margin:2.5rem auto;padding:0 5%;}
     .faq-geo .faq-h2{font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--navy);font-weight:800;margin-bottom:1.2rem;}
@@ -121,11 +123,32 @@
     .cta h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:1rem;}
     .cta p{opacity:0.9;max-width:520px;margin:0 auto 1.6rem;}
     .btn-wpp{display:inline-flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;font-weight:800;padding:1rem 2.2rem;border-radius:50px;text-decoration:none;}
-    footer{background:#13212e;color:rgba(255,255,255,0.75);padding:2.5rem 5%;text-align:center;font-size:0.85rem;}
+    footer{background:#101010;color:rgba(255,255,255,0.75);padding:2.5rem 5%;text-align:center;font-size:0.85rem;}
     footer .footer-links{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:1rem;}
     footer a{color:rgba(255,255,255,0.8);text-decoration:none;}
     footer a:hover{color:var(--gold);}
     .aviso{font-size:0.85rem;color:#777;font-style:italic;border-top:1px solid #eee;padding-top:1.2rem;margin-top:2rem;}
+  </style>
+  <style id="marca">
+    /* Identidade Viv'América — mesma do site principal (Poiret One + Josefin Sans) */
+    body, button, input { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.22em;
+                 text-transform:uppercase; font-size:clamp(0.9rem,2vw,1.05rem); }
+    .article-hero h1, .hero-blog h1 { font-family:'Poiret One', cursive; font-weight:400;
+                 letter-spacing:.1em; text-transform:uppercase; line-height:1.25;
+                 font-size:clamp(1.35rem,3.2vw,2.1rem); }
+    .article-hero { background:#161616 !important; }
+    .article-hero .tag { font-family:'Josefin Sans',sans-serif; font-weight:600;
+                 letter-spacing:.14em; border-radius:0; }
+    .faq-geo .faq-h2, .cta h2 { font-family:'Poiret One', cursive; font-weight:400;
+                 letter-spacing:.12em; text-transform:uppercase; font-size:clamp(1.1rem,2.4vw,1.5rem); }
+    article h2 { font-weight:600; letter-spacing:.01em; }
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    article .resumo { background:#F5EFDF; border-left-color:#C9A227; }
+    .destaque-link, .quem-serve, .metodo { border-radius:4px; }
+    .estoque-bloco { border-radius:4px; }
+    .btn-wpp { border-radius:4px; letter-spacing:.06em; }
+    .chip, .post-tag { letter-spacing:.1em; }
   </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
@@ -142,33 +165,33 @@
     .blog-layout > article{max-width:none;margin:0;padding:0;}
     .bo-aside{position:sticky;top:90px;display:flex;flex-direction:column;gap:1rem;}
     .bo-aside-titulo{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;
-      color:#c9a84c;font-weight:800;margin-bottom:.2rem;}
-    .bo-card{display:block;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;
+      color:#C9A227;font-weight:800;margin-bottom:.2rem;}
+    .bo-card{display:block;border:1px solid #e6e6e6;border-radius:4px;overflow:hidden;
       background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
-    .bo-card:hover{border-color:#c9a84c;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+    .bo-card:hover{border-color:#C9A227;box-shadow:0 6px 18px rgba(0,0,0,.08);}
     .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
     .bo-corpo{padding:.8rem .9rem 1rem;}
-    .bo-selo{display:inline-block;background:#0f1c29;color:#c9a84c;font-size:.66rem;font-weight:800;
-      text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:50px;}
+    .bo-selo{display:inline-block;background:#161616;color:#C9A227;font-size:.66rem;font-weight:800;
+      text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:4px;}
     .bo-selo.bo-urg{background:#C62828;color:#fff;}
-    .bo-corpo h4{font-size:1rem;color:#1a2b3c;font-weight:800;margin:.5rem 0 .25rem;line-height:1.25;}
+    .bo-corpo h4{font-size:1rem;color:#161616;font-weight:800;margin:.5rem 0 .25rem;line-height:1.25;}
     .bo-spec{font-size:.8rem;color:#666;margin:0 0 .4rem;line-height:1.45;}
-    .bo-preco{font-size:.9rem;color:#1a2b3c;margin:0 0 .6rem;}
-    .bo-preco b{color:#a8862e;font-size:1.02rem;}
+    .bo-preco{font-size:.9rem;color:#161616;margin:0 0 .6rem;}
+    .bo-preco b{color:#8f7418;font-size:1.02rem;}
     .bo-btn{font-size:.82rem;font-weight:800;color:#1565C0;}
     /* card dentro do texto */
-    .bo-inline{display:flex;gap:1.1rem;background:#faf7ef;border:1px solid #e8dcbb;
-      border-radius:14px;padding:1rem;margin:2rem 0;align-items:center;}
+    .bo-inline{display:flex;gap:1.1rem;background:#FBF8F0;border:1px solid #E4D9BC;
+      border-radius:4px;padding:1rem;margin:2rem 0;align-items:center;}
     .bo-inline img{width:150px;height:115px;object-fit:cover;border-radius:10px;flex-shrink:0;}
     .bo-inline-txt{min-width:0;}
-    .bo-eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;color:#a8862e;font-weight:800;}
-    .bo-inline-txt h4{font-size:1.15rem;color:#1a2b3c;font-weight:800;margin:.25rem 0 .3rem;}
+    .bo-eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;color:#8f7418;font-weight:800;}
+    .bo-inline-txt h4{font-size:1.15rem;color:#161616;font-weight:800;margin:.25rem 0 .3rem;}
     .bo-acoes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem;}
     /* 44px de altura minima: area de toque confortavel no celular */
     .bo-btn-primario,.bo-btn-wpp{font-size:.84rem;font-weight:800;text-decoration:none;
-      padding:.7rem 1.2rem;border-radius:50px;display:inline-flex;align-items:center;
+      padding:.7rem 1.2rem;border-radius:4px;display:inline-flex;align-items:center;
       min-height:44px;}
-    .bo-btn-primario{background:#1a2b3c;color:#fff;}
+    .bo-btn-primario{background:#161616;color:#fff;}
     .bo-btn-wpp{background:#25D366;color:#fff;}
     .bo-btn-primario:hover,.bo-btn-wpp:hover{opacity:.9;}
     @media(max-width:1100px){
@@ -287,45 +310,45 @@
         <!-- pontos -->
         <g>
           <!-- Indaiatuba -->
-          <circle cx="70" cy="150" r="14" fill="#c9a84c"/>
-          <text x="70" y="155" font-family="Segoe UI, Arial" font-size="14" font-weight="800" text-anchor="middle" fill="#1a2b3c">I</text>
-          <text x="70" y="185" font-family="Segoe UI, Arial" font-size="13" font-weight="700" text-anchor="middle" fill="#1a2b3c">Indaiatuba</text>
+          <circle cx="70" cy="150" r="14" fill="#C9A227"/>
+          <text x="70" y="155" font-family="Segoe UI, Arial" font-size="14" font-weight="800" text-anchor="middle" fill="#161616">I</text>
+          <text x="70" y="185" font-family="Segoe UI, Arial" font-size="13" font-weight="700" text-anchor="middle" fill="#161616">Indaiatuba</text>
           <text x="70" y="200" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" fill="#666">km 0</text>
           <!-- Campinas -->
-          <circle cx="215" cy="150" r="10" fill="#fff" stroke="#1a2b3c" stroke-width="2"/>
-          <text x="215" y="180" font-family="Segoe UI, Arial" font-size="12" font-weight="700" text-anchor="middle" fill="#1a2b3c">Campinas</text>
+          <circle cx="215" cy="150" r="10" fill="#fff" stroke="#161616" stroke-width="2"/>
+          <text x="215" y="180" font-family="Segoe UI, Arial" font-size="12" font-weight="700" text-anchor="middle" fill="#161616">Campinas</text>
           <text x="215" y="195" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" fill="#666">~20 min</text>
           <!-- Jundiaí -->
-          <circle cx="380" cy="150" r="10" fill="#fff" stroke="#1a2b3c" stroke-width="2"/>
-          <text x="380" y="180" font-family="Segoe UI, Arial" font-size="12" font-weight="700" text-anchor="middle" fill="#1a2b3c">Jundiaí</text>
+          <circle cx="380" cy="150" r="10" fill="#fff" stroke="#161616" stroke-width="2"/>
+          <text x="380" y="180" font-family="Segoe UI, Arial" font-size="12" font-weight="700" text-anchor="middle" fill="#161616">Jundiaí</text>
           <text x="380" y="195" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" fill="#666">~45 min</text>
           <!-- Barueri/Alphaville -->
-          <circle cx="540" cy="150" r="10" fill="#fff" stroke="#1a2b3c" stroke-width="2"/>
-          <text x="540" y="180" font-family="Segoe UI, Arial" font-size="12" font-weight="700" text-anchor="middle" fill="#1a2b3c">Alphaville/Barueri</text>
+          <circle cx="540" cy="150" r="10" fill="#fff" stroke="#161616" stroke-width="2"/>
+          <text x="540" y="180" font-family="Segoe UI, Arial" font-size="12" font-weight="700" text-anchor="middle" fill="#161616">Alphaville/Barueri</text>
           <text x="540" y="195" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" fill="#666">~1h15</text>
           <!-- São Paulo -->
-          <circle cx="640" cy="150" r="14" fill="#1a2b3c"/>
-          <text x="640" y="155" font-family="Segoe UI, Arial" font-size="14" font-weight="800" text-anchor="middle" fill="#c9a84c">SP</text>
-          <text x="640" y="185" font-family="Segoe UI, Arial" font-size="13" font-weight="700" text-anchor="middle" fill="#1a2b3c">São Paulo</text>
+          <circle cx="640" cy="150" r="14" fill="#161616"/>
+          <text x="640" y="155" font-family="Segoe UI, Arial" font-size="14" font-weight="800" text-anchor="middle" fill="#C9A227">SP</text>
+          <text x="640" y="185" font-family="Segoe UI, Arial" font-size="13" font-weight="700" text-anchor="middle" fill="#161616">São Paulo</text>
           <text x="640" y="200" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" fill="#666">~1h45 centro</text>
         </g>
         <!-- Rodovia Bandeirantes (linha superior) -->
-        <path d="M 84 145 Q 150 105, 215 140" stroke="#c9a84c" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M 225 140 Q 300 105, 380 140" stroke="#c9a84c" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M 390 140 Q 470 105, 540 140" stroke="#c9a84c" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M 550 145 Q 595 130, 626 145" stroke="#c9a84c" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M 84 145 Q 150 105, 215 140" stroke="#C9A227" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M 225 140 Q 300 105, 380 140" stroke="#C9A227" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M 390 140 Q 470 105, 540 140" stroke="#C9A227" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M 550 145 Q 595 130, 626 145" stroke="#C9A227" stroke-width="4" fill="none" stroke-linecap="round"/>
         <text x="150" y="90" font-family="Segoe UI, Arial" font-size="11" font-weight="700" fill="#a68536">SP-348 Bandeirantes</text>
         <!-- Rodovia Anhanguera (linha inferior alternativa) -->
-        <path d="M 84 155 Q 150 210, 215 160" stroke="#1a2b3c" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" opacity=".7"/>
-        <path d="M 225 160 Q 300 210, 380 160" stroke="#1a2b3c" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" opacity=".7"/>
-        <path d="M 390 160 Q 470 210, 540 160" stroke="#1a2b3c" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" opacity=".7"/>
-        <path d="M 550 155 Q 595 180, 626 155" stroke="#1a2b3c" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" opacity=".7"/>
-        <text x="150" y="245" font-family="Segoe UI, Arial" font-size="11" font-weight="700" fill="#1a2b3c" opacity=".8">SP-330 Anhanguera (alternativa)</text>
+        <path d="M 84 155 Q 150 210, 215 160" stroke="#161616" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" opacity=".7"/>
+        <path d="M 225 160 Q 300 210, 380 160" stroke="#161616" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" opacity=".7"/>
+        <path d="M 390 160 Q 470 210, 540 160" stroke="#161616" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" opacity=".7"/>
+        <path d="M 550 155 Q 595 180, 626 155" stroke="#161616" stroke-width="3" fill="none" stroke-dasharray="8 4" stroke-linecap="round" opacity=".7"/>
+        <text x="150" y="245" font-family="Segoe UI, Arial" font-size="11" font-weight="700" fill="#161616" opacity=".8">SP-330 Anhanguera (alternativa)</text>
         <!-- legenda tempos -->
         <g transform="translate(20,20)" font-family="Segoe UI, Arial" font-size="11" fill="#555">
-          <rect x="0"   y="0" width="16" height="4" fill="#c9a84c"/>
+          <rect x="0"   y="0" width="16" height="4" fill="#C9A227"/>
           <text x="22"  y="6">Rota A: Bandeirantes (preferencial)</text>
-          <rect x="230" y="0" width="16" height="4" fill="#1a2b3c" opacity=".7"/>
+          <rect x="230" y="0" width="16" height="4" fill="#161616" opacity=".7"/>
           <text x="252" y="6">Rota B: Anhanguera (alternativa)</text>
         </g>
       </svg>
@@ -394,7 +417,7 @@
     <p>Se você trabalha remoto ou tem flexibilidade para escolher/mudar de emprego, considere que o corredor <strong>Campinas-Viracopos</strong> tem milhares de vagas qualificadas em multinacionais (SAP, DHL, Nestlé, IBM, etc.). Muitas vezes o "vou morar em Indaiatuba e trabalhar em SP" acaba virando "achei um emprego melhor em Campinas em 6 meses".</p>
 
     <div class="pilar-link">
-      <span class="label">📚 Guia pilar</span>
+      <span class="label">Guia pilar</span>
       <a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba: guia completo 2026 (o guia definitivo) →</a>
     </div>
 
@@ -412,7 +435,7 @@
       <li><strong>Alto padrão:</strong> <a href="/helade-indaiatuba/">Hélade</a> no Park Meraki — perfil executivo compatível com salários da capital;</li>
       <li><strong>Casa em condomínio fechado:</strong> <a href="/alpnach-indaiatuba/">Alpnach Residence</a> ou <a href="/residencial-ravello-indaiatuba/">Ravello</a> — construir para o longo prazo faz sentido se você vai investir em qualidade de vida da família.</li>
     </ul>
-    <a class="destaque-link" href="/lancamentos-indaiatuba/">🏠 Ver todos os lançamentos em Indaiatuba →</a>
+    <a class="destaque-link" href="/lancamentos-indaiatuba/">Ver todos os lançamentos em Indaiatuba →</a>
 
     <h2>Continue lendo</h2>
     <ul>
@@ -458,7 +481,7 @@
           </div>
         </a>
         <a class="bo-card" href="/precos-lancamentos-indaiatuba/" data-emp="observatorio">
-          <div class="bo-corpo"><span class="bo-selo">📊 Observatório</span>
+          <div class="bo-corpo"><span class="bo-selo">Observatório</span>
           <h4>Tabela de preços de Indaiatuba</h4>
           <p class="bo-spec">Todos os lançamentos com preço aberto, sem cadastro.</p>
           <span class="bo-btn">Ver a tabela →</span></div></a>

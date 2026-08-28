@@ -67,7 +67,7 @@ const wa = (nome) => 'https://wa.me/5519989769457?text=' +
 function cardLateral(e) {
   const preco = e.p ? 'A partir de <b>' + brl(e.p) + '</b>' : 'Tabela sob consulta';
   const selo = (typeof e.est === 'number' && e.est <= 60)
-    ? '<span class="bo-selo bo-urg">🔥 Últimas ' + e.est + '</span>'
+    ? '<span class="bo-selo bo-urg">Últimas ' + e.est + '</span>'
     : '<span class="bo-selo">' + e.t + '</span>';
   return `
         <a class="bo-card" href="/${e.slug}/" data-emp="${e.slug}">
@@ -109,33 +109,33 @@ const CSS = `
     .blog-layout > article{max-width:none;margin:0;padding:0;}
     .bo-aside{position:sticky;top:90px;display:flex;flex-direction:column;gap:1rem;}
     .bo-aside-titulo{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;
-      color:#c9a84c;font-weight:800;margin-bottom:.2rem;}
-    .bo-card{display:block;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;
+      color:#C9A227;font-weight:800;margin-bottom:.2rem;}
+    .bo-card{display:block;border:1px solid #e6e6e6;border-radius:4px;overflow:hidden;
       background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
-    .bo-card:hover{border-color:#c9a84c;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+    .bo-card:hover{border-color:#C9A227;box-shadow:0 6px 18px rgba(0,0,0,.08);}
     .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
     .bo-corpo{padding:.8rem .9rem 1rem;}
-    .bo-selo{display:inline-block;background:#0f1c29;color:#c9a84c;font-size:.66rem;font-weight:800;
-      text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:50px;}
+    .bo-selo{display:inline-block;background:#161616;color:#C9A227;font-size:.66rem;font-weight:800;
+      text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:4px;}
     .bo-selo.bo-urg{background:#C62828;color:#fff;}
-    .bo-corpo h4{font-size:1rem;color:#1a2b3c;font-weight:800;margin:.5rem 0 .25rem;line-height:1.25;}
+    .bo-corpo h4{font-size:1rem;color:#161616;font-weight:800;margin:.5rem 0 .25rem;line-height:1.25;}
     .bo-spec{font-size:.8rem;color:#666;margin:0 0 .4rem;line-height:1.45;}
-    .bo-preco{font-size:.9rem;color:#1a2b3c;margin:0 0 .6rem;}
-    .bo-preco b{color:#a8862e;font-size:1.02rem;}
+    .bo-preco{font-size:.9rem;color:#161616;margin:0 0 .6rem;}
+    .bo-preco b{color:#8f7418;font-size:1.02rem;}
     .bo-btn{font-size:.82rem;font-weight:800;color:#1565C0;}
     /* card dentro do texto */
-    .bo-inline{display:flex;gap:1.1rem;background:#faf7ef;border:1px solid #e8dcbb;
-      border-radius:14px;padding:1rem;margin:2rem 0;align-items:center;}
+    .bo-inline{display:flex;gap:1.1rem;background:#FBF8F0;border:1px solid #E4D9BC;
+      border-radius:4px;padding:1rem;margin:2rem 0;align-items:center;}
     .bo-inline img{width:150px;height:115px;object-fit:cover;border-radius:10px;flex-shrink:0;}
     .bo-inline-txt{min-width:0;}
-    .bo-eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;color:#a8862e;font-weight:800;}
-    .bo-inline-txt h4{font-size:1.15rem;color:#1a2b3c;font-weight:800;margin:.25rem 0 .3rem;}
+    .bo-eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;color:#8f7418;font-weight:800;}
+    .bo-inline-txt h4{font-size:1.15rem;color:#161616;font-weight:800;margin:.25rem 0 .3rem;}
     .bo-acoes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem;}
     /* 44px de altura minima: area de toque confortavel no celular */
     .bo-btn-primario,.bo-btn-wpp{font-size:.84rem;font-weight:800;text-decoration:none;
-      padding:.7rem 1.2rem;border-radius:50px;display:inline-flex;align-items:center;
+      padding:.7rem 1.2rem;border-radius:4px;display:inline-flex;align-items:center;
       min-height:44px;}
-    .bo-btn-primario{background:#1a2b3c;color:#fff;}
+    .bo-btn-primario{background:#161616;color:#fff;}
     .bo-btn-wpp{background:#25D366;color:#fff;}
     .bo-btn-primario:hover,.bo-btn-wpp:hover{opacity:.9;}
     @media(max-width:1100px){
@@ -225,7 +225,7 @@ arquivos.forEach(({ slug, caminho }) => {
     '\n        <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>' +
     (itens.length > 1 ? itens.slice(1) : itens).map(cardLateral).join('') +
     '\n        <a class="bo-card" href="/precos-lancamentos-indaiatuba/" data-emp="observatorio">' +
-    '\n          <div class="bo-corpo"><span class="bo-selo">📊 Observatório</span>' +
+    '\n          <div class="bo-corpo"><span class="bo-selo">Observatório</span>' +
     '\n          <h4>Tabela de preços de Indaiatuba</h4>' +
     '\n          <p class="bo-spec">Todos os lançamentos com preço aberto, sem cadastro.</p>' +
     '\n          <span class="bo-btn">Ver a tabela →</span></div></a>\n      ');

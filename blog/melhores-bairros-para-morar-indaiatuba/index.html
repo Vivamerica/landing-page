@@ -68,16 +68,18 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{--navy:#1a2b3c;--gold:#c9a84c;--bg:#f7f7f5;--texto:#1f1f1f;--texto-claro:#555;--radius:14px;}
+    :root{--navy:#161616;--gold:#C9A227;--bg:#F7F5F0;--texto:#1f1f1f;--texto-claro:#555;--radius:14px;}
     body{font-family:"Segoe UI",Arial,sans-serif;color:var(--texto);background:#fff;line-height:1.7;}
     header{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;position:sticky;top:0;z-index:100;}
     .logo-text{color:#fff;font-size:clamp(0.95rem,2.2vw,1.15rem);font-weight:700;text-decoration:none;}
     nav a{color:rgba(255,255,255,0.85);text-decoration:none;margin-left:1.5rem;font-size:0.88rem;}
     nav a:hover{color:var(--gold);}
     @media(max-width:680px){nav{display:none;}}
-    .article-hero{background:linear-gradient(135deg,var(--navy),#24405c);color:#fff;padding:clamp(2.5rem,6vw,4rem) 5% clamp(2rem,4vw,3rem);}
+    .article-hero{background:#161616;color:#fff;padding:clamp(2.5rem,6vw,4rem) 5% clamp(2rem,4vw,3rem);}
     .article-hero .wrap{max-width:780px;margin:0 auto;}
     .article-hero .tag{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.75rem;font-weight:800;padding:0.3rem 0.8rem;border-radius:50px;text-transform:uppercase;letter-spacing:0.5px;}
     .article-hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;margin:0.8rem 0 0.6rem;line-height:1.2;}
@@ -86,7 +88,7 @@
     .breadcrumb a{color:var(--texto-claro);text-decoration:none;}
     .breadcrumb a:hover{color:var(--gold);}
     article{max-width:780px;margin:2rem auto 3rem;padding:0 5%;}
-    article .resumo{background:#f3ecd8;border-left:4px solid var(--gold);padding:1.1rem 1.3rem;border-radius:8px;font-size:1.05rem;margin-bottom:2rem;}
+    article .resumo{background:#F5EFDF;border-left:4px solid var(--gold);padding:1.1rem 1.3rem;border-radius:8px;font-size:1.05rem;margin-bottom:2rem;}
     article h2{font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--navy);font-weight:800;margin:2.2rem 0 0.8rem;}
     article h3{font-size:1.1rem;color:var(--navy);font-weight:700;margin:1.5rem 0 0.5rem;}
     article p{margin-bottom:1rem;color:#333;}
@@ -99,7 +101,7 @@
     .metodo{background:#eef3f7;border-left:4px solid var(--navy);padding:1rem 1.2rem;border-radius:8px;margin:1.2rem 0;font-size:0.95rem;}
     .fonte-nota{font-size:0.8rem;color:#777;font-style:italic;}
     .quem-serve{background:var(--bg);border:1px solid #e6e6e6;border-radius:10px;padding:0.9rem 1.1rem;margin:1rem 0;font-size:0.95rem;}
-    .estoque-bloco{background:#fdfaf2;border:2px solid var(--gold);border-radius:12px;padding:1rem 1.2rem;margin:1.2rem 0;font-size:0.95rem;}
+    .estoque-bloco{background:#FBF8F0;border:2px solid var(--gold);border-radius:12px;padding:1rem 1.2rem;margin:1.2rem 0;font-size:0.95rem;}
     .faq-geo{max-width:780px;margin:2.5rem auto;padding:0 5%;}
     .faq-geo .faq-h2{font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--navy);font-weight:800;margin-bottom:1.2rem;}
     .faq-geo details{border:1px solid #e6e6e6;border-radius:12px;margin-bottom:0.7rem;padding:0 1.2rem;background:#fafafa;}
@@ -112,11 +114,32 @@
     .cta h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:1rem;}
     .cta p{opacity:0.9;max-width:560px;margin:0 auto 1.6rem;}
     .btn-wpp{display:inline-flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;font-weight:800;padding:1rem 2.2rem;border-radius:50px;text-decoration:none;}
-    footer{background:#13212e;color:rgba(255,255,255,0.75);padding:2.5rem 5%;text-align:center;font-size:0.85rem;}
+    footer{background:#101010;color:rgba(255,255,255,0.75);padding:2.5rem 5%;text-align:center;font-size:0.85rem;}
     footer .footer-links{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:1rem;}
     footer a{color:rgba(255,255,255,0.8);text-decoration:none;}
     footer a:hover{color:var(--gold);}
     .aviso{font-size:0.85rem;color:#777;font-style:italic;border-top:1px solid #eee;padding-top:1.2rem;margin-top:2rem;}
+  </style>
+  <style id="marca">
+    /* Identidade Viv'América — mesma do site principal (Poiret One + Josefin Sans) */
+    body, button, input { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.22em;
+                 text-transform:uppercase; font-size:clamp(0.9rem,2vw,1.05rem); }
+    .article-hero h1, .hero-blog h1 { font-family:'Poiret One', cursive; font-weight:400;
+                 letter-spacing:.1em; text-transform:uppercase; line-height:1.25;
+                 font-size:clamp(1.35rem,3.2vw,2.1rem); }
+    .article-hero { background:#161616 !important; }
+    .article-hero .tag { font-family:'Josefin Sans',sans-serif; font-weight:600;
+                 letter-spacing:.14em; border-radius:0; }
+    .faq-geo .faq-h2, .cta h2 { font-family:'Poiret One', cursive; font-weight:400;
+                 letter-spacing:.12em; text-transform:uppercase; font-size:clamp(1.1rem,2.4vw,1.5rem); }
+    article h2 { font-weight:600; letter-spacing:.01em; }
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    article .resumo { background:#F5EFDF; border-left-color:#C9A227; }
+    .destaque-link, .quem-serve, .metodo { border-radius:4px; }
+    .estoque-bloco { border-radius:4px; }
+    .btn-wpp { border-radius:4px; letter-spacing:.06em; }
+    .chip, .post-tag { letter-spacing:.1em; }
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -131,7 +154,6 @@
       if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
     });
   </script>
-
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
     .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
@@ -139,33 +161,33 @@
     .blog-layout > article{max-width:none;margin:0;padding:0;}
     .bo-aside{position:sticky;top:90px;display:flex;flex-direction:column;gap:1rem;}
     .bo-aside-titulo{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;
-      color:#c9a84c;font-weight:800;margin-bottom:.2rem;}
-    .bo-card{display:block;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;
+      color:#C9A227;font-weight:800;margin-bottom:.2rem;}
+    .bo-card{display:block;border:1px solid #e6e6e6;border-radius:4px;overflow:hidden;
       background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
-    .bo-card:hover{border-color:#c9a84c;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+    .bo-card:hover{border-color:#C9A227;box-shadow:0 6px 18px rgba(0,0,0,.08);}
     .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
     .bo-corpo{padding:.8rem .9rem 1rem;}
-    .bo-selo{display:inline-block;background:#0f1c29;color:#c9a84c;font-size:.66rem;font-weight:800;
-      text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:50px;}
+    .bo-selo{display:inline-block;background:#161616;color:#C9A227;font-size:.66rem;font-weight:800;
+      text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:4px;}
     .bo-selo.bo-urg{background:#C62828;color:#fff;}
-    .bo-corpo h4{font-size:1rem;color:#1a2b3c;font-weight:800;margin:.5rem 0 .25rem;line-height:1.25;}
+    .bo-corpo h4{font-size:1rem;color:#161616;font-weight:800;margin:.5rem 0 .25rem;line-height:1.25;}
     .bo-spec{font-size:.8rem;color:#666;margin:0 0 .4rem;line-height:1.45;}
-    .bo-preco{font-size:.9rem;color:#1a2b3c;margin:0 0 .6rem;}
-    .bo-preco b{color:#a8862e;font-size:1.02rem;}
+    .bo-preco{font-size:.9rem;color:#161616;margin:0 0 .6rem;}
+    .bo-preco b{color:#8f7418;font-size:1.02rem;}
     .bo-btn{font-size:.82rem;font-weight:800;color:#1565C0;}
     /* card dentro do texto */
-    .bo-inline{display:flex;gap:1.1rem;background:#faf7ef;border:1px solid #e8dcbb;
-      border-radius:14px;padding:1rem;margin:2rem 0;align-items:center;}
+    .bo-inline{display:flex;gap:1.1rem;background:#FBF8F0;border:1px solid #E4D9BC;
+      border-radius:4px;padding:1rem;margin:2rem 0;align-items:center;}
     .bo-inline img{width:150px;height:115px;object-fit:cover;border-radius:10px;flex-shrink:0;}
     .bo-inline-txt{min-width:0;}
-    .bo-eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;color:#a8862e;font-weight:800;}
-    .bo-inline-txt h4{font-size:1.15rem;color:#1a2b3c;font-weight:800;margin:.25rem 0 .3rem;}
+    .bo-eyebrow{font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;color:#8f7418;font-weight:800;}
+    .bo-inline-txt h4{font-size:1.15rem;color:#161616;font-weight:800;margin:.25rem 0 .3rem;}
     .bo-acoes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem;}
     /* 44px de altura minima: area de toque confortavel no celular */
     .bo-btn-primario,.bo-btn-wpp{font-size:.84rem;font-weight:800;text-decoration:none;
-      padding:.7rem 1.2rem;border-radius:50px;display:inline-flex;align-items:center;
+      padding:.7rem 1.2rem;border-radius:4px;display:inline-flex;align-items:center;
       min-height:44px;}
-    .bo-btn-primario{background:#1a2b3c;color:#fff;}
+    .bo-btn-primario{background:#161616;color:#fff;}
     .bo-btn-wpp{background:#25D366;color:#fff;}
     .bo-btn-primario:hover,.bo-btn-wpp:hover{opacity:.9;}
     @media(max-width:1100px){
@@ -203,9 +225,9 @@
   <p class="breadcrumb"><a href="/">Início</a> › <a href="/blog/">Blog</a> › <a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a> › Melhores bairros</p>
 
   <div style="max-width:780px;margin:1.6rem auto 0;padding:0 5%;">
-    <div style="background:#fdfaf2;border:2px solid #c9a84c;border-radius:14px;padding:1.2rem 1.4rem;">
-      <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#c9a84c;font-weight:800;">📚 Guia pilar</span>
-      <a href="/blog/morar-em-indaiatuba/" style="color:#1a2b3c;font-size:1rem;font-weight:700;text-decoration:none;display:block;margin-top:0.3rem;">Este artigo faz parte do guia "Morar em Indaiatuba" — ver o guia completo →</a>
+    <div style="background:#FBF8F0;border:2px solid #C9A227;border-radius:14px;padding:1.2rem 1.4rem;">
+      <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#C9A227;font-weight:800;">Guia pilar</span>
+      <a href="/blog/morar-em-indaiatuba/" style="color:#161616;font-size:1rem;font-weight:700;text-decoration:none;display:block;margin-top:0.3rem;">Este artigo faz parte do guia "Morar em Indaiatuba" — ver o guia completo →</a>
     </div>
   </div>
 
@@ -329,7 +351,7 @@
     <p>Um exemplo documentado: o Jardim Park Meraki (divulgado comercialmente como Park Meraki) é um loteamento, não uma região consolidada — consta com esse nome nas listagens da Secretaria de Engenharia, com a ressalva-padrão de que os mapas são informativos e prevalece o Cartório de Registro de Imóveis. O empreendedor o apresenta como bairro planejado aberto, com condomínios internos, 78 lotes residenciais e 41 comerciais — informação do próprio empreendimento, que não conferimos em fonte pública.</p>
     <p>A regra vale igual para o nosso material: quando a Viv'América tem produto em um loteamento, ele aparece pelo nome do loteamento, no bloco de estoque — não como se fosse um bairro da cidade. E o jeito de saber a diferença sem depender de ninguém: peça a matrícula atualizada no Cartório de Registro de Imóveis e confira o nome exato do parcelamento na lista da Secretaria de Engenharia.</p>
     <div class="estoque-bloco">
-      <strong>🏠 Onde temos imóvel hoje (estoque Viv'América, agosto/2026):</strong> apartamentos em lançamento e prontos — <a href="/uni-residencial-indaiatuba/">Uni Residencial</a>, <a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a>, <a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a>, <a href="/vivere-indaiatuba/">Vívere Residencial</a>, <a href="/aurora-indaiatuba/">Aurora</a> e <a href="/helade-indaiatuba/">Hélade</a> (estes dois no Jardim Park Meraki), <a href="/storia-congesa-indaiatuba/">Storia Congesa</a> — e lotes nos parcelamentos <a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a>, <a href="/di-italia-indaiatuba/">Jardim Di Itália</a>, <a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a>, <a href="/parque-zarah-indaiatuba/">Parque Zarah</a>, <a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a>, <a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a>, <a href="/alpnach-indaiatuba/">Alpnach Residence</a> e <a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a>. A lista completa, sempre atualizada, está em <a href="/lancamentos-indaiatuba/">lançamentos em Indaiatuba</a>.
+      <strong>Onde temos imóvel hoje (estoque Viv'América, agosto/2026):</strong> apartamentos em lançamento e prontos — <a href="/uni-residencial-indaiatuba/">Uni Residencial</a>, <a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a>, <a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a>, <a href="/vivere-indaiatuba/">Vívere Residencial</a>, <a href="/aurora-indaiatuba/">Aurora</a> e <a href="/helade-indaiatuba/">Hélade</a> (estes dois no Jardim Park Meraki), <a href="/storia-congesa-indaiatuba/">Storia Congesa</a> — e lotes nos parcelamentos <a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a>, <a href="/di-italia-indaiatuba/">Jardim Di Itália</a>, <a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a>, <a href="/parque-zarah-indaiatuba/">Parque Zarah</a>, <a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a>, <a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a>, <a href="/alpnach-indaiatuba/">Alpnach Residence</a> e <a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a>. A lista completa, sempre atualizada, está em <a href="/lancamentos-indaiatuba/">lançamentos em Indaiatuba</a>.
     </div>
 
     <h2>Piores bairros de Indaiatuba? Por que este guia não responde essa pergunta — e o que dá para responder no lugar</h2>
@@ -349,7 +371,7 @@
     <h2>Quanto custa: o nosso Observatório de Preços (e por que ele não é "o preço do bairro")</h2>
     <p><strong>O que não existe:</strong> não há base oficial de preço por metro quadrado por bairro em Indaiatuba. Nenhum órgão público — Prefeitura, IBGE ou Seade — publica série de preços de imóveis bairro a bairro. O que a Prefeitura disponibiliza é o valor venal, apurado imóvel a imóvel e consultável pela Certidão de Valor Venal — e valor venal é base de cálculo de IPTU, não preço de mercado. Os índices que circulam em portais são estimativas de anúncio, não valores oficiais.</p>
     <p><strong>O que nós publicamos:</strong> o <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços dos lançamentos de Indaiatuba</a>, com o preço de tabela de cada empreendimento que representamos — aberto, sem cadastro, com o mês de referência em cada edição. Três avisos que fazem parte dele: preço de tabela não é preço fechado — o que se negocia costuma ser diferente do que se anuncia; é uma amostra dos <em>nossos</em> lançamentos, não a média do bairro; e não prometemos valorização — nenhum número ali é previsão do que o imóvel valerá amanhã.</p>
-    <a class="destaque-link" href="/precos-lancamentos-indaiatuba/">📊 Ver o Observatório de Preços — tabela de agosto/2026, sem cadastro →</a>
+    <a class="destaque-link" href="/precos-lancamentos-indaiatuba/">Ver o Observatório de Preços — tabela de agosto/2026, sem cadastro →</a>
     <p>Quer a leitura de preço de um endereço específico? Fale com um corretor: o que decide preço é o imóvel — metragem, estado, documentação, rua —, não o rótulo do bairro.</p>
     <p class="fonte-nota">Fontes: Prefeitura — Rendas Imobiliárias (Certidão de Valor Venal) e Legislação Tributária Municipal. Consultadas em 27/08/2026.</p>
 
@@ -391,7 +413,7 @@
           </div>
         </a>
         <a class="bo-card" href="/precos-lancamentos-indaiatuba/" data-emp="observatorio">
-          <div class="bo-corpo"><span class="bo-selo">📊 Observatório</span>
+          <div class="bo-corpo"><span class="bo-selo">Observatório</span>
           <h4>Tabela de preços de Indaiatuba</h4>
           <p class="bo-spec">Todos os lançamentos com preço aberto, sem cadastro.</p>
           <span class="bo-btn">Ver a tabela →</span></div></a>
@@ -441,7 +463,6 @@
     </div>
     <p>© 2026 Imobiliária Viv'América · Especialistas em lançamentos imobiliários em Indaiatuba SP</p>
   </footer>
-
   <script id="bo-rastreio">
     // mede se a oferta no blog vale a pena
     document.addEventListener('click', function (e) {
