@@ -44,7 +44,7 @@ const lotes   = () => comPreco(LOTES);
 // os demais vão na coluna lateral — por isso a lista tem 4, para o
 // destaque do texto não se repetir na lateral.
 const TEMAS = [
-  { re: /minha-casa|mcmv|fgts|quem-tem-direito|como-comprar-apartamento/, nome: 'MCMV',
+  { re: /minha-casa|mcmv|fgts|quem-tem-direito|como-comprar-apartamento|casa-propria-motorista/, nome: 'MCMV',
     pega: () => mcmv().slice(0, 4) },
   { re: /apartamento-ou-lote/, nome: 'apto+lote',
     pega: () => [mcmv()[0], lotes()[0], lotes()[1], mcmv()[1]] },
