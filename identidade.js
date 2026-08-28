@@ -1,0 +1,109 @@
+/* IDENTIDADE VISUAL — Poiret One + Josefin Sans, preto #161616 e dourado #C9A227
+   (a mesma do site principal imoveisvivamerica.com.br)
+
+   Ritual: criou landing/página nova → node identidade.js
+   Idempotente: aplica cores, fontes e a camada <style id="marca"> só onde falta.
+   Fora do escopo: folheto-lancamentos.html e folder*.html (impressos aprovados).
+   Acentos por produto (verde Vívere, marrom VIC) são preservados — só o chrome
+   (header, hero, footer, botões) entra na marca. */
+const fs = require('fs');
+const path = require('path');
+const RAIZ = 'C:\\Users\\Usuario\\Desktop\\landing-page';
+
+const CORES = [
+  ['linear-gradient(100deg, rgba(15,28,41,.93) 0%, rgba(15,28,41,.74) 48%, rgba(15,28,41,.42) 100%)',
+   'linear-gradient(100deg, rgba(16,16,16,.93) 0%, rgba(16,16,16,.74) 48%, rgba(16,16,16,.40) 100%)'],
+  ['linear-gradient(135deg,var(--navy),#24405c)', '#161616'],
+  ['#1a2b3c', '#161616'], ['#0f1c29', '#161616'], ['#24405c', '#2a2a2a'],
+  ['#1A2B3C', '#161616'], ['#0F1C29', '#161616'], ['#C9A84C', '#C9A227'],
+  ['#1a1a1a', '#161616'],
+  ['#0f2a1a', '#161616'], ['#0a1f12', '#101010'],  // chrome verde do Vivere -> marca
+  ['#c9a84c', '#C9A227'], ['#a8862e', '#8f7418'], ['#d4a962', '#C9A227'],
+  ['#13212e', '#101010'], ['#fbfaf6', '#F7F5F0'], ['#f7f7f5', '#F7F5F0'],
+  ['#faf8f2', '#F7F5F0'], ['#f3ecd8', '#F5EFDF'], ['#fdfaf2', '#FBF8F0'],
+  ['#e6e0d0', '#E6E1D6'],
+  ['"Segoe UI", Arial, sans-serif', "'Josefin Sans', system-ui, sans-serif"],
+  ['"Segoe UI",Arial,sans-serif', "'Josefin Sans',system-ui,sans-serif"], ['#ddd6c4', '#DCD6C6'], ['#e8dcbb', '#E4D9BC'],
+];
+const EMOJIS = ['📚','📊','🏠','📍','✅','🚗','🏢','🏞️','🔥','⚠️','⚠','🎯','💰','📄','🔑','🧮','🏦','📈','📉','🛵','⭐','✂️','🗞️','📦','🚦','☑️','✔️','🌳','🏗️','🔒','🏡','🌿','💧','🚌','🎓','🩺'];
+
+const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com">\n' +
+  '<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">';
+
+const MARCA = `
+  <style id="marca">
+    /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
+    body, button, input, select, textarea { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.2em;
+                 text-transform:uppercase; }
+    h1 { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.08em;
+         text-transform:uppercase; line-height:1.25; }
+    h2, h3 { font-weight:600; }
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
+    .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
+  </style>`;
+
+function trocarCores(s) {
+  for (const [de, para] of CORES) s = s.split(de).join(para);
+  return s;
+}
+function tirarEmojis(s) {
+  for (const e of EMOJIS) {
+    s = s.split('>' + e + ' ').join('>');
+    s = s.split('>' + e).join('>');
+    s = s.split('"' + e + ' ').join('"');
+    s = s.split("'" + e + ' ').join("'");   // template literals dos geradores
+    s = s.split('`' + e + ' ').join('`');
+  }
+  return s;
+}
+
+// ─── Fase 1: geradores ───
+for (const g of ['gera-observatorio.js', 'gera-home.js']) {
+  const f = path.join(RAIZ, g);
+  let s = fs.readFileSync(f, 'utf8');
+  const antes = s;
+  s = trocarCores(s);
+  s = tirarEmojis(s);
+  s = s.split("'Segoe UI',system-ui,Arial,sans-serif").join("'Josefin Sans',system-ui,sans-serif");
+  s = s.split('"Segoe UI",Arial,sans-serif').join("'Josefin Sans',system-ui,sans-serif");
+  // observatorio emite a pagina inteira: fontes + display no proprio template
+  if (g === 'gera-observatorio.js' && !s.includes('family=Poiret+One')) {
+    s = s.replace('<style>', FONTS + '\n<style>');
+    s = s.replace("body{font-family:'Josefin Sans'",
+      "h1{font-family:'Poiret One',cursive;font-weight:400;letter-spacing:.08em;text-transform:uppercase;line-height:1.25}\n  body{font-family:'Josefin Sans'");
+  }
+  if (s !== antes) fs.writeFileSync(f, s, 'utf8');
+  console.log(g + ': ' + (s !== antes ? 'atualizado' : 'ja estava'));
+}
+
+// ─── Fase 2: paginas ───
+function reskinPagina(html) {
+  let h = trocarCores(html);
+  if (!h.includes('family=Poiret+One')) h = h.replace('<style>', FONTS + '\n  <style>');
+  if (!h.includes('id="marca"')) {
+    const i = h.indexOf('</style>');
+    if (i > 0) h = h.slice(0, i + 8) + MARCA + h.slice(i + 8);
+  }
+  h = tirarEmojis(h);
+  return h;
+}
+
+const alvos = ['index.html'];
+for (const d of fs.readdirSync(RAIZ, { withFileTypes: true })) {
+  if (!d.isDirectory()) continue;
+  if (['seo', 'images', '.git', '.claude'].includes(d.name)) continue;
+  if (d.name === 'blog') { for (const b of fs.readdirSync(path.join(RAIZ,'blog'))) { const fb = path.join('blog', b, 'index.html'); if (fs.existsSync(path.join(RAIZ, fb))) alvos.push(fb); } alvos.push(path.join('blog','index.html')); continue; }
+  const f = path.join(d.name, 'index.html');
+  if (fs.existsSync(path.join(RAIZ, f))) alvos.push(f);
+}
+
+let n = 0, iguais = 0;
+for (const a of alvos) {
+  const f = path.join(RAIZ, a);
+  const antes = fs.readFileSync(f, 'utf8');
+  const depois = reskinPagina(antes);
+  if (depois !== antes) { fs.writeFileSync(f, depois, 'utf8'); n++; } else iguais++;
+}
+console.log('paginas: ' + n + ' transformadas, ' + iguais + ' ja estavam (' + alvos.length + ' alvos)');
