@@ -172,25 +172,28 @@ const HTML = `<!DOCTYPE html>
     if (a) gtag('event', 'whatsapp_click', { event_category: 'contato', page: 'observatorio' });
   });
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;background:#fbfaf6;line-height:1.65}
-  a{color:#0f1c29}
-  .topo{background:#0f1c29;color:#fff;padding:2.6rem 1.2rem 2.2rem}
+  h1{font-family:'Poiret One',cursive;font-weight:400;letter-spacing:.08em;text-transform:uppercase;line-height:1.25}
+  body{font-family:'Josefin Sans',system-ui,sans-serif;color:#161616;background:#F7F5F0;line-height:1.65}
+  a{color:#161616}
+  .topo{background:#161616;color:#fff;padding:2.6rem 1.2rem 2.2rem}
   .wrap{max-width:1000px;margin:0 auto;padding:0 1.2rem}
   .topo .wrap{padding:0}
-  .marca{font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:#c9a84c;font-weight:700}
+  .marca{font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:#C9A227;font-weight:700}
   .marca a{color:#fff;text-decoration:none}
   h1{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:800;line-height:1.15;margin:.6rem 0 .5rem;letter-spacing:-.02em}
-  h1 em{font-style:normal;color:#c9a84c}
+  h1 em{font-style:normal;color:#C9A227}
   .lede{max-width:62ch;opacity:.9;font-size:1.02rem}
   .atualizado{display:inline-block;margin-top:1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
-    background:rgba(201,168,76,.16);border:1px solid rgba(201,168,76,.45);color:#c9a84c;
+    background:rgba(201,168,76,.16);border:1px solid rgba(201,168,76,.45);color:#C9A227;
     border-radius:99px;padding:.35rem 1rem;font-weight:700}
 
   .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:-1.6rem auto 2.4rem;max-width:1000px;padding:0 1.2rem}
   .tile{background:#fff;border:1px solid #e3ddcd;border-radius:12px;padding:1.1rem 1.2rem;box-shadow:0 6px 18px rgba(15,28,41,.06)}
-  .tile b{display:block;font-size:1.45rem;font-weight:800;color:#0f1c29;font-variant-numeric:tabular-nums}
+  .tile b{display:block;font-size:1.45rem;font-weight:800;color:#161616;font-variant-numeric:tabular-nums}
   .tile span{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#8a8272;font-weight:700}
 
   h2{font-size:1.35rem;font-weight:800;margin:2.6rem 0 .4rem;letter-spacing:-.01em}
@@ -200,10 +203,10 @@ const HTML = `<!DOCTYPE html>
   .tabela-wrap{overflow-x:auto;background:#fff;border:1px solid #e3ddcd;border-radius:12px}
   table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:640px}
   th{text-align:left;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#8a8272;
-    padding:.8rem 1rem;border-bottom:2px solid #0f1c29;background:#faf8f2}
+    padding:.8rem 1rem;border-bottom:2px solid #161616;background:#F7F5F0}
   td{padding:.7rem 1rem;border-bottom:1px solid #eee9db;vertical-align:top}
   tr:last-child td{border-bottom:none}
-  td a{font-weight:700;text-decoration:none;border-bottom:1px solid #c9a84c}
+  td a{font-weight:700;text-decoration:none;border-bottom:1px solid #C9A227}
   td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
   td.obs{color:#6b6559;font-size:.84rem;max-width:34ch}
   .sc{color:#a15e2c;font-weight:700}
@@ -215,11 +218,11 @@ const HTML = `<!DOCTYPE html>
   .faq summary{font-weight:700;cursor:pointer}
   .faq p{margin-top:.6rem;color:#4a4a42;max-width:75ch}
 
-  .metodo{background:#f2efe6;border-left:4px solid #c9a84c;border-radius:0 10px 10px 0;
+  .metodo{background:#f2efe6;border-left:4px solid #C9A227;border-radius:0 10px 10px 0;
     padding:1.2rem 1.4rem;margin:2.4rem 0;font-size:.92rem;color:#4a4a42}
-  .metodo b{color:#1a2b3c}
+  .metodo b{color:#161616}
 
-  .cta{background:#0f1c29;border-radius:14px;color:#fff;text-align:center;padding:2.2rem 1.4rem;margin:2.6rem 0}
+  .cta{background:#161616;border-radius:14px;color:#fff;text-align:center;padding:2.2rem 1.4rem;margin:2.6rem 0}
   .cta p{opacity:.85;max-width:52ch;margin:0 auto .5rem}
   .cta strong{font-size:1.25rem;display:block;margin-bottom:.9rem}
   .cta a.btn{display:inline-block;background:#25D366;color:#fff;font-weight:800;text-decoration:none;

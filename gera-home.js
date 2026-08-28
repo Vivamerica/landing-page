@@ -70,7 +70,7 @@ gen('selos', `
         `);
 
 gen('obscard', `
-        <p class="oc-t">📊 Observatório · ${EDICAO.mes.toLowerCase()}/${EDICAO.ano}</p>
+        <p class="oc-t">Observatório · ${EDICAO.mes.toLowerCase()}/${EDICAO.ano}</p>
         <p class="oc-m2">${brl(m2Medio)}<small>/m² médio do lote</small></p>
         <p class="oc-linha"><b>${altas} empreendimento${altas === 1 ? '' : 's'}</b> ${altas === 1 ? 'subiu' : 'subiram'} o preço de entrada neste mês</p>
         <a href="/precos-lancamentos-indaiatuba/">Ver a tabela completa →</a>
@@ -153,10 +153,10 @@ if (fs.existsSync(HUB)) {
       ? 'A partir de ' + brl(e.p) + (e.m2 ? ' · ' + brl(Math.round(e.p / e.m2)) + '/m²' : '')
       : 'Tabela sob consulta';
     const badge = (typeof e.est === 'number' && e.est <= 60)
-      ? '🔥 Últimas ' + e.est + ' unidades'
+      ? 'Últimas ' + e.est + ' unidades'
       : e.t;
     const bStyle = (typeof e.est === 'number' && e.est <= 60)
-      ? 'background:#C62828;color:#fff;' : 'background:#0f1c29;color:#c9a84c;';
+      ? 'background:#C62828;color:#fff;' : 'background:#161616;color:#C9A227;';
     return `
       <a href="/${e.slug}/" class="listing-card">
         <img loading="lazy" decoding="async" src="../${e.img}" alt="${e.n} Indaiatuba">
@@ -174,10 +174,10 @@ if (fs.existsSync(HUB)) {
   if (ia >= 0 && ib > ia) {
     const porPreco = arr => arr.slice().sort((x, y) => (x.p || 9e9) - (y.p || 9e9));
     const grade = `
-      <h3 class="hub-tipo">🏢 Apartamentos <small>${APTOS.length}</small></h3>
+      <h3 class="hub-tipo">Apartamentos <small>${APTOS.length}</small></h3>
       <div class="listings-grid">${porPreco(APTOS).map(cardHub).join('')}
       </div>
-      <h3 class="hub-tipo">🏞️ Lotes e condomínios <small>${LOTES.length}</small></h3>
+      <h3 class="hub-tipo">Lotes e condomínios <small>${LOTES.length}</small></h3>
       <div class="listings-grid">${porPreco(LOTES).map(cardHub).join('')}
       </div>
     `;

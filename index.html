@@ -122,18 +122,20 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --verde: #c9a84c;
-      --verde-escuro: #1a2b3c;
-      --dourado: #c9a84c;
+      --verde: #C9A227;
+      --verde-escuro: #161616;
+      --dourado: #C9A227;
       --cinza-bg: #f5f5f5;
       --texto: #1a1a1a;
       --texto-claro: #555;
       --radius: 12px;
     }
-    body { font-family: "Segoe UI", Arial, sans-serif; color: var(--texto); background: #fff; line-height: 1.6; }
+    body { font-family: 'Josefin Sans', system-ui, sans-serif; color: var(--texto); background: #fff; line-height: 1.6; }
     header {
       background: var(--verde-escuro);
       padding: 0 5%;
@@ -150,13 +152,13 @@
     nav a:hover { color: var(--dourado); }
     .hero {
       background:
-        linear-gradient(100deg, rgba(15,28,41,.93) 0%, rgba(15,28,41,.74) 48%, rgba(15,28,41,.42) 100%),
+        linear-gradient(100deg, rgba(16,16,16,.93) 0%, rgba(16,16,16,.74) 48%, rgba(16,16,16,.40) 100%),
         url('aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg') center 65%/cover;
       color: #fff;
       text-align: left;
       padding: clamp(26px, 4vw, 40px) 5%;
     }
-    .nav-revenda { border:1px solid #c9a84c; border-radius:8px; padding:.4rem .9rem;
+    .nav-revenda { border:1px solid #C9A227; border-radius:8px; padding:.4rem .9rem;
       color:#F7D77E !important; font-weight:700; white-space:nowrap }
     .hero-in { max-width: 1200px; margin: 0 auto; display:flex; gap:2.2rem;
       align-items:center; justify-content:space-between; flex-wrap:wrap }
@@ -169,12 +171,12 @@
       border:1px solid rgba(201,168,76,.55); border-radius:14px;
       padding:1rem 1.15rem; backdrop-filter:blur(4px) }
     .obs-card .oc-t { font-size:.66rem; letter-spacing:.2em; text-transform:uppercase;
-      color:#c9a84c; font-weight:800 }
+      color:#C9A227; font-weight:800 }
     .obs-card .oc-m2 { font-size:1.55rem; font-weight:800; margin:.25rem 0 .15rem }
     .obs-card .oc-m2 small { font-size:.6em; font-weight:600; opacity:.75 }
     .obs-card .oc-linha { font-size:.84rem; opacity:.92; margin:.2rem 0 .7rem }
     .obs-card .oc-linha b { color:#F7D77E }
-    .obs-card a { display:block; text-align:center; background:#c9a84c; color:#0f1c29;
+    .obs-card a { display:block; text-align:center; background:#C9A227; color:#161616;
       font-weight:800; border-radius:9px; padding:.55rem; text-decoration:none; font-size:.88rem }
     @media (max-width: 760px){
       .hero-in { display:block }
@@ -266,34 +268,34 @@
     .btn-hero-alt:hover { background:rgba(255,255,255,.12); }
 
     /* ═══ FILTROS ═══ */
-    .filtros { background:#fff; border:1px solid #e6e0d0; border-radius:14px; padding:1.2rem 1.4rem; margin-bottom:2.5rem;
+    .filtros { background:#fff; border:1px solid #E6E1D6; border-radius:14px; padding:1.2rem 1.4rem; margin-bottom:2.5rem;
                display:flex; flex-wrap:wrap; gap:1.4rem 2rem; align-items:flex-start;
                box-shadow:0 2px 14px rgba(0,0,0,.06); scroll-margin-top:86px; }
     /* atalho flutuante de volta aos filtros — aparece só depois que o painel sai da tela */
     .volta-filtros { position:fixed; bottom:24px; left:24px; z-index:90; display:none;
                      align-items:center; gap:.45rem; min-height:44px; padding:.6rem 1.15rem;
-                     background:#1a2b3c; color:#fff; font:inherit; font-size:.86rem; font-weight:700;
+                     background:#161616; color:#fff; font:inherit; font-size:.86rem; font-weight:700;
                      border:1px solid rgba(201,168,76,.55); border-radius:50px; cursor:pointer;
                      box-shadow:0 4px 16px rgba(0,0,0,.25); }
     .volta-filtros.is-on { display:inline-flex; }
-    .volta-filtros:hover { background:#c9a84c; color:#1a2b3c; }
+    .volta-filtros:hover { background:#C9A227; color:#161616; }
     .filtro-grupo { display:flex; flex-direction:column; gap:.5rem; }
     .filtro-label { font-size:.68rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; color:#8a8272; }
     .filtro-chips { display:flex; flex-wrap:wrap; gap:.4rem; }
     .chip { font:inherit; font-size:.82rem; font-weight:600; padding:.4rem .85rem; border-radius:50px; cursor:pointer;
-            border:1px solid #ddd6c4; background:#faf8f2; color:#5a5346; transition:all .15s; white-space:nowrap; }
-    .chip:hover { border-color:#c9a84c; color:#1a2b3c; }
-    .chip.is-on { background:#1a2b3c; border-color:#1a2b3c; color:#fff; }
+            border:1px solid #DCD6C6; background:#F7F5F0; color:#5a5346; transition:all .15s; white-space:nowrap; }
+    .chip:hover { border-color:#C9A227; color:#161616; }
+    .chip.is-on { background:#161616; border-color:#161616; color:#fff; }
     .filtro-resultado { width:100%; margin:0; font-size:.82rem; color:#7a7365; font-weight:600; }
     .vazio-msg { text-align:center; padding:3rem 1rem; color:#7a7365; font-size:1rem; }
 
     /* ═══ CABECALHOS ═══ */
-    .cat-header { margin:3.5rem 0 1.5rem; padding-bottom:.7rem; border-bottom:3px solid #1a2b3c;
+    .cat-header { margin:3.5rem 0 1.5rem; padding-bottom:.7rem; border-bottom:3px solid #161616;
                   display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap; scroll-margin-top:120px; }
-    .cat-header h2 { font-size:clamp(1.5rem,3.2vw,2.1rem); font-weight:800; color:#1a2b3c; margin:0; }
+    .cat-header h2 { font-size:clamp(1.5rem,3.2vw,2.1rem); font-weight:800; color:#161616; margin:0; }
     .cat-header .cat-count { font-size:.86rem; color:#7a7365; font-weight:600; }
-    .sub-header { margin:2.8rem 0 1.2rem; padding-left:.9rem; border-left:4px solid #c9a84c; }
-    .sub-header h3 { font-size:1.1rem; font-weight:800; color:#1a2b3c; margin:0 0 .2rem; }
+    .sub-header { margin:2.8rem 0 1.2rem; padding-left:.9rem; border-left:4px solid #C9A227; }
+    .sub-header h3 { font-size:1.1rem; font-weight:800; color:#161616; margin:0 0 .2rem; }
     .sub-header p { font-size:.86rem; color:#7a7365; margin:0; }
 
     /* ═══ CARDS ═══ */
@@ -307,15 +309,15 @@
                    color:#a8935c; margin:0 0 .3rem; }
     .card-body h3 { font-size:1.18rem; font-weight:700; margin:0 0 .35rem; line-height:1.25; }
     .card-body h3 a { color:#1a1a1a; text-decoration:none; }
-    .card-body h3 a:hover { color:#1a2b3c; }
+    .card-body h3 a:hover { color:#161616; }
     .card-meta { font-size:.85rem; color:#5a5346; margin:0 0 .5rem; font-weight:600; }
-    .card-meta .pm2 { color:#1a2b3c; }
+    .card-meta .pm2 { color:#161616; }
     .card-desc { font-size:.87rem; color:#666; line-height:1.5; flex:1; margin:0 0 .9rem; }
     .card-price { font-size:.9rem; color:#7a7365; margin-bottom:.9rem; }
-    .card-price strong { font-size:1.15rem; color:#1a2b3c; font-weight:800; display:block; margin-top:.1rem; }
+    .card-price strong { font-size:1.15rem; color:#161616; font-weight:800; display:block; margin-top:.1rem; }
     .card-price-consult { color:#a15e2c; font-weight:700; font-size:1rem; }
     .card-actions { display:grid; grid-template-columns:1fr 1.15fr; gap:.5rem; }
-    .btn-card { display:block; background:#f0ece0; color:#1a2b3c; text-align:center; padding:.72rem .4rem;
+    .btn-card { display:block; background:#f0ece0; color:#161616; text-align:center; padding:.72rem .4rem;
                 border-radius:8px; font-weight:700; font-size:.85rem; text-decoration:none; transition:background .2s; }
     .btn-card:hover { background:#e2dcc8; }
     .btn-card-wa { display:inline-flex; align-items:center; justify-content:center; gap:.4rem; background:#25d366;
@@ -339,7 +341,7 @@
     }
     @media (max-width: 600px) {
       .menu-toggle { display:block; }
-      header nav { display:none; position:absolute; top:70px; left:0; right:0; background:#1a2b3c;
+      header nav { display:none; position:absolute; top:70px; left:0; right:0; background:#161616;
                    flex-direction:column; padding:.5rem 5% 1rem; box-shadow:0 8px 20px rgba(0,0,0,.25); }
       header nav.is-open { display:flex; }
       header nav a { margin:0; padding:.75rem 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:.95rem; }
@@ -348,6 +350,18 @@
     }
 
 
+  </style>
+  <style id="marca">
+    /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
+    body, button, input, select, textarea { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.2em;
+                 text-transform:uppercase; }
+    h1 { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.08em;
+         text-transform:uppercase; line-height:1.25; }
+    h2, h3 { font-weight:600; }
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
+    .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
@@ -389,7 +403,7 @@
         <!--/GEN:selos--></div>
       </div>
       <aside class="obs-card"><!--GEN:obscard-->
-        <p class="oc-t">📊 Observatório · agosto/2026</p>
+        <p class="oc-t">Observatório · agosto/2026</p>
         <p class="oc-m2">R$ 1.515<small>/m² médio do lote</small></p>
         <p class="oc-linha"><b>3 empreendimentos</b> subiram o preço de entrada neste mês</p>
         <a href="/precos-lancamentos-indaiatuba/">Ver a tabela completa →</a>
@@ -405,8 +419,8 @@
         <span class="filtro-label">Tipo</span>
         <div class="filtro-chips" data-filtro="tipo">
           <button class="chip is-on" data-v="">Todos</button>
-          <button class="chip" data-v="apartamento">🏢 Apartamentos</button>
-          <button class="chip" data-v="lote">🏞️ Lotes</button>
+          <button class="chip" data-v="apartamento">Apartamentos</button>
+          <button class="chip" data-v="lote">Lotes</button>
         </div>
       </div>
       <div class="filtro-grupo">
@@ -443,7 +457,7 @@
     
 
     <div class="cat-header" id="apartamentos">
-      <h2>🏢 Apartamentos</h2>
+      <h2>Apartamentos</h2>
       <span class="cat-count">13 empreendimentos · do menor ao maior investimento</span>
     </div>
 
@@ -477,7 +491,7 @@
           <img src="gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#c0392b;color:#fff;">🔥 60% Vendido · MCMV</span>
+          <span class="card-badge" style="background:#c0392b;color:#fff;">60% Vendido · MCMV</span>
           <p class="card-constr">VIC Engenharia</p>
           <h3><a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a></h3>
           <p class="card-meta">47,22 m²</p>
@@ -499,7 +513,7 @@
           <img src="gran-vic-colibri-indaiatuba/images/hero.jpg" alt="Gran Vic Colibri Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#c0392b;color:#fff;">🔥 Único MCMV c/ Suíte</span>
+          <span class="card-badge" style="background:#c0392b;color:#fff;">Único MCMV c/ Suíte</span>
           <p class="card-constr">VIC Engenharia</p>
           <h3><a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a></h3>
           <p class="card-meta">51,42 m²</p>
@@ -521,7 +535,7 @@
           <img src="vivere-indaiatuba/images/hero.jpg" alt="Vívere Residencial Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#f26b1d;color:#fff;">⚠ Últimas 5 · Pronto para morar</span>
+          <span class="card-badge" style="background:#f26b1d;color:#fff;">Últimas 5 · Pronto para morar</span>
           <p class="card-constr">Masotti</p>
           <h3><a href="/vivere-indaiatuba/">Vívere Residencial</a></h3>
           <p class="card-meta">46,77 a 50,52 m²</p>
@@ -543,7 +557,7 @@
           <img src="aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#0a1929;color:#d4a962;">Breve Lançamento · Alto Padrão</span>
+          <span class="card-badge" style="background:#0a1929;color:#C9A227;">Breve Lançamento · Alto Padrão</span>
           <p class="card-constr">Masotti</p>
           <h3><a href="/aurora-indaiatuba/">Aurora — Park Meraki</a></h3>
           <p class="card-meta">101 a 152 m²</p>
@@ -662,7 +676,7 @@
           <img src="manai-bosque-indaiatuba/images/hero-3-torres.jpg" alt="Manai Bosque Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#1a3a1f;color:#d4a962;">Pré-Lançamento</span>
+          <span class="card-badge" style="background:#1a3a1f;color:#C9A227;">Pré-Lançamento</span>
           <p class="card-constr">Masotti</p>
           <h3><a href="/manai-bosque-indaiatuba/">Manai Bosque</a></h3>
           <p class="card-meta">65 a 91 m²</p>
@@ -747,7 +761,7 @@
 
     <!-- ════════ LOTES ════════ -->
     <div class="cat-header" id="lotes">
-      <h2>🏞️ Lotes e Condomínios Fechados</h2>
+      <h2>Lotes e Condomínios Fechados</h2>
       <span class="cat-count">8 empreendimentos · do menor ao maior investimento</span>
     </div>
 
@@ -781,7 +795,7 @@
           <img src="di-italia-indaiatuba/images/hero.jpg" alt="Jardim Di Italia Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#c0392b;color:#fff;">🔥 Últimas 43 Unidades</span>
+          <span class="card-badge" style="background:#c0392b;color:#fff;">Últimas 43 Unidades</span>
           <p class="card-constr">Dominium</p>
           <h3><a href="/di-italia-indaiatuba/">Jardim Di Italia</a></h3>
           <p class="card-meta">A partir de 150 m² · <strong class="pm2">R$ 1.253/m²</strong></p>
@@ -803,7 +817,7 @@
           <img src="images/hero.jpg" alt="Terras de San Marino Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#C62828;color:#fff;">🔥 Últimas 4 Unidades</span>
+          <span class="card-badge" style="background:#C62828;color:#fff;">Últimas 4 Unidades</span>
           <p class="card-constr">Dominium</p>
           <h3><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a></h3>
           <p class="card-meta">A partir de 150 m² · <strong class="pm2">R$ 1.650/m²</strong></p>
@@ -868,7 +882,7 @@
           <img src="reserva-botanica-indaiatuba/images/hero.jpg" alt="Residencial Reserva Botânica Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#b8672f;color:#fff;">🔥 Últimas Unidades</span>
+          <span class="card-badge" style="background:#b8672f;color:#fff;">Últimas Unidades</span>
           <p class="card-constr">Zarin</p>
           <h3><a href="/reserva-botanica-indaiatuba/">Residencial Reserva Botânica</a></h3>
           <p class="card-meta">A partir de 250 m² · <strong class="pm2">R$ 1.567/m²</strong></p>
@@ -890,7 +904,7 @@
           <img src="alpnach-indaiatuba/images/hero.jpg" alt="Alpnach Residence Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#c9a84c;color:#1a1a1a;">Condomínio Fechado</span>
+          <span class="card-badge" style="background:#C9A227;color:#1a1a1a;">Condomínio Fechado</span>
           <p class="card-constr">Dominium</p>
           <h3><a href="/alpnach-indaiatuba/">Alpnach Residence</a></h3>
           <p class="card-meta">A partir de 300 m² · <strong class="pm2">R$ 1.600/m²</strong></p>
@@ -912,7 +926,7 @@
           <img src="residencial-ravello-indaiatuba/images/hero.jpg" alt="Residencial Ravello Indaiatuba" loading="lazy" width="400" height="200">
         </a>
         <div class="card-body">
-          <span class="card-badge" style="background:#c9a84c;color:#1a1a1a;">Condomínio Fechado</span>
+          <span class="card-badge" style="background:#C9A227;color:#1a1a1a;">Condomínio Fechado</span>
           <p class="card-constr">Dominium</p>
           <h3><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a></h3>
           <p class="card-meta">A partir de 420 m² · <strong class="pm2">R$ 1.600/m²</strong></p>
@@ -939,7 +953,7 @@
 
       <div class="pillars-grid">
         <a href="/loteamentos-em-indaiatuba/" class="pillar-card">
-          <span class="pillar-icon">🏡</span>
+          <span class="pillar-icon"></span>
           <h3>Loteamentos em Indaiatuba</h3>
           <p>Guia completo sobre loteamentos abertos e fechados disponíveis em Indaiatuba SP</p>
         </a>
@@ -959,7 +973,7 @@
           <p>Vale a pena? Custo, segurança, bairros e comparativo com outras cidades. Nosso guia mais completo.</p>
         </a>
         <a href="/blog/" class="pillar-card">
-          <span class="pillar-icon">📚</span>
+          <span class="pillar-icon"></span>
           <h3>Blog: Guias Práticos</h3>
           <p>Como usar o FGTS, Minha Casa Minha Vida, melhores bairros e apartamento ou lote em Indaiatuba</p>
         </a>

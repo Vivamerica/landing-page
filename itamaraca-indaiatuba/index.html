@@ -45,11 +45,13 @@
     "broker": {"@type":"RealEstateAgent","name":"Imobiliária Viv'América","telephone":"+5519989769457","url":"https://lancamentos.imoveisvivamerica.com.br/"}
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--forest:#1e4025;--forest2:#2a5432;--orange:#d97542;--orange-light:#e89468;--cream:#f5f0e0;--texto:#1c2b1c;--texto-claro:#5a6858;--radius:12px}
     html{scroll-behavior:smooth}
-    body{font-family:"Segoe UI",Arial,sans-serif;color:var(--texto);background:#fff;line-height:1.65;overflow-x:hidden}
+    body{font-family:'Josefin Sans',system-ui,sans-serif;color:var(--texto);background:#fff;line-height:1.65;overflow-x:hidden}
     header{background:var(--forest);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(217,117,66,.3)}
     .logo-text{color:#fff;font-size:clamp(0.9rem,2.2vw,1.1rem);font-weight:700;text-decoration:none;letter-spacing:.5px}
     nav a{color:rgba(255,255,255,.75);text-decoration:none;margin-left:1.5rem;font-size:.88rem}
@@ -118,7 +120,7 @@
     .faq-geo{max-width:900px;margin:0 auto}
     .faq-geo .faq-label{text-transform:uppercase;letter-spacing:2px;font-size:.75rem;font-weight:700;color:var(--orange);text-align:center;display:block}
     .faq-geo .faq-h2{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:300;color:var(--forest);text-align:center;margin:.4rem 0 2rem;letter-spacing:.02em}
-    .faq-geo details{border:1px solid #ede4d0;border-radius:12px;margin-bottom:.7rem;padding:0 1.3rem;background:#fdfaf2}
+    .faq-geo details{border:1px solid #ede4d0;border-radius:12px;margin-bottom:.7rem;padding:0 1.3rem;background:#FBF8F0}
     .faq-geo summary{cursor:pointer;padding:1.1rem 0;font-weight:700;color:var(--forest);font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
     .faq-geo summary::-webkit-details-marker{display:none}
     .faq-geo summary::after{content:"+";font-size:1.4rem;color:var(--orange);font-weight:400}
@@ -148,6 +150,18 @@
     .float-wpp svg{width:30px;height:30px;fill:#fff}
     @keyframes pulse-wpp{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5)}50%{box-shadow:0 4px 36px rgba(37,211,102,.85)}}
   </style>
+  <style id="marca">
+    /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
+    body, button, input, select, textarea { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.2em;
+                 text-transform:uppercase; }
+    h1 { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.08em;
+         text-transform:uppercase; line-height:1.25; }
+    h2, h3 { font-weight:600; }
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
+    .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
+  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
   <script>
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
@@ -166,7 +180,7 @@
     <a href="#contato">Contato</a>
   </nav>
 </header>
-<div class="top-bar">🏠 <span>MCMV</span> · Alvará 25/2026 · Zarin · Indaiatuba/SP · <span>Financie pela Caixa</span></div>
+<div class="top-bar"><span>MCMV</span> · Alvará 25/2026 · Zarin · Indaiatuba/SP · <span>Financie pela Caixa</span></div>
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -201,14 +215,14 @@
     <p class="lead">Todas as plantas com varanda, ponto de ar-condicionado na sala e nos dormitórios, gás natural para fogão, chuveiro e cozinha, revestimento cerâmico até o teto no box e pé direito de 2,80 m.</p>
     <div class="features-grid">
       <div class="feat-card"><span class="feat-icon">❄️</span><h4>Ponto para ar-condicionado</h4><p>Sala 12.000 BTU · dormitório 9.000 BTU · suíte 9.000 BTU. Ponto e dreno entregues.</p></div>
-      <div class="feat-card"><span class="feat-icon">🔥</span><h4>Gás natural encanado</h4><p>Fogão, chuveiro e torneira da cozinha alimentados por gás natural.</p></div>
+      <div class="feat-card"><span class="feat-icon"></span><h4>Gás natural encanado</h4><p>Fogão, chuveiro e torneira da cozinha alimentados por gás natural.</p></div>
       <div class="feat-card"><span class="feat-icon">🛁</span><h4>Revestimento até o teto no box</h4><p>Piso cerâmico e revestimento acima da bancada e no box até o teto.</p></div>
       <div class="feat-card"><span class="feat-icon">🍳</span><h4>Cozinha com bancada em granito</h4><p>Bancada em granito, revestimento cerâmico e 2 faixas de piso.</p></div>
-      <div class="feat-card"><span class="feat-icon">🌿</span><h4>Varanda com fechamento em vidro</h4><p>Permitido fechamento em vidro para ampliar a área útil.</p></div>
+      <div class="feat-card"><span class="feat-icon"></span><h4>Varanda com fechamento em vidro</h4><p>Permitido fechamento em vidro para ampliar a área útil.</p></div>
       <div class="feat-card"><span class="feat-icon">⚡</span><h4>Elétrica 110V + 220V</h4><p>Iluminação em 110V e tomadas em 220V, ideal para eletrodomésticos.</p></div>
       <div class="feat-card"><span class="feat-icon">📏</span><h4>Pé direito de 2,80 m</h4><p>Altura osso confortável e sensação de espaço amplo.</p></div>
       <div class="feat-card"><span class="feat-icon">🧺</span><h4>Área de serviço completa</h4><p>Piso e revestimento cerâmico, 1,50 m de altura na parede.</p></div>
-      <div class="feat-card"><span class="feat-icon">🏦</span><h4>MCMV com FGTS</h4><p>Financie pela Caixa Econômica Federal com uso do FGTS e subsídios do programa.</p></div>
+      <div class="feat-card"><span class="feat-icon"></span><h4>MCMV com FGTS</h4><p>Financie pela Caixa Econômica Federal com uso do FGTS e subsídios do programa.</p></div>
     </div>
   </div>
 </section>
@@ -291,7 +305,7 @@
       <span class="preco-tipo">Itamaracá · Apartamento MCMV</span>
       <div class="preco-valor">Sob consulta</div>
       <p class="preco-desc">Financiamento MCMV pela Caixa Econômica Federal com uso do FGTS. Condições especiais para as primeiras reservas.<br>Solicite a tabela oficial atualizada e a simulação personalizada.</p>
-      <div class="preco-disclaimer">⚠️ Tabela sujeita a alteração sem aviso prévio. Cadastro sujeito à aprovação de crédito. Fale com a Viv'América para receber a tabela e a disponibilidade atualizadas.</div>
+      <div class="preco-disclaimer">Tabela sujeita a alteração sem aviso prévio. Cadastro sujeito à aprovação de crédito. Fale com a Viv'América para receber a tabela e a disponibilidade atualizadas.</div>
       <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20a%20tabela%20oficial%20e%20a%20simula%C3%A7%C3%A3o%20do%20Itamarac%C3%A1%20Residencial." class="btn-orange" style="width:100%;justify-content:center;margin-top:.5rem;">Solicitar tabela oficial</a>
     </div>
   </div>
@@ -324,7 +338,7 @@
 </script>
 <section class="cta-section" id="contato">
   <div class="cta-content">
-    <span class="cta-badge">🏠 MCMV Zarin</span>
+    <span class="cta-badge">MCMV Zarin</span>
     <h2>Garanta seu apartamento no Itamaracá</h2>
     <p>Fale agora com a Viv'América e receba a tabela oficial, as plantas em PDF, a disponibilidade por torre e a simulação MCMV personalizada.</p>
     <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20fazer%20minha%20reserva%20no%20Itamarac%C3%A1%20Residencial%20em%20Indaiatuba." class="btn-orange" style="font-size:1.05rem;padding:1.1rem 2.6rem;">Falar no WhatsApp agora</a>
@@ -346,10 +360,10 @@
 /* ─── localização com mapa sob demanda ─── */
 .mapa-sec{padding:3.4rem 0;background:#f7f5ef}
 .mapa-wrap{max-width:1100px;margin:0 auto;padding:0 1.2rem}
-.mapa-wrap h2{font-size:1.75rem;font-weight:800;color:#0f1c29;margin:0 0 .35rem;letter-spacing:-.01em}
+.mapa-wrap h2{font-size:1.75rem;font-weight:800;color:#161616;margin:0 0 .35rem;letter-spacing:-.01em}
 .mapa-end{font-size:.95rem;color:#6b6559;margin:0 0 1.4rem}
 .mapa-box{position:relative;width:100%;aspect-ratio:16/9;max-height:460px;border-radius:14px;
-  overflow:hidden;background:#e8e4d8;border:1px solid #ddd6c4;cursor:pointer}
+  overflow:hidden;background:#e8e4d8;border:1px solid #DCD6C6;cursor:pointer}
 .mapa-box iframe{width:100%;height:100%;border:0;display:block}
 .mapa-btn{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
@@ -358,12 +372,12 @@
   font-family:inherit;transition:background .2s}
 .mapa-btn:hover{background:repeating-linear-gradient(45deg,#e9e5d8 0 14px,#e3ded0 14px 28px)}
 .mapa-ic{font-size:2.1rem;line-height:1}
-.mapa-t{font-size:1.05rem;font-weight:800;color:#0f1c29;
-  background:#c9a84c;padding:.7rem 1.6rem;border-radius:8px}
+.mapa-t{font-size:1.05rem;font-weight:800;color:#161616;
+  background:#C9A227;padding:.7rem 1.6rem;border-radius:8px}
 .mapa-s{font-size:.78rem;color:#7a7365;max-width:30ch;text-align:center;line-height:1.45}
 .mapa-rota{display:inline-block;margin-top:1rem;font-size:.92rem;font-weight:700;
-  color:#0f1c29;text-decoration:none;border-bottom:2px solid #c9a84c;padding-bottom:2px}
-.mapa-rota:hover{color:#c9a84c}
+  color:#161616;text-decoration:none;border-bottom:2px solid #C9A227;padding-bottom:2px}
+.mapa-rota:hover{color:#C9A227}
 @media(max-width:640px){.mapa-wrap h2{font-size:1.4rem}.mapa-box{aspect-ratio:4/3}}
 </style>
 <section class="mapa-sec" id="localizacao">
@@ -372,7 +386,7 @@
     <p class="mapa-end">Indaiatuba · São Paulo</p>
     <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4038.602442445237!2d-47.200887488645314!3d-23.07556954383886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b582e101fb3d%3A0x9e2908cec0c37541!2sItamarac%C3%A1%20Residencial!5e1!3m2!1spt-BR!2sbr!4v1786996728450!5m2!1spt-BR!2sbr">
       <button class="mapa-btn" type="button" aria-label="Carregar o mapa de localização">
-        <span class="mapa-ic" aria-hidden="true">📍</span>
+        <span class="mapa-ic" aria-hidden="true"></span>
         <span class="mapa-t">Ver no mapa</span>
         <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
       </button>

@@ -80,6 +80,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -308,6 +310,18 @@
       header .brand { font-size: 1.15rem; }
     }
   </style>
+  <style id="marca">
+    /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
+    body, button, input, select, textarea { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.2em;
+                 text-transform:uppercase; }
+    h1 { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.08em;
+         text-transform:uppercase; line-height:1.25; }
+    h2, h3 { font-weight:600; }
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
+    .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
+  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -398,7 +412,7 @@
     <h1>Storia <em>Congesa</em></h1>
     <p class="hero-tagline">A sua começa aqui.</p>
     <p class="hero-sub">Duas torres residenciais na região mais nobre de Indaiatuba. 186 apartamentos de 2 dormitórios com 1 suíte (70,05m²), 3 suítes com lavabo (114,89m²), 2 vagas + hobby box em todas as unidades.</p>
-    <p class="hero-loc">📍 Rua Nove de Julho x Rua Arara · Indaiatuba SP · Entrega dez/2026</p>
+    <p class="hero-loc">Rua Nove de Julho x Rua Arara · Indaiatuba SP · Entrega dez/2026</p>
     <div class="hero-btns">
       <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20o%20Storia%20Congesa%20e%20quero%20saber%20mais.%20Pode%20me%20ajudar?"
          class="btn-wa" target="_blank" rel="noopener">
@@ -456,7 +470,7 @@
       <div class="lazer-card">
         <img src="images/espelho-agua.jpg" alt="Espelho d'água no lobby do Storia Congesa Indaiatuba" loading="lazy">
         <div class="lazer-card-body">
-          <div class="lazer-icon">💧</div>
+          <div class="lazer-icon"></div>
           <h3>Lobby com Espelho d'Água</h3>
           <p>Recepção monumental com jardim interno, fontes e assinatura Storia em pedra</p>
         </div>
@@ -520,7 +534,7 @@
       <div class="lazer-card">
         <img src="images/churrasqueira.jpg" alt="Churrasqueira Storia Congesa" loading="lazy">
         <div class="lazer-card-body">
-          <div class="lazer-icon">🔥</div>
+          <div class="lazer-icon"></div>
           <h3>Churrasqueiras Coletivas</h3>
           <p>Espaço aberto com churrasqueiras a carvão, coifas e áreas de convivência</p>
         </div>
@@ -667,12 +681,12 @@
         <h2 class="sec-title">A poucos passos de tudo o que importa</h2>
         <p class="sec-desc">O Storia está entre a Av. Conceição, o Parque Ecológico e o cinturão comercial da Padaria Suíça e Oba Hortifruti — na mesma região dos empreendimentos irmãos Atmosphera Congesa e Authoria Congesa.</p>
         <ul class="poi-list">
-          <li><span>🌳 Parque Ecológico</span><strong>a poucos minutos</strong></li>
+          <li><span>Parque Ecológico</span><strong>a poucos minutos</strong></li>
           <li><span>🥖 Padaria Suíça</span><strong>a caminhada</strong></li>
           <li><span>🍎 Oba Hortifruti</span><strong>a caminhada</strong></li>
           <li><span>🛣️ Av. Presidente Vargas / Av. Conceição</span><strong>eixo principal</strong></li>
-          <li><span>🏢 Atmosphera Congesa</span><strong>mesma região</strong></li>
-          <li><span>🏢 Authoria Congesa</span><strong>mesma região</strong></li>
+          <li><span>Atmosphera Congesa</span><strong>mesma região</strong></li>
+          <li><span>Authoria Congesa</span><strong>mesma região</strong></li>
         </ul>
       </div>
       <div>
@@ -760,10 +774,10 @@
 /* ─── localização com mapa sob demanda ─── */
 .mapa-sec{padding:3.4rem 0;background:#f7f5ef}
 .mapa-wrap{max-width:1100px;margin:0 auto;padding:0 1.2rem}
-.mapa-wrap h2{font-size:1.75rem;font-weight:800;color:#0f1c29;margin:0 0 .35rem;letter-spacing:-.01em}
+.mapa-wrap h2{font-size:1.75rem;font-weight:800;color:#161616;margin:0 0 .35rem;letter-spacing:-.01em}
 .mapa-end{font-size:.95rem;color:#6b6559;margin:0 0 1.4rem}
 .mapa-box{position:relative;width:100%;aspect-ratio:16/9;max-height:460px;border-radius:14px;
-  overflow:hidden;background:#e8e4d8;border:1px solid #ddd6c4;cursor:pointer}
+  overflow:hidden;background:#e8e4d8;border:1px solid #DCD6C6;cursor:pointer}
 .mapa-box iframe{width:100%;height:100%;border:0;display:block}
 .mapa-btn{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
@@ -772,12 +786,12 @@
   font-family:inherit;transition:background .2s}
 .mapa-btn:hover{background:repeating-linear-gradient(45deg,#e9e5d8 0 14px,#e3ded0 14px 28px)}
 .mapa-ic{font-size:2.1rem;line-height:1}
-.mapa-t{font-size:1.05rem;font-weight:800;color:#0f1c29;
-  background:#c9a84c;padding:.7rem 1.6rem;border-radius:8px}
+.mapa-t{font-size:1.05rem;font-weight:800;color:#161616;
+  background:#C9A227;padding:.7rem 1.6rem;border-radius:8px}
 .mapa-s{font-size:.78rem;color:#7a7365;max-width:30ch;text-align:center;line-height:1.45}
 .mapa-rota{display:inline-block;margin-top:1rem;font-size:.92rem;font-weight:700;
-  color:#0f1c29;text-decoration:none;border-bottom:2px solid #c9a84c;padding-bottom:2px}
-.mapa-rota:hover{color:#c9a84c}
+  color:#161616;text-decoration:none;border-bottom:2px solid #C9A227;padding-bottom:2px}
+.mapa-rota:hover{color:#C9A227}
 @media(max-width:640px){.mapa-wrap h2{font-size:1.4rem}.mapa-box{aspect-ratio:4/3}}
 </style>
 <section class="mapa-sec" id="localizacao">
@@ -786,7 +800,7 @@
     <p class="mapa-end">Indaiatuba · São Paulo</p>
     <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.813003799738!2d-47.208053505560244!3d-23.0768352037406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b5007dfa81c3%3A0xfded51bc20b760bf!2sStoria%20Congesa!5e1!3m2!1spt-BR!2sbr!4v1786996620556!5m2!1spt-BR!2sbr">
       <button class="mapa-btn" type="button" aria-label="Carregar o mapa de localização">
-        <span class="mapa-ic" aria-hidden="true">📍</span>
+        <span class="mapa-ic" aria-hidden="true"></span>
         <span class="mapa-t">Ver no mapa</span>
         <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
       </button>

@@ -51,18 +51,20 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --verde: #c9a84c;
-      --verde-escuro: #1a2b3c;
-      --dourado: #c9a84c;
+      --verde: #C9A227;
+      --verde-escuro: #161616;
+      --dourado: #C9A227;
       --cinza-bg: #f5f5f5;
       --texto: #1a1a1a;
       --texto-claro: #555;
       --radius: 12px;
     }
-    body { font-family: "Segoe UI", Arial, sans-serif; color: var(--texto); background: #fff; line-height: 1.7; }
+    body { font-family: 'Josefin Sans', system-ui, sans-serif; color: var(--texto); background: #fff; line-height: 1.7; }
     header {
       background: var(--verde-escuro); padding: 0 5%;
       display: flex; align-items: center; justify-content: space-between;
@@ -135,8 +137,20 @@
     footer a:hover { color: var(--dourado); }
     .footer-links { margin-bottom: 1rem; }
     @media (max-width: 600px) { nav { display: none; } }
-  .hub-tipo{font-size:1.15rem;font-weight:800;margin:2rem 0 .9rem;color:#0f1c29}.hub-tipo small{color:#8a8272;font-weight:600;font-size:.8rem;margin-left:.4rem}
+  .hub-tipo{font-size:1.15rem;font-weight:800;margin:2rem 0 .9rem;color:#161616}.hub-tipo small{color:#8a8272;font-weight:600;font-size:.8rem;margin-left:.4rem}
 </style>
+  <style id="marca">
+    /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
+    body, button, input, select, textarea { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.2em;
+                 text-transform:uppercase; }
+    h1 { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.08em;
+         text-transform:uppercase; line-height:1.25; }
+    h2, h3 { font-weight:600; }
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
+    .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
+  </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
   <script>
@@ -198,7 +212,7 @@
   </div>
   <h1>Lançamentos Imobiliários em Indaiatuba SP 2026</h1>
   <p>Todos os empreendimentos em lançamento na cidade — apartamentos, lotes e condomínios fechados — com o preço "a partir de" aberto, sem cadastro.</p>
-  <a href="/precos-lancamentos-indaiatuba/" style="display:inline-block;margin-top:.9rem;background:#c9a84c;color:#0f1c29;font-weight:800;padding:.7rem 1.4rem;border-radius:9px;text-decoration:none">📊 Tabela de preços de agosto/2026 →</a>
+  <a href="/precos-lancamentos-indaiatuba/" style="display:inline-block;margin-top:.9rem;background:#C9A227;color:#161616;font-weight:800;padding:.7rem 1.4rem;border-radius:9px;text-decoration:none">Tabela de preços de agosto/2026 →</a>
 </section>
 
 <section class="listings-section">
@@ -207,12 +221,12 @@
     <p style="color:var(--texto-claro); margin-bottom: 0;">Ordenados do menor para o maior investimento · preços das tabelas oficiais de agosto/2026</p>
 
     <!--GEN:hubgrid-->
-      <h3 class="hub-tipo">🏢 Apartamentos <small>13</small></h3>
+      <h3 class="hub-tipo">Apartamentos <small>13</small></h3>
       <div class="listings-grid">
       <a href="/uni-residencial-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">MCMV · FGTS</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">MCMV · FGTS</span>
           <h3>Uni Residencial</h3>
           <p>Masotti · 2 dorm c/ suíte · sacada · vaga coberta</p>
           <div class="card-price">A partir de R$ 279.990</div>
@@ -222,7 +236,7 @@
       <a href="/gran-vic-tangara-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">MCMV · FGTS</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">MCMV · FGTS</span>
           <h3>Gran Vic Tangará</h3>
           <p>VIC Engenharia · 2 dorm · 47,22 m² · varanda · 16 itens lazer</p>
           <div class="card-price">A partir de R$ 331.737</div>
@@ -232,7 +246,7 @@
       <a href="/gran-vic-colibri-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../gran-vic-colibri-indaiatuba/images/hero.jpg" alt="Gran Vic Colibri Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">MCMV · FGTS</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">MCMV · FGTS</span>
           <h3>Gran Vic Colibri</h3>
           <p>VIC Engenharia · 2 dorm c/ suíte · 51,42 m² · 15 itens lazer</p>
           <div class="card-price">A partir de R$ 332.450</div>
@@ -242,7 +256,7 @@
       <a href="/vivere-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../vivere-indaiatuba/images/hero.jpg" alt="Vívere Residencial Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#C62828;color:#fff;">🔥 Últimas 5 unidades</span>
+          <span class="card-badge" style="background:#C62828;color:#fff;">Últimas 5 unidades</span>
           <h3>Vívere Residencial</h3>
           <p>Masotti · 2 dorm · 46 a 50 m² · pronto para morar · últimas 5 unidades</p>
           <div class="card-price">A partir de R$ 352.552</div>
@@ -252,7 +266,7 @@
       <a href="/aurora-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Alto padrão</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Alto padrão</span>
           <h3>Aurora — Park Meraki</h3>
           <p>Masotti · 101 a 152 m² · 4 torres · 32 áreas de lazer</p>
           <div class="card-price">A partir de R$ 758.850</div>
@@ -262,7 +276,7 @@
       <a href="/storia-congesa-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../storia-congesa-indaiatuba/images/hero.jpg" alt="Storia Congesa Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Alto padrão</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Alto padrão</span>
           <h3>Storia Congesa</h3>
           <p>Congesa · 70 a 114 m² · 2-3 vagas + hobby box · dez/2026</p>
           <div class="card-price">A partir de R$ 981.000</div>
@@ -272,7 +286,7 @@
       <a href="/helade-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../helade-indaiatuba/images/hero.jpg" alt="Hélade — Park Meraki Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Alto padrão</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Alto padrão</span>
           <h3>Hélade — Park Meraki</h3>
           <p>PERPLAN · 3 suítes · 120,18 m² · 3 vagas · mar/2027</p>
           <div class="card-price">A partir de R$ 1.300.668</div>
@@ -282,7 +296,7 @@
       <a href="/arete-home-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../arete-home-indaiatuba/images/hero.jpg" alt="Areté Home Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Pré-lançamento</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Pré-lançamento</span>
           <h3>Areté Home</h3>
           <p>PERPLAN · Torre única · 2 e 3 suítes · varanda nivelada · vagas cobertas</p>
           <div class="card-price">Tabela sob consulta</div>
@@ -292,7 +306,7 @@
       <a href="/viva-parque-aura-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../viva-parque-aura-indaiatuba/images/hero.jpg" alt="Viva Parque Aura Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Pré-lançamento</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Pré-lançamento</span>
           <h3>Viva Parque Aura</h3>
           <p>Pinheiro · RDZ · iBen · 47 a 85 m² · 7.000 m² parque · +30 itens lazer</p>
           <div class="card-price">Tabela sob consulta</div>
@@ -302,7 +316,7 @@
       <a href="/manai-bosque-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../manai-bosque-indaiatuba/images/hero-3-torres.jpg" alt="Manai Bosque Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Pré-lançamento</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Pré-lançamento</span>
           <h3>Manai Bosque</h3>
           <p>Masotti · 65 a 91 m² · piscina raia 25m · 36 áreas lazer</p>
           <div class="card-price">Tabela sob consulta</div>
@@ -312,7 +326,7 @@
       <a href="/seasons-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../seasons-indaiatuba/images/hero.jpg" alt="Congesa Seasons Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Pré-lançamento</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Pré-lançamento</span>
           <h3>Congesa Seasons</h3>
           <p>Congesa · 3 suítes · Penthouse · Maison c/ jardim</p>
           <div class="card-price">Tabela sob consulta</div>
@@ -322,7 +336,7 @@
       <a href="/spazio-italia-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../spazio-italia-indaiatuba/images/hero.jpg" alt="Spazio Italia Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Pré-lançamento</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Pré-lançamento</span>
           <h3>Spazio Italia</h3>
           <p>Zarin · 59 a 63 m² · suíte · 25+ itens lazer mobiliados</p>
           <div class="card-price">Tabela sob consulta</div>
@@ -332,7 +346,7 @@
       <a href="/itamaraca-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../itamaraca-indaiatuba/images/hero.jpg" alt="Itamaracá Residencial Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">MCMV · FGTS</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">MCMV · FGTS</span>
           <h3>Itamaracá Residencial</h3>
           <p>Zarin · 48 a 54 m² · Rua Tupinambás · 1 min Av. Conceição</p>
           <div class="card-price">Tabela sob consulta</div>
@@ -340,12 +354,12 @@
         </div>
       </a>
       </div>
-      <h3 class="hub-tipo">🏞️ Lotes e condomínios <small>8</small></h3>
+      <h3 class="hub-tipo">Lotes e condomínios <small>8</small></h3>
       <div class="listings-grid">
       <a href="/monte-carmelo-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Loteamento</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Loteamento</span>
           <h3>Residencial Monte Carmelo</h3>
           <p>Dominium · Loteamento aberto · entrada de R$ 16.000 · 96x</p>
           <div class="card-price">A partir de R$ 145.000 · R$ 967/m²</div>
@@ -355,7 +369,7 @@
       <a href="/di-italia-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../di-italia-indaiatuba/images/hero.jpg" alt="Jardim Di Italia Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#C62828;color:#fff;">🔥 Últimas 43 unidades</span>
+          <span class="card-badge" style="background:#C62828;color:#fff;">Últimas 43 unidades</span>
           <h3>Jardim Di Italia</h3>
           <p>Dominium · Loteamento aberto · infraestrutura concluída</p>
           <div class="card-price">A partir de R$ 188.000 · R$ 1.253/m²</div>
@@ -365,7 +379,7 @@
       <a href="/terras-de-san-marino-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../images/hero.jpg" alt="Terras de San Marino Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#C62828;color:#fff;">🔥 Últimas 4 unidades</span>
+          <span class="card-badge" style="background:#C62828;color:#fff;">Últimas 4 unidades</span>
           <h3>Terras de San Marino</h3>
           <p>Dominium · 546 lotes · 16.164 m² de lazer resort</p>
           <div class="card-price">A partir de R$ 247.500 · R$ 1.650/m²</div>
@@ -375,7 +389,7 @@
       <a href="/parque-zarah-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Cond. fechado</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Cond. fechado</span>
           <h3>Parque Zarah</h3>
           <p>Zarin · Inspiração persa · 15+ áreas de lazer · 2026</p>
           <div class="card-price">A partir de R$ 249.123 · R$ 1.661/m²</div>
@@ -385,7 +399,7 @@
       <a href="/vila-fahl-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../vila-fahl-indaiatuba/images/hero.jpg" alt="Residencial Vila Fahl Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Loteamento</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Loteamento</span>
           <h3>Residencial Vila Fahl</h3>
           <p>Vila Fahl · iBen · Residencial e comercial · 5 min do Parque Ecológico · até 96x · 15 itens de lazer</p>
           <div class="card-price">A partir de R$ 273.750 · R$ 1.825/m²</div>
@@ -395,7 +409,7 @@
       <a href="/reserva-botanica-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../reserva-botanica-indaiatuba/images/hero.jpg" alt="Reserva Botânica Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Cond. fechado</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Cond. fechado</span>
           <h3>Reserva Botânica</h3>
           <p>Zarin · 250 a 456 m² · portaria 24h · 3 quadras</p>
           <div class="card-price">A partir de R$ 391.682 · R$ 1.567/m²</div>
@@ -405,7 +419,7 @@
       <a href="/alpnach-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../alpnach-indaiatuba/images/hero.jpg" alt="Alpnach Residence Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#C62828;color:#fff;">🔥 Últimas 35 unidades</span>
+          <span class="card-badge" style="background:#C62828;color:#fff;">Últimas 35 unidades</span>
           <h3>Alpnach Residence</h3>
           <p>Dominium · 322 lotes · piscina coberta · mini mercado 24h</p>
           <div class="card-price">A partir de R$ 480.000 · R$ 1.600/m²</div>
@@ -415,7 +429,7 @@
       <a href="/residencial-ravello-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="../residencial-ravello-indaiatuba/images/hero.jpg" alt="Residencial Ravello Indaiatuba">
         <div class="card-body">
-          <span class="card-badge" style="background:#0f1c29;color:#c9a84c;">Cond. fechado</span>
+          <span class="card-badge" style="background:#161616;color:#C9A227;">Cond. fechado</span>
           <h3>Residencial Ravello</h3>
           <p>Dominium · 710 lotes · 27 itens: SPA, Wine Bar, Fire Pit</p>
           <div class="card-price">A partir de R$ 672.000 · R$ 1.600/m²</div>
@@ -443,7 +457,7 @@
 
     <div class="fase-grid">
       <div class="fase-card pre">
-        <span class="fase-icon">⭐</span>
+        <span class="fase-icon"></span>
         <h4>Pré-lançamento</h4>
         <p>Preço mais baixo, escolha dos melhores lotes. Exclusivo para cadastrados e investidores.</p>
       </div>
@@ -453,7 +467,7 @@
         <p>Empreendimento aberto ao público. Boa oportunidade antes das obras iniciarem.</p>
       </div>
       <div class="fase-card obras">
-        <span class="fase-icon">🏗️</span>
+        <span class="fase-icon"></span>
         <h4>Em obras</h4>
         <p>Preço já corrigido, mas ainda com valorização até a entrega. Boa liquidez.</p>
       </div>
