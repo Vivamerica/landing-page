@@ -362,6 +362,14 @@
     nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
     .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
     .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
+    .nav-cta { border:1px solid #C9A227; color:#C9A227 !important; padding:.45rem .9rem; border-radius:4px; }
+    .nav-cta:hover { background:#C9A227; color:#161616 !important; }
+    .cta-topo { display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; justify-content:space-between;
+                background:#161616; padding:1rem 1.2rem; margin:1.4rem 0 1.8rem; border-radius:4px; }
+    .cta-topo p { color:#fff; margin:0; font-weight:300; font-size:.95rem; }
+    .cta-topo a { background:#C9A227; color:#161616; font-weight:600; padding:.7rem 1.3rem; text-decoration:none;
+                  letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; border-radius:4px; white-space:nowrap; }
+    .cta-topo a:hover { background:#E0C05A; }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
@@ -1152,8 +1160,33 @@
     });
   });
 
+  // filtro pela URL: /?f=mcmv · /?t=lote · /?p=a · /?s=pronto (combináveis)
+  // é o que permite o blog mandar o leitor direto para "imóveis MCMV"
+  (function(){
+    var q = new URLSearchParams(location.search);
+    var mapa = { t:'tipo', p:'faixa', s:'status', f:'flag' };
+    var usado = false;
+    Object.keys(mapa).forEach(function(k){
+      var v = q.get(k);
+      if (v === null) return;
+      var chave = mapa[k];
+      var grp = document.querySelector('.filtro-chips[data-filtro="' + chave + '"]');
+      if (!grp) return;
+      var alvo = grp.querySelector('.chip[data-v="' + v + '"]');
+      if (!alvo) return;
+      grp.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('is-on'); });
+      alvo.classList.add('is-on');
+      estado[chave] = v;
+      usado = true;
+    });
+    if (usado) {
+      aplicar();
+      document.getElementById('filtros').scrollIntoView({ block: 'start' });
+    }
+  })();
+
   window.limparFiltros = function(){
-    estado = { faixa:'', status:'', flag:'' };
+    estado = { tipo:'', faixa:'', status:'', flag:'' };
     document.querySelectorAll('.filtro-chips').forEach(function(grp){
       grp.querySelectorAll('.chip').forEach(function(x,i){ x.classList.toggle('is-on', i===0); });
     });

@@ -42,6 +42,14 @@ const MARCA = `
     nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
     .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
     .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
+    .nav-cta { border:1px solid #C9A227; color:#C9A227 !important; padding:.45rem .9rem; border-radius:4px; }
+    .nav-cta:hover { background:#C9A227; color:#161616 !important; }
+    .cta-topo { display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; justify-content:space-between;
+                background:#161616; padding:1rem 1.2rem; margin:1.4rem 0 1.8rem; border-radius:4px; }
+    .cta-topo p { color:#fff; margin:0; font-weight:300; font-size:.95rem; }
+    .cta-topo a { background:#C9A227; color:#161616; font-weight:600; padding:.7rem 1.3rem; text-decoration:none;
+                  letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; border-radius:4px; white-space:nowrap; }
+    .cta-topo a:hover { background:#E0C05A; }
   </style>`;
 
 function trocarCores(s) {
@@ -82,7 +90,9 @@ for (const g of ['gera-observatorio.js', 'gera-home.js']) {
 function reskinPagina(html) {
   let h = trocarCores(html);
   if (!h.includes('family=Poiret+One')) h = h.replace('<style>', FONTS + '\n  <style>');
-  if (!h.includes('id="marca"')) {
+  if (h.includes('id="marca"')) {
+    h = h.replace(/\n?\s*<style id="marca">[\s\S]*?<\/style>/, MARCA);
+  } else {
     const i = h.indexOf('</style>');
     if (i > 0) h = h.slice(0, i + 8) + MARCA + h.slice(i + 8);
   }

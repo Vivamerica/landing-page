@@ -45,19 +45,24 @@ const lotes   = () => comPreco(LOTES);
 // destaque do texto não se repetir na lateral.
 const TEMAS = [
   { re: /minha-casa|mcmv|fgts|quem-tem-direito|como-comprar-apartamento|casa-propria-motorista/, nome: 'MCMV',
+    url: '/?f=mcmv', chamada: 'Apartamentos Minha Casa Minha Vida disponíveis em Indaiatuba',
     pega: () => mcmv().slice(0, 4) },
   { re: /apartamento-ou-lote/, nome: 'apto+lote',
+    url: '/', chamada: 'Apartamentos e lotes disponíveis em Indaiatuba',
     pega: () => [mcmv()[0], lotes()[0], lotes()[1], mcmv()[1]] },
   { re: /melhores-bairros|morar-em-indaiatuba$|morar-em-indaiatuba-e-bom/, nome: 'panorama',
+    url: '/', chamada: 'Veja o que está disponível em Indaiatuba agora',
     pega: () => [mcmv()[0], lotes()[0], altoP()[0], mcmv()[1]] },
   { re: /quanto-custa|desvantagens|indaiatuba-ou-/, nome: 'entrada',
+    url: '/?p=a', chamada: 'Imóveis até R$ 300 mil disponíveis em Indaiatuba',
     pega: () => [mcmv()[0], mcmv()[1], lotes()[0], lotes()[1]] },
   { re: /morar-em-indaiatuba-e-seguro|trabalhar-em-sao-paulo/, nome: 'cond. fechado',
+    url: '/?f=fechado', chamada: 'Condomínios fechados disponíveis em Indaiatuba',
     pega: () => [porSlug('terras-de-san-marino-indaiatuba') || lotes()[2], lotes()[0], mcmv()[0], altoP()[0]] },
 ];
 const paraTema = slug => {
   const t = TEMAS.find(t => t.re.test(slug)) || TEMAS[2];
-  return { nome: t.nome, itens: t.pega().filter(Boolean) };
+  return { nome: t.nome, url: t.url, chamada: t.chamada, itens: t.pega().filter(Boolean) };
 };
 
 // ─── HTML dos cards ───
@@ -175,7 +180,7 @@ let feitos = 0, pulados = [];
 
 arquivos.forEach(({ slug, caminho }) => {
   let h = fs.readFileSync(caminho, 'utf8');
-  const { nome, itens } = paraTema(slug);
+  const { nome, url, chamada, itens } = paraTema(slug);
   if (!itens.length) { pulados.push(slug + ' (sem empreendimento)'); return; }
 
   // 1. CSS e rastreio — SUBSTITUÍDOS a cada rodada, para que ajuste de
@@ -212,6 +217,25 @@ arquivos.forEach(({ slug, caminho }) => {
     }
   }
 
+  // 3.5 CTA de conversão no topo do texto — quem está no celular não vê a
+  //     coluna lateral, então o convite vem logo depois do resumo e cai na
+  //     home com o filtro do tema já ativo (a home lê /?f= /?t= /?p= /?s=)
+  if (!h.includes('<!--GEN:cta-topo-->')) {
+    const iResumo = h.indexOf('class="resumo"');
+    if (iResumo > -1) {
+      const fimResumo = h.indexOf('</p>', iResumo) + 4;
+      h = h.slice(0, fimResumo) + '\n\n    <!--GEN:cta-topo--><!--/GEN:cta-topo-->' + h.slice(fimResumo);
+    } else {
+      const ia2 = h.indexOf('<article>');
+      const primeiroH2 = h.indexOf('<h2', ia2);
+      if (primeiroH2 > -1) h = h.slice(0, primeiroH2) + '<!--GEN:cta-topo--><!--/GEN:cta-topo-->\n    ' + h.slice(primeiroH2);
+    }
+  }
+
+  // menu: o item Lançamentos vira botão de destaque
+  h = h.replace('<a href="/lancamentos-indaiatuba/">Lançamentos</a>',
+                '<a class="nav-cta" href="/lancamentos-indaiatuba/">Lançamentos de Imóveis</a>');
+
   // 4. preencher os marcadores (sempre — é daqui que vem o preço atualizado)
   const gen = (marca, conteudo) => {
     const a = '<!--GEN:' + marca + '-->', b = '<!--/GEN:' + marca + '-->';
@@ -231,6 +255,12 @@ arquivos.forEach(({ slug, caminho }) => {
     '\n          <span class="bo-btn">Ver a tabela →</span></div></a>\n      ');
 
   gen('oferta', cardTexto(itens[0]) + '\n    ');
+
+  gen('cta-topo',
+    '\n      <div class="cta-topo">' +
+    '\n        <p>' + chamada + '</p>' +
+    '\n        <a href="' + url + '" data-emp="cta-topo">Ver imóveis disponíveis</a>' +
+    '\n      </div>\n    ');
 
   fs.writeFileSync(caminho, h, 'utf8');
   feitos++;
