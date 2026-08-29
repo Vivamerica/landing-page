@@ -50,6 +50,16 @@ const MARCA = `
     .cta-topo a { background:#C9A227; color:#161616; font-weight:600; padding:.7rem 1.3rem; text-decoration:none;
                   letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; border-radius:4px; white-space:nowrap; }
     .cta-topo a:hover { background:#E0C05A; }
+    .malha { background:#161616; padding:2.2rem 5%; }
+    .malha-in { max-width:1160px; margin:0 auto; }
+    .malha-titulo { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.18em;
+                    text-transform:uppercase; color:#C9A227; font-size:.95rem; margin:0 0 1rem; }
+    .malha-grupo { margin:0 0 .7rem; line-height:2; }
+    .malha-rotulo { color:#C9A227; font-size:.68rem; font-weight:600; letter-spacing:.16em;
+                    text-transform:uppercase; margin-right:.9rem; }
+    .malha a { color:rgba(255,255,255,.78); text-decoration:none; font-size:.82rem;
+               font-weight:300; margin-right:.9rem; white-space:nowrap; }
+    .malha a:hover { color:#C9A227; }
   </style>`;
 
 function trocarCores(s) {
