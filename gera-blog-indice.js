@@ -40,6 +40,7 @@ const TEMA_POR_SLUG = {
   'melhores-bairros-para-morar-indaiatuba':          { tag: 'Bairros',                cat: 'bairros' },
   'indaiatuba-ou-sorocaba':                          { tag: 'Comparativo',            cat: 'comparativos' },
   'indaiatuba-ou-campinas':                          { tag: 'Comparativo',            cat: 'comparativos' },
+  'hospital-parque-dos-passaros-indaiatuba':         { tag: 'Cidade · Obra pública',  cat: 'cidade' },
   'apartamento-ou-lote-indaiatuba':                  { tag: 'Investimento',           cat: 'investimento' },
 };
 const DESTAQUES = new Set([
@@ -48,7 +49,7 @@ const DESTAQUES = new Set([
 const CATEGORIAS = [
   ['', 'Todos'], ['mcmv', 'Minha Casa Minha Vida'], ['fgts', 'FGTS'],
   ['morar', 'Morar em Indaiatuba'], ['bairros', 'Bairros'], ['seguranca', 'Segurança'],
-  ['comparativos', 'Comparativos'], ['investimento', 'Investimento'],
+  ['comparativos', 'Comparativos'], ['investimento', 'Investimento'], ['cidade', 'Vida na cidade'],
 ];
 const MESES = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
 
