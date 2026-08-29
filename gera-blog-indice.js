@@ -39,6 +39,7 @@ const TEMA_POR_SLUG = {
   'morar-em-indaiatuba-e-seguro':                    { tag: 'Segurança · Página-dado', cat: 'seguranca' },
   'melhores-bairros-para-morar-indaiatuba':          { tag: 'Bairros',                cat: 'bairros' },
   'indaiatuba-ou-sorocaba':                          { tag: 'Comparativo',            cat: 'comparativos' },
+  'indaiatuba-ou-campinas':                          { tag: 'Comparativo',            cat: 'comparativos' },
   'apartamento-ou-lote-indaiatuba':                  { tag: 'Investimento',           cat: 'investimento' },
 };
 const DESTAQUES = new Set([
