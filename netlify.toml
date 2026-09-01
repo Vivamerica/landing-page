@@ -1,6 +1,28 @@
 [build]
   publish = "."
-  functions = "netlify/functions"
 
-[functions]
-  node_bundler = "esbuild"
+# Cabecalhos de seguranca do lancamentos.imoveisvivamerica.com.br. Ate' aqui o
+# site saia com nenhum: qualquer pagina podia ser posta dentro de um <iframe>
+# de terceiro por cima de um botao falso (clickjacking sobre o botao de
+# WhatsApp e o formulario de lead), e o navegador ainda adivinhava o tipo do
+# arquivo pelo conteudo.
+# A gestao ja' fazia isso certo desde sempre (app/__init__.py,
+# _security_headers); o site publico, que e' a porta de entrada de lead e a
+# face da marca, nao fazia.
+#
+# NAO ha' Content-Security-Policy completa aqui, de proposito: estas paginas
+# usam GA4, pixel da Meta, Google Maps e script inline gerado pelos gera-*.js.
+# Uma CSP escrita no escuro derrubaria a medicao de campanha em silencio - o
+# site continuaria bonito e as conversoes parariam de contar. `frame-ancestors`
+# e' a unica diretiva que nao depende de nada disso, e e' justamente a que
+# barra o iframe no navegador moderno; o X-Frame-Options cobre os antigos.
+#
+# Referrer-Policy nao mexe na atribuicao de campanha: ela viaja no codigo `?c=`
+# e no sufixo " [#ABC234]" do texto do WhatsApp (atrib.js), nunca no Referer.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "frame-ancestors 'none'"
