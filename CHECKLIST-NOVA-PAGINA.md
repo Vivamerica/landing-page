@@ -36,7 +36,18 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 - [ ] `brand` do `Product` no JSON-LD é `{"@type":"Brand","name":"…"}` (Organization dá tipo inválido no Search Console)
 - [ ] Toda imagem referenciada (`<img src>`, `og:image`, `url()` de CSS, `image` do JSON-LD) existe no disco — a guarda do `node identidade.js` falha com exit 1 se faltar
 - [ ] Todo bloco `<script type="application/ld+json">` passa em `JSON.parse`
-- [ ] Ritual de fechamento: `node gera-relacionados.js` → `node gera-blog-ofertas.js` → `node gera-blog-indice.js` → **por último** `node identidade.js` (exit 0; o índice do blog é regerado sem a camada de marca e o identidade a repõe)
+- [ ] Menu padrão de TODA página (landing, hub, home, Observatório, blog): **Apartamentos** (→ `/apartamentos-na-planta-indaiatuba/`) · **Loteamentos** · **Condomínios** · **Blog**; a logo → `/`. Landing sem `<nav>` recebe `<nav class="nav-site">` (CSS `#nav-site`)
+- [ ] Breadcrumb (visível + `BreadcrumbList`): apartamento = `Início › Apartamentos na planta › <Nome>`; lote = `Início › Loteamentos › <Nome>`; condomínio fechado = `Início › Condomínios fechados › <Nome>`
+- [ ] Nada aponta para `/lancamentos-indaiatuba/` (hub extinto em 02/09/2026, 301 para a home — a home é a única dona de "lançamentos imobiliários indaiatuba"). Só `_redirects` cita a URL.
+- [ ] Ritual de fechamento, **nesta ordem** (cada gerador é idempotente; rodada duas vezes, a 2ª não muda nada):
+  1. `node gera-folheto.js` — fonte única (APTOS/LOTES)
+  2. `node gera-observatorio.js` — EDICAO + Observatório
+  3. `node gera-home.js` — home (title/description/H1/selos/cards) + os dois hubs de lote (grade, m², destaque, "Atualizado em")
+  4. `node gera-apartamentos.js` — página inteira `/apartamentos-na-planta-indaiatuba/`
+  5. `node gera-blog-ofertas.js` — cards/CTA/menu dos artigos
+  6. `node gera-blog-indice.js` — `blog/index.html`
+  7. `node gera-relacionados.js` — malha todas↔todas (landings + 3 páginas de categoria)
+  8. **por último** `node identidade.js` (exit 0; guardas de acento e imagem; repõe a camada de marca nas páginas regeradas)
 
 ---
 
@@ -54,12 +65,12 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 
 ---
 
-## 3. HUB PRINCIPAL
+## 3. HOME E PÁGINAS DE CATEGORIA
 
-- [ ] Adicionar card em `index.html` (hub raiz)
-- [ ] Adicionar card em `lancamentos-indaiatuba/index.html`
-- [ ] Adicionar link no footer de ambos os hubs
-- [ ] Atualizar contador de empreendimentos no hero (se houver)
+- [ ] Registrar o empreendimento em `APTOS` ou `LOTES` do `gera-folheto.js` (fonte única) — é daí que saem: contadores e preços da home, a grade dos hubs de lote, a página de apartamentos na planta, o Observatório, o folheto e o folder
+- [ ] Adicionar o card à mão em `index.html` (a home ainda tem cards escritos à mão; o `gera-home.js` só sincroniza preço/estoque pelo slug)
+- [ ] Apartamento vivo mas fora da fonte única (esgotado) → `EXTRAS_APTOS` em `gera-relacionados.js`
+- [ ] Rodar o ritual da seção 1b — os hubs (`/apartamentos-na-planta-indaiatuba/`, `/loteamentos-em-indaiatuba/`, `/condominios-fechados-indaiatuba/`) e os contadores se atualizam sozinhos; **não** existe mais `lancamentos-indaiatuba/`
 
 ---
 

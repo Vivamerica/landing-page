@@ -46,7 +46,8 @@ Contato (WhatsApp): +55 19 98976-9457
 
 ## Páginas de categoria (guias)
 
-- [Lançamentos em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/lancamentos-indaiatuba/): Panorama de todos os lançamentos imobiliários da cidade.
+- [Lançamentos imobiliários em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/): a home é a página de todos os lançamentos da cidade (apartamentos e lotes), com filtros por tipo, preço e fase.
+- [Apartamentos na planta em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/apartamentos-na-planta-indaiatuba/): só apartamentos em lançamento, em obras e recém-entregues, ordenados por preço, com seções por dormitórios, faixa de preço e fase e tabela-resumo. Apartamentos prontos de revenda ficam em https://imoveisvivamerica.com.br/site/venda/indaiatuba/apartamentos.
 - [Condomínios fechados em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/condominios-fechados-indaiatuba/): Comparativo de preços, segurança e lazer.
 - [Loteamentos em Indaiatuba](https://lancamentos.imoveisvivamerica.com.br/loteamentos-em-indaiatuba/): Preços por m², bairros e melhores opções.
 

@@ -12,8 +12,12 @@
    RITUAL MENSAL: quando chegarem as tabelas do mês,
    1. atualizar gera-folheto.js (como sempre);
    2. registrar as mudanças em MOVIMENTOS (de → para, % calculada aqui);
-   3. trocar EDICAO;
-   4. node gera-observatorio.js && commit && push && ping IndexNow.
+   3. trocar EDICAO (mes/ano/iso/lastmod — a home, os hubs de lote e a
+      página de apartamentos leem daqui o "tabela de <mês/ano>");
+   4. rodar o ritual completo, nesta ordem: gera-folheto →
+      gera-observatorio → gera-home → gera-apartamentos →
+      gera-blog-ofertas → gera-blog-indice → gera-relacionados →
+      identidade.js (último) && commit && push && ping IndexNow.
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
@@ -152,8 +156,8 @@ const HTML = `<!DOCTYPE html>
 <title>Preços de Lançamentos em Indaiatuba — Tabela ${EDICAO.mes}/${EDICAO.ano}</title>
 <meta name="description" content="Tabela de ${EDICAO.mes.toLowerCase()}/${EDICAO.ano} com preço na tela, sem cadastro: os ${total} lançamentos de Indaiatuba, m² de lote de ${brl(m2Min)} a ${brl(m2Max)} e quem subiu ou baixou no mês.">
 <link rel="canonical" href="${URL}">
-<meta property="og:title" content="Preços de Lançamentos em Indaiatuba — ${EDICAO.mes}/${EDICAO.ano}">
-<meta property="og:description" content="Os ${total} lançamentos da cidade com preço aberto, m² médio de lote e a movimentação do mês. Atualização mensal, fonte oficial.">
+<meta property="og:title" content="Preços de Lançamentos em Indaiatuba — Tabela ${EDICAO.mes}/${EDICAO.ano}">
+<meta property="og:description" content="Tabela de ${EDICAO.mes.toLowerCase()}/${EDICAO.ano} com preço na tela, sem cadastro: os ${total} lançamentos de Indaiatuba, m² de lote de ${brl(m2Min)} a ${brl(m2Max)} e quem subiu ou baixou no mês.">
 <meta property="og:url" content="${URL}">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -184,6 +188,9 @@ const HTML = `<!DOCTYPE html>
   .topo .wrap{padding:0}
   .marca{font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:#C9A227;font-weight:700}
   .marca a{color:#fff;text-decoration:none}
+  .nav-site{display:flex;flex-wrap:wrap;gap:1.2rem;margin:0 0 1.2rem}
+  .nav-site a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+  .nav-site a:hover{color:#C9A227}
   h1{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:800;line-height:1.15;margin:.6rem 0 .5rem;letter-spacing:-.02em}
   h1 em{font-style:normal;color:#C9A227}
   .lede{max-width:62ch;opacity:.9;font-size:1.02rem}
@@ -236,6 +243,12 @@ const HTML = `<!DOCTYPE html>
 <div class="topo">
   <div class="wrap">
     <p class="marca"><a href="/">Imobiliária Viv'América</a> · Observatório de Lançamentos</p>
+    <nav class="nav-site" aria-label="Seções do site">
+      <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
+      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
+      <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
+      <a href="/blog/">Blog</a>
+    </nav>
     <h1>Preços de lançamentos em Indaiatuba<br><em>${EDICAO.mes} de ${EDICAO.ano}</em></h1>
     <p class="lede">Os ${total} empreendimentos em lançamento na cidade, com o preço "a partir de"
     aberto — sem cadastro, sem formulário. Dados das tabelas oficiais das construtoras,
@@ -319,7 +332,10 @@ ${FAQ.map(f => `    <details><summary>${f.q}</summary><p>${f.a}</p></details>`).
 
 <footer>
   Imobiliária Viv'América · Indaiatuba/SP · (19) 98976-9457 ·
-  <a href="/">todos os lançamentos</a>
+  <a href="/">todos os lançamentos</a> ·
+  <a href="/apartamentos-na-planta-indaiatuba/">apartamentos na planta</a> ·
+  <a href="/loteamentos-em-indaiatuba/">loteamentos</a> ·
+  <a href="/condominios-fechados-indaiatuba/">condomínios fechados</a>
 </footer>
 </body>
 </html>`;

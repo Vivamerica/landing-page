@@ -92,7 +92,8 @@
   var SEM_EMPREENDIMENTO = ['blog', 'quermesse', 'qrcode',
                             'condominios-fechados-indaiatuba',
                             'loteamentos-em-indaiatuba',
-                            'lancamentos-indaiatuba'];
+                            'apartamentos-na-planta-indaiatuba',
+                            'precos-lancamentos-indaiatuba'];
 
   function nomeDoEmpreendimento() {
     try {

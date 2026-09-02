@@ -1,3 +1,8 @@
+# 02/09/2026: o hub de lancamentos virou a home (a home e a unica dona do termo);
+# a categoria de apartamentos mora em /apartamentos-na-planta-indaiatuba/
+/lancamentos-indaiatuba/* / 301!
+/lancamentos-indaiatuba / 301!
+
 https://www.jdmonte-carmelo-indaiatuba.com.br/* https://lancamentos.imoveisvivamerica.com.br/monte-carmelo-indaiatuba/ 301!
 https://jdmonte-carmelo-indaiatuba.com.br/* https://lancamentos.imoveisvivamerica.com.br/monte-carmelo-indaiatuba/ 301!
 

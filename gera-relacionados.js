@@ -6,13 +6,17 @@
    ganhava os links das novas (Monte Carmelo apontava p/ 9 destinos
    enquanto o Vívere, recém-feito, apontava p/ 22).
 
-   Este gerador injeta em CADA landing, antes do <footer>, o bloco
-   <!--GEN:malha-->: links para TODOS os outros empreendimentos da
-   fonte única (APTOS/LOTES de gera-folheto.js) + as páginas de
-   categoria + os guias-pilares do blog.
+   Este gerador injeta em CADA landing e em cada página de categoria
+   (apartamentos na planta, loteamentos, condomínios), antes do <footer>,
+   o bloco <!--GEN:malha-->: links para TODOS os outros empreendimentos
+   da fonte única (APTOS/LOTES de gera-folheto.js) + os EXTRAS_APTOS
+   (esgotados no ar) + as páginas de categoria + os guias-pilares do blog.
 
    Ritual: entrou/saiu empreendimento → node gera-relacionados.js
    (e o identidade.js cuida do estilo pela camada de marca).
+   Ordem completa: gera-folheto → gera-observatorio → gera-home →
+   gera-apartamentos → gera-blog-ofertas → gera-blog-indice →
+   gera-relacionados → identidade.js (último).
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
@@ -27,10 +31,16 @@ function extrair(nome) {
 const APTOS = extrair('APTOS');
 const LOTES = extrair('LOTES');
 
-// páginas vivas fora da fonte única (esgotados que seguem no ar)
+// páginas vivas fora da fonte única (esgotados que seguem no ar).
+// c/s/img/t são lidos pelo gera-apartamentos.js, que os mostra como cards
+// sem preço na página /apartamentos-na-planta-indaiatuba/.
 const EXTRAS_APTOS = [
-  { n: 'Gran Vic Canário', slug: 'gran-vic-canario-indaiatuba' },
-  { n: 'Gran Vic Andorinha', slug: 'gran-vic-andorinha-indaiatuba' },
+  { n: 'Gran Vic Canário', slug: 'gran-vic-canario-indaiatuba', c: 'VIC Engenharia',
+    s: '2 dorm c/ suíte · Parque dos Pássaros · alternativas: Tangará e Colibri', t: 'Esgotado',
+    img: 'gran-vic-canario-indaiatuba/images/hero.jpg' },
+  { n: 'Gran Vic Andorinha', slug: 'gran-vic-andorinha-indaiatuba', c: 'VIC Engenharia',
+    s: '2 dorm c/ suíte · Parque dos Pássaros · alternativas: Tangará e Colibri', t: 'Esgotado',
+    img: 'gran-vic-andorinha-indaiatuba/images/hero.jpg' },
 ];
 
 const aptos = APTOS.map(e => ({ n: e.n, slug: e.slug })).concat(EXTRAS_APTOS)
@@ -39,6 +49,9 @@ const lotes = LOTES.map(e => ({ n: e.n, slug: e.slug }))
   .filter(e => fs.existsSync(R + e.slug + '/index.html'));
 
 const GUIAS = [
+  ['Apartamentos na planta', '/apartamentos-na-planta-indaiatuba/'],
+  ['Loteamentos', '/loteamentos-em-indaiatuba/'],
+  ['Condomínios fechados', '/condominios-fechados-indaiatuba/'],
   ['Morar em Indaiatuba', '/blog/morar-em-indaiatuba/'],
   ['Minha Casa Minha Vida', '/blog/minha-casa-minha-vida-indaiatuba/'],
   ['Guia de bairros', '/blog/melhores-bairros-para-morar-indaiatuba/'],
@@ -62,7 +75,13 @@ function malhaPara(slugAtual) {
   `;
 }
 
-const alvos = aptos.concat(lotes).map(e => e.slug);
+// páginas de categoria também recebem a malha (02/09/2026): os dois hubs de
+// lote e a página de apartamentos na planta. O hub /lancamentos-indaiatuba/
+// não existe mais (301 para a home).
+const CATEGORIAS = ['apartamentos-na-planta-indaiatuba', 'loteamentos-em-indaiatuba', 'condominios-fechados-indaiatuba']
+  .filter(s => fs.existsSync(R + s + '/index.html'));
+
+const alvos = aptos.concat(lotes).map(e => e.slug).concat(CATEGORIAS);
 let feitos = 0, criados = 0;
 for (const slug of alvos) {
   const f = R + slug + '/index.html';
@@ -79,5 +98,5 @@ for (const slug of alvos) {
   fs.writeFileSync(f, h, 'utf8');
   feitos++;
 }
-console.log('gera-relacionados: malha em ' + feitos + ' landings (' + criados + ' marcadores novos) · ' +
+console.log('gera-relacionados: malha em ' + feitos + ' paginas (' + criados + ' marcadores novos; ' + CATEGORIAS.length + ' de categoria) · ' +
   (aptos.length + lotes.length) + ' empreendimentos + ' + GUIAS.length + ' guias por página');

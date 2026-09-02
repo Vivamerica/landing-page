@@ -13,8 +13,15 @@
    A escolha é por tema, não aleatória: artigo de MCMV mostra MCMV,
    artigo de lote mostra lote. Card irrelevante é ruído e não converte.
 
+   Também normaliza o menu dos artigos (Apartamentos · Loteamentos ·
+   Condomínios · Blog + botão "Lançamentos de Imóveis" → home) e, no card
+   de ofertas de apartamento, o link "Ver todos os apartamentos na planta".
+
    Ritual: node gera-folheto.js && node gera-observatorio.js &&
            node gera-home.js && node gera-blog-ofertas.js
+   Ordem completa: gera-folheto → gera-observatorio → gera-home →
+   gera-apartamentos → gera-blog-ofertas → gera-blog-indice →
+   gera-relacionados → identidade.js (último).
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
@@ -100,7 +107,8 @@ function cardTexto(e) {
           <div class="bo-acoes">
             <a class="bo-btn-primario" href="/${e.slug}/" data-emp="${e.slug}">Ver o empreendimento</a>
             <a class="bo-btn-wpp" href="${wa(e.n)}" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
+          </div>${e.m2 ? '' : `
+          <a class="bo-todos" href="/apartamentos-na-planta-indaiatuba/" data-emp="apartamentos-na-planta">Ver todos os apartamentos na planta →</a>`}
         </div>
       </div>`;
 }
@@ -143,6 +151,8 @@ const CSS = `
     .bo-btn-primario{background:#161616;color:#fff;}
     .bo-btn-wpp{background:#25D366;color:#fff;}
     .bo-btn-primario:hover,.bo-btn-wpp:hover{opacity:.9;}
+    .bo-todos{display:inline-block;margin-top:.6rem;font-size:.8rem;font-weight:800;color:#8f7418;text-decoration:none;}
+    .bo-todos:hover{color:#161616;}
     @media(max-width:1100px){
       .blog-layout{grid-template-columns:1fr;max-width:780px;gap:1.5rem;}
       .bo-aside{position:static;flex-direction:row;overflow-x:auto;padding-bottom:.5rem;
@@ -232,9 +242,19 @@ arquivos.forEach(({ slug, caminho }) => {
     }
   }
 
-  // menu: o item Lançamentos vira botão de destaque
-  h = h.replace('<a href="/lancamentos-indaiatuba/">Lançamentos</a>',
-                '<a class="nav-cta" href="/lancamentos-indaiatuba/">Lançamentos de Imóveis</a>');
+  // menu (padrão do site desde 02/09/2026): Apartamentos · Loteamentos ·
+  // Condomínios · Blog, e o botão de destaque "Lançamentos de Imóveis"
+  // aponta para a HOME — ela é a única dona do termo; o hub
+  // /lancamentos-indaiatuba/ virou 301. Idempotente.
+  h = h.replace(/<a href="\/lancamentos-indaiatuba\/">Lançamentos<\/a>/g,
+                '<a class="nav-cta" href="/">Lançamentos de Imóveis</a>');
+  h = h.replace(/<a class="nav-cta" href="\/lancamentos-indaiatuba\/">/g, '<a class="nav-cta" href="/">');
+  h = h.replace(/<nav>([\s\S]*?)<\/nav>/, (bloco, dentro) => {
+    if (dentro.includes('/apartamentos-na-planta-indaiatuba/')) return bloco;
+    const novo = dentro.replace(/(\s*)(<a href="\/loteamentos-em-indaiatuba\/">)/,
+      '$1<a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>$1$2');
+    return '<nav>' + novo + '</nav>';
+  });
 
   // 4. preencher os marcadores (sempre — é daqui que vem o preço atualizado)
   const gen = (marca, conteudo) => {

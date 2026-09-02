@@ -11,6 +11,11 @@
 
    Ritual: publicou artigo novo → registrar o slug em TEMA_POR_SLUG
    → node gera-blog-indice.js. Nunca editar blog/index.html à mão.
+   Menu padrão do site (02/09/2026): Apartamentos · Loteamentos ·
+   Condomínios · Blog; "Lançamentos de Imóveis" → home.
+   Ordem completa: gera-folheto → gera-observatorio → gera-home →
+   gera-apartamentos → gera-blog-ofertas → gera-blog-indice →
+   gera-relacionados → identidade.js (último).
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
@@ -201,10 +206,11 @@ const html = `<!DOCTYPE html>
   <header>
     <a href="/" class="logo-text">Viv'America · Indaiatuba</a>
     <nav>
+      <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
       <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
       <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
       <a href="/blog/" class="on">Blog</a>
-      <a href="/lancamentos-indaiatuba/" class="nav-cta">Lançamentos de Imóveis</a>
+      <a href="/" class="nav-cta">Lançamentos de Imóveis</a>
     </nav>
   </header>
 
@@ -213,7 +219,7 @@ const html = `<!DOCTYPE html>
     <h1>Guia do Mercado Imobiliário de Indaiatuba</h1>
     <p>Morar, comprar e financiar em Indaiatuba — explicado com dados, fontes e preço aberto, sem cadastro.</p>
     <div class="hero-acoes">
-      <a class="btn-solido" href="/lancamentos-indaiatuba/">Ver Lançamentos</a>
+      <a class="btn-solido" href="/">Ver Lançamentos</a>
       <a class="btn-tabela" href="/precos-lancamentos-indaiatuba/">Tabela de preços →</a>
     </div>
   </section>
@@ -232,7 +238,9 @@ ${artigos.map(cardHtml).join('\n')}
   <footer>
     <div class="footer-links">
       <a href="/">Início</a>
-      <a href="/lancamentos-indaiatuba/">Lançamentos</a>
+      <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a>
+      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
+      <a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a>
       <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a>
       <a href="/blog/">Blog</a>
     </div>
