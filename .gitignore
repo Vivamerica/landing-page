@@ -1,25 +1,54 @@
-# Sistema operacional
-.DS_Store
-Thumbs.db
-desktop.ini
+# LISTA DE PERMISSAO — nada entra por acidente.
+#
+# Esta pasta fica na Area de Trabalho e o gatilho de publicacao roda
+# `git add .`: qualquer arquivo largado aqui virava pagina na internet aberta,
+# porque a regra antiga era uma lista de EXCLUSAO (so' barrava o que alguem
+# tivesse lembrado de escrever). Um contrato, uma planilha ou um backup
+# esquecido nesta pasta ia ao ar sem ninguem ver.
+#
+# Agora e' o contrario: ignora-se TUDO e liberam-se so' os formatos que o site
+# realmente publica. Arquivo de formato novo nao sobe sozinho — se for para
+# publicar, adicione a extensao aqui, de proposito.
+#
+# Arquivo JA rastreado nao e' afetado por esta regra (o .gitignore so' vale
+# para o que ainda nao entrou), entao nada do site atual deixa de funcionar.
 
-# Editor
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
+*
 
-# Logs
-*.log
+# Pastas precisam passar para o git enxergar o conteudo delas
+!*/
 
-# Temporários
-*.tmp
-*.bak
+# Paginas e codigo do site
+!*.html
+!*.css
+!*.js
+
+# Imagens
+!*.jpg
+!*.jpeg
+!*.png
+!*.svg
+!*.webp
+!*.ico
+!*.gif
+
+# Conteudo e configuracao publicados de proposito
+!*.pdf
+!*.xml
+!*.txt
+!*.toml
+!_redirects
+!.gitignore
+
+# NAO liberar sem pensar duas vezes:
+#   .md    — nota interna de trabalho (os guias antigos ja' estao no ar)
+#   .json  — costuma carregar dado de cliente
+#   .csv .xlsx .docx .zip .db .env — nunca sao conteudo de site
+
+# Pesquisa de SEO — fica so' na maquina.
+# A pasta seria servida pelo Netlify e entregaria nossa lista de
+# palavras-chave e a leitura de concorrencia para quem pedisse a URL.
+seo/
 
 # Claude Code
 .claude/
-
-# Pesquisa de SEO — fica só na máquina.
-# A pasta seria servida pelo Netlify e entregaria nossa lista de
-# palavras-chave e a leitura de concorrência para quem pedisse a URL.
-seo/
