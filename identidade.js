@@ -141,3 +141,58 @@ if (sujos.length) {
   console.error('ACENTO CORROMPIDO em ' + sujos.length + ' pagina(s): ' + sujos.join(', ') + '\n  -> rode o desmojibake (scratchpad) ou corrija a origem; nao publique assim.');
   process.exit(1);
 }
+
+// GUARDA 2: imagem referenciada tem de existir no disco. Em 02/09/2026 tres
+// paginas apontavam para terras-de-san-marino-indaiatuba/images/hero.jpg (o hero
+// da Terras mora em /images/hero.jpg, na raiz) — 404 no <img> de dois cards e no
+// "image" do Product. Cobre <img src>, og:image/twitter:image, url(...) de CSS
+// e image/logo/thumbnailUrl dentro dos JSON-LD, so' para caminhos locais
+// (relativos, absolutos ou com o dominio do site). Falha alto.
+const DOMINIO = 'https://lancamentos.imoveisvivamerica.com.br/';
+const EXT_IMG = /\.(jpe?g|png|webp|gif|svg|avif)$/i;
+function localizar(ref, pagina) {
+  if (!ref || /^(data:|blob:|#)/.test(ref)) return null;
+  let r = ref.trim();
+  if (r.startsWith(DOMINIO)) r = '/' + r.slice(DOMINIO.length);
+  else if (/^(https?:)?\/\//i.test(r)) return null;           // host externo: fora do escopo
+  r = r.split(/[?#]/)[0];
+  try { r = decodeURIComponent(r); } catch (e) { /* mantem */ }
+  if (!EXT_IMG.test(r)) return null;
+  const base = r.startsWith('/') ? RAIZ : path.dirname(path.join(RAIZ, pagina));
+  return path.resolve(base, r.startsWith('/') ? r.slice(1) : r);
+}
+function colherImagens(h) {
+  const refs = [];
+  h.replace(/<img\b[^>]*?\s(?:src|data-src)="([^"]+)"/gi, (m, u) => { refs.push(u); return m; });
+  h.replace(/<meta\s+(?:property|name)="(?:og:image|twitter:image)"\s+content="([^"]+)"/gi, (m, u) => { refs.push(u); return m; });
+  h.replace(/url\(\s*['"]?([^'")]+)['"]?\s*\)/gi, (m, u) => { refs.push(u); return m; });
+  h.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (m, j) => {
+    let o; try { o = JSON.parse(j); } catch (e) { return m; }
+    (function anda(v) {
+      if (Array.isArray(v)) return v.forEach(anda);
+      if (v && typeof v === 'object') for (const k of Object.keys(v)) {
+        if (['image', 'logo', 'thumbnailUrl'].includes(k)) {
+          const x = v[k]; (Array.isArray(x) ? x : [x]).forEach(i => { if (typeof i === 'string') refs.push(i); else if (i && i.url) refs.push(i.url); });
+        } else anda(v[k]);
+      }
+    })(o);
+    return m;
+  });
+  return refs;
+}
+const faltantes = [];
+for (const a of alvos) {
+  const h = fs.readFileSync(path.join(RAIZ, a), 'utf8');
+  const vistos = new Set();
+  for (const ref of colherImagens(h)) {
+    const abs = localizar(ref, a);
+    if (!abs || vistos.has(abs)) continue;
+    vistos.add(abs);
+    if (!fs.existsSync(abs)) faltantes.push(a + ' -> ' + ref);
+  }
+}
+if (faltantes.length) {
+  console.error('IMAGEM INEXISTENTE (' + faltantes.length + '):\n  ' + faltantes.join('\n  ') + '\n  -> corrija o caminho ou coloque o arquivo; nao publique assim.');
+  process.exit(1);
+}
+console.log('guardas: acentos ok, imagens ok (' + alvos.length + ' paginas)');

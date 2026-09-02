@@ -113,8 +113,8 @@ const html = `<!DOCTYPE html>
   <title>Blog | Guia do Mercado Imobiliário de Indaiatuba | Viv'América</title>
   <meta name="description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba: MCMV, FGTS, bairros, segurança, custo de vida e comparativos — com dados e fontes, sem cadastro.">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Guia do Mercado Imobiliário de Indaiatuba">
-  <meta property="og:description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba — com dados e fontes.">
+  <meta property="og:title" content="Blog | Guia do Mercado Imobiliário de Indaiatuba | Viv'América">
+  <meta property="og:description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba: MCMV, FGTS, bairros, segurança, custo de vida e comparativos — com dados e fontes, sem cadastro.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${ABS}/blog/">
   <meta property="og:site_name" content="Imobiliária Viv'América">
