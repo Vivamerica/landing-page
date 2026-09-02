@@ -127,3 +127,17 @@ for (const a of alvos) {
   if (depois !== antes) { fs.writeFileSync(f, depois, 'utf8'); n++; } else iguais++;
 }
 console.log('paginas: ' + n + ' transformadas, ' + iguais + ' ja estavam (' + alvos.length + ' alvos)');
+
+// GUARDA: acento duplamente codificado ("HÃ©lade", "ImobiliÃ¡ria", "â€”").
+// Em 02/09/2026 havia 453 ocorrencias em 39 paginas, dentro do JSON-LD
+// (name/description do Product e do RealEstateAgent) e no rodape — tudo de um
+// unico commit (28a7875) que gravou o schema lido como CP1252. O Google casa a
+// entidade pelo name: "HÃ©lade" nao e' "Hélade". Falha alto para nao voltar.
+const _c = String.fromCharCode;
+const _cont = _c(0x80) + '-' + _c(0xBF) + _c(0x20AC) + _c(0x2013) + _c(0x2014) + _c(0x201C) + _c(0x201D) + _c(0x2018) + _c(0x2019) + _c(0x2026) + _c(0x2122);
+const MOJIBAKE = new RegExp('[' + _c(0xC2) + _c(0xC3) + '][' + _cont + ']|' + _c(0xE2) + '[' + _cont + '][' + _cont + ']');
+const sujos = alvos.filter(a => MOJIBAKE.test(fs.readFileSync(path.join(RAIZ, a), 'utf8')));
+if (sujos.length) {
+  console.error('ACENTO CORROMPIDO em ' + sujos.length + ' pagina(s): ' + sujos.join(', ') + '\n  -> rode o desmojibake (scratchpad) ou corrija a origem; nao publique assim.');
+  process.exit(1);
+}
