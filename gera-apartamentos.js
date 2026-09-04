@@ -405,6 +405,7 @@ const HTML = `<!DOCTYPE html>
       <a href="/${SLUG}/" class="on">Apartamentos</a>
       <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
       <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
+      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
       <a href="/blog/">Blog</a>
     </nav>
   </header>

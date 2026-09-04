@@ -36,7 +36,7 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 - [ ] `brand` do `Product` no JSON-LD é `{"@type":"Brand","name":"…"}` (Organization dá tipo inválido no Search Console)
 - [ ] Toda imagem referenciada (`<img src>`, `og:image`, `url()` de CSS, `image` do JSON-LD) existe no disco — a guarda do `node identidade.js` falha com exit 1 se faltar
 - [ ] Todo bloco `<script type="application/ld+json">` passa em `JSON.parse`
-- [ ] Menu padrão de TODA página (landing, hub, home, Observatório, blog): **Apartamentos** (→ `/apartamentos-na-planta-indaiatuba/`) · **Loteamentos** · **Condomínios** · **Blog**; a logo → `/`. Landing sem `<nav>` recebe `<nav class="nav-site">` (CSS `#nav-site`)
+- [ ] Menu padrão de TODA página (landing, hub, home, Observatório, blog): **Apartamentos** (→ `/apartamentos-na-planta-indaiatuba/`) · **Loteamentos** · **Condomínios** · **Veja no mapa** (→ `/mapa-lotes-indaiatuba/`, desde 04/09/2026) · **Blog**; a logo → `/`. Landing sem `<nav>` recebe `<nav class="nav-site">` (CSS `#nav-site`)
 - [ ] Breadcrumb (visível + `BreadcrumbList`): apartamento = `Início › Apartamentos na planta › <Nome>`; lote = `Início › Loteamentos › <Nome>`; condomínio fechado = `Início › Condomínios fechados › <Nome>`
 - [ ] Nada aponta para `/lancamentos-indaiatuba/` (hub extinto em 02/09/2026, 301 para a home — a home é a única dona de "lançamentos imobiliários indaiatuba"). Só `_redirects` cita a URL.
 - [ ] Ritual de fechamento, **nesta ordem** (gera-folder.js entra logo após o gera-folheto — o folder-verso ficou com Dominium/preços velhos em 04/09 por não estar na corrente) (cada gerador é idempotente; rodada duas vezes, a 2ª não muda nada):

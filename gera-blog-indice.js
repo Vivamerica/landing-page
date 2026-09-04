@@ -209,6 +209,7 @@ const html = `<!DOCTYPE html>
       <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
       <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
       <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
+      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
       <a href="/blog/" class="on">Blog</a>
       <a href="/" class="nav-cta">Lançamentos de Imóveis</a>
     </nav>

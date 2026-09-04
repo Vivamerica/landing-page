@@ -294,6 +294,7 @@ const HTML = `<!DOCTYPE html>
       <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
       <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
       <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
+      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
       <a href="/blog/">Blog</a>
     </nav>
     <h1>Preços de lançamentos em Indaiatuba<br><em>${EDICAO.mes} de ${EDICAO.ano}</em></h1>
