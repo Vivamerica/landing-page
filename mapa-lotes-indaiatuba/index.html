@@ -164,6 +164,10 @@ const ruas = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { max
 const satelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Imagens: Esri, Maxar, Earthstar Geographics' });
 L.control.layers({ 'Ruas': ruas, 'Satélite': satelite }, null, { position: 'topright' }).addTo(mapa);
 L.control.scale({ imperial: false }).addTo(mapa);
+// o contêiner pode nascer sem tamanho (aba em segundo plano, fontes carregando): recalcula e reenquadra
+function enquadrarTudo() { const pts = LOTES.flatMap(x => x.ll ? [x.ll] : []); if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.15)); }
+window.addEventListener('resize', () => mapa.invalidateSize());
+window.addEventListener('load', () => { mapa.invalidateSize(); if (!location.hash) enquadrarTudo(); });
 
 const camada = L.layerGroup().addTo(mapa);
 const marcadores = {};
@@ -232,8 +236,8 @@ function irParaBairro(id) {
   if (!bairroAtivo) return;
   const b = bairroDe(id);
   const pts = LOTES.filter(x => x.b === id && ativos.has(x.tipo)).flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
-  if (pts.length) mapa.flyToBounds(L.latLngBounds(pts).pad(0.6), { maxZoom: 17, duration: .8 });
-  else if (b.centro) mapa.flyTo(b.centro, 16, { duration: .8 });
+  if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.6), { maxZoom: 17 });
+  else if (b.centro) mapa.setView(b.centro, 16);
   history.replaceState(null, '', '#' + id);
   if (window.innerWidth <= 760) painel.classList.add('fechada');
 }
@@ -242,15 +246,15 @@ function irParaLote(x) {
   const m = marcadores[x.id];
   if (!m) { alert('Este lote ainda não tem posição no mapa. Fale conosco pelo WhatsApp para mais detalhes.'); return; }
   const ll = x.ll || (x.poly && L.latLngBounds(x.poly).getCenter());
-  mapa.flyTo(ll, 18, { duration: .8 });
-  setTimeout(() => m.openPopup(), 850);
+  mapa.setView(ll, 18);
+  setTimeout(() => m.openPopup(), 250);
   if (window.innerWidth <= 760) painel.classList.add('fechada');
 }
 montarLista();
 const painel = document.getElementById('painel');
 document.getElementById('btnLista').onclick = () => painel.classList.toggle('fechada');
 if (location.hash && bairroDe(location.hash.slice(1))) { setTimeout(() => irParaBairro(location.hash.slice(1)), 300); }
-else { const pts = LOTES.flatMap(x => x.ll ? [x.ll] : []); mapa.fitBounds(L.latLngBounds(pts).pad(0.15)); }
+else { enquadrarTudo(); }
 
 // ─── MODO TRAÇAR (?tracar=1): desenha o contorno do lote sobre o satélite e devolve o JSON ───
 if (new URLSearchParams(location.search).get('tracar') === '1') {
