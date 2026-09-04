@@ -287,6 +287,9 @@
     h1 { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.08em;
          text-transform:uppercase; line-height:1.25; }
     h2, h3 { font-weight:600; }
+    /* width/height nas <img> reservam espaço; quando o CSS só fixa a largura, a altura do
+       atributo esticava o logo (Andorinha/Colibri/Tangará, 04/09/2026) */
+    img[width][height] { height:auto; }
     nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
     .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
     .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
