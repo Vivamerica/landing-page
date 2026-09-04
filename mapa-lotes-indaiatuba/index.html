@@ -65,6 +65,10 @@
     .pp .obs{font-size:.7rem;color:#8a5a00;margin-top:.3rem}
     .pp .fonte{font-size:.68rem;color:var(--cinza);margin-top:.5rem}
     .pp .wa{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:700;padding:.45rem .8rem;border-radius:999px;margin-top:.5rem;font-size:.8rem}
+    .pino-bairro div{position:relative;transform:translate(-50%,-100%);background:var(--preto);color:#fff;border:1px solid var(--ouro);border-radius:.6rem;padding:.4rem .65rem;white-space:nowrap;font:.7rem 'Josefin Sans',sans-serif;box-shadow:0 3px 10px rgba(0,0,0,.35);cursor:pointer}
+    .pino-bairro b{display:block;color:var(--ouro);font-size:.82rem;letter-spacing:.04em}
+    .pino-bairro div::after{content:'';position:absolute;left:50%;bottom:-6px;width:10px;height:10px;background:var(--preto);border-right:1px solid var(--ouro);border-bottom:1px solid var(--ouro);transform:translateX(-50%) rotate(45deg)}
+    .pp .lnk{display:block;margin-top:.45rem;font-size:.78rem;color:var(--com)}
     .rotulo{background:#fff;border:1px solid var(--borda);border-radius:.35rem;padding:.1rem .35rem;font:700 .68rem 'Josefin Sans',sans-serif;color:var(--preto);box-shadow:0 1px 3px rgba(0,0,0,.15)}
     .leaflet-tooltip.rotulo::before{display:none}
     .btn-lista,.gaveta-topo,#overlay,.btn-filtrar{display:none}
@@ -128,6 +132,7 @@
 // ll = [lat, lng] do pino (aproximado). poly = contorno do lote [[lat,lng],...] quando traçado (modo ?tracar=1).
 const TIPOS = { RESIDENCIAL:['Residencial','var(--res)','#2e7d5b'], MISTO:['Misto (comercial)','var(--mis)','#b8641b'], COMERCIAL:['Comercial','var(--com)','#1f5fa8'], AVENIDA:['Avenida','var(--ave)','#7a3fb5'], GLEBA:['Gleba','var(--gle)','#8a6d1f'] };
 const BAIRROS = [
+  { id:'sanmarino', nome:'Terras de San Marino', sub:'condomínio fechado em lançamento · a prazo em 60x', landing:'/terras-de-san-marino-indaiatuba/', cond:'juros de 1% a.m. (tabela PRICE) · correção anual pelo IGP-M', overlay:{ url:'images/sanmarino.png', bounds:[[-23.102820726,-47.262921457],[-23.096220348,-47.254903395]] } },
   { id:'barnabe',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City' },
   { id:'araras',     nome:'Jardim das Araras' },
   { id:'bemtevi',    nome:'Jardim Bem-Te-Vi' },
@@ -136,6 +141,26 @@ const BAIRROS = [
   { id:'campobonito',nome:'Parque Campo Bonito', sub:'lotes 12x · glebas na Av. Clóvis Ferraz de Camargo', centro:[-23.09681,-47.27876] },
 ];
 const LOTES = [
+  // Terras de San Marino — espelho de vendas de 02/09/2026 (à vista R$ 1.650/m²; a prazo R$ 1.750/m², entrada 20%, saldo em 60x)
+  { b:'sanmarino', q:'B', l:'1', m2:202.78, tipo:'RESIDENCIAL', pm2:1650, vista:334587.00, prazo:354865.00, entrada:70973.00, parcela:6315.02, nx:60, ep:20, ll:[-23.098171,-47.259934] },
+  { b:'sanmarino', q:'B', l:'2', m2:197.71, tipo:'RESIDENCIAL', pm2:1650, vista:326221.50, prazo:345992.50, entrada:69198.50, parcela:6157.13, nx:60, ep:20, ll:[-23.098234,-47.259861] },
+  { b:'sanmarino', q:'C', l:'39', m2:277.04, tipo:'RESIDENCIAL', pm2:1650, vista:457116.00, prazo:484820.00, entrada:96964.00, parcela:8627.64, nx:60, ep:20, ll:[-23.100562,-47.256902] },
+  { b:'sanmarino', q:'D', l:'39', m2:201.84, tipo:'RESIDENCIAL', pm2:1650, vista:333036.00, prazo:353220.00, entrada:70644.00, parcela:6285.75, nx:60, ep:20, ll:[-23.098727,-47.260313] },
+  { b:'sanmarino', q:'D', l:'40', m2:197.53, tipo:'RESIDENCIAL', pm2:1650, vista:325924.50, prazo:345677.50, entrada:69135.50, parcela:6151.52, nx:60, ep:20, ll:[-23.098671,-47.260385] },
+  { b:'sanmarino', q:'F', l:'21', m2:164.15, tipo:'RESIDENCIAL', pm2:1650, vista:270847.50, prazo:287262.50, entrada:57452.50, parcela:5112.00, nx:60, ep:20, ll:[-23.099767,-47.259707] },
+  { b:'sanmarino', q:'H', l:'2', m2:158.29, tipo:'RESIDENCIAL', pm2:1650, vista:261178.50, prazo:277007.50, entrada:55401.50, parcela:4929.50, nx:60, ep:20, ll:[-23.099256,-47.260695] },
+  { b:'sanmarino', q:'H', l:'37', m2:150.94, tipo:'RESIDENCIAL', pm2:1650, vista:249051.00, prazo:264145.00, entrada:52829.00, parcela:4700.61, nx:60, ep:20, ll:[-23.099436,-47.260866] },
+  { b:'sanmarino', q:'I', l:'36', m2:290.86, tipo:'RESIDENCIAL', pm2:1650, vista:479919.00, prazo:509005.00, entrada:101801.00, parcela:9058.03, nx:60, ep:20, ll:[-23.101526,-47.258219] },
+  { b:'sanmarino', q:'I', l:'69', m2:164.61, tipo:'RESIDENCIAL', pm2:1650, vista:271606.50, prazo:288067.50, entrada:57613.50, parcela:5126.32, nx:60, ep:20, ll:[-23.100221,-47.259866] },
+  { b:'sanmarino', q:'J', l:'1', m2:296.56, tipo:'RESIDENCIAL', pm2:1650, vista:489324.00, prazo:518980.00, entrada:103796.00, parcela:9235.54, nx:60, ep:20, ll:[-23.099557,-47.261058] },
+  { b:'sanmarino', q:'J', l:'3', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.099644,-47.260923] },
+  { b:'sanmarino', q:'J', l:'5', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.099720,-47.260825] },
+  { b:'sanmarino', q:'J', l:'7', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.099796,-47.260728] },
+  { b:'sanmarino', q:'J', l:'8', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.099835,-47.260679] },
+  { b:'sanmarino', q:'J', l:'9', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.099877,-47.260629] },
+  { b:'sanmarino', q:'K', l:'6', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.100581,-47.259727] },
+  { b:'sanmarino', q:'K', l:'9', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.100701,-47.259579] },
+  { b:'sanmarino', q:'K', l:'12', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.100819,-47.259430] },
   { b:'barnabe', q:'32', l:'4',  m2:172.54, tipo:'AVENIDA',     pm2:1300,    vista:224302.00, entrada:null,      parcela:null,     soVista:true, ll:[-23.09038951151104,-47.27627524040461] },
   { b:'barnabe', q:'11', l:'1',  m2:214.12, tipo:'COMERCIAL',   pm2:1300,    vista:278356.00, entrada:41753.40,  parcela:3845.46,  ll:[-23.086845558307505,-47.277269509938215] },
   { b:'barnabe', q:'33', l:'8',  m2:302.69, tipo:'MISTO',       pm2:1100,    vista:332959.00, entrada:49943.85,  parcela:4599.80,  ll:[-23.090052628468513,-47.275254216077755] },
@@ -196,7 +221,7 @@ function popupHtml(x) {
   return `<div class="pp"><h3>Quadra ${x.q} · Lote ${x.l}</h3><div class="sub">${b.nome}${b.sub ? ' · ' + b.sub : ''}</div>
     <div class="preco">${brl(x.vista)} <small>à vista</small></div>
     <dl><dt>Metragem</dt><dd>${num(x.m2)} m²</dd><dt>Valor do m²</dt><dd>${brl(x.pm2)}</dd><dt>Tipo</dt><dd>${t[0]}</dd>
-    ${x.soVista ? '<dt>Condição</dt><dd>somente à vista</dd>' : `<dt>Entrada 15%</dt><dd>${brl(x.entrada)}</dd><dt>Parcelas</dt><dd>${x.nx || 96}x de ${brl(x.parcela)} <small>(1% a.m. incluído · correção mensal pelo IPCA)</small></dd>`}</dl>
+    ${x.prazo ? `<dt>A prazo</dt><dd>${brl(x.prazo)}</dd>` : ''}${x.soVista ? '<dt>Condição</dt><dd>somente à vista</dd>' : `<dt>Entrada ${x.ep || 15}%</dt><dd>${brl(x.entrada)}</dd><dt>Parcelas</dt><dd>${x.nx || 96}x de ${brl(x.parcela)} <small>(${x.cond || b.cond || '1% a.m. incluído · correção mensal pelo IPCA'})</small></dd>`}</dl>${b.landing ? `<a class="lnk" href="${b.landing}">Página do empreendimento →</a>` : ''}
     ${x.obs ? '<div class="obs">' + x.obs + '</div>' : ''}
     <a class="wa" href="${wa}" target="_blank" rel="noopener" onclick="try{gtag('event','whatsapp_click',{lote:'${x.id}'})}catch(e){}">Falar sobre este lote</a>
     <div class="fonte">Preço à vista de set/2026, sujeito a alteração sem aviso. Posição do pino aproximada.</div></div>`;
@@ -220,6 +245,28 @@ function desenhar() {
   });
 }
 desenhar();
+
+// ─── NÍVEIS: de longe um pino por bairro/empreendimento; perto (zoom >= 16) a planta e os lotes ───
+const ZOOM_LOTES = 16;
+mapa.createPane('plantas'); mapa.getPane('plantas').style.zIndex = 350;   // abaixo dos pinos (overlayPane = 400)
+const camadaBairros = L.layerGroup();
+const plantas = {};
+BAIRROS.forEach(b => {
+  const ls = LOTES.filter(x => x.b === b.id);
+  const pts = ls.flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
+  const centro = pts.length ? L.latLngBounds(pts).getCenter() : (b.centro ? L.latLng(b.centro) : null);
+  if (!centro || !ls.length) return;
+  const mk = L.marker(centro, { icon: L.divIcon({ className: 'pino-bairro', html: `<div><b>${b.nome}</b><span>${ls.length} lote${ls.length > 1 ? 's' : ''} · desde ${brl0(Math.min(...ls.map(x => x.vista)))}</span></div>`, iconSize: null, iconAnchor: [0, 0] }) });
+  mk.on('click', () => irParaBairro(b.id, true));
+  camadaBairros.addLayer(mk);
+  if (b.overlay) plantas[b.id] = L.imageOverlay(b.overlay.url, b.overlay.bounds, { opacity: .92, pane: 'plantas', alt: 'Planta de ' + b.nome });
+});
+function atualizarNivel() {
+  const perto = mapa.getZoom() >= ZOOM_LOTES;
+  const liga = (l, on) => { if (on && !mapa.hasLayer(l)) l.addTo(mapa); if (!on && mapa.hasLayer(l)) mapa.removeLayer(l); };
+  liga(camada, perto); liga(camadaBairros, !perto); Object.values(plantas).forEach(o => liga(o, perto));
+}
+mapa.on('zoomend', atualizarNivel); atualizarNivel();
 
 // ─── PAINEL ────────────────────────────────────────────────────────────────────
 const chips = document.getElementById('chips');
@@ -249,14 +296,14 @@ function montarLista() {
     lista.appendChild(div);
   });
 }
-function irParaBairro(id) {
-  bairroAtivo = bairroAtivo === id ? null : id;
+function irParaBairro(id, forcar) {
+  bairroAtivo = (!forcar && bairroAtivo === id) ? null : id;
   document.querySelectorAll('.bairro').forEach(d => d.classList.toggle('ativo', d.dataset.id === bairroAtivo));
   if (!bairroAtivo) return;
   const b = bairroDe(id);
   const pts = LOTES.filter(x => x.b === id && ativos.has(x.tipo)).flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
-  if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.6), { maxZoom: 17 });
-  else if (b.centro) mapa.setView(b.centro, 16);
+  if (pts.length) { mapa.fitBounds(L.latLngBounds(pts).pad(0.35), { maxZoom: 17 }); if (mapa.getZoom() < ZOOM_LOTES) mapa.setZoom(ZOOM_LOTES); }
+  else if (b.centro) mapa.setView(b.centro, ZOOM_LOTES);
   history.replaceState(null, '', '#' + id);
   if (ehCelular()) abrirGaveta(false);
 }
