@@ -117,7 +117,7 @@ function reskinPagina(html) {
 const alvos = ['index.html'];
 for (const d of fs.readdirSync(RAIZ, { withFileTypes: true })) {
   if (!d.isDirectory()) continue;
-  if (['seo', 'images', '.git', '.claude'].includes(d.name)) continue;
+  if (['seo', 'images', '.git', '.claude', 'mapa-lotes-indaiatuba'].includes(d.name)) continue;   // o mapa é um app Leaflet, fora da camada de marca
   if (d.name === 'blog') { for (const b of fs.readdirSync(path.join(RAIZ,'blog'))) { const fb = path.join('blog', b, 'index.html'); if (fs.existsSync(path.join(RAIZ, fb))) alvos.push(fb); } alvos.push(path.join('blog','index.html')); continue; }
   const f = path.join(d.name, 'index.html');
   if (fs.existsSync(path.join(RAIZ, f))) alvos.push(f);
