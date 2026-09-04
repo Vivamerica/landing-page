@@ -210,6 +210,25 @@ todos.forEach(e => {
 });
 feitos.push('estoque em ' + estLand + ' landings');
 
+// ─── 5b. JSON-LD das landings: priceValidUntil = último dia do mês da edição
+//        (tabela de construtora vale até a próxima leva; 31/12 à mão era mentira
+//        de conveniência) e brand SEMPRE @type Brand — o GSC acusa "tipo do objeto
+//        do campo brand não é válido" quando vai Organization. Casado por pasta. ───
+const ultimoDia = new Date(Number(EDICAO.iso.slice(0, 4)), Number(EDICAO.iso.slice(5, 7)), 0).getDate();
+const validade = EDICAO.iso + '-' + String(ultimoDia).padStart(2, '0');
+let ldLand = 0;
+todos.forEach(e => {
+  if (!e.slug) return;
+  const arq = R + e.slug + '/index.html';
+  if (!fs.existsSync(arq)) return;
+  let s = fs.readFileSync(arq, 'utf8');
+  const antes = s;
+  s = s.replace(/"priceValidUntil":(\s*)"\d{4}-\d{2}-\d{2}"/g, '"priceValidUntil":$1"' + validade + '"');
+  s = s.replace(/("brand":\s*\{\s*"@type":\s*)"Organization"/g, '$1"Brand"');
+  if (s !== antes) { fs.writeFileSync(arq, s, 'utf8'); ldLand++; }
+});
+feitos.push('priceValidUntil ' + validade + ' + brand Brand em ' + ldLand + ' landings');
+
 fs.writeFileSync(R + 'index.html', h, 'utf8');
 
 // ─── 6. hubs de lote gerados da fonte única ───

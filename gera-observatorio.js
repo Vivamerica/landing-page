@@ -23,7 +23,7 @@
 const fs = require('fs');
 const R = __dirname + '/';
 
-const EDICAO = { mes: 'Setembro', ano: 2026, iso: '2026-09', lastmod: '2026-09-02' };
+const EDICAO = { mes: 'Setembro', ano: 2026, iso: '2026-09', lastmod: '2026-09-04' };
 
 // estoque do mês ANTERIOR, para o "antes e depois" (vendidos = anterior - atual;
 // o atual vem do campo est da fonte única). null = primeira medição.
