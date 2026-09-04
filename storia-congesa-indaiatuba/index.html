@@ -333,11 +333,15 @@
     .malha-in { max-width:1160px; margin:0 auto; }
     .malha-titulo { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.18em;
                     text-transform:uppercase; color:#C9A227; font-size:.95rem; margin:0 0 1rem; }
-    .malha-grupo { margin:0 0 .7rem; line-height:2; }
+    /* flex-wrap: os links saem do gerador colados (sem espaço entre <a>) e com
+       nowrap; como inline puro viravam UMA linha de 1.700px e o celular
+       encolhia a página inteira (02/09/2026). Cada link é um item flex. */
+    .malha-grupo { display:flex; flex-wrap:wrap; align-items:baseline; gap:.15rem .9rem;
+                   margin:0 0 .7rem; line-height:1.8; max-width:100%; }
     .malha-rotulo { color:#C9A227; font-size:.68rem; font-weight:600; letter-spacing:.16em;
-                    text-transform:uppercase; margin-right:.9rem; }
+                    text-transform:uppercase; }
     .malha a { color:rgba(255,255,255,.78); text-decoration:none; font-size:.82rem;
-               font-weight:300; margin-right:.9rem; white-space:nowrap; }
+               font-weight:300; white-space:nowrap; }
     .malha a:hover { color:#C9A227; }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>

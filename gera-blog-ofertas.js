@@ -119,7 +119,10 @@ const CSS = `
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
     .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
       grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
-    .blog-layout > article{max-width:none;margin:0;padding:0;}
+    .blog-layout > article{max-width:none;margin:0;padding:0;min-width:0;}
+    /* min-width:0 — item flex herda min-content do filho mais largo (a tabela
+       com min-width:640px) e no celular empurrava o artigo para fora da tela;
+       com 0, o .tab-wrap volta a rolar por dentro (02/09/2026). */
     .bo-aside{position:sticky;top:90px;display:flex;flex-direction:column;gap:1rem;}
     .bo-aside-titulo{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;
       color:#C9A227;font-weight:800;margin-bottom:.2rem;}
