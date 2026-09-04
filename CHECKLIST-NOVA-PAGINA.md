@@ -39,7 +39,7 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 - [ ] Menu padrão de TODA página (landing, hub, home, Observatório, blog): **Apartamentos** (→ `/apartamentos-na-planta-indaiatuba/`) · **Loteamentos** · **Condomínios** · **Blog**; a logo → `/`. Landing sem `<nav>` recebe `<nav class="nav-site">` (CSS `#nav-site`)
 - [ ] Breadcrumb (visível + `BreadcrumbList`): apartamento = `Início › Apartamentos na planta › <Nome>`; lote = `Início › Loteamentos › <Nome>`; condomínio fechado = `Início › Condomínios fechados › <Nome>`
 - [ ] Nada aponta para `/lancamentos-indaiatuba/` (hub extinto em 02/09/2026, 301 para a home — a home é a única dona de "lançamentos imobiliários indaiatuba"). Só `_redirects` cita a URL.
-- [ ] Ritual de fechamento, **nesta ordem** (cada gerador é idempotente; rodada duas vezes, a 2ª não muda nada):
+- [ ] Ritual de fechamento, **nesta ordem** (gera-folder.js entra logo após o gera-folheto — o folder-verso ficou com Dominium/preços velhos em 04/09 por não estar na corrente) (cada gerador é idempotente; rodada duas vezes, a 2ª não muda nada):
   1. `node gera-folheto.js` — fonte única (APTOS/LOTES)
   2. `node gera-observatorio.js` — EDICAO + Observatório
   3. `node gera-home.js` — home (title/description/H1/selos/cards) + os dois hubs de lote (grade, m², destaque, "Atualizado em")
