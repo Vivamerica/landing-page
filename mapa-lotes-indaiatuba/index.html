@@ -99,7 +99,7 @@
     </div>
     <div class="lista" id="lista"></div>
     <div class="rodape">
-      Preços à vista da tabela de lotes disponíveis (Vista Verde), setembro/2026, sujeitos a alteração sem aviso. Entrada de 15% e parcelas conforme tabela; quantidade de parcelas e correção sob consulta. Pinos = posição aproximada do lote; limites em azul quando já traçados. Imobiliária Viv'América · CRECI 47394-J.
+      Preços à vista da tabela de lotes disponíveis (Vista Verde), setembro/2026, sujeitos a alteração sem aviso. Entrada de 15% e saldo em 96 parcelas (12 nos lotes do Campo Bonito) com 1% ao mês já incluído e correção mensal pelo IPCA (Índice de Preços ao Consumidor Amplo), conforme a tabela. Lotes comerciais aparecem como "mistos" na tabela. Pinos = posição aproximada do lote; limites em azul quando já traçados. Imobiliária Viv'América · CRECI 47394-J.
     </div>
   </aside>
   <div id="mapa" role="application" aria-label="Mapa com os lotes disponíveis"></div>
@@ -115,14 +115,14 @@
 // ─── DADOS ─────────────────────────────────────────────────────────────────────
 // Fonte: "Vista Verde — tabela de lotes disponíveis" (set/2026) + coordenadas informadas pelo Fabio em 04/09/2026.
 // ll = [lat, lng] do pino (aproximado). poly = contorno do lote [[lat,lng],...] quando traçado (modo ?tracar=1).
-const TIPOS = { RESIDENCIAL:['Residencial','var(--res)','#2e7d5b'], MISTO:['Misto','var(--mis)','#b8641b'], COMERCIAL:['Comercial','var(--com)','#1f5fa8'], AVENIDA:['Avenida','var(--ave)','#7a3fb5'], GLEBA:['Gleba','var(--gle)','#8a6d1f'] };
+const TIPOS = { RESIDENCIAL:['Residencial','var(--res)','#2e7d5b'], MISTO:['Misto (comercial)','var(--mis)','#b8641b'], COMERCIAL:['Comercial','var(--com)','#1f5fa8'], AVENIDA:['Avenida','var(--ave)','#7a3fb5'], GLEBA:['Gleba','var(--gle)','#8a6d1f'] };
 const BAIRROS = [
   { id:'barnabe',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City' },
   { id:'araras',     nome:'Jardim das Araras' },
   { id:'bemtevi',    nome:'Jardim Bem-Te-Vi' },
   { id:'andorinhas', nome:'Jardim das Andorinhas' },
   { id:'canarios',   nome:'Vila dos Canários' },
-  { id:'campobonito',nome:'Parque Campo Bonito', sub:'Av. Clóvis Ferraz de Camargo, próx. Igreja João Paulo II', centro:[-23.09681,-47.27876] },
+  { id:'campobonito',nome:'Parque Campo Bonito', sub:'lotes 12x · glebas na Av. Clóvis Ferraz de Camargo', centro:[-23.09681,-47.27876] },
 ];
 const LOTES = [
   { b:'barnabe', q:'32', l:'4',  m2:172.54, tipo:'AVENIDA',     pm2:1300,    vista:224302.00, entrada:null,      parcela:null,     soVista:true, ll:[-23.09038951151104,-47.27627524040461] },
@@ -149,7 +149,12 @@ const LOTES = [
   { b:'canarios', q:'A', l:'1',  m2:227.95, tipo:'RESIDENCIAL', pm2:1200,    vista:273540.00, entrada:41031.00,  parcela:3778.93,  ll:[-23.107185998513692,-47.26826684147724] },
   { b:'canarios', q:'A', l:'16', m2:225.73, tipo:'RESIDENCIAL', pm2:1200,    vista:270876.00, entrada:40631.40,  parcela:3742.13,  ll:[-23.10725345059146,-47.26709571219265] },
   { b:'canarios', q:'D', l:'17', m2:201.20, tipo:'RESIDENCIAL', pm2:1200,    vista:241440.00, entrada:36216.00,  parcela:3335.47,  ll:[-23.108595373530825,-47.26693398807634] },
-  { b:'campobonito', q:'A', l:'7C-1', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, obs:'Gleba A 7C-1, sem pino ainda.' },
+  { b:'campobonito', q:'A', l:'7C', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, nx:96, obs:'Gleba A 7C (a tabela grafa 7C-1 e 7C-2). Av. Clóvis Ferraz de Camargo, próx. Igreja João Paulo II — posição a confirmar.' },
+  { b:'campobonito', q:'A', l:'7-E2', m2:1578.60, tipo:'GLEBA', pm2:1300,    vista:2052167.00,entrada:307825.05, parcela:28350.51, nx:96, obs:'Gleba A 7-E2. Av. Clóvis Ferraz de Camargo, próx. Igreja João Paulo II — posição a confirmar.' },
+  { b:'campobonito', q:'27', l:'52', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12 },
+  { b:'campobonito', q:'27', l:'53', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12 },
+  { b:'campobonito', q:'27', l:'54', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12 },
+  { b:'campobonito', q:'28', l:'22', m2:151.20, tipo:'MISTO', pm2:1450,    vista:219240.00, entrada:32886.00,  parcela:16557.33, nx:12 },
 ];
 
 // ─── UTILIDADES ────────────────────────────────────────────────────────────────
@@ -179,7 +184,7 @@ function popupHtml(x) {
   return `<div class="pp"><h3>Quadra ${x.q} · Lote ${x.l}</h3><div class="sub">${b.nome}${b.sub ? ' · ' + b.sub : ''}</div>
     <div class="preco">${brl(x.vista)} <small>à vista</small></div>
     <dl><dt>Metragem</dt><dd>${num(x.m2)} m²</dd><dt>Valor do m²</dt><dd>${brl(x.pm2)}</dd><dt>Tipo</dt><dd>${t[0]}</dd>
-    ${x.soVista ? '<dt>Condição</dt><dd>somente à vista</dd>' : `<dt>Entrada 15%</dt><dd>${brl(x.entrada)}</dd><dt>Parcelas</dt><dd>${brl(x.parcela)} <small>(quantidade sob consulta)</small></dd>`}</dl>
+    ${x.soVista ? '<dt>Condição</dt><dd>somente à vista</dd>' : `<dt>Entrada 15%</dt><dd>${brl(x.entrada)}</dd><dt>Parcelas</dt><dd>${x.nx || 96}x de ${brl(x.parcela)} <small>(1% a.m. incluído · correção mensal pelo IPCA)</small></dd>`}</dl>
     ${x.obs ? '<div class="obs">' + x.obs + '</div>' : ''}
     <a class="wa" href="${wa}" target="_blank" rel="noopener" onclick="try{gtag('event','whatsapp_click',{lote:'${x.id}'})}catch(e){}">Falar sobre este lote</a>
     <div class="fonte">Tabela de lotes disponíveis (Vista Verde), set/2026. Posição do pino aproximada.</div></div>`;
