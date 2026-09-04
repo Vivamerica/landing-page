@@ -30,8 +30,10 @@ const EDICAO = { mes: 'Setembro', ano: 2026, iso: '2026-09', lastmod: '2026-09-0
 const ESTOQUE_ANTERIOR = {
   'monte-carmelo-indaiatuba':      { n: 587, data: 'ago/2026', fonte: 'relatório de estoque Dominium da edição de agosto; atual: "Lotes disponíveis - Monte Carmelo" de 02/09/2026' },
   'residencial-ravello-indaiatuba': { n: 197, data: 'ago/2026', fonte: 'relatório de estoque Dominium da edição de agosto; atual: "Lotes disponíveis - Ravello" de 02/09/2026' },
-  'di-italia-indaiatuba':          { n: 43,  data: '14/08/2026', fonte: 'relatório de estoque de 14/08/2026 — sem nova medição em setembro' },
-  'vivere-indaiatuba':             { n: 5,   data: '22/08/2026', fonte: 'arte da Masotti de 22/08/2026 — sem nova medição em setembro' },
+  'di-italia-indaiatuba':          { n: 43,  data: '14/08/2026', fonte: 'relatório de estoque de 14/08/2026; atual: "Lotes disponíveis - Di Italia" de 04/09/2026 (44 — um lote voltou ao estoque)' },
+  'vivere-indaiatuba':             { n: 5,   data: '22/08/2026', fonte: 'arte da Masotti de 22/08/2026; atual: confirmação da Masotti de 04/09/2026 (5 unidades, todas na Torre 7)' },
+  // Alpnach (35, estimativa de agosto) e Terras de San Marino (4, estimativa de agosto): os números anteriores
+  // não vinham de relatório — 1ª medição oficial em setembro (28 e 19), sem "vendidos no mês".
   // Reserva Botânica: 1ª medição com número (3 lotes, tabela Zarin de 10/07/2026);
   // antes o site só dizia "últimas unidades", sem contagem.
   // Terras de San Marino e Alpnach: 1ª medição (sem série anterior).
@@ -44,12 +46,16 @@ const MOVIMENTOS = [
   { n: 'Reserva Botânica',     c: 'Zarin',    de: 391682,  para: 532563,  causa: 'menor lote passou de 250 para 340 m² — restam 3 lotes (tabela jul/2026)', fonte: 'tabela Zarin de 10/07/2026' },
   { n: 'Hélade — Park Meraki', c: 'PERPLAN',  de: 1300668, para: 1391504, causa: 'reajuste na tabela da construtora', fonte: 'tabela PERPLAN de setembro/2026' },
   { n: 'Parque Zarah',         c: 'Zarin',    de: 249123,  para: 172500,  causa: 'menor lote agora é misto de 150 m² (fase Pérola); residencial a partir de R$ 212.072', fonte: 'tabela Zarin de setembro/2026 (3 fases)' },
+  { n: 'Jardim Di Italia',     c: 'Dominium', de: 188000,  para: 210000,  causa: 'reajuste do lote residencial de 150 m² à vista (a prazo: R$ 220.000 com entrada de R$ 44.000 em 60x)', fonte: 'relatório de estoque Dominium de 04/09/2026' },
+  { n: 'Alpnach Residence',    c: 'Dominium', de: 480000,  para: 510000,  causa: 'reajuste do lote de 300 m² à vista — restam 28 lotes (04/09/2026)', fonte: 'relatório de estoque Dominium de 04/09/2026' },
+  { n: 'Gran Vic Colibri',     c: 'VIC Engenharia', de: 332450, para: 334479, causa: 'reajuste na tabela da construtora — 84 unidades disponíveis', fonte: 'tabela VIC de 02/09/2026' },
+  { n: 'Gran Vic Tangará',     c: 'VIC Engenharia', de: 331737, para: 330000, causa: 'a unidade mais barata da tabela (Torre 03, apto 1001) está enquadrada em Faixa 4/SBPE; na Faixa 3 o piso é R$ 334.278', fonte: 'tabela VIC de 02/09/2026' },
 ];
 // Histórico da edição de agosto/2026 (já publicado então; NÃO entra na contagem
 // "mudaram neste mês" nem nas altas do card da home). Quando o Observatório
 // ganhar "edições anteriores", é daqui que sai.
 const MOVIMENTOS_AGOSTO_2026 = [
-  { n: 'Terras de San Marino', c: 'Dominium',       de: 225000, para: 247500, causa: 'reajuste na tabela da loteadora', fonte: 'tabela de 29/07/2026, piso confirmado no espelho de 13/08/2026' },
+  { n: 'Terras de San Marino', c: 'Armigh · Best Business', de: 225000, para: 247500, causa: 'reajuste na tabela da loteadora', fonte: 'tabela de 29/07/2026, piso confirmado no espelho de 13/08/2026' },
   { n: 'Gran Vic Tangará',    c: 'VIC Engenharia', de: 302464, para: 331737, causa: 'reajuste na tabela da construtora', fonte: 'tabela VIC de 15/08/2026' },
   { n: 'Jardim Di Italia',    c: 'Dominium',       de: 180000, para: 188000, causa: 'os lotes mais baratos foram vendidos — o preço de entrada subiu', fonte: 'relatório de estoque de 14/08/2026' },
 ];
@@ -61,6 +67,11 @@ const ENTRADAS = [
   { n: 'Itamaracá Residencial', c: 'Zarin',   para: 339990, causa: 'primeira tabela publicada — 48,11 e 53,84 m²', fonte: 'tabela Zarin de julho/2026' },
   { n: 'Spazio Italia',         c: 'Zarin',   para: 448820, causa: 'primeira tabela publicada — 59,5 e 63,58 m²', fonte: 'tabela Zarin de 10/07/2026' },
   { n: 'Areté Home',            c: 'PERPLAN', para: 991005, causa: 'primeira tabela publicada — 93 a 117 m²', fonte: 'tabela PERPLAN de agosto/2026' },
+  { n: 'Viva Parque Aura',      c: 'Pinheiro · RDZ · iBen', para: 300854, causa: 'primeira tabela publicada — Torre 3, 47 a 85 m²', fonte: 'tabela Pinheiro de 01/08/2026' },
+  { n: 'Viva Parque Sense',     c: 'Pinheiro · RDZ · iBen', para: 404886, causa: 'novo no site — 3 dorm c/ suíte de 59,93 m² e garden de 95,99 m²', fonte: 'tabela Pinheiro de 01/08/2026' },
+  { n: 'Manai Bosque',          c: 'Masotti', para: 505941, causa: 'início de vendas pela Torre I — 53 unidades', fonte: 'Masotti, 04/09/2026' },
+  { n: 'Gran Vic Andorinha',    c: 'VIC Engenharia', para: 372119, causa: 'voltou ao estoque — 2 unidades na Torre 01 (aptos 1204 e 1304)', fonte: 'tabela VIC de 02/09/2026' },
+  { n: 'Gran Vic Canário',      c: 'VIC Engenharia', para: 352135, causa: 'voltou ao estoque — 3 unidades na Torre 03 (aptos 1204, 1303 e 1503)', fonte: 'tabela VIC de 02/09/2026' },
 ];
 
 // ─── dados: mesma fonte do folheto ───
@@ -114,7 +125,7 @@ const linhaEst = e => {
         <td>${e.c}</td>
         <td class="num"><strong>${e.est}</strong> unidade${e.est === 1 ? '' : 's'}</td>
         <td class="num">${ant ? ant.n + ' <small style="color:#8a8272">(' + ant.data + ')</small>' : '<span style="color:#8a8272">1ª medição</span>'}</td>
-        <td class="num">${vend !== null ? '<strong class="desce">' + vend + ' vendida' + (vend === 1 ? '' : 's') + '</strong>' : '—'}</td>
+        <td class="num">${vend === null ? '—' : vend < 0 ? '<strong class="sobe">+' + (-vend) + ' de volta ao estoque</strong>' : '<strong class="desce">' + vend + ' vendida' + (vend === 1 ? '' : 's') + '</strong>'}</td>
       </tr>`;
 };
 

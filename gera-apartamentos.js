@@ -93,7 +93,9 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const semTags = s => String(s).replace(/<[^>]+>/g, '');
 
 // ─── classificação (regras no cabeçalho) ───
-const RE_DATA = /\b(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/(\d{4})\b/i;
+// Só vale como ENTREGA a data precedida da palavra "entrega" nas specs da fonte única
+// ("(set/2026)" e "tabela ago/2026" são datas de tabela/estoque, não de entrega — 04/09/2026).
+const RE_DATA = /entrega\s+(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/(\d{4})\b/i;
 const eMCMV = e => /^MCMV/.test(e.t || '');
 const e2dorm = e => eMCMV(e) || /2 dorm/i.test(e.s || '');
 const e3suites = e => e.t === 'Alto padrão' || /3 su[ií]tes/i.test(e.s || '');

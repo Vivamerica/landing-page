@@ -35,12 +35,8 @@ const LOTES = extrair('LOTES');
 // c/s/img/t são lidos pelo gera-apartamentos.js, que os mostra como cards
 // sem preço na página /apartamentos-na-planta-indaiatuba/.
 const EXTRAS_APTOS = [
-  { n: 'Gran Vic Canário', slug: 'gran-vic-canario-indaiatuba', c: 'VIC Engenharia',
-    s: '2 dorm c/ suíte · Parque dos Pássaros · alternativas: Tangará e Colibri', t: 'Esgotado',
-    img: 'gran-vic-canario-indaiatuba/images/hero.jpg' },
-  { n: 'Gran Vic Andorinha', slug: 'gran-vic-andorinha-indaiatuba', c: 'VIC Engenharia',
-    s: '2 dorm c/ suíte · Parque dos Pássaros · alternativas: Tangará e Colibri', t: 'Esgotado',
-    img: 'gran-vic-andorinha-indaiatuba/images/hero.jpg' },
+  // 04/09/2026: Canário (3 unidades) e Andorinha (2) voltaram ao estoque na tabela VIC de 02/09/2026
+  // e estão de novo em APTOS. Quando esgotarem outra vez, voltam para cá com t:'Esgotado'.
 ];
 
 const aptos = APTOS.map(e => ({ n: e.n, slug: e.slug })).concat(EXTRAS_APTOS)

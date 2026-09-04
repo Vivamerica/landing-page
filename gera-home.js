@@ -269,7 +269,7 @@ const faqDeVisivel = html => {
 // card no estilo de cada hub (classes CSS já existentes em cada página)
 const cardLoteamentos = e => `
       <a href="/${e.slug}/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/${e.img}" alt="${esc(e.n)} — ${tipoLote(e)} em Indaiatuba">
+        <img loading="lazy" decoding="async" src="/${e.img}" width="800" height="450" alt="${esc(e.n)} — ${tipoLote(e)} em Indaiatuba">
         <div class="listing-card-body">
           <p class="listing-card-badge">${tipoLote(e)}${seloEst(e)}</p>
           <h3>${esc(e.n)}</h3>
@@ -282,7 +282,7 @@ const cardLoteamentos = e => `
       </a>`;
 const cardCondominios = e => `
       <a href="/${e.slug}/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/${e.img}" alt="${esc(e.n)} — condomínio fechado em Indaiatuba">
+        <img loading="lazy" decoding="async" src="/${e.img}" width="800" height="450" alt="${esc(e.n)} — condomínio fechado em Indaiatuba">
         <div class="card-body">
           <span class="card-badge">${tipoLote(e)}${seloEst(e)}</span>
           <h3>${esc(e.n)}</h3>
