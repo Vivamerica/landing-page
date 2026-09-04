@@ -67,20 +67,29 @@
     .pp .wa{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:700;padding:.45rem .8rem;border-radius:999px;margin-top:.5rem;font-size:.8rem}
     .rotulo{background:#fff;border:1px solid var(--borda);border-radius:.35rem;padding:.1rem .35rem;font:700 .68rem 'Josefin Sans',sans-serif;color:var(--preto);box-shadow:0 1px 3px rgba(0,0,0,.15)}
     .leaflet-tooltip.rotulo::before{display:none}
-    .btn-lista{display:none}
+    .btn-lista,.gaveta-topo,#overlay{display:none}
     #tracar{display:none;position:absolute;right:.6rem;bottom:1.6rem;z-index:1000;background:#fff;border:1px solid var(--borda);border-radius:.6rem;padding:.6rem;width:min(420px,90vw);font-size:.75rem}
     #tracar textarea{width:100%;height:120px;font:.7rem monospace;margin:.4rem 0}
     #tracar button{font:inherit;padding:.35rem .6rem;border-radius:.4rem;border:1px solid var(--borda);background:var(--creme);cursor:pointer}
     @media(max-width:760px){
-      main{grid-template-columns:1fr;grid-template-rows:1fr auto}
       header{padding:.45rem .7rem;gap:.5rem}
       header h1{font-size:.72rem;letter-spacing:.03em}
       .marca{font-size:.6rem;letter-spacing:.16em}
       header .wa{display:none}
-      aside{order:2;border-right:0;border-top:1px solid var(--borda);max-height:42vh}
-      aside.fechada .lista,aside.fechada .filtros,aside.fechada .rodape{display:none}
-      .btn-lista{display:block;width:100%;background:var(--preto);color:var(--ouro);border:0;padding:.7rem;font:700 .85rem 'Josefin Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
-      #mapa{order:1;min-height:52vh}
+      main{display:block;position:relative}
+      #mapa{height:calc(100dvh - 48px);min-height:420px}
+      aside{position:fixed;top:0;left:0;height:100dvh;width:min(80vw,360px);z-index:1200;border-right:0;
+            box-shadow:0 0 30px rgba(0,0,0,.35);transform:translateX(-102%);transition:transform .25s ease}
+      aside.aberta{transform:none}
+      .gaveta-topo{display:flex;align-items:center;justify-content:space-between;padding:.7rem .9rem;background:var(--preto);color:var(--ouro);
+                   font-family:'Poiret One',cursive;letter-spacing:.14em;text-transform:uppercase;font-size:.9rem}
+      .gaveta-topo button{background:none;border:0;color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;padding:0 .2rem}
+      .btn-lista{display:block;position:fixed;left:.7rem;bottom:1.2rem;z-index:1150;background:var(--preto);color:var(--ouro);border:1px solid var(--ouro);
+                 padding:.75rem 1.1rem;border-radius:999px;font:700 .8rem 'Josefin Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+                 box-shadow:0 4px 16px rgba(0,0,0,.35)}
+      #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1190;opacity:0;pointer-events:none;transition:opacity .25s}
+      body.gaveta #overlay{opacity:1;pointer-events:auto}
+      .rodape{font-size:.66rem}
     }
   </style>
 </head>
@@ -92,18 +101,18 @@
 </header>
 <main>
   <aside id="painel">
-    <button class="btn-lista" id="btnLista" type="button">Bairros e lotes ▾</button>
+    <div class="gaveta-topo"><b>Bairros e lotes</b><button type="button" id="btnFechar" aria-label="Fechar">×</button></div>
     <div class="filtros">
       <p>Tipo de lote</p>
       <div class="chips" id="chips"></div>
     </div>
     <div class="lista" id="lista"></div>
-    <div class="rodape">
-      Preços à vista da tabela de lotes disponíveis (Vista Verde), setembro/2026, sujeitos a alteração sem aviso. Entrada de 15% e saldo em 96 parcelas (12 nos lotes do Campo Bonito) com 1% ao mês já incluído e correção mensal pelo IPCA (Índice de Preços ao Consumidor Amplo), conforme a tabela. Lotes comerciais aparecem como "mistos" na tabela. Pinos = posição aproximada do lote; limites em azul quando já traçados. Imobiliária Viv'América · CRECI 47394-J.
-    </div>
+    <div class="rodape">Preços à vista, sujeitos a alteração sem aviso. Para parcelamento, consulte-nos. Pinos em posição aproximada. Imobiliária Viv'América · CRECI 47394-J.</div>
   </aside>
   <div id="mapa" role="application" aria-label="Mapa com os lotes disponíveis"></div>
 </main>
+<button class="btn-lista" id="btnLista" type="button">Bairros e lotes</button>
+<div id="overlay"></div>
 <div id="tracar">
   <b>Modo traçar</b> — desenhe o polígono do lote (ícone de polígono no mapa), informe o id (ex.: <code>barnabe-q11-l1</code>) e copie o JSON abaixo para o arquivo de dados.
   <textarea id="tracarOut" readonly></textarea>
@@ -113,7 +122,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 // ─── DADOS ─────────────────────────────────────────────────────────────────────
-// Fonte: "Vista Verde — tabela de lotes disponíveis" (set/2026) + coordenadas informadas pelo Fabio em 04/09/2026.
+// Tabela de lotes disponíveis (set/2026) + coordenadas de campo (04/09/2026).
 // ll = [lat, lng] do pino (aproximado). poly = contorno do lote [[lat,lng],...] quando traçado (modo ?tracar=1).
 const TIPOS = { RESIDENCIAL:['Residencial','var(--res)','#2e7d5b'], MISTO:['Misto (comercial)','var(--mis)','#b8641b'], COMERCIAL:['Comercial','var(--com)','#1f5fa8'], AVENIDA:['Avenida','var(--ave)','#7a3fb5'], GLEBA:['Gleba','var(--gle)','#8a6d1f'] };
 const BAIRROS = [
@@ -149,7 +158,8 @@ const LOTES = [
   { b:'canarios', q:'A', l:'1',  m2:227.95, tipo:'RESIDENCIAL', pm2:1200,    vista:273540.00, entrada:41031.00,  parcela:3778.93,  ll:[-23.107185998513692,-47.26826684147724] },
   { b:'canarios', q:'A', l:'16', m2:225.73, tipo:'RESIDENCIAL', pm2:1200,    vista:270876.00, entrada:40631.40,  parcela:3742.13,  ll:[-23.10725345059146,-47.26709571219265] },
   { b:'canarios', q:'D', l:'17', m2:201.20, tipo:'RESIDENCIAL', pm2:1200,    vista:241440.00, entrada:36216.00,  parcela:3335.47,  ll:[-23.108595373530825,-47.26693398807634] },
-  { b:'campobonito', q:'A', l:'7C', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, nx:96, obs:'Gleba A 7C (a tabela grafa 7C-1 e 7C-2). próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
+  { b:'campobonito', q:'A', l:'7C-1', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, nx:96, obs:'Gleba A 7C-1, próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
+  { b:'campobonito', q:'A', l:'7C-2', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, nx:96, obs:'Gleba A 7C-2, próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
   { b:'campobonito', q:'A', l:'7-E2', m2:1578.60, tipo:'GLEBA', pm2:1300,    vista:2052167.00,entrada:307825.05, parcela:28350.51, nx:96, obs:'Gleba A 7-E2. próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
   { b:'campobonito', q:'27', l:'52', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12, ll:[-23.098181319147262,-47.27272881739487] },
   { b:'campobonito', q:'27', l:'53', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12, ll:[-23.09812888213065,-47.27277442301856] },
@@ -187,7 +197,7 @@ function popupHtml(x) {
     ${x.soVista ? '<dt>Condição</dt><dd>somente à vista</dd>' : `<dt>Entrada 15%</dt><dd>${brl(x.entrada)}</dd><dt>Parcelas</dt><dd>${x.nx || 96}x de ${brl(x.parcela)} <small>(1% a.m. incluído · correção mensal pelo IPCA)</small></dd>`}</dl>
     ${x.obs ? '<div class="obs">' + x.obs + '</div>' : ''}
     <a class="wa" href="${wa}" target="_blank" rel="noopener" onclick="try{gtag('event','whatsapp_click',{lote:'${x.id}'})}catch(e){}">Falar sobre este lote</a>
-    <div class="fonte">Tabela de lotes disponíveis (Vista Verde), set/2026. Posição do pino aproximada.</div></div>`;
+    <div class="fonte">Preço à vista de set/2026, sujeito a alteração sem aviso. Posição do pino aproximada.</div></div>`;
 }
 function desenhar() {
   camada.clearLayers();
@@ -213,7 +223,7 @@ desenhar();
 const chips = document.getElementById('chips');
 Object.entries(TIPOS).forEach(([k, v]) => {
   const c = document.createElement('button'); c.type = 'button'; c.className = 'chip'; c.innerHTML = `<i style="background:${v[2]}"></i>${v[0]}`;
-  c.onclick = () => { ativos.has(k) ? ativos.delete(k) : ativos.add(k); c.classList.toggle('off', !ativos.has(k)); desenhar(); montarLista(); };
+  c.onclick = () => { ativos.has(k) ? ativos.delete(k) : ativos.add(k); c.classList.toggle('off', !ativos.has(k)); desenhar(); montarLista(); if (ehCelular()) setTimeout(() => abrirGaveta(false), 150); };
   chips.appendChild(c);
 });
 const lista = document.getElementById('lista');
@@ -246,7 +256,7 @@ function irParaBairro(id) {
   if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.6), { maxZoom: 17 });
   else if (b.centro) mapa.setView(b.centro, 16);
   history.replaceState(null, '', '#' + id);
-  if (window.innerWidth <= 760) painel.classList.add('fechada');
+  if (ehCelular()) abrirGaveta(false);
 }
 function irParaLote(x) {
   document.querySelectorAll('.lote').forEach(d => d.classList.toggle('sel', d.dataset.id === x.id));
@@ -255,11 +265,15 @@ function irParaLote(x) {
   const ll = x.ll || (x.poly && L.latLngBounds(x.poly).getCenter());
   mapa.setView(ll, 18);
   setTimeout(() => m.openPopup(), 250);
-  if (window.innerWidth <= 760) painel.classList.add('fechada');
+  if (ehCelular()) abrirGaveta(false);
 }
 montarLista();
 const painel = document.getElementById('painel');
-document.getElementById('btnLista').onclick = () => painel.classList.toggle('fechada');
+const ehCelular = () => window.innerWidth <= 760;
+function abrirGaveta(v) { painel.classList.toggle('aberta', v); document.body.classList.toggle('gaveta', v); }
+document.getElementById('btnLista').onclick = () => abrirGaveta(true);
+document.getElementById('btnFechar').onclick = () => abrirGaveta(false);
+document.getElementById('overlay').onclick = () => abrirGaveta(false);
 // enquadramento inicial só quando o contêiner tem tamanho de verdade (uma vez)
 let enquadrado = false;
 function enquadrarInicial() {
