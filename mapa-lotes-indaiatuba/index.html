@@ -67,7 +67,7 @@
     .pp .wa{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:700;padding:.45rem .8rem;border-radius:999px;margin-top:.5rem;font-size:.8rem}
     .rotulo{background:#fff;border:1px solid var(--borda);border-radius:.35rem;padding:.1rem .35rem;font:700 .68rem 'Josefin Sans',sans-serif;color:var(--preto);box-shadow:0 1px 3px rgba(0,0,0,.15)}
     .leaflet-tooltip.rotulo::before{display:none}
-    .btn-lista,.gaveta-topo,#overlay{display:none}
+    .btn-lista,.gaveta-topo,#overlay,.btn-filtrar{display:none}
     #tracar{display:none;position:absolute;right:.6rem;bottom:1.6rem;z-index:1000;background:#fff;border:1px solid var(--borda);border-radius:.6rem;padding:.6rem;width:min(420px,90vw);font-size:.75rem}
     #tracar textarea{width:100%;height:120px;font:.7rem monospace;margin:.4rem 0}
     #tracar button{font:inherit;padding:.35rem .6rem;border-radius:.4rem;border:1px solid var(--borda);background:var(--creme);cursor:pointer}
@@ -90,6 +90,7 @@
       #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1190;opacity:0;pointer-events:none;transition:opacity .25s}
       body.gaveta #overlay{opacity:1;pointer-events:auto}
       .rodape{font-size:.66rem}
+      .btn-filtrar{display:block;width:100%;margin-top:.6rem;background:var(--ouro);color:var(--preto);border:0;border-radius:999px;padding:.6rem;font:700 .8rem 'Josefin Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
     }
   </style>
 </head>
@@ -105,6 +106,7 @@
     <div class="filtros">
       <p>Tipo de lote</p>
       <div class="chips" id="chips"></div>
+      <button class="btn-filtrar" id="btnFiltrar" type="button">Filtrar e ver no mapa</button>
     </div>
     <div class="lista" id="lista"></div>
     <div class="rodape">Preços à vista, sujeitos a alteração sem aviso. Para parcelamento, consulte-nos. Pinos em posição aproximada. Imobiliária Viv'América · CRECI 47394-J.</div>
@@ -223,7 +225,7 @@ desenhar();
 const chips = document.getElementById('chips');
 Object.entries(TIPOS).forEach(([k, v]) => {
   const c = document.createElement('button'); c.type = 'button'; c.className = 'chip'; c.innerHTML = `<i style="background:${v[2]}"></i>${v[0]}`;
-  c.onclick = () => { ativos.has(k) ? ativos.delete(k) : ativos.add(k); c.classList.toggle('off', !ativos.has(k)); desenhar(); montarLista(); if (ehCelular()) setTimeout(() => abrirGaveta(false), 150); };
+  c.onclick = () => { ativos.has(k) ? ativos.delete(k) : ativos.add(k); c.classList.toggle('off', !ativos.has(k)); desenhar(); montarLista(); };
   chips.appendChild(c);
 });
 const lista = document.getElementById('lista');
@@ -273,6 +275,7 @@ const ehCelular = () => window.innerWidth <= 760;
 function abrirGaveta(v) { painel.classList.toggle('aberta', v); document.body.classList.toggle('gaveta', v); }
 document.getElementById('btnLista').onclick = () => abrirGaveta(true);
 document.getElementById('btnFechar').onclick = () => abrirGaveta(false);
+document.getElementById('btnFiltrar').onclick = () => abrirGaveta(false);
 document.getElementById('overlay').onclick = () => abrirGaveta(false);
 // enquadramento inicial só quando o contêiner tem tamanho de verdade (uma vez)
 let enquadrado = false;
