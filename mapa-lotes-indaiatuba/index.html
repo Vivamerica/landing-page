@@ -169,7 +169,7 @@ L.control.scale({ imperial: false }).addTo(mapa);
 // o contêiner pode nascer sem tamanho (aba em segundo plano, fontes carregando): recalcula e reenquadra
 function enquadrarTudo() { const pts = LOTES.flatMap(x => x.ll ? [x.ll] : []); if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.15)); }
 window.addEventListener('resize', () => mapa.invalidateSize());
-window.addEventListener('load', () => { mapa.invalidateSize(); if (!location.hash) enquadrarTudo(); });
+window.addEventListener('load', () => mapa.invalidateSize());
 
 const camada = L.layerGroup().addTo(mapa);
 const marcadores = {};
@@ -255,8 +255,17 @@ function irParaLote(x) {
 montarLista();
 const painel = document.getElementById('painel');
 document.getElementById('btnLista').onclick = () => painel.classList.toggle('fechada');
-if (location.hash && bairroDe(location.hash.slice(1))) { setTimeout(() => irParaBairro(location.hash.slice(1)), 300); }
-else { enquadrarTudo(); }
+// enquadramento inicial só quando o contêiner tem tamanho de verdade (uma vez)
+let enquadrado = false;
+function enquadrarInicial() {
+  const t = mapa.getSize(); if (enquadrado || !(t.x > 0 && t.y > 0)) return;
+  enquadrado = true; mapa.invalidateSize();
+  const h = location.hash.slice(1);
+  if (h && bairroDe(h)) irParaBairro(h); else enquadrarTudo();
+}
+enquadrarInicial();
+if ('ResizeObserver' in window) new ResizeObserver(() => { mapa.invalidateSize(); enquadrarInicial(); }).observe(document.getElementById('mapa'));
+else setTimeout(enquadrarInicial, 500);
 
 // ─── MODO TRAÇAR (?tracar=1): desenha o contorno do lote sobre o satélite e devolve o JSON ───
 if (new URLSearchParams(location.search).get('tracar') === '1') {
