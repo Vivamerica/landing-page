@@ -132,7 +132,7 @@
 // ll = [lat, lng] do pino (aproximado). poly = contorno do lote [[lat,lng],...] quando traçado (modo ?tracar=1).
 const TIPOS = { RESIDENCIAL:['Residencial','var(--res)','#2e7d5b'], MISTO:['Misto (comercial)','var(--mis)','#b8641b'], COMERCIAL:['Comercial','var(--com)','#1f5fa8'], AVENIDA:['Avenida','var(--ave)','#7a3fb5'], GLEBA:['Gleba','var(--gle)','#8a6d1f'] };
 const BAIRROS = [
-  { id:'sanmarino', nome:'Terras de San Marino', sub:'condomínio fechado em lançamento · a prazo em 60x', landing:'/terras-de-san-marino-indaiatuba/', cond:'juros de 1% a.m. (tabela PRICE) · correção anual pelo IGP-M', overlay:{ url:'images/sanmarino.png', bounds:[[-23.102820726,-47.262921457],[-23.096220348,-47.254903395]] } },
+  { id:'sanmarino', nome:'Terras de San Marino', sub:'condomínio fechado em lançamento · a prazo em 60x', landing:'/terras-de-san-marino-indaiatuba/', cond:'juros de 1% a.m. na tabela PRICE · correção anual pelo IGP-M', overlay:{ url:'images/sanmarino.png', bounds:[[-23.102820726,-47.262921457],[-23.096220348,-47.254903395]] } },
   { id:'barnabe',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City' },
   { id:'araras',     nome:'Jardim das Araras' },
   { id:'bemtevi',    nome:'Jardim Bem-Te-Vi' },
@@ -209,7 +209,7 @@ const satelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/servic
 L.control.layers({ 'Ruas': ruas, 'Satélite': satelite }, null, { position: 'topright' }).addTo(mapa);
 L.control.scale({ imperial: false }).addTo(mapa);
 // o contêiner pode nascer sem tamanho (aba em segundo plano, fontes carregando): recalcula e reenquadra
-function enquadrarTudo() { const pts = LOTES.flatMap(x => x.ll ? [x.ll] : []); if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.15)); }
+function enquadrarTudo() { const pts = LOTES.flatMap(x => x.ll ? [x.ll] : []); if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.15), { animate: false }); }
 window.addEventListener('resize', () => mapa.invalidateSize());
 window.addEventListener('load', () => mapa.invalidateSize());
 
@@ -302,8 +302,8 @@ function irParaBairro(id, forcar) {
   if (!bairroAtivo) return;
   const b = bairroDe(id);
   const pts = LOTES.filter(x => x.b === id && ativos.has(x.tipo)).flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
-  if (pts.length) { mapa.fitBounds(L.latLngBounds(pts).pad(0.35), { maxZoom: 17 }); if (mapa.getZoom() < ZOOM_LOTES) mapa.setZoom(ZOOM_LOTES); }
-  else if (b.centro) mapa.setView(b.centro, ZOOM_LOTES);
+  if (pts.length) { mapa.fitBounds(L.latLngBounds(pts).pad(0.35), { maxZoom: 17, animate: false }); if (mapa.getZoom() < ZOOM_LOTES) mapa.setZoom(ZOOM_LOTES, { animate: false }); }
+  else if (b.centro) mapa.setView(b.centro, ZOOM_LOTES, { animate: false });
   history.replaceState(null, '', '#' + id);
   if (ehCelular()) abrirGaveta(false);
 }
@@ -312,7 +312,7 @@ function irParaLote(x) {
   const m = marcadores[x.id];
   if (!m) { alert('Este lote ainda não tem posição no mapa. Fale conosco pelo WhatsApp para mais detalhes.'); return; }
   const ll = x.ll || (x.poly && L.latLngBounds(x.poly).getCenter());
-  mapa.setView(ll, 18);
+  mapa.setView(ll, 18, { animate: false });
   setTimeout(() => m.openPopup(), 250);
   if (ehCelular()) abrirGaveta(false);
 }
