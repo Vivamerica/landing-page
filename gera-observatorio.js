@@ -23,21 +23,44 @@
 const fs = require('fs');
 const R = __dirname + '/';
 
-const EDICAO = { mes: 'Agosto', ano: 2026, iso: '2026-08', lastmod: '2026-08-20' };
+const EDICAO = { mes: 'Setembro', ano: 2026, iso: '2026-09', lastmod: '2026-09-02' };
 
 // estoque do mês ANTERIOR, para o "antes e depois" (vendidos = anterior - atual;
 // o atual vem do campo est da fonte única). null = primeira medição.
 const ESTOQUE_ANTERIOR = {
-  'di-italia-indaiatuba':   { n: 59,  data: 'jul/2026', fonte: 'material Dominium' },
-  'vivere-indaiatuba':      { n: 7,   data: '22/08/2026', fonte: 'arte da Masotti — 2 reservas na mesma semana' },
-  // demais: primeira medição em agosto; a série começa em setembro
+  'monte-carmelo-indaiatuba':      { n: 587, data: 'ago/2026', fonte: 'relatório de estoque Dominium da edição de agosto; atual: "Lotes disponíveis - Monte Carmelo" de 02/09/2026' },
+  'residencial-ravello-indaiatuba': { n: 197, data: 'ago/2026', fonte: 'relatório de estoque Dominium da edição de agosto; atual: "Lotes disponíveis - Ravello" de 02/09/2026' },
+  'di-italia-indaiatuba':          { n: 43,  data: '14/08/2026', fonte: 'relatório de estoque de 14/08/2026 — sem nova medição em setembro' },
+  'vivere-indaiatuba':             { n: 5,   data: '22/08/2026', fonte: 'arte da Masotti de 22/08/2026 — sem nova medição em setembro' },
+  // Reserva Botânica: 1ª medição com número (3 lotes, tabela Zarin de 10/07/2026);
+  // antes o site só dizia "últimas unidades", sem contagem.
+  // Terras de San Marino e Alpnach: 1ª medição (sem série anterior).
 };
 
 // mudanças de preço do mês, conferidas nas tabelas oficiais das construtoras
 const MOVIMENTOS = [
-  { n: 'Terras de San Marino', c: 'Dominium',       de: 225000, para: 247500, causa: 'reajuste na tabela da loteadora', fonte: 'tabela de 29/07/2026, piso confirmado no espelho de 13/08' },
+  // setembro/2026
+  { n: 'Residencial Ravello',  c: 'Dominium', de: 672000,  para: 714000,  causa: 'o menor lote disponível (420 m²) mudou no relatório de estoque', fonte: 'relatório de estoque Dominium de 02/09/2026' },
+  { n: 'Reserva Botânica',     c: 'Zarin',    de: 391682,  para: 532563,  causa: 'menor lote passou de 250 para 340 m² — restam 3 lotes (tabela jul/2026)', fonte: 'tabela Zarin de 10/07/2026' },
+  { n: 'Hélade — Park Meraki', c: 'PERPLAN',  de: 1300668, para: 1391504, causa: 'reajuste na tabela da construtora', fonte: 'tabela PERPLAN de setembro/2026' },
+  { n: 'Parque Zarah',         c: 'Zarin',    de: 249123,  para: 172500,  causa: 'menor lote agora é misto de 150 m² (fase Pérola); residencial a partir de R$ 212.072', fonte: 'tabela Zarin de setembro/2026 (3 fases)' },
+];
+// Histórico da edição de agosto/2026 (já publicado então; NÃO entra na contagem
+// "mudaram neste mês" nem nas altas do card da home). Quando o Observatório
+// ganhar "edições anteriores", é daqui que sai.
+const MOVIMENTOS_AGOSTO_2026 = [
+  { n: 'Terras de San Marino', c: 'Dominium',       de: 225000, para: 247500, causa: 'reajuste na tabela da loteadora', fonte: 'tabela de 29/07/2026, piso confirmado no espelho de 13/08/2026' },
   { n: 'Gran Vic Tangará',    c: 'VIC Engenharia', de: 302464, para: 331737, causa: 'reajuste na tabela da construtora', fonte: 'tabela VIC de 15/08/2026' },
   { n: 'Jardim Di Italia',    c: 'Dominium',       de: 180000, para: 188000, causa: 'os lotes mais baratos foram vendidos — o preço de entrada subiu', fonte: 'relatório de estoque de 14/08/2026' },
+];
+
+// empreendimentos que ganharam tabela nesta edição (saíram de "sob consulta");
+// ficam fora de MOVIMENTOS porque não há "antes" para calcular variação
+// (o gera-home conta altas em MOVIMENTOS e trataria de:null como alta)
+const ENTRADAS = [
+  { n: 'Itamaracá Residencial', c: 'Zarin',   para: 339990, causa: 'primeira tabela publicada — 48,11 e 53,84 m²', fonte: 'tabela Zarin de julho/2026' },
+  { n: 'Spazio Italia',         c: 'Zarin',   para: 448820, causa: 'primeira tabela publicada — 59,5 e 63,58 m²', fonte: 'tabela Zarin de 10/07/2026' },
+  { n: 'Areté Home',            c: 'PERPLAN', para: 991005, causa: 'primeira tabela publicada — 93 a 117 m²', fonte: 'tabela PERPLAN de agosto/2026' },
 ];
 
 // ─── dados: mesma fonte do folheto ───
@@ -109,6 +132,15 @@ const linhaMov = m => {
       </tr>`;
 };
 
+const linhaEntrada = m => `
+      <tr>
+        <td>${m.n}<br><small style="color:#8a8272;font-size:.78em">${m.causa}</small></td>
+        <td>${m.c}</td>
+        <td class="num"><span class="sc">sob consulta</span></td>
+        <td class="num"><strong>${brl(m.para)}</strong></td>
+        <td class="num" style="color:#8a8272;font-weight:700">novo na tabela</td>
+      </tr>`;
+
 // ─── FAQ (vira FAQPage no JSON-LD, gerado das mesmas respostas) ───
 const FAQ = [
   { q: 'Qual é o lançamento mais barato de Indaiatuba em ' + EDICAO.mes.toLowerCase() + ' de ' + EDICAO.ano + '?',
@@ -118,7 +150,7 @@ const FAQ = [
   { q: 'De onde vêm os preços desta página?',
     a: 'Das tabelas oficiais que as construtoras e loteadoras enviam à Imobiliária Viv’América, sempre com a data da tabela registrada. O valor exibido é o "a partir de" — a menor unidade disponível no momento da tabela. A página é atualizada mensalmente.' },
   { q: 'Os preços mudam com frequência?',
-    a: 'Sim — e é por isso que esta página existe. Em ' + EDICAO.mes.toLowerCase() + ', ' + MOVIMENTOS.length + ' empreendimentos mudaram de preço, com variações de ' + Math.min(...MOVIMENTOS.map(m => (m.para - m.de) / m.de * 100)).toFixed(1).replace('.', ',') + '% a +' + Math.max(...MOVIMENTOS.map(m => (m.para - m.de) / m.de * 100)).toFixed(1).replace('.', ',') + '%. Tabela de lançamento tem validade curta e reajuste por INCC ou IGPM.' },
+    a: 'Sim — e é por isso que esta página existe. Na edição de ' + EDICAO.mes.toLowerCase() + '/' + EDICAO.ano + ', ' + MOVIMENTOS.length + ' empreendimentos mudaram de preço de entrada e ' + ENTRADAS.length + ' ganharam a primeira tabela, com variações de ' + Math.min(...MOVIMENTOS.map(m => (m.para - m.de) / m.de * 100)).toFixed(1).replace('.', ',') + '% a +' + Math.max(...MOVIMENTOS.map(m => (m.para - m.de) / m.de * 100)).toFixed(1).replace('.', ',') + '%. Tabela de lançamento tem validade curta e reajuste por INCC (Índice Nacional de Custo da Construção) ou IGP-M.' },
 ];
 
 const jsonFaq = JSON.stringify({
@@ -159,6 +191,9 @@ const HTML = `<!DOCTYPE html>
 <meta property="og:title" content="Preços de Lançamentos em Indaiatuba — Tabela ${EDICAO.mes}/${EDICAO.ano}">
 <meta property="og:description" content="Tabela de ${EDICAO.mes.toLowerCase()}/${EDICAO.ano} com preço na tela, sem cadastro: os ${total} lançamentos de Indaiatuba, m² de lote de ${brl(m2Min)} a ${brl(m2Max)} e quem subiu ou baixou no mês.">
 <meta property="og:url" content="${URL}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Preços de Lançamentos em Indaiatuba — Tabela ${EDICAO.mes}/${EDICAO.ano}">
+<meta name="twitter:description" content="Tabela de ${EDICAO.mes.toLowerCase()}/${EDICAO.ano} com preço na tela, sem cadastro: os ${total} lançamentos de Indaiatuba, m² de lote de ${brl(m2Min)} a ${brl(m2Max)} e quem subiu ou baixou no mês.">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" type="image/png" href="/favicon.png">
 <script type="application/ld+json">${jsonDataset}</script>
@@ -191,6 +226,7 @@ const HTML = `<!DOCTYPE html>
   .nav-site{display:flex;flex-wrap:wrap;gap:1.2rem;margin:0 0 1.2rem}
   .nav-site a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
   .nav-site a:hover{color:#C9A227}
+  @media(max-width:680px){.nav-site{display:none}}
   h1{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:800;line-height:1.15;margin:.6rem 0 .5rem;letter-spacing:-.02em}
   h1 em{font-style:normal;color:#C9A227}
   .lede{max-width:62ch;opacity:.9;font-size:1.02rem}
@@ -260,7 +296,7 @@ const HTML = `<!DOCTYPE html>
 <div class="tiles">
   <div class="tile"><b>${total}</b><span>Lançamentos monitorados</span></div>
   <div class="tile"><b>${brl(menorLote.p)}</b><span>Menor entrada (lote)</span></div>
-  <div class="tile"><b>${brl(menorApto.p)}</b><span>Apto mais barato (MCMV)</span></div>
+  <div class="tile"><b>${brl(menorApto.p)}</b><span>Apto mais barato (MCMV — Minha Casa Minha Vida)</span></div>
   <div class="tile"><b>${brl(m2Medio)}/m²</b><span>Média do m² de lote</span></div>
 </div>
 
@@ -273,15 +309,16 @@ const HTML = `<!DOCTYPE html>
   <div class="tabela-wrap">
     <table>
       <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Antes</th><th>Agora</th><th>Variação</th></tr></thead>
-      <tbody>${MOVIMENTOS.map(linhaMov).join('')}
+      <tbody>${MOVIMENTOS.map(linhaMov).join('')}${ENTRADAS.map(linhaEntrada).join('')}
       </tbody>
     </table>
   </div>
 
   <h2>Estoque e ritmo de vendas <small>unidades disponíveis nos empreendimentos com relatório oficial de estoque</small></h2>
   <p class="sub">O "antes e depois" que mostra a velocidade do mercado: quantas unidades cada
-  empreendimento tinha, quantas tem agora e quantas saíram no período. Agosto é a primeira
-  medição da maioria — a série mês a mês fecha o ciclo em setembro.</p>
+  empreendimento tinha, quantas tem agora e quantas saíram no período. Onde consta
+  "1ª medição", ainda não há série anterior; onde a fonte não foi remedida no mês, a
+  medição anterior repete a última publicada e a coluna de vendidas fica em zero.</p>
   <div class="tabela-wrap">
     <table>
       <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Estoque atual</th><th>Medição anterior</th><th>Vendidas</th></tr></thead>

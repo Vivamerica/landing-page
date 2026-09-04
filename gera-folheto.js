@@ -8,50 +8,63 @@ const APTOS = [
     s:'2 dorm · 47,22 m² · varanda · 16 itens lazer', t:'MCMV · FGTS', slug:'gran-vic-tangara-indaiatuba' },
   { n:'Gran Vic Colibri', c:'VIC Engenharia', p:332450, img:'gran-vic-colibri-indaiatuba/images/hero.jpg',
     s:'2 dorm c/ suíte · 51,42 m² · 15 itens lazer', t:'MCMV · FGTS', slug:'gran-vic-colibri-indaiatuba' },
+  { n:'Itamaracá Residencial', c:'Zarin', p:339990, img:'itamaraca-indaiatuba/images/hero.jpg',
+    s:'48 a 54 m² · 1 vaga · tabela de julho/2026', t:'MCMV · FGTS', slug:'itamaraca-indaiatuba' },
   { n:'Vívere Residencial', c:'Masotti', p:352552, img:'vivere-indaiatuba/images/hero.jpg',
     s:'2 dorm · 46 a 50 m² · pronto para morar · últimas 5 unidades', t:'MCMV · Pronto', est:5, slug:'vivere-indaiatuba' },
+  { n:'Spazio Italia', c:'Zarin', p:448820, img:'spazio-italia-indaiatuba/images/hero.jpg',
+    s:'59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer', t:'Lançamento', slug:'spazio-italia-indaiatuba' },
   { n:'Aurora — Park Meraki', c:'Masotti', p:758850, img:'aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg',
     s:'101 a 152 m² · 4 torres · 32 áreas de lazer', t:'Alto padrão', slug:'aurora-indaiatuba' },
   { n:'Storia Congesa', c:'Congesa', p:981000, img:'storia-congesa-indaiatuba/images/hero.jpg',
     s:'70 a 114 m² · 2-3 vagas + hobby box · dez/2026', t:'Alto padrão', slug:'storia-congesa-indaiatuba' },
-  { n:'Hélade — Park Meraki', c:'PERPLAN', p:1300668, img:'helade-indaiatuba/images/hero.jpg',
-    s:'3 suítes · 120,18 m² · 3 vagas · mar/2027', t:'Alto padrão', slug:'helade-indaiatuba' },
-  { n:'Areté Home', c:'PERPLAN', p:null, img:'arete-home-indaiatuba/images/hero.jpg',
-    s:'Torre única · 2 e 3 suítes · varanda nivelada · vagas cobertas', t:'Pré-lançamento', slug:'arete-home-indaiatuba' },
+  { n:'Areté Home', c:'PERPLAN', p:991005, img:'arete-home-indaiatuba/images/hero.jpg',
+    s:'93 a 117 m² · 2 e 3 suítes · torre única · 19 andares', t:'Lançamento', slug:'arete-home-indaiatuba' },
+  { n:'Hélade — Park Meraki', c:'PERPLAN', p:1391504, img:'helade-indaiatuba/images/hero.jpg',
+    s:'3 suítes · 120,18 m² · 2 ou 3 vagas · mar/2027', t:'Alto padrão', slug:'helade-indaiatuba' },
   { n:'Viva Parque Aura', c:'Pinheiro · RDZ · iBen', p:null, img:'viva-parque-aura-indaiatuba/images/hero.jpg',
     s:'47 a 85 m² · 7.000 m² parque · +30 itens lazer', t:'Pré-lançamento', slug:'viva-parque-aura-indaiatuba' },
   { n:'Manai Bosque', c:'Masotti', p:null, img:'manai-bosque-indaiatuba/images/hero-3-torres.jpg',
     s:'65 a 91 m² · piscina raia 25m · 36 áreas lazer', t:'Pré-lançamento', slug:'manai-bosque-indaiatuba' },
   { n:'Congesa Seasons', c:'Congesa', p:null, img:'seasons-indaiatuba/images/hero.jpg',
     s:'3 suítes · Penthouse · Maison c/ jardim', t:'Pré-lançamento', slug:'seasons-indaiatuba' },
-  { n:'Spazio Italia', c:'Zarin', p:null, img:'spazio-italia-indaiatuba/images/hero.jpg',
-    s:'59 a 63 m² · suíte · 25+ itens lazer mobiliados', t:'Pré-lançamento', slug:'spazio-italia-indaiatuba' },
-  { n:'Itamaracá Residencial', c:'Zarin', p:null, img:'itamaraca-indaiatuba/images/hero.jpg',
-    s:'48 a 54 m² · Rua Tupinambás · 1 min Av. Conceição', t:'MCMV · FGTS', slug:'itamaraca-indaiatuba' },
 ];
+
 
 const LOTES = [
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, img:'monte-carmelo-indaiatuba/images/hero.jpg',
-    s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:587, slug:'monte-carmelo-indaiatuba' },
+    s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:568, slug:'monte-carmelo-indaiatuba' },
+  { n:'Parque Zarah', c:'Zarin', p:172500, m2:150, img:'parque-zarah-indaiatuba/images/hero.jpg',
+    s:'3 fases · residencial a partir de R$ 212 mil · Safira dez/2026 · Rubi e Pérola dez/2028', t:'Cond. fechado', slug:'parque-zarah-indaiatuba' },
   { n:'Jardim Di Italia', c:'Dominium', p:188000, m2:150, img:'di-italia-indaiatuba/images/hero.jpg',
     s:'Loteamento aberto · infraestrutura concluída', t:'Loteamento', est:43, slug:'di-italia-indaiatuba' },
   { n:'Terras de San Marino', c:'Dominium', p:247500, m2:150, img:'images/hero.jpg',
     s:'546 lotes · 16.164 m² de lazer resort', t:'Cond. fechado', est:4, slug:'terras-de-san-marino-indaiatuba' },
-  { n:'Parque Zarah', c:'Zarin', p:249123, m2:150, img:'parque-zarah-indaiatuba/images/hero.jpg',
-    s:'Inspiração persa · 15+ áreas de lazer · 2026', t:'Cond. fechado', slug:'parque-zarah-indaiatuba' },
   { n:'Residencial Vila Fahl', c:'Vila Fahl · iBen', p:273750, m2:150, img:'vila-fahl-indaiatuba/images/hero.jpg',
     s:'Residencial e comercial · 5 min do Parque Ecológico · até 96x · 15 itens de lazer', t:'Loteamento', slug:'vila-fahl-indaiatuba' },
-  { n:'Reserva Botânica', c:'Zarin', p:391682, m2:250, img:'reserva-botanica-indaiatuba/images/hero.jpg',
-    s:'250 a 456 m² · portaria 24h · 3 quadras', t:'Cond. fechado', slug:'reserva-botanica-indaiatuba' },
   { n:'Alpnach Residence', c:'Dominium', p:480000, m2:300, img:'alpnach-indaiatuba/images/hero.jpg',
     s:'322 lotes · piscina coberta · mini mercado 24h', t:'Cond. fechado', est:35, slug:'alpnach-indaiatuba' },
-  { n:'Residencial Ravello', c:'Dominium', p:672000, m2:420, img:'residencial-ravello-indaiatuba/images/hero.jpg',
-    s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:197, slug:'residencial-ravello-indaiatuba' },
+  { n:'Reserva Botânica', c:'Zarin', p:532563, m2:340, img:'reserva-botanica-indaiatuba/images/hero.jpg',
+    s:'3 lotes de 340 a 457 m² · portaria 24h · 3 quadras', t:'Cond. fechado', est:3, slug:'reserva-botanica-indaiatuba' },
+  { n:'Residencial Ravello', c:'Dominium', p:714000, m2:420, img:'residencial-ravello-indaiatuba/images/hero.jpg',
+    s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:185, slug:'residencial-ravello-indaiatuba' },
 ];
+
+
+// mês da edição: o gera-observatorio.js é o dono de EDICAO (lido como texto,
+// sem require, para não rodar o observatório daqui)
+const EDICAO = (() => {
+  const src = fs.readFileSync(__dirname + '/gera-observatorio.js', 'utf8');
+  const ini = src.indexOf('const EDICAO = ');
+  const fim = src.indexOf('};', ini) + 1;
+  return eval('(' + src.slice(ini + 'const EDICAO = '.length, fim) + ')');
+})();
+const edicao = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;   // setembro/2026
 
 const brl = n => n.toLocaleString('pt-BR');
 const tipoClasse = t => t.startsWith('MCMV') ? 'b-mcmv' : t === 'Alto padrão' ? 'b-alto'
-                    : t === 'Pré-lançamento' ? 'b-pre' : t === 'Loteamento' ? 'b-lote' : 'b-cond';
+                    : t === 'Pré-lançamento' ? 'b-pre' : t === 'Lançamento' ? 'b-lanc'
+                    : t === 'Loteamento' ? 'b-lote' : 'b-cond';
 
 function card(e, isLote) {
   const preco = e.p
@@ -83,8 +96,14 @@ const cardContato = `
 
 const comPreco = APTOS.filter(e => e.p);
 const semPreco = APTOS.filter(e => !e.p);
-const p2 = [...comPreco, ...semPreco.slice(0, 8 - comPreco.length)];   // sempre 8
-const p3 = semPreco.slice(8 - comPreco.length);                        // o resto
+const ordenados = [...comPreco, ...semPreco];   // preço crescente; sem preço no fim
+const p2 = ordenados.slice(0, 8);               // sempre 8
+const p3 = ordenados.slice(8);                  // o resto (cabe até 5 + contato + destaque)
+if (p3.length > 5) throw new Error('folheto: pagina 3 comporta 5 cards, tem ' + p3.length);
+const construtoras = new Set([...APTOS, ...LOTES].map(e => e.c.split(' · ')[0].trim())).size;
+const menorGeral = Math.min(...[...APTOS, ...LOTES].filter(e => e.p).map(e => e.p));
+const maiorApto = Math.max(...comPreco.map(e => e.p));
+const mil = n => n >= 1e6 ? (n / 1e6).toFixed(1).replace('.', ',') + ' mi' : Math.round(n / 1000) + ' mil';
 
 const HTML = `<!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="UTF-8">
@@ -138,7 +157,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
 .badge{position:absolute;top:2mm;left:2mm;font-size:5.9pt;font-weight:800;letter-spacing:.07em;
        text-transform:uppercase;padding:1.1mm 2.2mm;border-radius:6mm;color:#fff}
 .b-mcmv{background:#1565c0}.b-alto{background:#0c0c0c;color:#c8a44a}.b-pre{background:#a15e2c}
-.b-lote{background:#d4520a}.b-cond{background:#1a6b4a}
+.b-lote{background:#d4520a}.b-cond{background:#1a6b4a}.b-lanc{background:#0e6b7a}
 
 .card-b{padding:2.6mm 3mm 2.8mm;display:flex;flex-direction:column;flex:1}
 .constr{font-size:5.9pt;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#a8935c;margin-bottom:.7mm}
@@ -184,10 +203,10 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     <p class="capa-sub">Todo o portfólio de apartamentos e lotes em condomínio da cidade,
        do Minha Casa Minha Vida ao alto padrão — com as condições de quem compra no lançamento.</p>
     <div class="capa-nums">
-      <div><strong>18</strong><span>Empreendimentos</span></div>
-      <div><strong>6</strong><span>Construtoras</span></div>
-      <div><strong>145 mil</strong><span>Menor investimento</span></div>
-      <div><strong>1,3 mi</strong><span>Alto padrão</span></div>
+      <div><strong>${APTOS.length + LOTES.length}</strong><span>Empreendimentos</span></div>
+      <div><strong>${construtoras}</strong><span>Construtoras</span></div>
+      <div><strong>${mil(menorGeral)}</strong><span>Menor investimento</span></div>
+      <div><strong>${mil(maiorApto)}</strong><span>Alto padrão</span></div>
     </div>
     <div class="capa-pe">
       <div class="m">VIV'AMÉRICA<small>Imobiliária</small></div>
@@ -204,12 +223,12 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
 <section class="pg">
   <div class="hd"><h2>🏢 <span>Apartamentos</span></h2><span class="cnt">do menor ao maior investimento · 1 de 2</span></div>
   <div class="grid">${p2.map(e => card(e, false)).join('')}</div>
-  <div class="pe"><span>Viv'América · Lançamentos Indaiatuba</span><span>Edição <b>agosto/2026</b></span></div>
+  <div class="pe"><span>Viv'América · Lançamentos Indaiatuba</span><span>Edição <b>${edicao}</b></span></div>
 </section>
 
 <!-- ═══ APARTAMENTOS 2 ═══ -->
 <section class="pg">
-  <div class="hd"><h2>🏢 <span>Apartamentos</span></h2><span class="cnt">pré-lançamentos · 2 de 2</span></div>
+  <div class="hd"><h2>🏢 <span>Apartamentos</span></h2><span class="cnt">alto padrão e pré-lançamentos · 2 de 2</span></div>
   <div class="grid">
     ${p3.map(e => card(e, false)).join('')}
     ${cardContato}
@@ -222,13 +241,13 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
         <li>Menor preço por m² de todo o ciclo</li>
         <li>Escolha de andar e posição</li>
         <li>Condições de pagamento alongadas</li>
-        <li>Valorização durante a obra</li>
+        <li>Saldo corrigido só pelo INCC (Índice Nacional de Custo da Construção)</li>
         <li>Uso do FGTS nos enquadrados no MCMV</li>
         <li>Financiamento pela Caixa</li>
       </ul>
     </div>
   </div>
-  <div class="pe"><span>Viv'América · Lançamentos Indaiatuba</span><span>Edição <b>agosto/2026</b></span></div>
+  <div class="pe"><span>Viv'América · Lançamentos Indaiatuba</span><span>Edição <b>${edicao}</b></span></div>
 </section>
 
 <!-- ═══ LOTES ═══ -->
@@ -237,7 +256,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
   <div class="grid">${LOTES.map(e => card(e, true)).join('')}${LOTES.length < 8 ? cardContato : ''}</div>
   <div class="pe">
     <span>Imagens ilustrativas. Preços e condições sujeitos a alteração sem aviso prévio.</span>
-    <span>Edição <b>agosto/2026</b></span>
+    <span>Edição <b>${edicao}</b></span>
   </div>
 </section>
 
