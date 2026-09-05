@@ -1,0 +1,1 @@
+{ id:'barnabe',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City', overlay:{ url:'images/barnabe.png', bounds:[[-23.092289595,-47.284086001],[-23.084226018,-47.273046345]] } },

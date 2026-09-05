@@ -1,0 +1,1 @@
+{ id:'andorinhas', nome:'Jardim das Andorinhas', overlay:{ url:'images/andorinhas.png', bounds:[[-23.108548473,-47.271953653],[-23.104311666,-47.269346254]] } },

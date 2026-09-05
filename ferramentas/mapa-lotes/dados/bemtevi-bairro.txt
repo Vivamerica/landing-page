@@ -1,0 +1,1 @@
+{ id:'bemtevi',    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104063798,-47.270031922],[-23.100929535,-47.266787194]] } },

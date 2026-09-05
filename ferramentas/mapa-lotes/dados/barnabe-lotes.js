@@ -1,0 +1,8 @@
+{ b:'barnabe', q:'32', l:'4',  m2:172.54, tipo:'AVENIDA',     pm2:1300,    vista:224302.00, entrada:null,      parcela:null,     soVista:true, ll:[-23.090161,-47.276040] },
+{ b:'barnabe', q:'11', l:'1',  m2:214.12, tipo:'COMERCIAL',   pm2:1300,    vista:278356.00, entrada:41753.40,  parcela:3845.46,  ll:[-23.086723,-47.277425] },
+{ b:'barnabe', q:'33', l:'8',  m2:302.69, tipo:'MISTO',       pm2:1100,    vista:332959.00, entrada:49943.85,  parcela:4599.80,  ll:[-23.089774,-47.275057] },
+{ b:'barnabe', q:'38', l:'22', m2:238.49, tipo:'COMERCIAL',   pm2:1250,    vista:298112.50, entrada:44716.88,  parcela:4118.40,  ll:[-23.090975,-47.273542] },
+{ b:'barnabe', q:'44', l:'1',  m2:256.62, tipo:'COMERCIAL',   pm2:1250,    vista:320775.00, entrada:48116.25,  parcela:4431.48,  ll:[-23.089316,-47.281435] },
+{ b:'barnabe', q:'47', l:'1',  m2:243.07, tipo:'COMERCIAL',   pm2:1250,    vista:303837.50, entrada:45575.63,  parcela:4197.49,  ll:[-23.089640,-47.279832] },
+{ b:'barnabe', q:'54', l:'25', m2:328.47, tipo:'COMERCIAL',   pm2:1250,    vista:410587.50, entrada:61588.13,  parcela:5672.23,  ll:[-23.091364,-47.276272] },
+{ b:'barnabe', q:'56', l:'17', m2:297.23, tipo:'RESIDENCIAL', pm2:1133.33, vista:336860.66, entrada:50529.10,  parcela:4653.70,  ll:[-23.085236,-47.282769] },

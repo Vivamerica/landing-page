@@ -1,0 +1,1 @@
+{ id:'araras',     nome:'Jardim das Araras', overlay:{ url:'images/araras.png', bounds:[[-23.095652222,-47.288031882],[-23.088060187,-47.277154356]] } },

@@ -1,0 +1,7 @@
+{ b:'campobonito', q:'A', l:'7C-1', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, nx:96, obs:'Gleba A 7C-1, próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
+{ b:'campobonito', q:'A', l:'7C-2', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, nx:96, obs:'Gleba A 7C-2, próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
+{ b:'campobonito', q:'A', l:'7-E2', m2:1578.60, tipo:'GLEBA', pm2:1300,    vista:2052167.00,entrada:307825.05, parcela:28350.51, nx:96, obs:'Gleba A 7-E2. próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
+{ b:'campobonito', q:'27', l:'52', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12, ll:[-23.097112,-47.273049] },
+{ b:'campobonito', q:'27', l:'53', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12, ll:[-23.097085,-47.273118] },
+{ b:'campobonito', q:'27', l:'54', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12, ll:[-23.097058,-47.273187] },
+{ b:'campobonito', q:'28', l:'22', m2:151.20, tipo:'MISTO', pm2:1450,    vista:219240.00, entrada:32886.00,  parcela:16557.33, nx:12, ll:[-23.097995,-47.271779] },

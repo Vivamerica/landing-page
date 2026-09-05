@@ -1,0 +1,1 @@
+{ id:'campobonito',nome:'Parque Campo Bonito', sub:'lotes 12x · glebas na Av. Clóvis Ferraz de Camargo', centro:[-23.09681,-47.27876], overlay:{ url:'images/campobonito.png', bounds:[[-23.100960705,-47.283599709],[-23.093097471,-47.270933576]] } },
