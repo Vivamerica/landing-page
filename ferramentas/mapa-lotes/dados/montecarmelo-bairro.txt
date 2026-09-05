@@ -1,0 +1,1 @@
+{ id:'montecarmelo', nome:'Residencial Monte Carmelo', sub:'loteamento aberto · 568 lotes · a prazo em até 96x', landing:'/monte-carmelo-indaiatuba/', cond:'entrada de 10% e saldo em 24, 48 ou 96x conforme o lote, relatório Dominium de 02/09/2026', overlay:{ url:'images/montecarmelo.png', bounds:[[-23.097556669,-47.290758180],[-23.088978703,-47.279876118]] } },

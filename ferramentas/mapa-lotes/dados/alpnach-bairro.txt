@@ -1,0 +1,1 @@
+  { id:'alpnach', nome:'Alpnach Residence', sub:'condomínio fechado · 322 lotes · a prazo em 48x', landing:'/alpnach-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/alpnach.png', bounds:[[-23.084263640,-47.239591167],[-23.075924888,-47.230968063]] } },

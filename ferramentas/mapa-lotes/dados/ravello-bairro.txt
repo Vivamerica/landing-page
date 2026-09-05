@@ -1,0 +1,1 @@
+{ id:'ravello', nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 02/09/2026', overlay:{ url:'images/ravello.png', bounds:[[-23.084077694,-47.249446812],[-23.073393991,-47.234171390]] } },

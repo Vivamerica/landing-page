@@ -1,0 +1,1 @@
+{ id:'diitalia', nome:'Jardim Di Italia', sub:'loteamento · 404 lotes · a prazo em 60x', landing:'/di-italia-indaiatuba/', cond:'entrada de 20% e saldo em 60x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/diitalia.png', bounds:[[-23.103588740,-47.263368017],[-23.099479627,-47.259325927]] } },
