@@ -1,0 +1,17 @@
+{
+ "fit": "araras-fit-utm2.json",
+ "png": "5000/araras-solida.png",
+ "pw": 4545.35,
+ "ph": 1877.32,
+ "dilata_mag": 9,
+ "sem_perimetro": true,
+ "quadras": "araras-quadras.json",
+ "margem_pt": 40,
+ "res_m": 0.4,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/araras-solido-overlay.png",
+ "saida_bounds": "araras-solido-bounds.json",
+ "png_mascara": "5000/araras-5000-p1.png",
+ "recorte_lotes_m": 18
+}

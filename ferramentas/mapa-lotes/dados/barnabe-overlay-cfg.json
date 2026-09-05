@@ -1,0 +1,17 @@
+{
+ "fit": "barnabe-fit.json",
+ "png": "5000/barnabe-solida.png",
+ "pw": 4585.209,
+ "ph": 2552.556,
+ "dilata_mag": 9,
+ "sem_perimetro": true,
+ "quadras": "barnabe-quadras.json",
+ "margem_pt": 40,
+ "res_m": 0.6,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/barnabe-solido-overlay.png",
+ "saida_bounds": "barnabe-solido-bounds.json",
+ "png_mascara": "5000/barnabe-5000-p1.png",
+ "recorte_lotes_m": 18
+}

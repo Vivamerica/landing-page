@@ -1,0 +1,17 @@
+{
+ "fit": "campobonito-fit-nomes.json",
+ "png": "5000/campobonito-solida.png",
+ "pw": 5669,
+ "ph": 2591,
+ "dilata_mag": 9,
+ "sem_perimetro": true,
+ "quadras": "campobonito-quadras.json",
+ "margem_pt": 40,
+ "res_m": 0.55,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/campobonito-solido-overlay.png",
+ "saida_bounds": "campobonito-solido-bounds.json",
+ "png_mascara": "5000/campobonito-5000-p1.png",
+ "recorte_lotes_m": 18
+}

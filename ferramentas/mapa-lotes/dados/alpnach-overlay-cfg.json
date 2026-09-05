@@ -1,0 +1,48 @@
+{
+ "fit": "alpnach-fit.json",
+ "png": "5000/alpnach-solida.png",
+ "pw": 3234,
+ "ph": 1916,
+ "dilata_mag": 9,
+ "sementes_ext": [
+  [
+   5,
+   5
+  ],
+  [
+   4990,
+   5
+  ],
+  [
+   5,
+   2950
+  ],
+  [
+   4990,
+   2950
+  ]
+ ],
+ "pontos_dentro": [
+  [
+   1106,
+   1166
+  ],
+  [
+   1310,
+   1260
+  ],
+  [
+   900,
+   1100
+  ]
+ ],
+ "res_m": 0.35,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/alpnach-solido-overlay.png",
+ "saida_bounds": "alpnach-solido-bounds.json",
+ "png_mascara": "Projeto Urbanistico_Alpnach-5000-p1.png",
+ "recorte_lotes_m": 18,
+ "sem_perimetro": true,
+ "quadras": "alpnach-quadras.json"
+}

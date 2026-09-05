@@ -1,0 +1,48 @@
+{
+ "fit": "diitalia-fit.json",
+ "png": "5000/diitalia-solida.png",
+ "pw": 2707.09,
+ "ph": 1692.28,
+ "dilata_mag": 9,
+ "sementes_ext": [
+  [
+   5,
+   5
+  ],
+  [
+   4990,
+   5
+  ],
+  [
+   5,
+   3120
+  ],
+  [
+   4990,
+   3120
+  ]
+ ],
+ "pontos_dentro": [
+  [
+   614,
+   575
+  ],
+  [
+   1108,
+   1179
+  ],
+  [
+   1271,
+   930
+  ]
+ ],
+ "quadras": "diitalia-quadras.json",
+ "res_m": 0.4,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/diitalia-solido-overlay.png",
+ "saida_bounds": "diitalia-solido-bounds.json",
+ "png_mascara": "5000/diitalia-5000-p1.png",
+ "sem_perimetro": true,
+ "recorte_lotes_m": 18
+}

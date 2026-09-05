@@ -1,0 +1,17 @@
+{
+ "fit": "canarios-fit.json",
+ "png": "5000/canarios-solida.png",
+ "pw": 2384,
+ "ph": 1684,
+ "dilata_mag": 9,
+ "sem_perimetro": true,
+ "quadras": "canarios-quadras.json",
+ "margem_pt": 40,
+ "res_m": 0.35,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/canarios-solido-overlay.png",
+ "saida_bounds": "canarios-solido-bounds.json",
+ "png_mascara": "5000/canarios-5000-p1.png",
+ "recorte_lotes_m": 18
+}

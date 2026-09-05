@@ -32,11 +32,40 @@ for x, y in cfg.get('pontos_dentro', []):
     X, Y = page2px(x, y); ok = interior.getpixel((int(X), int(Y))) == 255; vazou = vazou or not ok
     print('ponto', x, y, 'dentro' if ok else 'FORA (vazou!)')
 if vazou or cfg.get('sem_perimetro'):
-    Q = json.load(open(T + cfg['quadras']))['quadras']; pts = [p for d in Q.values() for p in d.values()]
-    mg = cfg.get('margem_pt', 60)
-    x0, x1 = min(p[0] for p in pts) - mg, max(p[0] for p in pts) + mg; y0, y1 = min(p[1] for p in pts) - mg, max(p[1] for p in pts) + mg
-    interior = Image.new('L', im.size, 0); ImageDraw.Draw(interior).rectangle([page2px(x0, y1), page2px(x1, y0)], fill=255)
-    print('usando retangulo dos lotes: x %.0f..%.0f y %.0f..%.0f pt' % (x0, x1, y0, y1))
+    if cfg.get('recorte_lotes_m'):   # desenho solido: interior = vizinhanca (em metros) dos LOTES verdes, so a componente conexa do 1o ponto de controle
+        rr, gg, bb_ = im.split(); mpt = math.hypot(ce[0], cn[0]); mpp = mpt / k; d = int(cfg['recorte_lotes_m'] / mpp)
+        def cor(c, tol=4): return ImageChops.multiply(ImageChops.multiply(rr.point(lambda v: 255 if abs(v - c[0]) <= tol else 0), gg.point(lambda v: 255 if abs(v - c[1]) <= tol else 0)), bb_.point(lambda v: 255 if abs(v - c[2]) <= tol else 0))
+        f4 = 4; peq = cor((218, 236, 205)).resize((W // f4, H // f4), Image.BOX).point(lambda v: 255 if v > 0 else 0).filter(ImageFilter.MaxFilter((d // f4) | 1))
+        pts = []   # componentes que contem algum LOTE conhecido (quadras.json) ou os pontos de controle; sem nada: a maior componente
+        if cfg.get('quadras') and os.path.exists(T + cfg['quadras']):
+            Q = json.load(open(T + cfg['quadras']))['quadras']; pts = [page2px(*p) for d in Q.values() for p in d.values()]
+        elif cfg.get('pontos_dentro'): pts = [page2px(*p) for p in cfg['pontos_dentro']]
+        if pts:
+            n_comp = 0
+            for X, Y in pts:
+                sx, sy = int(X) // f4, int(Y) // f4
+                if 0 <= sx < peq.width and 0 <= sy < peq.height and peq.getpixel((sx, sy)) == 255: ImageDraw.floodfill(peq, (sx, sy), 128); n_comp += 1
+            peq = peq.point(lambda v: 255 if v == 128 else 0); print('  componentes com lotes conhecidos:', n_comp, 'de', len(pts), 'pontos')
+        else:
+            trab = peq.copy(); melhor = (0, None)
+            for y in range(0, peq.height, 4):
+                for x in range(0, peq.width, 4):
+                    if trab.getpixel((x, y)) != 255: continue
+                    ImageDraw.floodfill(trab, (x, y), 128); reg = trab.point(lambda v: 255 if v == 128 else 0); ar = reg.histogram()[255]
+                    if ar > melhor[0]: melhor = (ar, reg)
+                    trab.paste(64, (0, 0), reg)
+            peq = melhor[1]
+        interior = peq.resize((W, H), Image.NEAREST)
+        print('recorte pela vizinhanca dos lotes (%.0f m = %d px), componente do ponto de controle' % (cfg['recorte_lotes_m'], d))
+    elif cfg.get('recorte_auto'):   # interior = tudo que nao e branco no render (desenho solido ja recortado)
+        mn_ = ImageChops.darker(ImageChops.darker(*im.split()[:2]), im.split()[2]); interior = mn_.point(lambda v: 255 if v < 250 else 0).filter(ImageFilter.MaxFilter(5))
+        print('recorte automatico pelo conteudo do render')
+    else:
+        Q = json.load(open(T + cfg['quadras']))['quadras']; pts = [p for d in Q.values() for p in d.values()]
+        mg = cfg.get('margem_pt', 60)
+        x0, x1 = min(p[0] for p in pts) - mg, max(p[0] for p in pts) + mg; y0, y1 = min(p[1] for p in pts) - mg, max(p[1] for p in pts) + mg
+        interior = Image.new('L', im.size, 0); ImageDraw.Draw(interior).rectangle([page2px(x0, y1), page2px(x1, y0)], fill=255)
+        print('usando retangulo dos lotes: x %.0f..%.0f y %.0f..%.0f pt' % (x0, x1, y0, y1))
 # fica so a regiao conexa que contem o 1o ponto de controle (descarta marcas magenta soltas)
 if cfg.get('pontos_dentro') and not (vazou or cfg.get('sem_perimetro')):
     X, Y = page2px(*cfg['pontos_dentro'][0]); reg = interior.copy(); ImageDraw.floodfill(reg, (int(X), int(Y)), 200)

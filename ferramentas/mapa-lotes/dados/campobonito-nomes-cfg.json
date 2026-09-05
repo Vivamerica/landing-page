@@ -1,0 +1,4 @@
+{"id": "campobonito", "texto": "campobonito-text.json", "m_por_pt": 0.35278, "osm": "osm-bairros.json", "pw": 5669, "ph": 2591,
+ "ancora": "Avenida Ottilia Ferraz de Camargo", "escalas": [1.0], "passo_rumo": 2, "passo_ancora": 8,
+ "nomes": {"OTTILIA": "Avenida Ottilia Ferraz de Camargo", "IPE AMARELO": "Rua Ipê Amarelo", "AROEIRA SALSA": "Rua Aroeira Salsa", "FOLHA SANTA": "Rua Folha Santa",
+           "JACARANDA BRANCO": "Rua Jacarandá Branco", "JASMIM": "Rua Jasmim", "BENEDITA CARVALHO": "Rua Benedita Carvalho", "MANACA DA SERRA": "Rua Manacá da Serra", "FLAMBOYANZINHO": "Rua Flamboyanzinho"}}

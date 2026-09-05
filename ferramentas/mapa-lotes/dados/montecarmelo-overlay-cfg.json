@@ -1,0 +1,49 @@
+{
+ "fit": "montecarmelo-fit.json",
+ "png": "5000/montecarmelo-solida.png",
+ "pw": 4652,
+ "ph": 2409,
+ "dilata_mag": 9,
+ "sementes_ext": [
+  [
+   5,
+   5
+  ],
+  [
+   4994,
+   5
+  ],
+  [
+   5,
+   2583
+  ],
+  [
+   4994,
+   2583
+  ]
+ ],
+ "pontos_dentro": [
+  [
+   3167.4,
+   298.8
+  ],
+  [
+   2863.68,
+   885.84
+  ],
+  [
+   2126.28,
+   1078.44
+  ]
+ ],
+ "res_m": 0.5,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/montecarmelo-solido-overlay.png",
+ "saida_bounds": "montecarmelo-solido-bounds.json",
+ "quadras": "montecarmelo-quadras.json",
+ "margem_pt": 40,
+ "png_mascara": "5000/montecarmelo-5000-p1.png",
+ "recorte_lotes_m": 18,
+ "sem_perimetro": true
+}

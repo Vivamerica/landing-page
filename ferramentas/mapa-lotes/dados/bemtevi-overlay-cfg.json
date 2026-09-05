@@ -1,0 +1,17 @@
+{
+ "fit": "bemtevi-fit.json",
+ "png": "5000/bemtevi-solida.png",
+ "pw": 2063.16,
+ "ph": 1592.35,
+ "dilata_mag": 9,
+ "sem_perimetro": true,
+ "quadras": "bemtevi-quadras.json",
+ "margem_pt": 40,
+ "res_m": 0.4,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/bemtevi-solido-overlay.png",
+ "saida_bounds": "bemtevi-solido-bounds.json",
+ "png_mascara": "5000/bemtevi-5000-p1.png",
+ "recorte_lotes_m": 18
+}

@@ -1,0 +1,26 @@
+[
+ {
+  "id": "diitalia",
+  "circulos": {
+   "texto": "diitalia-text.json",
+   "pw": 2707.09,
+   "ph": 1692.28,
+   "fs": [
+    42.2
+   ],
+   "raio": 15,
+   "dx": 4,
+   "dy": 3
+  },
+  "tira_blobs": 36,
+  "engorda_linha": 3,
+  "escuro_max": 200,
+  "limpo": {
+   "id": "diitalia",
+   "pdf": "C:/Users/Usuario/Downloads/MAPAS/Mapa Di It*Corretores*.pdf",
+   "camadas": "drop:FILL;RG:0.87,0.43,0.0|*;RG:0.58,0.0,0.0|*;RG:0.0,0.44,0.0|*;RG:0.65,0.8,0.64|*;RG:1.0,0.0,0.0|*;RG:0.0,0.0,0.0|5.0;RG:0.0,0.0,0.0|17.0;RG:0.39,0.39,0.4|*;RG:0.0,1.0,0.75|*;RG:0.0,0.5,1.0|*;RG:0.35,0.73,0.28|*;RG:0.0,0.14,0.04|*;RG:0.0,0.43,0.87|*;RG:0.0,0.65,0.87|*;RG:0.22,0.27,0.45|*",
+   "overlay_cfg": "diitalia-overlay-cfg.json",
+   "larg_min": 10
+  }
+ }
+]

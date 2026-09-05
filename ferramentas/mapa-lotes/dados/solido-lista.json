@@ -1,0 +1,9 @@
+[
+ {"id":"zarah-safira"}, {"id":"zarah-rubi"}, {"id":"zarah-perola"}, {"id":"ravello"}, {"id":"bemtevi","engorda_linha":5}, {"id":"canarios","engorda_linha":5}, {"id":"alpnach"},
+ {"id":"diitalia","circulos":{"texto":"diitalia-text.json","pw":2707.09,"ph":1692.28,"fs":[42.2],"raio":15,"dx":4,"dy":3},"tira_blobs":36},
+ {"id":"andorinhas","tira_blobs":40,"engorda_linha":5},
+ {"id":"montecarmelo","limpo":{"id":"montecarmelo","pdf":"C:/Users/Usuario/Downloads/MAPAS/39.Mapa Monte Carmelo*.pdf","camadas":"Lotes;_Lotes;00_urb_quadras;HM-GUIA;PASSEIO;PAVIMENTO;DIVISA;Alinhamento;HM-QUAD03","overlay_cfg":"montecarmelo-overlay-cfg.json"}},
+ {"id":"araras","tira_blobs":30,"engorda_linha":5,"escuro_max":200},
+ {"id":"campobonito","engorda_linha":5,"escuro_max":200},
+ {"id":"barnabe","engorda_linha":5}
+]

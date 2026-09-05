@@ -1,0 +1,6 @@
+[
+ {"id":"diitalia","circulos":{"texto":"diitalia-text.json","pw":2707.09,"ph":1692.28,"fs":[42.2],"raio":15,"dx":4,"dy":3},"tira_blobs":36,"engorda_linha":3,
+  "limpo":{"id":"diitalia","pdf":"C:/Users/Usuario/Downloads/MAPAS/Mapa Di It*Corretores*.pdf","camadas":"drop:RG:0.87,0.43,0.0|*;RG:0.58,0.0,0.0|*;RG:0.0,0.44,0.0|*;RG:0.65,0.8,0.64|*;RG:1.0,0.0,0.0|*;RG:0.0,0.0,0.0|5.0;RG:0.39,0.39,0.4|*","overlay_cfg":"diitalia-overlay-cfg.json"}},
+ {"id":"andorinhas","tira_blobs":40,"engorda_linha":3,
+  "limpo":{"id":"andorinhas","pdf":"C:/Users/Usuario/Downloads/MAPAS/313-jardim-das-andorinhas.pdf","camadas":"drop:RG:0.5,0.5,0.5|*;RG:0.46,0.82,0.46|*;RG:0.0,1.0,0.0|*;RG:1.0,0.0,0.0|*;RG:1.0,0.28,0.28|*;RG:0.33,0.33,0.33|*;RG:0.87,0.76,0.43|*;RG:0.43,0.87,0.43|*;RG:0.14,0.58,0.0|*;RG:0.73,0.73,0.73|*;RG:0.0,0.87,0.87|*;RG:0.0,0.9,0.9|*;RG:0.56,0.78,1.0|*","overlay_cfg":"andorinhas-overlay-cfg.json","larg_min":1.5,"tudo_escuro":true}}
+]

@@ -1,0 +1,17 @@
+{
+ "fit": "andorinhas-fit.json",
+ "png": "5000/andorinhas-solida.png",
+ "pw": 2268,
+ "ph": 2211,
+ "dilata_mag": 9,
+ "sem_perimetro": true,
+ "quadras": "andorinhas-quadras.json",
+ "margem_pt": 40,
+ "res_m": 0.4,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/andorinhas-solido-overlay.png",
+ "saida_bounds": "andorinhas-solido-bounds.json",
+ "png_mascara": "5000/andorinhas-5000-p1.png",
+ "recorte_lotes_m": 18
+}

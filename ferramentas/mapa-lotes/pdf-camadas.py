@@ -25,7 +25,7 @@ cs = ContentStream(pg.get_contents(), r)
 PINTA = {b'S', b's', b'f', b'F', b'f*', b'B', b'B*', b'b', b'b*', b'n', b'W', b'W*', b'sh', b'Do', b'BI', b'ID', b'EI'}
 CONSTROI = {b'm', b'l', b'c', b'v', b'y', b'h', b're'}
 TEXTO = {b'Tj', b'TJ', b"'", b'"'}
-pilha = []; saida = []; n_ops = 0; n_drop = 0; vistos = {}
+pilha = []; saida = []; n_ops = 0; n_drop = 0; vistos = {}; caminho = []
 cor = 'G:0.0'; larg = 1.0
 def fmt(ops, op): return op.decode() + ':' + ','.join(str(round(float(x), 2)) for x in ops if isinstance(x, (int, float)) or hasattr(x, 'real'))
 for operandos, op in cs.operations:
@@ -37,8 +37,15 @@ for operandos, op in cs.operations:
             if LARG_MIN and larg < LARG_MIN: operandos = [FloatObject(LARG_MIN)]   # engrossa traco fino (plantas em hairline)
         if op in TEXTO: n_drop += 1; continue
         if op == b'Do': saida.append((operandos, op)); continue   # XObjects (blocos do CAD) sempre ficam no modo atributo
-        if descartar is not None:
-            if (op in PINTA or op in CONSTROI) and ((cor + '|' + str(larg)) in descartar or (cor + '|*') in descartar): n_drop += 1; continue
+        if descartar is not None:   # caminho inteiro decidido no operador de pintura; token FILL descarta preenchimentos (rg/g/k nao sao rastreados)
+            if op in CONSTROI: caminho.append((operandos, op)); continue
+            if op in PINTA:
+                if op in (b'W', b'W*', b'n'): saida.extend(caminho); caminho = []; saida.append((operandos, op)); continue   # recorte (clip): sempre fica
+                combo = (cor + '|' + str(larg)) in descartar or (cor + '|*') in descartar
+                fill = op in (b'f', b'F', b'f*'); ambos = op in (b'B', b'B*', b'b', b'b*')
+                if combo or (fill and 'FILL' in descartar): n_drop += 1 + len(caminho); caminho = []; continue
+                if ambos and 'FILL' in descartar: op = b's' if op in (b'b', b'b*') else b'S'
+                saida.extend(caminho); caminho = []; saida.append((operandos, op)); continue
             saida.append((operandos, op)); continue
         if (op in PINTA or op in CONSTROI) and (cor + '|' + str(larg)) not in por_atrib: n_drop += 1; continue
         saida.append((operandos, op)); continue

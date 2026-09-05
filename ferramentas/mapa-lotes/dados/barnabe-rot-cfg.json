@@ -1,0 +1,23 @@
+{
+ "id": "barnabe",
+ "png": "5000/barnabe-5000-p1.png",
+ "pw": 4585.209,
+ "ph": 2552.556,
+ "m_por_pt": 0.35278,
+ "blocos": "barnabe-ruas.png",
+ "ruas_png": "barnabe-ruas.png",
+ "osm": "osm-bairros.json",
+ "centro": [
+  -23.08825780670729,
+  -47.278566173121675
+ ],
+ "busca_m": 250,
+ "passo_grosso": 8,
+ "penal": 2,
+ "largura_via_m": 9,
+ "theta_faixa": [
+  -11.5,
+  4.5,
+  0.5
+ ]
+}

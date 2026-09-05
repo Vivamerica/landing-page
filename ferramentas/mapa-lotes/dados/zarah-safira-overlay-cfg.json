@@ -1,0 +1,17 @@
+{
+ "fit": "zarah-safira-fit.json",
+ "png": "5000/zarah-safira-solida.png",
+ "pw": 3370,
+ "ph": 2384,
+ "dilata_mag": 9,
+ "sem_perimetro": true,
+ "quadras": "zarah-safira-quadras.json",
+ "margem_pt": 70,
+ "res_m": 0.5,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/zarah-safira-solido-overlay.png",
+ "saida_bounds": "zarah-safira-solido-bounds.json",
+ "png_mascara": "5000/zarah-safira-5000-p1.png",
+ "recorte_lotes_m": 18
+}

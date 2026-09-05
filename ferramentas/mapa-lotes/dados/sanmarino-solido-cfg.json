@@ -1,0 +1,14 @@
+{
+ "modo": "cores",
+ "png": "5000/sanmarino-limpo-p1.png",
+ "saida": "5000/sanmarino-solida.png",
+ "saida_ruas": "sanmarino-ruas.png",
+ "m_por_px": 0.132,
+ "branco_min": 205,
+ "engorda_linha": 3,
+ "lote_max_m2": 2500,
+ "area_max_m2": 60000,
+ "passo_semente": 6,
+ "tira_blobs": 64,
+ "rua_faixa_m": 12
+}

@@ -1,0 +1,48 @@
+{
+ "fit": "ravello-fit.json",
+ "png": "5000/ravello-solida.png",
+ "pw": 3914.65,
+ "ph": 2400.94,
+ "dilata_mag": 9,
+ "sementes_ext": [
+  [
+   5,
+   5
+  ],
+  [
+   4994,
+   5
+  ],
+  [
+   5,
+   3061
+  ],
+  [
+   4994,
+   3061
+  ]
+ ],
+ "pontos_dentro": [
+  [
+   2726.76,
+   1591.08
+  ],
+  [
+   1907.28,
+   655.44
+  ],
+  [
+   1325.16,
+   879.72
+  ]
+ ],
+ "res_m": 0.5,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/ravello-solido-overlay.png",
+ "saida_bounds": "ravello-solido-bounds.json",
+ "quadras": "ravello-quadras.json",
+ "png_mascara": "5000/ravello-5000-p1.png",
+ "recorte_lotes_m": 18,
+ "sem_perimetro": true
+}

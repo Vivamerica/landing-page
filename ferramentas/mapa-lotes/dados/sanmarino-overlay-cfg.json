@@ -1,0 +1,15 @@
+{
+ "fit": "sanmarino-fit-B.json",
+ "png": "5000/sanmarino-solida-limpa.png",
+ "png_mascara": "5000/sanmarino-solida.png",
+ "pw": 5861,
+ "ph": 5113,
+ "dilata_mag": 9,
+ "sem_perimetro": true,
+ "res_m": 0.5,
+ "branco": 250,
+ "cores": 16,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/sanmarino-solido-overlay.png",
+ "saida_bounds": "sanmarino-solido-bounds.json",
+ "recorte_lotes_m": 18
+}
