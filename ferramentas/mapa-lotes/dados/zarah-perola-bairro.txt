@@ -1,0 +1,1 @@
+{ id:'zarah-perola', nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099420948,-47.270215062],[-23.094039981,-47.265319498]] } },

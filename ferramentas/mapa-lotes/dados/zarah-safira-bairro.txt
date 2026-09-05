@@ -1,0 +1,1 @@
+{ id:'zarah-safira', nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes · entrega dez/2026', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.102958863,-47.268121502],[-23.098790343,-47.264306643]] } },

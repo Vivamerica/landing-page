@@ -1,0 +1,1 @@
+{ id:'canarios',   nome:'Vila dos Canários', overlay:{ url:'images/canarios.png', bounds:[[-23.108930882,-47.268409945],[-23.107110832,-47.266713807]] } },

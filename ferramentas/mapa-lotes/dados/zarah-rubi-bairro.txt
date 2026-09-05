@@ -1,0 +1,1 @@
+{ id:'zarah-rubi', nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098533028,-47.265770497],[-23.094004107,-47.261732488]] } },
