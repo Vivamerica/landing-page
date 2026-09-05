@@ -1,0 +1,22 @@
+[
+ {
+  "id": "alpnach",
+  "pdf": "C:/Users/Usuario/Downloads/MAPAS/Projeto Urban*Alpnach*.pdf",
+  "camadas": "drop:RG:0.36,0.36,0.36|6.0;RG:0.82,0.0,0.0|6.0;G:0.52|*;RG:1.0,0.0,0.0|2.0;RG:1.0,0.0,0.0|0.0;G:1.0|5.0;RG:1.0,0.0,1.0|*;RG:0.98,0.1,0.82|2.0;RG:0.0,1.0,0.75|*;RG:0.0,0.72,0.18|*;G:0.82|*;G:0.83|*",
+  "overlay_cfg": "alpnach-overlay-cfg.json"
+ },
+ {
+  "id": "diitalia",
+  "pdf": "C:/Users/Usuario/Downloads/MAPAS/Mapa Di It*Corretores*.pdf",
+  "camadas": "drop:RG:0.87,0.43,0.0|*;RG:0.58,0.0,0.0|*;RG:0.0,0.44,0.0|*;RG:0.65,0.8,0.64|*;RG:1.0,0.0,0.0|*;RG:0.0,0.0,0.0|1.0;RG:0.0,0.0,0.0|2.0",
+  "overlay_cfg": "diitalia-overlay-cfg.json"
+ },
+ {
+  "id": "andorinhas",
+  "pdf": "C:/Users/Usuario/Downloads/MAPAS/313-jardim-das-andorinhas.pdf",
+  "camadas": "drop:RG:0.5,0.5,0.5|*;RG:0.46,0.82,0.46|*;RG:0.0,1.0,0.0|*;RG:1.0,0.0,0.0|*;RG:1.0,0.28,0.28|*;RG:0.33,0.33,0.33|*;RG:0.87,0.76,0.43|*;RG:0.43,0.87,0.43|*;RG:0.14,0.58,0.0|*;RG:0.73,0.73,0.73|*",
+  "overlay_cfg": "andorinhas-overlay-cfg.json",
+  "larg_min": 1.2,
+  "tudo_escuro": true
+ }
+]

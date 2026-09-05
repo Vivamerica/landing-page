@@ -8,13 +8,13 @@ itens = json.load(open(sys.argv[1], encoding='utf-8'))
 for it in itens:
     n = it['id']; print('=====', n, flush=True)
     pdf = glob.glob(it['pdf'])[0]
-    r = subprocess.run([PY, S + '/pdf-camadas.py', pdf, T + n + '-limpo.pdf', it['camadas']], capture_output=True, text=True, encoding='utf-8'); print(r.stdout.strip()[-200:], r.stderr.strip()[-200:], flush=True)
+    r = subprocess.run([PY, S + '/pdf-camadas.py', pdf, T + n + '-limpo.pdf', it['camadas']] + ([str(it['larg_min'])] if it.get('larg_min') else []), capture_output=True, text=True, encoding='utf-8'); print(r.stdout.strip()[-200:], r.stderr.strip()[-200:], flush=True)
     for f in glob.glob(T + '5000/' + n + '-limpo-p1.png'): os.remove(f)
     subprocess.run(['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', REPO + '/ferramentas/pdf2png.ps1', '-Pdf', (T + n + '-limpo.pdf').replace('/', chr(92)), '-Largura', '5000', '-Saida', (T + '5000').replace('/', chr(92))], capture_output=True)
     if not os.path.exists(T + '5000/' + n + '-limpo-p1.png'):   # o WinRT falha as vezes na 1a tentativa
         subprocess.run(['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', REPO + '/ferramentas/pdf2png.ps1', '-Pdf', (T + n + '-limpo.pdf').replace('/', chr(92)), '-Largura', '5000', '-Saida', (T + '5000').replace('/', chr(92))], capture_output=True)
     if not os.path.exists(T + '5000/' + n + '-limpo-p1.png'): print('  render falhou', flush=True); continue
-    r = subprocess.run([PY, S + '/recolore-limpo.py', T + '5000/' + n + '-limpo-p1.png', T + '5000/' + n + '-limpa.png'], capture_output=True, text=True, encoding='utf-8'); print(' ', r.stdout.strip()[-120:], flush=True)
+    r = subprocess.run([PY, S + '/recolore-limpo.py', T + '5000/' + n + '-limpo-p1.png', T + '5000/' + n + '-limpa.png'] + (['--tudo-escuro'] if it.get('tudo_escuro') else []), capture_output=True, text=True, encoding='utf-8'); print(' ', r.stdout.strip()[-120:], flush=True)
     o = json.load(open(T + it['overlay_cfg'], encoding='utf-8'))
     o['png_mascara'] = o['png']; o['png'] = '5000/' + n + '-limpa.png'; o['branco'] = 245; o['cores'] = 16
     o['saida'] = T + n + '-limpo-overlay.png'; o['saida_bounds'] = n + '-limpo-bounds.json'

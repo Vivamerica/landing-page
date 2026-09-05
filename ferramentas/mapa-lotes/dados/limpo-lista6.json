@@ -1,0 +1,9 @@
+[
+ {
+  "id": "alpnach",
+  "pdf": "C:/Users/Usuario/Downloads/MAPAS/Projeto Urban*Alpnach*.pdf",
+  "camadas": "drop:RG:0.36,0.36,0.36|6.0;RG:0.82,0.0,0.0|6.0;G:0.52|*;RG:1.0,0.0,0.0|2.0;G:1.0|5.0;RG:1.0,0.0,1.0|*;RG:0.98,0.1,0.82|2.0;RG:0.0,1.0,0.75|*;RG:0.0,0.72,0.18|*;G:0.82|*;G:0.83|*",
+  "overlay_cfg": "alpnach-overlay-cfg.json",
+  "larg_min": 2.5
+ }
+]
