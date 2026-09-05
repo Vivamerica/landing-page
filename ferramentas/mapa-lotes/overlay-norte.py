@@ -32,10 +32,14 @@ for x, y in cfg.get('pontos_dentro', []):
     X, Y = page2px(x, y); ok = interior.getpixel((int(X), int(Y))) == 255; vazou = vazou or not ok
     print('ponto', x, y, 'dentro' if ok else 'FORA (vazou!)')
 if vazou or cfg.get('sem_perimetro'):
-    if cfg.get('recorte_lotes_m'):   # desenho solido: interior = vizinhanca (em metros) dos LOTES verdes, so a componente conexa do 1o ponto de controle
+    if cfg.get('recorte_conteudo'):   # desenho clean: interior = tudo que nao e branco (o proprio desenho ja e a mancha do loteamento)
+        mn_ = ImageChops.darker(ImageChops.darker(im.split()[0], im.split()[1]), im.split()[2])
+        interior = mn_.point(lambda v: 255 if v < 250 else 0).filter(ImageFilter.MaxFilter(3))
+        print('recorte pelo conteudo do desenho clean')
+    elif cfg.get('recorte_lotes_m'):   # desenho solido: interior = vizinhanca (em metros) dos LOTES verdes, so a componente conexa do 1o ponto de controle
         rr, gg, bb_ = im.split(); mpt = math.hypot(ce[0], cn[0]); mpp = mpt / k; d = int(cfg['recorte_lotes_m'] / mpp)
         def cor(c, tol=4): return ImageChops.multiply(ImageChops.multiply(rr.point(lambda v: 255 if abs(v - c[0]) <= tol else 0), gg.point(lambda v: 255 if abs(v - c[1]) <= tol else 0)), bb_.point(lambda v: 255 if abs(v - c[2]) <= tol else 0))
-        f4 = 4; peq = cor((218, 236, 205)).resize((W // f4, H // f4), Image.BOX).point(lambda v: 255 if v > 0 else 0).filter(ImageFilter.MaxFilter((d // f4) | 1))
+        f4 = 4; peq = cor(tuple(cfg.get('cor_lote', [109, 179, 100]))).resize((W // f4, H // f4), Image.BOX).point(lambda v: 255 if v > 0 else 0).filter(ImageFilter.MaxFilter((d // f4) | 1))
         pts = []   # componentes que contem algum LOTE conhecido (quadras.json) ou os pontos de controle; sem nada: a maior componente
         if cfg.get('quadras') and os.path.exists(T + cfg['quadras']):
             Q = json.load(open(T + cfg['quadras']))['quadras']; pts = [page2px(*p) for d in Q.values() for p in d.values()]
@@ -75,6 +79,8 @@ bb = interior.getbbox(); print('bbox interior px', bb, 'em %.1fs' % (time.time()
 cantos = [px2page(bb[0], bb[1]), px2page(bb[2], bb[1]), px2page(bb[0], bb[3]), px2page(bb[2], bb[3])]
 lls = [utm2ll(*page2utm(*c)) for c in cantos]
 lat0, lat1 = min(l[0] for l in lls), max(l[0] for l in lls); lon0, lon1 = min(l[1] for l in lls), max(l[1] for l in lls)
+if cfg.get('bounds_fixos'):   # mantem exatamente o enquadramento ja publicado (o ajuste feito pelo Fabio continua valendo)
+    (lat0, lon0), (lat1, lon1) = cfg['bounds_fixos']; print('bounds fixos: mesmo enquadramento de antes')
 mlat = 111320.0; mlon = 111320.0 * math.cos(math.radians((lat0 + lat1)/2))
 res = cfg.get('res_m', 0.35)
 OW = int(round((lon1 - lon0) * mlon / res)); OH = int(round((lat1 - lat0) * mlat / res))

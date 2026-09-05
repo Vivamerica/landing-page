@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajuste das plantas — mapa de lotes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root{ --bg:#12160f; --painel:#1b2117; --linha:#2c3626; --texto:#eef2e9; --fraco:#9aa892; --destaque:#8dc63f; }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font:14px/1.45 system-ui,'Segoe UI',sans-serif;background:var(--bg);color:var(--texto)}
+  #app{display:flex;height:100%}
+  #painel{width:350px;flex:0 0 350px;background:var(--painel);border-right:1px solid var(--linha);display:flex;flex-direction:column;overflow:hidden}
+  #painel h1{font-size:15px;margin:0;padding:13px 16px 9px;border-bottom:1px solid var(--linha);font-weight:600}
+  #painel h1 small{display:block;font-weight:400;color:var(--fraco);font-size:12px;margin-top:3px}
+  .secao{padding:9px 16px;border-bottom:1px solid var(--linha)}
+  .secao label{display:block;font-size:12px;color:var(--fraco);margin-bottom:4px}
+  #lista{flex:1;overflow:auto;padding:6px 8px;min-height:90px}
+  .item{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;cursor:pointer;border:1px solid transparent}
+  .item:hover{background:#232b1e}
+  .item.sel{background:#2b3a20;border-color:var(--destaque)}
+  .item input{accent-color:var(--destaque);cursor:pointer}
+  .item .nome{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .item .marca{font-size:11px;color:var(--destaque)}
+  button{font:inherit;background:#2b3a20;color:var(--texto);border:1px solid var(--linha);border-radius:6px;padding:6px 10px;cursor:pointer}
+  button:hover{background:#384a2a}
+  button.primario{background:var(--destaque);color:#14200a;border-color:var(--destaque);font-weight:600}
+  button.primario:hover{filter:brightness(1.08)}
+  .linhaBotoes{display:flex;gap:7px;flex-wrap:wrap}
+  input[type=range]{width:100%;accent-color:var(--destaque)}
+  #info{font-size:12px;color:var(--fraco);line-height:1.65}
+  #info b{color:var(--texto);font-weight:600}
+  #status{padding:8px 16px;font-size:12px;border-top:1px solid var(--linha);color:var(--fraco);min-height:34px}
+  #mapa{flex:1;background:#0b0e08}
+  .alca{width:20px;height:20px;border-radius:50%;border:2px solid #14200a;box-shadow:0 1px 4px rgba(0,0,0,.55);cursor:grab;display:flex;align-items:center;justify-content:center;font-size:12px;color:#14200a;font-weight:700}
+  .alca.girar{background:#ffd23f}
+  .alca.canto{background:#8dc63f;border-radius:4px}
+  .planta-img{pointer-events:none}
+  .planta-img.ativa{pointer-events:auto;cursor:move}
+  .ajuda{font-size:11.5px;color:var(--fraco);line-height:1.65}
+  .ajuda kbd{background:#2b3a20;border:1px solid var(--linha);border-radius:4px;padding:1px 5px;font-size:11px}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="painel">
+    <h1>Ajuste das plantas<small>Arraste, gire e estique sobre o mapa. Salva sozinho a cada mudança.</small></h1>
+    <div class="secao">
+      <div class="linhaBotoes">
+        <button id="bSat">Satélite</button><button id="bRuas">Ruas</button><button id="bPinos">Pinos: ligados</button>
+      </div>
+    </div>
+    <div class="secao">
+      <label>Transparência da planta selecionada: <span id="vOpac">75%</span></label>
+      <input type="range" id="opac" min="15" max="100" value="75">
+    </div>
+    <div id="lista"></div>
+    <div class="secao" id="painelSel" style="display:none">
+      <div id="info"></div>
+      <div class="linhaBotoes" style="margin-top:8px">
+        <button id="bZoom">Enquadrar</button><button id="bEsquadro">Tirar distorção</button><button id="bReset">Voltar ao original</button>
+      </div>
+    </div>
+    <div class="secao">
+      <div class="ajuda">
+        <b>Cantos verdes</b> esticam · <b>bola amarela</b> gira · arrastar a planta move<br>
+        <kbd>setas</kbd> 1 m · com <kbd>Shift</kbd> 0,2 m · <kbd>,</kbd> <kbd>.</kbd> giram 0,1°<br>
+        <kbd>-</kbd> <kbd>+</kbd> tamanho · <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz
+      </div>
+    </div>
+    <div class="secao linhaBotoes">
+      <button class="primario" id="bSalvar">Salvar agora</button>
+      <button id="bMapa">Ver o mapa</button>
+    </div>
+    <div id="status">Carregando…</div>
+  </div>
+  <div id="mapa"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const M_LAT = 111320;
+const rad = d => d * Math.PI / 180, gra = r => r * 180 / Math.PI;
+const mlon = lat => M_LAT * Math.cos(rad(lat));
+const llDe = (c, dx, dy) => [c[0] + dy / M_LAT, c[1] + dx / mlon(c[0])];
+const metros = (a, b) => [(b[1] - a[1]) * mlon(a[0]), (b[0] - a[0]) * M_LAT];   // de a para b, em metros
+const gira = (u, th) => { const c = Math.cos(rad(th)), s = Math.sin(rad(th)); return [u[0] * c - u[1] * s, u[0] * s + u[1] * c]; };
+
+// ---- overlay com rotação/deformação: os 3 cantos definem a matriz
+const OverlayGirado = L.Layer.extend({
+  initialize(url, cantos, opts) { this._url = url; this._cantos = cantos; L.setOptions(this, opts); },
+  onAdd(map) {
+    if (!this._img) {
+      const img = this._img = L.DomUtil.create('img', 'planta-img');
+      img.src = this._url; img.alt = ''; img.draggable = false;
+      img.style.position = 'absolute'; img.style.transformOrigin = '0 0';
+      img.style.opacity = this.options.opacity ?? 0.85;
+      img.addEventListener('load', () => this._desenha());
+    }
+    map.getPane(this.options.pane || 'overlayPane').appendChild(this._img);
+    map.on('zoomend viewreset moveend', this._desenha, this);
+    this._desenha();
+  },
+  onRemove(map) { L.DomUtil.remove(this._img); map.off('zoomend viewreset moveend', this._desenha, this); },
+  setCantos(c) { this._cantos = c; this._desenha(); return this; },
+  setOpacity(o) { this.options.opacity = o; if (this._img) this._img.style.opacity = o; return this; },
+  ativa(sim) { if (this._img) this._img.classList.toggle('ativa', !!sim); return this; },
+  porCima() { if (this._img && this._img.parentNode) this._img.parentNode.appendChild(this._img); return this; },
+  _desenha() {
+    const img = this._img, map = this._map;
+    if (!img || !map || !img.naturalWidth) return;
+    const [tl, tr, bl] = this._cantos.map(ll => map.latLngToLayerPoint(L.latLng(ll)));
+    const w = img.naturalWidth, h = img.naturalHeight;
+    img.style.transform = `matrix(${(tr.x - tl.x) / w},${(tr.y - tl.y) / w},${(bl.x - tl.x) / h},${(bl.y - tl.y) / h},${tl.x},${tl.y})`;
+  }
+});
+
+const mapa = L.map('mapa', { zoomControl: true, zoomAnimation: false, preferCanvas: true }).setView([-23.097, -47.274], 14);
+const satelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, maxNativeZoom: 19, attribution: 'Imagens: Esri, Maxar' }).addTo(mapa);
+const ruas = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' });
+const desenhador = L.canvas({ padding: 0.4 });
+mapa.createPane('alcas').style.zIndex = 660;
+
+let plantas = [], sel = null, mostrarPinos = true, opacidade = 0.75, pilha = [];
+const $ = s => document.querySelector(s);
+const status = t => $('#status').textContent = t;
+
+// ---- geometria: centro + vetor u (largura) e v (altura), em metros
+function cantosDe(p) {
+  const { lat, lon, u, v } = p.est, c = [lat, lon];
+  return [llDe(c, -(u[0] + v[0]) / 2, -(u[1] + v[1]) / 2), llDe(c, (u[0] - v[0]) / 2, (u[1] - v[1]) / 2), llDe(c, (v[0] - u[0]) / 2, (v[1] - u[1]) / 2)];
+}
+function aplicaCantos(p, tl, tr, bl) {
+  const u = metros(tl, tr), v = metros(tl, bl);
+  const c = llDe(tl, (u[0] + v[0]) / 2, (u[1] + v[1]) / 2);
+  p.est = { lat: c[0], lon: c[1], u, v };
+}
+function pinosDe(p) {
+  const [tl] = cantosDe(p), { u, v } = p.est;
+  return p.pinosNorm.map(([sx, ty]) => llDe(tl, sx * u[0] + ty * v[0], sx * u[1] + ty * v[1]));
+}
+function medidas(p) {
+  const { u, v } = p.est;
+  const lu = Math.hypot(...u), lv = Math.hypot(...v);
+  const angU = gra(Math.atan2(u[1], u[0]));                 // 0 = leste
+  const angV = gra(Math.atan2(-v[1], -v[0]));               // -v aponta para o norte quando não há giro
+  let esq = angV - angU - 90; while (esq > 180) esq -= 360; while (esq < -180) esq += 360;
+  return { larg: lu / p.Wm, alt: lv / p.Hm, giro: angU, esquadro: esq };
+}
+function mexida(p) {
+  const m = medidas(p);
+  return Math.abs(p.est.lat - p.ini.lat) > 1e-9 || Math.abs(p.est.lon - p.ini.lon) > 1e-9 ||
+    Math.abs(m.giro) > 1e-4 || Math.abs(m.larg - 1) > 1e-5 || Math.abs(m.alt - 1) > 1e-5 || Math.abs(m.esquadro) > 1e-4;
+}
+function redesenha(p, comPinos = true) {
+  p.overlay.setCantos(cantosDe(p));
+  if (comPinos && p.marcadores.length) { const lls = pinosDe(p); p.marcadores.forEach((m, i) => m.setLatLng(lls[i])); }
+  if (p === sel) { posicionaAlcas(); mostraInfo(); }
+  const el = document.getElementById('it-' + p.id);
+  if (el) el.querySelector('.marca').textContent = mexida(p) ? 'ajustada' : '';
+}
+
+// ---- alças
+let alcaGirar, alcas = {}, contorno;
+function quatroCantos(p) { const [tl, tr, bl] = cantosDe(p); return { tl, tr, bl, br: [tr[0] + bl[0] - tl[0], tr[1] + bl[1] - tl[1]] }; }
+function posicionaAlcas() {
+  if (!sel) return;
+  const q = quatroCantos(sel), c = [sel.est.lat, sel.est.lon];
+  ['tl', 'tr', 'bl', 'br'].forEach(k => alcas[k].setLatLng(q[k]));
+  const meio = [(q.tl[0] + q.tr[0]) / 2, (q.tl[1] + q.tr[1]) / 2];
+  alcaGirar.setLatLng([meio[0] + (meio[0] - c[0]) * 0.13, meio[1] + (meio[1] - c[1]) * 0.13]);
+  contorno.setLatLngs([q.tl, q.tr, q.br, q.bl, q.tl]);
+}
+function guarda() { if (!sel) return; pilha.push({ id: sel.id, est: JSON.parse(JSON.stringify(sel.est)) }); if (pilha.length > 80) pilha.shift(); }
+function desfaz() {
+  const x = pilha.pop(); if (!x) return status('nada para desfazer');
+  const p = plantas.find(y => y.id === x.id); p.est = x.est; redesenha(p); salvaAuto(); status('desfeito: ' + p.nome);
+}
+function mostraInfo() {
+  if (!sel) return;
+  const m = medidas(sel), [dx, dy] = metros([sel.ini.lat, sel.ini.lon], [sel.est.lat, sel.est.lon]);
+  $('#info').innerHTML = `<b>${sel.nome}</b><br>deslocou <b>${Math.hypot(dx, dy).toFixed(1)} m</b> (L ${dx.toFixed(1)} / N ${dy.toFixed(1)})<br>` +
+    `giro <b>${(-m.giro).toFixed(2)}°</b> · largura <b>${(m.larg * 100).toFixed(2)}%</b> · altura <b>${(m.alt * 100).toFixed(2)}%</b><br>` +
+    `distorção <b>${m.esquadro.toFixed(2)}°</b> · ${sel.pinosNorm.length} pino(s) juntos`;
+}
+function seleciona(p) {
+  if (sel) { sel.overlay.ativa(false).setOpacity(0.85); }
+  sel = p;
+  document.querySelectorAll('.item').forEach(e => e.classList.toggle('sel', e.id === 'it-' + p.id));
+  $('#painelSel').style.display = 'block';
+  if (!p.visivel) alterna(p, true);
+  p.overlay.ativa(true).setOpacity(opacidade).porCima();
+  [alcaGirar, ...Object.values(alcas), contorno].forEach(l => l.addTo(mapa));
+  posicionaAlcas(); mostraInfo(); status('selecionada: ' + p.nome);
+}
+function alterna(p, ver) {
+  p.visivel = ver;
+  if (ver) { p.overlay.addTo(mapa); if (mostrarPinos) p.grupoPinos.addTo(mapa); }
+  else { mapa.removeLayer(p.overlay); mapa.removeLayer(p.grupoPinos); }
+  const cb = document.querySelector('#it-' + p.id + ' input'); if (cb) cb.checked = ver;
+}
+const escondePinos = () => sel && mapa.hasLayer(sel.grupoPinos) && mapa.removeLayer(sel.grupoPinos);
+const voltaPinos = () => { if (sel && sel.visivel && mostrarPinos) sel.grupoPinos.addTo(mapa); };
+
+// ---- arrastar a planta
+let arrastando = null;
+mapa.getPane('overlayPane').addEventListener('mousedown', ev => {
+  if (!sel || ev.target !== sel.overlay._img) return;
+  ev.preventDefault(); guarda();
+  arrastando = { lat0: sel.est.lat, lon0: sel.est.lon, p0: mapa.mouseEventToLatLng(ev) };
+  mapa.dragging.disable(); escondePinos();
+});
+document.addEventListener('mousemove', ev => {
+  if (!arrastando || !sel) return;
+  const p1 = mapa.mouseEventToLatLng(ev);
+  sel.est.lat = arrastando.lat0 + (p1.lat - arrastando.p0.lat);
+  sel.est.lon = arrastando.lon0 + (p1.lng - arrastando.p0.lng);
+  redesenha(sel, false);
+});
+document.addEventListener('mouseup', () => {
+  if (!arrastando) return;
+  arrastando = null; mapa.dragging.enable(); voltaPinos();
+  if (sel) { redesenha(sel); salvaAuto(); }
+});
+
+// ---- teclado
+document.addEventListener('keydown', ev => {
+  if (!sel || ev.target.tagName === 'INPUT') return;
+  const passo = ev.shiftKey ? 0.2 : 1, giroP = ev.shiftKey ? 1 : 0.1;
+  let usou = true;
+  const escala = f => { sel.est.u = sel.est.u.map(x => x * f); sel.est.v = sel.est.v.map(x => x * f); };
+  if (ev.key === 'ArrowUp') { guarda(); sel.est.lat += passo / M_LAT; }
+  else if (ev.key === 'ArrowDown') { guarda(); sel.est.lat -= passo / M_LAT; }
+  else if (ev.key === 'ArrowLeft') { guarda(); sel.est.lon -= passo / mlon(sel.est.lat); }
+  else if (ev.key === 'ArrowRight') { guarda(); sel.est.lon += passo / mlon(sel.est.lat); }
+  else if (ev.key === ',') { guarda(); sel.est.u = gira(sel.est.u, giroP); sel.est.v = gira(sel.est.v, giroP); }
+  else if (ev.key === '.') { guarda(); sel.est.u = gira(sel.est.u, -giroP); sel.est.v = gira(sel.est.v, -giroP); }
+  else if (ev.key === '+' || ev.key === '=') { guarda(); escala(1.002); }
+  else if (ev.key === '-') { guarda(); escala(1 / 1.002); }
+  else if (ev.key.toLowerCase() === 'z' && (ev.ctrlKey || ev.metaKey)) { desfaz(); usou = false; }
+  else usou = false;
+  if (usou) { ev.preventDefault(); redesenha(sel); salvaAuto(); }
+});
+
+// ---- salvamento automático
+let tempoSalvar = null, salvando = false, pendente = false;
+function montaSaida() {
+  const saida = { versao: 2, plantas: {} };
+  plantas.forEach(p => {
+    if (!mexida(p)) return;
+    const m = medidas(p);
+    saida.plantas[p.id] = { nome: p.nome, lat: +p.est.lat.toFixed(9), lon: +p.est.lon.toFixed(9),
+      u: p.est.u.map(x => +x.toFixed(4)), v: p.est.v.map(x => +x.toFixed(4)),
+      Wm: +p.Wm.toFixed(4), Hm: +p.Hm.toFixed(4), lat0: p.ini.lat, lon0: p.ini.lon,
+      giro: +(-m.giro).toFixed(4), largura: +m.larg.toFixed(6), altura: +m.alt.toFixed(6), distorcao: +m.esquadro.toFixed(4) };
+  });
+  return saida;
+}
+function grava(aviso) {
+  if (salvando) { pendente = true; return; }
+  const saida = montaSaida(), n = Object.keys(saida.plantas).length;
+  salvando = true;
+  fetch('/salvar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(saida) })
+    .then(r => r.json())
+    .then(() => status((aviso || 'salvo automaticamente') + ' às ' + new Date().toTimeString().slice(0, 8) + ' — ' + n + ' planta(s) ajustada(s)'))
+    .catch(e => status('NÃO consegui salvar (' + e + '). Não feche esta aba e me avise.'))
+    .then(() => { salvando = false; if (pendente) { pendente = false; grava(); } });
+}
+function salvaAuto() { clearTimeout(tempoSalvar); tempoSalvar = setTimeout(() => grava(), 700); }
+window.addEventListener('beforeunload', () => { if (tempoSalvar) { clearTimeout(tempoSalvar); navigator.sendBeacon('/salvar', new Blob([JSON.stringify(montaSaida())], { type: 'application/json' })); } });
+
+// ---- carga
+fetch('plantas.json').then(r => r.json()).then(d => {
+  const lista = $('#lista');
+  d.plantas.forEach(pl => {
+    const [[la0, lo0], [la1, lo1]] = pl.bounds, centro = [(la0 + la1) / 2, (lo0 + lo1) / 2];
+    const Wm = (lo1 - lo0) * mlon(centro[0]), Hm = (la1 - la0) * M_LAT;
+    const p = { id: pl.id, nome: pl.nome, arq: pl.arq, w: pl.w, h: pl.h, Wm, Hm, visivel: true,
+      ini: { lat: centro[0], lon: centro[1] }, est: { lat: centro[0], lon: centro[1], u: [Wm, 0], v: [0, -Hm] },
+      pinosNorm: pl.pinos.map(([la, lo]) => [((lo - centro[1]) * mlon(centro[0])) / Wm + 0.5, 0.5 - ((la - centro[0]) * M_LAT) / Hm]) };
+    p.overlay = new OverlayGirado('img/' + pl.arq, cantosDe(p), { opacity: 0.85 });
+    p.marcadores = pl.pinos.map(ll => L.circleMarker(ll, { radius: 3, renderer: desenhador, color: '#14200a', weight: 1, fillColor: '#ff8c1a', fillOpacity: .95 }));
+    p.grupoPinos = L.layerGroup(p.marcadores);
+    plantas.push(p);
+    const div = document.createElement('div');
+    div.className = 'item'; div.id = 'it-' + p.id;
+    div.innerHTML = `<input type="checkbox" checked><span class="nome">${pl.nome}</span><span class="marca"></span>`;
+    div.querySelector('input').addEventListener('click', e => { e.stopPropagation(); alterna(p, e.target.checked); });
+    div.addEventListener('click', () => seleciona(p));
+    lista.appendChild(div);
+    alterna(p, true);
+  });
+  const icone = (cls, txt) => L.divIcon({ className: '', html: `<div class="alca ${cls}">${txt}</div>`, iconSize: [20, 20], iconAnchor: [10, 10] });
+  alcaGirar = L.marker([0, 0], { draggable: true, pane: 'alcas', icon: icone('girar', '↻') });
+  ['tl', 'tr', 'bl', 'br'].forEach(k => alcas[k] = L.marker([0, 0], { draggable: true, pane: 'alcas', icon: icone('canto', '') }));
+  contorno = L.polyline([], { color: '#8dc63f', weight: 1.5, dashArray: '6 5', pane: 'alcas' });
+  // girar
+  let refAng = 0, refU = null, refV = null;
+  alcaGirar.on('dragstart', () => { guarda(); escondePinos(); const c = [sel.est.lat, sel.est.lon], a = alcaGirar.getLatLng(); const m = metros(c, [a.lat, a.lng]); refAng = Math.atan2(m[1], m[0]); refU = sel.est.u.slice(); refV = sel.est.v.slice(); });
+  alcaGirar.on('drag', () => { const c = [sel.est.lat, sel.est.lon], a = alcaGirar.getLatLng(); const m = metros(c, [a.lat, a.lng]); const d = gra(Math.atan2(m[1], m[0]) - refAng); sel.est.u = gira(refU, d); sel.est.v = gira(refV, d); redesenha(sel, false); });
+  // cantos: os outros dois cantos ficam parados
+  let fixos = null;
+  Object.entries(alcas).forEach(([k, a]) => {
+    a.on('dragstart', () => { guarda(); escondePinos(); const q = quatroCantos(sel); fixos = q; });
+    a.on('drag', () => {
+      const q = { ...fixos }, ll = a.getLatLng(); q[k] = [ll.lat, ll.lng];
+      if (k === 'br') {   // estica nas duas direções mantendo o canto oposto
+        const u = metros(fixos.tl, fixos.tr), v = metros(fixos.tl, fixos.bl), alvo = metros(fixos.tl, q.br);
+        const det = u[0] * v[1] - u[1] * v[0];
+        if (Math.abs(det) < 1e-6) return;
+        const fa = (alvo[0] * v[1] - alvo[1] * v[0]) / det, fb = (u[0] * alvo[1] - u[1] * alvo[0]) / det;
+        q.tr = llDe(fixos.tl, u[0] * fa, u[1] * fa); q.bl = llDe(fixos.tl, v[0] * fb, v[1] * fb);
+      }
+      aplicaCantos(sel, q.tl, q.tr, q.bl); redesenha(sel, false);
+    });
+  });
+  [alcaGirar, ...Object.values(alcas)].forEach(a => a.on('dragend', () => { voltaPinos(); redesenha(sel); salvaAuto(); }));
+  // retoma o que já estava ajustado (aceita o formato antigo com giro/escala)
+  fetch('ajustes.json').then(r => r.ok ? r.json() : null).then(a => {
+    let n = 0;
+    if (a && a.plantas) Object.entries(a.plantas).forEach(([id, s]) => {
+      const p = plantas.find(x => x.id === id); if (!p) return;
+      if (s.u && s.v) p.est = { lat: s.lat, lon: s.lon, u: s.u.slice(), v: s.v.slice() };
+      else { const e = s.escala ?? 1, t = -(s.theta ?? 0); p.est = { lat: s.lat, lon: s.lon, u: gira([p.Wm * e, 0], -t), v: gira([0, -p.Hm * e], -t) }; }
+      redesenha(p); n++;
+    });
+    status(n ? 'retomando: ' + n + ' planta(s) já ajustada(s)' : plantas.length + ' plantas carregadas. Clique numa da lista.');
+  }).catch(() => status(plantas.length + ' plantas carregadas.'));
+  seleciona(plantas[0]);
+  mapa.fitBounds(L.latLngBounds(plantas.flatMap(p => cantosDe(p))), { padding: [20, 20] });
+});
+
+// ---- botões
+$('#bSat').onclick = () => { mapa.removeLayer(ruas); satelite.addTo(mapa); };
+$('#bRuas').onclick = () => { mapa.removeLayer(satelite); ruas.addTo(mapa); };
+$('#bPinos').onclick = () => { mostrarPinos = !mostrarPinos; $('#bPinos').textContent = 'Pinos: ' + (mostrarPinos ? 'ligados' : 'desligados'); plantas.forEach(p => { if (p.visivel) { if (mostrarPinos) p.grupoPinos.addTo(mapa); else mapa.removeLayer(p.grupoPinos); } }); };
+$('#opac').oninput = e => { opacidade = e.target.value / 100; $('#vOpac').textContent = e.target.value + '%'; if (sel) sel.overlay.setOpacity(opacidade); };
+$('#bZoom').onclick = () => sel && mapa.fitBounds(L.latLngBounds(cantosDe(sel)), { padding: [30, 30] });
+$('#bEsquadro').onclick = () => {   // mantém giro e tamanhos, tira só a distorção (volta a 90 graus)
+  if (!sel) return; guarda();
+  const m = medidas(sel), lu = Math.hypot(...sel.est.u), lv = Math.hypot(...sel.est.v), a = Math.atan2(sel.est.u[1], sel.est.u[0]);
+  sel.est.u = [lu * Math.cos(a), lu * Math.sin(a)];
+  sel.est.v = [lv * Math.cos(a - Math.PI / 2), lv * Math.sin(a - Math.PI / 2)];
+  redesenha(sel); grava('distorção removida e salvo');
+};
+$('#bReset').onclick = () => { if (!sel) return; guarda(); sel.est = { lat: sel.ini.lat, lon: sel.ini.lon, u: [sel.Wm, 0], v: [0, -sel.Hm] }; redesenha(sel); grava('planta voltou ao original e foi salvo'); };
+$('#bMapa').onclick = () => window.open('/mapa/mapa-lotes-indaiatuba/', '_blank');
+$('#bSalvar').onclick = () => grava('salvo por você');
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<title>Encaixe das Plantas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --chao:#11150f; --caixa:#1a2116; --caixa2:#212a1c; --risco:#313c28;
+    --texto:#ecf1e6; --fraco:#93a289; --lima:#a3d95a; --ambar:#ffc53d; --laranja:#ff8c1a;
+    --fonte:'Archivo',system-ui,'Segoe UI',sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%;margin:0;background:var(--chao);color:var(--texto);font-family:var(--fonte);overscroll-behavior:none}
+  #tela{display:flex;flex-direction:column;height:100dvh}
+  header{display:flex;align-items:center;gap:10px;padding:9px 13px;background:var(--caixa);border-bottom:1px solid var(--risco);flex:0 0 auto}
+  header .nome{font-weight:600;font-size:15px;line-height:1.2;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  header .estado{font-family:var(--mono);font-size:11px;color:var(--fraco);text-align:right;line-height:1.3;flex:0 0 auto;max-width:44%}
+  header .estado b{color:var(--lima);font-weight:500}
+  #palco{position:relative;flex:1;overflow:hidden;background:#0a0d07;touch-action:none}
+  #palco img{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform;user-select:none;-webkit-user-drag:none}
+  #fundo{opacity:1}
+  #planta{opacity:.78}
+  .alca{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab}
+  .alca i{display:block;border:2px solid #10160b;box-shadow:0 2px 6px rgba(0,0,0,.55)}
+  .alca.canto i{width:17px;height:17px;background:var(--lima);border-radius:4px}
+  .alca.girar i{width:19px;height:19px;background:var(--ambar);border-radius:50%}
+  #medidas{position:absolute;left:10px;bottom:10px;font-family:var(--mono);font-size:11px;line-height:1.5;color:var(--texto);background:rgba(17,21,15,.82);border:1px solid var(--risco);border-radius:8px;padding:7px 9px;pointer-events:none;max-width:62%}
+  #medidas b{color:var(--lima);font-weight:500}
+  #medidas .cinza{color:var(--fraco)}
+  footer{flex:0 0 auto;background:var(--caixa);border-top:1px solid var(--risco);padding:8px 10px 10px;display:flex;flex-direction:column;gap:8px}
+  #chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+  .chip{flex:0 0 auto;padding:6px 11px;border-radius:999px;border:1px solid var(--risco);background:var(--caixa2);color:var(--fraco);font-size:12.5px;font-weight:500;white-space:nowrap;cursor:pointer}
+  .chip.on{background:var(--lima);border-color:var(--lima);color:#132009;font-weight:600}
+  .chip .pt{color:var(--lima);margin-left:5px}
+  .chip.on .pt{color:#132009}
+  .fila{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .grupo{display:flex;gap:4px;background:var(--caixa2);border:1px solid var(--risco);border-radius:10px;padding:4px}
+  .grupo>span{align-self:center;font-size:11px;color:var(--fraco);padding:0 4px}
+  button{font-family:var(--fonte);font-size:14px;font-weight:600;background:transparent;color:var(--texto);border:0;border-radius:7px;padding:8px 11px;min-width:38px;cursor:pointer}
+  button:active{background:#33421f}
+  button.lig{background:var(--lima);color:#132009}
+  .barra{display:flex;align-items:center;gap:8px;flex:1;min-width:150px}
+  .barra label{font-size:11px;color:var(--fraco);white-space:nowrap}
+  input[type=range]{flex:1;accent-color:var(--lima);min-width:70px}
+  .acoes{display:flex;gap:6px;margin-left:auto}
+  .acoes button{background:var(--caixa2);border:1px solid var(--risco);font-size:12.5px;font-weight:500;padding:7px 10px}
+  #aviso{display:none;padding:7px 13px;background:#3a2f10;color:var(--ambar);font-size:12px;border-bottom:1px solid var(--risco)}
+</style>
+<div id="tela">
+  <header>
+    <div class="nome" id="hNome">—</div>
+    <div class="estado" id="hEstado">carregando…</div>
+  </header>
+  <div id="aviso"></div>
+  <div id="palco">
+    <img id="geral" alt="">
+    <img id="fundo" alt="">
+    <img id="planta" alt="">
+    <div class="alca canto" id="a-tl"><i></i></div>
+    <div class="alca canto" id="a-tr"><i></i></div>
+    <div class="alca canto" id="a-bl"><i></i></div>
+    <div class="alca canto" id="a-br"><i></i></div>
+    <div class="alca girar" id="a-gi"><i></i></div>
+    <div id="medidas"></div>
+  </div>
+  <footer>
+    <div id="chips"></div>
+    <div class="fila">
+      <div class="grupo">
+        <button data-mv="-1,0">◀</button><button data-mv="0,1">▲</button><button data-mv="0,-1">▼</button><button data-mv="1,0">▶</button>
+      </div>
+      <div class="grupo"><span>giro</span><button data-gi="1">↺</button><button data-gi="-1">↻</button></div>
+      <div class="grupo"><span>tam.</span><button data-es="-1">−</button><button data-es="1">+</button></div>
+      <div class="grupo" id="passos"><button data-passo=".2">fino</button><button data-passo="1" class="lig">1 m</button><button data-passo="5">5 m</button></div>
+    </div>
+    <div class="fila">
+      <div class="barra"><label>planta</label><input type="range" id="opac" min="20" max="100" value="78"></div>
+      <div class="acoes">
+        <button id="bEsq">esquadro</button><button id="bZoom">enquadrar</button><button id="bCidade">cidade</button><button id="bZero">zerar</button>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+const DADOS = /*__DADOS__*/{plantas:[]}/*__FIM__*/;
+const M_LAT = 111320, rad = d => d * Math.PI / 180, gra = r => r * 180 / Math.PI;
+const $ = s => document.getElementById(s);
+const palco = $('palco'), imgG = $('geral'), imgF = $('fundo'), imgP = $('planta');
+let plantas = [], atual = null, cam = { x: 0, y: 0, k: 1 }, passo = 1, opac = .78, db = null, avisado = false;
+
+// ---- preparo dos dados: tudo em metros, com origem no centro original de cada planta
+DADOS.plantas.forEach(pl => {
+  const [[la0, lo0], [la1, lo1]] = pl.bounds;
+  const o = [(la0 + la1) / 2, (lo0 + lo1) / 2], ml = M_LAT * Math.cos(rad(o[0]));
+  const Wm = (lo1 - lo0) * ml, Hm = (la1 - la0) * M_LAT;
+  const [[fs, fw], [fn, fe]] = pl.fundoBounds;
+  plantas.push({
+    id: pl.id, nome: pl.nome, o, ml, Wm, Hm, w: pl.w, h: pl.h, fundo: pl.fundo, planta: pl.planta,
+    fundoRet: { x0: (fw - o[1]) * ml, x1: (fe - o[1]) * ml, y0: (fs - o[0]) * M_LAT, y1: (fn - o[0]) * M_LAT },
+    geralRet: (() => { const [[gs, gw], [gn, ge]] = (DADOS.geralBounds || pl.fundoBounds); return { x0: (gw - o[1]) * ml, x1: (ge - o[1]) * ml, y0: (gs - o[0]) * M_LAT, y1: (gn - o[0]) * M_LAT }; })(),
+    pinos: pl.pinos.map(([la, lo]) => [((lo - o[1]) * ml) / Wm + .5, .5 - ((la - o[0]) * M_LAT) / Hm]),
+    est: { cx: 0, cy: 0, u: [Wm, 0], v: [0, -Hm] }
+  });
+});
+const gira = (u, t) => { const c = Math.cos(rad(t)), s = Math.sin(rad(t)); return [u[0] * c - u[1] * s, u[0] * s + u[1] * c]; };
+const cantos = p => { const { cx, cy, u, v } = p.est; const tl = [cx - (u[0] + v[0]) / 2, cy - (u[1] + v[1]) / 2]; return [tl, [tl[0] + u[0], tl[1] + u[1]], [tl[0] + v[0], tl[1] + v[1]], [tl[0] + u[0] + v[0], tl[1] + u[1] + v[1]]]; };
+function limitaCamera() {
+  const p = atual; if (!p) return;
+  const L = palco.clientWidth, A = palco.clientHeight, r = p.geralRet;
+  if (!L || !A) return;
+  const kMin = Math.max(L / (r.x1 - r.x0), A / (r.y1 - r.y0));
+  cam.k = Math.max(kMin, Math.min(60, cam.k));
+  const mx = L / (2 * cam.k), my = A / (2 * cam.k);
+  cam.x = Math.min(Math.max(cam.x, r.x0 + mx), r.x1 - mx);
+  cam.y = Math.min(Math.max(cam.y, r.y0 + my), r.y1 - my);
+}
+const naTela = (x, y) => [(x - cam.x) * cam.k + palco.clientWidth / 2, palco.clientHeight / 2 - (y - cam.y) * cam.k];
+const doMundo = (sx, sy) => [(sx - palco.clientWidth / 2) / cam.k + cam.x, cam.y - (sy - palco.clientHeight / 2) / cam.k];
+function medidas(p) {
+  const { u, v } = p.est, lu = Math.hypot(...u), lv = Math.hypot(...v);
+  const au = gra(Math.atan2(u[1], u[0])), av = gra(Math.atan2(-v[1], -v[0]));
+  let esq = av - au - 90; while (esq > 180) esq -= 360; while (esq < -180) esq += 360;
+  return { larg: lu / p.Wm, alt: lv / p.Hm, giro: -au, esq, desl: Math.hypot(p.est.cx, p.est.cy) };
+}
+const mexida = p => { const m = medidas(p); return Math.abs(m.desl) > .05 || Math.abs(m.giro) > 1e-3 || Math.abs(m.larg - 1) > 1e-4 || Math.abs(m.alt - 1) > 1e-4 || Math.abs(m.esq) > 1e-3; };
+
+// ---- desenho
+function desenha() {
+  const p = atual; if (!p) return;
+  limitaCamera();
+  const pinta = (el, r) => { const [x, y] = naTela(r.x0, r.y1); el.style.transform = `translate(${x}px,${y}px) scale(${(r.x1 - r.x0) * cam.k / (el.naturalWidth || 1)},${(r.y1 - r.y0) * cam.k / (el.naturalHeight || 1)})`; };
+  pinta(imgG, p.geralRet); pinta(imgF, p.fundoRet);
+  const [tl, tr, bl, br] = cantos(p).map(([x, y]) => naTela(x, y));
+  imgP.style.transform = `matrix(${(tr[0] - tl[0]) / p.w},${(tr[1] - tl[1]) / p.w},${(bl[0] - tl[0]) / p.h},${(bl[1] - tl[1]) / p.h},${tl[0]},${tl[1]})`;
+  const pos = { 'a-tl': tl, 'a-tr': tr, 'a-bl': bl, 'a-br': br };
+  Object.entries(pos).forEach(([id, q]) => { const e = $(id); e.style.left = q[0] + 'px'; e.style.top = q[1] + 'px'; });
+  const meio = [(tl[0] + tr[0]) / 2, (tl[1] + tr[1]) / 2], cxy = naTela(p.est.cx, p.est.cy);
+  const dx = meio[0] - cxy[0], dy = meio[1] - cxy[1], nn = Math.hypot(dx, dy) || 1;
+  $('a-gi').style.left = (meio[0] + dx / nn * 34) + 'px'; $('a-gi').style.top = (meio[1] + dy / nn * 34) + 'px';
+  const m = medidas(p);
+  $('medidas').innerHTML = `<b>${m.giro.toFixed(2)}°</b> de giro<br><span class="cinza">largura</span> <b>${(m.larg * 100).toFixed(2)}%</b> · <span class="cinza">altura</span> <b>${(m.alt * 100).toFixed(2)}%</b><br><span class="cinza">distorção</span> <b>${m.esq.toFixed(2)}°</b> · <span class="cinza">moveu</span> <b>${m.desl.toFixed(1)} m</b>`;
+  document.querySelectorAll('.chip').forEach(c => { if (c.dataset.id === p.id) c.querySelector('.pt').textContent = mexida(p) ? '•' : ''; });
+}
+function enquadra() {
+  const p = atual, q = cantos(p), L = palco.clientWidth, A = palco.clientHeight;
+  if (!L || !A) { requestAnimationFrame(enquadra); return; }   // a caixa ainda nao tem tamanho
+  const xs = q.map(c => c[0]), ys = q.map(c => c[1]);
+  const larg = Math.max(...xs) - Math.min(...xs), alt = Math.max(...ys) - Math.min(...ys);
+  cam.k = Math.min(L / (larg * 1.16), A / (alt * 1.16));
+  cam.x = (Math.max(...xs) + Math.min(...xs)) / 2; cam.y = (Math.max(...ys) + Math.min(...ys)) / 2;
+  limitaCamera(); desenha();
+}
+function abre(p, semEnquadrar) {
+  atual = p;
+  $('hNome').textContent = p.nome;
+  if (DADOS.geral && imgG.src !== DADOS.geral) imgG.src = DADOS.geral;
+  imgF.src = p.fundo; imgP.src = p.planta; imgP.style.opacity = opac;
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.dataset.id === p.id));
+  const pronto = () => { if (semEnquadrar) desenha(); else enquadra(); };
+  imgF.onload = pronto; imgP.onload = pronto; imgG.onload = pronto;
+  if (imgF.complete && imgP.complete) pronto();
+  requestAnimationFrame(pronto);
+}
+
+// ---- toques: arrastar a planta, arrastar o mapa, pinça, alças
+let modo = null, ini = null;
+const ponto = ev => [ev.clientX - palco.getBoundingClientRect().left, ev.clientY - palco.getBoundingClientRect().top];
+function dentroDaPlanta(sx, sy) {
+  const p = atual, [tl] = cantos(p), { u, v } = p.est;
+  const [mx, my] = doMundo(sx, sy), dx = mx - tl[0], dy = my - tl[1];
+  const det = u[0] * v[1] - u[1] * v[0]; if (!det) return false;
+  const a = (dx * v[1] - dy * v[0]) / det, b = (u[0] * dy - u[1] * dx) / det;
+  return a >= 0 && a <= 1 && b >= 0 && b <= 1;
+}
+const toques = new Map();
+palco.addEventListener('pointerdown', ev => {
+  palco.setPointerCapture(ev.pointerId); toques.set(ev.pointerId, ponto(ev));
+  if (toques.size === 2) { const [p1, p2] = [...toques.values()]; modo = 'pinca'; ini = { d: Math.hypot(p1[0] - p2[0], p1[1] - p2[1]), k: cam.k, c: doMundo((p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2) }; return; }
+  const [sx, sy] = ponto(ev);
+  if (dentroDaPlanta(sx, sy)) { modo = 'planta'; ini = { m: doMundo(sx, sy), cx: atual.est.cx, cy: atual.est.cy }; guarda(); }
+  else { modo = 'mapa'; ini = { m: doMundo(sx, sy), cx: cam.x, cy: cam.y }; }
+});
+palco.addEventListener('pointermove', ev => {
+  if (!toques.has(ev.pointerId)) return;
+  toques.set(ev.pointerId, ponto(ev));
+  if (modo === 'pinca' && toques.size >= 2) {
+    const [p1, p2] = [...toques.values()], d = Math.hypot(p1[0] - p2[0], p1[1] - p2[1]);
+    cam.k = Math.max(.05, Math.min(60, ini.k * d / (ini.d || 1)));
+    const meio = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2], agora = doMundo(meio[0], meio[1]);
+    cam.x += ini.c[0] - agora[0]; cam.y += ini.c[1] - agora[1]; desenha(); return;
+  }
+  const [sx, sy] = ponto(ev), m = doMundo(sx, sy);
+  if (modo === 'planta') { atual.est.cx = ini.cx + m[0] - ini.m[0]; atual.est.cy = ini.cy + m[1] - ini.m[1]; desenha(); }
+  else if (modo === 'mapa') { cam.x = ini.cx - (m[0] - ini.m[0]); cam.y = ini.cy - (m[1] - ini.m[1]); desenha(); }
+});
+function solta(ev) { toques.delete(ev.pointerId); if (modo === 'planta') salva(); if (toques.size === 0) modo = null; }
+palco.addEventListener('pointerup', solta); palco.addEventListener('pointercancel', solta);
+palco.addEventListener('wheel', ev => { ev.preventDefault(); const [sx, sy] = ponto(ev), antes = doMundo(sx, sy); cam.k = Math.max(.05, Math.min(60, cam.k * (ev.deltaY < 0 ? 1.15 : 1 / 1.15))); const dep = doMundo(sx, sy); cam.x += antes[0] - dep[0]; cam.y += antes[1] - dep[1]; desenha(); }, { passive: false });
+
+['tl', 'tr', 'bl', 'br', 'gi'].forEach(k => {
+  const el = $('a-' + k); let base = null;
+  el.addEventListener('pointerdown', ev => {
+    ev.stopPropagation(); el.setPointerCapture(ev.pointerId); guarda();
+    const q = cantos(atual);
+    base = { q, u: atual.est.u.slice(), v: atual.est.v.slice(), ang: 0 };
+    if (k === 'gi') { const [sx, sy] = ponto(ev), m = doMundo(sx, sy); base.ang = Math.atan2(m[1] - atual.est.cy, m[0] - atual.est.cx); }
+  });
+  el.addEventListener('pointermove', ev => {
+    if (!base) return; ev.stopPropagation();
+    const [sx, sy] = ponto(ev), m = doMundo(sx, sy), p = atual;
+    if (k === 'gi') { const d = gra(Math.atan2(m[1] - p.est.cy, m[0] - p.est.cx) - base.ang); p.est.u = gira(base.u, d); p.est.v = gira(base.v, d); }
+    else {
+      const [tl, tr, bl] = base.q; let n = { tl: tl.slice(), tr: tr.slice(), bl: bl.slice() };
+      if (k === 'br') {
+        const u = base.u, v = base.v, alvo = [m[0] - tl[0], m[1] - tl[1]], det = u[0] * v[1] - u[1] * v[0];
+        if (!det) return;
+        const fa = (alvo[0] * v[1] - alvo[1] * v[0]) / det, fb = (u[0] * alvo[1] - u[1] * alvo[0]) / det;
+        n.tr = [tl[0] + u[0] * fa, tl[1] + u[1] * fa]; n.bl = [tl[0] + v[0] * fb, tl[1] + v[1] * fb];
+      } else n[k] = m;
+      const u = [n.tr[0] - n.tl[0], n.tr[1] - n.tl[1]], v = [n.bl[0] - n.tl[0], n.bl[1] - n.tl[1]];
+      p.est = { cx: n.tl[0] + (u[0] + v[0]) / 2, cy: n.tl[1] + (u[1] + v[1]) / 2, u, v };
+    }
+    desenha();
+  });
+  const fim = () => { if (base) { base = null; salva(); } };
+  el.addEventListener('pointerup', fim); el.addEventListener('pointercancel', fim);
+});
+
+// ---- botões
+document.querySelectorAll('[data-mv]').forEach(b => b.onclick = () => { guarda(); const [dx, dy] = b.dataset.mv.split(',').map(Number); atual.est.cx += dx * passo; atual.est.cy += dy * passo; desenha(); salva(); });
+document.querySelectorAll('[data-gi]').forEach(b => b.onclick = () => { guarda(); const d = +b.dataset.gi * (passo === .2 ? .1 : passo === 1 ? .5 : 2); atual.est.u = gira(atual.est.u, d); atual.est.v = gira(atual.est.v, d); desenha(); salva(); });
+document.querySelectorAll('[data-es]').forEach(b => b.onclick = () => { guarda(); const f = 1 + (+b.dataset.es) * (passo === .2 ? .001 : passo === 1 ? .005 : .02); atual.est.u = atual.est.u.map(x => x * f); atual.est.v = atual.est.v.map(x => x * f); desenha(); salva(); });
+document.querySelectorAll('[data-passo]').forEach(b => b.onclick = () => { passo = +b.dataset.passo; document.querySelectorAll('[data-passo]').forEach(o => o.classList.toggle('lig', o === b)); });
+$('opac').oninput = e => { opac = e.target.value / 100; imgP.style.opacity = opac; };
+$('bZoom').onclick = () => enquadra();
+$('bCidade').onclick = () => { const r = atual.geralRet; cam.k = 1e-4; cam.x = (r.x0 + r.x1) / 2; cam.y = (r.y0 + r.y1) / 2; desenha(); };   // o limite da camera ja para no maior afastamento
+$('bEsq').onclick = () => { guarda(); const p = atual, lu = Math.hypot(...p.est.u), lv = Math.hypot(...p.est.v), a = Math.atan2(p.est.u[1], p.est.u[0]); p.est.u = [lu * Math.cos(a), lu * Math.sin(a)]; p.est.v = [lv * Math.cos(a - Math.PI / 2), lv * Math.sin(a - Math.PI / 2)]; desenha(); salva(); };
+$('bZero').onclick = () => { guarda(); atual.est = { cx: 0, cy: 0, u: [atual.Wm, 0], v: [0, -atual.Hm] }; desenha(); salva(); };
+let pilha = [];
+function guarda() { pilha.push({ id: atual.id, est: JSON.parse(JSON.stringify(atual.est)) }); if (pilha.length > 60) pilha.shift(); }
+
+// ---- gravação: neste aparelho na hora, e na nuvem quando o Claude estiver disponível
+const CHAVE = 'encaixe-plantas-v1';
+function estadoSalvavel() {
+  const fora = {};
+  plantas.forEach(p => { if (!mexida(p)) return; const m = medidas(p);
+    fora[p.id] = { nome: p.nome, lat: p.o[0] + p.est.cy / M_LAT, lon: p.o[1] + p.est.cx / p.ml, u: p.est.u, v: p.est.v, Wm: p.Wm, Hm: p.Hm, lat0: p.o[0], lon0: p.o[1], giro: +m.giro.toFixed(4), largura: +m.larg.toFixed(6), altura: +m.alt.toFixed(6), distorcao: +m.esq.toFixed(4) };
+  });
+  return fora;
+}
+let tSalva = null;
+function salva() {
+  const tudo = estadoSalvavel();
+  try { localStorage.setItem(CHAVE, JSON.stringify(tudo)); } catch (e) {}
+  const n = Object.keys(tudo).length;
+  $('hEstado').innerHTML = `<b>${n}</b> ajustada(s)<br>salvo no aparelho`;
+  clearTimeout(tSalva);
+  tSalva = setTimeout(async () => {
+    if (!db || !atual) return;
+    const p = atual, d = tudo[p.id];
+    try {
+      if (d) await db.doc('ajustes/' + p.id).set({ ...d, quando: new Date().toISOString() });
+      else await db.doc('ajustes/' + p.id).delete();
+      $('hEstado').innerHTML = `<b>${n}</b> ajustada(s)<br>salvo na nuvem ${new Date().toTimeString().slice(0, 5)}`;
+    } catch (e) { $('hEstado').innerHTML = `<b>${n}</b> ajustada(s)<br>só no aparelho`; }
+  }, 600);
+}
+function aplica(id, d) {
+  const p = plantas.find(x => x.id === id); if (!p || !d) return false;
+  const ml = p.ml;
+  p.est = { cx: (d.lon - p.o[1]) * ml, cy: (d.lat - p.o[0]) * M_LAT, u: d.u.slice(), v: d.v.slice() };
+  return true;
+}
+// monta a lista
+const chips = $('chips');
+plantas.forEach(p => {
+  const b = document.createElement('button');
+  b.className = 'chip'; b.dataset.id = p.id; b.innerHTML = p.nome.replace(/^(Parque|Jardim|Residencial|Vila dos|Terras de) /, '') + '<span class="pt"></span>';
+  b.onclick = () => abre(p);
+  chips.appendChild(b);
+});
+try { const g = JSON.parse(localStorage.getItem(CHAVE) || '{}'); Object.entries(g).forEach(([k, v]) => aplica(k, v)); } catch (e) {}
+abre(plantas[0]);
+addEventListener('resize', () => desenha());
+addEventListener('load', () => enquadra());
+(async () => {
+  db = await claude.use('db');
+  if (!db) { $('aviso').style.display = 'block'; $('aviso').textContent = 'Sem nuvem agora: os ajustes ficam salvos neste aparelho e eu leio depois.'; return; }
+  try {
+    const snap = await db.collection('ajustes').get();
+    let n = 0;
+    snap.docs.forEach(d => { const v = d.data(); if (v && v.u && aplica(d.id, v)) n++; });
+    if (n) { desenha(); $('hEstado').innerHTML = `<b>${n}</b> ajustada(s)<br>vindas da nuvem`; }
+    else $('hEstado').innerHTML = 'nuvem ligada';
+  } catch (e) { $('hEstado').innerHTML = 'nuvem indisponível'; }
+})();
+</script>

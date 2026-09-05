@@ -40,3 +40,21 @@ sem grade -> ajusta-nomes.py (rotulos de vias nomeadas x OSM: escala, rumo e tra
 Barnabe -> ajusta-rotacao.py com ruas_png (a grade impressa nao bate com o OSM/satelite). Quando o fit muda,
 reprojeta-ll.py <id> fit-antigo fit-novo mantem os pinos no mesmo ponto da planta; atualiza-bounds.py ids troca os bounds.
 Conferir SEM publicar (creditos da Netlify): node serve-local.js e abrir http://127.0.0.1:8766/mapa-lotes-indaiatuba/.
+
+## Desenho "clean" (padrao do Perola, 05/09/2026 a noite) e o editor de encaixe
+O desenho agora nasce das QUADRAS, nao de adivinhar rua: `preenche-quadras.py` acha as celulas fechadas do render
+so-linhas, marca como LOTE as que tem forma de lote OU que contem uma posicao conhecida de lote (`pontos_lote`, vindas
+de `<id>-quadras.json`), junta os lotes vizinhos na quadra (calcadas e canteiros entram), fecha o perimetro do
+loteamento e pinta de CINZA tudo o que sobra dentro dele. Assim nao existe rua verde nem buraco branco.
+`clean-lote.py id1,id2` roda tudo (opcoes proprias de cada planta em `opcoes-planta.json`) e reaproveita o
+enquadramento ja publicado (`bounds_fixos` no overlay-norte), para nao invalidar ajustes feitos a mao.
+Casos especiais: Araras (guia tracejada -> `fecha_m` 1,4), Alpnach (eixos vermelhos cortam os lotes -> `so_escuro`),
+Andorinhas e San Marino (planta com texto/curva de nivel ou so raster) ficam com o desenho anterior recolorido.
+
+**Editor de encaixe** (o Fabio move/gira/estica a planta sobre o satelite e eu aplico depois):
+- escritorio: `node ajuste-server.js` e abrir http://127.0.0.1:8767/ (editor em `editor/escritorio.html`,
+  dados por `editor/gera-plantas.py`); grava em `<scratchpad>/ajuste/ajustes.json` a cada mudanca.
+- celular: `gera-fundos.py` (recorte nitido de cada loteamento) + `gera-geral.py` (satelite da cidade inteira,
+  fundo de contexto) geram `dados-celular.json`; `editor/celular-modelo.html` + esses dados viram a pagina publicada
+  como Artifact (capacidade `db`), que salva sozinho na nuvem. Ler com a acao read_db, colecao `ajustes`.
+- aplicar: `aplica-ajustes.py` gira/estica a imagem, recalcula os bounds e leva os pinos junto.

@@ -13,8 +13,12 @@ ent, sai, manter = sys.argv[1], sys.argv[2], set(x.strip() for x in sys.argv[3].
 # modo por ATRIBUTO (plantas sem camadas): "attr:RG:0.0,0.0,0.0|5.0;G:0.38|4.0" -> mantem so caminhos tracados com essa cor|largura
 por_atrib = None
 if sys.argv[3].startswith('attr:'): por_atrib = set(x.strip() for x in sys.argv[3][5:].split(';')); manter = set()
+cxa = [1e9, -1e9]; cya = [1e9, -1e9]; MAXBB = 0
 descartar = None   # modo "drop:cor|largura;..." -> mantem tudo (sem texto) menos essas combinacoes (largura '*' = qualquer)
-if sys.argv[3].startswith('drop:'): descartar = set(x.strip() for x in sys.argv[3][5:].split(';')); por_atrib = set(); manter = set()
+if sys.argv[3].startswith('drop:'):
+    descartar = set(x.strip() for x in sys.argv[3][5:].split(';')); por_atrib = set(); manter = set()
+    for x in list(descartar):
+        if x.startswith('maxbb:'): MAXBB = float(x[6:]); descartar.discard(x)
 r = PdfReader(ent); pg = r.pages[0]
 props = pg['/Resources'].get('/Properties', {})
 nome = {}
@@ -37,11 +41,19 @@ for operandos, op in cs.operations:
             if LARG_MIN and larg < LARG_MIN: operandos = [FloatObject(LARG_MIN)]   # engrossa traco fino (plantas em hairline)
         if op in TEXTO: n_drop += 1; continue
         if op == b'Do': saida.append((operandos, op)); continue   # XObjects (blocos do CAD) sempre ficam no modo atributo
+        if op in CONSTROI and MAXBB:   # acumula a caixa do caminho corrente
+            xs = [float(v) for v in operandos[0::2] if hasattr(v, 'real')]; ys = [float(v) for v in operandos[1::2] if hasattr(v, 'real')]
+            if op == b're' and len(operandos) >= 4:
+                xs = [float(operandos[0]), float(operandos[0]) + float(operandos[2])]; ys = [float(operandos[1]), float(operandos[1]) + float(operandos[3])]
+            for v in xs: cxa[0] = min(cxa[0], v); cxa[1] = max(cxa[1], v)
+            for v in ys: cya[0] = min(cya[0], v); cya[1] = max(cya[1], v)
         if descartar is not None:   # caminho inteiro decidido no operador de pintura; token FILL descarta preenchimentos (rg/g/k nao sao rastreados)
             if op in CONSTROI: caminho.append((operandos, op)); continue
             if op in PINTA:
                 if op in (b'W', b'W*', b'n'): saida.extend(caminho); caminho = []; saida.append((operandos, op)); continue   # recorte (clip): sempre fica
                 combo = (cor + '|' + str(larg)) in descartar or (cor + '|*') in descartar
+                if MAXBB and max(cxa[1] - cxa[0], cya[1] - cya[0]) > MAXBB: combo = True   # caminho gigante (curva de nivel)
+                cxa = [1e9, -1e9]; cya = [1e9, -1e9]
                 fill = op in (b'f', b'F', b'f*'); ambos = op in (b'B', b'B*', b'b', b'b*')
                 if combo or (fill and 'FILL' in descartar): n_drop += 1 + len(caminho); caminho = []; continue
                 if ambos and 'FILL' in descartar: op = b's' if op in (b'b', b'b*') else b'S'
