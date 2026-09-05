@@ -13,7 +13,7 @@ claro = ImageChops.multiply(mx.point(lambda v: 255 if 150 <= v < 245 else 0), sa
 mag = ImageChops.multiply(ImageChops.multiply(r.point(lambda v: 255 if v > 150 else 0), b.point(lambda v: 255 if v > 150 else 0)), g.point(lambda v: 255 if v < 140 else 0))
 azul = ImageChops.multiply(b.point(lambda v: 255 if v > 150 else 0), r.point(lambda v: 255 if v < 120 else 0))
 out = Image.new('RGB', im.size, (255, 255, 255))
-out.paste((214, 214, 214), (0, 0), claro)
+out.paste((55, 65, 81) if '--tudo-escuro' in sys.argv else (214, 214, 214), (0, 0), claro)   # --tudo-escuro: plantas com divisas em cinza claro
 out.paste((55, 65, 81), (0, 0), escuro)
 out.paste((37, 99, 235), (0, 0), azul)
 out.paste((46, 125, 91), (0, 0), mag)

@@ -1,0 +1,5 @@
+[
+ {"id":"zarah-safira","pdf":"C:/Users/Usuario/Downloads/MAPAS/Parque Zarah Safira I.pdf","camadas":"GUIA;0 hachura leito;000 REVISAO 4;0;000 Divisa","overlay_cfg":"zarah-safira-overlay-cfg.json"},
+ {"id":"zarah-rubi","pdf":"C:/Users/Usuario/Downloads/MAPAS/Parque Zarah Rubi II.pdf","camadas":"GUIA;0 hachura leito;000 REVISAO 4;0;000 Divisa","overlay_cfg":"zarah-rubi-overlay-cfg.json"},
+ {"id":"zarah-perola","pdf":"C:/Users/Usuario/Downloads/MAPAS/Parque Zarah P*rola III.pdf","camadas":"GUIA;0 hachura leito;000 REVISAO 4;0;000 Divisa","overlay_cfg":"zarah-perola-overlay-cfg.json"}
+]

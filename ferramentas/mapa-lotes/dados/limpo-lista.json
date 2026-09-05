@@ -1,0 +1,11 @@
+[
+ {"id":"montecarmelo","pdf":"C:/Users/Usuario/Downloads/MAPAS/39.Mapa Monte Carmelo*.pdf","camadas":"Lotes;00_urb_quadras;HM-GUIA;PASSEIO;PAVIMENTO;DIVISA;Alinhamento;HM-QUAD03","overlay_cfg":"montecarmelo-overlay-cfg.json"},
+ {"id":"barnabe","pdf":"C:/Users/Usuario/Downloads/MAPAS/332-parque-barnabe.pdf","camadas":"LOTES;Lotes_mistos;QUADRA;Divisa;Guia","overlay_cfg":"barnabe-overlay-cfg.json"},
+ {"id":"bemtevi","pdf":"C:/Users/Usuario/Downloads/MAPAS/319-jardim-bem-te-vi.pdf","camadas":"Lotes;Lotes_mistos;Quadras;GUIA;DIVISA;Avenida_projetada","overlay_cfg":"bemtevi-overlay-cfg.json"},
+ {"id":"araras","pdf":"C:/Users/Usuario/Downloads/MAPAS/351-jardim-das-araras.pdf","camadas":"Lotes;Lotes_mistos;LOTES_II;Lote misto;Quadras;Guia;00 GUIA FINAL;RUA;CRI_GUIA","overlay_cfg":"araras-overlay-cfg.json"},
+ {"id":"canarios","pdf":"C:/Users/Usuario/Downloads/MAPAS/353-vila-dos-canarios.pdf","camadas":"lotes;Quadras;GUIA;Guia projetada;asfalto;Q.LOTES","overlay_cfg":"canarios-overlay-cfg.json"},
+ {"id":"campobonito","pdf":"C:/Users/Usuario/Downloads/MAPAS/304-parque-campo-bonito.pdf","camadas":"LOTES_II;Q.LOTES;GUIA;GUIA PROJ 01;DIVISA;LOTES-ÁREAS","overlay_cfg":"campobonito-overlay-cfg.json"},
+ {"id":"zarah-safira","pdf":"C:/Users/Usuario/Downloads/MAPAS/Parque Zarah Safira I.pdf","camadas":"GUIA;QUADRAS;LOTES_II;000 Divisa;0 hachura leito;0 LOTES MISTOS;PISO;0","overlay_cfg":"zarah-safira-overlay-cfg.json"},
+ {"id":"zarah-rubi","pdf":"C:/Users/Usuario/Downloads/MAPAS/Parque Zarah Rubi II.pdf","camadas":"GUIA;QUADRAS;LOTES_II;000 Divisa;0 hachura leito;0 LOTES MISTOS;0","overlay_cfg":"zarah-rubi-overlay-cfg.json"},
+ {"id":"zarah-perola","pdf":"C:/Users/Usuario/Downloads/MAPAS/Parque Zarah P*rola III.pdf","camadas":"GUIA;QUADRAS;LOTES_II;000 Divisa;0 hachura leito;0 LOTES MISTOS;ARRIMO","overlay_cfg":"zarah-perola-overlay-cfg.json"}
+]
