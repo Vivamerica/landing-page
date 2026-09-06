@@ -1,6 +1,19 @@
 {
- "araras":    {"fecha_m": 1.4, "tira_blobs": 0},
- "alpnach":   {"so_escuro": true, "escuro_max": 205, "fecha_m": 1.0},
- "andorinhas":{"tira_blobs": 40, "fecha_m": 0.9},
- "diitalia":  {"tira_blobs": 36}
+ "araras": {
+  "fecha_m": 1.4,
+  "tira_blobs": 0,
+  "res_m": 0.3
+ },
+ "alpnach": {
+  "so_escuro": true,
+  "escuro_max": 205,
+  "fecha_m": 1.0
+ },
+ "andorinhas": {
+  "tira_blobs": 75,
+  "fecha_m": 0.9
+ },
+ "diitalia": {
+  "tira_blobs": 36
+ }
 }

@@ -13,12 +13,14 @@ ent, sai, manter = sys.argv[1], sys.argv[2], set(x.strip() for x in sys.argv[3].
 # modo por ATRIBUTO (plantas sem camadas): "attr:RG:0.0,0.0,0.0|5.0;G:0.38|4.0" -> mantem so caminhos tracados com essa cor|largura
 por_atrib = None
 if sys.argv[3].startswith('attr:'): por_atrib = set(x.strip() for x in sys.argv[3][5:].split(';')); manter = set()
-cxa = [1e9, -1e9]; cya = [1e9, -1e9]; MAXBB = 0
+cxa = [1e9, -1e9]; cya = [1e9, -1e9]; MAXBB = 0; SINU = None; SUAVE = None; pontos = []
 descartar = None   # modo "drop:cor|largura;..." -> mantem tudo (sem texto) menos essas combinacoes (largura '*' = qualquer)
 if sys.argv[3].startswith('drop:'):
     descartar = set(x.strip() for x in sys.argv[3][5:].split(';')); por_atrib = set(); manter = set()
     for x in list(descartar):
         if x.startswith('maxbb:'): MAXBB = float(x[6:]); descartar.discard(x)
+        if x.startswith('sinuoso:'): SINU = [float(v) for v in x[8:].split(',')]; descartar.discard(x)
+        if x.startswith('suave:'): SUAVE = [float(v) for v in x[6:].split(',')]; descartar.discard(x)
 r = PdfReader(ent); pg = r.pages[0]
 props = pg['/Resources'].get('/Properties', {})
 nome = {}
@@ -41,6 +43,10 @@ for operandos, op in cs.operations:
             if LARG_MIN and larg < LARG_MIN: operandos = [FloatObject(LARG_MIN)]   # engrossa traco fino (plantas em hairline)
         if op in TEXTO: n_drop += 1; continue
         if op == b'Do': saida.append((operandos, op)); continue   # XObjects (blocos do CAD) sempre ficam no modo atributo
+        if op in CONSTROI and (SINU or SUAVE):   # guarda os vertices para medir o formato do caminho
+            vs = [float(v) for v in operandos if hasattr(v, 'real')]
+            if op == b're' and len(vs) >= 4: pontos += [(vs[0], vs[1]), (vs[0] + vs[2], vs[1] + vs[3])]
+            else: pontos += [(vs[i], vs[i + 1]) for i in range(0, len(vs) - 1, 2)]
         if op in CONSTROI and MAXBB:   # acumula a caixa do caminho corrente
             xs = [float(v) for v in operandos[0::2] if hasattr(v, 'real')]; ys = [float(v) for v in operandos[1::2] if hasattr(v, 'real')]
             if op == b're' and len(operandos) >= 4:
@@ -50,9 +56,27 @@ for operandos, op in cs.operations:
         if descartar is not None:   # caminho inteiro decidido no operador de pintura; token FILL descarta preenchimentos (rg/g/k nao sao rastreados)
             if op in CONSTROI: caminho.append((operandos, op)); continue
             if op in PINTA:
-                if op in (b'W', b'W*', b'n'): saida.extend(caminho); caminho = []; saida.append((operandos, op)); continue   # recorte (clip): sempre fica
+                if op in (b'W', b'W*', b'n'): saida.extend(caminho); caminho = []; pontos = []; saida.append((operandos, op)); continue   # recorte (clip): sempre fica
                 combo = (cor + '|' + str(larg)) in descartar or (cor + '|*') in descartar
                 if MAXBB and max(cxa[1] - cxa[0], cya[1] - cya[0]) > MAXBB: combo = True   # caminho gigante (curva de nivel)
+                if SINU and len(pontos) >= SINU[0]:   # aberto, com muitos vertices, sinuoso e longo = curva de nivel
+                    import math as _m
+                    comp = sum(_m.dist(pontos[i], pontos[i + 1]) for i in range(len(pontos) - 1))
+                    xs = [q[0] for q in pontos]; ys = [q[1] for q in pontos]
+                    diag = _m.hypot(max(xs) - min(xs), max(ys) - min(ys)) or 1
+                    fechado = _m.dist(pontos[0], pontos[-1]) < diag * 0.05
+                    if not fechado and comp / diag > SINU[1] and comp > SINU[2]: combo = True
+                if SUAVE and op in (b'S', b's') and len(pontos) >= SUAVE[0]:   # curva de nivel: so curvas suaves, sem canto
+                    import math as _m
+                    xs = [q[0] for q in pontos]; ys = [q[1] for q in pontos]
+                    diag = _m.hypot(max(xs) - min(xs), max(ys) - min(ys))
+                    angs = []
+                    for i in range(len(pontos) - 2):
+                        a, b_, c_ = pontos[i], pontos[i + 1], pontos[i + 2]
+                        v1 = (b_[0] - a[0], b_[1] - a[1]); v2 = (c_[0] - b_[0], c_[1] - b_[1]); n1 = _m.hypot(*v1); n2 = _m.hypot(*v2)
+                        if n1 > 1e-6 and n2 > 1e-6: angs.append(_m.degrees(_m.acos(max(-1, min(1, (v1[0] * v2[0] + v1[1] * v2[1]) / (n1 * n2))))))
+                    if angs and diag > SUAVE[2] and sum(1 for a in angs if a < 35) / len(angs) > SUAVE[1]: combo = True
+                pontos = []
                 cxa = [1e9, -1e9]; cya = [1e9, -1e9]
                 fill = op in (b'f', b'F', b'f*'); ambos = op in (b'B', b'B*', b'b', b'b*')
                 if combo or (fill and 'FILL' in descartar): n_drop += 1 + len(caminho); caminho = []; continue

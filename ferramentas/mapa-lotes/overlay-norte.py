@@ -50,6 +50,15 @@ if vazou or cfg.get('sem_perimetro'):
                 sx, sy = int(X) // f4, int(Y) // f4
                 if 0 <= sx < peq.width and 0 <= sy < peq.height and peq.getpixel((sx, sy)) == 255: ImageDraw.floodfill(peq, (sx, sy), 128); n_comp += 1
             peq = peq.point(lambda v: 255 if v == 128 else 0); print('  componentes com lotes conhecidos:', n_comp, 'de', len(pts), 'pontos')
+            if cfg.get('so_maior_bloco'):   # descarta pedacos soltos longe do corpo principal
+                trab = peq.copy(); melhor = (0, None); nb = 0
+                for y in range(0, peq.height, 3):
+                    for x in range(0, peq.width, 3):
+                        if trab.getpixel((x, y)) != 255: continue
+                        ImageDraw.floodfill(trab, (x, y), 128); reg = trab.point(lambda v: 255 if v == 128 else 0); ar = reg.histogram()[255]; nb += 1
+                        if ar > melhor[0]: melhor = (ar, reg)
+                        trab.paste(64, (0, 0), reg)
+                if melhor[1] is not None: peq = melhor[1]; print('  fica so o bloco principal (de %d pedacos)' % nb)
         else:
             trab = peq.copy(); melhor = (0, None)
             for y in range(0, peq.height, 4):

@@ -28,7 +28,7 @@ for n in sys.argv[1].split(','):
     _html = open('C:/Users/Usuario/Desktop/landing-page/mapa-lotes-indaiatuba/index.html', encoding='utf-8').read()
     _m = _re.search(r"\{ id:'%s',.*?bounds:\[\[([-\d.]+),([-\d.]+)\],\[([-\d.]+),([-\d.]+)\]\]" % n, _html)
     if _m and '--livre' not in sys.argv: o['bounds_fixos'] = [[float(_m.group(1)), float(_m.group(2))], [float(_m.group(3)), float(_m.group(4))]]
-    o['png'] = '5000/' + n + '-clean.png'; o['res_m'] = 0.4; o.pop('recorte_conteudo', None)
+    o['png'] = '5000/' + n + '-clean.png'; o['res_m'] = c2.pop('res_m', 0.4); o['so_maior_bloco'] = True; o.pop('recorte_conteudo', None)
     if os.path.exists(T + n + '-quadras.json'):   # recorta pelas quadras com lote conhecido: fora a moldura e as tabelas da prancha
         o['recorte_lotes_m'] = 45; o['quadras'] = n + '-quadras.json'; o['sem_perimetro'] = True
     else: o['recorte_conteudo'] = True

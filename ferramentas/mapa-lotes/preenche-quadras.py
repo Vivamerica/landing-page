@@ -158,11 +158,11 @@ COR = {'lote': tuple(cfg.get('cor_lote', [109, 179, 100])), 'rua': tuple(cfg.get
 out = Image.new('RGB', (W, H), (255, 255, 255))
 out.paste(COR['rua'], (0, 0), PERIM)          # tudo dentro do perimetro comeca cinza (rua)
 out.paste(COR['lote'], (0, 0), QUADRA)        # quadras por cima, verdes e solidas
-cont = Image.new('L', (W, H), 0)
-for r_ in regs:   # divisas: borda das celulas de lote (continua, sem risco solto)
-    if r_['cls'] == 'lote':
-        m = r_['msk']; box = (r_['x'], r_['y'], r_['x'] + m.width, r_['y'] + m.height)
-        cont.paste(ImageChops.lighter(cont.crop(box), borda_interna(m)), (r_['x'], r_['y']))
+LOTES = Image.new('L', (W, H), 0)
+for r_ in regs:
+    if r_['cls'] == 'lote': LOTES.paste(255, (r_['x'], r_['y']), r_['msk'])
+# uma divisa so entre dois lotes: o proprio traco do CAD (fino) dentro da quadra, nao a borda de cada celula
+cont = ImageChops.multiply(linha.filter(ImageFilter.MinFilter(eng)), LOTES.filter(ImageFilter.MaxFilter(odd(eng + 2))))
 cont = ImageChops.lighter(cont, borda_interna(QUADRA))   # contorno da quadra
 wl = m2px(cfg.get('larg_linha_m', 0.5))
 if wl >= 3: cont = cont.filter(ImageFilter.MaxFilter(odd(wl)))
