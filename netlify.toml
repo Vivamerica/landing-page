@@ -19,6 +19,34 @@
 #
 # Referrer-Policy nao mexe na atribuicao de campanha: ela viaja no codigo `?c=`
 # e no sufixo " [#ABC234]" do texto do WhatsApp (atrib.js), nunca no Referer.
+# 07/09/2026 (auditoria nº 1, frente 7): cache das imagens e dos scripts/estilos. Os arquivos sao trocados no lugar
+# (mesmo nome: images/hero.jpg, mapa-lotes-indaiatuba/images/<id>.png), entao nada de "immutable": uma semana no
+# navegador e revalidacao em segundo plano por 30 dias. HTML continua como esta (must-revalidate da Netlify).
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -385,6 +385,7 @@ ${FAQ.map(f => `    <details><summary>${f.q}</summary><p>${f.a}</p></details>`).
   <a href="/apartamentos-na-planta-indaiatuba/">apartamentos na planta</a> ·
   <a href="/loteamentos-em-indaiatuba/">loteamentos</a> ·
   <a href="/condominios-fechados-indaiatuba/">condomínios fechados</a>
+<p class="nap">Imobiliária Viv'América · CRECI 047394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
 </footer>
 </body>
 </html>`;

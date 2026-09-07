@@ -67,7 +67,7 @@ for (const d of fs.readdirSync(R + 'blog', { withFileTypes: true })) {
   if (!fs.existsSync(f)) continue;
   const h = fs.readFileSync(f, 'utf8');
   const headline = (h.match(/"headline":\s*"([^"]+)"/) || [])[1];
-  const desc = (h.match(/<meta name="description" content="([^"]+)"/) || [])[1];
+  const desc = (h.match(/<meta name="description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba: Minha Casa Minha Vida, FGTS, bairros, segurança e comparativos. Com fontes, sem cadastro."]+)"/) || [])[1];
   const pub = (h.match(/"datePublished":\s*"([^"]+)"/) || [])[1];
   const tema = TEMA_POR_SLUG[d.name];
   if (!headline || !desc || !pub) { avisos.push(d.name + ': faltando headline/description/datePublished'); continue; }
@@ -115,11 +115,11 @@ const html = `<!DOCTYPE html>
   <meta charset="UTF-8">
 <script src="/atrib.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Guia do Mercado Imobiliário de Indaiatuba | Viv'América</title>
+  <title>Guia do Mercado Imobiliário de Indaiatuba | Viv'América</title>
   <meta name="description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba: MCMV, FGTS, bairros, segurança, custo de vida e comparativos — com dados e fontes, sem cadastro.">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Blog | Guia do Mercado Imobiliário de Indaiatuba | Viv'América">
-  <meta property="og:description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba: MCMV, FGTS, bairros, segurança, custo de vida e comparativos — com dados e fontes, sem cadastro.">
+  <meta property="og:title" content="Guia do Mercado Imobiliário de Indaiatuba | Viv'América">
+  <meta property="og:description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba: Minha Casa Minha Vida, FGTS, bairros, segurança e comparativos. Com fontes, sem cadastro.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${ABS}/blog/">
   <meta property="og:site_name" content="Imobiliária Viv'América">
@@ -246,6 +246,7 @@ ${artigos.map(cardHtml).join('\n')}
       <a href="/blog/">Blog</a>
     </div>
     <p>© 2026 Imobiliária Viv'América · Lançamentos imobiliários em Indaiatuba SP</p>
+  <p class="nap">Imobiliária Viv'América · CRECI 047394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
   </footer>
 
   <script>
