@@ -132,20 +132,20 @@
 // ll = [lat, lng] do pino (aproximado). poly = contorno do lote [[lat,lng],...] quando traçado (modo ?tracar=1).
 const TIPOS = { RESIDENCIAL:['Residencial','var(--res)','#2e7d5b'], MISTO:['Misto (comercial)','var(--mis)','#b8641b'], COMERCIAL:['Comercial','var(--com)','#1f5fa8'], AVENIDA:['Avenida','var(--ave)','#7a3fb5'], GLEBA:['Gleba','var(--gle)','#8a6d1f'] };
 const BAIRROS = [
-  { id:'sanmarino', nome:'Terras de San Marino', sub:'condomínio fechado em lançamento · a prazo em 60x', landing:'/terras-de-san-marino-indaiatuba/', cond:'juros de 1% a.m. na tabela PRICE · correção anual pelo IGP-M', overlay:{ url:'images/sanmarino.png', bounds:[[-23.102199854,-47.261326372],[-23.097726916,-47.256612673]] } },
+  { id:'sanmarino', nome:'Terras de San Marino', sub:'condomínio fechado em lançamento · a prazo em 60x', landing:'/terras-de-san-marino-indaiatuba/', cond:'juros de 1% a.m. na tabela PRICE · correção anual pelo IGP-M', overlay:{ url:'images/sanmarino.png', bounds:[[-23.102820726,-47.262921457],[-23.096220348,-47.254903395]] } },
   { id:'alpnach', nome:'Alpnach Residence', sub:'condomínio fechado · 322 lotes · a prazo em 48x', landing:'/alpnach-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/alpnach.png', bounds:[[-23.084263640,-47.239591167],[-23.075924888,-47.230968063]] } },
-  { id:'montecarmelo', nome:'Residencial Monte Carmelo', sub:'loteamento aberto · 568 lotes · a prazo em até 96x', landing:'/monte-carmelo-indaiatuba/', cond:'entrada de 10% e saldo em 24, 48 ou 96x conforme o lote, relatório Dominium de 02/09/2026', overlay:{ url:'images/montecarmelo.png', bounds:[[-23.097533621,-47.290940137],[-23.088498938,-47.279639671]] } },
-  { id:'ravello', nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 02/09/2026', overlay:{ url:'images/ravello.png', bounds:[[-23.083976180,-47.248913611],[-23.073404646,-47.231775004]] } },
-  { id:'diitalia', nome:'Jardim Di Italia', sub:'loteamento · 404 lotes · a prazo em 60x', landing:'/di-italia-indaiatuba/', cond:'entrada de 20% e saldo em 60x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/diitalia.png', bounds:[[-23.103651874,-47.263391555],[-23.099539914,-47.259392460]] } },
-  { id:'canarios',   nome:'Vila dos Canários', overlay:{ url:'images/canarios.png', bounds:[[-23.108888913,-47.267867584],[-23.107270446,-47.266678606]] } },
-  { id:'zarah-safira', nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes · entrega dez/2026', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.103798440,-47.268241365],[-23.098270196,-47.263908391]] } },
-  { id:'zarah-rubi', nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098559758,-47.265937951],[-23.094132776,-47.261098746]] } },
-  { id:'zarah-perola', nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099381563,-47.270020427],[-23.094009346,-47.265429966]] } },
-  { id:'bemtevi',    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104041735,-47.269727754],[-23.100557515,-47.266166000]] } },
-  { id:'andorinhas', nome:'Jardim das Andorinhas', overlay:{ url:'images/andorinhas.png', bounds:[[-23.108352723,-47.271958218],[-23.104240534,-47.269451604]] } },
-  { id:'araras',     nome:'Jardim das Araras', overlay:{ url:'images/araras.png', bounds:[[-23.096753908,-47.288471910],[-23.088155965,-47.275681182]] } },
-  { id:'campobonito',nome:'Parque Campo Bonito', sub:'lotes 12x · glebas na Av. Clóvis Ferraz de Camargo', centro:[-23.09681,-47.27876], overlay:{ url:'images/campobonito.png', bounds:[[-23.101283068,-47.283275194],[-23.091153974,-47.266513172]] } },
-  { id:'barnabe',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City', overlay:{ url:'images/barnabe.png', bounds:[[-23.092306712,-47.284835691],[-23.084104152,-47.273122074]] } },
+  { id:'montecarmelo', nome:'Residencial Monte Carmelo', sub:'loteamento aberto · 568 lotes · a prazo em até 96x', landing:'/monte-carmelo-indaiatuba/', cond:'entrada de 10% e saldo em 24, 48 ou 96x conforme o lote, relatório Dominium de 02/09/2026', overlay:{ url:'images/montecarmelo.png', bounds:[[-23.097556669,-47.290758180],[-23.088978703,-47.279876118]] } },
+  { id:'ravello', nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 02/09/2026', overlay:{ url:'images/ravello.png', bounds:[[-23.084077694,-47.249446812],[-23.073393991,-47.234171390]] } },
+  { id:'diitalia', nome:'Jardim Di Italia', sub:'loteamento · 404 lotes · a prazo em 60x', landing:'/di-italia-indaiatuba/', cond:'entrada de 20% e saldo em 60x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/diitalia.png', bounds:[[-23.103588740,-47.263368017],[-23.099479627,-47.259325927]] } },
+  { id:'canarios',   nome:'Vila dos Canários', overlay:{ url:'images/canarios.png', bounds:[[-23.108930882,-47.268409945],[-23.107110832,-47.266713807]] } },
+  { id:'zarah-safira', nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes · entrega dez/2026', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.102958863,-47.268121502],[-23.098790343,-47.264306643]] } },
+  { id:'zarah-rubi', nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098533028,-47.265770497],[-23.094004107,-47.261732488]] } },
+  { id:'zarah-perola', nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099420948,-47.270215062],[-23.094039981,-47.265319498]] } },
+  { id:'bemtevi',    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104063798,-47.270031922],[-23.100929535,-47.266787194]] } },
+  { id:'andorinhas', nome:'Jardim das Andorinhas', overlay:{ url:'images/andorinhas.png', bounds:[[-23.108548473,-47.271953653],[-23.104311666,-47.269346254]] } },
+  { id:'araras',     nome:'Jardim das Araras', overlay:{ url:'images/araras.png', bounds:[[-23.095638139,-47.288116774],[-23.088177574,-47.277229598]] } },
+  { id:'campobonito',nome:'Parque Campo Bonito', sub:'lotes 12x · glebas na Av. Clóvis Ferraz de Camargo', centro:[-23.09681,-47.27876], overlay:{ url:'images/campobonito.png', bounds:[[-23.100133763,-47.282667194],[-23.092193889,-47.269990125]] } },
+  { id:'barnabe',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City', overlay:{ url:'images/barnabe.png', bounds:[[-23.092385336,-47.284128038],[-23.084321763,-47.273088377]] } },
 ];
 const LOTES = [
   // Terras de San Marino — espelho de vendas de 02/09/2026 (à vista R$ 1.650/m²; a prazo R$ 1.750/m², entrada 20%, saldo em 60x)
@@ -1810,8 +1810,36 @@ BAIRROS.forEach(b => {
   const mk = L.marker(centro, { icon: L.divIcon({ className: 'pino-bairro', html: `<div><b>${b.nome}</b><span>${ls.length} lote${ls.length > 1 ? 's' : ''} · desde ${brl0(Math.min(...ls.map(x => x.vista)))}</span></div>`, iconSize: null, iconAnchor: [0, 0] }) });
   mk.on('click', () => irParaBairro(b.id, true));
   camadaBairros.addLayer(mk);
-  if (b.overlay) plantas[b.id] = L.imageOverlay(b.overlay.url, b.overlay.bounds, { opacity: .92, pane: 'plantas', alt: 'Planta de ' + b.nome });
+  if (b.overlay && /\.svg$/i.test(b.overlay.url)) plantas[b.id] = plantaSvg(b);
+  else if (b.overlay) plantas[b.id] = L.imageOverlay(b.overlay.url, b.overlay.bounds, { opacity: .92, pane: 'plantas', alt: 'Planta de ' + b.nome });
 });
+// Planta vetorial (.svg): L.svgOverlay fica nítido em qualquer zoom. O arquivo chega por fetch (assíncrono), mas
+// atualizarNivel precisa da camada e de getBounds() já agora → devolve um grupo vazio que conhece seus bounds e
+// só baixa o SVG na primeira vez que entra no mapa (mesmo comportamento preguiçoso do <img> do imageOverlay).
+function plantaSvg(b) {
+  const bounds = L.latLngBounds(b.overlay.bounds);
+  const grupo = L.layerGroup();
+  grupo.getBounds = () => bounds;
+  let pedido = null;
+  grupo.on('add', () => {
+    if (pedido) return;
+    pedido = fetch(b.overlay.url)
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+      .then(txt => {
+        const el = new DOMParser().parseFromString(txt, 'image/svg+xml').documentElement;
+        if (!el || el.nodeName.toLowerCase() !== 'svg') throw new Error('arquivo não é SVG');
+        if (!el.getAttribute('xmlns')) el.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        if (!el.getAttribute('viewBox')) {   // sem viewBox o desenho não escala; monta a partir de width/height
+          const w = parseFloat(el.getAttribute('width')), h = parseFloat(el.getAttribute('height'));
+          if (w > 0 && h > 0) el.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+        }
+        if (!el.getAttribute('preserveAspectRatio')) el.setAttribute('preserveAspectRatio', 'none');   // preenche os bounds como o PNG preenchia
+        grupo.addLayer(L.svgOverlay(el, bounds, { opacity: .92, pane: 'plantas', alt: 'Planta de ' + b.nome }));
+      })
+      .catch(e => console.warn('planta SVG de ' + b.id + ' não carregou:', e));
+  });
+  return grupo;
+}
 function atualizarNivel() {
   const perto = mapa.getZoom() >= ZOOM_LOTES;
   const liga = (l, on) => { if (on && !mapa.hasLayer(l)) l.addTo(mapa); if (!on && mapa.hasLayer(l)) mapa.removeLayer(l); };
