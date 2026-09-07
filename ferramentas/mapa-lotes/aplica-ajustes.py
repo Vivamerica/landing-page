@@ -48,7 +48,7 @@ for _f in sorted(glob.glob(S + '/ajuste/ajustes-aplicado-*.json')): _apl.update(
 for _k in list(aj):
     _p, _v = _apl.get(_k), aj[_k]
     if _p and _v.get('cantos') and all(abs(_p['cantos'][q][i] - _v['cantos'][q][i]) < 1e-8 for q in CANTOS for i in (0, 1)):
-        print('!! %s: cantos iguais a um ajuste ja' aplicado — e' re-gravacao antiga, pulei' % _k); del aj[_k]
+        print("!! %s: cantos iguais a um ajuste ja aplicado (regravacao de aba sem F5), pulei" % _k); del aj[_k]
 if not aj: print('nada ajustado'); sys.exit()
 html = open(R + 'index.html', encoding='utf-8', newline='').read(); assert '\r' not in html
 saida_img = (TESTE.rstrip('/\\') + '/') if TESTE else R + 'images/'
