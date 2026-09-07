@@ -246,7 +246,7 @@ ${artigos.map(cardHtml).join('\n')}
       <a href="/blog/">Blog</a>
     </div>
     <p>© 2026 Imobiliária Viv'América · Lançamentos imobiliários em Indaiatuba SP</p>
-  <p class="nap">Imobiliária Viv'América · CRECI 047394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
+  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
   </footer>
 
   <script>
