@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+<script src="/atrib.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imprensa e dados — Observatório de Preços de Indaiatuba</title>
+  <meta name="description" content="Dados abertos do Observatório de Preços de Lançamentos em Indaiatuba: CSV, JSON, três gráficos e release da edição setembro/2026, sob licença CC BY 4.0.">
+  <meta name="keywords" content="observatório de preços indaiatuba, dados abertos lançamentos indaiatuba, preço do m² de lote indaiatuba, imprensa imobiliária indaiatuba, cc by 4.0, imobiliária viv'américa">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Imprensa e dados — Observatório de Preços de Indaiatuba">
+  <meta property="og:description" content="Dados abertos do Observatório de Preços de Lançamentos em Indaiatuba: CSV, JSON, três gráficos e release da edição setembro/2026, sob licença CC BY 4.0.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg">
+  <meta property="og:url" content="https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Imobiliária Viv'América">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg">
+  <meta name="twitter:title" content="Imprensa e dados — Observatório de Preços de Indaiatuba">
+  <meta name="twitter:description" content="Dados abertos do Observatório de Preços de Lançamentos em Indaiatuba: CSV, JSON, três gráficos e release da edição setembro/2026, sob licença CC BY 4.0.">
+  <link rel="canonical" href="https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://lancamentos.imoveisvivamerica.com.br/"},{"@type":"ListItem","position":2,"name":"Imprensa e dados","item":"https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/"}]}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Observatório de Preços de Lançamentos em Indaiatuba — edição setembro/2026",
+    "alternateName": "Dados de lançamentos imobiliários em Indaiatuba/SP, setembro de 2026",
+    "description": "Um registro por empreendimento (24 lançamentos imobiliários de Indaiatuba/SP: 16 apartamentos e 8 loteamentos e condomínios fechados de lotes) com incorporadora, preço \"a partir de\" e mês da tabela de origem, conforme as tabelas oficiais das incorporadoras. Edição de setembro/2026 do Observatório de Preços de Lançamentos em Indaiatuba, publicado mensalmente pela Imobiliária Viv'América.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/",
+    "isBasedOn": "https://lancamentos.imoveisvivamerica.com.br/precos-lancamentos-indaiatuba/",
+    "license": "https://creativecommons.org/licenses/by/4.0/deed.pt-br",
+    "isAccessibleForFree": true,
+    "inLanguage": "pt-BR",
+    "keywords": ["lançamentos imobiliários", "Indaiatuba", "preço por m²", "loteamentos", "apartamentos na planta", "dados abertos"],
+    "temporalCoverage": "2026-07/2026-09",
+    "datePublished": "2026-09-07",
+    "dateModified": "2026-09-07",
+    "spatialCoverage": {"@type": "Place", "name": "Indaiatuba, São Paulo, Brasil"},
+    "creator": {
+      "@type": ["Organization", "RealEstateAgent"],
+      "name": "Imobiliária Viv'América",
+      "legalName": "Imobiliária Viva América Ltda - ME",
+      "alternateName": "Imóveis Viva América",
+      "url": "https://lancamentos.imoveisvivamerica.com.br/",
+      "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
+      "telephone": "+5519989769457",
+      "email": "financeiro@imoveisvivamerica.com.br",
+      "taxID": "57.213.317/0001-23",
+      "identifier": {"@type": "PropertyValue", "propertyID": "CRECI", "value": "47394-J"},
+      "address": {"@type": "PostalAddress", "streetAddress": "Av. Higienópolis, 70 - Jardim União", "addressLocality": "Indaiatuba", "addressRegion": "SP", "postalCode": "13348-671", "addressCountry": "BR"}
+    },
+    "variableMeasured": [
+      {"@type": "PropertyValue", "name": "nome", "description": "Nome do empreendimento"},
+      {"@type": "PropertyValue", "name": "tipo", "description": "apartamento ou lote"},
+      {"@type": "PropertyValue", "name": "incorporadora", "description": "Incorporadora ou loteadora responsável"},
+      {"@type": "PropertyValue", "name": "preco_a_partir_de", "description": "Menor preço da tabela oficial, em reais (vazio quando a tabela não foi liberada)", "unitText": "BRL"},
+      {"@type": "PropertyValue", "name": "mes_tabela", "description": "Mês da tabela de origem, no formato AAAA-MM"},
+      {"@type": "PropertyValue", "name": "spec", "description": "Resumo das características informadas na tabela"},
+      {"@type": "PropertyValue", "name": "url", "description": "Página do empreendimento neste site"},
+      {"@type": "PropertyValue", "name": "fonte", "description": "Origem do valor e mês/ano"}
+    ],
+    "distribution": [
+      {"@type": "DataDownload", "name": "CSV (UTF-8, separador ponto e vírgula)", "encodingFormat": "text/csv", "contentUrl": "https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/dados-lancamentos-indaiatuba-2026-09.csv"},
+      {"@type": "DataDownload", "name": "JSON", "encodingFormat": "application/json", "contentUrl": "https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/dados-lancamentos-indaiatuba-2026-09.json"}
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --verde: #C9A227;
+      --verde-escuro: #161616;
+      --dourado: #C9A227;
+      --cinza-bg: #f5f5f5;
+      --creme: #F7F5F0;
+      --texto: #161616;
+      --texto-claro: #555;
+      --radius: 12px;
+    }
+    body { font-family: 'Josefin Sans', system-ui, sans-serif; color: var(--texto); background: #fff; line-height: 1.7; }
+    header {
+      background: var(--verde-escuro); padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px; position: sticky; top: 0; z-index: 100;
+    }
+    .logo-text { color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 700; text-decoration: none; }
+    nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+    nav a:hover { color: var(--dourado); }
+    .hero {
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d4a5e 100%);
+      color: #fff; text-align: center;
+      padding: clamp(50px, 8vw, 90px) 5% clamp(40px, 6vw, 70px);
+    }
+    .breadcrumb { font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem; }
+    .breadcrumb a { color: #fff; text-decoration: none; }
+    .hero h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; max-width: 750px; margin: 0 auto 1rem; line-height: 1.2; }
+    .hero p { font-size: clamp(0.95rem, 2vw, 1.1rem); max-width: 580px; margin: 0 auto; opacity: 0.9; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 5%; }
+    .content-section { padding: clamp(40px, 6vw, 70px) 0; }
+    h2 { font-size: clamp(1.3rem, 2.8vw, 1.8rem); font-weight: 800; color: var(--verde-escuro); margin: 2rem 0 1rem; }
+    h3 { font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 700; color: var(--verde); margin: 1.5rem 0 0.5rem; }
+    p { margin-bottom: 1rem; color: var(--texto-claro); font-size: 1rem; }
+    strong { color: var(--texto); }
+    a { color: var(--verde-escuro); }
+    ul, ol { margin: 0.5rem 0 1rem 1.5rem; color: var(--texto-claro); }
+    li { margin-bottom: 0.4rem; }
+    .highlight-box {
+      background: #fdf6e3; border-left: 4px solid var(--verde);
+      padding: 1.2rem 1.5rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.5rem 0;
+    }
+    .highlight-box p { margin: 0; color: var(--texto); }
+    .vantagem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+    .vantagem-card { background: var(--cinza-bg); border-radius: var(--radius); padding: 1.4rem; }
+    .vantagem-card h4 { font-size: 0.78rem; font-weight: 700; color: var(--verde); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .vantagem-card p { font-size: 0.95rem; margin: 0; color: var(--texto); }
+    .vantagem-card a { color: var(--verde-escuro); font-weight: 600; }
+    .btn-card { display: block; background: var(--verde-escuro); color: #fff; text-align: center; padding: 0.6rem; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; }
+    .btn-card:hover { background: #0d1c28; }
+    .cta-section { background: linear-gradient(135deg, var(--verde-escuro), #2d4a5e); color: #fff; text-align: center; padding: clamp(50px, 8vw, 80px) 5%; }
+    .cta-section h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 800; margin-bottom: 1rem; color: #fff; }
+    .cta-section p { font-size: 1rem; opacity: 0.9; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; color: #fff; }
+    .btn-wpp { display: inline-flex; align-items: center; gap: 0.6rem; background: #25d366; color: #fff; font-weight: 700; padding: 1rem 2.4rem; border-radius: 50px; text-decoration: none; font-size: 1rem; transition: transform 0.2s; }
+    .btn-wpp:hover { transform: translateY(-2px); }
+    footer { background: var(--verde-escuro); color: rgba(255,255,255,0.75); text-align: center; padding: 2.5rem 5%; font-size: 0.85rem; }
+    footer a { color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 0.6rem; }
+    footer a:hover { color: var(--dourado); }
+    .footer-links { margin-bottom: 1rem; }
+    @media (max-width: 600px) { nav { display: none; } }
+
+    /* ─── específicos desta página ─── */
+    .dl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.2rem 0 1.6rem; }
+    .dl-card { background: var(--cinza-bg); border-radius: var(--radius); padding: 1.3rem 1.4rem; display: flex; flex-direction: column; gap: .4rem; }
+    .dl-card h4 { font-size: 0.78rem; font-weight: 700; color: var(--verde); letter-spacing: .1em; text-transform: uppercase; }
+    .dl-card p { font-size: .92rem; margin: 0 0 .6rem; color: var(--texto); flex: 1; }
+    .dl-card small { font-size: .78rem; color: var(--texto-claro); }
+    .atrib { background: var(--verde-escuro); color: var(--creme); border-radius: var(--radius); padding: 1.2rem 1.4rem; margin: 1rem 0 1.4rem; }
+    .atrib pre { white-space: pre-wrap; word-break: break-word; font-family: inherit; font-size: .98rem; line-height: 1.6; margin: 0 0 .9rem; color: var(--creme); }
+    .btn-copiar { background: var(--dourado); color: var(--verde-escuro); border: 0; font: inherit; font-weight: 600; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; padding: .6rem 1.1rem; border-radius: 4px; cursor: pointer; }
+    .btn-copiar:hover { background: #E0C05A; }
+    .tabela-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; background: #fff; font-size: .9rem; }
+    th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid #eee9db; vertical-align: top; }
+    th { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: #8a8272; border-bottom: 2px solid var(--verde-escuro); }
+    th.num, td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    td code { font-family: ui-monospace, Consolas, monospace; font-size: .85em; background: var(--creme); padding: .1rem .35rem; border-radius: 3px; }
+    .dic { margin: .6rem 0 1.4rem; }
+    figure.grafico { background: var(--creme); border: 1px solid #e3ddcd; border-radius: var(--radius); padding: 1.3rem 1.4rem 1.1rem; margin: 1.4rem 0; }
+    figure.grafico h3 { margin: 0 0 .15rem; color: var(--texto); font-size: 1.08rem; }
+    figure.grafico .sub { font-size: .85rem; color: var(--texto-claro); margin: 0 0 .8rem; }
+    .grafico-wrap { overflow-x: auto; }
+    .grafico-wrap svg { display: block; width: 100%; min-width: 560px; height: auto; }
+    figure.grafico p.leitura { margin: .9rem 0 0; color: var(--texto); font-size: .95rem; }
+    details.tabela-twin { margin-top: .8rem; }
+    details.tabela-twin summary { cursor: pointer; font-size: .82rem; font-weight: 600; color: var(--texto-claro); letter-spacing: .05em; text-transform: uppercase; }
+    details.tabela-twin table { margin-top: .6rem; font-size: .86rem; }
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin: 1.2rem 0 1.4rem; }
+    .tile { background: #fff; border: 1px solid #e3ddcd; border-radius: var(--radius); padding: 1.1rem 1.2rem; box-shadow: 0 6px 18px rgba(15,28,41,.06); }
+    .tile b { display: block; font-size: 1.55rem; font-weight: 700; color: var(--texto); line-height: 1.2; }
+    .tile span { display: block; font-size: .82rem; color: var(--texto); margin-top: .2rem; }
+    .tile small { display: block; font-size: .74rem; color: #8a8272; margin-top: .35rem; }
+  </style>
+  <style id="marca">
+    /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
+    body, button, input, select, textarea { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.2em;
+                 text-transform:uppercase; }
+    h1 { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.08em;
+         text-transform:uppercase; line-height:1.25; }
+    h2, h3 { font-weight:600; }
+    /* width/height nas <img> reservam espaço; quando o CSS só fixa a largura, a altura do
+       atributo esticava o logo (Andorinha/Colibri/Tangará, 04/09/2026) */
+    :where(img[width][height]) { height:auto; }   /* :where = especificidade zero: qualquer CSS da página vence (o .logo{height:90px} do Terras perdia) */
+    @media (max-width:760px) { body:has(.wa-float, .float-wpp, .whats-flutuante) footer { padding-bottom: 6.5rem; } }   /* 07/09: o botão flutuante do WhatsApp cobria a linha NAP do rodapé no celular */
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
+    .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
+    .nav-cta { border:1px solid #C9A227; color:#C9A227 !important; padding:.45rem .9rem; border-radius:4px; }
+    .nav-cta:hover { background:#C9A227; color:#161616 !important; }
+    .cta-topo { display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; justify-content:space-between;
+                background:#161616; padding:1rem 1.2rem; margin:1.4rem 0 1.8rem; border-radius:4px; }
+    .cta-topo p { color:#fff; margin:0; font-weight:300; font-size:.95rem; }
+    .cta-topo a { background:#C9A227; color:#161616; font-weight:600; padding:.7rem 1.3rem; text-decoration:none;
+                  letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; border-radius:4px; white-space:nowrap; }
+    .cta-topo a:hover { background:#E0C05A; }
+    .malha { background:#161616; padding:2.2rem 5%; }
+    .malha-in { max-width:1160px; margin:0 auto; }
+    .malha-titulo { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.18em;
+                    text-transform:uppercase; color:#C9A227; font-size:.95rem; margin:0 0 1rem; }
+    /* flex-wrap: os links saem do gerador colados (sem espaço entre <a>) e com
+       nowrap; como inline puro viravam UMA linha de 1.700px e o celular
+       encolhia a página inteira (02/09/2026). Cada link é um item flex. */
+    .malha-grupo { display:flex; flex-wrap:wrap; align-items:baseline; gap:.15rem .9rem;
+                   margin:0 0 .7rem; line-height:1.8; max-width:100%; }
+    .malha-rotulo { color:#C9A227; font-size:.68rem; font-weight:600; letter-spacing:.16em;
+                    text-transform:uppercase; }
+    .malha a { color:rgba(255,255,255,.78); text-decoration:none; font-size:.82rem;
+               font-weight:300; white-space:nowrap; }
+    .malha a:hover { color:#C9A227; }
+  </style>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-40C0379NPR');
+    // Rastrear cliques no WhatsApp como conversão
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('a[href*="wa.me"]');
+      if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
+    });
+  </script>
+</head>
+<body>
+
+<header>
+  <a class="logo-text" href="/">Imobiliária Viv'América</a>
+  <nav>
+    <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
+    <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
+    <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
+    <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="breadcrumb">
+    <a href="/">Início</a> › Imprensa e dados
+  </div>
+  <h1>Imprensa e dados</h1>
+  <p>Os números do Observatório de Preços de Lançamentos em Indaiatuba, abertos para jornalistas, pesquisadores e quem quiser conferir: planilha, JSON, gráficos e release da edição de setembro/2026.</p>
+</section>
+
+<div class="container">
+  <div class="content-section">
+
+    <h2>O que é o Observatório</h2>
+    <p>O <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços de Lançamentos em Indaiatuba</a> é uma tabela <strong>mensal</strong>, aberta e sem cadastro, com o preço "a partir de" dos lançamentos imobiliários que a Imobiliária Viv'América representa na cidade — apartamentos, loteamentos e condomínios fechados de lotes. A edição de setembro/2026 acompanha <strong>24 empreendimentos</strong> de 9 incorporadoras e loteadoras.</p>
+    <p>Os valores vêm das <strong>tabelas oficiais das incorporadoras</strong>, sempre com o mês da tabela registrado ao lado do preço. Cada edição mostra também o que mudou entre as duas últimas tabelas de cada empreendimento e o estoque nos empreendimentos que têm relatório oficial de unidades.</p>
+    <div class="highlight-box">
+      <p><strong>O que o Observatório não faz:</strong> não projeta preço, não promete valorização nem retorno e não avalia imóveis. Publica o preço da tabela, a metragem e o mês; a comparação é de quem lê.</p>
+    </div>
+
+    <h2>Licença</h2>
+    <p>Os dados e os gráficos desta página estão sob a licença <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" rel="license">Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)</a>. Você pode copiar, publicar, adaptar e redistribuir, inclusive para uso comercial, desde que cite a fonte. Texto de atribuição pronto para copiar:</p>
+    <div class="atrib">
+      <pre id="atrib-texto">Fonte: Observatório de Preços de Lançamentos em Indaiatuba — Imobiliária Viv'América (CRECI 47394-J), edição setembro/2026, https://lancamentos.imoveisvivamerica.com.br/precos-lancamentos-indaiatuba/</pre>
+      <button type="button" class="btn-copiar" data-copiar="atrib-texto">Copiar atribuição</button>
+    </div>
+    <p>Em texto corrido basta o crédito "Observatório de Preços de Lançamentos em Indaiatuba / Imobiliária Viv'América" com link para o Observatório. As fotos e perspectivas dos empreendimentos pertencem às incorporadoras e não estão cobertas por esta licença.</p>
+
+    <h2>Baixar os dados</h2>
+    <p>Um registro por empreendimento (24 linhas), com incorporadora, preço "a partir de", mês da tabela de origem e o link da página de cada um. Edição setembro/2026, arquivos gerados em 07/09/2026.</p>
+    <div class="dl-grid">
+      <div class="dl-card">
+        <h4>CSV</h4>
+        <p>UTF-8, separador ponto e vírgula (;), sem BOM. Compatível com Excel, Google Planilhas e LibreOffice.</p>
+        <a class="btn-card" href="dados-lancamentos-indaiatuba-2026-09.csv" download>Baixar CSV</a>
+      </div>
+      <div class="dl-card">
+        <h4>JSON</h4>
+        <p>Lista de objetos com as mesmas colunas do CSV; o preço vem como número (<code>null</code> quando a incorporadora ainda não liberou a tabela).</p>
+        <a class="btn-card" href="dados-lancamentos-indaiatuba-2026-09.json" download>Baixar JSON</a>
+      </div>
+    </div>
+    <h3>Dicionário de dados</h3>
+    <div class="tabela-wrap">
+      <table class="dic">
+        <thead><tr><th>Coluna</th><th>Conteúdo</th></tr></thead>
+        <tbody>
+          <tr><td><code>nome</code></td><td>Nome do empreendimento.</td></tr>
+          <tr><td><code>tipo</code></td><td><code>apartamento</code> ou <code>lote</code> (loteamento aberto ou condomínio fechado de lotes).</td></tr>
+          <tr><td><code>incorporadora</code></td><td>Incorporadora ou loteadora responsável; parcerias separadas por " · ".</td></tr>
+          <tr><td><code>preco_a_partir_de</code></td><td>Menor preço da tabela oficial, em reais, sem separador de milhar. Vazio (CSV) ou <code>null</code> (JSON) quando a tabela ainda não foi liberada.</td></tr>
+          <tr><td><code>mes_tabela</code></td><td>Mês da tabela de origem, no formato <code>AAAA-MM</code>. É o da edição (2026-09) quando a incorporadora não cita outro.</td></tr>
+          <tr><td><code>spec</code></td><td>Resumo das características informadas: metragem, dormitórios, estoque conferido (com mês), previsão de entrega informada pela incorporadora.</td></tr>
+          <tr><td><code>url</code></td><td>Página do empreendimento neste site.</td></tr>
+          <tr><td><code>fonte</code></td><td>Origem do valor e mês/ano, por exemplo "tabela da incorporadora, setembro/2026".</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Gráficos da edição setembro/2026</h2>
+    <p>Três leituras dos mesmos dados, em SVG. Podem ser copiadas e reproduzidas com a atribuição acima; cada gráfico tem a tabela correspondente logo abaixo.</p>
+
+    <figure class="grafico" id="grafico-m2-lote">
+      <h3>Preço do m² de lote por loteamento — setembro/2026</h3>
+      <p class="sub">Preço "a partir de" dividido pela metragem do menor lote disponível, em R$/m². Os 8 loteamentos e condomínios fechados do Observatório.</p>
+      <div class="grafico-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 336" role="img" aria-labelledby="g-lotes-t g-lotes-d" font-family="'Josefin Sans', system-ui, sans-serif">
+  <title id="g-lotes-t">Preço do m² de lote por loteamento em Indaiatuba, setembro/2026</title>
+  <desc id="g-lotes-d">Barras horizontais, do maior para o menor: Residencial Vila Fahl R$ 1.825/m²; Alpnach Residence R$ 1.700/m²; Residencial Ravello R$ 1.700/m²; Terras de San Marino R$ 1.650/m²; Reserva Botânica R$ 1.566/m²; Jardim Di Italia R$ 1.400/m²; Parque Zarah R$ 1.150/m²; Residencial Monte Carmelo R$ 967/m². Média R$ 1.495/m².</desc>
+  <rect x="0" y="0" width="700" height="336" fill="#F7F5F0"/>
+  <text x="200" y="324" text-anchor="middle" font-size="12" fill="#6b6559">0</text>
+  <line x1="292.5" y1="14" x2="292.5" y2="302" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="292.5" y="324" text-anchor="middle" font-size="12" fill="#6b6559">R$ 500</text>
+  <line x1="385" y1="14" x2="385" y2="302" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="385" y="324" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1.000</text>
+  <line x1="477.5" y1="14" x2="477.5" y2="302" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="477.5" y="324" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1.500</text>
+  <line x1="570" y1="14" x2="570" y2="302" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="570" y="324" text-anchor="middle" font-size="12" fill="#6b6559">R$ 2.000</text>
+  <line x1="200" y1="14" x2="200" y2="302" stroke="#161616" stroke-width="1"/>
+  <g>
+    <title>Residencial Vila Fahl (Vila Fahl · iBen) · lote a partir de 150 m² · R$ 273.750 · R$ 1.825/m²</title>
+    <rect x="0" y="14" width="700" height="36" fill="transparent"/>
+    <path d="M200,22 h333.6 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-333.6 z" fill="#C9A227"/>
+    <text x="190" y="32" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Residencial Vila Fahl</text>
+    <text x="545.6" y="32" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.825/m²</text>
+  </g>
+  <g>
+    <title>Alpnach Residence (Dominium) · lote a partir de 300 m² · R$ 510.000 · R$ 1.700/m²</title>
+    <rect x="0" y="50" width="700" height="36" fill="transparent"/>
+    <path d="M200,58 h310.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-310.5 z" fill="#C9A227"/>
+    <text x="190" y="68" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Alpnach Residence</text>
+    <text x="522.5" y="68" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.700/m²</text>
+  </g>
+  <g>
+    <title>Residencial Ravello (Dominium) · lote a partir de 420 m² · R$ 714.000 · R$ 1.700/m²</title>
+    <rect x="0" y="86" width="700" height="36" fill="transparent"/>
+    <path d="M200,94 h310.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-310.5 z" fill="#C9A227"/>
+    <text x="190" y="104" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Residencial Ravello</text>
+    <text x="522.5" y="104" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.700/m²</text>
+  </g>
+  <g>
+    <title>Terras de San Marino (Armigh · Best Business) · lote a partir de 150 m² · R$ 247.500 · R$ 1.650/m²</title>
+    <rect x="0" y="122" width="700" height="36" fill="transparent"/>
+    <path d="M200,130 h301.3 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-301.3 z" fill="#C9A227"/>
+    <text x="190" y="140" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Terras de San Marino</text>
+    <text x="513.3" y="140" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.650/m²</text>
+  </g>
+  <g>
+    <title>Reserva Botânica (Zarin) · lote a partir de 340 m² · R$ 532.563 · R$ 1.566/m²</title>
+    <rect x="0" y="158" width="700" height="36" fill="transparent"/>
+    <path d="M200,166 h285.7 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-285.7 z" fill="#C9A227"/>
+    <text x="190" y="176" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Reserva Botânica</text>
+    <text x="497.7" y="176" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.566/m²</text>
+  </g>
+  <g>
+    <title>Jardim Di Italia (Dominium) · lote a partir de 150 m² · R$ 210.000 · R$ 1.400/m²</title>
+    <rect x="0" y="194" width="700" height="36" fill="transparent"/>
+    <path d="M200,202 h255.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-255.0 z" fill="#C9A227"/>
+    <text x="190" y="212" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Jardim Di Italia</text>
+    <text x="467" y="212" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.400/m²</text>
+  </g>
+  <g>
+    <title>Parque Zarah (Zarin) · lote a partir de 150 m² · R$ 172.500 · R$ 1.150/m²</title>
+    <rect x="0" y="230" width="700" height="36" fill="transparent"/>
+    <path d="M200,238 h208.8 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-208.8 z" fill="#C9A227"/>
+    <text x="190" y="248" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Parque Zarah</text>
+    <text x="420.8" y="248" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.150/m²</text>
+  </g>
+  <g>
+    <title>Residencial Monte Carmelo (Dominium) · lote a partir de 150 m² · R$ 145.000 · R$ 967/m²</title>
+    <rect x="0" y="266" width="700" height="36" fill="transparent"/>
+    <path d="M200,274 h174.9 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-174.9 z" fill="#C9A227"/>
+    <text x="190" y="284" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Residencial Monte Carmelo</text>
+    <text x="386.9" y="284" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 967/m²</text>
+  </g>
+</svg></div>
+      <p class="leitura">Em setembro/2026 o m² de lote em Indaiatuba vai de R$ 967 (Residencial Monte Carmelo) a R$ 1.825 (Residencial Vila Fahl); a média dos 8 loteamentos é R$ 1.495/m², e três deles (Alpnach Residence, Residencial Ravello e Terras de San Marino) ficam entre R$ 1.650 e R$ 1.700.</p>
+      <details class="tabela-twin"><summary>Ver como tabela</summary><div class="tabela-wrap"><table>
+<thead><tr><th>Loteamento</th><th>Loteadora</th><th class="num">Menor lote</th><th class="num">A partir de</th><th class="num">R$/m²</th></tr></thead>
+<tbody>
+<tr><td><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a></td><td>Vila Fahl · iBen</td><td class="num">150 m²</td><td class="num">R$ 273.750</td><td class="num">R$ 1.825</td></tr>
+<tr><td><a href="/alpnach-indaiatuba/">Alpnach Residence</a></td><td>Dominium</td><td class="num">300 m²</td><td class="num">R$ 510.000</td><td class="num">R$ 1.700</td></tr>
+<tr><td><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a></td><td>Dominium</td><td class="num">420 m²</td><td class="num">R$ 714.000</td><td class="num">R$ 1.700</td></tr>
+<tr><td><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a></td><td>Armigh · Best Business</td><td class="num">150 m²</td><td class="num">R$ 247.500</td><td class="num">R$ 1.650</td></tr>
+<tr><td><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a></td><td>Zarin</td><td class="num">340 m²</td><td class="num">R$ 532.563</td><td class="num">R$ 1.566</td></tr>
+<tr><td><a href="/di-italia-indaiatuba/">Jardim Di Italia</a></td><td>Dominium</td><td class="num">150 m²</td><td class="num">R$ 210.000</td><td class="num">R$ 1.400</td></tr>
+<tr><td><a href="/parque-zarah-indaiatuba/">Parque Zarah</a></td><td>Zarin</td><td class="num">150 m²</td><td class="num">R$ 172.500</td><td class="num">R$ 1.150</td></tr>
+<tr><td><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a></td><td>Dominium</td><td class="num">150 m²</td><td class="num">R$ 145.000</td><td class="num">R$ 967</td></tr>
+<tr><td colspan="4"><strong>Média dos 8 loteamentos</strong></td><td class="num"><strong>R$ 1.495</strong></td></tr>
+</tbody></table></div></details>
+    </figure>
+
+    <figure class="grafico" id="grafico-faixas-apartamentos">
+      <h3>Apartamentos por faixa de preço "a partir de" — setembro/2026</h3>
+      <p class="sub">Quantos empreendimentos têm o menor preço da tabela em cada faixa. Dos 16 apartamentos monitorados, 15 têm tabela publicada.</p>
+      <div class="grafico-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" role="img" aria-labelledby="g-faixas-t g-faixas-d" font-family="'Josefin Sans', system-ui, sans-serif">
+  <title id="g-faixas-t">Apartamentos em lançamento por faixa de preço de entrada, setembro/2026</title>
+  <desc id="g-faixas-d">Contagem de empreendimentos por faixa do preço &quot;a partir de&quot;: até R$ 300 mil = 1; R$ 300 mil a R$ 600 mil = 10; acima de R$ 600 mil = 4. 1 sem tabela.</desc>
+  <rect x="0" y="0" width="700" height="180" fill="#F7F5F0"/>
+  <text x="200" y="168" text-anchor="middle" font-size="12" fill="#6b6559">0</text>
+  <line x1="266" y1="14" x2="266" y2="146" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="266" y="168" text-anchor="middle" font-size="12" fill="#6b6559">2</text>
+  <line x1="332" y1="14" x2="332" y2="146" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="332" y="168" text-anchor="middle" font-size="12" fill="#6b6559">4</text>
+  <line x1="398" y1="14" x2="398" y2="146" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="398" y="168" text-anchor="middle" font-size="12" fill="#6b6559">6</text>
+  <line x1="464" y1="14" x2="464" y2="146" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="464" y="168" text-anchor="middle" font-size="12" fill="#6b6559">8</text>
+  <line x1="530" y1="14" x2="530" y2="146" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="530" y="168" text-anchor="middle" font-size="12" fill="#6b6559">10</text>
+  <line x1="200" y1="14" x2="200" y2="146" stroke="#161616" stroke-width="1"/>
+  <g>
+    <title>até R$ 300 mil: Uni Residencial</title>
+    <rect x="0" y="14" width="700" height="44" fill="transparent"/>
+    <path d="M200,26 h29.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-29.0 z" fill="#C9A227"/>
+    <text x="190" y="36" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">até R$ 300 mil</text>
+    <text x="241" y="36" dy="0.35em" font-size="13" font-weight="600" fill="#161616">1 empreendimento</text>
+  </g>
+  <g>
+    <title>R$ 300 mil a R$ 600 mil: Viva Parque Aura, Gran Vic Tangará, Gran Vic Colibri, Itamaracá Residencial, Gran Vic Canário, Vívere Residencial, Gran Vic Andorinha, Viva Parque Sense, Spazio Italia, Manai Bosque</title>
+    <rect x="0" y="58" width="700" height="44" fill="transparent"/>
+    <path d="M200,70 h326.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-326.0 z" fill="#C9A227"/>
+    <text x="190" y="80" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">R$ 300 mil a R$ 600 mil</text>
+    <text x="538" y="80" dy="0.35em" font-size="13" font-weight="600" fill="#161616">10 empreendimentos</text>
+  </g>
+  <g>
+    <title>acima de R$ 600 mil: Aurora — Park Meraki, Storia Congesa, Areté Home, Hélade — Park Meraki</title>
+    <rect x="0" y="102" width="700" height="44" fill="transparent"/>
+    <path d="M200,114 h128.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-128.0 z" fill="#C9A227"/>
+    <text x="190" y="124" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">acima de R$ 600 mil</text>
+    <text x="340" y="124" dy="0.35em" font-size="13" font-weight="600" fill="#161616">4 empreendimentos</text>
+  </g>
+</svg></div>
+      <p class="leitura">Dos 15 apartamentos com tabela publicada em setembro/2026, 10 têm preço de entrada entre R$ 300 mil e R$ 600 mil; só o Uni Residencial (R$ 279.990) fica abaixo de R$ 300 mil, 4 começam acima de R$ 600 mil e o Congesa Seasons segue sob consulta.</p>
+      <details class="tabela-twin"><summary>Ver como tabela</summary><div class="tabela-wrap"><table>
+<thead><tr><th>Faixa do preço de entrada</th><th class="num">Empreendimentos</th><th>Quais</th></tr></thead>
+<tbody>
+<tr><td>até R$ 300 mil</td><td class="num">1</td><td><a href="/uni-residencial-indaiatuba/">Uni Residencial</a> (R$ 279.990)</td></tr>
+<tr><td>R$ 300 mil a R$ 600 mil</td><td class="num">10</td><td><a href="/viva-parque-aura-indaiatuba/">Viva Parque Aura</a> (R$ 300.854), <a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a> (R$ 330.000), <a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a> (R$ 334.479), <a href="/itamaraca-indaiatuba/">Itamaracá Residencial</a> (R$ 339.990), <a href="/gran-vic-canario-indaiatuba/">Gran Vic Canário</a> (R$ 352.135), <a href="/vivere-indaiatuba/">Vívere Residencial</a> (R$ 352.552), <a href="/gran-vic-andorinha-indaiatuba/">Gran Vic Andorinha</a> (R$ 372.119), <a href="/viva-parque-sense-indaiatuba/">Viva Parque Sense</a> (R$ 404.886), <a href="/spazio-italia-indaiatuba/">Spazio Italia</a> (R$ 448.820), <a href="/manai-bosque-indaiatuba/">Manai Bosque</a> (R$ 505.941)</td></tr>
+<tr><td>acima de R$ 600 mil</td><td class="num">4</td><td><a href="/aurora-indaiatuba/">Aurora — Park Meraki</a> (R$ 758.850), <a href="/storia-congesa-indaiatuba/">Storia Congesa</a> (R$ 981.000), <a href="/arete-home-indaiatuba/">Areté Home</a> (R$ 991.005), <a href="/helade-indaiatuba/">Hélade — Park Meraki</a> (R$ 1.391.504)</td></tr>
+<tr><td>sem tabela publicada</td><td class="num">1</td><td><a href="/seasons-indaiatuba/">Congesa Seasons</a> (sob consulta)</td></tr>
+</tbody></table></div></details>
+    </figure>
+
+    <figure class="grafico" id="grafico-menor-preco-incorporadora">
+      <h3>Menor preço de entrada por incorporadora — setembro/2026</h3>
+      <p class="sub">O menor preço "a partir de" entre todos os empreendimentos de cada incorporadora ou loteadora, apartamentos e lotes juntos. A etiqueta ao lado do valor diz se é lote ou apartamento.</p>
+      <div class="grafico-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 372" role="img" aria-labelledby="g-incorp-t g-incorp-d" font-family="'Josefin Sans', system-ui, sans-serif">
+  <title id="g-incorp-t">Menor preço de entrada por incorporadora em Indaiatuba, setembro/2026</title>
+  <desc id="g-incorp-d">Barras horizontais, da menor para a maior entrada: Dominium R$ 145.000 (Residencial Monte Carmelo); Zarin R$ 172.500 (Parque Zarah); Armigh · Best Business R$ 247.500 (Terras de San Marino); Vila Fahl · iBen R$ 273.750 (Residencial Vila Fahl); Masotti R$ 279.990 (Uni Residencial); Pinheiro · RDZ · iBen R$ 300.854 (Viva Parque Aura); VIC Engenharia R$ 330.000 (Gran Vic Tangará); Congesa R$ 981.000 (Storia Congesa); PERPLAN R$ 991.005 (Areté Home).</desc>
+  <rect x="0" y="0" width="700" height="372" fill="#F7F5F0"/>
+  <text x="200" y="360" text-anchor="middle" font-size="12" fill="#6b6559">0</text>
+  <line x1="323.3" y1="14" x2="323.3" y2="338" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="323.3" y="360" text-anchor="middle" font-size="12" fill="#6b6559">R$ 500 mil</text>
+  <line x1="446.7" y1="14" x2="446.7" y2="338" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="446.7" y="360" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1,0 mi</text>
+  <line x1="570" y1="14" x2="570" y2="338" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="570" y="360" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1,5 mi</text>
+  <line x1="200" y1="14" x2="200" y2="338" stroke="#161616" stroke-width="1"/>
+  <g>
+    <title>Dominium: R$ 145.000 — Residencial Monte Carmelo (lote)</title>
+    <rect x="0" y="14" width="700" height="36" fill="transparent"/>
+    <path d="M200,22 h31.8 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-31.8 z" fill="#C9A227"/>
+    <text x="190" y="32" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Dominium</text>
+    <text x="243.8" y="32" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 145.000<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
+  </g>
+  <g>
+    <title>Zarin: R$ 172.500 — Parque Zarah (lote)</title>
+    <rect x="0" y="50" width="700" height="36" fill="transparent"/>
+    <path d="M200,58 h38.6 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-38.6 z" fill="#C9A227"/>
+    <text x="190" y="68" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Zarin</text>
+    <text x="250.6" y="68" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 172.500<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
+  </g>
+  <g>
+    <title>Armigh · Best Business: R$ 247.500 — Terras de San Marino (lote)</title>
+    <rect x="0" y="86" width="700" height="36" fill="transparent"/>
+    <path d="M200,94 h57.1 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-57.1 z" fill="#C9A227"/>
+    <text x="190" y="104" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Armigh · Best Business</text>
+    <text x="269.1" y="104" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 247.500<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
+  </g>
+  <g>
+    <title>Vila Fahl · iBen: R$ 273.750 — Residencial Vila Fahl (lote)</title>
+    <rect x="0" y="122" width="700" height="36" fill="transparent"/>
+    <path d="M200,130 h63.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-63.5 z" fill="#C9A227"/>
+    <text x="190" y="140" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Vila Fahl · iBen</text>
+    <text x="275.5" y="140" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 273.750<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
+  </g>
+  <g>
+    <title>Masotti: R$ 279.990 — Uni Residencial (apartamento)</title>
+    <rect x="0" y="158" width="700" height="36" fill="transparent"/>
+    <path d="M200,166 h65.1 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-65.1 z" fill="#C9A227"/>
+    <text x="190" y="176" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Masotti</text>
+    <text x="277.1" y="176" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 279.990<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+  </g>
+  <g>
+    <title>Pinheiro · RDZ · iBen: R$ 300.854 — Viva Parque Aura (apartamento)</title>
+    <rect x="0" y="194" width="700" height="36" fill="transparent"/>
+    <path d="M200,202 h70.2 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-70.2 z" fill="#C9A227"/>
+    <text x="190" y="212" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Pinheiro · RDZ · iBen</text>
+    <text x="282.2" y="212" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 300.854<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+  </g>
+  <g>
+    <title>VIC Engenharia: R$ 330.000 — Gran Vic Tangará (apartamento)</title>
+    <rect x="0" y="230" width="700" height="36" fill="transparent"/>
+    <path d="M200,238 h77.4 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-77.4 z" fill="#C9A227"/>
+    <text x="190" y="248" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">VIC Engenharia</text>
+    <text x="289.4" y="248" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 330.000<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+  </g>
+  <g>
+    <title>Congesa: R$ 981.000 — Storia Congesa (apartamento)</title>
+    <rect x="0" y="266" width="700" height="36" fill="transparent"/>
+    <path d="M200,274 h238.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-238.0 z" fill="#C9A227"/>
+    <text x="190" y="284" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Congesa</text>
+    <text x="450" y="284" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 981.000<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+  </g>
+  <g>
+    <title>PERPLAN: R$ 991.005 — Areté Home (apartamento)</title>
+    <rect x="0" y="302" width="700" height="36" fill="transparent"/>
+    <path d="M200,310 h240.4 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-240.4 z" fill="#C9A227"/>
+    <text x="190" y="320" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">PERPLAN</text>
+    <text x="452.4" y="320" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 991.005<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+  </g>
+</svg></div>
+      <p class="leitura">Entre as 9 incorporadoras com tabela publicada em setembro/2026, a menor entrada é a da Dominium (R$ 145.000, lote no Residencial Monte Carmelo); em apartamentos, a Masotti tem o menor preço de entrada (R$ 279.990, Uni Residencial), enquanto Congesa e PERPLAN começam em R$ 981.000 e R$ 991.005.</p>
+      <details class="tabela-twin"><summary>Ver como tabela</summary><div class="tabela-wrap"><table>
+<thead><tr><th>Incorporadora</th><th class="num">Menor entrada</th><th>Empreendimento</th><th>Tipo</th></tr></thead>
+<tbody>
+<tr><td>Dominium</td><td class="num">R$ 145.000</td><td>Residencial Monte Carmelo</td><td>lote</td></tr>
+<tr><td>Zarin</td><td class="num">R$ 172.500</td><td>Parque Zarah</td><td>lote</td></tr>
+<tr><td>Armigh · Best Business</td><td class="num">R$ 247.500</td><td>Terras de San Marino</td><td>lote</td></tr>
+<tr><td>Vila Fahl · iBen</td><td class="num">R$ 273.750</td><td>Residencial Vila Fahl</td><td>lote</td></tr>
+<tr><td>Masotti</td><td class="num">R$ 279.990</td><td>Uni Residencial</td><td>apartamento</td></tr>
+<tr><td>Pinheiro · RDZ · iBen</td><td class="num">R$ 300.854</td><td>Viva Parque Aura</td><td>apartamento</td></tr>
+<tr><td>VIC Engenharia</td><td class="num">R$ 330.000</td><td>Gran Vic Tangará</td><td>apartamento</td></tr>
+<tr><td>Congesa</td><td class="num">R$ 981.000</td><td>Storia Congesa</td><td>apartamento</td></tr>
+<tr><td>PERPLAN</td><td class="num">R$ 991.005</td><td>Areté Home</td><td>apartamento</td></tr>
+</tbody></table></div></details>
+    </figure>
+
+    <h2>Release — edição setembro/2026</h2>
+    <div class="tiles">
+      <div class="tile"><b>24</b><span>lançamentos monitorados</span><small>16 apartamentos e 8 loteamentos · setembro/2026</small></div>
+      <div class="tile"><b>R$ 967 a R$ 1.825</b><span>preço do m² de lote</span><small>média de R$ 1.495/m² nos 8 loteamentos · setembro/2026</small></div>
+      <div class="tile"><b>8 + 8</b><span>mudaram o preço de entrada + ganharam a primeira tabela</span><small>variações de −30,8% a +36,0% · setembro/2026</small></div>
+    </div>
+    <p><strong>Contexto.</strong> Na edição de setembro/2026, o Observatório acompanha 24 lançamentos imobiliários em Indaiatuba/SP. O menor preço de entrada entre os lotes é o do Residencial Monte Carmelo (Dominium), R$ 145.000 por um lote de 150 m²; entre os apartamentos, o do Uni Residencial (Masotti), R$ 279.990, enquadrado no Minha Casa Minha Vida. Das 8 variações de preço de entrada confirmadas entre duas tabelas oficiais, 6 são altas — quatro por reajuste de tabela (Hélade — Park Meraki, Jardim Di Italia, Alpnach Residence, Gran Vic Colibri) e duas porque o menor lote disponível mudou (Residencial Ravello, Reserva Botânica) — e 2 são quedas (Parque Zarah, −30,8%, com o menor lote agora misto de 150 m²; Gran Vic Tangará, −0,5%). Foram 8 movimentações no mês: 4 empreendimentos com a primeira tabela publicada (Itamaracá, Spazio Italia, Areté Home e Viva Parque Aura), o Viva Parque Sense novo no site, o Manai Bosque com início de vendas e o Gran Vic Andorinha e o Canário de volta ao estoque. Nos loteamentos com relatório oficial de estoque, o Residencial Monte Carmelo passou de 587 para 568 lotes disponíveis (19 vendidos) e o Residencial Ravello de 197 para 185 (12 vendidos), entre agosto e setembro de 2026.</p>
+    <p>Todos os números acima estão na edição de setembro/2026 do <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a>, atualizada em 04/09/2026, e no CSV desta página. Preços são os "a partir de" das tabelas oficiais e podem mudar sem aviso; o Observatório não faz projeção nem promete valorização.</p>
+
+    <h2>Contato para imprensa</h2>
+    <div class="vantagem-grid">
+      <div class="vantagem-card">
+        <h4>E-mail</h4>
+        <p><a href="mailto:financeiro@imoveisvivamerica.com.br">financeiro@imoveisvivamerica.com.br</a></p>
+      </div>
+      <div class="vantagem-card">
+        <h4>WhatsApp</h4>
+        <p><a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20Imprensa%20e%20dados%20do%20Observat%C3%B3rio%20de%20Pre%C3%A7os%20de%20Indaiatuba.%20Pode%20me%20ajudar%3F">(19) 98976-9457</a></p>
+      </div>
+      <div class="vantagem-card">
+        <h4>Responsável pelo conteúdo</h4>
+        <p>Fabio Correia — CRECI 303686-F</p>
+      </div>
+      <div class="vantagem-card">
+        <h4>Endereço</h4>
+        <p>Imobiliária Viv'América · CRECI 47394-J<br>Av. Higienópolis, 70 – Jardim União<br>Indaiatuba/SP</p>
+      </div>
+    </div>
+    <p>Atendimento de segunda a sexta, das 8h30 às 18h, e sábado, das 9h às 12h. Para entrevista, tabela completa de um empreendimento ou correção de dado, escreva no e-mail com o nome do veículo e o prazo. Edições anteriores e o histórico de cada tabela ficam à disposição sob pedido.</p>
+
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Precisa de um dado que não está aqui?</h2>
+  <p>Fale com quem responde pelo Observatório: Fabio Correia, CRECI 303686-F, pelo WhatsApp (19) 98976-9457.</p>
+  <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20Imprensa%20e%20dados%20do%20Observat%C3%B3rio%20de%20Pre%C3%A7os%20de%20Indaiatuba.%20Pode%20me%20ajudar%3F" class="btn-wpp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Falar no WhatsApp
+  </a>
+</div>
+
+  <footer>
+  <div class="footer-links">
+    <a href="/">Início</a>
+    <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a>
+    <a href="/loteamentos-em-indaiatuba/">Loteamentos em Indaiatuba</a>
+    <a href="/condominios-fechados-indaiatuba/">Condomínios Fechados</a>
+    <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <p>© 2026 Imobiliária Viv'América · CRECI 47394-J · Lançamentos imobiliários em Indaiatuba SP</p>
+<p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-copiar]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var alvo = document.getElementById(b.getAttribute('data-copiar'));
+      if (!alvo || !navigator.clipboard) return;
+      var original = b.textContent;
+      navigator.clipboard.writeText(alvo.textContent.trim()).then(function () {
+        b.textContent = 'Copiado!';
+        setTimeout(function () { b.textContent = original; }, 1800);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

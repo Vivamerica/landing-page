@@ -1,0 +1,242 @@
+[
+  {
+    "nome": "Uni Residencial",
+    "tipo": "apartamento",
+    "incorporadora": "Masotti",
+    "preco_a_partir_de": 279990,
+    "mes_tabela": "2026-09",
+    "spec": "2 dorm c/ suíte · sacada · vaga coberta",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/uni-residencial-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Gran Vic Tangará",
+    "tipo": "apartamento",
+    "incorporadora": "VIC Engenharia",
+    "preco_a_partir_de": 330000,
+    "mes_tabela": "2026-09",
+    "spec": "2 dorm · 47,22 m² · 78 unidades (set/2026) · entrega nov/2028",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-tangara-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Gran Vic Colibri",
+    "tipo": "apartamento",
+    "incorporadora": "VIC Engenharia",
+    "preco_a_partir_de": 334479,
+    "mes_tabela": "2026-09",
+    "spec": "2 dorm c/ suíte · 51,42 m² · 84 unidades (set/2026) · entrega dez/2028",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-colibri-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Itamaracá Residencial",
+    "tipo": "apartamento",
+    "incorporadora": "Zarin",
+    "preco_a_partir_de": 339990,
+    "mes_tabela": "2026-07",
+    "spec": "48 a 54 m² · 1 vaga · tabela de julho/2026",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/itamaraca-indaiatuba/",
+    "fonte": "tabela da incorporadora, julho/2026"
+  },
+  {
+    "nome": "Gran Vic Canário",
+    "tipo": "apartamento",
+    "incorporadora": "VIC Engenharia",
+    "preco_a_partir_de": 352135,
+    "mes_tabela": "2026-09",
+    "spec": "2 dorm · 47,22 m² · últimas 3 unidades (set/2026) · entrega mai/2028",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Vívere Residencial",
+    "tipo": "apartamento",
+    "incorporadora": "Masotti",
+    "preco_a_partir_de": 352552,
+    "mes_tabela": "2026-09",
+    "spec": "2 dorm · 46 a 50 m² · pronto para morar · últimas 5 unidades",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/vivere-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Gran Vic Andorinha",
+    "tipo": "apartamento",
+    "incorporadora": "VIC Engenharia",
+    "preco_a_partir_de": 372119,
+    "mes_tabela": "2026-09",
+    "spec": "2 dorm c/ suíte · 51,42 m² · últimas 2 unidades (set/2026) · entrega fev/2028",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-andorinha-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Spazio Italia",
+    "tipo": "apartamento",
+    "incorporadora": "Zarin",
+    "preco_a_partir_de": 448820,
+    "mes_tabela": "2026-09",
+    "spec": "59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/spazio-italia-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Aurora — Park Meraki",
+    "tipo": "apartamento",
+    "incorporadora": "Masotti",
+    "preco_a_partir_de": 758850,
+    "mes_tabela": "2026-09",
+    "spec": "101 a 152 m² · 4 torres · 32 áreas de lazer",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/aurora-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Storia Congesa",
+    "tipo": "apartamento",
+    "incorporadora": "Congesa",
+    "preco_a_partir_de": 981000,
+    "mes_tabela": "2026-09",
+    "spec": "70 a 114 m² · 2-3 vagas + hobby box · entrega dez/2026",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/storia-congesa-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Areté Home",
+    "tipo": "apartamento",
+    "incorporadora": "PERPLAN",
+    "preco_a_partir_de": 991005,
+    "mes_tabela": "2026-09",
+    "spec": "93 a 117 m² · 2 e 3 suítes · torre única · 19 andares",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/arete-home-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Hélade — Park Meraki",
+    "tipo": "apartamento",
+    "incorporadora": "PERPLAN",
+    "preco_a_partir_de": 1391504,
+    "mes_tabela": "2026-09",
+    "spec": "3 suítes · 120,18 m² · 2 ou 3 vagas · entrega mar/2027",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/helade-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Viva Parque Aura",
+    "tipo": "apartamento",
+    "incorporadora": "Pinheiro · RDZ · iBen",
+    "preco_a_partir_de": 300854,
+    "mes_tabela": "2026-08",
+    "spec": "47 a 85 m² · Torre 3 (tabela ago/2026) · 7.000 m² parque · +30 itens lazer",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/viva-parque-aura-indaiatuba/",
+    "fonte": "tabela da incorporadora, agosto/2026"
+  },
+  {
+    "nome": "Viva Parque Sense",
+    "tipo": "apartamento",
+    "incorporadora": "Pinheiro · RDZ · iBen",
+    "preco_a_partir_de": 404886,
+    "mes_tabela": "2026-08",
+    "spec": "3 dorm c/ suíte · 59,93 m² · garden 95,99 m² · 8 torres · tabela ago/2026",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/viva-parque-sense-indaiatuba/",
+    "fonte": "tabela da incorporadora, agosto/2026"
+  },
+  {
+    "nome": "Manai Bosque",
+    "tipo": "apartamento",
+    "incorporadora": "Masotti",
+    "preco_a_partir_de": 505941,
+    "mes_tabela": "2026-09",
+    "spec": "65 a 91 m² · Torre I: 53 unidades (set/2026) · piscina raia 25m · 36 áreas lazer",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/manai-bosque-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Congesa Seasons",
+    "tipo": "apartamento",
+    "incorporadora": "Congesa",
+    "preco_a_partir_de": null,
+    "mes_tabela": "2026-09",
+    "spec": "3 suítes · Penthouse · Maison c/ jardim",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/seasons-indaiatuba/",
+    "fonte": "sob consulta — tabela não liberada pela incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Residencial Monte Carmelo",
+    "tipo": "lote",
+    "incorporadora": "Dominium",
+    "preco_a_partir_de": 145000,
+    "mes_tabela": "2026-09",
+    "spec": "Loteamento aberto · entrada de R$ 16.000 · 96x",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/monte-carmelo-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Parque Zarah",
+    "tipo": "lote",
+    "incorporadora": "Zarin",
+    "preco_a_partir_de": 172500,
+    "mes_tabela": "2026-09",
+    "spec": "3 fases · residencial a partir de R$ 212 mil · Safira dez/2026 · Rubi e Pérola dez/2028",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/parque-zarah-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Jardim Di Italia",
+    "tipo": "lote",
+    "incorporadora": "Dominium",
+    "preco_a_partir_de": 210000,
+    "mes_tabela": "2026-09",
+    "spec": "Loteamento aberto · infraestrutura concluída · entrada R$ 44.000 · 60x",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/di-italia-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Terras de San Marino",
+    "tipo": "lote",
+    "incorporadora": "Armigh · Best Business",
+    "preco_a_partir_de": 247500,
+    "mes_tabela": "2026-09",
+    "spec": "546 lotes · 19 disponíveis (espelho 02/09/2026) · 16.164 m² de lazer resort",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/terras-de-san-marino-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Residencial Vila Fahl",
+    "tipo": "lote",
+    "incorporadora": "Vila Fahl · iBen",
+    "preco_a_partir_de": 273750,
+    "mes_tabela": "2026-09",
+    "spec": "Residencial e comercial · obra 71,91% (jul/2026) · até 96x · 15 itens de lazer",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/vila-fahl-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Alpnach Residence",
+    "tipo": "lote",
+    "incorporadora": "Dominium",
+    "preco_a_partir_de": 510000,
+    "mes_tabela": "2026-09",
+    "spec": "322 lotes · 28 disponíveis (04/09/2026) · piscina coberta · mini mercado 24h",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/alpnach-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  },
+  {
+    "nome": "Reserva Botânica",
+    "tipo": "lote",
+    "incorporadora": "Zarin",
+    "preco_a_partir_de": 532563,
+    "mes_tabela": "2026-07",
+    "spec": "3 lotes de 340 a 457 m² · portaria 24h · 3 quadras",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/reserva-botanica-indaiatuba/",
+    "fonte": "tabela da incorporadora, julho/2026"
+  },
+  {
+    "nome": "Residencial Ravello",
+    "tipo": "lote",
+    "incorporadora": "Dominium",
+    "preco_a_partir_de": 714000,
+    "mes_tabela": "2026-09",
+    "spec": "710 lotes · 27 itens: SPA, Wine Bar, Fire Pit",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/residencial-ravello-indaiatuba/",
+    "fonte": "tabela da incorporadora, setembro/2026"
+  }
+]

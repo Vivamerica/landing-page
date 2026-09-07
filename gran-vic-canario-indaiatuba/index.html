@@ -346,6 +346,7 @@
     /* width/height nas <img> reservam espaço; quando o CSS só fixa a largura, a altura do
        atributo esticava o logo (Andorinha/Colibri/Tangará, 04/09/2026) */
     :where(img[width][height]) { height:auto; }   /* :where = especificidade zero: qualquer CSS da página vence (o .logo{height:90px} do Terras perdia) */
+    @media (max-width:760px) { body:has(.wa-float, .float-wpp, .whats-flutuante) footer { padding-bottom: 6.5rem; } }   /* 07/09: o botão flutuante do WhatsApp cobria a linha NAP do rodapé no celular */
     nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
     .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
     .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
@@ -409,7 +410,7 @@
       <div class="hero-badge">Voltou ao estoque · Minha Casa Minha Vida (MCMV) Faixa 3 · Parque dos Pássaros · Indaiatuba/SP</div>
       <h1>Gran Vic Canário — apartamentos de 2 dormitórios em Indaiatuba<span>últimas 3 unidades (set/2026) · a partir de R$ 352.135</span></h1>
       <p>Três apartamentos da Torre 03 voltaram à tabela da VIC Engenharia em 02/09/2026: 2 dormitórios, 47,22 m², varanda e vaga demarcada. Aceita FGTS (Fundo de Garantia do Tempo de Serviço) e entra no MCMV Faixa 3. Entrega do Módulo 03 prevista para 16/05/2028.</p>
-      <a href="#precos" class="btn-hero">Ver tabela e condições →</a>
+      <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Tenho%20interesse%20nas%20%C3%BAltimas%20unidades%20do%20Gran%20Vic%20Can%C3%A1rio.%20Podem%20me%20enviar%20a%20tabela%20e%20a%20simula%C3%A7%C3%A3o%3F" class="btn-hero" target="_blank" rel="noopener">Falar sobre o Gran Vic Canário →</a>
     </div>
   </section>
 

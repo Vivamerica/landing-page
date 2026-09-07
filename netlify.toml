@@ -47,6 +47,24 @@
   [headers.values]
     Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
 
+# 07/09/2026 (frente 7): arquivos de trabalho e material impresso ficam acessiveis, mas fora do indice do Google.
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+[[headers]]
+  for = "/urls-alteradas.txt"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+[[headers]]
+  for = "/qrcode/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 [[headers]]
   for = "/*"
   [headers.values]
