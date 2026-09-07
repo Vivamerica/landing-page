@@ -16,6 +16,10 @@ Ordem, por empreendimento (exemplos em dados/):
 5. disponiveis: dominium-disp.py relatorio.pdf <id>-disp.json (Dominium/Lugano) | zarah-tabela.py (Zarin 180x)
 6. lotes-js.py <id> <id>-disp.json <id>-quadras.json <id>-fit.json <id>-lotes.js  (linhas LOTES do mapa)
 7. overlay: overlay-norte.py <id>-overlay-cfg.json -> images/<id>.png (norte p/ cima, recortado ao perimetro magenta, branco transparente) + bounds
+   Planta colorida SEM divisa magenta (Zarin, Dominium) e que deve aparecer INTEIRA (areas verdes, APP, lotes mistos):
+   mascara-cores.py <id>-mascara-cfg.json (mancha das areas coloridas: erosao tira curvas de nivel/tracejados/carimbo,
+   fechamento 25 m, preenche buracos, maior bloco) e no overlay-cfg `sem_perimetro` + `interior_png`. Receita do Safira (07/09):
+   dados/zarah-safira-mascara-cfg.json + dados/zarah-safira-cheio-overlay-cfg.json (0,4 m/px, 32 cores, 366 KB).
 8. confere-overlay.py images/<id>.png <id>-bounds.json conf.jpg 17  (planta sobre o satelite Esri, sem precisar do site)
 9. patch-mapa-bairro.py <id> <id>-bairro.txt <id>-lotes.js "comentario"  (idempotente) e node checa-mapa-js.js
 Regras: nunca citar a fonte "Vista Verde"; precos a vista do relatorio; lotes sem "nx" recebem soVista:true.
@@ -58,3 +62,10 @@ Andorinhas e San Marino (planta com texto/curva de nivel ou so raster) ficam com
   fundo de contexto) geram `dados-celular.json`; `editor/celular-modelo.html` + esses dados viram a pagina publicada
   como Artifact (capacidade `db`), que salva sozinho na nuvem. Ler com a acao read_db, colecao `ajustes`.
 - aplicar: `aplica-ajustes.py` gira/estica a imagem, recalcula os bounds e leva os pinos junto.
+
+## Encaixe a mao (07/09/2026)
+Editor do escritorio `editor/escritorio.html` (servido por `ajuste-server.js`, porta 8767): os 4 cantos ficam soltos (homografia,
+matrix3d), bolinhas azuis no meio dos lados esticam so aquele lado, Shift+canto estica sem deformar. Salva `ajustes.json` versao 3
+(`cantos`). `aplica-ajustes.py` reamostra a planta por perspectiva (PIL PERSPECTIVE), recalcula bounds e leva os pinos; `--seco` e
+`--teste DIR`. `troca-planta.py <id>` troca a imagem por `<id>-cheio-overlay.png` mantendo o ajuste salvo. Os encaixes do Fabio de
+07/09 estao em `dados/ajustes-fabio-2026-09-07.json` (12 plantas) e ja foram aplicados.

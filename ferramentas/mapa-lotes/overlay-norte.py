@@ -36,6 +36,10 @@ if vazou or cfg.get('sem_perimetro'):
         mn_ = ImageChops.darker(ImageChops.darker(im.split()[0], im.split()[1]), im.split()[2])
         interior = mn_.point(lambda v: 255 if v < 250 else 0).filter(ImageFilter.MaxFilter(3))
         print('recorte pelo conteudo do desenho clean')
+    elif cfg.get('interior_png'):   # mascara pronta (ex.: mascara-cores.py = loteamento inteiro pelas areas coloridas), do tamanho do render
+        interior = Image.open(T + cfg['interior_png']).convert('L').point(lambda v: 255 if v > 127 else 0)
+        assert interior.size == im.size, 'mascara %s != render %s' % (interior.size, im.size)
+        print('recorte pela mascara', cfg['interior_png'])
     elif cfg.get('recorte_lotes_m'):   # desenho solido: interior = vizinhanca (em metros) dos LOTES verdes, so a componente conexa do 1o ponto de controle
         rr, gg, bb_ = im.split(); mpt = math.hypot(ce[0], cn[0]); mpp = mpt / k; d = int(cfg['recorte_lotes_m'] / mpp)
         def cor(c, tol=4): return ImageChops.multiply(ImageChops.multiply(rr.point(lambda v: 255 if abs(v - c[0]) <= tol else 0), gg.point(lambda v: 255 if abs(v - c[1]) <= tol else 0)), bb_.point(lambda v: 255 if abs(v - c[2]) <= tol else 0))

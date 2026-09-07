@@ -8,3 +8,7 @@ https://jdmonte-carmelo-indaiatuba.com.br/* https://lancamentos.imoveisvivameric
 
 /quermesse/* / 301
 /quermesse / 301
+
+# 07/09/2026: hub que foi anunciado na home em mai-jun/2026 e nunca existiu (404 desde entao) -> categoria de loteamentos
+/loteamentos-abertos-indaiatuba/* /loteamentos-em-indaiatuba/ 301
+/loteamentos-abertos-indaiatuba /loteamentos-em-indaiatuba/ 301

@@ -35,16 +35,19 @@
   .alca{width:20px;height:20px;border-radius:50%;border:2px solid #14200a;box-shadow:0 1px 4px rgba(0,0,0,.55);cursor:grab;display:flex;align-items:center;justify-content:center;font-size:12px;color:#14200a;font-weight:700}
   .alca.girar{background:#ffd23f}
   .alca.canto{background:#8dc63f;border-radius:4px}
-  .planta-img{pointer-events:none}
+  .alca.lado{background:#4fc3f7;width:16px;height:16px}
+  .planta-img{pointer-events:none;backface-visibility:hidden}
   .planta-img.ativa{pointer-events:auto;cursor:move}
   .ajuda{font-size:11.5px;color:var(--fraco);line-height:1.65}
   .ajuda kbd{background:#2b3a20;border:1px solid var(--linha);border-radius:4px;padding:1px 5px;font-size:11px}
+  .ajuda i{display:inline-block;width:10px;height:10px;border:1px solid #14200a;vertical-align:-1px;margin-right:2px}
+  .ajuda i.canto{background:#8dc63f;border-radius:2px} .ajuda i.lado{background:#4fc3f7;border-radius:50%} .ajuda i.girar{background:#ffd23f;border-radius:50%}
 </style>
 </head>
 <body>
 <div id="app">
   <div id="painel">
-    <h1>Ajuste das plantas<small>Arraste, gire e estique sobre o mapa. Salva sozinho a cada mudança.</small></h1>
+    <h1>Ajuste das plantas<small>Arraste, gire, estique e deforme sobre o mapa. Salva sozinho a cada mudança.</small></h1>
     <div class="secao">
       <div class="linhaBotoes">
         <button id="bSat">Satélite</button><button id="bRuas">Ruas</button><button id="bPinos">Pinos: ligados</button>
@@ -58,14 +61,14 @@
     <div class="secao" id="painelSel" style="display:none">
       <div id="info"></div>
       <div class="linhaBotoes" style="margin-top:8px">
-        <button id="bZoom">Enquadrar</button><button id="bEsquadro">Tirar distorção</button><button id="bReset">Voltar ao original</button>
+        <button id="bZoom">Enquadrar</button><button id="bEsquadro">Tirar deformação</button><button id="bReset">Voltar ao original</button>
       </div>
     </div>
     <div class="secao">
       <div class="ajuda">
-        <b>Cantos verdes</b> esticam · <b>bola amarela</b> gira · arrastar a planta move<br>
-        <kbd>setas</kbd> 1 m · com <kbd>Shift</kbd> 0,2 m · <kbd>,</kbd> <kbd>.</kbd> giram 0,1°<br>
-        <kbd>-</kbd> <kbd>+</kbd> tamanho · <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz
+        <i class="canto"></i><b>cantos</b>: cada um anda sozinho (deforma) · <i class="lado"></i><b>meio dos lados</b>: estica só aquele lado, na horizontal ou na vertical<br>
+        <i class="girar"></i><b>bola amarela</b> gira · arrastar a planta move · <kbd>Shift</kbd> num canto estica a planta inteira sem deformar<br>
+        <kbd>setas</kbd> 1 m · com <kbd>Shift</kbd> 0,2 m · <kbd>,</kbd> <kbd>.</kbd> giram 0,1° · <kbd>-</kbd> <kbd>+</kbd> tamanho · <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz
       </div>
     </div>
     <div class="secao linhaBotoes">
@@ -84,15 +87,36 @@ const mlon = lat => M_LAT * Math.cos(rad(lat));
 const llDe = (c, dx, dy) => [c[0] + dy / M_LAT, c[1] + dx / mlon(c[0])];
 const metros = (a, b) => [(b[1] - a[1]) * mlon(a[0]), (b[0] - a[0]) * M_LAT];   // de a para b, em metros
 const gira = (u, th) => { const c = Math.cos(rad(th)), s = Math.sin(rad(th)); return [u[0] * c - u[1] * s, u[0] * s + u[1] * c]; };
+const CANTOS = ['tl', 'tr', 'br', 'bl'];   // sentido horário a partir do canto superior esquerdo da imagem
+const LADOS = { tm: ['tl', 'tr'], rm: ['tr', 'br'], bm: ['br', 'bl'], lm: ['bl', 'tl'] };
 
-// ---- overlay com rotação/deformação: os 3 cantos definem a matriz
-const OverlayGirado = L.Layer.extend({
+// ---- homografia: 4 pares (x,y)->(X,Y) => [a,b,c,d,e,f,g,h] com X=(ax+by+c)/(gx+hy+1), Y=(dx+ey+f)/(gx+hy+1)
+function homografia(src, dst) {
+  const M = [];
+  for (let i = 0; i < 4; i++) {
+    const [x, y] = src[i], [X, Y] = dst[i];
+    M.push([x, y, 1, 0, 0, 0, -X * x, -X * y, X]);
+    M.push([0, 0, 0, x, y, 1, -Y * x, -Y * y, Y]);
+  }
+  const n = 8;
+  for (let i = 0; i < n; i++) {
+    let p = i; for (let r = i + 1; r < n; r++) if (Math.abs(M[r][i]) > Math.abs(M[p][i])) p = r;
+    [M[i], M[p]] = [M[p], M[i]];
+    const piv = M[i][i]; if (Math.abs(piv) < 1e-14) return null;
+    for (let r = 0; r < n; r++) { if (r === i) continue; const f = M[r][i] / piv; if (!f) continue; for (let c = i; c <= n; c++) M[r][c] -= f * M[i][c]; }
+  }
+  return M.map((r, i) => r[n] / r[i]);
+}
+const aplicaH = (h, x, y) => { const w = h[6] * x + h[7] * y + 1; return [(h[0] * x + h[1] * y + h[2]) / w, (h[3] * x + h[4] * y + h[5]) / w]; };
+
+// ---- overlay deformável: os 4 cantos (lat/lon) definem uma homografia imagem -> tela (matrix3d)
+const OverlayLivre = L.Layer.extend({
   initialize(url, cantos, opts) { this._url = url; this._cantos = cantos; L.setOptions(this, opts); },
   onAdd(map) {
     if (!this._img) {
       const img = this._img = L.DomUtil.create('img', 'planta-img');
       img.src = this._url; img.alt = ''; img.draggable = false;
-      img.style.position = 'absolute'; img.style.transformOrigin = '0 0';
+      img.style.position = 'absolute'; img.style.transformOrigin = '0 0'; img.style.left = '0'; img.style.top = '0';
       img.style.opacity = this.options.opacity ?? 0.85;
       img.addEventListener('load', () => this._desenha());
     }
@@ -108,9 +132,12 @@ const OverlayGirado = L.Layer.extend({
   _desenha() {
     const img = this._img, map = this._map;
     if (!img || !map || !img.naturalWidth) return;
-    const [tl, tr, bl] = this._cantos.map(ll => map.latLngToLayerPoint(L.latLng(ll)));
     const w = img.naturalWidth, h = img.naturalHeight;
-    img.style.transform = `matrix(${(tr.x - tl.x) / w},${(tr.y - tl.y) / w},${(bl.x - tl.x) / h},${(bl.y - tl.y) / h},${tl.x},${tl.y})`;
+    const p = CANTOS.map(k => { const q = map.latLngToLayerPoint(L.latLng(this._cantos[k])); return [q.x, q.y]; });
+    const H = homografia([[0, 0], [w, 0], [w, h], [0, h]], p);
+    if (!H) return;
+    const [a, b, c, d, e, f, g, hh] = H;
+    img.style.transform = `matrix3d(${a},${d},0,${g},${b},${e},0,${hh},0,0,1,0,${c},${f},0,1)`;
   }
 });
 
@@ -124,63 +151,70 @@ let plantas = [], sel = null, mostrarPinos = true, opacidade = 0.75, pilha = [];
 const $ = s => document.querySelector(s);
 const status = t => $('#status').textContent = t;
 
-// ---- geometria: centro + vetor u (largura) e v (altura), em metros
-function cantosDe(p) {
-  const { lat, lon, u, v } = p.est, c = [lat, lon];
-  return [llDe(c, -(u[0] + v[0]) / 2, -(u[1] + v[1]) / 2), llDe(c, (u[0] - v[0]) / 2, (u[1] - v[1]) / 2), llDe(c, (v[0] - u[0]) / 2, (v[1] - u[1]) / 2)];
+// ---- geometria: o estado de cada planta são os 4 cantos em lat/lon (est.c); ini.c é o retângulo original
+const copia = c => ({ tl: c.tl.slice(), tr: c.tr.slice(), br: c.br.slice(), bl: c.bl.slice() });
+const centroDe = c => [CANTOS.reduce((s, k) => s + c[k][0], 0) / 4, CANTOS.reduce((s, k) => s + c[k][1], 0) / 4];
+function retangulo(bounds) { const [[la0, lo0], [la1, lo1]] = bounds; return { tl: [la1, lo0], tr: [la1, lo1], br: [la0, lo1], bl: [la0, lo0] }; }
+function cantosDeUV(centro, u, v) {   // formato antigo (centro + vetores): paralelogramo
+  const tl = llDe(centro, -(u[0] + v[0]) / 2, -(u[1] + v[1]) / 2), tr = llDe(centro, (u[0] - v[0]) / 2, (u[1] - v[1]) / 2), bl = llDe(centro, (v[0] - u[0]) / 2, (v[1] - u[1]) / 2);
+  return { tl, tr, bl, br: [tr[0] + bl[0] - tl[0], tr[1] + bl[1] - tl[1]] };
 }
-function aplicaCantos(p, tl, tr, bl) {
-  const u = metros(tl, tr), v = metros(tl, bl);
-  const c = llDe(tl, (u[0] + v[0]) / 2, (u[1] + v[1]) / 2);
-  p.est = { lat: c[0], lon: c[1], u, v };
+function hPinos(p) {   // quadrado unitário da imagem -> metros a partir do canto superior esquerdo
+  const c = p.est.c;
+  return homografia([[0, 0], [1, 0], [1, 1], [0, 1]], [[0, 0], metros(c.tl, c.tr), metros(c.tl, c.br), metros(c.tl, c.bl)]);
 }
 function pinosDe(p) {
-  const [tl] = cantosDe(p), { u, v } = p.est;
-  return p.pinosNorm.map(([sx, ty]) => llDe(tl, sx * u[0] + ty * v[0], sx * u[1] + ty * v[1]));
+  const H = hPinos(p), tl = p.est.c.tl;
+  if (!H) return p.pinosNorm.map(() => tl);
+  return p.pinosNorm.map(([sx, ty]) => llDe(tl, ...aplicaH(H, sx, ty)));
 }
 function medidas(p) {
-  const { u, v } = p.est;
+  const c = p.est.c, u = metros(c.tl, c.tr), v = metros(c.tl, c.bl);
   const lu = Math.hypot(...u), lv = Math.hypot(...v);
   const angU = gra(Math.atan2(u[1], u[0]));                 // 0 = leste
   const angV = gra(Math.atan2(-v[1], -v[0]));               // -v aponta para o norte quando não há giro
   let esq = angV - angU - 90; while (esq > 180) esq -= 360; while (esq < -180) esq += 360;
-  return { larg: lu / p.Wm, alt: lv / p.Hm, giro: angU, esquadro: esq };
+  const brPar = [c.tr[0] + c.bl[0] - c.tl[0], c.tr[1] + c.bl[1] - c.tl[1]];   // onde o 4º canto estaria sem deformação
+  const def = Math.hypot(...metros(brPar, c.br));
+  return { larg: lu / p.Wm, alt: lv / p.Hm, giro: angU, esquadro: esq, deformacao: def, u, v };
 }
-function mexida(p) {
-  const m = medidas(p);
-  return Math.abs(p.est.lat - p.ini.lat) > 1e-9 || Math.abs(p.est.lon - p.ini.lon) > 1e-9 ||
-    Math.abs(m.giro) > 1e-4 || Math.abs(m.larg - 1) > 1e-5 || Math.abs(m.alt - 1) > 1e-5 || Math.abs(m.esquadro) > 1e-4;
-}
+function mexida(p) { return CANTOS.some(k => Math.abs(p.est.c[k][0] - p.ini.c[k][0]) > 1e-9 || Math.abs(p.est.c[k][1] - p.ini.c[k][1]) > 1e-9); }
 function redesenha(p, comPinos = true) {
-  p.overlay.setCantos(cantosDe(p));
+  p.overlay.setCantos(p.est.c);
   if (comPinos && p.marcadores.length) { const lls = pinosDe(p); p.marcadores.forEach((m, i) => m.setLatLng(lls[i])); }
   if (p === sel) { posicionaAlcas(); mostraInfo(); }
   const el = document.getElementById('it-' + p.id);
   if (el) el.querySelector('.marca').textContent = mexida(p) ? 'ajustada' : '';
 }
+function translada(p, dlat, dlon) { CANTOS.forEach(k => { p.est.c[k] = [p.est.c[k][0] + dlat, p.est.c[k][1] + dlon]; }); }
+function giraTudo(p, graus, centro) {
+  const c0 = centro || centroDe(p.est.c);
+  CANTOS.forEach(k => { const m = gira(metros(c0, p.est.c[k]), graus); p.est.c[k] = llDe(c0, m[0], m[1]); });
+}
+function escalaTudo(p, f) { const c0 = centroDe(p.est.c); CANTOS.forEach(k => { const m = metros(c0, p.est.c[k]); p.est.c[k] = llDe(c0, m[0] * f, m[1] * f); }); }
 
-// ---- alças
-let alcaGirar, alcas = {}, contorno;
-function quatroCantos(p) { const [tl, tr, bl] = cantosDe(p); return { tl, tr, bl, br: [tr[0] + bl[0] - tl[0], tr[1] + bl[1] - tl[1]] }; }
+// ---- alças: 4 cantos (soltos), 4 meios de lado (esticam o lado), 1 de giro
+let alcaGirar, alcas = {}, lados = {}, contorno;
 function posicionaAlcas() {
   if (!sel) return;
-  const q = quatroCantos(sel), c = [sel.est.lat, sel.est.lon];
-  ['tl', 'tr', 'bl', 'br'].forEach(k => alcas[k].setLatLng(q[k]));
-  const meio = [(q.tl[0] + q.tr[0]) / 2, (q.tl[1] + q.tr[1]) / 2];
-  alcaGirar.setLatLng([meio[0] + (meio[0] - c[0]) * 0.13, meio[1] + (meio[1] - c[1]) * 0.13]);
-  contorno.setLatLngs([q.tl, q.tr, q.br, q.bl, q.tl]);
+  const c = sel.est.c, ce = centroDe(c);
+  CANTOS.forEach(k => alcas[k].setLatLng(c[k]));
+  Object.entries(LADOS).forEach(([k, [a, b]]) => lados[k].setLatLng([(c[a][0] + c[b][0]) / 2, (c[a][1] + c[b][1]) / 2]));
+  const meio = [(c.tl[0] + c.tr[0]) / 2, (c.tl[1] + c.tr[1]) / 2];
+  alcaGirar.setLatLng([meio[0] + (meio[0] - ce[0]) * 0.13, meio[1] + (meio[1] - ce[1]) * 0.13]);
+  contorno.setLatLngs([c.tl, c.tr, c.br, c.bl, c.tl]);
 }
-function guarda() { if (!sel) return; pilha.push({ id: sel.id, est: JSON.parse(JSON.stringify(sel.est)) }); if (pilha.length > 80) pilha.shift(); }
+function guarda() { if (!sel) return; pilha.push({ id: sel.id, c: copia(sel.est.c) }); if (pilha.length > 80) pilha.shift(); }
 function desfaz() {
   const x = pilha.pop(); if (!x) return status('nada para desfazer');
-  const p = plantas.find(y => y.id === x.id); p.est = x.est; redesenha(p); salvaAuto(); status('desfeito: ' + p.nome);
+  const p = plantas.find(y => y.id === x.id); p.est.c = x.c; redesenha(p); salvaAuto(); status('desfeito: ' + p.nome);
 }
 function mostraInfo() {
   if (!sel) return;
-  const m = medidas(sel), [dx, dy] = metros([sel.ini.lat, sel.ini.lon], [sel.est.lat, sel.est.lon]);
+  const m = medidas(sel), [dx, dy] = metros(centroDe(sel.ini.c), centroDe(sel.est.c));
   $('#info').innerHTML = `<b>${sel.nome}</b><br>deslocou <b>${Math.hypot(dx, dy).toFixed(1)} m</b> (L ${dx.toFixed(1)} / N ${dy.toFixed(1)})<br>` +
     `giro <b>${(-m.giro).toFixed(2)}°</b> · largura <b>${(m.larg * 100).toFixed(2)}%</b> · altura <b>${(m.alt * 100).toFixed(2)}%</b><br>` +
-    `distorção <b>${m.esquadro.toFixed(2)}°</b> · ${sel.pinosNorm.length} pino(s) juntos`;
+    `esquadro <b>${m.esquadro.toFixed(2)}°</b> · deformação <b>${m.deformacao.toFixed(1)} m</b> · ${sel.pinosNorm.length} pino(s) juntos`;
 }
 function seleciona(p) {
   if (sel) { sel.overlay.ativa(false).setOpacity(0.85); }
@@ -189,7 +223,7 @@ function seleciona(p) {
   $('#painelSel').style.display = 'block';
   if (!p.visivel) alterna(p, true);
   p.overlay.ativa(true).setOpacity(opacidade).porCima();
-  [alcaGirar, ...Object.values(alcas), contorno].forEach(l => l.addTo(mapa));
+  [alcaGirar, ...Object.values(alcas), ...Object.values(lados), contorno].forEach(l => l.addTo(mapa));
   posicionaAlcas(); mostraInfo(); status('selecionada: ' + p.nome);
 }
 function alterna(p, ver) {
@@ -206,14 +240,13 @@ let arrastando = null;
 mapa.getPane('overlayPane').addEventListener('mousedown', ev => {
   if (!sel || ev.target !== sel.overlay._img) return;
   ev.preventDefault(); guarda();
-  arrastando = { lat0: sel.est.lat, lon0: sel.est.lon, p0: mapa.mouseEventToLatLng(ev) };
+  arrastando = { c0: copia(sel.est.c), p0: mapa.mouseEventToLatLng(ev) };
   mapa.dragging.disable(); escondePinos();
 });
 document.addEventListener('mousemove', ev => {
   if (!arrastando || !sel) return;
   const p1 = mapa.mouseEventToLatLng(ev);
-  sel.est.lat = arrastando.lat0 + (p1.lat - arrastando.p0.lat);
-  sel.est.lon = arrastando.lon0 + (p1.lng - arrastando.p0.lng);
+  sel.est.c = copia(arrastando.c0); translada(sel, p1.lat - arrastando.p0.lat, p1.lng - arrastando.p0.lng);
   redesenha(sel, false);
 });
 document.addEventListener('mouseup', () => {
@@ -227,31 +260,32 @@ document.addEventListener('keydown', ev => {
   if (!sel || ev.target.tagName === 'INPUT') return;
   const passo = ev.shiftKey ? 0.2 : 1, giroP = ev.shiftKey ? 1 : 0.1;
   let usou = true;
-  const escala = f => { sel.est.u = sel.est.u.map(x => x * f); sel.est.v = sel.est.v.map(x => x * f); };
-  if (ev.key === 'ArrowUp') { guarda(); sel.est.lat += passo / M_LAT; }
-  else if (ev.key === 'ArrowDown') { guarda(); sel.est.lat -= passo / M_LAT; }
-  else if (ev.key === 'ArrowLeft') { guarda(); sel.est.lon -= passo / mlon(sel.est.lat); }
-  else if (ev.key === 'ArrowRight') { guarda(); sel.est.lon += passo / mlon(sel.est.lat); }
-  else if (ev.key === ',') { guarda(); sel.est.u = gira(sel.est.u, giroP); sel.est.v = gira(sel.est.v, giroP); }
-  else if (ev.key === '.') { guarda(); sel.est.u = gira(sel.est.u, -giroP); sel.est.v = gira(sel.est.v, -giroP); }
-  else if (ev.key === '+' || ev.key === '=') { guarda(); escala(1.002); }
-  else if (ev.key === '-') { guarda(); escala(1 / 1.002); }
+  if (ev.key === 'ArrowUp') { guarda(); translada(sel, passo / M_LAT, 0); }
+  else if (ev.key === 'ArrowDown') { guarda(); translada(sel, -passo / M_LAT, 0); }
+  else if (ev.key === 'ArrowLeft') { guarda(); translada(sel, 0, -passo / mlon(sel.est.c.tl[0])); }
+  else if (ev.key === 'ArrowRight') { guarda(); translada(sel, 0, passo / mlon(sel.est.c.tl[0])); }
+  else if (ev.key === ',') { guarda(); giraTudo(sel, giroP); }
+  else if (ev.key === '.') { guarda(); giraTudo(sel, -giroP); }
+  else if (ev.key === '+' || ev.key === '=') { guarda(); escalaTudo(sel, 1.002); }
+  else if (ev.key === '-') { guarda(); escalaTudo(sel, 1 / 1.002); }
   else if (ev.key.toLowerCase() === 'z' && (ev.ctrlKey || ev.metaKey)) { desfaz(); usou = false; }
   else usou = false;
   if (usou) { ev.preventDefault(); redesenha(sel); salvaAuto(); }
 });
 
-// ---- salvamento automático
+// ---- salvamento automático (versão 3: os 4 cantos; lat/lon/u/v continuam para quem lê o formato antigo)
 let tempoSalvar = null, salvando = false, pendente = false;
+const r9 = ll => [+ll[0].toFixed(9), +ll[1].toFixed(9)];
 function montaSaida() {
-  const saida = { versao: 2, plantas: {} };
+  const saida = { versao: 3, plantas: {} };
   plantas.forEach(p => {
     if (!mexida(p)) return;
-    const m = medidas(p);
-    saida.plantas[p.id] = { nome: p.nome, lat: +p.est.lat.toFixed(9), lon: +p.est.lon.toFixed(9),
-      u: p.est.u.map(x => +x.toFixed(4)), v: p.est.v.map(x => +x.toFixed(4)),
-      Wm: +p.Wm.toFixed(4), Hm: +p.Hm.toFixed(4), lat0: p.ini.lat, lon0: p.ini.lon,
-      giro: +(-m.giro).toFixed(4), largura: +m.larg.toFixed(6), altura: +m.alt.toFixed(6), distorcao: +m.esquadro.toFixed(4) };
+    const m = medidas(p), ce = centroDe(p.est.c), ci = centroDe(p.ini.c);
+    saida.plantas[p.id] = { nome: p.nome,
+      cantos: { tl: r9(p.est.c.tl), tr: r9(p.est.c.tr), br: r9(p.est.c.br), bl: r9(p.est.c.bl) },
+      lat: +ce[0].toFixed(9), lon: +ce[1].toFixed(9), u: m.u.map(x => +x.toFixed(4)), v: m.v.map(x => +x.toFixed(4)),
+      Wm: +p.Wm.toFixed(4), Hm: +p.Hm.toFixed(4), lat0: ci[0], lon0: ci[1], bounds0: p.bounds,
+      giro: +(-m.giro).toFixed(4), largura: +m.larg.toFixed(6), altura: +m.alt.toFixed(6), distorcao: +m.esquadro.toFixed(4), deformacao_m: +m.deformacao.toFixed(2) };
   });
   return saida;
 }
@@ -274,10 +308,10 @@ fetch('plantas.json').then(r => r.json()).then(d => {
   d.plantas.forEach(pl => {
     const [[la0, lo0], [la1, lo1]] = pl.bounds, centro = [(la0 + la1) / 2, (lo0 + lo1) / 2];
     const Wm = (lo1 - lo0) * mlon(centro[0]), Hm = (la1 - la0) * M_LAT;
-    const p = { id: pl.id, nome: pl.nome, arq: pl.arq, w: pl.w, h: pl.h, Wm, Hm, visivel: true,
-      ini: { lat: centro[0], lon: centro[1] }, est: { lat: centro[0], lon: centro[1], u: [Wm, 0], v: [0, -Hm] },
-      pinosNorm: pl.pinos.map(([la, lo]) => [((lo - centro[1]) * mlon(centro[0])) / Wm + 0.5, 0.5 - ((la - centro[0]) * M_LAT) / Hm]) };
-    p.overlay = new OverlayGirado('img/' + pl.arq, cantosDe(p), { opacity: 0.85 });
+    const p = { id: pl.id, nome: pl.nome, arq: pl.arq, w: pl.w, h: pl.h, Wm, Hm, visivel: true, bounds: pl.bounds,
+      ini: { c: retangulo(pl.bounds) }, est: { c: retangulo(pl.bounds) },
+      pinosNorm: pl.pinos.map(([la, lo]) => [(lo - lo0) / (lo1 - lo0), (la1 - la) / (la1 - la0)]) };
+    p.overlay = new OverlayLivre('img/' + pl.arq, p.est.c, { opacity: 0.85 });
     p.marcadores = pl.pinos.map(ll => L.circleMarker(ll, { radius: 3, renderer: desenhador, color: '#14200a', weight: 1, fillColor: '#ff8c1a', fillOpacity: .95 }));
     p.grupoPinos = L.layerGroup(p.marcadores);
     plantas.push(p);
@@ -291,42 +325,59 @@ fetch('plantas.json').then(r => r.json()).then(d => {
   });
   const icone = (cls, txt) => L.divIcon({ className: '', html: `<div class="alca ${cls}">${txt}</div>`, iconSize: [20, 20], iconAnchor: [10, 10] });
   alcaGirar = L.marker([0, 0], { draggable: true, pane: 'alcas', icon: icone('girar', '↻') });
-  ['tl', 'tr', 'bl', 'br'].forEach(k => alcas[k] = L.marker([0, 0], { draggable: true, pane: 'alcas', icon: icone('canto', '') }));
+  CANTOS.forEach(k => alcas[k] = L.marker([0, 0], { draggable: true, pane: 'alcas', icon: icone('canto', '') }));
+  Object.keys(LADOS).forEach(k => lados[k] = L.marker([0, 0], { draggable: true, pane: 'alcas', icon: icone('lado', '') }));
   contorno = L.polyline([], { color: '#8dc63f', weight: 1.5, dashArray: '6 5', pane: 'alcas' });
-  // girar
-  let refAng = 0, refU = null, refV = null;
-  alcaGirar.on('dragstart', () => { guarda(); escondePinos(); const c = [sel.est.lat, sel.est.lon], a = alcaGirar.getLatLng(); const m = metros(c, [a.lat, a.lng]); refAng = Math.atan2(m[1], m[0]); refU = sel.est.u.slice(); refV = sel.est.v.slice(); });
-  alcaGirar.on('drag', () => { const c = [sel.est.lat, sel.est.lon], a = alcaGirar.getLatLng(); const m = metros(c, [a.lat, a.lng]); const d = gra(Math.atan2(m[1], m[0]) - refAng); sel.est.u = gira(refU, d); sel.est.v = gira(refV, d); redesenha(sel, false); });
-  // cantos: os outros dois cantos ficam parados
-  let fixos = null;
-  Object.entries(alcas).forEach(([k, a]) => {
-    a.on('dragstart', () => { guarda(); escondePinos(); const q = quatroCantos(sel); fixos = q; });
+  // girar em volta do centro
+  let refAng = 0, refC = null, refCentro = null;
+  alcaGirar.on('dragstart', () => { guarda(); escondePinos(); refC = copia(sel.est.c); refCentro = centroDe(refC); const a = alcaGirar.getLatLng(); const m = metros(refCentro, [a.lat, a.lng]); refAng = gra(Math.atan2(m[1], m[0])); });
+  alcaGirar.on('drag', () => { const a = alcaGirar.getLatLng(); const m = metros(refCentro, [a.lat, a.lng]); sel.est.c = copia(refC); giraTudo(sel, gra(Math.atan2(m[1], m[0])) - refAng, refCentro); redesenha(sel, false); });
+  // cantos: cada um anda sozinho (deformação livre); com Shift, estica a planta inteira mantendo o canto oposto (sem deformar)
+  let refShift = false;
+  const oposto = { tl: 'br', tr: 'bl', br: 'tl', bl: 'tr' };
+  CANTOS.forEach(k => {
+    const a = alcas[k];
+    a.on('dragstart', ev => { guarda(); escondePinos(); refC = copia(sel.est.c); refShift = !!(ev.originalEvent && ev.originalEvent.shiftKey); });
     a.on('drag', () => {
-      const q = { ...fixos }, ll = a.getLatLng(); q[k] = [ll.lat, ll.lng];
-      if (k === 'br') {   // estica nas duas direções mantendo o canto oposto
-        const u = metros(fixos.tl, fixos.tr), v = metros(fixos.tl, fixos.bl), alvo = metros(fixos.tl, q.br);
-        const det = u[0] * v[1] - u[1] * v[0];
-        if (Math.abs(det) < 1e-6) return;
-        const fa = (alvo[0] * v[1] - alvo[1] * v[0]) / det, fb = (u[0] * alvo[1] - u[1] * alvo[0]) / det;
-        q.tr = llDe(fixos.tl, u[0] * fa, u[1] * fa); q.bl = llDe(fixos.tl, v[0] * fb, v[1] * fb);
-      }
-      aplicaCantos(sel, q.tl, q.tr, q.bl); redesenha(sel, false);
+      const ll = a.getLatLng(), novo = [ll.lat, ll.lng];
+      if (refShift) {   // escala não uniforme com o canto oposto fixo, nos eixos da planta
+        const o = refC[oposto[k]], u = metros(refC.tl, refC.tr), v = metros(refC.tl, refC.bl);
+        const alvo = metros(o, novo), orig = metros(o, refC[k]);
+        const det = u[0] * v[1] - u[1] * v[0]; if (Math.abs(det) < 1e-6) return;
+        const fa = (alvo[0] * v[1] - alvo[1] * v[0]) / (orig[0] * v[1] - orig[1] * v[0]);
+        const fb = (u[0] * alvo[1] - u[1] * alvo[0]) / (u[0] * orig[1] - u[1] * orig[0]);
+        if (!isFinite(fa) || !isFinite(fb)) return;
+        CANTOS.forEach(q => { const m = metros(o, refC[q]); const ma = (m[0] * v[1] - m[1] * v[0]) / det, mb = (u[0] * m[1] - u[1] * m[0]) / det; sel.est.c[q] = llDe(o, u[0] * ma * fa + v[0] * mb * fb, u[1] * ma * fa + v[1] * mb * fb); });
+      } else sel.est.c[k] = novo;
+      redesenha(sel, false);
     });
   });
-  [alcaGirar, ...Object.values(alcas)].forEach(a => a.on('dragend', () => { voltaPinos(); redesenha(sel); salvaAuto(); }));
-  // retoma o que já estava ajustado (aceita o formato antigo com giro/escala)
+  // meios de lado: os dois cantos daquele lado andam juntos (estica só aquele lado)
+  let refLado = null;
+  Object.entries(LADOS).forEach(([k, [p1, p2]]) => {
+    const a = lados[k];
+    a.on('dragstart', () => { guarda(); escondePinos(); refC = copia(sel.est.c); const ll = a.getLatLng(); refLado = [ll.lat, ll.lng]; });
+    a.on('drag', () => {
+      const ll = a.getLatLng(), dlat = ll.lat - refLado[0], dlon = ll.lng - refLado[1];
+      sel.est.c = copia(refC); [p1, p2].forEach(q => { sel.est.c[q] = [refC[q][0] + dlat, refC[q][1] + dlon]; });
+      redesenha(sel, false);
+    });
+  });
+  [alcaGirar, ...Object.values(alcas), ...Object.values(lados)].forEach(a => a.on('dragend', () => { voltaPinos(); redesenha(sel); salvaAuto(); }));
+  // retoma o que já estava ajustado: versão 3 (cantos), versão 2 (centro + u/v) ou a antiga (giro/escala)
   fetch('ajustes.json').then(r => r.ok ? r.json() : null).then(a => {
     let n = 0;
     if (a && a.plantas) Object.entries(a.plantas).forEach(([id, s]) => {
       const p = plantas.find(x => x.id === id); if (!p) return;
-      if (s.u && s.v) p.est = { lat: s.lat, lon: s.lon, u: s.u.slice(), v: s.v.slice() };
-      else { const e = s.escala ?? 1, t = -(s.theta ?? 0); p.est = { lat: s.lat, lon: s.lon, u: gira([p.Wm * e, 0], -t), v: gira([0, -p.Hm * e], -t) }; }
+      if (s.cantos) p.est.c = copia(s.cantos);
+      else if (s.u && s.v) p.est.c = cantosDeUV([s.lat, s.lon], s.u, s.v);
+      else { const e = s.escala ?? 1, t = -(s.theta ?? 0); p.est.c = cantosDeUV([s.lat, s.lon], gira([p.Wm * e, 0], -t), gira([0, -p.Hm * e], -t)); }
       redesenha(p); n++;
     });
     status(n ? 'retomando: ' + n + ' planta(s) já ajustada(s)' : plantas.length + ' plantas carregadas. Clique numa da lista.');
   }).catch(() => status(plantas.length + ' plantas carregadas.'));
   seleciona(plantas[0]);
-  mapa.fitBounds(L.latLngBounds(plantas.flatMap(p => cantosDe(p))), { padding: [20, 20] });
+  mapa.fitBounds(L.latLngBounds(plantas.flatMap(p => CANTOS.map(k => p.est.c[k]))), { padding: [20, 20] });
 });
 
 // ---- botões
@@ -334,15 +385,17 @@ $('#bSat').onclick = () => { mapa.removeLayer(ruas); satelite.addTo(mapa); };
 $('#bRuas').onclick = () => { mapa.removeLayer(satelite); ruas.addTo(mapa); };
 $('#bPinos').onclick = () => { mostrarPinos = !mostrarPinos; $('#bPinos').textContent = 'Pinos: ' + (mostrarPinos ? 'ligados' : 'desligados'); plantas.forEach(p => { if (p.visivel) { if (mostrarPinos) p.grupoPinos.addTo(mapa); else mapa.removeLayer(p.grupoPinos); } }); };
 $('#opac').oninput = e => { opacidade = e.target.value / 100; $('#vOpac').textContent = e.target.value + '%'; if (sel) sel.overlay.setOpacity(opacidade); };
-$('#bZoom').onclick = () => sel && mapa.fitBounds(L.latLngBounds(cantosDe(sel)), { padding: [30, 30] });
-$('#bEsquadro').onclick = () => {   // mantém giro e tamanhos, tira só a distorção (volta a 90 graus)
+$('#bZoom').onclick = () => sel && mapa.fitBounds(L.latLngBounds(CANTOS.map(k => sel.est.c[k])), { padding: [30, 30] });
+$('#bEsquadro').onclick = () => {   // mantém posição, giro e tamanhos médios; volta a ser um retângulo (sem deformação nem esquadro)
   if (!sel) return; guarda();
-  const m = medidas(sel), lu = Math.hypot(...sel.est.u), lv = Math.hypot(...sel.est.v), a = Math.atan2(sel.est.u[1], sel.est.u[0]);
-  sel.est.u = [lu * Math.cos(a), lu * Math.sin(a)];
-  sel.est.v = [lv * Math.cos(a - Math.PI / 2), lv * Math.sin(a - Math.PI / 2)];
-  redesenha(sel); grava('distorção removida e salvo');
+  const c = sel.est.c, ce = centroDe(c);
+  const lu = (Math.hypot(...metros(c.tl, c.tr)) + Math.hypot(...metros(c.bl, c.br))) / 2, lv = (Math.hypot(...metros(c.tl, c.bl)) + Math.hypot(...metros(c.tr, c.br))) / 2;
+  const u1 = metros(c.tl, c.tr), u2 = metros(c.bl, c.br), a = Math.atan2(u1[1] + u2[1], u1[0] + u2[0]);
+  const u = [lu * Math.cos(a), lu * Math.sin(a)], v = [lv * Math.cos(a - Math.PI / 2), lv * Math.sin(a - Math.PI / 2)];
+  sel.est.c = cantosDeUV(ce, u, v);
+  redesenha(sel); grava('deformação removida e salvo');
 };
-$('#bReset').onclick = () => { if (!sel) return; guarda(); sel.est = { lat: sel.ini.lat, lon: sel.ini.lon, u: [sel.Wm, 0], v: [0, -sel.Hm] }; redesenha(sel); grava('planta voltou ao original e foi salvo'); };
+$('#bReset').onclick = () => { if (!sel) return; guarda(); sel.est.c = copia(sel.ini.c); redesenha(sel); grava('planta voltou ao original e foi salvo'); };
 $('#bMapa').onclick = () => window.open('/mapa/mapa-lotes-indaiatuba/', '_blank');
 $('#bSalvar').onclick = () => grava('salvo por você');
 </script>

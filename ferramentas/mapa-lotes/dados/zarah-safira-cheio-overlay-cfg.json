@@ -1,0 +1,13 @@
+{
+ "fit": "zarah-safira-fit.json",
+ "png": "5000/zarah-safira-5000-p1.png",
+ "pw": 3370,
+ "ph": 2384,
+ "sem_perimetro": true,
+ "interior_png": "zarah-safira-cheio-mascara.png",
+ "res_m": 0.4,
+ "branco": 245,
+ "cores": 32,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/zarah-safira-cheio-overlay.png",
+ "saida_bounds": "zarah-safira-cheio-bounds.json"
+}

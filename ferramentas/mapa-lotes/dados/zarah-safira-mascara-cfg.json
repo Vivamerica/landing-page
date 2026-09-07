@@ -1,0 +1,12 @@
+{
+ "png": "5000/zarah-safira-5000-p1.png",
+ "saida": "zarah-safira-cheio-mascara.png",
+ "check": "zarah-safira-cheio-mascara-check.jpg",
+ "sat_min": 60,
+ "cinza": [185, 240],
+ "erode_px": 7,
+ "fecha_m": 25,
+ "m_por_px": 0.2378,
+ "engorda_px": 9,
+ "fator": 2
+}
