@@ -366,15 +366,17 @@ fetch('plantas.json').then(r => r.json()).then(d => {
   [alcaGirar, ...Object.values(alcas), ...Object.values(lados)].forEach(a => a.on('dragend', () => { voltaPinos(); redesenha(sel); salvaAuto(); }));
   // retoma o que já estava ajustado: versão 3 (cantos), versão 2 (centro + u/v) ou a antiga (giro/escala)
   fetch('ajustes.json').then(r => r.ok ? r.json() : null).then(a => {
-    let n = 0;
+    let n = 0, velhos = 0;
     if (a && a.plantas) Object.entries(a.plantas).forEach(([id, s]) => {
       const p = plantas.find(x => x.id === id); if (!p) return;
+      // ajuste feito sobre OUTRA imagem (bounds diferentes: a planta foi trocada ou aplicada depois) não vale mais
+      if (s.bounds0 && JSON.stringify(s.bounds0) !== JSON.stringify(p.bounds)) { velhos++; return; }
       if (s.cantos) p.est.c = copia(s.cantos);
       else if (s.u && s.v) p.est.c = cantosDeUV([s.lat, s.lon], s.u, s.v);
       else { const e = s.escala ?? 1, t = -(s.theta ?? 0); p.est.c = cantosDeUV([s.lat, s.lon], gira([p.Wm * e, 0], -t), gira([0, -p.Hm * e], -t)); }
       redesenha(p); n++;
     });
-    status(n ? 'retomando: ' + n + ' planta(s) já ajustada(s)' : plantas.length + ' plantas carregadas. Clique numa da lista.');
+    status((n ? 'retomando: ' + n + ' planta(s) já ajustada(s)' : plantas.length + ' plantas carregadas. Clique numa da lista.') + (velhos ? ' · ' + velhos + ' ajuste(s) antigo(s) ignorado(s): a planta mudou depois deles' : ''));
   }).catch(() => status(plantas.length + ' plantas carregadas.'));
   seleciona(plantas[0]);
   mapa.fitBounds(L.latLngBounds(plantas.flatMap(p => CANTOS.map(k => p.est.c[k]))), { padding: [20, 20] });

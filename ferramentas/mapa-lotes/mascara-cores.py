@@ -60,6 +60,16 @@ for y in range(0, trab.height, 4):
         if ar > melhor[0]: melhor = (ar, reg)
         trab.paste(64, (0, 0), reg)
 m = melhor[1]; bb = m.getbbox(); print('blocos: %d; maior com %.0f x %.0f m de caixa' % (nb, (bb[2] - bb[0]) * mpp, (bb[3] - bb[1]) * mpp))
+if cfg.get('fecha_forma_m'):   # fecha as reentrancias da FORMA (lotes grandes abertos para a divisa): em resolucao baixa, raio grande
+    f2 = cfg.get('fator_forma', 4); pq = m.resize((m.width // f2, m.height // f2), Image.BOX).point(lambda v: 255 if v > 60 else 0)
+    kf = int(cfg['fecha_forma_m'] / (mpp * f2)) | 1
+    pq = pq.filter(ImageFilter.MaxFilter(kf)).filter(ImageFilter.MinFilter(kf))
+    fora = pq.copy(); ImageDraw.Draw(fora).rectangle([0, 0, fora.width - 1, fora.height - 1], outline=0)
+    for p in [(0, 0), (fora.width - 1, 0), (0, fora.height - 1), (fora.width - 1, fora.height - 1)]:
+        if fora.getpixel(p) == 0: ImageDraw.floodfill(fora, p, 128)
+    pq = fora.point(lambda v: 0 if v == 128 else 255)
+    m = ImageChops.lighter(m, pq.resize(m.size, Image.BILINEAR).point(lambda v: 255 if v > 127 else 0))
+    print('forma fechada com %d m (%d px em 1/%d)' % (cfg['fecha_forma_m'], kf, f2))
 m = m.filter(ImageFilter.MaxFilter(cfg.get('engorda_px', 9) // f | 1))
 m = m.resize((W, H), Image.NEAREST)
 m.save(T + cfg['saida']); bb = m.getbbox()

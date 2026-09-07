@@ -15,5 +15,7 @@
  "quadras": "araras-quadras.json",
  "margem_pt": 200,
  "pw": 4545.35,
- "ph": 1877.32
+ "ph": 1877.32,
+ "fecha_forma_m": 70,
+ "fator_forma": 4
 }

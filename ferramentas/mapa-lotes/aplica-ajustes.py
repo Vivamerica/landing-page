@@ -54,6 +54,8 @@ for bid, a in aj.items():
     # o editor partiu do mesmo retangulo que esta' no index.html? (senao o ajuste e' relativo a outra imagem)
     if 'lat0' in a and (abs(a['lat0'] - c0[0]) > 2e-7 or abs(a['lon0'] - c0[1]) > 2e-7):
         print('!! %s: o ajuste foi feito sobre outra imagem (centro %.6f,%.6f x %.6f,%.6f) — pulei' % (bid, a['lat0'], a['lon0'], c0[0], c0[1])); continue
+    if a.get('bounds0') and any(abs(a['bounds0'][i][j] - [[la0, lo0], [la1, lo1]][i][j]) > 2e-7 for i in range(2) for j in range(2)):
+        print('!! %s: bounds0 do ajuste != bounds do index.html (imagem trocada/aplicada depois do ajuste) — pulei' % bid); continue
     if a.get('cantos'): C = {k: tuple(a['cantos'][k]) for k in CANTOS}
     elif a.get('u') and a.get('v'): C = cantos_uv((a['lat'], a['lon']), a['u'], a['v'])
     else:
