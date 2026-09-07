@@ -29,12 +29,15 @@ if cfg.get('sem_azul'):   # represa / curso d'agua (azul puro) ficam de fora: o 
 if cfg.get('cinza'):
     lo, hi = cfg['cinza']
     m = ImageChops.lighter(m, ImageChops.multiply(sat.point(lambda v: 255 if v < 25 else 0), mx.point(lambda v: 255 if lo <= v <= hi else 0)))
-if cfg.get('escuro_max') is not None:
-    esc = cfg['escuro_max']; m = ImageChops.lighter(m, mn.point(lambda v: 255 if v <= esc else 0))
 mpp = cfg.get('m_por_px', 0.238) * f
-if cfg.get('erode_px', 7) > 0:
+if cfg.get('erode_px', 7) > 0:   # erosao so' no que tem cor: some com curvas de nivel coloridas, tracejados, texto; as areas grandes ficam
     e = cfg['erode_px'] // f | 1
-    m = m.filter(ImageFilter.MinFilter(e)).filter(ImageFilter.MaxFilter(e))          # some o que e fino (linhas, texto)
+    m = m.filter(ImageFilter.MinFilter(e)).filter(ImageFilter.MaxFilter(e))
+if cfg.get('escuro_max') is not None:   # linhas PRETAS (todos os canais baixos) medidas em resolucao cheia: linha fina de 1 px tambem conta
+    esc = cfg['escuro_max']; R_, G_, B_ = im.split()
+    mx_full = ImageChops.lighter(ImageChops.lighter(R_, G_), B_)
+    escuro = mx_full.point(lambda v: 255 if v <= esc else 0).resize(peq.size, Image.BOX).point(lambda v: 255 if v > 0 else 0)
+    m = ImageChops.lighter(m, escuro)
 k = int(cfg.get('fecha_m', 25) / mpp) | 1
 m = m.filter(ImageFilter.MaxFilter(k)).filter(ImageFilter.MinFilter(k))              # fechamento: cobre as quadras brancas
 if cfg.get('abre_m'):

@@ -41,6 +41,14 @@ def cantos_uv(c, u, v):
 CANTOS = ['tl', 'tr', 'br', 'bl']
 aj = json.load(open(S + '/ajuste/ajustes.json', encoding='utf-8'))['plantas']
 if SO: aj = {k: v for k, v in aj.items() if k in SO}
+# entrada com os MESMOS cantos de um ajuste ja' aplicado e' re-gravacao de estado velho (aba do editor sem F5), nao ajuste novo
+import glob
+_apl = {}
+for _f in sorted(glob.glob(S + '/ajuste/ajustes-aplicado-*.json')): _apl.update(json.load(open(_f, encoding='utf-8'))['plantas'])
+for _k in list(aj):
+    _p, _v = _apl.get(_k), aj[_k]
+    if _p and _v.get('cantos') and all(abs(_p['cantos'][q][i] - _v['cantos'][q][i]) < 1e-8 for q in CANTOS for i in (0, 1)):
+        print('!! %s: cantos iguais a um ajuste ja' aplicado — e' re-gravacao antiga, pulei' % _k); del aj[_k]
 if not aj: print('nada ajustado'); sys.exit()
 html = open(R + 'index.html', encoding='utf-8', newline='').read(); assert '\r' not in html
 saida_img = (TESTE.rstrip('/\\') + '/') if TESTE else R + 'images/'
@@ -90,7 +98,8 @@ for bid, a in aj.items():
         sx, ty = (lon - lo0) / (lo1 - lo0), (la1 - lat) / (la1 - la0)
         X, Y = aplica(Hp, sx, ty); nl = llde(C['tl'], X, Y)
         return mm.group(0).replace(ll.group(0), 'll:[%.6f,%.6f]' % nl)
-    html, n = re.subn(r"^ *\{ b:'%s'.*$" % re.escape(bid), move, html, flags=re.M)
+    if '--sem-pinos' in sys.argv: n = 0   # so' a imagem: os pinos ja' estao no lugar (retroca de imagem com o mesmo encaixe)
+    else: html, n = re.subn(r"^ *\{ b:'%s'.*$" % re.escape(bid), move, html, flags=re.M)
     aplicados[bid] = {'bounds': nb, 'size': [OW, OH]}
     print('               imagem %d KB, %d pino(s) reposicionado(s), %.1fs' % (os.path.getsize(saida_img + bid + '.png') // 1024, n, time.time() - t0))
 if SECO or not aplicados: sys.exit()

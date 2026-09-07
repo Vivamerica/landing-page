@@ -5,8 +5,8 @@
  "sat_min": 60,
  "sem_azul": true,
  "cinza": null,
- "escuro_max": 120,
- "erode_px": 0,
+ "escuro_max": 110,
+ "erode_px": 7,
  "fecha_m": 16,
  "abre_m": 0,
  "m_por_px": 0.321,
@@ -16,6 +16,6 @@
  "margem_pt": 200,
  "pw": 4545.35,
  "ph": 1877.32,
- "fecha_forma_m": 70,
+ "fecha_forma_m": 0,
  "fator_forma": 4
 }
