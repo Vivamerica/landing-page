@@ -37,10 +37,10 @@
     "numberOfAccommodationUnits": 172,
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": -23.08155,
-      "longitude": -47.19755
+      "latitude": -23.081133,
+      "longitude": -47.1975516
     },
-    "hasMap": "https://www.google.com/maps/search/?api=1&query=Rua%20Tr%C3%AAs%20Marias%2C%20254%20-%20Indaiatuba%20SP",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Espa%C3%A7o%20Concei%C3%A7%C3%A3o%20Indaiatuba",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua Três Marias, 254 — Cidade Nova II",
@@ -255,6 +255,22 @@
     .wa-float svg{width:33px;height:33px;}
     @media (max-width:760px){ body:has(.wa-float,.float-wpp,.whats-flutuante) footer{padding-bottom:6.5rem} }
     @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} }
+    /* ─── localização com mapa sob demanda: o iframe do Google só nasce no clique ─── */
+    .mapa-box{position:relative;width:100%;aspect-ratio:16/9;max-height:460px;border-radius:10px;
+      overflow:hidden;background:#e8e4d8;border:1px solid var(--border);cursor:pointer;margin-top:1.8rem}
+    .mapa-box iframe{width:100%;height:100%;border:0;display:block}
+    .mapa-btn{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
+      background:repeating-linear-gradient(45deg,#efece2 0 14px,#eae6da 14px 28px);
+      font-family:inherit;transition:background .2s}
+    .mapa-btn:hover{background:repeating-linear-gradient(45deg,#e9e5d8 0 14px,#e3ded0 14px 28px)}
+    .mapa-ic{font-size:2.1rem;line-height:1}
+    .mapa-t{font-size:1.02rem;font-weight:700;color:#161616;background:var(--gold);padding:.7rem 1.6rem;border-radius:6px}
+    .mapa-s{font-size:.78rem;color:#7a7365;max-width:32ch;text-align:center;line-height:1.45}
+    .mapa-rota{display:inline-block;margin-top:1rem;font-size:.92rem;font-weight:700;color:var(--ink);
+      text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px}
+    .mapa-rota:hover{color:var(--gold)}
+    @media(max-width:640px){.mapa-box{aspect-ratio:4/3}}
   </style>
   <style id="marca">
     /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
@@ -519,6 +535,14 @@
       <div class="card"><h3>5 minutos</h3><p>Avenida Presidente Vargas</p></div>
       <div class="card"><h3>6 minutos</h3><p>Saída da cidade pelo acesso à Rodovia Santos Dumont</p></div>
     </div>
+    <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4439.88928322767!2d-47.197551600000004!3d-23.081132999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b59cb498cc07%3A0x8a1d628b402259c1!2zRXNwYcOnbyBDb25jZWnDp8OjbyBJbmRhaWF0dWJh!5e1!3m2!1spt-BR!2sbr!4v1788986557409!5m2!1spt-BR!2sbr">
+      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do Espaço Conceição">
+        <span class="mapa-ic" aria-hidden="true"></span>
+        <span class="mapa-t">Ver no mapa</span>
+        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
+      </button>
+    </div>
+    <p><a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=Espa%C3%A7o+Concei%C3%A7%C3%A3o+Indaiatuba" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>
     <p style="margin-top:1.4rem;font-size:.88rem;color:var(--gray);">Tempos de carro estimados no book do empreendimento, com base no Google Maps. O trânsito e o horário alteram esses tempos.</p>
   </div>
 </section>
@@ -593,6 +617,27 @@
   </p>
 <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
 </footer>
+
+<script>
+// o iframe do Google só nasce no clique: nada sai daqui antes disso
+(function () {
+  var cx = document.querySelectorAll('.mapa-box');
+  for (var i = 0; i < cx.length; i++) {
+    cx[i].addEventListener('click', function () {
+      if (this.dataset.pronto) return;
+      this.dataset.pronto = '1';
+      var f = document.createElement('iframe');
+      f.src = this.dataset.src;
+      f.title = 'Mapa do Espaço Conceição, Rua Três Marias, 254, Indaiatuba';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      this.innerHTML = '';
+      this.appendChild(f);
+    }, { once: true });
+  }
+})();
+</script>
 
 </body>
 </html>
