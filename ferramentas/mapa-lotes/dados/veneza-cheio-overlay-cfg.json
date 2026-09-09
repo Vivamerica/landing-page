@@ -1,0 +1,13 @@
+{
+ "fit": "veneza-fit.json",
+ "png": "5000/295-jardim-residencial-veneza-p1.png",
+ "pw": 3118,
+ "ph": 2268,
+ "sem_perimetro": true,
+ "interior_png": "veneza-cheio-mascara.png",
+ "res_m": 0.4,
+ "branco": 245,
+ "cores": 32,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp/mapas/veneza-cheio-overlay.png",
+ "saida_bounds": "veneza-cheio-bounds.json"
+}

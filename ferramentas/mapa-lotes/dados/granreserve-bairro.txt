@@ -1,0 +1,1 @@
+{ id:'granreserve', nome:'Park Gran Reserve', sub:'loteamento · 1 lote disponível (relatório de 04/09/2026)', cond:'entrada mínima R$ 130.000,00 + 36 parcelas (relatório SECE de 04/09/2026)', overlay:{ url:'images/granreserve.png', bounds:[[-23.079409228,-47.192662164],[-23.066101439,-47.177031096]] } },

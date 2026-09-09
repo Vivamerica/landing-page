@@ -1,0 +1,13 @@
+{
+ "fit": "bomsucesso-fit.json",
+ "png": "5000/337-jardim-bom-sucesso_-p1.png",
+ "pw": 4749.04,
+ "ph": 3003.99,
+ "sem_perimetro": true,
+ "interior_png": "bomsucesso-cheio-mascara.png",
+ "res_m": 0.4,
+ "branco": 245,
+ "cores": 32,
+ "saida": "C:/Users/Usuario/AppData/Local/Temp/mapas/bomsucesso-cheio-overlay.png",
+ "saida_bounds": "bomsucesso-cheio-bounds.json"
+}

@@ -1,0 +1,1 @@
+{ id:'veneza', nome:'Jardim Residencial Veneza', sub:'loteamento · 1 lote disponível (relatório de 04/09/2026)', cond:'somente à vista, conforme relatório SECE de 04/09/2026', overlay:{ url:'images/veneza.png', bounds:[[-23.103417160,-47.256340185],[-23.097138619,-47.248041714]] } },

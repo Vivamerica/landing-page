@@ -1,0 +1,13 @@
+{
+ "fit": "vistareal-fit.json",
+ "png": "5000/340-jardim-park-vista-real-p1.png",
+ "pw": 2759.64,
+ "ph": 2574.68,
+ "sem_perimetro": true,
+ "interior_png": "vistareal-cheio-mascara.png",
+ "res_m": 0.35,
+ "branco": 245,
+ "cores": 64,
+ "saida": "C:/Users/Usuario/AppData/Local/Temp/mapas/vistareal-cheio-overlay.png",
+ "saida_bounds": "vistareal-cheio-bounds.json"
+}

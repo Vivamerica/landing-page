@@ -1,0 +1,16 @@
+{
+ "E": [
+  0.3527907753819057,
+  0.0,
+  274876.22999202576
+ ],
+ "N": [
+  0.0,
+  0.35277497682554904,
+  7446579.497278788
+ ],
+ "pw": 2759.64,
+ "ph": 2574.68,
+ "render": "5000/340-jardim-park-vista-real-p1.png",
+ "fonte": "grade UTM impressa na moldura (E(X) 275.000..275.800, N(Y) 7.446.600..7.447.400, SIRGAS2000 conforme a planta); pagina virtual = cropbox [399.5,1009.6,2974.2,3769.2] girado 270 (x'=3769.2-y, y'=x-399.5), norte para cima; residuo max E 0.021 m, N 0.015 m"
+}

@@ -1,0 +1,1 @@
+  { id:'bomsucesso', nome:'Jardim Bom Sucesso', sub:'loteamento · 1 lote misto disponível, segregado em C01-A e C01-B (nota de 08/09/2026)', cond:'entrada de 20% e saldo em 72x, conforme nota de 08/09/2026', overlay:{ url:'images/bomsucesso.png', bounds:[[-23.118272070,-47.266759110],[-23.103705813,-47.257188239]] } },

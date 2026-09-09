@@ -1,0 +1,1 @@
+  { id:'viena', nome:'Jardim Residencial Viena', sub:'loteamento · 1 lote disponível (relatório de 04/09/2026)', cond:'somente à vista, conforme relatório SECE de 04/09/2026', overlay:{ url:'images/viena.png', bounds:[[-23.071391689,-47.253206438],[-23.066973314,-47.246145907]] } },

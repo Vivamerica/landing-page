@@ -1,0 +1,13 @@
+{
+ "fit": "viena-fit.json",
+ "png": "5000/302-jardim-residencial-viena-p1.png",
+ "pw": 2835,
+ "ph": 1843,
+ "sem_perimetro": true,
+ "interior_png": "viena-cheio-mascara.png",
+ "res_m": 0.35,
+ "branco": 245,
+ "cores": 48,
+ "saida": "C:/Users/Usuario/AppData/Local/Temp/mapas/viena-cheio-overlay.png",
+ "saida_bounds": "viena-cheio-bounds.json"
+}

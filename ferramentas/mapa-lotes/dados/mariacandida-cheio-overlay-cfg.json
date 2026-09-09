@@ -1,0 +1,13 @@
+{
+ "fit": "mariacandida-fit.json",
+ "png": "5000/Mapa Maria Candida (1)-p1.png",
+ "pw": 842,
+ "ph": 595,
+ "sem_perimetro": true,
+ "interior_png": "mariacandida-cheio-mascara.png",
+ "res_m": 0.4,
+ "branco": 245,
+ "cores": 48,
+ "saida": "C:/Users/Usuario/AppData/Local/Temp/mapas/mariacandida-cheio-overlay.png",
+ "saida_bounds": "mariacandida-cheio-bounds.json"
+}

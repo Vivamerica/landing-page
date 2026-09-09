@@ -1,0 +1,1 @@
+{ id:'vistareal', nome:'Jardim Park Vista Real', sub:'loteamento · 29 lotes disponíveis (relatório de 04/09/2026)', cond:'entrada mínima (cerca de 20%) e saldo em 36 parcelas, conforme relatório SECE de 04/09/2026; lote A-16 só à vista', overlay:{ url:'images/vistareal.png', bounds:[[-23.073044564,-47.195643662],[-23.068200034,-47.188678744]] } },

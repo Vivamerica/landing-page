@@ -1,0 +1,40 @@
+{
+ "fit": "granreserve-fit.json",
+ "png": "5000/318-loteamento-park-gran-reserve-p1.png",
+ "pw": 4809.043,
+ "ph": 2977.512,
+ "dilata_mag": 9,
+ "sementes_ext": [
+  [
+   0,
+   0
+  ],
+  [
+   4999,
+   0
+  ],
+  [
+   0,
+   3095
+  ],
+  [
+   4999,
+   3095
+  ]
+ ],
+ "pontos_dentro": [
+  [
+   3957.84,
+   1698.31
+  ],
+  [
+   865.63,
+   1727.16
+  ]
+ ],
+ "res_m": 0.4,
+ "branco": 245,
+ "cores": 48,
+ "saida": "C:\\Users\\Usuario\\AppData\\Local\\Temp\\mapas\\granreserve-cheio-overlay.png",
+ "saida_bounds": "granreserve-cheio-bounds.json"
+}

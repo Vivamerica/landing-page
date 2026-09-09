@@ -1,0 +1,21 @@
+{
+ "E": [
+  0.28651934149165176,
+  -0.2012386432914984,
+  275781.3210707447
+ ],
+ "N": [
+  0.2012386432914984,
+  0.28651934149165176,
+  7445842.630800805
+ ],
+ "quadro": "pagina EXIBIDA (cropbox girado /Rotate 270): pw 4809.043 ph 2977.512 pt; x_d = X_px/K, y_d = ph - Y_px/K, K = 1.039708 px/pt",
+ "escala_m_pt": 0.3501290113695417,
+ "rumo_eixo_x_az": 125.08252516707205,
+ "rms_m": 7.248563042868496,
+ "n_pontos": 6,
+ "fonte": "pontos de controle: cruzamentos da Av. Mario Gil e ruas nomeadas na planta x nos do OSM (similaridade, minimos quadrados)",
+ "escala_nominal_m_pt": 0.35278,
+ "razao_escala": 0.9924854338951804,
+ "norte_graus_a_direita_do_cima_da_planta": 35.08252516707205
+}

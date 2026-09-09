@@ -1,0 +1,13 @@
+{
+ "fit": "paulista3-fit.json",
+ "png": "5000/Paulista 3 - Planta Comercial-p1.png",
+ "pw": 2835,
+ "ph": 2268,
+ "sem_perimetro": true,
+ "interior_png": "paulista3-cheio-mascara.png",
+ "res_m": 0.4,
+ "branco": 245,
+ "cores": 48,
+ "saida": "C:/Users/Usuario/AppData/Local/Temp/mapas/paulista3-cheio-overlay.png",
+ "saida_bounds": "paulista3-cheio-bounds.json"
+}

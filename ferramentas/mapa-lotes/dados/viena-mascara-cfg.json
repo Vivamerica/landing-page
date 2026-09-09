@@ -1,0 +1,21 @@
+{
+ "png": "5000/302-jardim-residencial-viena-p1.png",
+ "saida": "viena-cheio-mascara.png",
+ "check": "viena-cheio-mascara-check.jpg",
+ "sat_min": 60,
+ "sem_azul": true,
+ "cinza": null,
+ "escuro_max": 110,
+ "erode_px": 7,
+ "fecha_m": 16,
+ "abre_m": 0,
+ "m_por_px": 0.2,
+ "engorda_px": 9,
+ "fator": 2,
+ "quadras": "viena-ret-quadras.json",
+ "margem_pt": 0,
+ "pw": 2835,
+ "ph": 1843,
+ "fecha_forma_m": 0,
+ "fator_forma": 4
+}

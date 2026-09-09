@@ -1,0 +1,17 @@
+{
+ "png": "5000/bomsucesso-limpo-mask-src.png",
+ "saida": "bomsucesso-cheio-mascara.png",
+ "check": "bomsucesso-cheio-mascara-check.jpg",
+ "sat_min": 60,
+ "sem_azul": false,
+ "cinza": null,
+ "escuro_max": 100,
+ "erode_px": 7,
+ "fecha_m": 20,
+ "abre_m": 0,
+ "m_por_px": 0.3351,
+ "engorda_px": 9,
+ "fator": 2,
+ "fecha_forma_m": 0,
+ "fator_forma": 4
+}
