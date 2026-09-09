@@ -34,6 +34,12 @@
     .filtros{padding:.5rem .8rem;border-bottom:1px solid var(--borda)}
     .filtros p{font-size:.72rem;color:var(--cinza);margin-bottom:.4rem;letter-spacing:.08em;text-transform:uppercase}
     .chips{display:flex;flex-wrap:wrap;gap:.35rem}
+    .filtros p.sep{margin-top:.55rem}
+    .busca{margin-top:.55rem}
+    .busca input{width:100%;border:1px solid var(--borda);border-radius:999px;padding:.4rem .75rem;font:inherit;font-size:.78rem;background:#fff}
+    .busca input:focus{outline:2px solid var(--ouro);outline-offset:1px}
+    .oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .vazio{padding:1.1rem .9rem;color:var(--cinza);font-size:.8rem}
     .chip{border:1px solid var(--borda);border-radius:999px;padding:.2rem .5rem;font-size:.7rem;cursor:pointer;background:#fff;display:inline-flex;align-items:center;gap:.35rem}
     .chip i{width:.6rem;height:.6rem;border-radius:50%;display:inline-block}
     .chip.off{opacity:.38}
@@ -108,8 +114,14 @@
   <aside id="painel">
     <div class="gaveta-topo"><b>Bairros e lotes</b><button type="button" id="btnFechar" aria-label="Fechar">×</button></div>
     <div class="filtros">
-      <p>Tipo de lote</p>
+      <p>Tipo de loteamento</p>
+      <div class="chips" id="chipsLot"></div>
+      <p class="sep">Tipo de lote</p>
       <div class="chips" id="chips"></div>
+      <div class="busca">
+        <label class="oculto" for="busca">Buscar bairro, quadra ou lote</label>
+        <input type="search" id="busca" placeholder="Buscar bairro, quadra ou lote" autocomplete="off">
+      </div>
       <button class="btn-filtrar" id="btnFiltrar" type="button">Filtrar e ver no mapa</button>
     </div>
     <div class="lista" id="lista"></div>
@@ -130,17 +142,20 @@
 // ─── DADOS ─────────────────────────────────────────────────────────────────────
 // Tabela de lotes disponíveis (set/2026; Maria Cândida jul/2025) + coordenadas de campo (04/09/2026).
 // ll = [lat, lng] do pino (aproximado). poly = contorno do lote [[lat,lng],...] quando traçado (modo ?tracar=1).
-const TIPOS = { RESIDENCIAL:['Residencial','var(--res)','#2e7d5b'], MISTO:['Misto (comercial)','var(--mis)','#b8641b'], COMERCIAL:['Comercial','var(--com)','#1f5fa8'], AVENIDA:['Avenida','var(--ave)','#7a3fb5'], GLEBA:['Gleba','var(--gle)','#8a6d1f'] };
+const TIPOS = { RESIDENCIAL:['Residencial','var(--res)','#2e7d5b'], MISTO:['Misto','var(--mis)','#b8641b'], COMERCIAL:['Comercial','var(--com)','#1f5fa8'], GLEBA:['Gleba','var(--gle)','#8a6d1f'] };
+// 09/09/2026: lote de avenida passou a contar como COMERCIAL e "misto (comercial)" virou so "misto" (pedido do Fabio).
+const LOTEAM = { ABERTO:['Loteamento aberto','#2f7d8f'], FECHADO:['Loteamento fechado','#7a3fb5'] };
+const especieDe = b => (b && b.fechado) ? 'FECHADO' : 'ABERTO';
 const BAIRROS = [
-  { id:'sanmarino', nome:'Terras de San Marino', sub:'condomínio fechado em lançamento · a prazo em 60x', landing:'/terras-de-san-marino-indaiatuba/', cond:'juros de 1% a.m. na tabela PRICE · correção anual pelo IGP-M', overlay:{ url:'images/sanmarino.png', bounds:[[-23.103290271,-47.263758441],[-23.095355547,-47.254242201]] } },
-  { id:'alpnach', nome:'Alpnach Residence', sub:'condomínio fechado · 322 lotes · a prazo em 48x', landing:'/alpnach-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/alpnach.png', bounds:[[-23.084263640,-47.239591167],[-23.075924888,-47.230968063]] } },
+  { id:'sanmarino', fechado:true, nome:'Terras de San Marino', sub:'condomínio fechado em lançamento · a prazo em 60x', landing:'/terras-de-san-marino-indaiatuba/', cond:'juros de 1% a.m. na tabela PRICE · correção anual pelo IGP-M', overlay:{ url:'images/sanmarino.png', bounds:[[-23.103290271,-47.263758441],[-23.095355547,-47.254242201]] } },
+  { id:'alpnach', fechado:true, nome:'Alpnach Residence', sub:'condomínio fechado · 322 lotes · a prazo em 48x', landing:'/alpnach-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/alpnach.png', bounds:[[-23.084263640,-47.239591167],[-23.075924888,-47.230968063]] } },
   { id:'montecarmelo', nome:'Residencial Monte Carmelo', sub:'loteamento aberto · 568 lotes · a prazo em até 96x', landing:'/monte-carmelo-indaiatuba/', cond:'entrada de 10% e saldo em 24, 48 ou 96x conforme o lote, relatório Dominium de 02/09/2026', overlay:{ url:'images/montecarmelo.png', bounds:[[-23.097591481,-47.290771730],[-23.088961221,-47.279840990]] } },
-  { id:'ravello', nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 02/09/2026', overlay:{ url:'images/ravello.png', bounds:[[-23.084077694,-47.249446812],[-23.073393991,-47.234171390]] } },
+  { id:'ravello', fechado:true, nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 02/09/2026', overlay:{ url:'images/ravello.png', bounds:[[-23.084077694,-47.249446812],[-23.073393991,-47.234171390]] } },
   { id:'diitalia', nome:'Jardim Di Italia', sub:'loteamento · 404 lotes · a prazo em 60x', landing:'/di-italia-indaiatuba/', cond:'entrada de 20% e saldo em 60x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/diitalia.png', bounds:[[-23.103579757,-47.263075029],[-23.099470643,-47.259032939]] } },
   { id:'canarios',   nome:'Vila dos Canários', overlay:{ url:'images/canarios.png', bounds:[[-23.108921899,-47.268419712],[-23.107101849,-47.266723574]] } },
-  { id:'zarah-safira', nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes · entrega dez/2026', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.104061777,-47.269326681],[-23.097995146,-47.262840271]] } },
-  { id:'zarah-rubi', nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098524045,-47.265731433],[-23.093995123,-47.261693425]] } },
-  { id:'zarah-perola', nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099411964,-47.270175998],[-23.094030998,-47.265280434]] } },
+  { id:'zarah-safira', fechado:true, nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes · entrega dez/2026', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.104061777,-47.269326681],[-23.097995146,-47.262840271]] } },
+  { id:'zarah-rubi', fechado:true, nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098524045,-47.265731433],[-23.093995123,-47.261693425]] } },
+  { id:'zarah-perola', fechado:true, nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% + 180 parcelas mensais, tabela Zarin de set/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099411964,-47.270175998],[-23.094030998,-47.265280434]] } },
   { id:'bemtevi',    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104009900,-47.269992856],[-23.100875636,-47.266748130]] } },
   { id:'andorinhas', nome:'Jardim das Andorinhas', overlay:{ url:'images/andorinhas.png', bounds:[[-23.108521524,-47.272461516],[-23.104284716,-47.269854118]] } },
   { id:'araras',     nome:'Jardim das Araras', overlay:{ url:'images/araras.png', bounds:[[-23.096617254,-47.289265394],[-23.087239678,-47.276216447]] } },
@@ -1742,7 +1757,7 @@ const LOTES = [
   { b:'campobonito', q:'27', l:'54', m2:153.50, tipo:'MISTO', pm2:1450,    vista:222575.00, entrada:33386.25,  parcela:16809.19, nx:12, ll:[-23.098113,-47.272868] },
   { b:'campobonito', q:'28', l:'22', m2:151.20, tipo:'MISTO', pm2:1450,    vista:219240.00, entrada:32886.00,  parcela:16557.33, nx:12, ll:[-23.099579,-47.272178] },
   // Parque Barnabé (Smart City) — planta original do loteamento georreferenciada (OpenStreetMap/satélite); pinos reposicionados pela planta
-  { b:'barnabe', q:'32', l:'4',  m2:172.54, tipo:'AVENIDA',     pm2:1300,    vista:224302.00, entrada:null,      parcela:null,     soVista:true, ll:[-23.090403,-47.276357] },
+  { b:'barnabe', q:'32', l:'4',  m2:172.54, tipo:'COMERCIAL',     pm2:1300,    vista:224302.00, entrada:null,      parcela:null,     soVista:true, ll:[-23.090403,-47.276357] },
   { b:'barnabe', q:'11', l:'1',  m2:214.12, tipo:'COMERCIAL',   pm2:1300,    vista:278356.00, entrada:41753.40,  parcela:3845.46,  ll:[-23.086827,-47.277307], soVista:true },
   { b:'barnabe', q:'33', l:'8',  m2:302.69, tipo:'MISTO',       pm2:1100,    vista:332959.00, entrada:49943.85,  parcela:4599.80,  ll:[-23.090122,-47.275328], soVista:true },
   { b:'barnabe', q:'38', l:'22', m2:238.49, tipo:'COMERCIAL',   pm2:1250,    vista:298112.50, entrada:44716.88,  parcela:4118.40,  ll:[-23.091480,-47.273968], soVista:true },
@@ -2017,6 +2032,18 @@ const desdeTxt = ls => { const v = ls.filter(temPreco).map(x => x.vista); return
 const minTxt = ls => { const v = ls.filter(temPreco).map(x => x.vista); return v.length ? brl0(Math.min(...v)) + '+' : 'consulte'; };
 LOTES.forEach((x, i) => { x.id = x.b + '-q' + x.q.toLowerCase() + '-l' + x.l.toLowerCase().replace(/\s+/g, ''); x.i = i; });
 const ativos = new Set(Object.keys(TIPOS));
+const ativosLot = new Set(Object.keys(LOTEAM));
+let termo = '';
+const semAcento = t => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+// um lote entra no mapa e na lista quando passa nos tres filtros: especie do loteamento, tipo de lote e busca livre
+function passa(x) {
+  if (!ativos.has(x.tipo)) return false;
+  const b = bairroDe(x.b);
+  if (!ativosLot.has(especieDe(b))) return false;
+  if (!termo) return true;
+  const alvo = semAcento(`${b ? b.nome : ''} ${b && b.sub ? b.sub : ''} quadra ${x.q} q${x.q} lote ${x.l} l${x.l} ${TIPOS[x.tipo][0]} ${m2Txt(x)}`);
+  return termo.split(/\s+/).every(t => alvo.includes(t));
+}
 
 // ─── MAPA ──────────────────────────────────────────────────────────────────────
 const mapa = L.map('mapa', { zoomControl: true, preferCanvas: true }).setView([-23.097, -47.274], 14);   // canvas: centenas de pinos sem pesar o DOM
@@ -2045,7 +2072,7 @@ function popupHtml(x) {
 function desenhar() {
   camada.clearLayers();
   LOTES.forEach(x => {
-    if (!ativos.has(x.tipo)) return;
+    if (!passa(x)) return;
     const cor = TIPOS[x.tipo][2];
     if (x.poly && x.poly.length > 2) {
       const pg = L.polygon(x.poly, { color: '#1f5fa8', weight: 2, fillColor: cor, fillOpacity: .35 }).addTo(camada);
@@ -2067,13 +2094,16 @@ const ZOOM_LOTES = 16;
 mapa.createPane('plantas'); mapa.getPane('plantas').style.zIndex = 350;   // abaixo dos pinos (overlayPane = 400)
 const camadaBairros = L.layerGroup();
 const plantas = {};
+const pinosBairro = {};
+const iconeBairro = (b, ls) => L.divIcon({ className: 'pino-bairro', html: `<div><b>${b.nome}</b><span>${ls.length} lote${ls.length > 1 ? 's' : ''} · ${desdeTxt(ls)}</span></div>`, iconSize: null, iconAnchor: [0, 0] });
 BAIRROS.forEach(b => {
   const ls = LOTES.filter(x => x.b === b.id);
   const pts = ls.flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
   const centro = pts.length ? L.latLngBounds(pts).getCenter() : (b.centro ? L.latLng(b.centro) : null);
   if (!centro || !ls.length) return;
-  const mk = L.marker(centro, { icon: L.divIcon({ className: 'pino-bairro', html: `<div><b>${b.nome}</b><span>${ls.length} lote${ls.length > 1 ? 's' : ''} · ${desdeTxt(ls)}</span></div>`, iconSize: null, iconAnchor: [0, 0] }) });
+  const mk = L.marker(centro, { icon: iconeBairro(b, ls) });
   mk.on('click', () => irParaBairro(b.id, true));
+  pinosBairro[b.id] = mk;
   camadaBairros.addLayer(mk);
   if (b.overlay && /\.svg$/i.test(b.overlay.url)) plantas[b.id] = plantaSvg(b);
   else if (b.overlay) plantas[b.id] = L.imageOverlay(b.overlay.url, b.overlay.bounds, { opacity: .92, pane: 'plantas', alt: 'Planta de ' + b.nome });
@@ -2105,22 +2135,54 @@ function plantaSvg(b) {
   });
   return grupo;
 }
+// quantos lotes de cada bairro sobrevivem aos filtros — usado pelo pino de bairro e pela planta
+function contagemFiltrada() {
+  const c = {};
+  LOTES.forEach(x => { if (passa(x)) c[x.b] = (c[x.b] || 0) + 1; });
+  return c;
+}
+function atualizarPinosBairro() {
+  BAIRROS.forEach(b => {
+    const mk = pinosBairro[b.id]; if (!mk) return;
+    const ls = LOTES.filter(x => x.b === b.id && passa(x));
+    if (!ls.length) { camadaBairros.removeLayer(mk); return; }
+    mk.setIcon(iconeBairro(b, ls));
+    if (!camadaBairros.hasLayer(mk)) camadaBairros.addLayer(mk);
+  });
+}
 function atualizarNivel() {
   const perto = mapa.getZoom() >= ZOOM_LOTES;
   const liga = (l, on) => { if (on && !mapa.hasLayer(l)) l.addTo(mapa); if (!on && mapa.hasLayer(l)) mapa.removeLayer(l); };
   liga(camada, perto); liga(camadaBairros, !perto);
   const vista = mapa.getBounds().pad(0.2);   // planta só é baixada/desenhada quando o bairro entra na tela
-  Object.values(plantas).forEach(o => liga(o, perto && vista.intersects(o.getBounds())));
+  const cont = contagemFiltrada();
+  Object.entries(plantas).forEach(([id, o]) => liga(o, perto && !!cont[id] && vista.intersects(o.getBounds())));
 }
 mapa.on('zoomend moveend', atualizarNivel); atualizarNivel();
 
 // ─── PAINEL ────────────────────────────────────────────────────────────────────
-const chips = document.getElementById('chips');
-Object.entries(TIPOS).forEach(([k, v]) => {
-  const c = document.createElement('button'); c.type = 'button'; c.className = 'chip'; c.innerHTML = `<i style="background:${v[2]}"></i>${v[0]}`;
-  c.onclick = () => { ativos.has(k) ? ativos.delete(k) : ativos.add(k); c.classList.toggle('off', !ativos.has(k)); desenhar(); montarLista(); };
-  chips.appendChild(c);
+function montarChips(alvo, defs, conjunto) {
+  const cx = document.getElementById(alvo);
+  Object.entries(defs).forEach(([k, v]) => {
+    const c = document.createElement('button'); c.type = 'button'; c.className = 'chip'; c.setAttribute('aria-pressed', 'true');
+    c.innerHTML = `<i style="background:${v[v.length - 1]}"></i>${v[0]}`;
+    c.onclick = () => {
+      conjunto.has(k) ? conjunto.delete(k) : conjunto.add(k);
+      c.classList.toggle('off', !conjunto.has(k)); c.setAttribute('aria-pressed', String(conjunto.has(k)));
+      aplicarFiltros();
+    };
+    cx.appendChild(c);
+  });
+}
+montarChips('chipsLot', LOTEAM, ativosLot);
+montarChips('chips', TIPOS, ativos);
+const campoBusca = document.getElementById('busca');
+let tBusca = null;
+campoBusca.addEventListener('input', () => {
+  clearTimeout(tBusca);
+  tBusca = setTimeout(() => { termo = semAcento(campoBusca.value.trim()); aplicarFiltros(); }, 180);
 });
+function aplicarFiltros() { desenhar(); atualizarPinosBairro(); montarLista(); atualizarNivel(); }
 const lista = document.getElementById('lista');
 let bairroAtivo = null;
 function montarLista() {
@@ -2128,7 +2190,7 @@ function montarLista() {
   const chave = v => { const m = String(v).match(/^(\D*)(\d*)/); return [m[1].toUpperCase(), Number(m[2] || 0)]; };
   const cmp = (a, c) => { const [qa, na] = chave(a.q), [qc, nc] = chave(c.q); if (qa !== qc) return qa.localeCompare(qc); if (na !== nc) return na - nc; const [la, ma] = chave(a.l), [lc, mc] = chave(c.l); return ma !== mc ? ma - mc : la.localeCompare(lc); };
   [...BAIRROS].sort((a, c) => a.nome.localeCompare(c.nome, 'pt-BR')).forEach(b => {
-    const ls = LOTES.filter(x => x.b === b.id && ativos.has(x.tipo));
+    const ls = LOTES.filter(x => x.b === b.id && passa(x));
     if (!ls.length) return;
     const pinados = ls.filter(x => x.ll || x.poly).length;
     const div = document.createElement('div'); div.className = 'bairro' + (bairroAtivo === b.id ? ' ativo' : ''); div.dataset.id = b.id;
@@ -2143,13 +2205,14 @@ function montarLista() {
     div.querySelector('button').onclick = () => irParaBairro(b.id);
     lista.appendChild(div);
   });
+  if (!lista.children.length) lista.innerHTML = '<p class="vazio">Nenhum lote com esses filtros. Tente limpar a busca ou ligar mais tipos de lote.</p>';
 }
 function irParaBairro(id, forcar) {
   bairroAtivo = (!forcar && bairroAtivo === id) ? null : id;
   document.querySelectorAll('.bairro').forEach(d => d.classList.toggle('ativo', d.dataset.id === bairroAtivo));
   if (!bairroAtivo) return;
   const b = bairroDe(id);
-  const pts = LOTES.filter(x => x.b === id && ativos.has(x.tipo)).flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
+  const pts = LOTES.filter(x => x.b === id && passa(x)).flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
   if (pts.length) { mapa.fitBounds(L.latLngBounds(pts).pad(0.35), { maxZoom: 17, animate: false }); if (mapa.getZoom() < ZOOM_LOTES) mapa.setZoom(ZOOM_LOTES, { animate: false }); }
   else if (b.centro) mapa.setView(b.centro, ZOOM_LOTES, { animate: false });
   history.replaceState(null, '', '#' + id);
