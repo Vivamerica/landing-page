@@ -1,2 +1,2 @@
-  { b:'bomsucesso', q:'C', l:'01-A', m2:1085.85, tipo:'MISTO', pm2:1500, vista:1628775.00, entrada:325755.00, parcela:26060.00, nx:72, ep:20, ll:[-23.116703,-47.260524], obs:'lote C01 segregado pela loteadora em A e B' },
-  { b:'bomsucesso', q:'C', l:'01-B', m2:500.00, tipo:'MISTO', pm2:1500, vista:750000.00, entrada:150000.00, parcela:12000.00, nx:72, ep:20, ll:[-23.116705,-47.260426], obs:'lote C01 segregado pela loteadora em A e B' },
+  { b:'bomsucesso', q:'C', l:'01-A', m2:1085.85, tipo:'MISTO', pm2:1500, vista:1628775.00, entrada:325755.00, parcela:26060.00, nx:72, ep:20, ll:[-23.116734,-47.260595], obs:'lote C01 segregado pela loteadora em A e B' },
+  { b:'bomsucesso', q:'C', l:'01-B', m2:500.00, tipo:'MISTO', pm2:1500, vista:750000.00, entrada:150000.00, parcela:12000.00, nx:72, ep:20, ll:[-23.116767,-47.260383], obs:'lote C01 segregado pela loteadora em A e B' },
