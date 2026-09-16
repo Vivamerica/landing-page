@@ -1,0 +1,456 @@
+{
+  "slug": "izzi-residence-indaiatuba",
+  "nome": "Izzi Residence",
+  "categoria": "apartamentos",
+  "data": "2026-09-16",
+  "title": "Izzi Residence Indaiatuba | 39 a 66 m² no Centro · GPCI",
+  "description": "Izzi Residence, Centro de Indaiatuba: 2 torres e 448 apartamentos de 39,90 a 66,47 m². Tabela set/2026 a partir de R$ 371.862, entrega prevista jun/2028.",
+  "keywords": "izzi residence indaiatuba, izzi gpci, apartamento centro indaiatuba, studio indaiatuba, apartamento compacto indaiatuba, apartamento com garden indaiatuba, housi indaiatuba, lancamento centro indaiatuba",
+  "schema_tipo": "ApartmentComplex",
+  "schema_desc": "Duas torres de térreo mais 15 pavimentos no Centro de Indaiatuba/SP, na esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz, com mall de serviços e minimercado no térreo. 448 apartamentos, 14 por andar. Na tabela de setembro/2026, plantas de 39,90 m², 39,99 m² e 43,97 m² com suíte, e gardens de 66,43 m² e 66,47 m² no térreo. Realização GPCI, IBEN e GH Properties. Entrega prevista para junho de 2028.",
+  "unidades_total": 448,
+  "endereco_schema": "Esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz — Centro",
+  "preco_min": 371862.27,
+  "preco_max": 446100.0,
+  "offer_count": 79,
+  "oferta_desc": "Tabela GPCI de setembro/2026 com 79 unidades listadas (62 na Torre 1 e 17 na Torre 2), de R$ 371.862,27 a R$ 446.100,00. A tabela avisa que as unidades podem já não estar disponíveis. Correção pelo INCC até o habite-se.",
+  "produto_nome": "Izzi Residence Indaiatuba — apartamento de 39,90 m² no Centro",
+  "produto_desc": "Apartamentos de 39,90 a 43,97 m² e gardens de 66,43 e 66,47 m² no Centro de Indaiatuba/SP. Realização GPCI, IBEN e GH Properties. Tabela de setembro/2026.",
+  "marca": "GPCI",
+  "lazer": [
+    "Piscina com prainha e deck",
+    "Piscina com deck no rooftop da Torre 1",
+    "Piscina com deck no rooftop da Torre 2",
+    "Salão de festas no rooftop",
+    "Brinquedoteca",
+    "Academia",
+    "Penthouse Urban com cozinha gourmet e adega",
+    "Penthouse Concept com cozinha gourmet",
+    "Lounge",
+    "Pub",
+    "Adega",
+    "Coworking",
+    "Lavanderia de autosserviço",
+    "Boulevard com áreas de descanso e esporte",
+    "Lazer descoberto no térreo",
+    "Mall de serviços no térreo",
+    "Minimercado no lobby",
+    "Lobby",
+    "Portaria"
+  ],
+  "marca_topo": [
+    "IZZI",
+    "Residence"
+  ],
+  "wa_flutuante": "Olá! Quero a tabela atualizada do Izzi Residence.",
+  "wa_topo": "Olá! Tenho interesse no Izzi Residence. Quero a tabela e as condições.",
+  "hero": {
+    "eyebrow": "Centro · Indaiatuba/SP",
+    "sub": "Compactos e gardens · mall de serviços no térreo · GPCI",
+    "lead": "Duas torres no Centro, na esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz, com minimercado e mall de serviços no térreo e piscina no alto de cada torre. Plantas de 39,90 a 43,97 m² e gardens de 66 m² no térreo.",
+    "preco": "A partir de R$ 371.862,27",
+    "preco_nota": "tabela GPCI de setembro/2026 · entrega prevista jun/2028",
+    "cta_msg": "Olá! Quero a tabela do Izzi Residence e as unidades da tabela de setembro.",
+    "cta_texto": "Ver unidades e valores"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Um complexo no Centro com serviço no térreo",
+      "paragrafos": [
+        "O Izzi Residence reúne duas torres de térreo mais 15 pavimentos, com 14 apartamentos por andar e 448 unidades no total. Cada torre tem dois elevadores. O térreo é ocupado por um mall de serviços e um minimercado no lobby, ligados às torres por um boulevard com áreas de descanso e de esporte.",
+        "O lazer se divide entre o térreo e o topo das torres. Embaixo ficam a piscina com prainha, o lounge, o pub, a adega, o coworking e a lavanderia de autosserviço. No rooftop, a Torre 1 tem piscina, salão de festas, brinquedoteca e a Penthouse Urban; a Torre 2 tem piscina, academia e a Penthouse Concept. O projeto de interiores é assinado pelo arquiteto Anderson Leite e o paisagismo por Alexandre Furcolin, segundo o material da incorporadora."
+      ],
+      "numeros": [
+        {
+          "n": "2",
+          "p": "torres de térreo + 15 pavimentos"
+        },
+        {
+          "n": "448",
+          "p": "apartamentos, 14 por andar"
+        },
+        {
+          "n": "79",
+          "p": "unidades na tabela de set/2026"
+        },
+        {
+          "n": "jun/2028",
+          "p": "entrega prevista"
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "label": "Plantas",
+      "classe": "cream",
+      "h2": "Compactos de 39,90 a 43,97 m² e gardens no térreo",
+      "paragrafos": [
+        "As plantas das unidades listadas na tabela de setembro/2026 são as abaixo. O apartamento tem paredes removíveis, o que permite mais de um layout. A planta de 43,97 m² é identificada como suíte e tem duas vagas; as demais têm uma vaga. O material não informa o número de dormitórios de cada planta, então confirme o layout da unidade no atendimento."
+      ],
+      "tabela": {
+        "legenda": "Unidades da tabela GPCI de setembro/2026 por planta. Área do garden somada à área privativa, como a tabela apresenta.",
+        "cab": [
+          "Planta",
+          "Área",
+          "Vagas",
+          "Unidades",
+          "De",
+          "Até"
+        ],
+        "num": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "linhas": [
+          [
+            "Tipo Canto",
+            "39,90 m²",
+            "1",
+            "13",
+            "R$ 371.862,27",
+            "R$ 402.662,27"
+          ],
+          [
+            "Tipo Meio",
+            "39,99 m²",
+            "1",
+            "30",
+            "R$ 378.299,03",
+            "R$ 403.499,03"
+          ],
+          [
+            "Suíte",
+            "43,97 m²",
+            "2",
+            "31",
+            "R$ 406.900,00",
+            "R$ 446.100,00"
+          ],
+          [
+            "Garden Canto",
+            "39,90 + 26,57 = 66,47 m²",
+            "1",
+            "4",
+            "R$ 400.554,75",
+            "R$ 400.554,75"
+          ],
+          [
+            "Garden Meio",
+            "39,99 + 26,44 = 66,43 m²",
+            "1",
+            "1",
+            "R$ 401.391,51",
+            "R$ 401.391,51"
+          ]
+        ]
+      },
+      "cards": [
+        {
+          "t": "Paredes removíveis",
+          "p": "A planta foi pensada para mudar de layout, conforme o caderno técnico da incorporadora."
+        },
+        {
+          "t": "Ar-condicionado",
+          "p": "Entrega com infraestrutura seca. Aparelhos, rede frigorígena e dreno ficam por conta do proprietário."
+        },
+        {
+          "t": "Cozinha e banheiro",
+          "p": "Água quente nas torneiras, bancada da cozinha em granito e revestimento cerâmico até o teto no banheiro."
+        },
+        {
+          "t": "Acabamento",
+          "p": "Persianas elétricas, laje técnica, pontos de TV e pé-direito de 2,70 m nos ambientes secos."
+        },
+        {
+          "t": "Gardens",
+          "p": "As unidades do térreo com garden são entregues com grama natural."
+        },
+        {
+          "t": "Opcionais pagos à parte",
+          "p": "Kits de acabamento Izzi Design, pacote de mobília Housi Decor e gestão de locação por temporada da Housi. Valores sob consulta."
+        }
+      ]
+    },
+    {
+      "skip": true,
+      "depois": "lazer"
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "79 unidades na tabela de setembro/2026",
+      "paragrafos": [
+        "A tabela da GPCI de setembro/2026 lista 79 unidades: 62 na Torre 1 e 17 na Torre 2. Os valores vão de R$ 371.862,27 a R$ 446.100,00 e sobem, em geral, com o andar. A própria tabela avisa que as unidades anunciadas podem já ter sido vendidas, então a disponibilidade se confirma no atendimento."
+      ],
+      "tabela2_titulo": "Duas formas de pagar",
+      "tabela2_paragrafos": [
+        "As condições comerciais de setembro/2026 trazem duas modalidades. Propostas fora delas são analisadas pela coordenação do empreendimento."
+      ],
+      "tabela2": {
+        "cab": [
+          "Modalidade",
+          "Ato mínimo",
+          "Restante"
+        ],
+        "linhas": [
+          [
+            "Investidor",
+            "10%",
+            "Em até 18 parcelas sem correção pelo INCC, ou em até 21 com correção"
+          ],
+          [
+            "Financiamento Caixa",
+            "6%",
+            "Diferença da entrada em até 21 parcelas corrigidas pelo INCC, inclusive anuais, e o saldo financiado pelo banco"
+          ]
+        ]
+      },
+      "notas": [
+        "Até o habite-se o saldo devedor é corrigido pelo INCC (Índice Nacional de Custo da Construção). Depois do habite-se incidem IGP-M e juros de 1% ao mês. O financiamento depende da análise e da aprovação de crédito da Caixa."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela completa do Izzi Residence com andar e valor de cada unidade.",
+        "texto": "Pedir a tabela completa"
+      }
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "No Centro, na esquina da Rua 24 de Maio",
+      "paragrafos": [
+        "A ficha técnica da incorporadora situa o terreno na esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz, no Centro de Indaiatuba. O mapa do material mostra no entorno a Avenida Presidente Vargas, a Avenida Dr. Jácomo Nazário, a Avenida Itororó e a Avenida Presidente Kennedy, sem informar distâncias.",
+        "A central de vendas fica em outro endereço: Avenida 9 de Julho, 52, no Park Meraki."
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Perspectivas",
+    "h2": "Como o projeto foi desenhado",
+    "aviso": "Perspectivas ilustradas do material da incorporadora. Móveis, objetos e decoração são sugestão e não compõem o memorial descritivo; a vegetação é mostrada em fase adulta.",
+    "itens": [
+      {
+        "arq": "fachada.jpg",
+        "alt": "Perspectiva ilustrada das torres do Izzi Residence ao entardecer",
+        "w": 721,
+        "h": 948,
+        "leg": "Fachada das torres"
+      },
+      {
+        "arq": "boulevard.jpg",
+        "alt": "Perspectiva ilustrada do boulevard do Izzi Residence visto do alto, com jardins e ciclistas",
+        "w": 836,
+        "h": 949,
+        "leg": "Boulevard entre as torres e o mall"
+      },
+      {
+        "arq": "piscina.jpg",
+        "alt": "Perspectiva ilustrada da piscina com prainha e deck de madeira do Izzi Residence",
+        "w": 1328,
+        "h": 950,
+        "leg": "Piscina com prainha"
+      },
+      {
+        "arq": "rooftop.jpg",
+        "alt": "Perspectiva ilustrada da piscina no rooftop do Izzi Residence com vista da cidade",
+        "w": 1231,
+        "h": 852,
+        "leg": "Piscina no rooftop"
+      },
+      {
+        "arq": "salao-festas.jpg",
+        "alt": "Perspectiva ilustrada do salão de festas envidraçado no alto da torre",
+        "w": 1325,
+        "h": 948,
+        "leg": "Salão de festas no rooftop"
+      },
+      {
+        "arq": "lounge.jpg",
+        "alt": "Perspectiva ilustrada do lounge com sofá azul e coworking ao fundo",
+        "w": 1328,
+        "h": 950,
+        "leg": "Lounge e coworking"
+      },
+      {
+        "arq": "adega.jpg",
+        "alt": "Perspectiva ilustrada da adega com poltronas de couro e parede de vinhos",
+        "w": 1231,
+        "h": 852,
+        "leg": "Adega"
+      },
+      {
+        "arq": "academia.jpg",
+        "alt": "Perspectiva ilustrada da academia com esteiras e janelas altas",
+        "w": 1229,
+        "h": 540,
+        "leg": "Academia"
+      },
+      {
+        "arq": "brinquedoteca.jpg",
+        "alt": "Perspectiva ilustrada da brinquedoteca colorida com mesas infantis",
+        "w": 1278,
+        "h": 852,
+        "leg": "Brinquedoteca"
+      },
+      {
+        "arq": "apartamento.jpg",
+        "alt": "Perspectiva ilustrada da sala de um apartamento do Izzi Residence com mesa redonda",
+        "w": 1230,
+        "h": 688,
+        "leg": "Sala do apartamento"
+      },
+      {
+        "arq": "cozinha.jpg",
+        "alt": "Perspectiva ilustrada da cozinha compacta com cooktop e bancada clara",
+        "w": 1231,
+        "h": 688,
+        "leg": "Cozinha do apartamento"
+      },
+      {
+        "arq": "implantacao.jpg",
+        "alt": "Implantação ilustrada do Izzi Residence com as duas torres, o boulevard e o estacionamento",
+        "w": 1216,
+        "h": 652,
+        "leg": "Implantação"
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Lazer no térreo e no alto das duas torres",
+    "intro": "A lista abaixo segue o material da incorporadora. As áreas comuns são entregues equipadas e decoradas, conforme o memorial descritivo.",
+    "itens": [
+      "Piscina com prainha e deck",
+      "Lazer descoberto no térreo",
+      "Lounge",
+      "Pub",
+      "Adega",
+      "Coworking",
+      "Lavanderia de autosserviço",
+      "Boulevard com áreas de descanso e esporte",
+      "Minimercado no lobby",
+      "Mall de serviços no térreo",
+      "Piscina com deck no rooftop da Torre 1",
+      "Salão de festas no rooftop da Torre 1",
+      "Brinquedoteca",
+      "Penthouse Urban, com cozinha gourmet e adega",
+      "Piscina com deck no rooftop da Torre 2",
+      "Academia",
+      "Penthouse Concept, com cozinha gourmet",
+      "Lobby e portaria"
+    ],
+    "nota": "O estacionamento tem 640 vagas no total, com 36 para visitantes, 14 para pessoas com deficiência e 10 para as lojas, segundo o caderno técnico."
+  },
+  "ficha": [
+    [
+      "Realização",
+      "GPCI, IBEN e GH Properties"
+    ],
+    [
+      "Incorporadora responsável",
+      "24 de Maio Empreendimento Imobiliário SPE Ltda. — CNPJ 51.685.586/0001-06"
+    ],
+    [
+      "Endereço",
+      "Esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz — Centro, Indaiatuba/SP"
+    ],
+    [
+      "Torres",
+      "2, com térreo + 15 pavimentos e 2 elevadores cada"
+    ],
+    [
+      "Apartamentos",
+      "448 no total, 14 por andar, 224 por torre"
+    ],
+    [
+      "Plantas na tabela",
+      "39,90 m², 39,99 m² e 43,97 m²; gardens de 66,43 m² e 66,47 m²"
+    ],
+    [
+      "Vagas",
+      "2 nas plantas de 43,97 m²; 1 nas demais. 640 vagas no total"
+    ],
+    [
+      "Interiores e paisagismo",
+      "Anderson Leite (interiores) e Alexandre Furcolin (paisagismo)"
+    ],
+    [
+      "Aprovação",
+      "Protocolo nº 13.734/2022 da Prefeitura de Indaiatuba"
+    ],
+    [
+      "Incorporação",
+      "Declarada pela incorporadora como em fase de registro, sobre a matrícula nº 133.406 do Oficial de Registro de Imóveis de Indaiatuba/SP"
+    ],
+    [
+      "Entrega prevista",
+      "Junho de 2028, conforme as condições comerciais de setembro/2026"
+    ]
+  ],
+  "secoes_fim": [],
+  "faq": [
+    {
+      "q": "Quanto custa um apartamento no Izzi Residence?",
+      "a": "A tabela da GPCI de setembro/2026 lista 79 unidades, de R$ 371.862,27 a R$ 446.100,00. A planta Tipo Canto, de 39,90 m², começa em R$ 371.862,27; a Tipo Meio, de 39,99 m², em R$ 378.299,03; e a Suíte, de 43,97 m², em R$ 406.900,00. A tabela avisa que as unidades anunciadas podem já ter sido vendidas."
+    },
+    {
+      "q": "Como é o pagamento do Izzi Residence?",
+      "a": "Pelas condições comerciais de setembro/2026 há duas modalidades. Na condição investidor, o ato é de no mínimo 10% e o restante sai em até 18 parcelas sem correção pelo INCC ou em até 21 com correção. Na condição financiamento Caixa, o ato é de no mínimo 6%, a diferença da entrada vai em até 21 parcelas corrigidas pelo INCC e o saldo é financiado, sujeito à aprovação de crédito do banco. Até o habite-se o saldo é corrigido pelo INCC; depois dele, por IGP-M mais juros de 1% ao mês."
+    },
+    {
+      "q": "Quantos apartamentos e torres tem o Izzi Residence?",
+      "a": "São 2 torres com térreo mais 15 pavimentos, 14 apartamentos por andar, 224 por torre e 448 no total, com dois elevadores em cada torre."
+    },
+    {
+      "q": "Onde fica o Izzi Residence?",
+      "a": "No Centro de Indaiatuba/SP, na esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz, segundo a ficha técnica da incorporadora. A central de vendas fica na Avenida 9 de Julho, 52, no Park Meraki."
+    },
+    {
+      "q": "Quando o Izzi Residence será entregue?",
+      "a": "A previsão de entrega é junho de 2028, conforme as condições comerciais da GPCI com referência setembro/2026. A data vale para o empreendimento como um todo."
+    },
+    {
+      "q": "O apartamento vem com ar-condicionado e móveis?",
+      "a": "Não. O apartamento é entregue com infraestrutura seca para ar-condicionado; aparelhos, rede frigorígena e dreno ficam por conta do proprietário. Móveis e decoração das imagens são sugestão. Há pacotes opcionais, pagos à parte, de acabamento (Izzi Design) e de mobília e gestão de locação (Housi)."
+    },
+    {
+      "q": "O Izzi Residence já tem registro de incorporação?",
+      "a": "O material da incorporadora declara o empreendimento em fase de registro de incorporação, sobre a matrícula nº 133.406 do Oficial de Registro de Imóveis de Indaiatuba, com projeto aprovado sob o protocolo nº 13.734/2022. Peça o número do registro atualizado antes de assinar qualquer proposta."
+    }
+  ],
+  "cta": {
+    "h2": "Quer ver as unidades do Izzi Residence?",
+    "p": "Mandamos a tabela com andar, torre, planta e valor de cada uma das unidades listadas, e explicamos as duas modalidades de pagamento.",
+    "msg": "Olá! Quero falar sobre o Izzi Residence no Centro de Indaiatuba."
+  },
+  "rodape": {
+    "marca": "IZZI RESIDENCE",
+    "linha": "Izzi Residence · 2 torres, 448 apartamentos de 39,90 a 66,47 m² · Esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz · Centro · Indaiatuba, SP",
+    "realizacao": "Realização GPCI, IBEN e GH Properties",
+    "legal": "Perspectivas ilustradas; móveis, objetos e decoração são sugestão e não compõem o memorial descritivo. Preços e condições conforme a tabela GPCI e as condições comerciais de setembro/2026, com saldo corrigido pelo INCC até o habite-se e por IGP-M mais juros de 1% ao mês depois dele, sujeitos a alteração sem aviso; a disponibilidade das unidades é confirmada no atendimento. Empreendimento aprovado pela Prefeitura de Indaiatuba sob o protocolo nº 13.734/2022, declarado pela incorporadora em fase de registro de incorporação sobre a matrícula nº 133.406 do Oficial de Registro de Imóveis de Indaiatuba/SP. Incorporadora responsável: 24 de Maio Empreendimento Imobiliário SPE Ltda., CNPJ 51.685.586/0001-06. Página publicada em set/2026."
+  },
+  "home": {
+    "tipo": "apartamento",
+    "preco": 371862,
+    "dorms": "",
+    "mcmv": "0",
+    "status": "obras",
+    "constr": "GPCI",
+    "badge": "Lançamento · Centro",
+    "meta": "39,90 a 66,47 m²",
+    "desc": "Duas torres no Centro com mall de serviços e minimercado no térreo · piscina no rooftop · gardens no térreo · entrega prevista jun/2028.",
+    "alt": "Perspectiva ilustrada da fachada do Izzi Residence com o mall de serviços no térreo",
+    "itemlist": "Izzi Residence — 2 torres GPCI no Centro, 448 apartamentos de 39,90 a 66,47 m² · a partir de R$ 371.862 (tabela set/2026)"
+  },
+  "llms": {
+    "secao": "apartamentos",
+    "linha": "Realização GPCI, IBEN e GH Properties no Centro de Indaiatuba, na esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz (SPE 24 de Maio Empreendimento Imobiliário Ltda., CNPJ 51.685.586/0001-06). Duas torres de térreo + 15 pavimentos, 14 apartamentos por andar, 448 unidades, com mall de serviços e minimercado no térreo e piscina no rooftop de cada torre. Tabela GPCI de setembro/2026 com 79 unidades listadas (62 na Torre 1, 17 na Torre 2): Tipo Canto 39,90 m² de R$ 371.862,27 a R$ 402.662,27; Tipo Meio 39,99 m² de R$ 378.299,03 a R$ 403.499,03; Suíte 43,97 m² (2 vagas) de R$ 406.900,00 a R$ 446.100,00; gardens de 66,47 m² (R$ 400.554,75) e 66,43 m² (R$ 401.391,51). Pagamento: investidor com ato de 10% e saldo em até 18x sem INCC ou 21x com INCC; financiamento Caixa com ato de 6%, diferença da entrada em até 21x com INCC e saldo financiado. INCC até o habite-se, depois IGP-M + 1% a.m. Entrega prevista junho/2028. O material não informa número de dormitórios; apartamento com paredes removíveis. Declarado pela incorporadora em fase de registro de incorporação (matrícula 133.406, protocolo 13.734/2022)."
+  }
+}

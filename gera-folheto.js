@@ -14,6 +14,7 @@ const APTOS = [
     s:'2 dorm · 47,22 m² · últimas 3 unidades (set/2026) · entrega mai/2028', t:'MCMV · FGTS', est:3, slug:'gran-vic-canario-indaiatuba' },
   { n:'Vívere Residencial', c:'Masotti', p:352552, img:'vivere-indaiatuba/images/hero.jpg',
     s:'2 dorm · 46 a 50 m² · pronto para morar · últimas 5 unidades', t:'MCMV · Pronto', est:5, slug:'vivere-indaiatuba' },
+  { n:'Izzi Residence', c:'GPCI', p:371862, img:'izzi-residence-indaiatuba/images/hero.jpg', s:'39,90 a 66,47 m² · Centro · mall no térreo · entrega jun/2028', t:'Lançamento', slug:'izzi-residence-indaiatuba' },
   { n:'Gran Vic Andorinha', c:'VIC Engenharia', p:372119, img:'gran-vic-andorinha-indaiatuba/images/hero.jpg',
     s:'2 dorm c/ suíte · 51,42 m² · últimas 2 unidades (set/2026) · entrega fev/2028', t:'MCMV · FGTS', est:2, slug:'gran-vic-andorinha-indaiatuba' },
   { n:'Spazio Italia', c:'Zarin', p:448820, img:'spazio-italia-indaiatuba/images/hero.jpg',
