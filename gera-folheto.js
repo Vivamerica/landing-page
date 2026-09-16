@@ -61,6 +61,7 @@ const LOTES = [
   { n:'Residencial Ravello', c:'Dominium', p:714000, m2:420, img:'residencial-ravello-indaiatuba/images/hero.jpg',
     s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:185, slug:'residencial-ravello-indaiatuba' },
   { n:'Alphaville Indaiatuba', c:'Alphaville', p:888939, m2:525, img:'alphaville-indaiatuba/images/hero.jpg', s:'Itaici · 131 lotes de 511 a 1.249 m² · clube com piscina de raias', t:'Cond. fechado', slug:'alphaville-indaiatuba' },
+  { n:'Lagos de Helvetia', c:'GPCI', p:901800, m2:501, img:'lagos-de-helvetia-indaiatuba/images/hero.jpg', s:'Helvetia · 44 lotes de 501 a 2.015 m² · lago e clube', t:'Cond. fechado', slug:'lagos-de-helvetia-indaiatuba' },
 ];
 
 
