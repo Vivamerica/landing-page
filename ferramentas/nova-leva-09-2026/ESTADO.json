@@ -1,13 +1,14 @@
 {
-  "atualizado": "2026-09-16T19:10",
+  "atualizado": "2026-09-16T20:00",
   "push_autorizado": true,
+  "concluido": true,
   "empreendimentos": {
     "izzi-residence-indaiatuba": "publicado",
     "artemis-residencial-indaiatuba": "publicado",
-    "parque-das-aguas-indaiatuba": "commitado",
-    "360-home-office-mall-indaiatuba": "commitado",
-    "alphaville-indaiatuba": "pendente",
-    "lagos-de-helvetia-indaiatuba": "pendente"
+    "parque-das-aguas-indaiatuba": "publicado",
+    "360-home-office-mall-indaiatuba": "publicado",
+    "alphaville-indaiatuba": "publicado",
+    "lagos-de-helvetia-indaiatuba": "publicado"
   },
   "fora": {
     "vargas-residence": "só logos, sem book nem tabela"
