@@ -4,6 +4,7 @@ const OUT = 'C:/Users/Usuario/Desktop/landing-page/folheto-lancamentos.html';
 const APTOS = [
   { n:'Uni Residencial', c:'Masotti', p:279990, img:'uni-residencial-indaiatuba/images/hero.jpg',
     s:'2 dorm c/ suíte · sacada · vaga coberta', t:'MCMV · FGTS', slug:'uni-residencial-indaiatuba' },
+  { n:'Residencial Parque das Águas', c:'GPCI', p:309120, img:'parque-das-aguas-indaiatuba/images/hero.jpg', s:'2 dorm · 46 a 72 m² · 3 torres · lago e complexo aquático', t:'Lançamento', slug:'parque-das-aguas-indaiatuba' },
   { n:'Gran Vic Tangará', c:'VIC Engenharia', p:330000, img:'gran-vic-tangara-indaiatuba/images/hero.jpg',
     s:'2 dorm · 47,22 m² · 78 unidades (set/2026) · entrega nov/2028', t:'MCMV · FGTS', slug:'gran-vic-tangara-indaiatuba' },
   { n:'Gran Vic Colibri', c:'VIC Engenharia', p:334479, img:'gran-vic-colibri-indaiatuba/images/hero.jpg',
