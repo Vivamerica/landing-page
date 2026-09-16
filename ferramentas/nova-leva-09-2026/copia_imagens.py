@@ -17,8 +17,13 @@ for par in sys.argv[3:]:
     im = Image.open(origem + arq).convert('RGB')
     if max(im.size) > 1600:
         im.thumbnail((1600, 1600), Image.LANCZOS)
-    for q in (82, 78, 74, 70, 66, 62, 58):
-        im.save(dest + nome, 'JPEG', quality=q, optimize=True, progressive=True)
-        if os.path.getsize(dest + nome) <= 260 * 1024:
-            break
+    ok = False
+    while not ok:
+        for q in (82, 78, 74, 70, 66, 62):
+            im.save(dest + nome, 'JPEG', quality=q, optimize=True, progressive=True)
+            if os.path.getsize(dest + nome) <= 260 * 1024:
+                ok = True
+                break
+        if not ok:   # vegetação densa não cabe só baixando qualidade: reduz 15% e tenta de novo
+            im = im.resize((int(im.width * .85), int(im.height * .85)), Image.LANCZOS)
     print('%-26s %4dx%-4d %3d KB (q%d)' % (nome, im.size[0], im.size[1], os.path.getsize(dest + nome) // 1024, q))

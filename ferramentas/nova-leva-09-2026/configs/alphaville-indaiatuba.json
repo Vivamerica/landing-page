@@ -1,0 +1,164 @@
+{
+  "slug": "alphaville-indaiatuba",
+  "nome": "Alphaville Indaiatuba",
+  "categoria": "condominios",
+  "data": "2026-09-16",
+  "title": "Alphaville Indaiatuba | lotes de 511 a 1.249 m² · Itaici",
+  "description": "Alphaville Indaiatuba, no Itaici: condomínio fechado com 131 lotes de 511 a 1.249 m² na tabela set/2026, desde R$ 888.939. Ato de 20% e saldo em 60 meses.",
+  "keywords": "alphaville indaiatuba, lote alphaville indaiatuba, condominio fechado itaici, lote 1000 m2 indaiatuba, terreno alphaville itaici, condominio de lotes indaiatuba, alphaville lancamento 2026",
+  "schema_tipo": "RealEstateListing",
+  "schema_desc": "Condomínio fechado de lotes do Grupo Alphaville no bairro do Itaici, em Indaiatuba/SP, com lotes a partir de 510 m² e de 1.000 m², clube com piscina climatizada de raias semiolímpicas, quadras e 245 mil m² de áreas verdes e de lazer. Tabela de vendas de setembro/2026 com 131 lotes, de 511,50 a 1.249,22 m², de R$ 888.939,47 a R$ 1.609.895,78, com ato de 20% e saldo em 60 meses corrigido pelo IPCA.",
+  "endereco_schema": "Bairro do Itaici",
+  "preco_min": 888939.47,
+  "preco_max": 1609895.78,
+  "offer_count": 131,
+  "oferta_desc": "Tabela de vendas Alphaville de setembro/2026 com 131 lotes, de R$ 888.939,47 (lote E-30, 525,04 m²) a R$ 1.609.895,78 (lote M-16, 1.205,76 m²). As custas de escrituração são cobradas à parte. Ato de 20% e saldo de 80% em 60 meses, corrigido pelo IPCA.",
+  "produto_nome": "Alphaville Indaiatuba — lote de 525 m² no Itaici",
+  "produto_desc": "Lotes de 511 a 1.249 m² em condomínio fechado Alphaville no Itaici, Indaiatuba/SP. Tabela de vendas de setembro/2026.",
+  "marca": "Alphaville",
+  "lazer": [],
+  "marca_topo": ["ALPHAVILLE", "Indaiatuba"],
+  "wa_flutuante": "Olá! Quero a tabela de lotes do Alphaville Indaiatuba.",
+  "wa_topo": "Olá! Tenho interesse no Alphaville Indaiatuba. Quero a tabela de lotes e as condições.",
+  "hero": {
+    "eyebrow": "Itaici · Indaiatuba/SP",
+    "sub": "Condomínio fechado de lotes · Grupo Alphaville",
+    "lead": "Lotes a partir de 510 m² e de 1.000 m² em um condomínio fechado com clube, piscina climatizada de raias semiolímpicas, quadras e 245 mil m² de áreas verdes e de lazer. Na tabela de setembro/2026 são 131 lotes à venda.",
+    "preco": "A partir de R$ 888.939,47",
+    "preco_nota": "tabela de vendas de setembro/2026 · custas de escrituração à parte",
+    "cta_msg": "Olá! Quero a tabela de lotes do Alphaville Indaiatuba com quadra, metragem e valor.",
+    "cta_texto": "Ver lotes e valores"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Um condomínio de lotes no Itaici, com clube e áreas verdes",
+      "paragrafos": [
+        "O Alphaville Indaiatuba fica no bairro do Itaici. É um loteamento fechado em duas linhas de produto: lotes a partir de 510 m², nas quadras A a I, e lotes a partir de 1.000 m², nas quadras J a Q. O projeto urbanístico e o paisagismo são do próprio Grupo Alphaville; a arquitetura e os interiores do clube e da portaria são do escritório DMDV Arquitetos.",
+        "O material da loteadora descreve rede elétrica subterrânea nas vias internas, uma Área de Preservação Permanente entre os blocos de lotes, reaproveitamento de água de chuva, energia solar e paisagismo com espécies nativas. O clube é entregue equipado e mobiliado. A construção de cada casa fica por conta de quem compra o lote, e a loteadora informa que pode expandir o empreendimento em área vizinha."
+      ],
+      "numeros": [
+        {"n": "131", "p": "lotes na tabela de set/2026"},
+        {"n": "245 mil", "p": "m² de áreas verdes e lazer"},
+        {"n": "16", "p": "quadras na tabela"},
+        {"n": "20%", "p": "de ato e saldo em 60 meses"}
+      ],
+      "depois": "galeria"
+    },
+    {
+      "label": "Lotes",
+      "classe": "cream",
+      "h2": "Duas linhas: lotes de 510 m² e de 1.000 m²",
+      "paragrafos": [
+        "O book chama as linhas de lotes de 510 m² e de 1.000 m², mas as metragens da tabela variam lote a lote. Na tabela de setembro/2026, os lotes à venda são estes:"
+      ],
+      "tabela": {
+        "legenda": "Lotes da tabela de vendas Alphaville de setembro/2026, por linha. Valores sem as custas de escrituração.",
+        "cab": ["Linha", "Quadras", "Lotes", "Metragem", "De", "Até"],
+        "num": [2, 4, 5],
+        "linhas": [
+          ["Lotes a partir de 510 m²", "A a I", "93", "511,50 a 863,29 m²", "R$ 888.939,47", "R$ 1.539.959,93"],
+          ["Lotes a partir de 1.000 m²", "J a Q", "38", "1.001,00 a 1.249,22 m²", "R$ 1.153.370,11", "R$ 1.609.895,78"]
+        ]
+      },
+      "cards": [
+        {"t": "Valor por metro quadrado", "p": "Na linha de 510 m² o valor vai de cerca de R$ 1.284 a R$ 1.858 por m²; na de 1.000 m², de R$ 1.136 a R$ 1.335 por m² (cálculo sobre a tabela de setembro/2026)."},
+        {"t": "Custas de escrituração", "p": "Cobradas à parte, em coluna própria da tabela: equivalem a 4,76% do valor em todos os lotes. No lote E-30, por exemplo, são R$ 42.313,52."},
+        {"t": "Infraestrutura", "p": "Rede elétrica subterrânea nas vias internas, reaproveitamento de água de chuva e uso de energia solar, segundo a loteadora."},
+        {"t": "Construção", "p": "A casa é projetada e construída por quem compra o lote. Peça as regras construtivas (recuos, ocupação e gabarito) antes de fechar."},
+        {"t": "Taxa do condomínio", "p": "O valor mensal da associação não consta do material recebido. Confirme no atendimento."},
+        {"t": "Entorno", "p": "O próprio book informa faixa de servidão de linha de transmissão e linha férrea nos arredores do empreendimento."}
+      ]
+    },
+    {"skip": true, "depois": "lazer"},
+    {"skip": true, "depois": "ficha"},
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "Ato de 20% e saldo em 60 meses",
+      "paragrafos": ["A tabela de vendas de setembro/2026 usa a mesma estrutura para os 131 lotes: 20% de ato e os 80% restantes em uma de duas opções. A primeira parcela vence 30 dias depois, e as parcelas são corrigidas pelo IPCA/IBGE."],
+      "tabela2_titulo": "Exemplo com o lote A-03 (539,19 m², R$ 957.618,30)",
+      "tabela2_paragrafos": ["Os valores abaixo estão impressos na própria tabela para esse lote."],
+      "tabela2": {"cab": ["Opção", "Ato (20%)", "Anuais", "Mensais"], "num": [1], "linhas": [
+        ["Opção 1", "R$ 191.523,66", "5 de R$ 38.304,73 (4% cada)", "60 de R$ 9.576,18 (1% cada)"],
+        ["Opção 2", "R$ 191.523,66", "—", "60 de R$ 12.768,24 (1,333% cada)"]]},
+      "notas": ["As custas de escrituração desse lote são R$ 45.582,63, cobradas à parte. A tabela não informa desconto à vista nem taxa de condomínio; peça essas condições no atendimento."],
+      "cta": {"msg": "Olá! Quero a tabela completa do Alphaville Indaiatuba com todos os lotes e a simulação de pagamento.", "texto": "Pedir a tabela completa"}
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "No bairro do Itaici, em Indaiatuba",
+      "paragrafos": ["O material da loteadora situa o empreendimento no bairro do Itaici, sem logradouro nem número. Os tempos abaixo são os do book, sem indicação do meio de transporte."],
+      "cards": [
+        {"t": "7 a 12 minutos", "p": "Mosteiro de Itaici (7), Parque Ecológico (8), Colônia Helvetia (10) e Centro de Indaiatuba (12)"},
+        {"t": "10 a 15 minutos", "p": "Parque do Mirim, Bosque do Saber, supermercados Pão de Açúcar, Covabra e OBA, e Aeroporto de Viracopos"},
+        {"t": "20 a 35 minutos", "p": "Acesso à Rodovia Anhanguera (20), Centro de Campinas (25), Lagoa do Taquaral e Hopi Hari (30) e Shopping Iguatemi Campinas (35)"}
+      ],
+      "notas": ["O book informa a distância até São Paulo em 110 km."]
+    }
+  ],
+  "galeria": {
+    "label": "Perspectivas",
+    "h2": "Como o projeto foi desenhado",
+    "aviso": "Perspectivas ilustradas do material da loteadora, com a vegetação em fase adulta. O adensamento do local depende das casas que cada comprador construir.",
+    "itens": [
+      {"arq": "clube-aereo.jpg", "alt": "Perspectiva ilustrada aérea do clube do Alphaville Indaiatuba com piscinas e jardins", "w": 1156, "h": 770, "leg": "Clube visto do alto"},
+      {"arq": "portaria.jpg", "alt": "Perspectiva ilustrada da portaria do Alphaville Indaiatuba", "w": 1600, "h": 1112, "leg": "Portaria"},
+      {"arq": "clube.jpg", "alt": "Perspectiva ilustrada da entrada do clube com espelho d'água", "w": 1600, "h": 1066, "leg": "Entrada do clube"},
+      {"arq": "piscina-raias.jpg", "alt": "Perspectiva ilustrada da piscina climatizada com raias semiolímpicas", "w": 1600, "h": 1066, "leg": "Piscina com raias semiolímpicas"},
+      {"arq": "salao.jpg", "alt": "Perspectiva ilustrada do salão de festas envidraçado do clube", "w": 1297, "h": 1255, "leg": "Salão de festas"},
+      {"arq": "academia.jpg", "alt": "Perspectiva ilustrada da academia do clube", "w": 1368, "h": 1406, "leg": "Academia"},
+      {"arq": "espaco-kids.jpg", "alt": "Perspectiva ilustrada do espaço kids com piscina de bolinhas", "w": 1341, "h": 852, "leg": "Espaço kids"},
+      {"arq": "quadras.jpg", "alt": "Perspectiva ilustrada aérea das quadras e das vias do condomínio", "w": 1156, "h": 838, "leg": "Quadras e vias internas"},
+      {"arq": "praca.jpg", "alt": "Perspectiva ilustrada de uma praça arborizada do condomínio", "w": 1360, "h": 945, "leg": "Praça"},
+      {"arq": "playground.jpg", "alt": "Perspectiva ilustrada do playground de madeira", "w": 1258, "h": 606, "leg": "Playground"},
+      {"arq": "pet.jpg", "alt": "Perspectiva ilustrada da praça para cachorros", "w": 1444, "h": 606, "leg": "Praça Quatro Patas"},
+      {"arq": "horta.jpg", "alt": "Perspectiva ilustrada da horta e da churrasqueira", "w": 1576, "h": 1388, "leg": "Horta e churrasqueira"},
+      {"arq": "terreno.jpg", "alt": "Foto aérea do terreno do Alphaville Indaiatuba no Itaici", "w": 1600, "h": 756, "leg": "O terreno no Itaici"},
+      {"arq": "implantacao.jpg", "alt": "Implantação ilustrada do Alphaville Indaiatuba com as quadras e a área de preservação", "w": 1600, "h": 1112, "leg": "Implantação"}
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Clube, quadras e oito praças temáticas",
+    "intro": "A lista abaixo segue o material da loteadora. O clube tem acesso exclusivo à área de lazer e é entregue equipado e mobiliado.",
+    "itens": ["Piscina adulto climatizada com raias semiolímpicas", "Piscina infantil", "Academia", "Salão de festas", "Sala de jogos", "Espaço kids", "Churrasqueira", "Quadra poliesportiva", "Quadra de tênis", "Quadra de areia", "Campo de futebol", "Playground", "Horta", "Bosque", "Praça Convivência", "Praça Essência", "Praça Movimento", "Praça Quatro Patas", "Praça do Brincar", "Praça Raízes", "Praça do Pomar", "Área de Preservação Permanente"],
+    "nota": "O paisagismo usa espécies nativas em todo o loteamento e em 97% das áreas construídas, segundo a loteadora."
+  },
+  "ficha": [
+    ["Realização", "Grupo Alphaville"],
+    ["Tipo", "Loteamento fechado (condomínio de lotes)"],
+    ["Localização", "Bairro do Itaici, Indaiatuba/SP"],
+    ["Lotes na tabela", "131 (93 nas quadras A a I e 38 nas quadras J a Q)"],
+    ["Metragens", "511,50 a 863,29 m² e 1.001,00 a 1.249,22 m²"],
+    ["Áreas verdes e lazer", "245 mil m²"],
+    ["Projeto", "Urbanismo e paisagismo Alphaville; clube e portaria por DMDV Arquitetos"],
+    ["Aprovação", "Decreto Municipal nº 15.602, de 11/12/2025, Processo Administrativo nº 19.518/2021"],
+    ["Registro do loteamento", "O book, impresso em fevereiro de 2026, informava o registro prenotado sob o nº 412388 no Registro de Imóveis de Indaiatuba e a venda após a conclusão desse registro. Peça a matrícula antes de assinar."],
+    ["Entrega da infraestrutura", "Não informada no material; confirme no atendimento"]
+  ],
+  "faq": [
+    {"q": "Quanto custa um lote no Alphaville Indaiatuba?", "a": "A tabela de vendas de setembro/2026 lista 131 lotes, de R$ 888.939,47 a R$ 1.609.895,78. Na linha de lotes a partir de 510 m² os valores vão de R$ 888.939,47 a R$ 1.539.959,93; na de lotes a partir de 1.000 m², de R$ 1.153.370,11 a R$ 1.609.895,78. As custas de escrituração são cobradas à parte e equivalem a 4,76% do valor do lote."},
+    {"q": "Como é o pagamento dos lotes do Alphaville Indaiatuba?", "a": "O ato é de 20% do valor. Os 80% restantes podem ser pagos em 5 parcelas anuais de 4% mais 60 mensais de 1%, ou em 60 mensais de 1,333%. A primeira parcela vence em 30 dias e as parcelas são corrigidas pelo IPCA/IBGE, conforme a tabela de setembro/2026."},
+    {"q": "Qual o tamanho dos lotes do Alphaville Indaiatuba?", "a": "São duas linhas. Nas quadras A a I, os lotes da tabela têm de 511,50 a 863,29 m². Nas quadras J a Q, de 1.001,00 a 1.249,22 m²."},
+    {"q": "Onde fica o Alphaville Indaiatuba?", "a": "No bairro do Itaici, em Indaiatuba/SP. Pelos tempos informados no book da loteadora, o Mosteiro de Itaici fica a 7 minutos, o Centro de Indaiatuba a 12 e o Aeroporto de Viracopos de 12 a 15 minutos."},
+    {"q": "O que tem no clube do Alphaville Indaiatuba?", "a": "Piscina adulto climatizada com raias semiolímpicas, piscina infantil, academia, salão de festas, sala de jogos, espaço kids e churrasqueira, além de quadras poliesportiva, de tênis e de areia, campo de futebol, playground, horta e oito praças temáticas. O clube é entregue equipado e mobiliado, segundo a loteadora."},
+    {"q": "O loteamento já está registrado?", "a": "O book da loteadora, impresso em fevereiro de 2026, informava o loteamento aprovado pelo Decreto Municipal nº 15.602/2025 e o registro prenotado sob o nº 412388 no Registro de Imóveis de Indaiatuba, com a venda prevista para depois da conclusão desse registro. Peça a matrícula atualizada antes de assinar."},
+    {"q": "Quanto é a taxa de condomínio do Alphaville Indaiatuba?", "a": "O valor mensal da associação de moradores não consta do material recebido da loteadora. Ele é informado no atendimento."}
+  ],
+  "cta": {"h2": "Quer ver os lotes do Alphaville Indaiatuba?", "p": "Mandamos a tabela com quadra, metragem, valor e custas de cada um dos 131 lotes, e simulamos as duas opções de pagamento.", "msg": "Olá! Quero falar sobre os lotes do Alphaville Indaiatuba no Itaici."},
+  "rodape": {
+    "marca": "ALPHAVILLE INDAIATUBA",
+    "linha": "Alphaville Indaiatuba · condomínio fechado de lotes de 511 a 1.249 m² · Bairro do Itaici · Indaiatuba, SP",
+    "realizacao": "Realização Grupo Alphaville",
+    "legal": "Perspectivas ilustradas, com a vegetação em fase adulta; o projeto pode sofrer alterações e o adensamento depende das escolhas construtivas de cada adquirente. A loteadora pode expandir o empreendimento em área contígua. Preços e condições conforme a tabela de vendas de setembro/2026, sem as custas de escrituração, com parcelas corrigidas pelo IPCA/IBGE e sujeitos a alteração sem aviso; a disponibilidade dos lotes é confirmada no atendimento. Loteamento aprovado pelo Decreto Municipal nº 15.602, de 11/12/2025, Processo Administrativo nº 19.518/2021; o book de fevereiro de 2026 informava o registro prenotado sob o nº 412388 no Registro de Imóveis de Indaiatuba/SP. Página publicada em set/2026."
+  },
+  "home": {"tipo": "lote", "preco": 888939, "lote": "fechado", "status": "lancamento", "constr": "Alphaville", "pm2": "1693",
+    "badge": "Condomínio Fechado", "badge_estilo": "background:#C9A227;color:#161616;",
+    "meta": "Lotes de 511 a 1.249 m²",
+    "desc": "131 lotes na tabela de setembro/2026 no Itaici · clube com piscina climatizada de raias semiolímpicas · 245 mil m² de áreas verdes · ato de 20% e saldo em 60 meses.",
+    "alt": "Perspectiva ilustrada da piscina do clube do Alphaville Indaiatuba",
+    "itemlist": "Alphaville Indaiatuba — condomínio fechado de lotes no Itaici, 131 lotes de 511 a 1.249 m² · a partir de R$ 888.939 (tabela set/2026)"},
+  "llms": {"secao": "condominios", "linha": "Loteamento fechado do Grupo Alphaville no bairro do Itaici, Indaiatuba, com lotes a partir de 510 m² (quadras A a I) e a partir de 1.000 m² (quadras J a Q), clube entregue equipado com piscina climatizada de raias semiolímpicas, academia, salão de festas, quadras de tênis, areia e poliesportiva, campo de futebol, 8 praças temáticas e 245 mil m² de áreas verdes e de lazer; rede elétrica subterrânea. Tabela de vendas de setembro/2026 com 131 lotes (93 de 511,50 a 863,29 m²; 38 de 1.001 a 1.249,22 m²), de R$ 888.939,47 a R$ 1.609.895,78, mais custas de escrituração de 4,76%. Pagamento: ato de 20% e saldo em 5 anuais de 4% + 60 mensais de 1%, ou 60 mensais de 1,333%, corrigidos pelo IPCA. Aprovado pelo Decreto Municipal 15.602/2025; o book de fev/2026 informava registro prenotado sob nº 412388. Taxa de associação e prazo de entrega não informados."}
+}

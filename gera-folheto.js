@@ -60,6 +60,7 @@ const LOTES = [
     s:'3 lotes de 340 a 457 m² · portaria 24h · 3 quadras', t:'Cond. fechado', est:3, slug:'reserva-botanica-indaiatuba' },
   { n:'Residencial Ravello', c:'Dominium', p:714000, m2:420, img:'residencial-ravello-indaiatuba/images/hero.jpg',
     s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:185, slug:'residencial-ravello-indaiatuba' },
+  { n:'Alphaville Indaiatuba', c:'Alphaville', p:888939, m2:525, img:'alphaville-indaiatuba/images/hero.jpg', s:'Itaici · 131 lotes de 511 a 1.249 m² · clube com piscina de raias', t:'Cond. fechado', slug:'alphaville-indaiatuba' },
 ];
 
 

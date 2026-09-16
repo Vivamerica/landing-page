@@ -28,8 +28,13 @@ preco_txt = ('A partir de <strong>R$ %s</strong>' % format(preco, ',').replace('
 msg = 'Olá! Tenho interesse no %s%s. Pode me passar as condições?' % (
     c['nome'], (' (a partir de R$ %s)' % format(preco, ',').replace(',', '.')) if preco else '')
 wa = 'https://wa.me/5519989769457?text=' + quote(msg, safe='')
+if h['tipo'] == 'lote':   # card de lote: data-lote/data-pm2 no lugar de dorms/mcmv (padrão dos cards de condomínio)
+    linha2 = 'data-lote="%s" data-status="%s" data-constr="%s" data-pm2="%s"' % (h.get('lote', 'fechado'), h.get('status', ''), h['constr'], h.get('pm2', ''))
+else:
+    linha2 = 'data-dorms="%s" data-mcmv="%s" data-status="%s" data-constr="%s"' % (h.get('dorms', ''), h.get('mcmv', '0'), h.get('status', ''), h['constr'])
+estilo_badge = h.get('badge_estilo', 'background:#14140F;color:#D9CFC0;')
 card = '''      <article class="listing-card" data-tipo="%s" data-preco="%s" data-faixa="%s"
-               data-dorms="%s" data-mcmv="%s" data-status="%s" data-constr="%s">
+               LINHA2>
         <a href="/%s/" class="card-img-link">
           <img src="%s/images/hero.jpg" alt="%s" loading="lazy" width="400" height="200">
         </a>
@@ -50,11 +55,14 @@ card = '''      <article class="listing-card" data-tipo="%s" data-preco="%s" dat
         </div>
       </article>
 
-''' % (h['tipo'], preco or '', faixa, h.get('dorms', ''), h.get('mcmv', '0'), h.get('status', ''), h['constr'],
+''' % (h['tipo'], preco or '', faixa,
        slug, slug, h['alt'], h['badge'], h['constr'], slug, c['nome'], h['meta'], h['desc'], preco_txt,
        slug, wa, c['nome'], svg)
+card = card.replace('LINHA2', linha2).replace('style="background:#14140F;color:#D9CFC0;"', 'style="%s"' % estilo_badge)
 
-cards = [(m.start(), m.group(1)) for m in re.finditer(r'      <article class="listing-card"[^>]*?data-preco="(\d*)"', s)]
+# só entre os cards do mesmo tipo (apartamento x lote ficam em grades diferentes)
+cards = [(m.start(), m.group(2)) for m in re.finditer(r'      <article class="listing-card" data-tipo="([a-z]+)" data-preco="(\d*)"', s)
+         if m.group(1) == h['tipo']]
 alvo = None
 if preco is not None:
     for pos, p in cards:
