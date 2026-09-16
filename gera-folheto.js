@@ -19,6 +19,7 @@ const APTOS = [
     s:'2 dorm c/ suíte · 51,42 m² · últimas 2 unidades (set/2026) · entrega fev/2028', t:'MCMV · FGTS', est:2, slug:'gran-vic-andorinha-indaiatuba' },
   { n:'Spazio Italia', c:'Zarin', p:448820, img:'spazio-italia-indaiatuba/images/hero.jpg',
     s:'59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer', t:'Lançamento', slug:'spazio-italia-indaiatuba' },
+  { n:'Artemis Residencial', c:'GPCI', p:555171, img:'artemis-residencial-indaiatuba/images/hero.jpg', s:'3 dorm c/ suíte · 63,85 e 64,44 m² · Park Meraki · entrega abr/2028', t:'Lançamento', slug:'artemis-residencial-indaiatuba' },
   { n:'Aurora — Park Meraki', c:'Masotti', p:758850, img:'aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg',
     s:'101 a 152 m² · 4 torres · 32 áreas de lazer', t:'Alto padrão', slug:'aurora-indaiatuba' },
   { n:'Storia Congesa', c:'Congesa', p:981000, img:'storia-congesa-indaiatuba/images/hero.jpg',
