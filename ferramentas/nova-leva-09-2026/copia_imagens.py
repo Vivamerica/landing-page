@@ -6,6 +6,7 @@ Imprime largura x altura de cada arquivo final (vai no config da galeria).
 """
 import os, sys
 from PIL import Image
+Image.MAX_IMAGE_PIXELS = None   # material local da incorporadora; a implantação do 360 tem 200 MP
 sys.stdout.reconfigure(encoding='utf-8')
 RAIZ = 'C:/Users/Usuario/Desktop/landing-page/'
 slug, origem = sys.argv[1], sys.argv[2].rstrip('/\\') + '/'

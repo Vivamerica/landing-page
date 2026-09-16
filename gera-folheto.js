@@ -39,6 +39,7 @@ const APTOS = [
     s:'65 a 91 m² · Torre I: 53 unidades (set/2026) · piscina raia 25m · 36 áreas lazer', t:'Lançamento', slug:'manai-bosque-indaiatuba' },
   { n:'Congesa Seasons', c:'Congesa', p:null, img:'seasons-indaiatuba/images/hero.jpg',
     s:'3 suítes · Penthouse · Maison c/ jardim', t:'Pré-lançamento', slug:'seasons-indaiatuba' },
+  { n:'360 Home Office Mall', c:'HINC', p:null, img:'360-home-office-mall-indaiatuba/images/hero.jpg', s:'uso misto · 111 unidades com suíte de 39 a 128 m² · Park Meraki', t:'Lançamento', slug:'360-home-office-mall-indaiatuba' },
 ];
 
 

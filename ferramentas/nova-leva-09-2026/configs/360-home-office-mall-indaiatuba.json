@@ -1,0 +1,166 @@
+{
+  "slug": "360-home-office-mall-indaiatuba",
+  "nome": "360 Home Office Mall",
+  "categoria": "apartamentos",
+  "data": "2026-09-16",
+  "title": "360 Home Office Mall Indaiatuba | Park Meraki · HINC",
+  "description": "360 Home Office Mall, Park Meraki: torre residencial com 111 unidades de 39,73 a 128,36 m², mais office, corporate e mall. Incorporação registrada em ago/2026.",
+  "keywords": "360 home office mall indaiatuba, 360 indaiatuba, hinc indaiatuba, studio park meraki, apartamento 1 suite indaiatuba, sala comercial park meraki, laje corporativa indaiatuba, loja park meraki, duplex indaiatuba",
+  "schema_tipo": "ApartmentComplex",
+  "schema_desc": "Complexo de uso misto na Avenida 9 de Julho, 55, no Park Meraki, em Indaiatuba/SP, com três torres (residencial, office e corporate) sobre um mall de 19 lojas, em terreno de 5.752,43 m². A torre residencial tem 111 unidades: 108 apartamentos tipo de 39,73 a 60,73 m² e 3 duplex de 68,54 a 128,36 m², com suíte. Lazer no alto da torre com piscina, sky garden e sky deck. Incorporação HINC, construção HCON, registrada sob R.04 da matrícula 156.803 em 21/08/2026.",
+  "unidades_total": 111,
+  "endereco_schema": "Avenida 9 de Julho, 55 — Park Meraki",
+  "preco_min": null,
+  "marca": "HINC",
+  "lazer": ["Sky garden", "Sky deck", "Piscina no rooftop com prainha", "Solário", "Espaço fitness", "Sauna", "Espaço gourmet", "Salão de festas com área externa", "Coworking", "Lounge", "Espaço família", "Praça cívica", "Playground", "Bicicletário", "Vagas para carros elétricos"],
+  "marca_topo": ["360", "Home · Office · Mall"],
+  "wa_flutuante": "Olá! Quero os valores do 360 Home Office Mall.",
+  "wa_topo": "Olá! Tenho interesse no 360 Home Office Mall. Quero os valores e as condições.",
+  "hero": {
+    "eyebrow": "Avenida 9 de Julho, 55 · Park Meraki",
+    "sub": "Residencial, office, corporate e mall · HINC",
+    "lead": "Um complexo de uso misto no Park Meraki: uma torre residencial com 111 unidades de 39,73 a 128,36 m², uma torre de salas, uma torre corporativa e um mall de 19 lojas na base. O lazer do residencial fica no alto da torre, com piscina, sky garden e sky deck.",
+    "preco": "Valores sob consulta",
+    "preco_nota": "incorporação registrada em 21/08/2026 · tabela no atendimento",
+    "cta_msg": "Olá! Quero os valores e as unidades do 360 Home Office Mall.",
+    "cta_texto": "Pedir valores e unidades"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Morar, trabalhar e comprar no mesmo endereço",
+      "paragrafos": [
+        "O 360 Home Office Mall ocupa um terreno de 5.752,43 m² na Avenida 9 de Julho, 55, no Park Meraki, na quadra cercada pelas avenidas Conceição, Presidente Vargas e 9 de Julho. São três torres com lobbies e acessos independentes: a residencial, a office, com salas de 45 a 332 m², e a corporate, com conjuntos de 114 a 225 m² e lajes inteiras de 1.133 m². Na base, um mall com 19 lojas com mezanino e 3.135 m².",
+        "O projeto de arquitetura é de Paulo Lisboa Arquitetura com a LKS, o paisagismo da Takeda Design, a iluminação da Noyori Lighting Design e os interiores das áreas comuns da Tria Arquitetura. A incorporação é da HINC, braço imobiliário do Grupo H2C, e a construção é da HCON Engenharia."
+      ],
+      "numeros": [
+        {"n": "111", "p": "unidades residenciais"},
+        {"n": "3", "p": "torres sobre o mall"},
+        {"n": "19", "p": "lojas com mezanino"},
+        {"n": "487", "p": "vagas para carros em 3 subsolos"}
+      ],
+      "depois": "galeria"
+    },
+    {
+      "label": "Plantas do residencial",
+      "classe": "cream",
+      "h2": "Apartamentos com suíte e três duplex",
+      "paragrafos": [
+        "Os apartamentos tipo ficam do 10º ao 18º andar e os duplex no 8º e 9º. Todas as plantas de venda conferidas têm uma suíte. O material apresenta também sugestões de unir unidades vizinhas em plantas de 82 m², 100 m² e até 120 m²; regras e custos dessa junção são confirmados no atendimento."
+      ],
+      "tabela": {
+        "legenda": "Plantas de venda da torre residencial, conforme o caderno de vendas da incorporadora. Área calculada pela NBR 12721.",
+        "cab": ["Planta", "Andares", "Área", "Vagas"],
+        "num": [2],
+        "linhas": [
+          ["Tipo, finais 2, 3, 4, 5, 6, 9 e 10", "10º ao 18º", "39,73 a 39,75 m²", "1"],
+          ["Tipo, final 1", "10º ao 18º", "42,53 m²", "a confirmar"],
+          ["Tipo, final 12", "10º ao 18º", "43,34 m²", "a confirmar"],
+          ["Tipo, finais 7 e 8", "10º ao 18º", "49,50 m²", "a confirmar"],
+          ["Tipo, final 11 (dois banheiros)", "10º ao 18º", "60,73 m²", "2"],
+          ["Duplex, final 2", "8º e 9º", "68,54 m²", "a confirmar"],
+          ["Duplex, final 1", "8º e 9º", "103,66 m²", "a confirmar"],
+          ["Duplex, final 3", "8º e 9º", "128,36 m²", "a confirmar"]
+        ]
+      },
+      "cards": [
+        {"t": "Segurança", "p": "Lobby do residencial com clausura, controle de acesso por biometria, reconhecimento facial e cartão, e câmeras em todas as áreas comuns."},
+        {"t": "Energia e ar", "p": "Medição individual de energia, geradores e infraestrutura seca para ar-condicionado split. Os aparelhos não estão incluídos."},
+        {"t": "Estacionamento", "p": "Três subsolos, um deles só do residencial, com vagas para carros elétricos e bicicletário."},
+        {"t": "Estrutura", "p": "Laje nervurada e protendida, com vãos maiores e menos pilares."},
+        {"t": "Serviços", "p": "Bolsão de delivery e entregas e aplicativo do condomínio para reservas, encomendas e câmeras."},
+        {"t": "Salas e lojas", "p": "Office de 45 a 332 m², corporate de 114 a 225 m² por conjunto e 19 lojas no mall. Pergunte pelas unidades comerciais."}
+      ]
+    },
+    {"skip": true, "depois": "lazer"},
+    {"skip": true, "depois": "ficha"},
+    {
+      "id": "precos",
+      "label": "Valores",
+      "h2": "Tabela e condições sob consulta",
+      "paragrafos": ["O material que recebemos da incorporadora não traz tabela de preços, condições de pagamento nem data de entrega. Por isso não publicamos valores nesta página. Pelo WhatsApp mandamos a tabela em vigor, com a data da versão, para as unidades residenciais, as salas, os conjuntos corporativos e as lojas."],
+      "cta": {"msg": "Olá! Quero a tabela do 360 Home Office Mall com os valores das unidades.", "texto": "Pedir a tabela"}
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Avenida 9 de Julho, 55, no Park Meraki",
+      "paragrafos": ["O complexo fica na quadra das avenidas 9 de Julho, Conceição e Presidente Vargas. O book da incorporadora traz os tempos abaixo, marcados por ela como referência ilustrativa e sem indicar o meio de transporte."],
+      "cards": [
+        {"t": "1 a 3 minutos", "p": "Clube 9 de Julho, supermercado Roldão, Hospital Santa Ignês e supermercado Pão de Açúcar"},
+        {"t": "7 a 10 minutos", "p": "Centro de Indaiatuba, Rodovia Santos Dumont, Shopping Jaraguá e Polo Shopping"},
+        {"t": "15 a 31 minutos", "p": "Aeroporto de Viracopos (15) e Campinas (31)"}
+      ],
+      "notas": ["O stand de vendas, chamado Espaço 360, fica na Estrada Chafic José Saif, 136, Vila Maria Elena."]
+    }
+  ],
+  "galeria": {
+    "label": "Perspectivas",
+    "h2": "Como o projeto foi desenhado",
+    "aviso": "Perspectivas ilustradas do material da incorporadora, de caráter artístico. Pisos elevados, forros das salas, móveis e decoração não compõem o memorial descritivo; a vegetação é mostrada em porte adulto.",
+    "itens": [
+      {"arq": "torres.jpg", "alt": "Perspectiva ilustrada das três torres do 360 Home Office Mall", "w": 1600, "h": 1203, "leg": "As três torres"},
+      {"arq": "aerea.jpg", "alt": "Perspectiva ilustrada aérea das torres do 360 no Park Meraki", "w": 1100, "h": 1100, "leg": "Vista aérea"},
+      {"arq": "mall.jpg", "alt": "Perspectiva ilustrada do mall com lojas voltadas para a calçada", "w": 1600, "h": 800, "leg": "Mall com 19 lojas"},
+      {"arq": "residencial-noite.jpg", "alt": "Perspectiva ilustrada da torre residencial iluminada à noite", "w": 1280, "h": 1600, "leg": "Torre residencial"},
+      {"arq": "lobby-home.jpg", "alt": "Perspectiva ilustrada do lobby da torre residencial", "w": 1600, "h": 1203, "leg": "Lobby do residencial"},
+      {"arq": "piscina.jpg", "alt": "Perspectiva ilustrada da piscina no rooftop da torre residencial", "w": 1600, "h": 900, "leg": "Piscina no rooftop"},
+      {"arq": "piscina-por-do-sol.jpg", "alt": "Perspectiva ilustrada da piscina no rooftop ao pôr do sol", "w": 1600, "h": 961, "leg": "Piscina ao pôr do sol"},
+      {"arq": "sky-garden.jpg", "alt": "Perspectiva ilustrada do sky garden e do sky deck no alto da torre", "w": 1280, "h": 1600, "leg": "Sky garden e sky deck"},
+      {"arq": "salao-festas.jpg", "alt": "Perspectiva ilustrada do salão de festas", "w": 1600, "h": 900, "leg": "Salão de festas"},
+      {"arq": "gourmet.jpg", "alt": "Perspectiva ilustrada do espaço gourmet", "w": 1600, "h": 1200, "leg": "Espaço gourmet"},
+      {"arq": "fitness.jpg", "alt": "Perspectiva ilustrada do espaço fitness com vista", "w": 1600, "h": 373, "leg": "Espaço fitness"},
+      {"arq": "apto-tipo.jpg", "alt": "Perspectiva ilustrada de um apartamento tipo decorado", "w": 1600, "h": 1600, "leg": "Apartamento tipo"},
+      {"arq": "duplex.jpg", "alt": "Perspectiva ilustrada do duplex de 128 m² decorado", "w": 1600, "h": 1000, "leg": "Duplex de 128,36 m²"},
+      {"arq": "lobby-office.jpg", "alt": "Perspectiva ilustrada do lobby da torre office", "w": 1600, "h": 900, "leg": "Lobby do office"},
+      {"arq": "lobby-corporate.jpg", "alt": "Perspectiva ilustrada do lobby da torre corporate", "w": 1600, "h": 1143, "leg": "Lobby do corporate"},
+      {"arq": "implantacao.jpg", "alt": "Implantação ilustrada do complexo 360 com as três torres e o mall", "w": 1600, "h": 1442, "leg": "Implantação"}
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Lazer no alto da torre residencial",
+    "intro": "A lista abaixo segue o material da incorporadora. O salão de festas e o coworking ficam no 8º andar; a piscina, o solário e o fitness no 19º; o sky garden e o sky deck no 20º e no 21º.",
+    "itens": ["Sky garden", "Sky deck", "Piscina no rooftop com prainha", "Solário", "Espaço fitness", "Sauna", "Espaço gourmet", "Salão de festas com área externa", "Coworking", "Lounge", "Espaço família", "Praça cívica", "Playground"],
+    "nota": "O complexo tem 487 vagas para carros, 70 para motos e 13 para pessoas com deficiência, em três subsolos. O material informa uma vaga para os apartamentos de cerca de 40 m² e duas para o final 11; as demais se confirmam no atendimento."
+  },
+  "ficha": [
+    ["Incorporação", "HINC Incorporações e Loteamentos (Grupo H2C)"],
+    ["Construção", "HCON Engenharia e Construção"],
+    ["Incorporadora responsável", "360 Home, Office & Mall SPE Ltda. — CNPJ 59.465.382/0001-71"],
+    ["Endereço", "Avenida 9 de Julho, 55 — Park Meraki, Indaiatuba/SP"],
+    ["Terreno", "5.752,43 m²"],
+    ["Torres", "3 (residencial, office e corporate), com lobbies e acessos independentes, sobre um mall"],
+    ["Residencial", "111 unidades: 108 tipo (10º ao 18º andar) e 3 duplex (8º e 9º)"],
+    ["Plantas residenciais", "39,73 a 60,73 m² no tipo; 68,54 a 128,36 m² nos duplex; todas com suíte"],
+    ["Office", "Salas de 45 a 152 m², duplex de 83 a 201 m² e coberturas de 135 a 332 m²"],
+    ["Corporate", "Conjuntos de 114 a 225 m² e laje inteira de 1.133 m², do 3º ao 7º andar"],
+    ["Mall", "19 lojas com mezanino, 3.135 m²"],
+    ["Estacionamento", "3 subsolos; 487 vagas para carros, 70 para motos e 13 para pessoas com deficiência"],
+    ["Projetos", "Paulo Lisboa Arquitetura | LKS (arquitetura), Takeda Design (paisagismo), Noyori Lighting Design, Tria Arquitetura e Eco Arquitetura (interiores)"],
+    ["Incorporação registrada", "R.04 da matrícula nº 156.803 do Oficial de Registro de Imóveis de Indaiatuba/SP, publicado em 21/08/2026"],
+    ["Entrega", "Não informada no material; confirme no atendimento"]
+  ],
+  "faq": [
+    {"q": "Quanto custa um apartamento no 360 Home Office Mall?", "a": "O material que recebemos da incorporadora não traz tabela de preços, então não publicamos valores. A tabela em vigor, com a data da versão, é enviada pelo WhatsApp da Viv'América para as unidades residenciais, as salas, os conjuntos e as lojas."},
+    {"q": "Quais são as plantas do residencial do 360?", "a": "São 108 apartamentos tipo, do 10º ao 18º andar, de 39,73 a 60,73 m², e 3 duplex no 8º e 9º andar, de 68,54, 103,66 e 128,36 m². Todas as plantas de venda conferidas têm uma suíte. A planta de 60,73 m² tem dois banheiros."},
+    {"q": "O 360 Home Office Mall tem salas comerciais e lojas?", "a": "Sim. A torre office tem salas de 45 a 152 m², duplex de 83 a 201 m² e coberturas de 135 a 332 m². A torre corporate tem conjuntos de 114 a 225 m² e lajes inteiras de 1.133 m². O mall tem 19 lojas com mezanino."},
+    {"q": "Onde fica o 360 Home Office Mall?", "a": "Na Avenida 9 de Julho, 55, no Park Meraki, em Indaiatuba/SP, na quadra das avenidas Conceição, Presidente Vargas e 9 de Julho. O stand de vendas fica na Estrada Chafic José Saif, 136, Vila Maria Elena."},
+    {"q": "O 360 Home Office Mall tem registro de incorporação?", "a": "Sim. O material da incorporadora informa o registro publicado em 21/08/2026 sob R.04 da matrícula nº 156.803 do Oficial de Registro de Imóveis de Indaiatuba."},
+    {"q": "Qual é o lazer do residencial?", "a": "Piscina no rooftop com prainha, solário, espaço fitness e sauna no 19º andar; sky garden e sky deck no 20º e 21º; salão de festas com área externa e coworking no 8º; além de espaço gourmet, lounge, espaço família, praça cívica e playground."},
+    {"q": "Quando o 360 Home Office Mall será entregue?", "a": "O material recebido não informa a data de entrega. A previsão atualizada é passada no atendimento, junto com a tabela."}
+  ],
+  "cta": {"h2": "Quer os valores do 360 Home Office Mall?", "p": "Mandamos a tabela em vigor das unidades residenciais, salas, conjuntos e lojas, e as condições de pagamento.", "msg": "Olá! Quero falar sobre o 360 Home Office Mall no Park Meraki."},
+  "rodape": {
+    "marca": "360 HOME · OFFICE · MALL",
+    "linha": "360 Home Office Mall · residencial com 111 unidades de 39,73 a 128,36 m², office, corporate e mall · Avenida 9 de Julho, 55 · Park Meraki · Indaiatuba, SP",
+    "realizacao": "Incorporação HINC · construção HCON",
+    "legal": "Perspectivas, plantas e layouts de caráter ilustrativo e artístico; móveis, decoração, pisos elevados e forros das salas não compõem o memorial descritivo, e a vegetação é mostrada em porte adulto. O Memorial de Incorporação, o Memorial Descritivo e os contratos prevalecem sobre este material, e a incorporadora pode fazer alterações técnicas e estéticas. Valores, condições e prazo de entrega são informados no atendimento. Incorporação registrada sob R.04 da matrícula nº 156.803 do Oficial de Registro de Imóveis de Indaiatuba/SP, publicado em 21/08/2026. Incorporadora responsável: 360 Home, Office & Mall SPE Ltda., CNPJ 59.465.382/0001-71. Página publicada em set/2026."
+  },
+  "home": {"tipo": "apartamento", "preco": null, "dorms": "1", "mcmv": "0", "status": "", "constr": "HINC",
+    "badge": "Lançamento · uso misto", "meta": "39 a 128 m² · suíte",
+    "desc": "Residencial, office, corporate e mall no Park Meraki · 111 unidades com suíte · piscina, sky garden e sky deck no alto da torre.",
+    "alt": "Perspectiva ilustrada das torres do 360 Home Office Mall ao pôr do sol",
+    "itemlist": "360 Home Office Mall — uso misto HINC no Park Meraki, torre residencial com 111 unidades de 39,73 a 128,36 m² · valores sob consulta"},
+  "llms": {"secao": "apartamentos", "linha": "Complexo de uso misto da HINC (Grupo H2C), construção HCON, na Avenida 9 de Julho, 55, Park Meraki, Indaiatuba (SPE 360 Home, Office & Mall Ltda., CNPJ 59.465.382/0001-71). Terreno de 5.752,43 m², três torres (residencial, office e corporate) sobre um mall de 19 lojas com mezanino (3.135 m²). Residencial com 111 unidades: 108 tipo do 10º ao 18º andar (39,73 a 60,73 m²) e 3 duplex no 8º e 9º (68,54, 103,66 e 128,36 m²), todas com suíte. Office com salas de 45 a 332 m²; corporate com conjuntos de 114 a 225 m² e lajes de 1.133 m². Lazer: piscina no rooftop com prainha, solário, fitness e sauna (19º), sky garden e sky deck (20º e 21º), salão de festas e coworking (8º). 487 vagas para carros em 3 subsolos. Incorporação registrada sob R.04 da matrícula 156.803, publicada em 21/08/2026. O material não traz tabela de preços nem data de entrega: valores sob consulta."}
+}
