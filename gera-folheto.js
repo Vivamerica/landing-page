@@ -35,7 +35,7 @@ const APTOS = [
     s:'47 a 85 m² · Torre 3 (tabela ago/2026) · 7.000 m² parque · +30 itens lazer', t:'Lançamento', slug:'viva-parque-aura-indaiatuba' },
   { n:'Viva Parque Sense', c:'Pinheiro · RDZ · iBen', p:404886, img:'viva-parque-sense-indaiatuba/images/hero.jpg',
     s:'3 dorm c/ suíte · 59,93 m² · garden 95,99 m² · 8 torres · tabela ago/2026', t:'Lançamento', slug:'viva-parque-sense-indaiatuba' },
-  { n:'Manai Bosque', c:'Masotti', p:505941, img:'manai-bosque-indaiatuba/images/hero-3-torres.jpg',
+  { n:'Manai Bosque', c:'Masotti', p:505941, img:'manai-bosque-indaiatuba/images/vista-aerea-real.jpg',
     s:'65 a 91 m² · Torre I: 53 unidades (set/2026) · piscina raia 25m · 36 áreas lazer', t:'Lançamento', slug:'manai-bosque-indaiatuba' },
   { n:'Congesa Seasons', c:'Congesa', p:null, img:'seasons-indaiatuba/images/hero.jpg',
     s:'3 suítes · Penthouse · Maison c/ jardim', t:'Pré-lançamento', slug:'seasons-indaiatuba' },
