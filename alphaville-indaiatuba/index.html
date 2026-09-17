@@ -56,6 +56,12 @@
     "description": "Condomínio fechado de lotes do Grupo Alphaville no bairro do Itaici, em Indaiatuba/SP, com lotes a partir de 510 m² e de 1.000 m², clube com piscina climatizada de raias semiolímpicas, quadras e 245 mil m² de áreas verdes e de lazer. Tabela de vendas de setembro/2026 com 131 lotes, de 511,50 a 1.249,22 m², de R$ 888.939,47 a R$ 1.609.895,78, com ato de 20% e saldo em 60 meses corrigido pelo IPCA.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/alphaville-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/alphaville-indaiatuba/images/hero.jpg",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.128448,
+      "longitude": -47.196168
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=-23.128448%2C-47.196168",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Bairro do Itaici",
@@ -565,12 +571,20 @@
   <div class="container">
     <p class="label">Localização</p>
     <h2>No bairro do Itaici, em Indaiatuba</h2>
-    <p class="prosa">O material da loteadora situa o empreendimento no bairro do Itaici, sem logradouro nem número. Os tempos abaixo são os do book, sem indicação do meio de transporte.</p>
+    <p class="prosa">O material da loteadora situa o empreendimento no bairro do Itaici, sem logradouro nem número; o mapa abaixo marca o ponto do empreendimento. Os tempos abaixo são os do book, sem indicação do meio de transporte.</p>
     <div class="grid g3" style="margin-top:1.8rem;">
       <div class="card"><h3>7 a 12 minutos</h3><p>Mosteiro de Itaici (7), Parque Ecológico (8), Colônia Helvetia (10) e Centro de Indaiatuba (12)</p></div>
       <div class="card"><h3>10 a 15 minutos</h3><p>Parque do Mirim, Bosque do Saber, supermercados Pão de Açúcar, Covabra e OBA, e Aeroporto de Viracopos</p></div>
       <div class="card"><h3>20 a 35 minutos</h3><p>Acesso à Rodovia Anhanguera (20), Centro de Campinas (25), Lagoa do Taquaral e Hopi Hari (30) e Shopping Iguatemi Campinas (35)</p></div>
     </div>
+    <div class="mapa-box" data-src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1s-23.128448,-47.196168!6i16" data-titulo="Mapa do Alphaville Indaiatuba, Indaiatuba">
+      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do Alphaville Indaiatuba">
+        <span class="mapa-ic" aria-hidden="true"></span>
+        <span class="mapa-t">Ver no mapa</span>
+        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
+      </button>
+    </div>
+    <p><a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=-23.128448%2C-47.196168" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>
     <p class="nota">O book informa a distância até São Paulo em 110 km.</p>
   </div>
 </section>
@@ -645,6 +659,27 @@
   </p>
 <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
 </footer>
+
+<script>
+// o iframe do Google só nasce no clique: nada sai daqui antes disso
+(function () {
+  var cx = document.querySelectorAll('.mapa-box');
+  for (var i = 0; i < cx.length; i++) {
+    cx[i].addEventListener('click', function () {
+      if (this.dataset.pronto) return;
+      this.dataset.pronto = '1';
+      var f = document.createElement('iframe');
+      f.src = this.dataset.src;
+      f.title = this.dataset.titulo || 'Mapa';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      this.innerHTML = '';
+      this.appendChild(f);
+    }, { once: true });
+  }
+})();
+</script>
 
 </body>
 </html>

@@ -57,6 +57,12 @@
     "url": "https://lancamentos.imoveisvivamerica.com.br/artemis-residencial-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/artemis-residencial-indaiatuba/images/hero.jpg",
     "numberOfAccommodationUnits": 320,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.07959,
+      "longitude": -47.187413
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Residencial%20Artemis%20Indaiatuba",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Park Meraki, junto à Avenida 9 de Julho",
@@ -644,8 +650,16 @@
   <div class="container">
     <p class="label">Localização</p>
     <h2>No Park Meraki, junto à Avenida 9 de Julho</h2>
-    <p class="prosa">A implantação da incorporadora situa o terreno no Park Meraki, junto à Avenida 9 de Julho. O material ainda não traz o número do endereço da obra. No mapa de localização aparecem a Avenida Visconde de Indaiatuba, a Avenida Presidente Vargas, a Avenida Conceição, o acesso à Rodovia SP-75, o Clube 9 de Julho, os supermercados Pão de Açúcar e Pague Menos e o Centro, sem distâncias informadas.</p>
+    <p class="prosa">A implantação da incorporadora situa o terreno no Park Meraki, junto à Avenida 9 de Julho. O material ainda não traz o número do endereço da obra; o mapa abaixo mostra o local cadastrado no Google. No mapa de localização aparecem a Avenida Visconde de Indaiatuba, a Avenida Presidente Vargas, a Avenida Conceição, o acesso à Rodovia SP-75, o Clube 9 de Julho, os supermercados Pão de Açúcar e Pague Menos e o Centro, sem distâncias informadas.</p>
     <p class="prosa">O Park Meraki tem, fora do condomínio, ciclovia, pista de caminhada, quadras e áreas verdes do próprio bairro. A central de vendas fica na Avenida 9 de Julho, 52.</p>
+    <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d648.854975992451!2d-47.18741327284535!3d-23.07959048917185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b5007fdd7ad3%3A0x70a7a3efd5edca82!2sResidencial%20Artemis!5e0!3m2!1spt-BR!2sbr!4v1789659883246!5m2!1spt-BR!2sbr" data-titulo="Mapa do Artemis Residencial, Indaiatuba">
+      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do Artemis Residencial">
+        <span class="mapa-ic" aria-hidden="true"></span>
+        <span class="mapa-t">Ver no mapa</span>
+        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
+      </button>
+    </div>
+    <p><a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=Residencial%20Artemis%20Indaiatuba" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>
   </div>
 </section>
 
@@ -719,6 +733,27 @@
   </p>
 <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
 </footer>
+
+<script>
+// o iframe do Google só nasce no clique: nada sai daqui antes disso
+(function () {
+  var cx = document.querySelectorAll('.mapa-box');
+  for (var i = 0; i < cx.length; i++) {
+    cx[i].addEventListener('click', function () {
+      if (this.dataset.pronto) return;
+      this.dataset.pronto = '1';
+      var f = document.createElement('iframe');
+      f.src = this.dataset.src;
+      f.title = this.dataset.titulo || 'Mapa';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      this.innerHTML = '';
+      this.appendChild(f);
+    }, { once: true });
+  }
+})();
+</script>
 
 </body>
 </html>

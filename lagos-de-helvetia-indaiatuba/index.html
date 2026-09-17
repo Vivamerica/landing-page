@@ -56,6 +56,12 @@
     "description": "Condomínio de lotes da GPCI Empreendimentos na região de Helvetia, em Indaiatuba/SP, com 169 lotes a partir de 500 m², lago integrado às áreas comuns, portaria e clube com piscinas adulto, infantil e coberta, academia com espaço pilates, saunas, salão de festas, quadras de tênis de saibro e de areia e campo de futebol. Tabela de 01/07/2026 com 44 lotes, de 501,00 a 2.015,04 m², a R$ 1.800 por m², de R$ 901.800,00 a R$ 3.627.072,00.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/lagos-de-helvetia-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/lagos-de-helvetia-indaiatuba/images/hero.jpg",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.05492,
+      "longitude": -47.174785
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Lagos%20de%20Helvetia%20Indaiatuba",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Região de Helvetia",
@@ -584,12 +590,20 @@
   <div class="container">
     <p class="label">Localização</p>
     <h2>Na região de Helvetia, em Indaiatuba</h2>
-    <p class="prosa">O material da incorporadora situa o empreendimento na região de Helvetia, com uma hípica ao lado, sem informar logradouro, número ou distâncias. O endereço de acesso é passado no atendimento.</p>
+    <p class="prosa">O material da incorporadora situa o empreendimento na região de Helvetia, com uma hípica ao lado, sem informar logradouro, número ou distâncias. O mapa abaixo mostra o local cadastrado no Google.</p>
     <div class="grid g3" style="margin-top:1.8rem;">
       <div class="card"><h3>Helvetia</h3><p>Região fundada por imigrantes suíços, com haras, campos de polo e golfe e alamedas, segundo o book</p></div>
       <div class="card"><h3>Hípica ao lado</h3><p>O book cita a hípica vizinha e a convivência com os cavalos como parte da paisagem</p></div>
       <div class="card"><h3>Viracopos e capital</h3><p>O book menciona a proximidade do Aeroporto de Viracopos e de São Paulo, sem informar distância nem tempo</p></div>
     </div>
+    <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1835.5755737375034!2d-47.17478507485746!3d-23.054919618333926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b50005459b35%3A0x408e61c1a9440dbb!2sLagos%20de%20Helvetia!5e0!3m2!1spt-BR!2sbr!4v1789659909953!5m2!1spt-BR!2sbr" data-titulo="Mapa do Lagos de Helvetia, Indaiatuba">
+      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do Lagos de Helvetia">
+        <span class="mapa-ic" aria-hidden="true"></span>
+        <span class="mapa-t">Ver no mapa</span>
+        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
+      </button>
+    </div>
+    <p><a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=Lagos%20de%20Helvetia%20Indaiatuba" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>
   </div>
 </section>
 
@@ -663,6 +677,27 @@
   </p>
 <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
 </footer>
+
+<script>
+// o iframe do Google só nasce no clique: nada sai daqui antes disso
+(function () {
+  var cx = document.querySelectorAll('.mapa-box');
+  for (var i = 0; i < cx.length; i++) {
+    cx[i].addEventListener('click', function () {
+      if (this.dataset.pronto) return;
+      this.dataset.pronto = '1';
+      var f = document.createElement('iframe');
+      f.src = this.dataset.src;
+      f.title = this.dataset.titulo || 'Mapa';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      this.innerHTML = '';
+      this.appendChild(f);
+    }, { once: true });
+  }
+})();
+</script>
 
 </body>
 </html>

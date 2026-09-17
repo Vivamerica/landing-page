@@ -72,7 +72,21 @@ def paragrafos(lista, classe='prosa'):
     return ''.join('    <p class="%s">%s</p>\n' % (classe, e(p)) for p in (lista or []))
 
 
-def secao(sc):
+def bloco_mapa(m, nome):
+    """Mapa do Google sob demanda: o iframe só nasce no clique (mesmo padrão do Espaço Conceição)."""
+    from urllib.parse import quote
+    rota = 'https://www.google.com/maps/dir/?api=1&destination=' + quote(m.get('rota', nome), safe='')
+    return ('    <div class="mapa-box" data-src="%s" data-titulo="%s">\n'
+            '      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do %s">\n'
+            '        <span class="mapa-ic" aria-hidden="true"></span>\n'
+            '        <span class="mapa-t">Ver no mapa</span>\n'
+            '        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>\n'
+            '      </button>\n    </div>\n'
+            '    <p><a class="mapa-rota" href="%s" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>\n'
+            ) % (e(m['embed']), e('Mapa do ' + nome + ', Indaiatuba'), e(nome), e(rota))
+
+
+def secao(sc, mapa=None, nome=''):
     classe = sc.get('classe', '')
     attrs = (' class="%s"' % classe if classe else '') + (' id="%s"' % sc['id'] if sc.get('id') else '')
     corpo = '    <p class="label">%s</p>\n    <h2>%s</h2>\n' % (e(sc['label']), e(sc['h2']))
@@ -84,6 +98,8 @@ def secao(sc):
         corpo += '    <h3 style="margin-top:2.2rem;">%s</h3>\n' % e(sc['tabela2_titulo'])
         corpo += paragrafos(sc.get('tabela2_paragrafos'))
         corpo += tabela(sc['tabela2'])
+    if mapa and sc.get('id') == 'localizacao':
+        corpo += bloco_mapa(mapa, nome)
     corpo += paragrafos(sc.get('notas'), 'nota')
     if sc.get('cta'):
         corpo += '    <p style="margin-top:1.4rem;"><a class="btn" href="%s" target="_blank" rel="noopener">%s</a></p>\n' % (wa(sc['cta']['msg']), e(sc['cta']['texto']))
@@ -111,6 +127,9 @@ def main(caminho_cfg):
         principal['numberOfAccommodationUnits'] = c['unidades_total']
     if c.get('geo'):
         principal['geo'] = {"@type": "GeoCoordinates", "latitude": c['geo'][0], "longitude": c['geo'][1]}
+    if c.get('mapa'):
+        from urllib.parse import quote
+        principal['hasMap'] = 'https://www.google.com/maps/search/?api=1&query=' + quote(c['mapa'].get('rota', c['nome']), safe='')
     principal['address'] = {"@type": "PostalAddress", "streetAddress": c['endereco_schema'],
                             "addressLocality": "Indaiatuba", "addressRegion": "SP", "addressCountry": "BR"}
     if c.get('preco_min') is not None:
@@ -173,7 +192,7 @@ def main(caminho_cfg):
 
     for sc in c['secoes']:
         if not sc.get('skip'):
-            out.append(secao(sc))
+            out.append(secao(sc, c.get('mapa'), c['nome']))
         if sc.get('depois') == 'galeria' and c.get('galeria'):
             g = c['galeria']
             figs = ''.join('      <figure><img src="images/%s" alt="%s" width="%d" height="%d" loading="lazy"><figcaption>%s</figcaption></figure>\n'
@@ -209,6 +228,11 @@ def main(caminho_cfg):
     out.append('  <p style="margin-top:12px;">\n    %s\n  </p>\n' % e(r['legal']))
     out.append('<p class="nap">Imobiliária Viv\'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · '
                '<a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>\n</footer>\n\n')
+    if c.get('mapa') and js_mapa:
+        js = js_mapa.replace("f.title = 'Mapa do Espaço Conceição, Rua Três Marias, 254, Indaiatuba';",
+                             "f.title = this.dataset.titulo || 'Mapa';")
+        assert 'dataset.titulo' in js, 'script do mapa no modelo mudou'
+        out.append(js + '\n\n')
     out.append('</body>\n</html>\n')
     doc = ''.join(out)
     # checagens da casa

@@ -57,6 +57,12 @@
     "url": "https://lancamentos.imoveisvivamerica.com.br/360-home-office-mall-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/360-home-office-mall-indaiatuba/images/hero.jpg",
     "numberOfAccommodationUnits": 111,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.084297,
+      "longitude": -47.194293
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=360%20Home%20Office%20Mall%20Indaiatuba",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Avenida 9 de Julho, 55 — Park Meraki",
@@ -582,6 +588,14 @@
       <div class="card"><h3>7 a 10 minutos</h3><p>Centro de Indaiatuba, Rodovia Santos Dumont, Shopping Jaraguá e Polo Shopping</p></div>
       <div class="card"><h3>15 a 31 minutos</h3><p>Aeroporto de Viracopos (15) e Campinas (31)</p></div>
     </div>
+    <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1297.6645282182503!2d-47.19429303039887!3d-23.084296568800134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b500202f68ed%3A0xb520a2838d253a08!2s360%20Home%20Office%20Mall!5e0!3m2!1spt-BR!2sbr!4v1789659955431!5m2!1spt-BR!2sbr" data-titulo="Mapa do 360 Home Office Mall, Indaiatuba">
+      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do 360 Home Office Mall">
+        <span class="mapa-ic" aria-hidden="true"></span>
+        <span class="mapa-t">Ver no mapa</span>
+        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
+      </button>
+    </div>
+    <p><a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=360%20Home%20Office%20Mall%20Indaiatuba" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>
     <p class="nota">O stand de vendas, chamado Espaço 360, fica na Estrada Chafic José Saif, 136, Vila Maria Elena.</p>
   </div>
 </section>
@@ -656,6 +670,27 @@
   </p>
 <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
 </footer>
+
+<script>
+// o iframe do Google só nasce no clique: nada sai daqui antes disso
+(function () {
+  var cx = document.querySelectorAll('.mapa-box');
+  for (var i = 0; i < cx.length; i++) {
+    cx[i].addEventListener('click', function () {
+      if (this.dataset.pronto) return;
+      this.dataset.pronto = '1';
+      var f = document.createElement('iframe');
+      f.src = this.dataset.src;
+      f.title = this.dataset.titulo || 'Mapa';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      this.innerHTML = '';
+      this.appendChild(f);
+    }, { once: true });
+  }
+})();
+</script>
 
 </body>
 </html>

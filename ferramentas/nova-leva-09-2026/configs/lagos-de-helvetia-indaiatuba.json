@@ -9,15 +9,18 @@
   "schema_tipo": "RealEstateListing",
   "schema_desc": "Condomínio de lotes da GPCI Empreendimentos na região de Helvetia, em Indaiatuba/SP, com 169 lotes a partir de 500 m², lago integrado às áreas comuns, portaria e clube com piscinas adulto, infantil e coberta, academia com espaço pilates, saunas, salão de festas, quadras de tênis de saibro e de areia e campo de futebol. Tabela de 01/07/2026 com 44 lotes, de 501,00 a 2.015,04 m², a R$ 1.800 por m², de R$ 901.800,00 a R$ 3.627.072,00.",
   "endereco_schema": "Região de Helvetia",
-  "preco_min": 901800.00,
-  "preco_max": 3627072.00,
+  "preco_min": 901800.0,
+  "preco_max": 3627072.0,
   "offer_count": 44,
   "oferta_desc": "Tabela Lagos de Helvetia de 01/07/2026 com 44 lotes, de R$ 901.800,00 (lote de 501,00 m²) a R$ 3.627.072,00 (lote A1, 2.015,04 m²), todos a R$ 1.800 por m². Ato de 10% e saldo em até 12 mensais sem juros e sem correção, ou ato de 20% e 24 mensais sem juros com correção anual pelo IPCA, ou ato de 10% e 36 a 96 mensais pela tabela Price com juros de 0,80% a.m. mais IPCA.",
   "produto_nome": "Lagos de Helvetia — lote de 501 m² em Indaiatuba",
   "produto_desc": "Lotes de 501 a 2.015 m² em condomínio de lotes da GPCI na região de Helvetia, Indaiatuba/SP. Tabela de 01/07/2026.",
   "marca": "GPCI Empreendimentos",
   "lazer": [],
-  "marca_topo": ["LAGOS DE HELVETIA", "Indaiatuba"],
+  "marca_topo": [
+    "LAGOS DE HELVETIA",
+    "Indaiatuba"
+  ],
   "wa_flutuante": "Olá! Quero a tabela de lotes do Lagos de Helvetia.",
   "wa_topo": "Olá! Tenho interesse no Lagos de Helvetia. Quero a tabela de lotes e as condições.",
   "hero": {
@@ -38,10 +41,22 @@
         "A implantação tem portaria com entrada e saída de moradores e visitantes, clube, alamedas e pista de caminhada. A arquitetura é do escritório Prado Ferreira, os interiores de Catherine Trevisan e o paisagismo de Marcelo Novaes. O lote é vendido como terreno: a casa é projetada e construída por quem compra."
       ],
       "numeros": [
-        {"n": "169", "p": "lotes no projeto"},
-        {"n": "44", "p": "lotes na tabela de 01/07/2026"},
-        {"n": "R$ 1.800", "p": "por m² em todos os lotes da tabela"},
-        {"n": "501 a 2.015", "p": "m² de área"}
+        {
+          "n": "169",
+          "p": "lotes no projeto"
+        },
+        {
+          "n": "44",
+          "p": "lotes na tabela de 01/07/2026"
+        },
+        {
+          "n": "R$ 1.800",
+          "p": "por m² em todos os lotes da tabela"
+        },
+        {
+          "n": "501 a 2.015",
+          "p": "m² de área"
+        }
       ],
       "depois": "galeria"
     },
@@ -54,52 +69,159 @@
       ],
       "tabela": {
         "legenda": "Lotes da tabela Lagos de Helvetia de 01/07/2026, por faixa de área.",
-        "cab": ["Faixa de área", "Lotes", "Metragem", "De", "Até"],
-        "num": [1, 3, 4],
+        "cab": [
+          "Faixa de área",
+          "Lotes",
+          "Metragem",
+          "De",
+          "Até"
+        ],
+        "num": [
+          1,
+          3,
+          4
+        ],
         "linhas": [
-          ["Até 550 m²", "29", "501,00 a 549,50 m²", "R$ 901.800,00", "R$ 989.100,00"],
-          ["De 550 a 750 m²", "13", "597,21 a 717,09 m²", "R$ 1.074.978,00", "R$ 1.290.762,00"],
-          ["Acima de 750 m²", "2", "858,53 e 2.015,04 m²", "R$ 1.545.354,00", "R$ 3.627.072,00"]
+          [
+            "Até 550 m²",
+            "29",
+            "501,00 a 549,50 m²",
+            "R$ 901.800,00",
+            "R$ 989.100,00"
+          ],
+          [
+            "De 550 a 750 m²",
+            "13",
+            "597,21 a 717,09 m²",
+            "R$ 1.074.978,00",
+            "R$ 1.290.762,00"
+          ],
+          [
+            "Acima de 750 m²",
+            "2",
+            "858,53 e 2.015,04 m²",
+            "R$ 1.545.354,00",
+            "R$ 3.627.072,00"
+          ]
         ]
       },
       "cards": [
-        {"t": "Metragem mais oferecida", "p": "Lotes de 528,00 m², a R$ 950.400,00: são 16 na tabela, nas quadras F, G e H."},
-        {"t": "Menor valor", "p": "Seis lotes de 501,00 m² a R$ 901.800,00, nas quadras K e L (K12, K13, K14, L13, L15 e L16)."},
-        {"t": "Maior lote", "p": "O lote A1, de 2.015,04 m², a R$ 3.627.072,00. O segundo maior é o B6, de 858,53 m²."},
-        {"t": "Construção", "p": "A casa é por conta de quem compra o lote. Peça as regras construtivas (recuos, ocupação e fechamentos) antes de fechar."},
-        {"t": "Taxa mensal", "p": "O valor da taxa de manutenção do condomínio não consta do material recebido. Confirme no atendimento."},
-        {"t": "Disponibilidade", "p": "A própria tabela avisa que os lotes anunciados podem já ter sido vendidos. Confirme a quadra e o lote antes de simular."}
+        {
+          "t": "Metragem mais oferecida",
+          "p": "Lotes de 528,00 m², a R$ 950.400,00: são 16 na tabela, nas quadras F, G e H."
+        },
+        {
+          "t": "Menor valor",
+          "p": "Seis lotes de 501,00 m² a R$ 901.800,00, nas quadras K e L (K12, K13, K14, L13, L15 e L16)."
+        },
+        {
+          "t": "Maior lote",
+          "p": "O lote A1, de 2.015,04 m², a R$ 3.627.072,00. O segundo maior é o B6, de 858,53 m²."
+        },
+        {
+          "t": "Construção",
+          "p": "A casa é por conta de quem compra o lote. Peça as regras construtivas (recuos, ocupação e fechamentos) antes de fechar."
+        },
+        {
+          "t": "Taxa mensal",
+          "p": "O valor da taxa de manutenção do condomínio não consta do material recebido. Confirme no atendimento."
+        },
+        {
+          "t": "Disponibilidade",
+          "p": "A própria tabela avisa que os lotes anunciados podem já ter sido vendidos. Confirme a quadra e o lote antes de simular."
+        }
       ]
     },
-    {"skip": true, "depois": "lazer"},
-    {"skip": true, "depois": "ficha"},
+    {
+      "skip": true,
+      "depois": "lazer"
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
     {
       "id": "precos",
       "label": "Preços e condições",
       "h2": "Do pagamento em 12 vezes ao saldo em 96 meses",
-      "paragrafos": ["A tabela de 01/07/2026 traz três formas de pagamento, calculadas sobre o valor do lote: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA (anual em 36 meses, mensal nos prazos maiores)."],
+      "paragrafos": [
+        "A tabela de 01/07/2026 traz três formas de pagamento, calculadas sobre o valor do lote: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA (anual em 36 meses, mensal nos prazos maiores)."
+      ],
       "tabela2_titulo": "Exemplo com um lote de 501,00 m² (R$ 901.800,00)",
-      "tabela2_paragrafos": ["Os valores abaixo estão impressos na própria tabela para esse lote."],
-      "tabela2": {"cab": ["Plano", "Ato", "Mensais"], "num": [1], "linhas": [
-        ["12 mensais", "R$ 90.180,00 (10%)", "12 de R$ 67.635,00"],
-        ["24 mensais", "R$ 180.360,00 (20%)", "24 de R$ 30.060,00"],
-        ["36 mensais", "R$ 90.180,00 (10%)", "36 de R$ 26.036,54"],
-        ["48 mensais", "R$ 90.180,00 (10%)", "48 de R$ 20.429,22"],
-        ["60 mensais", "R$ 90.180,00 (10%)", "60 de R$ 17.085,22"],
-        ["96 mensais", "R$ 90.180,00 (10%)", "96 de R$ 12.144,54"]]},
-      "notas": ["A tabela é de 01/07/2026 e avisa que os preços podem mudar sem aviso prévio. Os planos de 24 meses em diante têm as parcelas corrigidas pelo IPCA. Desconto à vista e taxa mensal não constam do material; peça essas condições no atendimento."],
-      "cta": {"msg": "Olá! Quero a tabela atualizada do Lagos de Helvetia e a simulação de pagamento de um lote.", "texto": "Pedir a tabela atualizada"}
+      "tabela2_paragrafos": [
+        "Os valores abaixo estão impressos na própria tabela para esse lote."
+      ],
+      "tabela2": {
+        "cab": [
+          "Plano",
+          "Ato",
+          "Mensais"
+        ],
+        "num": [
+          1
+        ],
+        "linhas": [
+          [
+            "12 mensais",
+            "R$ 90.180,00 (10%)",
+            "12 de R$ 67.635,00"
+          ],
+          [
+            "24 mensais",
+            "R$ 180.360,00 (20%)",
+            "24 de R$ 30.060,00"
+          ],
+          [
+            "36 mensais",
+            "R$ 90.180,00 (10%)",
+            "36 de R$ 26.036,54"
+          ],
+          [
+            "48 mensais",
+            "R$ 90.180,00 (10%)",
+            "48 de R$ 20.429,22"
+          ],
+          [
+            "60 mensais",
+            "R$ 90.180,00 (10%)",
+            "60 de R$ 17.085,22"
+          ],
+          [
+            "96 mensais",
+            "R$ 90.180,00 (10%)",
+            "96 de R$ 12.144,54"
+          ]
+        ]
+      },
+      "notas": [
+        "A tabela é de 01/07/2026 e avisa que os preços podem mudar sem aviso prévio. Os planos de 24 meses em diante têm as parcelas corrigidas pelo IPCA. Desconto à vista e taxa mensal não constam do material; peça essas condições no atendimento."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela atualizada do Lagos de Helvetia e a simulação de pagamento de um lote.",
+        "texto": "Pedir a tabela atualizada"
+      }
     },
     {
       "id": "localizacao",
       "classe": "cream",
       "label": "Localização",
       "h2": "Na região de Helvetia, em Indaiatuba",
-      "paragrafos": ["O material da incorporadora situa o empreendimento na região de Helvetia, com uma hípica ao lado, sem informar logradouro, número ou distâncias. O endereço de acesso é passado no atendimento."],
+      "paragrafos": [
+        "O material da incorporadora situa o empreendimento na região de Helvetia, com uma hípica ao lado, sem informar logradouro, número ou distâncias. O mapa abaixo mostra o local cadastrado no Google."
+      ],
       "cards": [
-        {"t": "Helvetia", "p": "Região fundada por imigrantes suíços, com haras, campos de polo e golfe e alamedas, segundo o book"},
-        {"t": "Hípica ao lado", "p": "O book cita a hípica vizinha e a convivência com os cavalos como parte da paisagem"},
-        {"t": "Viracopos e capital", "p": "O book menciona a proximidade do Aeroporto de Viracopos e de São Paulo, sem informar distância nem tempo"}
+        {
+          "t": "Helvetia",
+          "p": "Região fundada por imigrantes suíços, com haras, campos de polo e golfe e alamedas, segundo o book"
+        },
+        {
+          "t": "Hípica ao lado",
+          "p": "O book cita a hípica vizinha e a convivência com os cavalos como parte da paisagem"
+        },
+        {
+          "t": "Viracopos e capital",
+          "p": "O book menciona a proximidade do Aeroporto de Viracopos e de São Paulo, sem informar distância nem tempo"
+        }
       ]
     }
   ],
@@ -108,66 +230,286 @@
     "h2": "Como o projeto foi desenhado",
     "aviso": "Perspectivas ilustradas do material da incorporadora. As fotos da região e da paisagem também são do book.",
     "itens": [
-      {"arq": "lago.jpg", "alt": "Perspectiva ilustrada do lago do Lagos de Helvetia com o clube ao fundo", "w": 1328, "h": 467, "leg": "O lago e o clube"},
-      {"arq": "portaria.jpg", "alt": "Perspectiva ilustrada da portaria do Lagos de Helvetia", "w": 1325, "h": 948, "leg": "Portaria"},
-      {"arq": "piscina.jpg", "alt": "Perspectiva ilustrada da piscina adulto do clube", "w": 1600, "h": 573, "leg": "Piscina adulto"},
-      {"arq": "piscina-coberta.jpg", "alt": "Perspectiva ilustrada da piscina coberta", "w": 1325, "h": 948, "leg": "Piscina coberta"},
-      {"arq": "salao.jpg", "alt": "Perspectiva ilustrada do salão de festas", "w": 1600, "h": 573, "leg": "Salão de festas"},
-      {"arq": "lounge-bar.jpg", "alt": "Perspectiva ilustrada do lounge com bar do salão de festas", "w": 1326, "h": 948, "leg": "Lounge do salão de festas"},
-      {"arq": "academia.jpg", "alt": "Perspectiva ilustrada da academia", "w": 1328, "h": 949, "leg": "Academia"},
-      {"arq": "pilates.jpg", "alt": "Perspectiva ilustrada do espaço pilates", "w": 1325, "h": 948, "leg": "Espaço pilates"},
-      {"arq": "brinquedoteca.jpg", "alt": "Perspectiva ilustrada da brinquedoteca", "w": 1325, "h": 948, "leg": "Brinquedoteca"},
-      {"arq": "jogos.jpg", "alt": "Perspectiva ilustrada do salão de jogos com mesa de bilhar", "w": 1327, "h": 948, "leg": "Salão de jogos"},
-      {"arq": "churrasqueira.jpg", "alt": "Perspectiva ilustrada da churrasqueira sob pergolado", "w": 1325, "h": 947, "leg": "Churrasqueira"},
-      {"arq": "tenis.jpg", "alt": "Perspectiva ilustrada da quadra de tênis de saibro", "w": 1600, "h": 573, "leg": "Quadra de tênis de saibro"},
-      {"arq": "quadra-areia.jpg", "alt": "Perspectiva ilustrada da quadra de areia", "w": 1600, "h": 573, "leg": "Quadra de areia"},
-      {"arq": "campo.jpg", "alt": "Perspectiva ilustrada do campo de futebol", "w": 1327, "h": 949, "leg": "Campo de futebol"},
-      {"arq": "playground.jpg", "alt": "Perspectiva ilustrada do playground de madeira", "w": 1327, "h": 948, "leg": "Playground"},
-      {"arq": "alameda.jpg", "alt": "Perspectiva ilustrada de uma alameda do condomínio", "w": 1600, "h": 573, "leg": "Alameda"},
-      {"arq": "regiao.jpg", "alt": "Foto aérea de campos e matas na região de Helvetia", "w": 1600, "h": 883, "leg": "Paisagem da região (foto do book)"},
-      {"arq": "helvetia.jpg", "alt": "Foto de um campo gramado com casarão e árvores na região de Helvetia", "w": 1326, "h": 948, "leg": "Região de Helvetia (foto do book)"},
-      {"arq": "implantacao.jpg", "alt": "Implantação ilustrada do Lagos de Helvetia sobre foto aérea", "w": 1586, "h": 948, "leg": "Implantação"}
+      {
+        "arq": "lago.jpg",
+        "alt": "Perspectiva ilustrada do lago do Lagos de Helvetia com o clube ao fundo",
+        "w": 1328,
+        "h": 467,
+        "leg": "O lago e o clube"
+      },
+      {
+        "arq": "portaria.jpg",
+        "alt": "Perspectiva ilustrada da portaria do Lagos de Helvetia",
+        "w": 1325,
+        "h": 948,
+        "leg": "Portaria"
+      },
+      {
+        "arq": "piscina.jpg",
+        "alt": "Perspectiva ilustrada da piscina adulto do clube",
+        "w": 1600,
+        "h": 573,
+        "leg": "Piscina adulto"
+      },
+      {
+        "arq": "piscina-coberta.jpg",
+        "alt": "Perspectiva ilustrada da piscina coberta",
+        "w": 1325,
+        "h": 948,
+        "leg": "Piscina coberta"
+      },
+      {
+        "arq": "salao.jpg",
+        "alt": "Perspectiva ilustrada do salão de festas",
+        "w": 1600,
+        "h": 573,
+        "leg": "Salão de festas"
+      },
+      {
+        "arq": "lounge-bar.jpg",
+        "alt": "Perspectiva ilustrada do lounge com bar do salão de festas",
+        "w": 1326,
+        "h": 948,
+        "leg": "Lounge do salão de festas"
+      },
+      {
+        "arq": "academia.jpg",
+        "alt": "Perspectiva ilustrada da academia",
+        "w": 1328,
+        "h": 949,
+        "leg": "Academia"
+      },
+      {
+        "arq": "pilates.jpg",
+        "alt": "Perspectiva ilustrada do espaço pilates",
+        "w": 1325,
+        "h": 948,
+        "leg": "Espaço pilates"
+      },
+      {
+        "arq": "brinquedoteca.jpg",
+        "alt": "Perspectiva ilustrada da brinquedoteca",
+        "w": 1325,
+        "h": 948,
+        "leg": "Brinquedoteca"
+      },
+      {
+        "arq": "jogos.jpg",
+        "alt": "Perspectiva ilustrada do salão de jogos com mesa de bilhar",
+        "w": 1327,
+        "h": 948,
+        "leg": "Salão de jogos"
+      },
+      {
+        "arq": "churrasqueira.jpg",
+        "alt": "Perspectiva ilustrada da churrasqueira sob pergolado",
+        "w": 1325,
+        "h": 947,
+        "leg": "Churrasqueira"
+      },
+      {
+        "arq": "tenis.jpg",
+        "alt": "Perspectiva ilustrada da quadra de tênis de saibro",
+        "w": 1600,
+        "h": 573,
+        "leg": "Quadra de tênis de saibro"
+      },
+      {
+        "arq": "quadra-areia.jpg",
+        "alt": "Perspectiva ilustrada da quadra de areia",
+        "w": 1600,
+        "h": 573,
+        "leg": "Quadra de areia"
+      },
+      {
+        "arq": "campo.jpg",
+        "alt": "Perspectiva ilustrada do campo de futebol",
+        "w": 1327,
+        "h": 949,
+        "leg": "Campo de futebol"
+      },
+      {
+        "arq": "playground.jpg",
+        "alt": "Perspectiva ilustrada do playground de madeira",
+        "w": 1327,
+        "h": 948,
+        "leg": "Playground"
+      },
+      {
+        "arq": "alameda.jpg",
+        "alt": "Perspectiva ilustrada de uma alameda do condomínio",
+        "w": 1600,
+        "h": 573,
+        "leg": "Alameda"
+      },
+      {
+        "arq": "regiao.jpg",
+        "alt": "Foto aérea de campos e matas na região de Helvetia",
+        "w": 1600,
+        "h": 883,
+        "leg": "Paisagem da região (foto do book)"
+      },
+      {
+        "arq": "helvetia.jpg",
+        "alt": "Foto de um campo gramado com casarão e árvores na região de Helvetia",
+        "w": 1326,
+        "h": 948,
+        "leg": "Região de Helvetia (foto do book)"
+      },
+      {
+        "arq": "implantacao.jpg",
+        "alt": "Implantação ilustrada do Lagos de Helvetia sobre foto aérea",
+        "w": 1586,
+        "h": 948,
+        "leg": "Implantação"
+      }
     ]
   },
   "lazer_bloco": {
     "h2": "Clube, lago e áreas de esporte",
     "intro": "A lista abaixo segue a legenda da implantação publicada no book da incorporadora.",
-    "itens": ["Espelho d'água", "Praça de boas-vindas", "Praça com pergolado", "Alameda das Águas", "Alameda das Árvores", "Boulevard", "Deck mirante", "Piscina adulto", "Piscina infantil", "Piscina coberta", "Lounge molhado", "Solário", "Chill lounge", "Academia com espaço pilates", "Sala de massagem", "Sauna úmida", "Sauna seca", "Salão de festas com bar", "Lounge do salão de festas", "Área externa de festas", "Churrasqueira", "Fireplace", "Minimercado / salão de jogos", "Brinquedoteca com fraldário", "Playground", "Mini playground", "Quadra de tênis de saibro", "Quadra de areia", "Campo de futebol", "Pista de caminhada", "Área de descanso"],
+    "itens": [
+      "Espelho d'água",
+      "Praça de boas-vindas",
+      "Praça com pergolado",
+      "Alameda das Águas",
+      "Alameda das Árvores",
+      "Boulevard",
+      "Deck mirante",
+      "Piscina adulto",
+      "Piscina infantil",
+      "Piscina coberta",
+      "Lounge molhado",
+      "Solário",
+      "Chill lounge",
+      "Academia com espaço pilates",
+      "Sala de massagem",
+      "Sauna úmida",
+      "Sauna seca",
+      "Salão de festas com bar",
+      "Lounge do salão de festas",
+      "Área externa de festas",
+      "Churrasqueira",
+      "Fireplace",
+      "Minimercado / salão de jogos",
+      "Brinquedoteca com fraldário",
+      "Playground",
+      "Mini playground",
+      "Quadra de tênis de saibro",
+      "Quadra de areia",
+      "Campo de futebol",
+      "Pista de caminhada",
+      "Área de descanso"
+    ],
     "nota": "A lista final de equipamentos e o prazo de entrega do clube são confirmados no atendimento."
   },
   "ficha": [
-    ["Realização", "GPCI Empreendimentos"],
-    ["Titular (rodapé do book)", "PECFLOR LTDA., CNPJ 04.653.120/0001-49"],
-    ["Tipo", "Condomínio de lotes com portaria"],
-    ["Localização", "Região de Helvetia, Indaiatuba/SP"],
-    ["Lotes no projeto", "169, a partir de 500 m² (book)"],
-    ["Lotes na tabela", "44, de 501,00 a 2.015,04 m² (01/07/2026)"],
-    ["Projeto", "Arquitetura Prado Ferreira; interiores Catherine Trevisan; paisagismo Marcelo Novaes"],
-    ["Aprovação", "Decreto Municipal nº 15.326, de 28/11/2024"],
-    ["Registro", "R.04/143.178 no Registro de Imóveis de Indaiatuba/SP (rodapé do book)"],
-    ["Entrega da infraestrutura", "Não informada no material; confirme no atendimento"]
+    [
+      "Realização",
+      "GPCI Empreendimentos"
+    ],
+    [
+      "Titular (rodapé do book)",
+      "PECFLOR LTDA., CNPJ 04.653.120/0001-49"
+    ],
+    [
+      "Tipo",
+      "Condomínio de lotes com portaria"
+    ],
+    [
+      "Localização",
+      "Região de Helvetia, Indaiatuba/SP"
+    ],
+    [
+      "Lotes no projeto",
+      "169, a partir de 500 m² (book)"
+    ],
+    [
+      "Lotes na tabela",
+      "44, de 501,00 a 2.015,04 m² (01/07/2026)"
+    ],
+    [
+      "Projeto",
+      "Arquitetura Prado Ferreira; interiores Catherine Trevisan; paisagismo Marcelo Novaes"
+    ],
+    [
+      "Aprovação",
+      "Decreto Municipal nº 15.326, de 28/11/2024"
+    ],
+    [
+      "Registro",
+      "R.04/143.178 no Registro de Imóveis de Indaiatuba/SP (rodapé do book)"
+    ],
+    [
+      "Entrega da infraestrutura",
+      "Não informada no material; confirme no atendimento"
+    ]
   ],
   "faq": [
-    {"q": "Quanto custa um lote no Lagos de Helvetia?", "a": "A tabela de 01/07/2026 lista 44 lotes, todos a R$ 1.800 por metro quadrado: de R$ 901.800,00, no lote de 501,00 m², a R$ 3.627.072,00, no lote A1, de 2.015,04 m². A tabela avisa que os preços podem mudar sem aviso prévio."},
-    {"q": "Como é o pagamento dos lotes do Lagos de Helvetia?", "a": "Há três formas na tabela de 01/07/2026: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA. Num lote de 501,00 m², o plano de 96 meses fica em R$ 90.180,00 de ato e 96 parcelas de R$ 12.144,54."},
-    {"q": "Qual o tamanho dos lotes do Lagos de Helvetia?", "a": "O projeto tem 169 lotes a partir de 500 m². Na tabela de 01/07/2026, os lotes à venda vão de 501,00 a 2.015,04 m², e a metragem mais oferecida é a de 528,00 m²."},
-    {"q": "Onde fica o Lagos de Helvetia?", "a": "Na região de Helvetia, em Indaiatuba/SP, com uma hípica ao lado, segundo o book da incorporadora. O material não traz logradouro nem distâncias; o endereço de acesso é informado no atendimento."},
-    {"q": "O que tem no clube do Lagos de Helvetia?", "a": "Piscinas adulto, infantil e coberta, academia com espaço pilates, sala de massagem, saunas úmida e seca, salão de festas com bar e lounge, churrasqueira, brinquedoteca, salão de jogos, quadras de tênis de saibro e de areia, campo de futebol, playground e pista de caminhada, além do lago e das alamedas, conforme a legenda do book."},
-    {"q": "O Lagos de Helvetia está registrado?", "a": "O rodapé legal do book informa a aprovação pelo Decreto Municipal nº 15.326, de 28/11/2024, e o registro sob o nº R.04/143.178 no Registro de Imóveis de Indaiatuba/SP. Peça a matrícula atualizada antes de assinar."},
-    {"q": "Quanto é a taxa mensal do Lagos de Helvetia?", "a": "O valor da taxa de manutenção não consta do material recebido da incorporadora. Ele é informado no atendimento."}
+    {
+      "q": "Quanto custa um lote no Lagos de Helvetia?",
+      "a": "A tabela de 01/07/2026 lista 44 lotes, todos a R$ 1.800 por metro quadrado: de R$ 901.800,00, no lote de 501,00 m², a R$ 3.627.072,00, no lote A1, de 2.015,04 m². A tabela avisa que os preços podem mudar sem aviso prévio."
+    },
+    {
+      "q": "Como é o pagamento dos lotes do Lagos de Helvetia?",
+      "a": "Há três formas na tabela de 01/07/2026: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA. Num lote de 501,00 m², o plano de 96 meses fica em R$ 90.180,00 de ato e 96 parcelas de R$ 12.144,54."
+    },
+    {
+      "q": "Qual o tamanho dos lotes do Lagos de Helvetia?",
+      "a": "O projeto tem 169 lotes a partir de 500 m². Na tabela de 01/07/2026, os lotes à venda vão de 501,00 a 2.015,04 m², e a metragem mais oferecida é a de 528,00 m²."
+    },
+    {
+      "q": "Onde fica o Lagos de Helvetia?",
+      "a": "Na região de Helvetia, em Indaiatuba/SP, com uma hípica ao lado, segundo o book da incorporadora. O material não traz logradouro nem distâncias; o endereço de acesso é informado no atendimento."
+    },
+    {
+      "q": "O que tem no clube do Lagos de Helvetia?",
+      "a": "Piscinas adulto, infantil e coberta, academia com espaço pilates, sala de massagem, saunas úmida e seca, salão de festas com bar e lounge, churrasqueira, brinquedoteca, salão de jogos, quadras de tênis de saibro e de areia, campo de futebol, playground e pista de caminhada, além do lago e das alamedas, conforme a legenda do book."
+    },
+    {
+      "q": "O Lagos de Helvetia está registrado?",
+      "a": "O rodapé legal do book informa a aprovação pelo Decreto Municipal nº 15.326, de 28/11/2024, e o registro sob o nº R.04/143.178 no Registro de Imóveis de Indaiatuba/SP. Peça a matrícula atualizada antes de assinar."
+    },
+    {
+      "q": "Quanto é a taxa mensal do Lagos de Helvetia?",
+      "a": "O valor da taxa de manutenção não consta do material recebido da incorporadora. Ele é informado no atendimento."
+    }
   ],
-  "cta": {"h2": "Quer ver os lotes do Lagos de Helvetia?", "p": "Confirmamos com a GPCI quais lotes seguem disponíveis e simulamos o plano de pagamento que cabe no seu orçamento.", "msg": "Olá! Quero falar sobre os lotes do Lagos de Helvetia."},
+  "cta": {
+    "h2": "Quer ver os lotes do Lagos de Helvetia?",
+    "p": "Confirmamos com a GPCI quais lotes seguem disponíveis e simulamos o plano de pagamento que cabe no seu orçamento.",
+    "msg": "Olá! Quero falar sobre os lotes do Lagos de Helvetia."
+  },
   "rodape": {
     "marca": "LAGOS DE HELVETIA",
     "linha": "Lagos de Helvetia · condomínio de lotes de 501 a 2.015 m² · Região de Helvetia · Indaiatuba, SP",
     "realizacao": "Realização GPCI Empreendimentos",
     "legal": "Imagens meramente ilustrativas; o projeto pode sofrer alterações. Preços e condições conforme a tabela Lagos de Helvetia de 01/07/2026, sujeitos a alteração sem aviso prévio; nos planos de 24 meses em diante há correção pelo IPCA e, a partir de 36 meses, juros de 0,80% a.m. pela tabela Price. A disponibilidade dos lotes é confirmada com a GPCI no atendimento. Empreendimento de PECFLOR LTDA. (CNPJ 04.653.120/0001-49), aprovado pelo Decreto Municipal nº 15.326, de 28/11/2024, e registrado sob o nº R.04/143.178 no Registro de Imóveis de Indaiatuba/SP, conforme o book. Página publicada em set/2026."
   },
-  "home": {"tipo": "lote", "preco": 901800, "lote": "fechado", "status": "lancamento", "constr": "GPCI", "pm2": "1800",
-    "badge": "Condomínio Fechado", "badge_estilo": "background:#C9A227;color:#161616;",
+  "home": {
+    "tipo": "lote",
+    "preco": 901800,
+    "lote": "fechado",
+    "status": "lancamento",
+    "constr": "GPCI",
+    "pm2": "1800",
+    "badge": "Condomínio Fechado",
+    "badge_estilo": "background:#C9A227;color:#161616;",
     "meta": "Lotes de 501 a 2.015 m²",
     "desc": "44 lotes na tabela de 01/07/2026 na região de Helvetia · lago e clube com piscina coberta, saunas e tênis de saibro · pagamento em até 96 meses.",
     "alt": "Perspectiva ilustrada aérea do clube e do lago do Lagos de Helvetia",
-    "itemlist": "Lagos de Helvetia — condomínio de lotes da GPCI na região de Helvetia, 44 lotes de 501 a 2.015 m² · a partir de R$ 901.800 (tabela 01/07/2026)"},
-  "llms": {"secao": "condominios", "linha": "Condomínio de lotes da GPCI Empreendimentos na região de Helvetia, Indaiatuba, com 169 lotes a partir de 500 m², lago integrado às áreas comuns, hípica vizinha, portaria e clube com piscinas adulto, infantil e coberta, academia com pilates, saunas, salão de festas, quadras de tênis de saibro e de areia e campo de futebol. Tabela de 01/07/2026 com 44 lotes de 501,00 a 2.015,04 m², todos a R$ 1.800/m², de R$ 901.800,00 a R$ 3.627.072,00. Pagamento: 10% + 12 mensais sem juros; 20% + 24 mensais com IPCA anual; ou 10% + 36 a 96 mensais pela Price a 0,80% a.m. + IPCA. Aprovado pelo Decreto 15.326/2024 e registrado sob R.04/143.178 (titular PECFLOR LTDA.). Entrega, endereço e taxa mensal não informados."}
+    "itemlist": "Lagos de Helvetia — condomínio de lotes da GPCI na região de Helvetia, 44 lotes de 501 a 2.015 m² · a partir de R$ 901.800 (tabela 01/07/2026)"
+  },
+  "llms": {
+    "secao": "condominios",
+    "linha": "Condomínio de lotes da GPCI Empreendimentos na região de Helvetia, Indaiatuba, com 169 lotes a partir de 500 m², lago integrado às áreas comuns, hípica vizinha, portaria e clube com piscinas adulto, infantil e coberta, academia com pilates, saunas, salão de festas, quadras de tênis de saibro e de areia e campo de futebol. Tabela de 01/07/2026 com 44 lotes de 501,00 a 2.015,04 m², todos a R$ 1.800/m², de R$ 901.800,00 a R$ 3.627.072,00. Pagamento: 10% + 12 mensais sem juros; 20% + 24 mensais com IPCA anual; ou 10% + 36 a 96 mensais pela Price a 0,80% a.m. + IPCA. Aprovado pelo Decreto 15.326/2024 e registrado sob R.04/143.178 (titular PECFLOR LTDA.). Entrega, endereço e taxa mensal não informados."
+  },
+  "geo": [
+    -23.05492,
+    -47.174785
+  ],
+  "mapa": {
+    "rota": "Lagos de Helvetia Indaiatuba",
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1835.5755737375034!2d-47.17478507485746!3d-23.054919618333926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b50005459b35%3A0x408e61c1a9440dbb!2sLagos%20de%20Helvetia!5e0!3m2!1spt-BR!2sbr!4v1789659909953!5m2!1spt-BR!2sbr"
+  }
 }
