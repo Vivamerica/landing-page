@@ -1,0 +1,174 @@
+{
+  "slug": "porteira-de-ferro-indaiatuba",
+  "nome": "Porteira de Ferro",
+  "categoria": "condominios",
+  "data": "2026-09-17",
+  "title": "Porteira de Ferro Indaiatuba | último lote de 520 m²",
+  "description": "Porteira de Ferro, loteamento fechado da GPCI em Indaiatuba: 103 lotes a partir de 500 m². Resta 1 lote na tabela de 17/09/2026: 520 m² por R$ 1.300.000.",
+  "keywords": "porteira de ferro indaiatuba, porteira de ferro residencial, loteamento fechado indaiatuba, lote 500 m2 indaiatuba, gpci indaiatuba, lote alto padrao indaiatuba, condominio fechado indaiatuba",
+  "schema_tipo": "RealEstateListing",
+  "schema_desc": "Loteamento fechado da GPCI Empreendimentos em Indaiatuba/SP, com 103 lotes a partir de 500 m², lago de quase 14 mil m², área verde de quase 20 mil m² e Club House instalada no casarão existente, restaurado, com salão de festas, salão de jogos, espaço gourmet, sala de música, espaço kids, academia, sauna e SPA, além de portaria, boulevard, pier, pista de caminhada, quadras de tênis e de beach tennis, piscina adulto e infantil e playground. Na tabela de 17/09/2026 resta um lote: quadra E, lote 3, de 520,00 m², a R$ 2.500 por m².",
+  "endereco_schema": "Loteamento Porteira de Ferro",
+  "geo": [-23.063994, -47.191067],
+  "mapa": {"rota": "Porteira de Ferro Residencial Loteamento Fechado Indaiatuba",
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4440.455049296702!2d-47.1910672!3d-23.0639942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b5a729dacc9f%3A0xa2b85922c7ac4b27!2sPorteira%20de%20Ferro%20Residencial%20Loteamento%20Fechado!5e1!3m2!1spt-BR!2sbr!4v1789677120342!5m2!1spt-BR!2sbr"},
+  "preco_min": 1300000.00,
+  "preco_max": 1300000.00,
+  "offer_count": 1,
+  "oferta_desc": "Tabela Porteira de Ferro de 17/09/2026 com um lote: quadra E, lote 3, de 520,00 m², a R$ 2.500 por m², total de R$ 1.300.000,00. À vista com 5% de desconto sai por R$ 1.235.000,00. A prazo: sinal de R$ 455.000,00 e saldo de R$ 845.000,00 em até 36 parcelas.",
+  "produto_nome": "Porteira de Ferro — lote de 520 m² em Indaiatuba",
+  "produto_desc": "Último lote da tabela de 17/09/2026 no loteamento fechado Porteira de Ferro, em Indaiatuba/SP: quadra E, lote 3, com 520,00 m².",
+  "marca": "GPCI Empreendimentos",
+  "lazer": [],
+  "marca_topo": ["PORTEIRA DE FERRO", "Indaiatuba"],
+  "wa_flutuante": "Olá! Quero falar sobre o último lote do Porteira de Ferro.",
+  "wa_topo": "Olá! Tenho interesse no lote do Porteira de Ferro. Pode me passar as condições?",
+  "hero": {
+    "eyebrow": "Loteamento fechado · Indaiatuba/SP",
+    "sub": "103 lotes a partir de 500 m² · GPCI Empreendimentos",
+    "lead": "Um loteamento fechado de 103 lotes em volta de um lago de quase 14 mil m², com o casarão existente restaurado para virar a Club House. Na tabela de 17/09/2026 resta um lote à venda: o de 520 m² da quadra E.",
+    "preco": "R$ 1.300.000,00",
+    "preco_nota": "lote de 520,00 m² · R$ 2.500/m² · tabela de 17/09/2026",
+    "cta_msg": "Olá! Quero as condições do último lote do Porteira de Ferro, o de 520 m².",
+    "cta_texto": "Falar sobre este lote"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "103 lotes em volta de um lago, com o casarão preservado",
+      "paragrafos": [
+        "O Porteira de Ferro é um loteamento fechado da GPCI Empreendimentos em Indaiatuba. São 103 lotes a partir de 500 m², distribuídos nas quadras A a L em volta de um lago. Segundo o book da incorporadora, a área verde tem quase 20 mil m² e o espelho d'água, quase 14 mil m².",
+        "O casarão que já existia na propriedade será restaurado e adaptado para ser a Club House do condomínio. O paisagismo é assinado por Alexandre Furcolin, os interiores por Catherine Trevisan e a reforma do casarão pelo escritório Mangava, dos arquitetos Paula Pereira e André Furcolin."
+      ],
+      "numeros": [
+        {"n": "103", "p": "lotes no projeto"},
+        {"n": "1", "p": "lote na tabela de 17/09/2026"},
+        {"n": "500 m²", "p": "área mínima dos lotes"},
+        {"n": "14 mil", "p": "m² de espelho d'água"}
+      ],
+      "depois": "galeria"
+    },
+    {
+      "label": "O lote",
+      "classe": "cream",
+      "h2": "Quadra E, lote 3: 520,00 m²",
+      "paragrafos": [
+        "A tabela de 17/09/2026 traz um único lote à venda. É o que aparece na implantação do book na quadra E, com 520,00 m² impressos ao lado do número 3."
+      ],
+      "tabela": {
+        "legenda": "Lote disponível na tabela Porteira de Ferro de 17/09/2026.",
+        "cab": ["Quadra e lote", "Área", "Valor do m²", "Valor de tabela", "À vista (5% de desconto)"],
+        "num": [1, 2, 3, 4],
+        "linhas": [
+          ["Quadra E · lote 3", "520,00 m²", "R$ 2.500,00", "R$ 1.300.000,00", "R$ 1.235.000,00"]
+        ]
+      },
+      "cards": [
+        {"t": "Por que é o último", "p": "A tabela de 17/09/2026 lista só este lote. A própria tabela avisa que a disponibilidade muda sem aviso: confirmamos com a GPCI antes de qualquer proposta."},
+        {"t": "Construção", "p": "O lote é vendido como terreno. O projeto e a obra da casa são por conta do comprador, dentro das regras do loteamento."},
+        {"t": "Regras construtivas", "p": "Recuos, taxa de ocupação e prazo para construir não constam do material recebido. Peça o regulamento antes de fechar."},
+        {"t": "Taxa mensal", "p": "O valor da taxa de manutenção do condomínio não consta do material. Confirme no atendimento."},
+        {"t": "Registro do loteamento", "p": "O rodapé do book informa que a comercialização ocorre depois do registro no cartório de imóveis. Peça a matrícula atualizada antes de assinar."},
+        {"t": "Entrega", "p": "O material não informa prazo de entrega da infraestrutura nem do clube."}
+      ]
+    },
+    {"skip": true, "depois": "lazer"},
+    {"skip": true, "depois": "ficha"},
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "Sinal de 35% e saldo em até 36 meses",
+      "paragrafos": ["A tabela de 17/09/2026 traz três formas de pagamento a prazo para o lote, todas com sinal de R$ 455.000,00 (35% do valor) e saldo de R$ 845.000,00. À vista, o valor cai 5% e fica em R$ 1.235.000,00."],
+      "tabela2_titulo": "As três opções impressas na tabela",
+      "tabela2_paragrafos": ["Os valores abaixo são os da própria tabela, para o lote de 520,00 m²."],
+      "tabela2": {"cab": ["Plano", "Sinal", "Parcelas", "Juros e correção"], "num": [1], "linhas": [
+        ["12 mensais", "R$ 455.000,00", "12 de R$ 70.416,67", "sem juros e sem correção"],
+        ["24 mensais", "R$ 455.000,00", "24 de R$ 38.836,64", "juros de 0,80% a.m. (Price) e IPCA anual"],
+        ["36 mensais", "R$ 455.000,00", "36 de R$ 27.107,36", "juros de 0,80% a.m. (Price) e IPCA anual"]]},
+      "notas": ["A tabela avisa que os preços podem mudar sem aviso prévio e que a unidade anunciada pode não estar mais disponível. Confirmamos com a GPCI antes de qualquer proposta."],
+      "cta": {"msg": "Olá! Quero simular o pagamento do lote de 520 m² do Porteira de Ferro.", "texto": "Simular o pagamento"}
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Onde fica o Porteira de Ferro",
+      "paragrafos": ["O book não traz o endereço do empreendimento; diz apenas que fica em uma das regiões da cidade próxima de comércios e serviços, sem citar distâncias. O mapa abaixo mostra o local cadastrado no Google."],
+      "cards": [
+        {"t": "Lago e área verde", "p": "O book informa espelho d'água de quase 14 mil m² e área verde de quase 20 mil m² dentro do loteamento"},
+        {"t": "Acesso", "p": "A portaria fica na ponta sul do terreno, junto à rotatória, conforme a implantação do book"},
+        {"t": "Entorno", "p": "O material não informa distâncias até escolas, comércio ou rodovias"}
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Perspectivas",
+    "h2": "Como o projeto foi desenhado",
+    "aviso": "Imagens do book da incorporadora, identificadas por ela como meramente ilustrativas. A vegetação aparece em porte adulto e os ambientes seguem o memorial descritivo.",
+    "itens": [
+      {"arq": "casarao-aereo.jpg", "alt": "Foto aérea do casarão do Porteira de Ferro entre jardins", "w": 1600, "h": 634, "leg": "O casarão que vira a Club House"},
+      {"arq": "casarao.jpg", "alt": "Foto do casarão do Porteira de Ferro visto de cima", "w": 1021, "h": 1020, "leg": "O casarão existente"},
+      {"arq": "portal.jpg", "alt": "Foto do portão de ferro com vista para o jardim", "w": 1359, "h": 1360, "leg": "O portal de ferro"},
+      {"arq": "jardim.jpg", "alt": "Foto do jardim formal do casarão", "w": 1360, "h": 680, "leg": "Jardim do casarão"},
+      {"arq": "portaria.jpg", "alt": "Perspectiva ilustrada da portaria do Porteira de Ferro", "w": 1600, "h": 735, "leg": "Portaria"},
+      {"arq": "club-house.jpg", "alt": "Perspectiva ilustrada da Club House com ciprestes e fonte", "w": 1600, "h": 779, "leg": "Club House"},
+      {"arq": "colunata.jpg", "alt": "Perspectiva ilustrada da colunata da Club House", "w": 1600, "h": 778, "leg": "Colunata"},
+      {"arq": "hall.jpg", "alt": "Perspectiva ilustrada do hall interno da Club House", "w": 1600, "h": 764, "leg": "Hall"},
+      {"arq": "salao-festas.jpg", "alt": "Perspectiva ilustrada do salão de festas com lareira", "w": 1600, "h": 362, "leg": "Salão de festas com lareira"},
+      {"arq": "gourmet.jpg", "alt": "Perspectiva ilustrada do espaço gourmet", "w": 1600, "h": 362, "leg": "Espaço gourmet"},
+      {"arq": "jogos.jpg", "alt": "Perspectiva ilustrada do salão de jogos com mesa de sinuca", "w": 1600, "h": 954, "leg": "Salão de jogos"},
+      {"arq": "brinquedoteca.jpg", "alt": "Perspectiva ilustrada do espaço kids", "w": 1600, "h": 739, "leg": "Espaço kids"},
+      {"arq": "spa.jpg", "alt": "Perspectiva ilustrada do SPA", "w": 1600, "h": 973, "leg": "SPA"},
+      {"arq": "musica.jpg", "alt": "Perspectiva ilustrada da sala de música com piano", "w": 1600, "h": 1502, "leg": "Sala de música"},
+      {"arq": "lareira.jpg", "alt": "Perspectiva ilustrada da sala de estar com lareira", "w": 1600, "h": 1502, "leg": "Sala de estar com lareira"},
+      {"arq": "academia.jpg", "alt": "Perspectiva ilustrada da academia", "w": 1600, "h": 954, "leg": "Academia"},
+      {"arq": "quadras.jpg", "alt": "Perspectiva ilustrada das quadras de tênis e de beach tennis", "w": 1600, "h": 714, "leg": "Quadras"},
+      {"arq": "piscina.jpg", "alt": "Perspectiva ilustrada da piscina adulto e infantil", "w": 1360, "h": 649, "leg": "Piscina adulto e infantil"},
+      {"arq": "lazer.jpg", "alt": "Perspectiva ilustrada das áreas de lazer ao ar livre", "w": 1360, "h": 662, "leg": "Áreas de lazer"},
+      {"arq": "lago.jpg", "alt": "Perspectiva ilustrada do lago do Porteira de Ferro", "w": 1156, "h": 1132, "leg": "O lago"},
+      {"arq": "implantacao.jpg", "alt": "Implantação do Porteira de Ferro sobre foto aérea, com as quadras A a L", "w": 1600, "h": 1011, "leg": "Implantação"}
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Club House no casarão, quadras e lago",
+    "intro": "A lista abaixo segue a legenda da implantação e a descrição da Club House no book da incorporadora.",
+    "itens": ["Portaria", "Boulevard", "Pier", "Pista de caminhada", "Jardim", "Quadra de tênis", "Quadra de beach tennis", "Piscina adulto e infantil", "Playground", "Club House no casarão restaurado", "Salão de festas com lareira", "Sala de estar com lareira", "Salão de jogos", "Minimercado", "Espaço gourmet", "Sala de música", "Espaço kids", "Academia", "Sauna", "SPA"],
+    "nota": "O book informa que os projetos da portaria e das demais áreas de lazer podem sofrer alterações."
+  },
+  "ficha": [
+    ["Realização", "GPCI Empreendimentos"],
+    ["Titular (rodapé do book)", "Indaiá Negócios e Participações Ltda., CNPJ 48.326.567/0001-89"],
+    ["Tipo", "Loteamento fechado"],
+    ["Lotes no projeto", "103, a partir de 500 m²"],
+    ["Lote na tabela", "1 — quadra E, lote 3, com 520,00 m² (17/09/2026)"],
+    ["Área verde", "quase 20 mil m², segundo o book"],
+    ["Espelho d'água", "quase 14 mil m², segundo o book"],
+    ["Projeto", "Paisagismo Alexandre Furcolin; interiores Catherine Trevisan; casarão pelo escritório Mangava"],
+    ["Registro do loteamento", "O book informa que a venda ocorre após o registro no cartório de imóveis (Lei 6.766/79); peça a matrícula"],
+    ["Entrega da infraestrutura", "Não informada no material; confirme no atendimento"]
+  ],
+  "faq": [
+    {"q": "Quanto custa o lote disponível no Porteira de Ferro?", "a": "Na tabela de 17/09/2026 o lote da quadra E, lote 3, tem 520,00 m² e custa R$ 1.300.000,00, o equivalente a R$ 2.500 por metro quadrado. À vista, com 5% de desconto, sai por R$ 1.235.000,00."},
+    {"q": "Como é o pagamento do lote do Porteira de Ferro?", "a": "O sinal é de R$ 455.000,00 (35% do valor) e o saldo de R$ 845.000,00 pode ser pago em 12 parcelas de R$ 70.416,67, sem juros e sem correção; em 24 de R$ 38.836,64; ou em 36 de R$ 27.107,36. Nos planos de 24 e 36 meses há juros de 0,80% ao mês pela tabela Price e correção anual pelo IPCA."},
+    {"q": "Quantos lotes tem o Porteira de Ferro?", "a": "O book da incorporadora informa 103 lotes a partir de 500 m², nas quadras A a L. Na tabela de 17/09/2026 resta um lote à venda."},
+    {"q": "O que tem na área de lazer do Porteira de Ferro?", "a": "O casarão existente é restaurado e vira a Club House, com salão de festas e sala de estar com lareira, salão de jogos, minimercado, espaço gourmet, sala de música, espaço kids, academia, sauna e SPA. A implantação traz ainda portaria, boulevard, pier, pista de caminhada, jardim, quadra de tênis, quadra de beach tennis, piscina adulto e infantil e playground."},
+    {"q": "Onde fica o Porteira de Ferro?", "a": "Em Indaiatuba/SP. O book não informa o endereço nem distâncias; a página traz o mapa do local cadastrado no Google, e o acesso é pela portaria junto à rotatória, como mostra a implantação."},
+    {"q": "O Porteira de Ferro já está registrado?", "a": "O rodapé legal do book informa que o produto é comercializado somente após o registro do loteamento no cartório de imóveis, nos termos da Lei 6.766/79. Peça a matrícula atualizada antes de assinar."},
+    {"q": "Quanto é a taxa mensal do Porteira de Ferro?", "a": "O valor da taxa de manutenção não consta do material recebido da incorporadora. Ele é informado no atendimento."}
+  ],
+  "cta": {"h2": "Quer o último lote do Porteira de Ferro?", "p": "Confirmamos com a GPCI se o lote segue disponível, mandamos a tabela de 17/09/2026 e simulamos o pagamento à vista ou em até 36 parcelas.", "msg": "Olá! Quero falar sobre o lote de 520 m² do Porteira de Ferro."},
+  "rodape": {
+    "marca": "PORTEIRA DE FERRO",
+    "linha": "Porteira de Ferro · loteamento fechado com 103 lotes a partir de 500 m² · Indaiatuba, SP",
+    "realizacao": "Realização GPCI Empreendimentos",
+    "legal": "Imagens meramente ilustrativas, com a vegetação em porte adulto; os projetos da portaria e das áreas de lazer podem sofrer alterações e os ambientes são entregues conforme o memorial descritivo. Preços e condições conforme a tabela de 17/09/2026, sujeitos a alteração sem aviso prévio; nos planos de 24 e 36 meses há juros de 0,80% a.m. pela tabela Price e correção anual pelo IPCA. A disponibilidade do lote é confirmada com a GPCI. Empreendimento de Indaiá Negócios e Participações Ltda. (CNPJ 48.326.567/0001-89); conforme o book, o produto é comercializado somente após o registro do loteamento no cartório de imóveis, nos termos da Lei 6.766/79. Página publicada em set/2026.",
+    "distrato": ""
+  },
+  "home": {"tipo": "lote", "preco": 1300000, "lote": "fechado", "status": "lancamento", "constr": "GPCI", "pm2": "2500",
+    "badge": "Último lote", "badge_estilo": "background:#C9A227;color:#161616;",
+    "meta": "Lote de 520 m²",
+    "desc": "Último lote da tabela de 17/09/2026 · loteamento fechado de 103 lotes em volta de um lago · Club House no casarão restaurado · sinal de 35% e saldo em até 36x.",
+    "alt": "Foto aérea do Porteira de Ferro, em Indaiatuba",
+    "itemlist": "Porteira de Ferro — loteamento fechado da GPCI em Indaiatuba, último lote de 520 m² por R$ 1.300.000 (tabela 17/09/2026)"},
+  "llms": {"secao": "condominios", "linha": "Loteamento fechado da GPCI Empreendimentos em Indaiatuba, com 103 lotes a partir de 500 m² em volta de um lago de quase 14 mil m² e área verde de quase 20 mil m²; o casarão existente é restaurado e vira a Club House (salão de festas e sala de estar com lareira, salão de jogos, minimercado, espaço gourmet, sala de música, espaço kids, academia, sauna e SPA), com portaria, boulevard, pier, pista de caminhada, quadras de tênis e beach tennis, piscina adulto e infantil e playground; paisagismo de Alexandre Furcolin. Tabela de 17/09/2026 com um único lote: quadra E, lote 3, de 520,00 m², a R$ 2.500/m², total R$ 1.300.000,00 (à vista R$ 1.235.000,00 com 5% de desconto); sinal de 35% e saldo em 12 sem juros, 24 ou 36 parcelas com juros de 0,80% a.m. e IPCA anual. Titular: Indaiá Negócios e Participações Ltda. A venda ocorre após o registro do loteamento; entrega, endereço e taxa mensal não informados."}
+}

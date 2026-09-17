@@ -174,6 +174,7 @@ const BAIRROS = [
   { id:'mariacandida', fechado:true, nome:'Jardim Residencial Dona Maria Cândida', sub:'loteamento fechado · 180 lotes disponíveis (lista de 08/09/2026) · a prazo em até 60x', tab:'jul/2025', cond:'entrada de 10% no ato e saldo em até 60x, tabela Asseplan Narezzi válida a partir de 01/07/2025; contratos com prazo acima de 12 meses são reajustados anualmente pelo IPCA, quando positivo', overlay:{ url:'images/mariacandida.png', bounds:[[-23.093366137,-47.248778098],[-23.086446163,-47.238755644]] } },
   { id:'paulista3', nome:'Jardim Paulista III', sub:'loteamento · 32 lotes disponíveis (tabela de lançamento 96x, recebida em 08/09/2026)', cond:'entrada de 15% (20% ou 50% em alguns lotes) e saldo em 96 parcelas corrigidas pelo IPCA, conforme a tabela; parcela indicada é a da tabela', overlay:{ url:'images/paulista3.png', bounds:[[-23.133154295,-47.257973782],[-23.124453714,-47.249506540]] } },
   { id:'vilafahl', nome:'Residencial Vila Fahl', sub:'loteamento · 67 lotes da Fase 1 (48 residenciais e 19 comerciais) · a prazo em até 96x', landing:'/vila-fahl-indaiatuba/', cond:'sinal de 10% e saldo em até 96 parcelas, tabela da Fase 1 recebida em 17/09/2026; à vista com 5% de desconto', overlay:{ url:'images/vilafahl.png', bounds:[[-23.092794000,-47.259482094],[-23.084804457,-47.248773204]] } },
+  { id:'porteiraferro', fechado:true, nome:'Porteira de Ferro', sub:'loteamento fechado · último lote da tabela de 17/09/2026 · a prazo em até 36x', landing:'/porteira-de-ferro-indaiatuba/', cond:'sinal de 35% e saldo em até 36 parcelas: até 12 sem juros e sem correção; em 24 e 36 há juros de 0,80% a.m. (Price) e correção anual pelo IPCA; à vista com 5% de desconto', overlay:{ url:'images/porteiraferro.png', bounds:[[-23.065958882,-47.191108355],[-23.059816259,-47.187124968]] } },
 ];
 const LOTES = [
   // Terras de San Marino — espelho de vendas de 02/09/2026 (à vista R$ 1.650/m²; a prazo R$ 1.750/m², entrada 20%, saldo em 60x)
@@ -2120,6 +2121,8 @@ const LOTES = [
   { b:'vilafahl', q:'R', l:'20', m2:150.00, tipo:'COMERCIAL', pm2:2000, vista:300000.00, entrada:30000.00, parcela:4125.27, nx:96, ep:10, ll:[-23.090676,-47.253272] },
   { b:'vilafahl', q:'R', l:'21', m2:150.00, tipo:'COMERCIAL', pm2:2000, vista:300000.00, entrada:30000.00, parcela:4125.27, nx:96, ep:10, ll:[-23.090753,-47.253287] },
   { b:'vilafahl', q:'R', l:'22', m2:234.63, tipo:'COMERCIAL', pm2:2000, vista:469260.00, entrada:46926.00, parcela:6452.75, nx:96, ep:10, ll:[-23.090823,-47.253302] },
+  // Porteira de Ferro (GPCI) — último lote da tabela de 17/09/2026; planta da página 8 do book encaixada no satélite
+  { b:'porteiraferro', q:'E', l:'3', m2:520.00, tipo:'RESIDENCIAL', pm2:2500, vista:1300000.00, entrada:455000.00, parcela:27107.36, nx:36, ep:35, ll:[-23.063208,-47.187920], obs:'Último lote da tabela de 17/09/2026; à vista com 5% de desconto sai por R$ 1.235.000. Posição pela implantação do book' },
 ];
 
 // ─── UTILIDADES ────────────────────────────────────────────────────────────────

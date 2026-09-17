@@ -1,0 +1,1 @@
+{ b:'porteiraferro', q:'E', l:'3', m2:520.00, tipo:'RESIDENCIAL', pm2:2500, vista:1300000.00, entrada:455000.00, parcela:27107.36, nx:36, ep:35, ll:[-23.063208,-47.187920], obs:'Último lote da tabela de 17/09/2026; à vista com 5% de desconto sai por R$ 1.235.000. Posição pela implantação do book' },

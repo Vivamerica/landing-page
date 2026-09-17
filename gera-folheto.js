@@ -62,6 +62,7 @@ const LOTES = [
     s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:185, slug:'residencial-ravello-indaiatuba' },
   { n:'Alphaville Indaiatuba', c:'Alphaville', p:888939, m2:525, img:'alphaville-indaiatuba/images/hero.jpg', s:'Itaici · 131 lotes de 511 a 1.249 m² · clube com piscina de raias', t:'Cond. fechado', slug:'alphaville-indaiatuba' },
   { n:'Lagos de Helvetia', c:'GPCI', p:901800, m2:501, img:'lagos-de-helvetia-indaiatuba/images/hero.jpg', s:'Helvetia · 44 lotes de 501 a 2.015 m² · lago e clube', t:'Cond. fechado', slug:'lagos-de-helvetia-indaiatuba' },
+  { n:'Porteira de Ferro', c:'GPCI', p:1300000, m2:520, img:'porteira-de-ferro-indaiatuba/images/hero.jpg', s:'Último lote · 103 lotes a partir de 500 m² · Club House no casarão', t:'Cond. fechado', slug:'porteira-de-ferro-indaiatuba' },
 ];
 
 
