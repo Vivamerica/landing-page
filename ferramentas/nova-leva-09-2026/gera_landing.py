@@ -83,7 +83,7 @@ def bloco_mapa(m, nome):
             '        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>\n'
             '      </button>\n    </div>\n'
             '    <p><a class="mapa-rota" href="%s" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>\n'
-            ) % (e(m['embed']), e('Mapa do ' + nome + ', Indaiatuba'), e(nome), e(rota))
+            ) % (e(m['embed']), e('Mapa do ' + nome + ('' if 'Indaiatuba' in nome else ', Indaiatuba')), e(nome), e(rota))
 
 
 def secao(sc, mapa=None, nome=''):
