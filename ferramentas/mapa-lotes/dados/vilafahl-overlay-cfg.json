@@ -1,0 +1,14 @@
+{
+ "fit": "vilafahl-fit.json",
+ "png": "vilafahl/render.png",
+ "pw": 4008,
+ "ph": 2835,
+ "dilata_mag": 13,
+ "sementes_ext": [[20, 20], [5980, 20], [20, 4220], [5980, 4220]],
+ "pontos_dentro": [[700, 2280], [1840, 1100], [1100, 1300], [2100, 1850], [900, 700]],
+ "res_m": 0.4,
+ "branco": 245,
+ "cores": 32,
+ "saida": "C:/Users/Usuario/AppData/Local/Temp/mapas/vilafahl-cheio-overlay.png",
+ "saida_bounds": "vilafahl-cheio-bounds.json"
+}

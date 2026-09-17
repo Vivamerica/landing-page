@@ -1,0 +1,13 @@
+{
+ "E": [
+  0.34762914755439867,
+  0.06012102136988466,
+  268500.2944190276
+ ],
+ "N": [
+  -0.06012102136988466,
+  0.34762914755439867,
+  7444457.84745374
+ ],
+ "fonte": "grade UTM de 100 m desenhada na planta (22 linhas vetoriais, 283,46 pt = 100 m = 1:1000, girada 9,81 graus) + torre 17-01 E=268764,085 N=7444609,444 (residuo ~1 m); coords = pt da pagina, y para cima"
+}

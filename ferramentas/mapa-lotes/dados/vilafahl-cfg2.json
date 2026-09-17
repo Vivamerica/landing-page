@@ -1,0 +1,22 @@
+{
+ "texto": "vilafahl-text.json",
+ "png": "vilafahl/render.png",
+ "pw": 4008,
+ "ph": 2835,
+ "re_letra": "[A-Z]",
+ "fs_letra": 92.4,
+ "filtro_letra": "True",
+ "fs_num": 54.1,
+ "engorda": 3,
+ "raio_num": 6,
+ "raio_letra": 20,
+ "janela": 260,
+ "area_max": 26000,
+ "dilata_adj": 7,
+ "m_por_pt": 0.35278,
+ "enc_max_m": 40,
+ "letra_max_m": 99999,
+ "saida_quadras": "vilafahl-quadras.json",
+ "saida_check": "vilafahl/lotes-check.jpg",
+ "check_escala": 0.3
+}
