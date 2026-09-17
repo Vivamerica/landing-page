@@ -57,6 +57,12 @@
     "url": "https://lancamentos.imoveisvivamerica.com.br/parque-das-aguas-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/parque-das-aguas-indaiatuba/images/hero.jpg",
     "numberOfAccommodationUnits": 400,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.098574,
+      "longitude": -47.257412
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Residencial%20Parque%20das%20%C3%81guas%20Indaiatuba",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua João Manoel Ruz Peres, 220",
@@ -711,6 +717,14 @@
     <p class="label">Localização</p>
     <h2>Rua João Manoel Ruz Peres, 220</h2>
     <p class="prosa">O endereço do empreendimento, segundo a ficha técnica da incorporadora, é Rua João Manoel Ruz Peres, 220, em Indaiatuba. O material não informa o bairro nem distâncias até pontos de referência. O stand de vendas fica na Avenida Fábio Ferraz Bicudo.</p>
+    <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1658.6671924844388!2d-47.25741211391845!3d-23.098574320096834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b3efb316f8c3%3A0xd9974d3b1bf8f4a0!2sResidencial%20Parque%20das%20%C3%81guas%20Indaiatuba!5e1!3m2!1spt-BR!2sbr!4v1789665443453!5m2!1spt-BR!2sbr" data-titulo="Mapa do Residencial Parque das Águas, Indaiatuba">
+      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do Residencial Parque das Águas">
+        <span class="mapa-ic" aria-hidden="true"></span>
+        <span class="mapa-t">Ver no mapa</span>
+        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
+      </button>
+    </div>
+    <p><a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=Residencial%20Parque%20das%20%C3%81guas%20Indaiatuba" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>
   </div>
 </section>
 
@@ -784,6 +798,27 @@
   </p>
 <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
 </footer>
+
+<script>
+// o iframe do Google só nasce no clique: nada sai daqui antes disso
+(function () {
+  var cx = document.querySelectorAll('.mapa-box');
+  for (var i = 0; i < cx.length; i++) {
+    cx[i].addEventListener('click', function () {
+      if (this.dataset.pronto) return;
+      this.dataset.pronto = '1';
+      var f = document.createElement('iframe');
+      f.src = this.dataset.src;
+      f.title = this.dataset.titulo || 'Mapa';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      this.innerHTML = '';
+      this.appendChild(f);
+    }, { once: true });
+  }
+})();
+</script>
 
 </body>
 </html>

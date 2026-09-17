@@ -11,14 +11,49 @@
   "unidades_total": 400,
   "endereco_schema": "Rua João Manoel Ruz Peres, 220",
   "preco_min": 309119.89,
-  "preco_max": 399259.90,
+  "preco_max": 399259.9,
   "offer_count": 54,
   "oferta_desc": "Tabelas GPCI de setembro/2026 (Torre 1 e 2 revisão 0, Torre 3 revisão 1) com 54 apartamentos listados, de R$ 309.119,89 a R$ 399.259,90 no valor de venda final. As condições de pagamento não constam dessas tabelas.",
   "produto_nome": "Residencial Parque das Águas — apartamento de 2 dormitórios com 46,13 m²",
   "produto_desc": "Apartamentos de 2 dormitórios de 46,13 a 50,60 m² e gardens de até 72,30 m² em Indaiatuba/SP. Realização GPCI. Tabela de setembro/2026.",
   "marca": "GPCI",
-  "lazer": ["Lago com chafariz flutuante", "Piscina adulto com borda infinita e prainha", "Piscina infantil com brinquedos aquáticos", "Complexo aquático com aquaplay", "Solário", "Salão de festas", "Área gourmet", "Quatro churrasqueiras", "Academia", "Academia ao ar livre", "Quadra recreativa", "Quadra de areia", "Pista de caminhada", "Playground", "Brinquedoteca", "Coworking", "Minimercado", "Car wash", "Pet place", "Bicicletário", "Espaço zen", "Espaço piquenique", "Redário", "Pomar", "Fire place", "Mirante", "Espelho d'água", "Praça da leitura", "Praça do lazer", "Espaço convivência", "Heliponto de drones"],
-  "marca_topo": ["PARQUE", "das Águas"],
+  "lazer": [
+    "Lago com chafariz flutuante",
+    "Piscina adulto com borda infinita e prainha",
+    "Piscina infantil com brinquedos aquáticos",
+    "Complexo aquático com aquaplay",
+    "Solário",
+    "Salão de festas",
+    "Área gourmet",
+    "Quatro churrasqueiras",
+    "Academia",
+    "Academia ao ar livre",
+    "Quadra recreativa",
+    "Quadra de areia",
+    "Pista de caminhada",
+    "Playground",
+    "Brinquedoteca",
+    "Coworking",
+    "Minimercado",
+    "Car wash",
+    "Pet place",
+    "Bicicletário",
+    "Espaço zen",
+    "Espaço piquenique",
+    "Redário",
+    "Pomar",
+    "Fire place",
+    "Mirante",
+    "Espelho d'água",
+    "Praça da leitura",
+    "Praça do lazer",
+    "Espaço convivência",
+    "Heliponto de drones"
+  ],
+  "marca_topo": [
+    "PARQUE",
+    "das Águas"
+  ],
   "wa_flutuante": "Olá! Quero a tabela atualizada do Residencial Parque das Águas.",
   "wa_topo": "Olá! Tenho interesse no Residencial Parque das Águas. Quero a tabela e as condições.",
   "hero": {
@@ -39,10 +74,22 @@
         "O lazer ocupa boa parte do terreno. Há um lago com chafariz flutuante, piscina adulto com borda infinita e prainha, complexo aquático infantil, quadras, pista de caminhada, pomar, mirante e espaços cobertos como salão de festas, coworking, academia e brinquedoteca. O paisagismo é de Edu Leal Arquitetura e Paisagismo e os interiores das áreas comuns são de Catherine Trevisan, segundo o material da incorporadora."
       ],
       "numeros": [
-        {"n": "400", "p": "apartamentos em 3 torres"},
-        {"n": "29.581", "p": "m² de terreno"},
-        {"n": "30+", "p": "espaços de lazer"},
-        {"n": "54", "p": "unidades nas tabelas de set/2026"}
+        {
+          "n": "400",
+          "p": "apartamentos em 3 torres"
+        },
+        {
+          "n": "29.581",
+          "p": "m² de terreno"
+        },
+        {
+          "n": "30+",
+          "p": "espaços de lazer"
+        },
+        {
+          "n": "54",
+          "p": "unidades nas tabelas de set/2026"
+        }
       ],
       "depois": "galeria"
     },
@@ -55,47 +102,156 @@
       ],
       "tabela": {
         "legenda": "Unidades das tabelas GPCI de setembro/2026 por planta, no valor de venda final. O número de vagas (1 ou 2) muda de unidade para unidade.",
-        "cab": ["Planta", "Área", "Unidades", "De", "Até"],
-        "num": [1, 2, 3, 4],
+        "cab": [
+          "Planta",
+          "Área",
+          "Unidades",
+          "De",
+          "Até"
+        ],
+        "num": [
+          1,
+          2,
+          3,
+          4
+        ],
         "linhas": [
-          ["Tipo, 2 dormitórios", "46,13 m²", "10", "R$ 309.119,89", "R$ 341.769,64"],
-          ["Tipo, 2 dormitórios", "47,78 m²", "24", "R$ 312.377,35", "R$ 368.641,22"],
-          ["Tipo, 2 dormitórios com suíte", "50,60 m²", "13", "R$ 357.598,82", "R$ 399.259,90"],
-          ["Garden", "46,13 + 24,66 = 70,79 m²", "3", "R$ 361.608,48", "R$ 386.921,07"],
-          ["Garden", "47,78 + 24,52 = 72,30 m²", "4", "R$ 371.974,65", "R$ 398.012,88"]
+          [
+            "Tipo, 2 dormitórios",
+            "46,13 m²",
+            "10",
+            "R$ 309.119,89",
+            "R$ 341.769,64"
+          ],
+          [
+            "Tipo, 2 dormitórios",
+            "47,78 m²",
+            "24",
+            "R$ 312.377,35",
+            "R$ 368.641,22"
+          ],
+          [
+            "Tipo, 2 dormitórios com suíte",
+            "50,60 m²",
+            "13",
+            "R$ 357.598,82",
+            "R$ 399.259,90"
+          ],
+          [
+            "Garden",
+            "46,13 + 24,66 = 70,79 m²",
+            "3",
+            "R$ 361.608,48",
+            "R$ 386.921,07"
+          ],
+          [
+            "Garden",
+            "47,78 + 24,52 = 72,30 m²",
+            "4",
+            "R$ 371.974,65",
+            "R$ 398.012,88"
+          ]
         ]
       },
       "cards": [
-        {"t": "Cozinha e banheiro", "p": "Piso cerâmico, bancada e lavatório em granito e revestimento cerâmico até o teto no banheiro."},
-        {"t": "Varanda", "p": "Churrasqueira a carvão e piso cerâmico, na opção com varanda."},
-        {"t": "Janelas e pé-direito", "p": "Janelas com persiana integrada e pé-direito de 2,70 m nos ambientes secos."},
-        {"t": "Pontos prontos", "p": "Pontos de TV nos dormitórios e no estar e pontos de ar-condicionado nos dormitórios."},
-        {"t": "Ar-condicionado", "p": "Os aparelhos, a rede frigorígena e o dreno ficam por conta do comprador."},
-        {"t": "Garden", "p": "Os apartamentos do térreo com garden são entregues com grama."}
+        {
+          "t": "Cozinha e banheiro",
+          "p": "Piso cerâmico, bancada e lavatório em granito e revestimento cerâmico até o teto no banheiro."
+        },
+        {
+          "t": "Varanda",
+          "p": "Churrasqueira a carvão e piso cerâmico, na opção com varanda."
+        },
+        {
+          "t": "Janelas e pé-direito",
+          "p": "Janelas com persiana integrada e pé-direito de 2,70 m nos ambientes secos."
+        },
+        {
+          "t": "Pontos prontos",
+          "p": "Pontos de TV nos dormitórios e no estar e pontos de ar-condicionado nos dormitórios."
+        },
+        {
+          "t": "Ar-condicionado",
+          "p": "Os aparelhos, a rede frigorígena e o dreno ficam por conta do comprador."
+        },
+        {
+          "t": "Garden",
+          "p": "Os apartamentos do térreo com garden são entregues com grama."
+        }
       ]
     },
-    {"skip": true, "depois": "lazer"},
-    {"skip": true, "depois": "ficha"},
+    {
+      "skip": true,
+      "depois": "lazer"
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
     {
       "id": "precos",
       "label": "Preços",
       "h2": "54 apartamentos nas tabelas de setembro/2026",
-      "paragrafos": ["A GPCI publica uma tabela por torre. Nas de setembro/2026 constam 54 apartamentos, com valor de venda final de R$ 309.119,89 a R$ 399.259,90. As tabelas trazem também o valor de avaliação e uma coluna chamada parcela bônus adimplência, cuja regra não vem explicada no material; peça a explicação no atendimento antes de comparar valores."],
+      "paragrafos": [
+        "A GPCI publica uma tabela por torre. Nas de setembro/2026 constam 54 apartamentos, com valor de venda final de R$ 309.119,89 a R$ 399.259,90. As tabelas trazem também o valor de avaliação e uma coluna chamada parcela bônus adimplência, cuja regra não vem explicada no material; peça a explicação no atendimento antes de comparar valores."
+      ],
       "tabela2_titulo": "Por torre",
-      "tabela2_paragrafos": ["Há também vagas de garagem avulsas à venda por R$ 25.000,00 cada, três na Torre 1 e duas na Torre 3."],
-      "tabela2": {"cab": ["Torre", "Revisão da tabela", "Apartamentos", "De", "Até"], "num": [2, 3, 4], "linhas": [
-        ["Torre 1", "set/2026, revisão 0", "11", "R$ 311.217,71", "R$ 396.797,07"],
-        ["Torre 2", "set/2026, revisão 0", "16", "R$ 309.119,89", "R$ 359.710,96"],
-        ["Torre 3", "set/2026, revisão 1", "27", "R$ 321.608,33", "R$ 399.259,90"]]},
-      "notas": ["As tabelas não informam entrada, parcelas, índice de correção nem data de entrega. Essas condições são passadas no atendimento, com a data da versão em vigor."],
-      "cta": {"msg": "Olá! Quero as condições de pagamento e a data de entrega do Residencial Parque das Águas.", "texto": "Pedir condições e entrega"}
+      "tabela2_paragrafos": [
+        "Há também vagas de garagem avulsas à venda por R$ 25.000,00 cada, três na Torre 1 e duas na Torre 3."
+      ],
+      "tabela2": {
+        "cab": [
+          "Torre",
+          "Revisão da tabela",
+          "Apartamentos",
+          "De",
+          "Até"
+        ],
+        "num": [
+          2,
+          3,
+          4
+        ],
+        "linhas": [
+          [
+            "Torre 1",
+            "set/2026, revisão 0",
+            "11",
+            "R$ 311.217,71",
+            "R$ 396.797,07"
+          ],
+          [
+            "Torre 2",
+            "set/2026, revisão 0",
+            "16",
+            "R$ 309.119,89",
+            "R$ 359.710,96"
+          ],
+          [
+            "Torre 3",
+            "set/2026, revisão 1",
+            "27",
+            "R$ 321.608,33",
+            "R$ 399.259,90"
+          ]
+        ]
+      },
+      "notas": [
+        "As tabelas não informam entrada, parcelas, índice de correção nem data de entrega. Essas condições são passadas no atendimento, com a data da versão em vigor."
+      ],
+      "cta": {
+        "msg": "Olá! Quero as condições de pagamento e a data de entrega do Residencial Parque das Águas.",
+        "texto": "Pedir condições e entrega"
+      }
     },
     {
       "id": "localizacao",
       "classe": "cream",
       "label": "Localização",
       "h2": "Rua João Manoel Ruz Peres, 220",
-      "paragrafos": ["O endereço do empreendimento, segundo a ficha técnica da incorporadora, é Rua João Manoel Ruz Peres, 220, em Indaiatuba. O material não informa o bairro nem distâncias até pontos de referência. O stand de vendas fica na Avenida Fábio Ferraz Bicudo."]
+      "paragrafos": [
+        "O endereço do empreendimento, segundo a ficha técnica da incorporadora, é Rua João Manoel Ruz Peres, 220, em Indaiatuba. O material não informa o bairro nem distâncias até pontos de referência. O stand de vendas fica na Avenida Fábio Ferraz Bicudo."
+      ]
     }
   ],
   "galeria": {
@@ -103,65 +259,276 @@
     "h2": "Como o projeto foi desenhado",
     "aviso": "Perspectivas ilustradas do material da incorporadora. Móveis, objetos e decoração são sugestão e não compõem o memorial descritivo; a vegetação é mostrada em fase adulta.",
     "itens": [
-      {"arq": "torres.jpg", "alt": "Perspectiva ilustrada das três torres do Residencial Parque das Águas", "w": 1325, "h": 947, "leg": "As três torres"},
-      {"arq": "aerea.jpg", "alt": "Perspectiva ilustrada aérea do Parque das Águas com o entorno arborizado", "w": 1032, "h": 760, "leg": "Vista aérea"},
-      {"arq": "lago.jpg", "alt": "Perspectiva ilustrada do lago com chafariz e coqueiros junto às torres", "w": 1324, "h": 947, "leg": "Lago com chafariz"},
-      {"arq": "piscina.jpg", "alt": "Perspectiva ilustrada da piscina com borda infinita voltada para o lago", "w": 1327, "h": 949, "leg": "Piscina com borda infinita"},
-      {"arq": "aquatico.jpg", "alt": "Perspectiva ilustrada do complexo aquático infantil com brinquedos", "w": 1213, "h": 665, "leg": "Complexo aquático"},
-      {"arq": "quadras.jpg", "alt": "Perspectiva ilustrada da quadra recreativa e da quadra de areia", "w": 1327, "h": 948, "leg": "Quadras"},
-      {"arq": "playground.jpg", "alt": "Perspectiva ilustrada do playground colorido", "w": 1325, "h": 948, "leg": "Playground"},
-      {"arq": "salao-festas.jpg", "alt": "Perspectiva ilustrada do salão de festas com mesas", "w": 1213, "h": 510, "leg": "Salão de festas"},
-      {"arq": "academia.jpg", "alt": "Perspectiva ilustrada da academia com aparelhos de musculação", "w": 1213, "h": 510, "leg": "Academia"},
-      {"arq": "coworking.jpg", "alt": "Perspectiva ilustrada do coworking com salas envidraçadas", "w": 1326, "h": 948, "leg": "Coworking"},
-      {"arq": "brinquedoteca.jpg", "alt": "Perspectiva ilustrada da brinquedoteca com pufes coloridos", "w": 1213, "h": 665, "leg": "Brinquedoteca"},
-      {"arq": "car-wash.jpg", "alt": "Perspectiva ilustrada do espaço car wash", "w": 1212, "h": 510, "leg": "Car wash"},
-      {"arq": "living.jpg", "alt": "Perspectiva ilustrada do living de um apartamento decorado", "w": 1327, "h": 947, "leg": "Living do apartamento"},
-      {"arq": "cozinha.jpg", "alt": "Perspectiva ilustrada da cozinha integrada com mesa de jantar", "w": 1325, "h": 947, "leg": "Cozinha integrada"},
-      {"arq": "garden.jpg", "alt": "Perspectiva ilustrada do garden de um apartamento térreo à noite", "w": 1213, "h": 602, "leg": "Apartamento garden"},
-      {"arq": "implantacao.jpg", "alt": "Implantação ilustrada do Parque das Águas com as três torres e o lago", "w": 1326, "h": 591, "leg": "Implantação"}
+      {
+        "arq": "torres.jpg",
+        "alt": "Perspectiva ilustrada das três torres do Residencial Parque das Águas",
+        "w": 1325,
+        "h": 947,
+        "leg": "As três torres"
+      },
+      {
+        "arq": "aerea.jpg",
+        "alt": "Perspectiva ilustrada aérea do Parque das Águas com o entorno arborizado",
+        "w": 1032,
+        "h": 760,
+        "leg": "Vista aérea"
+      },
+      {
+        "arq": "lago.jpg",
+        "alt": "Perspectiva ilustrada do lago com chafariz e coqueiros junto às torres",
+        "w": 1324,
+        "h": 947,
+        "leg": "Lago com chafariz"
+      },
+      {
+        "arq": "piscina.jpg",
+        "alt": "Perspectiva ilustrada da piscina com borda infinita voltada para o lago",
+        "w": 1327,
+        "h": 949,
+        "leg": "Piscina com borda infinita"
+      },
+      {
+        "arq": "aquatico.jpg",
+        "alt": "Perspectiva ilustrada do complexo aquático infantil com brinquedos",
+        "w": 1213,
+        "h": 665,
+        "leg": "Complexo aquático"
+      },
+      {
+        "arq": "quadras.jpg",
+        "alt": "Perspectiva ilustrada da quadra recreativa e da quadra de areia",
+        "w": 1327,
+        "h": 948,
+        "leg": "Quadras"
+      },
+      {
+        "arq": "playground.jpg",
+        "alt": "Perspectiva ilustrada do playground colorido",
+        "w": 1325,
+        "h": 948,
+        "leg": "Playground"
+      },
+      {
+        "arq": "salao-festas.jpg",
+        "alt": "Perspectiva ilustrada do salão de festas com mesas",
+        "w": 1213,
+        "h": 510,
+        "leg": "Salão de festas"
+      },
+      {
+        "arq": "academia.jpg",
+        "alt": "Perspectiva ilustrada da academia com aparelhos de musculação",
+        "w": 1213,
+        "h": 510,
+        "leg": "Academia"
+      },
+      {
+        "arq": "coworking.jpg",
+        "alt": "Perspectiva ilustrada do coworking com salas envidraçadas",
+        "w": 1326,
+        "h": 948,
+        "leg": "Coworking"
+      },
+      {
+        "arq": "brinquedoteca.jpg",
+        "alt": "Perspectiva ilustrada da brinquedoteca com pufes coloridos",
+        "w": 1213,
+        "h": 665,
+        "leg": "Brinquedoteca"
+      },
+      {
+        "arq": "car-wash.jpg",
+        "alt": "Perspectiva ilustrada do espaço car wash",
+        "w": 1212,
+        "h": 510,
+        "leg": "Car wash"
+      },
+      {
+        "arq": "living.jpg",
+        "alt": "Perspectiva ilustrada do living de um apartamento decorado",
+        "w": 1327,
+        "h": 947,
+        "leg": "Living do apartamento"
+      },
+      {
+        "arq": "cozinha.jpg",
+        "alt": "Perspectiva ilustrada da cozinha integrada com mesa de jantar",
+        "w": 1325,
+        "h": 947,
+        "leg": "Cozinha integrada"
+      },
+      {
+        "arq": "garden.jpg",
+        "alt": "Perspectiva ilustrada do garden de um apartamento térreo à noite",
+        "w": 1213,
+        "h": 602,
+        "leg": "Apartamento garden"
+      },
+      {
+        "arq": "implantacao.jpg",
+        "alt": "Implantação ilustrada do Parque das Águas com as três torres e o lago",
+        "w": 1326,
+        "h": 591,
+        "leg": "Implantação"
+      }
     ]
   },
   "lazer_bloco": {
     "h2": "Mais de 30 espaços de lazer",
     "intro": "A lista abaixo segue o material da incorporadora. As áreas comuns são entregues equipadas e decoradas, conforme o memorial descritivo.",
-    "itens": ["Lago com chafariz flutuante", "Espelho d'água", "Piscina adulto com borda infinita e prainha", "Piscina infantil com brinquedos aquáticos", "Complexo aquático com aquaplay", "Solário", "Salão de festas", "Área gourmet", "Quatro churrasqueiras", "Fire place", "Academia", "Academia ao ar livre", "Quadra recreativa", "Quadra de areia", "Pista de caminhada", "Playground", "Brinquedoteca", "Coworking", "Minimercado", "Car wash", "Pet place", "Bicicletário", "Espaço zen", "Espaço piquenique", "Redário", "Pomar", "Mirante", "Praça da leitura", "Praça do lazer", "Espaço convivência", "Heliponto de drones"],
+    "itens": [
+      "Lago com chafariz flutuante",
+      "Espelho d'água",
+      "Piscina adulto com borda infinita e prainha",
+      "Piscina infantil com brinquedos aquáticos",
+      "Complexo aquático com aquaplay",
+      "Solário",
+      "Salão de festas",
+      "Área gourmet",
+      "Quatro churrasqueiras",
+      "Fire place",
+      "Academia",
+      "Academia ao ar livre",
+      "Quadra recreativa",
+      "Quadra de areia",
+      "Pista de caminhada",
+      "Playground",
+      "Brinquedoteca",
+      "Coworking",
+      "Minimercado",
+      "Car wash",
+      "Pet place",
+      "Bicicletário",
+      "Espaço zen",
+      "Espaço piquenique",
+      "Redário",
+      "Pomar",
+      "Mirante",
+      "Praça da leitura",
+      "Praça do lazer",
+      "Espaço convivência",
+      "Heliponto de drones"
+    ],
     "nota": "O estacionamento soma 600 vagas, com 42 para visitantes. Cada apartamento tem uma ou duas vagas, conforme a unidade."
   },
   "ficha": [
-    ["Realização", "GPCI, com gestão de projetos e obras da IBEN"],
-    ["Incorporadora responsável", "Indaiatuba 1 Empreendimento Imobiliário SPE Ltda. — CNPJ 54.443.323/0001-89"],
-    ["Endereço", "Rua João Manoel Ruz Peres, 220 — Indaiatuba/SP"],
-    ["Terreno", "29.581,18 m²"],
-    ["Área construída", "24.647,73 m²"],
-    ["Torres", "3: Torres 1 e 2 com térreo + 12 pavimentos, Torre 3 com térreo + 13; 2 elevadores por torre"],
-    ["Apartamentos", "400 no total (130, 130 e 140), 10 por andar e 10 gardens por torre"],
-    ["Plantas", "46,13 m², 47,78 m² e 50,60 m², com 2 dormitórios; gardens de 70,27 m² a 72,30 m²"],
-    ["Vagas", "1 ou 2 por apartamento; 600 no total"],
-    ["Paisagismo e interiores", "Edu Leal Arquitetura e Paisagismo; Catherine Trevisan (áreas comuns)"],
-    ["Aprovação", "Protocolo nº 12.950/2023 e Alvará de Execução nº 3/2025 da Prefeitura de Indaiatuba"],
-    ["Incorporação", "Registrada sob R.05 da matrícula nº 143.183 do Oficial de Registro de Imóveis de Indaiatuba/SP"],
-    ["Entrega", "Não informada nas tabelas de setembro/2026; confirme no atendimento"]
+    [
+      "Realização",
+      "GPCI, com gestão de projetos e obras da IBEN"
+    ],
+    [
+      "Incorporadora responsável",
+      "Indaiatuba 1 Empreendimento Imobiliário SPE Ltda. — CNPJ 54.443.323/0001-89"
+    ],
+    [
+      "Endereço",
+      "Rua João Manoel Ruz Peres, 220 — Indaiatuba/SP"
+    ],
+    [
+      "Terreno",
+      "29.581,18 m²"
+    ],
+    [
+      "Área construída",
+      "24.647,73 m²"
+    ],
+    [
+      "Torres",
+      "3: Torres 1 e 2 com térreo + 12 pavimentos, Torre 3 com térreo + 13; 2 elevadores por torre"
+    ],
+    [
+      "Apartamentos",
+      "400 no total (130, 130 e 140), 10 por andar e 10 gardens por torre"
+    ],
+    [
+      "Plantas",
+      "46,13 m², 47,78 m² e 50,60 m², com 2 dormitórios; gardens de 70,27 m² a 72,30 m²"
+    ],
+    [
+      "Vagas",
+      "1 ou 2 por apartamento; 600 no total"
+    ],
+    [
+      "Paisagismo e interiores",
+      "Edu Leal Arquitetura e Paisagismo; Catherine Trevisan (áreas comuns)"
+    ],
+    [
+      "Aprovação",
+      "Protocolo nº 12.950/2023 e Alvará de Execução nº 3/2025 da Prefeitura de Indaiatuba"
+    ],
+    [
+      "Incorporação",
+      "Registrada sob R.05 da matrícula nº 143.183 do Oficial de Registro de Imóveis de Indaiatuba/SP"
+    ],
+    [
+      "Entrega",
+      "Não informada nas tabelas de setembro/2026; confirme no atendimento"
+    ]
   ],
   "faq": [
-    {"q": "Quanto custa um apartamento no Residencial Parque das Águas?", "a": "As tabelas da GPCI de setembro/2026 listam 54 apartamentos, com valor de venda final de R$ 309.119,89 a R$ 399.259,90. A planta de 46,13 m² começa em R$ 309.119,89, a de 47,78 m² em R$ 312.377,35 e a de 50,60 m², com suíte, em R$ 357.598,82. Há também vagas avulsas por R$ 25.000,00."},
-    {"q": "Quantos dormitórios têm os apartamentos do Parque das Águas?", "a": "Todas as plantas têm dois dormitórios. A de 50,60 m² tem um deles como suíte. As plantas têm paredes removíveis, com opções de living ampliado e de varanda integrada ou aberta."},
-    {"q": "Quantos apartamentos e torres tem o Parque das Águas?", "a": "São 3 torres e 400 apartamentos: as Torres 1 e 2 têm 130 unidades cada, em térreo mais 12 pavimentos, e a Torre 3 tem 140, em térreo mais 13. Cada andar tem 10 apartamentos e cada torre tem 10 gardens no térreo."},
-    {"q": "Qual é a forma de pagamento e a data de entrega?", "a": "As tabelas de setembro/2026 trazem só o valor de avaliação, a parcela bônus adimplência e o valor de venda final de cada unidade. Entrada, parcelas, índice de correção e data de entrega não constam delas e são informados no atendimento."},
-    {"q": "Onde fica o Residencial Parque das Águas?", "a": "Na Rua João Manoel Ruz Peres, 220, em Indaiatuba/SP, conforme a ficha técnica da incorporadora. O stand de vendas fica na Avenida Fábio Ferraz Bicudo."},
-    {"q": "O Parque das Águas tem registro de incorporação?", "a": "Sim. O material da incorporadora informa a incorporação registrada sob R.05 da matrícula nº 143.183 do Oficial de Registro de Imóveis de Indaiatuba, com projeto aprovado sob o protocolo nº 12.950/2023 e Alvará de Execução nº 3/2025."},
-    {"q": "O apartamento vem com ar-condicionado?", "a": "Não. O apartamento tem pontos de ar-condicionado nos dormitórios, mas os aparelhos, a rede frigorígena e o dreno ficam por conta do comprador."}
+    {
+      "q": "Quanto custa um apartamento no Residencial Parque das Águas?",
+      "a": "As tabelas da GPCI de setembro/2026 listam 54 apartamentos, com valor de venda final de R$ 309.119,89 a R$ 399.259,90. A planta de 46,13 m² começa em R$ 309.119,89, a de 47,78 m² em R$ 312.377,35 e a de 50,60 m², com suíte, em R$ 357.598,82. Há também vagas avulsas por R$ 25.000,00."
+    },
+    {
+      "q": "Quantos dormitórios têm os apartamentos do Parque das Águas?",
+      "a": "Todas as plantas têm dois dormitórios. A de 50,60 m² tem um deles como suíte. As plantas têm paredes removíveis, com opções de living ampliado e de varanda integrada ou aberta."
+    },
+    {
+      "q": "Quantos apartamentos e torres tem o Parque das Águas?",
+      "a": "São 3 torres e 400 apartamentos: as Torres 1 e 2 têm 130 unidades cada, em térreo mais 12 pavimentos, e a Torre 3 tem 140, em térreo mais 13. Cada andar tem 10 apartamentos e cada torre tem 10 gardens no térreo."
+    },
+    {
+      "q": "Qual é a forma de pagamento e a data de entrega?",
+      "a": "As tabelas de setembro/2026 trazem só o valor de avaliação, a parcela bônus adimplência e o valor de venda final de cada unidade. Entrada, parcelas, índice de correção e data de entrega não constam delas e são informados no atendimento."
+    },
+    {
+      "q": "Onde fica o Residencial Parque das Águas?",
+      "a": "Na Rua João Manoel Ruz Peres, 220, em Indaiatuba/SP, conforme a ficha técnica da incorporadora. O stand de vendas fica na Avenida Fábio Ferraz Bicudo."
+    },
+    {
+      "q": "O Parque das Águas tem registro de incorporação?",
+      "a": "Sim. O material da incorporadora informa a incorporação registrada sob R.05 da matrícula nº 143.183 do Oficial de Registro de Imóveis de Indaiatuba, com projeto aprovado sob o protocolo nº 12.950/2023 e Alvará de Execução nº 3/2025."
+    },
+    {
+      "q": "O apartamento vem com ar-condicionado?",
+      "a": "Não. O apartamento tem pontos de ar-condicionado nos dormitórios, mas os aparelhos, a rede frigorígena e o dreno ficam por conta do comprador."
+    }
   ],
-  "cta": {"h2": "Quer ver as unidades do Parque das Águas?", "p": "Mandamos as três tabelas com torre, andar, vista, vagas e valor de cada apartamento, e as condições de pagamento em vigor.", "msg": "Olá! Quero falar sobre o Residencial Parque das Águas em Indaiatuba."},
+  "cta": {
+    "h2": "Quer ver as unidades do Parque das Águas?",
+    "p": "Mandamos as três tabelas com torre, andar, vista, vagas e valor de cada apartamento, e as condições de pagamento em vigor.",
+    "msg": "Olá! Quero falar sobre o Residencial Parque das Águas em Indaiatuba."
+  },
   "rodape": {
     "marca": "PARQUE DAS ÁGUAS",
     "linha": "Residencial Parque das Águas · 3 torres, 400 apartamentos de 2 dormitórios, 46,13 a 72,30 m² · Rua João Manoel Ruz Peres, 220 · Indaiatuba, SP",
     "realizacao": "Realização GPCI · gestão IBEN",
     "legal": "Perspectivas ilustradas; móveis, objetos e decoração são sugestão e não compõem o memorial descritivo. Preços conforme as tabelas GPCI de setembro/2026 (Torres 1 e 2 revisão 0, Torre 3 revisão 1), no valor de venda final, sujeitos a alteração sem aviso; condições de pagamento, índice de correção, prazo de entrega e disponibilidade são confirmados no atendimento. Empreendimento aprovado pela Prefeitura de Indaiatuba sob o protocolo nº 12.950/2023 e Alvará de Execução nº 3/2025, com incorporação registrada sob R.05 da matrícula nº 143.183 do Oficial de Registro de Imóveis de Indaiatuba/SP. Incorporadora responsável: Indaiatuba 1 Empreendimento Imobiliário SPE Ltda., CNPJ 54.443.323/0001-89. Página publicada em set/2026."
   },
-  "home": {"tipo": "apartamento", "preco": 309120, "dorms": "2", "mcmv": "0", "status": "", "constr": "GPCI",
-    "badge": "Lançamento · 3 torres", "meta": "46 a 72 m² · 2 dorm",
+  "home": {
+    "tipo": "apartamento",
+    "preco": 309120,
+    "dorms": "2",
+    "mcmv": "0",
+    "status": "",
+    "constr": "GPCI",
+    "badge": "Lançamento · 3 torres",
+    "meta": "46 a 72 m² · 2 dorm",
     "desc": "400 apartamentos de 2 dormitórios em volta de um lago · piscina com borda infinita · complexo aquático · mais de 30 espaços de lazer.",
     "alt": "Perspectiva ilustrada das torres do Residencial Parque das Águas ao entardecer",
-    "itemlist": "Residencial Parque das Águas — 3 torres GPCI, 400 apartamentos de 2 dorm de 46 a 72 m², lago e complexo aquático · a partir de R$ 309.120 (tabela set/2026)"},
-  "llms": {"secao": "apartamentos", "linha": "Realização GPCI com gestão IBEN na Rua João Manoel Ruz Peres, 220, Indaiatuba (SPE Indaiatuba 1 Empreendimento Imobiliário Ltda., CNPJ 54.443.323/0001-89). Terreno de 29.581,18 m², 24.647,73 m² construídos, 3 torres (Torres 1 e 2 com térreo + 12 e 130 aptos cada; Torre 3 com térreo + 13 e 140 aptos), 400 apartamentos de 2 dormitórios, 10 por andar e 10 gardens por torre. Plantas de 46,13 m², 47,78 m² e 50,60 m² (esta com suíte); gardens de 70,27 a 72,30 m²; paredes removíveis. Mais de 30 itens de lazer: lago com chafariz, piscina com borda infinita e prainha, complexo aquático infantil, quadras, pista de caminhada, pomar, mirante, coworking, car wash. Tabelas GPCI de setembro/2026 (uma por torre) com 54 apartamentos, valor de venda final de R$ 309.119,89 a R$ 399.259,90; vagas avulsas a R$ 25.000. As tabelas não informam pagamento, correção nem entrega. Incorporação registrada sob R.05 da matrícula 143.183; protocolo 12.950/2023 e Alvará nº 3/2025."}
+    "itemlist": "Residencial Parque das Águas — 3 torres GPCI, 400 apartamentos de 2 dorm de 46 a 72 m², lago e complexo aquático · a partir de R$ 309.120 (tabela set/2026)"
+  },
+  "llms": {
+    "secao": "apartamentos",
+    "linha": "Realização GPCI com gestão IBEN na Rua João Manoel Ruz Peres, 220, Indaiatuba (SPE Indaiatuba 1 Empreendimento Imobiliário Ltda., CNPJ 54.443.323/0001-89). Terreno de 29.581,18 m², 24.647,73 m² construídos, 3 torres (Torres 1 e 2 com térreo + 12 e 130 aptos cada; Torre 3 com térreo + 13 e 140 aptos), 400 apartamentos de 2 dormitórios, 10 por andar e 10 gardens por torre. Plantas de 46,13 m², 47,78 m² e 50,60 m² (esta com suíte); gardens de 70,27 a 72,30 m²; paredes removíveis. Mais de 30 itens de lazer: lago com chafariz, piscina com borda infinita e prainha, complexo aquático infantil, quadras, pista de caminhada, pomar, mirante, coworking, car wash. Tabelas GPCI de setembro/2026 (uma por torre) com 54 apartamentos, valor de venda final de R$ 309.119,89 a R$ 399.259,90; vagas avulsas a R$ 25.000. As tabelas não informam pagamento, correção nem entrega. Incorporação registrada sob R.05 da matrícula 143.183; protocolo 12.950/2023 e Alvará nº 3/2025."
+  },
+  "geo": [
+    -23.098574,
+    -47.257412
+  ],
+  "mapa": {
+    "rota": "Residencial Parque das Águas Indaiatuba",
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1658.6671924844388!2d-47.25741211391845!3d-23.098574320096834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b3efb316f8c3%3A0xd9974d3b1bf8f4a0!2sResidencial%20Parque%20das%20%C3%81guas%20Indaiatuba!5e1!3m2!1spt-BR!2sbr!4v1789665443453!5m2!1spt-BR!2sbr"
+  }
 }

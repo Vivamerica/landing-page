@@ -452,5 +452,13 @@
   "llms": {
     "secao": "apartamentos",
     "linha": "Realização GPCI, IBEN e GH Properties no Centro de Indaiatuba, na esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz (SPE 24 de Maio Empreendimento Imobiliário Ltda., CNPJ 51.685.586/0001-06). Duas torres de térreo + 15 pavimentos, 14 apartamentos por andar, 448 unidades, com mall de serviços e minimercado no térreo e piscina no rooftop de cada torre. Tabela GPCI de setembro/2026 com 79 unidades listadas (62 na Torre 1, 17 na Torre 2): Tipo Canto 39,90 m² de R$ 371.862,27 a R$ 402.662,27; Tipo Meio 39,99 m² de R$ 378.299,03 a R$ 403.499,03; Suíte 43,97 m² (2 vagas) de R$ 406.900,00 a R$ 446.100,00; gardens de 66,47 m² (R$ 400.554,75) e 66,43 m² (R$ 401.391,51). Pagamento: investidor com ato de 10% e saldo em até 18x sem INCC ou 21x com INCC; financiamento Caixa com ato de 6%, diferença da entrada em até 21x com INCC e saldo financiado. INCC até o habite-se, depois IGP-M + 1% a.m. Entrega prevista junho/2028. O material não informa número de dormitórios; apartamento com paredes removíveis. Declarado pela incorporadora em fase de registro de incorporação (matrícula 133.406, protocolo 13.734/2022)."
+  },
+  "geo": [
+    -23.087137,
+    -47.208696
+  ],
+  "mapa": {
+    "rota": "Izzi Residence Indaiatuba",
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4602.176863593712!2d-47.208695999999996!3d-23.087136799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b5006c1481d5%3A0x21ae189665ad541f!2sIzzi%20Residence%20Indaiatuba!5e1!3m2!1spt-BR!2sbr!4v1789665395288!5m2!1spt-BR!2sbr"
   }
 }

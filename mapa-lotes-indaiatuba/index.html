@@ -72,8 +72,13 @@
     .pp .fonte{font-size:.68rem;color:var(--cinza);margin-top:.5rem}
     .pp .wa{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:700;padding:.45rem .8rem;border-radius:999px;margin-top:.5rem;font-size:.8rem}
     .pino-bairro div{position:relative;transform:translate(-50%,-100%);background:var(--preto);color:#fff;border:1px solid var(--ouro);border-radius:.6rem;padding:.4rem .65rem;white-space:nowrap;font:.7rem 'Josefin Sans',sans-serif;box-shadow:0 3px 10px rgba(0,0,0,.35);cursor:pointer}
+    .pino-bairro.baixo div{transform:translate(-50%,8px)}
+    .pino-bairro.baixo div::after{bottom:auto;top:-6px;border-right:0;border-bottom:0;border-left:1px solid var(--ouro);border-top:1px solid var(--ouro)}
     .pino-bairro b{display:block;color:var(--ouro);font-size:.82rem;letter-spacing:.04em}
     .pino-bairro div::after{content:'';position:absolute;left:50%;bottom:-6px;width:10px;height:10px;background:var(--preto);border-right:1px solid var(--ouro);border-bottom:1px solid var(--ouro);transform:translateX(-50%) rotate(45deg)}
+    .pino-bairro-mini div{width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:var(--ouro);color:var(--preto);border:2px solid var(--preto);display:flex;align-items:center;justify-content:center;font:700 .66rem 'Josefin Sans',sans-serif;box-shadow:0 2px 6px rgba(0,0,0,.35);cursor:pointer}
+    .pino-bairro-mini.grupo div{width:32px;height:32px;margin:-16px 0 0 -16px;box-shadow:0 0 0 3px rgba(201,162,39,.45),0 2px 6px rgba(0,0,0,.35)}
+    .pino-bairro-mini:hover div,.pino-bairro-mini:focus-visible div{transform:scale(1.15)}
     .pp .lnk{display:block;margin-top:.45rem;font-size:.78rem;color:var(--com)}
     .rotulo{background:#fff;border:1px solid var(--borda);border-radius:.35rem;padding:.1rem .35rem;font:700 .68rem 'Josefin Sans',sans-serif;color:var(--preto);box-shadow:0 1px 3px rgba(0,0,0,.15)}
     .leaflet-tooltip.rotulo::before{display:none}
@@ -2164,14 +2169,23 @@ mapa.createPane('plantas'); mapa.getPane('plantas').style.zIndex = 350;   // aba
 const camadaBairros = L.layerGroup();
 const plantas = {};
 const pinosBairro = {};
-const iconeBairro = (b, ls) => L.divIcon({ className: 'pino-bairro', html: `<div><b>${b.nome}</b><span>${ls.length} lote${ls.length > 1 ? 's' : ''} · ${desdeTxt(ls)}</span></div>`, iconSize: null, iconAnchor: [0, 0] });
+const htmlBairro = (b, ls) => `<div><b>${b.nome}</b><span>${ls.length} lote${ls.length > 1 ? 's' : ''} · ${desdeTxt(ls)}</span></div>`;
+const iconeBairro = (b, ls, baixo) => L.divIcon({ className: 'pino-bairro' + (baixo ? ' baixo' : ''), html: htmlBairro(b, ls), iconSize: null, iconAnchor: [0, 0] });
+const iconeMini = (b, ls) => L.divIcon({ className: 'pino-bairro-mini', html: `<div>${ls.length}</div>`, iconSize: null, iconAnchor: [0, 0] });
 BAIRROS.forEach(b => {
   const ls = LOTES.filter(x => x.b === b.id);
   const pts = ls.flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
   const centro = pts.length ? L.latLngBounds(pts).getCenter() : (b.centro ? L.latLng(b.centro) : null);
   if (!centro || !ls.length) return;
   const mk = L.marker(centro, { icon: iconeBairro(b, ls) });
-  mk.on('click', () => irParaBairro(b.id, true));
+  mk.on('click', () => {
+    if (mk._grupo) {   // grupo de bairros colados: aproxima até eles se separarem
+      const bx = L.latLngBounds(mk._grupo.map(id => pinosBairro[id].getLatLng())).pad(0.6);
+      const teto = mapa.getZoom() >= ZOOM_LOTES - 1 ? ZOOM_LOTES : ZOOM_LOTES - 1;   // para antes dos lotes: os nomes aparecem separados
+      const z = Math.min(Math.max(mapa.getBoundsZoom(bx), mapa.getZoom() + 1), teto);
+      mapa.setView(bx.getCenter(), z);
+    } else irParaBairro(b.id, true);
+  });
   pinosBairro[b.id] = mk;
   camadaBairros.addLayer(mk);
   if (b.overlay && /\.svg$/i.test(b.overlay.url)) plantas[b.id] = plantaSvg(b);
@@ -2218,6 +2232,7 @@ function atualizarPinosBairro() {
     mk.setIcon(iconeBairro(b, ls));
     if (!camadaBairros.hasLayer(mk)) camadaBairros.addLayer(mk);
   });
+  if (window.__rotulosProntos) arrumarRotulos();
 }
 function atualizarNivel() {
   const perto = mapa.getZoom() >= ZOOM_LOTES;
@@ -2228,6 +2243,84 @@ function atualizarNivel() {
   Object.entries(plantas).forEach(([id, o]) => liga(o, perto && !!cont[id] && vista.intersects(o.getBounds())));
 }
 mapa.on('zoomend moveend', atualizarNivel); atualizarNivel();
+
+// ─── RÓTULOS SEM SOBREPOSIÇÃO: de longe, o bairro cujo rótulo bateria em outro vira uma bolinha com o número de
+// lotes (nome no hover, zoom no clique). Os maiores (mais lotes) ganham o rótulo primeiro. Refeito a cada zoom e filtro.
+const medidas = {};
+const medidor = document.createElement('div');
+medidor.className = 'pino-bairro';
+medidor.style.cssText = 'position:absolute;left:-9999px;top:0;visibility:hidden;pointer-events:none';
+document.body.appendChild(medidor);
+function medir(html) {
+  if (!medidas[html]) {
+    medidor.innerHTML = html;
+    const d = medidor.firstElementChild;
+    medidas[html] = [d.offsetWidth, d.offsetHeight];
+  }
+  return medidas[html];
+}
+function arrumarRotulos() {
+  if (mapa.getZoom() >= ZOOM_LOTES) return;
+  const itens = [];
+  BAIRROS.forEach(b => {
+    const mk = pinosBairro[b.id];
+    if (!mk || !camadaBairros.hasLayer(mk)) return;
+    const ls = LOTES.filter(x => x.b === b.id && passa(x));
+    if (ls.length) itens.push({ b, mk, ls, p: mapa.latLngToContainerPoint(mk.getLatLng()) });
+  });
+  itens.sort((a, c) => c.ls.length - a.ls.length);
+  const caixas = [], minis = [];
+  const bate = (a, c) => a.x0 < c.x1 && c.x0 < a.x1 && a.y0 < c.y1 && c.y0 < a.y1;
+  const R = 17;   // raio da bolinha + folga
+  itens.forEach(it => {
+    const [w, h] = medir(htmlBairro(it.b, it.ls));
+    const cx = { x0: it.p.x - w / 2 - 4, x1: it.p.x + w / 2 + 4, y0: it.p.y - h - 10, y1: it.p.y + 4 };
+    const el = it.mk.getElement();
+    it.mk.setOpacity(1);
+    if (el) el.style.pointerEvents = '';
+    const livre = c => !caixas.some(o => bate(o, c)) && !minis.some(m => bate(m.caixa, c));
+    const cxBaixo = { x0: cx.x0, x1: cx.x1, y0: it.p.y - 4, y1: it.p.y + h + 10 };
+    const pos = livre(cx) ? 'cima' : livre(cxBaixo) ? 'baixo' : null;
+    if (pos) {
+      caixas.push(pos === 'cima' ? cx : cxBaixo);
+      it.mk._grupo = null;
+      it.mk.setIcon(iconeBairro(it.b, it.ls, pos === 'baixo'));
+      it.mk.setZIndexOffset(1000);
+      it.mk.unbindTooltip();
+      return;
+    }
+    // bolinha: entra no grupo mais próximo que ela tocaria; senão vira uma bolinha nova
+    const caixaMini = { x0: it.p.x - R, x1: it.p.x + R, y0: it.p.y - R, y1: it.p.y + R };
+    const alvo = minis.filter(m => bate(m.caixa, caixaMini))
+      .sort((m, n) => Math.hypot(m.p.x - it.p.x, m.p.y - it.p.y) - Math.hypot(n.p.x - it.p.x, n.p.y - it.p.y))[0];
+    if (alvo) {
+      alvo.membros.push(it);
+      it.mk.setOpacity(0);
+      it.mk.unbindTooltip();
+      if (el) el.style.pointerEvents = 'none';
+    } else {
+      minis.push({ p: it.p, caixa: caixaMini, membros: [it] });
+    }
+  });
+  minis.forEach(m => {
+    const cabeca = m.membros[0].mk;
+    const total = m.membros.reduce((t, it) => t + it.ls.length, 0);
+    const n = m.membros.length;
+    cabeca._grupo = n > 1 ? m.membros.map(it => it.b.id) : null;
+    cabeca.setIcon(L.divIcon({ className: 'pino-bairro-mini' + (n > 1 ? ' grupo' : ''), html: `<div>${total}</div>`, iconSize: null, iconAnchor: [0, 0] }));
+    cabeca.setZIndexOffset(500);
+    const dica = n > 1
+      ? `${n} loteamentos · ${total} lotes<br>${m.membros.map(it => it.b.nome).join('<br>')}<br><i>clique para aproximar</i>`
+      : `${m.membros[0].b.nome} · ${total} lote${total > 1 ? 's' : ''}`;
+    if (!cabeca.getTooltip()) cabeca.bindTooltip(dica, { direction: 'top', offset: [0, -14], className: 'rotulo' });
+    else cabeca.setTooltipContent(dica);
+  });
+}
+mapa.on('zoomend', arrumarRotulos);
+window.addEventListener('resize', arrumarRotulos);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { Object.keys(medidas).forEach(k => delete medidas[k]); arrumarRotulos(); });
+window.__rotulosProntos = true;
+arrumarRotulos();
 
 // ─── PAINEL ────────────────────────────────────────────────────────────────────
 function montarChips(alvo, defs, conjunto) {

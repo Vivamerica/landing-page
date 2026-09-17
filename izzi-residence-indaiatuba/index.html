@@ -57,6 +57,12 @@
     "url": "https://lancamentos.imoveisvivamerica.com.br/izzi-residence-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/izzi-residence-indaiatuba/images/hero.jpg",
     "numberOfAccommodationUnits": 448,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.087137,
+      "longitude": -47.208696
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Izzi%20Residence%20Indaiatuba",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz — Centro",
@@ -644,6 +650,14 @@
     <h2>No Centro, na esquina da Rua 24 de Maio</h2>
     <p class="prosa">A ficha técnica da incorporadora situa o terreno na esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz, no Centro de Indaiatuba. O mapa do material mostra no entorno a Avenida Presidente Vargas, a Avenida Dr. Jácomo Nazário, a Avenida Itororó e a Avenida Presidente Kennedy, sem informar distâncias.</p>
     <p class="prosa">A central de vendas fica em outro endereço: Avenida 9 de Julho, 52, no Park Meraki.</p>
+    <div class="mapa-box" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4602.176863593712!2d-47.208695999999996!3d-23.087136799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b5006c1481d5%3A0x21ae189665ad541f!2sIzzi%20Residence%20Indaiatuba!5e1!3m2!1spt-BR!2sbr!4v1789665395288!5m2!1spt-BR!2sbr" data-titulo="Mapa do Izzi Residence, Indaiatuba">
+      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do Izzi Residence">
+        <span class="mapa-ic" aria-hidden="true"></span>
+        <span class="mapa-t">Ver no mapa</span>
+        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>
+      </button>
+    </div>
+    <p><a class="mapa-rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=Izzi%20Residence%20Indaiatuba" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>
   </div>
 </section>
 
@@ -717,6 +731,27 @@
   </p>
 <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
 </footer>
+
+<script>
+// o iframe do Google só nasce no clique: nada sai daqui antes disso
+(function () {
+  var cx = document.querySelectorAll('.mapa-box');
+  for (var i = 0; i < cx.length; i++) {
+    cx[i].addEventListener('click', function () {
+      if (this.dataset.pronto) return;
+      this.dataset.pronto = '1';
+      var f = document.createElement('iframe');
+      f.src = this.dataset.src;
+      f.title = this.dataset.titulo || 'Mapa';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      this.innerHTML = '';
+      this.appendChild(f);
+    }, { once: true });
+  }
+})();
+</script>
 
 </body>
 </html>
