@@ -46,7 +46,7 @@ const APTOS = [
 const LOTES = [
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, img:'monte-carmelo-indaiatuba/images/hero.jpg',
     s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:568, slug:'monte-carmelo-indaiatuba' },
-  { n:'Parque Zarah', c:'Zarin', p:172500, m2:150, img:'parque-zarah-indaiatuba/images/hero.jpg',
+  { n:'Parque Zarah', c:'Zarin', p:210000, m2:150, img:'parque-zarah-indaiatuba/images/hero.jpg',
     s:'3 fases · residencial a partir de R$ 217,5 mil · Safira dez/2026 · Rubi e Pérola dez/2028', t:'Cond. fechado', slug:'parque-zarah-indaiatuba' },
   { n:'Jardim Di Italia', c:'Dominium', p:210000, m2:150, img:'di-italia-indaiatuba/images/hero.jpg',
     s:'Loteamento aberto · infraestrutura concluída · entrada R$ 44.000 · 60x', t:'Loteamento', est:44, slug:'di-italia-indaiatuba' },
