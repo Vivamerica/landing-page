@@ -9,19 +9,24 @@
   "schema_tipo": "RealEstateListing",
   "schema_desc": "Loteamento fechado da Urban Square em Indaiatuba/SP, com lotes a partir de 360 m², mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. A estrutura prevista inclui portaria principal, prédio administrativo, salão de festas, duas casas de campo, duas quadras de tênis, três quadras de beach tennis, complexo de piscinas com raia, piscina recreativa, piscina infantil, dois spas e prainha, piscina coberta e aquecida, academia, salão de jogos, brinquedoteca, pet place, pista de skate e fiação subterrânea. Na tabela de setembro/2026 há 319 lotes, de 360,00 a 616,90 m², a R$ 1.770 por m².",
   "endereco_schema": "Loteamento Ville de Provence",
-  "geo": [-23.047349, -47.206831],
-  "preco_min": 637200.00,
-  "preco_max": 1091913.00,
+  "geo": [
+    -23.047349,
+    -47.206831
+  ],
+  "preco_min": 637200.0,
+  "preco_max": 1091913.0,
   "offer_count": 319,
   "oferta_desc": "Tabela Ville de Provence de setembro/2026, a R$ 1.770 por m²: 319 lotes de 360,00 a 616,90 m², de R$ 637.200,00 a R$ 1.091.913,00. Pagamento com sinal de 10% e saldo em até 12 parcelas sem juros e sem correção, ou de 24 a 96 parcelas com juros de 0,8% ao mês e correção pelo IPCA — anual até 36 meses, mensal acima disso.",
   "produto_nome": "Ville de Provence — lotes de 360 a 617 m² em Indaiatuba",
   "produto_desc": "Lotes em loteamento fechado da Urban Square em Indaiatuba/SP, de 360,00 a 616,90 m², a R$ 1.770 por m² na tabela de setembro/2026.",
   "marca": "Urban Square",
-  "marca_topo": ["VILLE DE PROVENCE", "Indaiatuba"],
+  "marca_topo": [
+    "VILLE DE PROVENCE",
+    "Indaiatuba"
+  ],
   "lazer": [],
   "wa_flutuante": "Olá! Quero falar sobre os lotes do Ville de Provence.",
   "wa_topo": "Olá! Tenho interesse no Ville de Provence. Pode me passar a tabela e as condições?",
-
   "hero": {
     "eyebrow": "Loteamento fechado · Indaiatuba/SP",
     "sub": "Lotes de 360 a 617 m² · Urban Square",
@@ -31,7 +36,6 @@
     "cta_msg": "Olá! Quero a tabela do Ville de Provence e as condições de pagamento.",
     "cta_texto": "Pedir a tabela"
   },
-
   "secoes": [
     {
       "label": "O empreendimento",
@@ -41,10 +45,22 @@
         "Segundo o book da incorporadora, são mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. A tabela de setembro/2026 traz 319 lotes distribuídos em 30 quadras, de 360,00 a 616,90 m², todos ao mesmo preço por metro: R$ 1.770."
       ],
       "numeros": [
-        { "n": "319", "p": "lotes na tabela de set/2026" },
-        { "n": "360 m²", "p": "área mínima dos lotes" },
-        { "n": "53 mil", "p": "m² de área de lazer" },
-        { "n": "168 mil", "p": "m² de áreas verdes" }
+        {
+          "n": "319",
+          "p": "lotes na tabela de set/2026"
+        },
+        {
+          "n": "360 m²",
+          "p": "área mínima dos lotes"
+        },
+        {
+          "n": "53 mil",
+          "p": "m² de área de lazer"
+        },
+        {
+          "n": "168 mil",
+          "p": "m² de áreas verdes"
+        }
       ],
       "depois": "galeria"
     },
@@ -58,16 +74,52 @@
       ],
       "tabela": {
         "legenda": "Exemplo com o menor lote da tabela de setembro/2026: 360,00 m², com sinal de R$ 63.720,00.",
-        "cab": ["Parcelas", "Valor da parcela", "Juros e correção"],
+        "cab": [
+          "Parcelas",
+          "Valor da parcela",
+          "Juros e correção"
+        ],
         "linhas": [
-          ["12x", "R$ 47.790,00", "sem juros e sem correção"],
-          ["24x", "R$ 26.357,44", "0,8% a.m. + IPCA anual"],
-          ["36x", "R$ 18.397,08", "0,8% a.m. + IPCA anual"],
-          ["48x", "R$ 14.435,02", "0,8% a.m. + IPCA mensal"],
-          ["60x", "R$ 12.072,19", "0,8% a.m. + IPCA mensal"],
-          ["72x", "R$ 10.508,88", "0,8% a.m. + IPCA mensal"],
-          ["84x", "R$ 9.402,34", "0,8% a.m. + IPCA mensal"],
-          ["96x", "R$ 8.581,17", "0,8% a.m. + IPCA mensal"]
+          [
+            "12x",
+            "R$ 47.790,00",
+            "sem juros e sem correção"
+          ],
+          [
+            "24x",
+            "R$ 26.357,44",
+            "0,8% a.m. + IPCA anual"
+          ],
+          [
+            "36x",
+            "R$ 18.397,08",
+            "0,8% a.m. + IPCA anual"
+          ],
+          [
+            "48x",
+            "R$ 14.435,02",
+            "0,8% a.m. + IPCA mensal"
+          ],
+          [
+            "60x",
+            "R$ 12.072,19",
+            "0,8% a.m. + IPCA mensal"
+          ],
+          [
+            "72x",
+            "R$ 10.508,88",
+            "0,8% a.m. + IPCA mensal"
+          ],
+          [
+            "84x",
+            "R$ 9.402,34",
+            "0,8% a.m. + IPCA mensal"
+          ],
+          [
+            "96x",
+            "R$ 8.581,17",
+            "0,8% a.m. + IPCA mensal"
+          ]
         ]
       }
     },
@@ -79,12 +131,32 @@
       ],
       "tabela": {
         "legenda": "Distribuição por área na tabela de setembro/2026.",
-        "cab": ["Faixa de área", "Lotes", "Valor de tabela"],
+        "cab": [
+          "Faixa de área",
+          "Lotes",
+          "Valor de tabela"
+        ],
         "linhas": [
-          ["360 a 399 m²", "242", "de R$ 637.200 a R$ 706.230"],
-          ["400 a 499 m²", "44", "de R$ 708.000 a R$ 882.593"],
-          ["500 a 599 m²", "31", "de R$ 885.000 a R$ 1.059.723"],
-          ["600 m² ou mais", "2", "até R$ 1.091.913"]
+          [
+            "360 a 399 m²",
+            "242",
+            "de R$ 637.200 a R$ 706.230"
+          ],
+          [
+            "400 a 499 m²",
+            "44",
+            "de R$ 708.000 a R$ 882.593"
+          ],
+          [
+            "500 a 599 m²",
+            "31",
+            "de R$ 885.000 a R$ 1.059.723"
+          ],
+          [
+            "600 m² ou mais",
+            "2",
+            "até R$ 1.091.913"
+          ]
         ]
       },
       "depois": "lazer"
@@ -99,27 +171,97 @@
       ]
     }
   ],
-
   "galeria": {
     "label": "Perspectivas",
     "h2": "Como o projeto foi desenhado",
     "aviso": "Imagens do book da incorporadora, identificadas por ela como meramente ilustrativas. A vegetação aparece em porte adulto e será entregue em estágio inicial, conforme projeto específico.",
     "itens": [
-      { "arq": "portaria.jpg", "alt": "Perspectiva da portaria principal do Ville de Provence", "w": 1200, "h": 490, "leg": "Portaria principal" },
-      { "arq": "piscina.jpg", "alt": "Perspectiva do complexo de piscinas do Ville de Provence", "w": 1200, "h": 675, "leg": "Complexo de piscinas, com raia e prainha" },
-      { "arq": "complexo-lazer.jpg", "alt": "Perspectiva aérea do complexo de lazer do Ville de Provence", "w": 1200, "h": 499, "leg": "O complexo de lazer visto de cima" },
-      { "arq": "quadras-tenis.jpg", "alt": "Perspectiva das quadras de tênis do Ville de Provence", "w": 1200, "h": 675, "leg": "Duas quadras de tênis" },
-      { "arq": "beach-tennis.jpg", "alt": "Perspectiva das quadras de beach tennis do Ville de Provence", "w": 1200, "h": 675, "leg": "Três quadras de beach tennis" },
-      { "arq": "piscina-aquecida.jpg", "alt": "Perspectiva da piscina coberta e aquecida do Ville de Provence", "w": 1200, "h": 675, "leg": "Piscina coberta e aquecida" },
-      { "arq": "academia.jpg", "alt": "Perspectiva da academia do Ville de Provence", "w": 1200, "h": 675, "leg": "Academia" },
-      { "arq": "salao-festas.jpg", "alt": "Perspectiva do interior do salão de festas do Ville de Provence", "w": 1200, "h": 675, "leg": "Salão de festas" },
-      { "arq": "casas-de-campo.jpg", "alt": "Perspectiva externa das casas de campo do Ville de Provence", "w": 1200, "h": 675, "leg": "Duas casas de campo" },
-      { "arq": "brinquedoteca.jpg", "alt": "Perspectiva da brinquedoteca do Ville de Provence", "w": 1200, "h": 571, "leg": "Salão de jogos e brinquedoteca" },
-      { "arq": "pista-skate.jpg", "alt": "Perspectiva da pista de skate do Ville de Provence", "w": 1200, "h": 675, "leg": "Pista de skate" },
-      { "arq": "pet-place.jpg", "alt": "Perspectiva do pet place do Ville de Provence", "w": 1200, "h": 675, "leg": "Pet place" }
+      {
+        "arq": "portaria.jpg",
+        "alt": "Perspectiva da portaria principal do Ville de Provence",
+        "w": 1200,
+        "h": 490,
+        "leg": "Portaria principal"
+      },
+      {
+        "arq": "piscina.jpg",
+        "alt": "Perspectiva do complexo de piscinas do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Complexo de piscinas, com raia e prainha"
+      },
+      {
+        "arq": "complexo-lazer.jpg",
+        "alt": "Perspectiva aérea do complexo de lazer do Ville de Provence",
+        "w": 1200,
+        "h": 499,
+        "leg": "O complexo de lazer visto de cima"
+      },
+      {
+        "arq": "quadras-tenis.jpg",
+        "alt": "Perspectiva das quadras de tênis do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Duas quadras de tênis"
+      },
+      {
+        "arq": "beach-tennis.jpg",
+        "alt": "Perspectiva das quadras de beach tennis do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Três quadras de beach tennis"
+      },
+      {
+        "arq": "piscina-aquecida.jpg",
+        "alt": "Perspectiva da piscina coberta e aquecida do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Piscina coberta e aquecida"
+      },
+      {
+        "arq": "academia.jpg",
+        "alt": "Perspectiva da academia do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Academia"
+      },
+      {
+        "arq": "salao-festas.jpg",
+        "alt": "Perspectiva do interior do salão de festas do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Salão de festas"
+      },
+      {
+        "arq": "casas-de-campo.jpg",
+        "alt": "Perspectiva externa das casas de campo do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Duas casas de campo"
+      },
+      {
+        "arq": "brinquedoteca.jpg",
+        "alt": "Perspectiva da brinquedoteca do Ville de Provence",
+        "w": 1200,
+        "h": 571,
+        "leg": "Salão de jogos e brinquedoteca"
+      },
+      {
+        "arq": "pista-skate.jpg",
+        "alt": "Perspectiva da pista de skate do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Pista de skate"
+      },
+      {
+        "arq": "pet-place.jpg",
+        "alt": "Perspectiva do pet place do Ville de Provence",
+        "w": 1200,
+        "h": 675,
+        "leg": "Pet place"
+      }
     ]
   },
-
   "lazer_bloco": {
     "h2": "Piscina de 350 m², tênis, beach tennis e duas casas de campo",
     "intro": "A lista abaixo segue a legenda da implantação no book da incorporadora.",
@@ -145,47 +287,95 @@
     ],
     "nota": "O book informa que as imagens são ilustrativas e que os projetos podem sofrer alterações sem aviso prévio."
   },
-
   "ficha": [
-    ["Realização", "Urban Square"],
-    ["Tipo", "Loteamento fechado"],
-    ["Lotes na tabela", "319, em 30 quadras (setembro/2026)"],
-    ["Área dos lotes", "de 360,00 a 616,90 m²"],
-    ["Valor do m²", "R$ 1.770, igual em toda a tabela"],
-    ["Área de lazer", "mais de 53.000 m², segundo o book"],
-    ["Áreas verdes", "mais de 168.000 m², segundo o book"],
-    ["Projeto", "Arquitetura de Antonio Scarpa; paisagismo de Roberto Riscala"],
-    ["Aprovação", "Decreto municipal nº 15.336, de 6 de dezembro de 2024"],
-    ["Registro do loteamento", "O book informa que a comercialização ocorre após o registro no Oficial de Registro de Imóveis (Lei 6.766/79); peça a nós a certidão atualizada antes de assinar"],
-    ["Entrega", "A incorporadora não informou cronograma no material que recebemos"],
-    ["Pagamento", "Sinal de 10% e saldo em até 12x sem juros, ou de 24 a 96x com juros de 0,8% a.m. e IPCA"]
+    [
+      "Realização",
+      "Urban Square"
+    ],
+    [
+      "Tipo",
+      "Loteamento fechado"
+    ],
+    [
+      "Lotes na tabela",
+      "319, em 30 quadras (setembro/2026)"
+    ],
+    [
+      "Área dos lotes",
+      "de 360,00 a 616,90 m²"
+    ],
+    [
+      "Valor do m²",
+      "R$ 1.770, igual em toda a tabela"
+    ],
+    [
+      "Área de lazer",
+      "mais de 53.000 m², segundo o book"
+    ],
+    [
+      "Áreas verdes",
+      "mais de 168.000 m², segundo o book"
+    ],
+    [
+      "Projeto",
+      "Arquitetura de Antonio Scarpa; paisagismo de Roberto Riscala"
+    ],
+    [
+      "Aprovação",
+      "Decreto municipal nº 15.336, de 6 de dezembro de 2024"
+    ],
+    [
+      "Documentação",
+      "Aprovado pelo decreto municipal nº 15.336/2024; certidão de matrícula e memorial enviados sob pedido"
+    ],
+    [
+      "Entrega",
+      "Cronograma ainda não informado pela incorporadora"
+    ],
+    [
+      "Pagamento",
+      "Sinal de 10% e saldo em até 12x sem juros, ou de 24 a 96x com juros de 0,8% a.m. e IPCA"
+    ]
   ],
-
   "faq": [
-    { "q": "Quanto custa um lote no Ville de Provence?",
-      "a": "Na tabela de setembro/2026 o preço é de R$ 1.770 por metro quadrado, igual para todos os lotes. O menor, de 360,00 m², custa R$ 637.200,00 e o maior, de 616,90 m², R$ 1.091.913,00." },
-    { "q": "Quantos lotes ainda estão disponíveis?",
-      "a": "A tabela de setembro/2026 traz 319 lotes, distribuídos em 30 quadras. A disponibilidade muda a cada atualização da incorporadora — confirme conosco antes de fechar." },
-    { "q": "Como funciona o parcelamento?",
-      "a": "O sinal é de 10% do valor do lote e o saldo é parcelado. Em até 12 parcelas não há juros nem correção. De 24 a 96 parcelas há juros de 0,8% ao mês e correção pelo IPCA: anual quando o prazo fica entre 12 e 36 meses, mensal quando passa de 36." },
-    { "q": "Qual o tamanho dos lotes?",
-      "a": "De 360,00 a 616,90 m². A maior parte da tabela fica na faixa de 360 a 399 m²: são 242 dos 319 lotes. Acima de 500 m² são 33 lotes, e só 2 passam de 600 m²." },
-    { "q": "O Ville de Provence é um condomínio fechado?",
-      "a": "O material da incorporadora o descreve como loteamento fechado, aprovado pela Prefeitura de Indaiatuba pelo decreto nº 15.336, de 6 de dezembro de 2024. Loteamento fechado e condomínio de lotes são figuras jurídicas diferentes, com regras próprias de área comum e de convenção — peça a nós a documentação do empreendimento para conferir qual é o caso antes de decidir." },
-    { "q": "O loteamento já está registrado em cartório?",
-      "a": "O book da incorporadora traz a aprovação da Prefeitura pelo decreto nº 15.336/2024 e informa que a comercialização depende do registro no Oficial de Registro de Imóveis competente. Não publicamos aqui o número da matrícula porque ainda não o recebemos: peça a nós a certidão atualizada antes de assinar qualquer proposta." },
-    { "q": "Qual a previsão de entrega?",
-      "a": "O material que temos da incorporadora não traz data de entrega das obras. Quando a Urban Square informar o cronograma, atualizamos esta página." },
-    { "q": "Onde fica o Ville de Provence?",
-      "a": "Na região do Parque do Mirim, em Indaiatuba. O projeto urbanístico protocolado na Prefeitura leva o nome de Parque Altos do Mirim. Pelo book, são 8 minutos até o centro da cidade e 20 até o Aeroporto de Viracopos." }
+    {
+      "q": "Quanto custa um lote no Ville de Provence?",
+      "a": "Na tabela de setembro/2026 o preço é de R$ 1.770 por metro quadrado, igual para todos os lotes. O menor, de 360,00 m², custa R$ 637.200,00 e o maior, de 616,90 m², R$ 1.091.913,00."
+    },
+    {
+      "q": "Quantos lotes ainda estão disponíveis?",
+      "a": "A tabela de setembro/2026 traz 319 lotes, distribuídos em 30 quadras. A disponibilidade muda a cada atualização da incorporadora — confirme conosco antes de fechar."
+    },
+    {
+      "q": "Como funciona o parcelamento?",
+      "a": "O sinal é de 10% do valor do lote e o saldo é parcelado. Em até 12 parcelas não há juros nem correção. De 24 a 96 parcelas há juros de 0,8% ao mês e correção pelo IPCA: anual quando o prazo fica entre 12 e 36 meses, mensal quando passa de 36."
+    },
+    {
+      "q": "Qual o tamanho dos lotes?",
+      "a": "De 360,00 a 616,90 m². A maior parte da tabela fica na faixa de 360 a 399 m²: são 242 dos 319 lotes. Acima de 500 m² são 33 lotes, e só 2 passam de 600 m²."
+    },
+    {
+      "q": "O Ville de Provence é um condomínio fechado?",
+      "a": "O material da incorporadora o descreve como loteamento fechado, aprovado pela Prefeitura de Indaiatuba pelo decreto nº 15.336, de 6 de dezembro de 2024. Loteamento fechado e condomínio de lotes são figuras jurídicas diferentes, com regras próprias de área comum e de convenção — peça a nós a documentação do empreendimento para conferir qual é o caso antes de decidir."
+    },
+    {
+      "q": "Onde vejo a documentação do loteamento?",
+      "a": "O Ville de Provence foi aprovado pela Prefeitura de Indaiatuba pelo decreto nº 15.336, de 6 de dezembro de 2024, e está em comercialização. Mandamos a certidão de matrícula e o memorial do loteamento para quem pedir — vale ler antes de assinar qualquer proposta, como em qualquer compra de lote."
+    },
+    {
+      "q": "Qual a previsão de entrega?",
+      "a": "O material que temos da incorporadora não traz a data de conclusão das obras. Pedimos o cronograma à Urban Square e atualizamos esta página assim que ele chegar."
+    },
+    {
+      "q": "Onde fica o Ville de Provence?",
+      "a": "Na região do Parque do Mirim, em Indaiatuba. O projeto urbanístico protocolado na Prefeitura leva o nome de Parque Altos do Mirim. Pelo book, são 8 minutos até o centro da cidade e 20 até o Aeroporto de Viracopos."
+    }
   ],
-
   "cta": {
     "h2": "Quer a tabela do Ville de Provence?",
     "p": "Mandamos a tabela de setembro/2026 com os 319 lotes, confirmamos com a Urban Square quais seguem disponíveis e simulamos o pagamento de 12 a 96 parcelas.",
     "msg": "Olá! Quero a tabela do Ville de Provence e uma simulação de pagamento."
   },
-
   "home": {
     "tipo": "lote",
     "preco": 637200,
@@ -199,16 +389,14 @@
     "alt": "Perspectiva da portaria do Ville de Provence, em Indaiatuba",
     "itemlist": "Ville de Provence — loteamento fechado da Urban Square em Indaiatuba, 319 lotes de 360 a 617 m² a partir de R$ 637.200 (tabela set/2026)"
   },
-
   "rodape": {
     "marca": "VILLE DE PROVENCE",
     "linha": "Ville de Provence · loteamento fechado com lotes de 360 a 617 m² · Indaiatuba, SP",
     "realizacao": "Realização Urban Square",
-    "legal": "Imagens meramente ilustrativas, com a vegetação representada em porte adulto; a vegetação é entregue em estágio inicial, conforme projeto específico, e os projetos podem sofrer alterações sem aviso prévio. Preços e condições conforme a tabela de setembro/2026, a R$ 1.770 por m², sujeitos a alteração sem aviso prévio; de 24 a 96 parcelas há juros de 0,80% a.m. e correção pelo IPCA (anual até 36 meses, mensal acima disso). A disponibilidade dos lotes é confirmada com a Urban Square. Loteamento aprovado pela Prefeitura Municipal de Indaiatuba pelo decreto nº 15.336, de 6 de dezembro de 2024; a comercialização depende do registro no Oficial de Registro de Imóveis competente."
+    "legal": "Imagens meramente ilustrativas, com a vegetação representada em porte adulto; a vegetação é entregue em estágio inicial, conforme projeto específico, e os projetos podem sofrer alterações sem aviso prévio. Preços e condições conforme a tabela de setembro/2026, a R$ 1.770 por m², sujeitos a alteração sem aviso prévio; de 24 a 96 parcelas há juros de 0,80% a.m. e correção pelo IPCA (anual até 36 meses, mensal acima disso). A disponibilidade dos lotes é confirmada com a Urban Square. Loteamento aprovado pela Prefeitura Municipal de Indaiatuba pelo decreto nº 15.336, de 6 de dezembro de 2024. Documentação do loteamento disponível sob pedido."
   },
-
   "llms": {
     "secao": "condominios",
-    "linha": "Loteamento fechado da Urban Square em Indaiatuba, com lotes de 360,00 a 616,90 m², mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. Estrutura prevista: portaria principal e de serviços, prédio administrativo, complexo de piscinas (raia, recreativa, infantil, piscina de 350 m² com dois spas e prainha), piscina coberta e aquecida, academia, duas quadras de tênis, três de beach tennis, salão de festas com espaço gourmet, duas casas de campo, salão de jogos, brinquedoteca, pet place, pista de skate e fiação subterrânea. Arquitetura de Antonio Scarpa e paisagismo de Roberto Riscala. Tabela de setembro/2026 com 319 lotes em 30 quadras, a R$ 1.770/m², de R$ 637.200,00 (360,00 m²) a R$ 1.091.913,00 (616,90 m²); sinal de 10% e saldo em até 12 parcelas sem juros, ou de 24 a 96 parcelas com juros de 0,8% a.m. e IPCA. Aprovado pelo decreto municipal nº 15.336, de 06/12/2024; a comercialização depende do registro no cartório de imóveis."
+    "linha": "Loteamento fechado da Urban Square em Indaiatuba, com lotes de 360,00 a 616,90 m², mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. Estrutura prevista: portaria principal e de serviços, prédio administrativo, complexo de piscinas (raia, recreativa, infantil, piscina de 350 m² com dois spas e prainha), piscina coberta e aquecida, academia, duas quadras de tênis, três de beach tennis, salão de festas com espaço gourmet, duas casas de campo, salão de jogos, brinquedoteca, pet place, pista de skate e fiação subterrânea. Arquitetura de Antonio Scarpa e paisagismo de Roberto Riscala. Tabela de setembro/2026 com 319 lotes em 30 quadras, a R$ 1.770/m², de R$ 637.200,00 (360,00 m²) a R$ 1.091.913,00 (616,90 m²); sinal de 10% e saldo em até 12 parcelas sem juros, ou de 24 a 96 parcelas com juros de 0,8% a.m. e IPCA. Aprovado pelo decreto municipal nº 15.336, de 06/12/2024. Em comercialização; documentação enviada sob pedido."
   }
 }
