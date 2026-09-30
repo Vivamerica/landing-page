@@ -14,8 +14,6 @@ s = io.open(P, encoding='utf-8', newline='').read()
 assert "id:'villeprovence'" not in s, 'ja esta no mapa'
 assert AB in s and AL in s, 'ancoras mudaram — reinsira a mao'
 s = s.replace(AB, AB + ' ' + BAIRRO, 1)
-s = s.replace(AL, AL + '
-' + LOTES.rstrip('
-'), 1)
+s = s.replace(AL, AL + chr(10) + LOTES.rstrip(chr(10)), 1)
 io.open(P, 'w', encoding='utf-8', newline='').write(s)
 print('Ville de Provence de volta: 1 bairro + 312 lotes')
