@@ -47,7 +47,7 @@ const MOVIMENTOS = [
   { n: 'Hélade — Park Meraki', c: 'PERPLAN',  de: 1300668, para: 1391504, causa: 'reajuste na tabela da construtora', fonte: 'tabela PERPLAN de setembro/2026' },
   { n: 'Parque Zarah',         c: 'Zarin',    de: 249123,  para: 211050,  causa: 'menor lote agora é misto de 150 m² (fase Pérola); os de R$ 172.500 da quadra 14 saíram da tabela; residencial a partir de R$ 218.588 — a tabela de outubro reajustou os 662 lotes em 0,5%', fonte: 'tabela Zarin de 01/10/2026 (3 fases)' },
   { n: 'Jardim Di Italia',     c: 'Dominium', de: 188000,  para: 210000,  causa: 'reajuste do lote residencial de 150 m² à vista (a prazo: R$ 220.000 com entrada de R$ 44.000 em 60x)', fonte: 'relatório de estoque Dominium de 04/09/2026' },
-  { n: 'Alpnach Residence',    c: 'Dominium', de: 480000,  para: 510000,  causa: 'reajuste do lote de 300 m² à vista — restam 28 lotes (04/09/2026)', fonte: 'relatório de estoque Dominium de 04/09/2026' },
+  { n: 'Alpnach Residence',    c: 'Dominium', de: 480000,  para: 510000,  causa: 'reajuste do lote de 300 m² à vista — restam 19 lotes (01/10/2026)', fonte: 'relatório de estoque Dominium de 04/09/2026' },
   { n: 'Gran Vic Colibri',     c: 'VIC Engenharia', de: 332450, para: 334479, causa: 'reajuste na tabela da construtora — 84 unidades disponíveis', fonte: 'tabela VIC de 02/09/2026' },
   { n: 'Gran Vic Tangará',     c: 'VIC Engenharia', de: 331737, para: 330000, causa: 'a unidade mais barata da tabela (Torre 03, apto 1001) está enquadrada em Faixa 4/SBPE; na Faixa 3 o piso é R$ 334.278', fonte: 'tabela VIC de 02/09/2026' },
 ];
