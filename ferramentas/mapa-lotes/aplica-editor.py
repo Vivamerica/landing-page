@@ -33,11 +33,20 @@ print('%d pino(s) e %d planta(s) no arquivo' % (len(pinos), len(plantas)))
 # ── plantas ─────────────────────────────────────────────────────────
 MLAT = 110574.0
 for bid, cfg in plantas.items():
+    # SEMPRE partir da planta sem girar. Rodar o script duas vezes girava a
+    # imagem de novo — a Reserva chegou a 180 graus assim, de cabeca para baixo,
+    # com os bounds certos (a conta nao depende do estado do arquivo, mas a
+    # imagem sim). Na primeira passada o original fica guardado aqui.
     png = IMG + bid + '.png'
-    if not os.path.exists(png):
-        print('  %s: sem PNG, pulando' % bid)
-        continue
-    im = Image.open(png).convert('RGBA')
+    base = AQUI + '/plantas-sem-girar/' + bid + '.png'
+    os.makedirs(os.path.dirname(base), exist_ok=True)
+    if not os.path.exists(base):
+        if not os.path.exists(png):
+            print('  %s: sem PNG, pulando' % bid)
+            continue
+        Image.open(png).save(base)
+        print('  %s: planta original guardada em plantas-sem-girar/' % bid)
+    im = Image.open(base).convert('RGBA')
     larg_m = cfg['larg']
     alt_m = larg_m * im.size[1] / im.size[0]
     rot = cfg['rot']
