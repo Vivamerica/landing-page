@@ -58,12 +58,16 @@ def data_da_tabela(slug):
     datas = PERTO.findall(t)
     if datas:
         return max(set(datas), key=chave), 'dia'
-    datas = QUALQUER.findall(t)
-    if datas:
-        return max(set(datas), key=chave), 'dia (aproximado)'
+    # O mes vem ANTES de "qualquer data da pagina": a landing do Alphaville cita
+    # a tabela so por mes (set/2026) e traz o Decreto Municipal de 11/12/2025 como
+    # unica data completa. Pelo fallback largo, um empreendimento atualizado em
+    # setembro aparecia como dez/2025 — dez meses de atraso que nao existiam.
     meses = MES.findall(t)
     if meses:
         return meses[0], 'mês'
+    datas = QUALQUER.findall(t)
+    if datas:
+        return max(set(datas), key=chave), 'dia (SUSPEITO: data solta da página)'
     return None, 'não achei'
 
 
@@ -91,7 +95,11 @@ saida.sort(key=ordem)
 print('%-32s %-18s %-12s %-10s %s' % ('EMPREENDIMENTO', 'CONSTRUTORA', 'TABELA', 'ESTOQUE', 'TIPO'))
 print('-' * 92)
 for x in saida:
-    print('%-32s %-18s %-12s %-10s %s' % (x['n'][:32], (x['c'] or '')[:18], x['data'] or '—',
+    # marca a data que nao veio colada a "tabela/estoque/relatorio": e palpite,
+    # e palpite ja fez empreendimento em dia parecer dez meses atrasado
+    sinal = ' ?' if 'SUSPEITO' in (x['origem'] or '') else ''
+    print('%-32s %-18s %-12s %-10s %s' % (x['n'][:32], (x['c'] or '')[:18],
+                                          (x['data'] or '—') + sinal,
                                           ('%d' % x['est']) if x['est'] else '—', x['t']))
 print()
 print('%d lançamentos na fonte única (%d apartamentos, %d lotes)' % (len(saida), len(APT), len(LOT)))
