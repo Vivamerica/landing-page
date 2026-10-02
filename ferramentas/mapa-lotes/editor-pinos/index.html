@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pinos do mapa de lotes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root{--preto:#14110f;--ouro:#c9a227;--borda:#d9d4cb;--creme:#faf8f5;--verde:#1f7a3f;--cinza:#7d7569}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font:14px/1.45 system-ui,sans-serif;color:var(--preto)}
+  body{display:flex}
+  aside{width:340px;flex:0 0 340px;border-right:1px solid var(--borda);display:flex;flex-direction:column;background:var(--creme)}
+  header{background:var(--preto);color:#fff;padding:.7rem .9rem}
+  header b{color:var(--ouro);letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+  header div{font-size:.72rem;opacity:.75;margin-top:.15rem}
+  .barra{padding:.6rem .9rem;border-bottom:1px solid var(--borda);display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+  button{font:inherit;font-size:.78rem;padding:.4rem .7rem;border-radius:.4rem;border:1px solid var(--borda);background:#fff;cursor:pointer}
+  button.forte{background:var(--preto);color:#fff;border-color:var(--preto);font-weight:700}
+  button.ouro{background:var(--ouro);border-color:var(--ouro);font-weight:700}
+  button:disabled{opacity:.45;cursor:default}
+  #prog{font-size:.75rem;color:var(--cinza);padding:.35rem .9rem;border-bottom:1px solid var(--borda)}
+  #prog b{color:var(--verde)}
+  ul{list-style:none;margin:0;padding:0;overflow:auto;flex:1}
+  li{padding:.4rem .9rem;border-bottom:1px solid #eee;cursor:pointer;display:flex;justify-content:space-between;gap:.5rem;align-items:center}
+  li:hover{background:#fff}
+  li.ativo{background:var(--ouro);font-weight:700}
+  li.posto{color:var(--verde)}
+  li.posto .marca::after{content:'✓';font-weight:700}
+  li .meta{font-size:.72rem;color:var(--cinza);font-weight:400}
+  li.ativo .meta{color:#4a3f1a}
+  .quadra{background:#efece6;font-weight:700;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--cinza);padding:.3rem .9rem;position:sticky;top:0}
+  #mapa{flex:1}
+  .pino-lote{background:var(--verde);color:#fff;border-radius:999px;padding:1px 5px;font:700 11px system-ui;white-space:nowrap;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+  .pino-lote.ativo{background:var(--ouro);color:#000}
+  .ajuda{padding:.6rem .9rem;font-size:.72rem;color:var(--cinza);border-top:1px solid var(--borda);background:#fff}
+  .ajuda b{color:var(--preto)}
+</style>
+</head>
+<body>
+<aside>
+  <header><b>Pinos do mapa de lotes</b><div>clique no lote, depois no lugar dele no mapa</div></header>
+  <div class="barra" style="padding-bottom:.3rem">
+    <select id="bairro" style="width:100%;font:inherit;font-size:.8rem;padding:.4rem;border-radius:.4rem;border:1px solid var(--borda)"></select>
+  </div>
+  <div id="semPlanta" style="display:none;background:#fff6e0;border-bottom:1px solid var(--borda);padding:.5rem .9rem;font-size:.73rem;color:#7a5c00">
+    Este empreendimento ainda não tem a planta posicionada — use os controles abaixo.
+  </div>
+  <div id="painelPlanta" style="display:none;border-bottom:1px solid var(--borda);padding:.55rem .9rem;background:#fff">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem">
+      <b style="font-size:.76rem">Planta</b>
+      <label style="font-size:.72rem;display:flex;gap:.25rem;align-items:center"><input type="checkbox" id="moverPlanta"> mover</label>
+    </div>
+    <div style="font-size:.71rem;color:var(--cinza)">Giro <span id="vRot">0</span>°</div>
+    <input type="range" id="rot" min="-180" max="180" step="0.5" value="0" style="width:100%">
+    <div style="font-size:.71rem;color:var(--cinza);margin-top:.2rem">Largura <span id="vLarg">500</span> m</div>
+    <input type="range" id="larg" min="80" max="2000" step="5" value="500" style="width:100%">
+    <div style="font-size:.71rem;color:var(--cinza);margin-top:.2rem">Opacidade</div>
+    <input type="range" id="opac" min="20" max="100" step="5" value="90" style="width:100%">
+    <div style="font-size:.69rem;color:var(--cinza);margin-top:.3rem">
+      Ligue <b>mover</b> e arraste a planta. Desligue para voltar a marcar pinos.
+    </div>
+  </div>
+  <div class="barra">
+    <button id="interp" class="ouro" title="Preenche os lotes entre os que você já marcou, em cada quadra">Seguir sequência</button>
+    <button id="salvar" class="forte">Salvar</button>
+    <button id="limpar">Limpar quadra</button>
+    <label style="font-size:.75rem;display:flex;gap:.25rem;align-items:center"><input type="checkbox" id="sug" checked> ímã</label>
+  </div>
+  <div id="prog"></div>
+  <ul id="lista"></ul>
+  <div class="ajuda">
+    <b>Como funciona:</b> marque o <b>primeiro e o último lote de cada fila</b> da quadra e clique em <b>Seguir sequência</b> — os do meio entram distribuídos entre eles.<br><br>
+    A numeração dá a volta na quadra: na G, por exemplo, 01 a 19 correm por uma rua e 20 a 36 voltam pela outra. Então são <b>quatro</b> marcações nessa quadra (01, 19, 20 e 36), não duas — se marcar só as pontas, os lotes do meio cortam por dentro da quadra.<br><br>
+    Os pontinhos cinza são marcadores que achei na planta; clicar perto de um encaixa o pino nele. Desligue no <b>ímã</b> se atrapalhar. Pinos podem ser arrastados.
+  </div>
+</aside>
+<div id="mapa"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+let BAIRROS = [], bairro = null, LOTES = [], SUG = [], pos = {}, ativo = null, pinos = {},
+    camadaSug = null, camadaPlanta = null;
+
+const mapa = L.map('mapa', { zoomControl: true }).setView([-23.1272, -47.2023], 16);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  { maxZoom: 20, maxNativeZoom: 19, attribution: 'Esri' }).addTo(mapa);
+
+const brl = n => 'R$ ' + n.toLocaleString('pt-BR', { maximumFractionDigits: 0 });
+
+fetch('dados.json').then(r => r.json()).then(d => {
+  BAIRROS = d.bairros; SUG = d.sugestoes || [];
+  const sel = document.getElementById('bairro');
+  BAIRROS.forEach((b, i) => {
+    const o = document.createElement('option');
+    o.value = i; o.textContent = `${b.nome} (${b.lotes.length})`;
+    sel.appendChild(o);
+  });
+  sel.onchange = () => trocaBairro(+sel.value);
+  // os pinos já marcados valem para todos os bairros: a chave traz o id do bairro
+  fetch('pinos.json').then(r => r.ok ? r.json() : {}).then(p => { pos = p || {}; trocaBairro(0); })
+    .catch(() => trocaBairro(0));
+});
+
+function trocaBairro(i) {
+  bairro = BAIRROS[i];
+  LOTES = bairro.lotes;
+  ativo = null;
+  if (camadaPlanta) { mapa.removeLayer(camadaPlanta); camadaPlanta = null; }
+  if (planta) { planta.remove(); planta = null; plantaCfg = null; }
+  const painel = document.getElementById('painelPlanta');
+  if (bairro.overlay) {                       // já georreferenciada: entra fixa
+    camadaPlanta = L.imageOverlay('/img/' + bairro.overlay.url.split('/').pop(),
+      bairro.overlay.bounds, { opacity: .95 }).addTo(mapa);
+    mapa.fitBounds(L.latLngBounds(bairro.overlay.bounds));
+    painel.style.display = 'none';
+  } else if (bairro.plantaLivre) {            // a posicionar: entra solta, com controles
+    if (bairro.centro) mapa.setView(bairro.centro, 16);
+    const g = Object.assign({ centro: bairro.centro, rot: 0, larg: 500, opac: .9 },
+                            pos['planta|' + bairro.id] || {});
+    montaPlanta('/img/' + bairro.plantaLivre, g);
+    document.getElementById('rot').value = g.rot;
+    document.getElementById('larg').value = g.larg;
+    document.getElementById('opac').value = g.opac * 100;
+    document.getElementById('vRot').textContent = g.rot;
+    document.getElementById('vLarg').textContent = g.larg;
+    painel.style.display = 'block';
+  } else {
+    if (bairro.centro) mapa.setView(bairro.centro, 17);
+    painel.style.display = 'none';
+  }
+  // o ímã só tem marcadores do Alphaville; nos outros a lista fica vazia
+  if (camadaSug) mapa.removeLayer(camadaSug);
+  camadaSug = L.layerGroup((bairro.id === 'alphaville' ? SUG : []).map(c => L.circleMarker(c, {
+    radius: 3, color: '#fff', weight: 1, fillColor: '#888', fillOpacity: .85, interactive: false
+  })));
+  if (document.getElementById('sug').checked) camadaSug.addTo(mapa);
+  document.getElementById('semPlanta').style.display = bairro.overlay ? 'none' : 'block';
+  desenhaLista(); desenhaPinos();
+}
+
+const chave = id => bairro.id + '|' + id;
+
+// ── planta livre: o imageOverlay do Leaflet não gira, então a planta é uma
+// <img> num pane próprio, posicionada na mão e girada por CSS. O que se guarda
+// é centro, largura em metros e ângulo; o PNG rotacionado e os bounds finais
+// saem depois, no script que aplica ao mapa.
+mapa.createPane('plantaLivre');
+mapa.getPane('plantaLivre').style.zIndex = 390;
+mapa.getPane('plantaLivre').style.pointerEvents = 'none';
+let planta = null, plantaCfg = null;
+
+function montaPlanta(url, cfg) {
+  if (planta) planta.remove();
+  plantaCfg = cfg;
+  planta = document.createElement('img');
+  planta.src = url;
+  planta.style.cssText = 'position:absolute;transform-origin:50% 50%;will-change:transform';
+  planta.draggable = false;
+  mapa.getPane('plantaLivre').appendChild(planta);
+  planta.onload = posicionaPlanta;
+  posicionaPlanta();
+}
+
+function posicionaPlanta() {
+  if (!planta || !plantaCfg) return;
+  const c = mapa.latLngToLayerPoint(L.latLng(plantaCfg.centro));
+  // largura em metros -> pixels no zoom atual
+  const p1 = mapa.latLngToLayerPoint(L.latLng(plantaCfg.centro));
+  const p2 = mapa.latLngToLayerPoint(L.latLng(
+    plantaCfg.centro[0],
+    plantaCfg.centro[1] + plantaCfg.larg / (111320 * Math.cos(plantaCfg.centro[0] * Math.PI / 180))));
+  const larguraPx = Math.abs(p2.x - p1.x);
+  const alturaPx = larguraPx * (planta.naturalHeight / planta.naturalWidth || 1.4);
+  planta.style.width = larguraPx + 'px';
+  planta.style.height = alturaPx + 'px';
+  planta.style.left = (c.x - larguraPx / 2) + 'px';
+  planta.style.top = (c.y - alturaPx / 2) + 'px';
+  planta.style.transform = `rotate(${plantaCfg.rot}deg)`;
+  planta.style.opacity = plantaCfg.opac;
+}
+mapa.on('zoom move zoomend moveend viewreset', posicionaPlanta);
+
+// arrastar a planta quando o modo "mover" está ligado
+let arrastando = null;
+mapa.getContainer().addEventListener('mousedown', e => {
+  if (!planta || !document.getElementById('moverPlanta').checked) return;
+  arrastando = mapa.mouseEventToLatLng(e);
+  mapa.dragging.disable();
+  e.preventDefault();
+});
+window.addEventListener('mousemove', e => {
+  if (!arrastando) return;
+  const agora = mapa.mouseEventToLatLng(e);
+  plantaCfg.centro = [plantaCfg.centro[0] + (agora.lat - arrastando.lat),
+                      plantaCfg.centro[1] + (agora.lng - arrastando.lng)];
+  arrastando = agora;
+  posicionaPlanta();
+});
+window.addEventListener('mouseup', () => { if (arrastando) { arrastando = null; mapa.dragging.enable(); } });
+
+['rot', 'larg', 'opac'].forEach(id => {
+  document.getElementById(id).oninput = e => {
+    if (!plantaCfg) return;
+    const v = +e.target.value;
+    if (id === 'rot') { plantaCfg.rot = v; document.getElementById('vRot').textContent = v; }
+    if (id === 'larg') { plantaCfg.larg = v; document.getElementById('vLarg').textContent = v; }
+    if (id === 'opac') plantaCfg.opac = v / 100;
+    posicionaPlanta();
+  };
+});
+
+function desenhaLista() {
+  const ul = document.getElementById('lista');
+  ul.innerHTML = '';
+  let q = null;
+  LOTES.forEach(x => {
+    if (x.q !== q) { q = x.q; const h = document.createElement('li'); h.className = 'quadra'; h.textContent = 'Quadra ' + q; ul.appendChild(h); }
+    const li = document.createElement('li');
+    li.dataset.id = x.id;
+    li.innerHTML = `<span><span class="marca"></span> ${x.q}-${x.lbl||x.l}</span>`
+                 + `<span class="meta">${x.m2.toFixed(0)} m² · ${brl(x.vista)}</span>`;
+    li.onclick = () => selecionar(x.id);
+    ul.appendChild(li);
+  });
+  atualiza();
+}
+
+function selecionar(id) {
+  ativo = id;
+  atualiza();
+  if (pos[chave(id)]) mapa.panTo(pos[chave(id)]);
+}
+
+function atualiza() {
+  const n = LOTES.filter(l => pos[chave(l.id)]).length;
+  document.getElementById('prog').innerHTML = `<b>${n}</b> de ${LOTES.length} posicionados` +
+    (ativo ? ` · marcando <b>${ativo}</b>` : ' · escolha um lote');
+  document.querySelectorAll('#lista li[data-id]').forEach(li => {
+    li.classList.toggle('ativo', li.dataset.id === ativo);
+    li.classList.toggle('posto', !!pos[chave(li.dataset.id)]);
+  });
+  const li = document.querySelector(`#lista li[data-id="${ativo}"]`);
+  if (li) li.scrollIntoView({ block: 'nearest' });
+}
+
+function desenhaPinos() {
+  Object.values(pinos).forEach(p => mapa.removeLayer(p));
+  pinos = {};
+  LOTES.forEach(x => {                      // só os pinos do bairro aberto
+    const c = pos[chave(x.id)];
+    if (!c) return;
+    const m = L.marker(c, { draggable: true, icon: L.divIcon({
+      className: '', html: `<div class="pino-lote${x.id === ativo ? ' ativo' : ''}">${x.q}-${x.lbl || x.l}</div>`,
+      iconSize: null, iconAnchor: [14, 9] }) }).addTo(mapa);
+    m.on('dragend', e => { pos[chave(x.id)] = [e.target.getLatLng().lat, e.target.getLatLng().lng]; atualiza(); });
+    m.on('click', () => selecionar(x.id));
+    pinos[x.id] = m;
+  });
+  atualiza();
+}
+
+// ímã: encaixa no marcador detectado mais perto, se estiver a menos de ~12 m
+function encaixa(c) {
+  if (!document.getElementById('sug').checked) return c;
+  let melhor = null, dist = 1e9;
+  SUG.forEach(s => {
+    const d = mapa.distance(c, s);
+    if (d < dist) { dist = d; melhor = s; }
+  });
+  return (melhor && dist < 12) ? melhor : c;
+}
+
+mapa.on('click', e => {
+  if (!ativo) return;
+  pos[chave(ativo)] = encaixa([e.latlng.lat, e.latlng.lng]);
+  const i = LOTES.findIndex(l => l.id === ativo);
+  ativo = (i >= 0 && i + 1 < LOTES.length) ? LOTES[i + 1].id : null;   // já pula para o próximo
+  desenhaPinos();
+});
+
+// Seguir sequência: em cada quadra, preenche os lotes entre os já marcados,
+// distribuindo pela numeração (não pela distância) — é assim que a fila é feita.
+document.getElementById('interp').onclick = () => {
+  let feitos = 0;
+  const quadras = [...new Set(LOTES.map(l => l.q))];
+  quadras.forEach(q => {
+    // lote sem número puro (o Bom Sucesso usa 01-A) fica de fora: sem número
+    // não há como distribuir, e chutar a ordem seria pior que deixar manual
+    const daQuadra = LOTES.filter(l => l.q === q && l.l !== null).sort((a, b) => a.l - b.l);
+    const ancoras = daQuadra.filter(l => pos[chave(l.id)]);
+    if (ancoras.length < 2) return;
+    daQuadra.forEach(l => {
+      if (pos[chave(l.id)]) return;
+      const antes = ancoras.filter(a => a.l < l.l).pop();
+      const depois = ancoras.find(a => a.l > l.l);
+      if (!antes || !depois) return;              // fora do trecho ancorado: não inventa
+      const f = (l.l - antes.l) / (depois.l - antes.l);
+      const A = pos[chave(antes.id)], B = pos[chave(depois.id)];
+      pos[chave(l.id)] = encaixa([A[0] + f * (B[0] - A[0]), A[1] + f * (B[1] - A[1])]);
+      feitos++;
+    });
+  });
+  desenhaPinos();
+  alert(feitos ? feitos + ' lote(s) posicionados pela sequência.' :
+    'Marque pelo menos dois lotes da mesma quadra primeiro (de preferência o menor e o maior número).');
+};
+
+document.getElementById('limpar').onclick = () => {
+  if (!ativo) return alert('Escolha um lote da quadra que quer limpar.');
+  const q = ativo.split('-')[0];
+  if (!confirm('Apagar os pinos da quadra ' + q + ' em ' + bairro.nome + '?')) return;
+  LOTES.filter(l => l.q === q).forEach(l => delete pos[chave(l.id)]);
+  desenhaPinos();
+};
+
+document.getElementById('sug').onchange = e => {
+  if (e.target.checked) camadaSug.addTo(mapa); else mapa.removeLayer(camadaSug);
+};
+
+document.getElementById('salvar').onclick = () => {
+  // a planta solta vai junto, com a chave planta|<bairro>
+  if (plantaCfg) pos['planta|' + bairro.id] = plantaCfg;
+  fetch('/salvar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pos) })
+    .then(r => r.text()).then(t => alert('Salvo: ' + t))
+    .catch(e => alert('Não salvou: ' + e));
+};
+</script>
+</body>
+</html>
