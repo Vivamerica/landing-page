@@ -82,7 +82,7 @@ postos, ja, nao = 0, 0, []
 for k, c in pinos.items():
     bid, lote = k.split('|', 1)
     q, l = lote.rsplit('-', 1)
-    pad = re.compile(r"^( *\{ b:'%s', q:'%s', l:'0*%s'[^\n]*)\n" % (re.escape(bid), re.escape(q), re.escape(l)), re.M)
+    pad = re.compile(r"^( *\{ b:'%s',\s+q:'%s',\s*l:'0*%s'[^\n]*)\n" % (re.escape(bid), re.escape(q), re.escape(l)), re.M)
     m = pad.search(s)
     if not m:
         nao.append(k)

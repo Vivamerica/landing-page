@@ -13,7 +13,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 P = 'C:/Users/Usuario/Desktop/landing-page/mapa-lotes-indaiatuba/index.html'
 s = io.open(P, encoding='utf-8', newline='').read()
 
-LINHA = re.compile(r"^ *\{ b:'([^']+)', q:'([^']+)', l:'([^']+)'([^\n]*)\n", re.M)
+LINHA = re.compile(r"^ *\{ b:'([^']+)',\s+q:'([^']+)',\s*l:'([^']+)'([^\n]*)\n", re.M)
 num = lambda linha, nome: (lambda g: float(g.group(1)) if g else None)(
     re.search(r'\b' + nome + r':(-?[\d.]+)', linha))
 

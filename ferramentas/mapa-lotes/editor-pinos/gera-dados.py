@@ -42,7 +42,7 @@ for i, (ini, bid) in enumerate(achados):
 
 # ── lotes sem posicao ───────────────────────────────────────────────
 pend = {}
-for m in re.finditer(r"^ *\{ b:'([^']+)', q:'([^']+)', l:'([^']+)'([^\n]*)\n", s, re.M):
+for m in re.finditer(r"^ *\{ b:'([^']+)',\s+q:'([^']+)',\s*l:'([^']+)'([^\n]*)\n", s, re.M):
     bid, q, l, resto = m.groups()
     if 'll:[' in resto:
         continue
