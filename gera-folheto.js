@@ -44,6 +44,8 @@ const APTOS = [
 
 
 const LOTES = [
+  { n:'Jardim Dona Maria Cândida', c:'Asseplan Narezzi', p:600000, m2:300, img:'maria-candida-indaiatuba/images/portaria.jpg',
+    s:'Loteamento fechado · obras concluídas · 180 lotes disponíveis (08/09/2026)', t:'Loteamento', est:180, slug:'maria-candida-indaiatuba' },
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, img:'monte-carmelo-indaiatuba/images/hero.jpg',
     s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:585, slug:'monte-carmelo-indaiatuba' },
   { n:'Parque Zarah', c:'Zarin', p:211050, m2:150, img:'parque-zarah-indaiatuba/images/hero.jpg',
