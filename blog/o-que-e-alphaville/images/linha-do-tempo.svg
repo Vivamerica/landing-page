@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 560" role="img" aria-label="Linha do tempo da Alphaville de 1973 a 2025">
+<title>Alphaville: de 1973 a 2025</title>
+<desc>Marcos da Alphaville segundo o Formulário de Referência entregue à CVM em 2026: fundação em 1973 em Barueri, primeiro projeto fora em 1997, entrada da Gafisa em 2006, compra de 70% por Pátria e Blackstone em 2013, abertura de capital em 2020 e recorde de entregas em 2025.</desc>
+<style>
+ .bg{fill:#14110f}
+ .eixo{stroke:#3a342c;stroke-width:2}
+ .tick{stroke:#5a5247;stroke-width:1}
+ .ano{fill:#c9a227;font:700 15px Georgia,serif}
+ .tit{fill:#f5f1e8;font:600 13px system-ui,sans-serif}
+ .sub{fill:#9a9184;font:400 11.5px system-ui,sans-serif}
+ .ponto{fill:#c9a227}
+ .pontoG{fill:#f5f1e8}
+ .cab{fill:#f5f1e8;font:700 20px Georgia,serif}
+ .fonte{fill:#6f6759;font:400 10.5px system-ui,sans-serif}
+ @media (prefers-color-scheme: light){
+   .bg{fill:#faf8f5} .tit{fill:#14110f} .sub{fill:#6b6255} .pontoG{fill:#14110f}
+   .eixo{stroke:#d9d4cb} .tick{stroke:#c9c3b8} .cab{fill:#14110f} .fonte{fill:#8a8272}
+ }
+</style>
+<rect class="bg" width="1180" height="560"/>
+<text class="cab" x="70" y="40">Alphaville, de 1973 a 2025</text>
+<line class="eixo" x1="86" y1="300" x2="1126" y2="300"/>
+<line class="tick" x1="106.0" y1="295" x2="106.0" y2="305"/>
+<text class="fonte" x="106.0" y="322" text-anchor="middle">1970</text>
+<line class="tick" x1="279.1" y1="295" x2="279.1" y2="305"/>
+<text class="fonte" x="279.1" y="322" text-anchor="middle">1980</text>
+<line class="tick" x1="452.2" y1="295" x2="452.2" y2="305"/>
+<text class="fonte" x="452.2" y="322" text-anchor="middle">1990</text>
+<line class="tick" x1="625.3" y1="295" x2="625.3" y2="305"/>
+<text class="fonte" x="625.3" y="322" text-anchor="middle">2000</text>
+<line class="tick" x1="798.4" y1="295" x2="798.4" y2="305"/>
+<text class="fonte" x="798.4" y="322" text-anchor="middle">2010</text>
+<line class="tick" x1="971.5" y1="295" x2="971.5" y2="305"/>
+<text class="fonte" x="971.5" y="322" text-anchor="middle">2020</text>
+<line class="tick" x1="157.9" y1="300" x2="157.9" y2="284.0"/>
+<circle class="pontoG" cx="157.9" cy="300" r="6"/>
+<text class="ano" x="157.9" y="256.0" text-anchor="middle">1973</text>
+<text class="tit" x="157.9" y="272.0" text-anchor="middle">Primeiro Alphaville, em Barueri</text>
+<text class="sub" x="157.9" y="289.0" text-anchor="middle">Renato Albuquerque e Yojiro Takaoka</text>
+<line class="tick" x1="573.4" y1="300" x2="573.4" y2="334.0"/>
+<circle class="ponto" cx="573.4" cy="300" r="4"/>
+<text class="ano" x="573.4" y="326.0" text-anchor="middle">1997</text>
+<text class="tit" x="573.4" y="342.0" text-anchor="middle">Sai de Barueri</text>
+<text class="sub" x="573.4" y="359.0" text-anchor="middle">primeiro projeto fora: Campinas</text>
+<line class="tick" x1="590.7" y1="300" x2="590.7" y2="220.0"/>
+<circle class="ponto" cx="590.7" cy="300" r="4"/>
+<text class="ano" x="590.7" y="192.0" text-anchor="middle">1998</text>
+<text class="tit" x="590.7" y="208.0" text-anchor="middle">Chega a Minas</text>
+<text class="sub" x="590.7" y="225.0" text-anchor="middle">Alphaville Lagoa dos Ingleses, BH</text>
+<line class="tick" x1="625.3" y1="300" x2="625.3" y2="398.0"/>
+<circle class="ponto" cx="625.3" cy="300" r="4"/>
+<text class="ano" x="625.3" y="390.0" text-anchor="middle">2000</text>
+<text class="tit" x="625.3" y="406.0" text-anchor="middle">Vai para o Norte e o Nordeste</text>
+<text class="sub" x="625.3" y="423.0" text-anchor="middle">Paraná, Goiás, Bahia e Amazonas</text>
+<line class="tick" x1="729.2" y1="300" x2="729.2" y2="156.0"/>
+<circle class="ponto" cx="729.2" cy="300" r="4"/>
+<text class="ano" x="729.2" y="128.0" text-anchor="middle">2006</text>
+<text class="tit" x="729.2" y="144.0" text-anchor="middle">Gafisa entra</text>
+<text class="sub" x="729.2" y="161.0" text-anchor="middle">com 60% das ações</text>
+<line class="tick" x1="781.1" y1="300" x2="781.1" y2="462.0"/>
+<circle class="ponto" cx="781.1" cy="300" r="4"/>
+<text class="ano" x="781.1" y="454.0" text-anchor="middle">2009</text>
+<text class="tit" x="781.1" y="470.0" text-anchor="middle">Nasce o Terras Alpha</text>
+<text class="sub" x="781.1" y="487.0" text-anchor="middle">linha de lotes menores</text>
+<line class="tick" x1="850.3" y1="300" x2="850.3" y2="284.0"/>
+<circle class="ponto" cx="850.3" cy="300" r="4"/>
+<text class="ano" x="850.3" y="256.0" text-anchor="middle">2013</text>
+<text class="tit" x="850.3" y="272.0" text-anchor="middle">Pátria e Blackstone</text>
+<text class="sub" x="850.3" y="289.0" text-anchor="middle">compram 70% da companhia</text>
+<line class="tick" x1="885.0" y1="300" x2="885.0" y2="334.0"/>
+<circle class="ponto" cx="885.0" cy="300" r="4"/>
+<text class="ano" x="885.0" y="326.0" text-anchor="middle">2015</text>
+<text class="tit" x="885.0" y="342.0" text-anchor="middle">100 projetos lançados</text>
+<line class="tick" x1="971.5" y1="300" x2="971.5" y2="220.0"/>
+<circle class="pontoG" cx="971.5" cy="300" r="6"/>
+<text class="ano" x="971.5" y="192.0" text-anchor="middle">2020</text>
+<text class="tit" x="971.5" y="208.0" text-anchor="middle">Abre capital na B3</text>
+<text class="sub" x="971.5" y="225.0" text-anchor="middle">ticker AVLL3</text>
+<line class="tick" x1="1058.1" y1="300" x2="1058.1" y2="398.0"/>
+<circle class="ponto" cx="1058.1" cy="300" r="4"/>
+<text class="ano" x="1058.1" y="390.0" text-anchor="end">2025</text>
+<text class="tit" x="1058.1" y="406.0" text-anchor="end">Recorde de entregas</text>
+<text class="sub" x="1058.1" y="423.0" text-anchor="end">8 empreendimentos, 2.047 lotes</text>
+<text class="fonte" x="70" y="538">Fonte: Formulário de Referência da Alphaville S.A. entregue à CVM, versão de 30/06/2026.</text>
+</svg>

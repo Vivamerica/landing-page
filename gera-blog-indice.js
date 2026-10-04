@@ -47,6 +47,7 @@ const TEMA_POR_SLUG = {
   'indaiatuba-ou-campinas':                          { tag: 'Comparativo',            cat: 'comparativos' },
   'hospital-parque-dos-passaros-indaiatuba':         { tag: 'Cidade · Obra pública',  cat: 'cidade' },
   'apartamento-ou-lote-indaiatuba':                  { tag: 'Investimento',           cat: 'investimento' },
+  'o-que-e-alphaville':                              { tag: 'Mercado · Marca',        cat: 'mercado' },
 };
 const DESTAQUES = new Set([
   'morar-em-indaiatuba', 'minha-casa-minha-vida-indaiatuba', 'como-usar-fgts-comprar-imovel-indaiatuba',
@@ -55,6 +56,7 @@ const CATEGORIAS = [
   ['', 'Todos'], ['mcmv', 'Minha Casa Minha Vida'], ['fgts', 'FGTS'],
   ['morar', 'Morar em Indaiatuba'], ['bairros', 'Bairros'], ['seguranca', 'Segurança'],
   ['comparativos', 'Comparativos'], ['investimento', 'Investimento'], ['cidade', 'Vida na cidade'],
+  ['mercado', 'Mercado'],
 ];
 const MESES = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
 

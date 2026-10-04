@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 853 821" role="img" aria-label="Estados do Brasil onde a Alphaville tem empreendimentos">
+<title>Onde a Alphaville está</title>
+<desc>Mapa esquemático do Brasil com três níveis de evidência. Em dourado cheio, os 7 estados e o Distrito Federal com lote Alphaville à venda em 04/10/2026 segundo o catálogo do site oficial: São Paulo, Paraná, Ceará, Piauí, Bahia, Minas Gerais, Espírito Santo e o Distrito Federal. Em dourado escuro, os 7 estados em que um documento entregue à CVM nomeia um empreendimento: Goiás, Paraíba, Pernambuco, Sergipe, Mato Grosso do Sul, Tocantins e Amazonas. Em contorno dourado, os 6 estados com empreendimento confirmado em fonte pública fora da CVM: Rio Grande do Sul, Mato Grosso, Maranhão, Rio de Janeiro, Rio Grande do Norte e Alagoas. Total verificado: 20 estados além do Distrito Federal. O Formulário de Referência informa presença em 23 estados além do Distrito Federal, sem listar quais, e repete esse número sem alteração de 2020 a 2026; o ITR do segundo trimestre de 2026 informa landbank em 18 estados e o ITR do quarto trimestre de 2025 informa entregas em 6 estados.</desc>
+<style>
+ .bg{fill:#14110f}
+ .uf{fill:#262019;stroke:#332c23;stroke-width:1.5}
+ .uf-a{fill:#c9a227;stroke:#e0bb3d;stroke-width:1.5}
+ .uf-b{fill:#7d6a24;stroke:#9c8530;stroke-width:1.5}
+ .uf-c{fill:#2e2817;stroke:#c9a227;stroke-width:2}
+ .sig{fill:#6f6759;font:600 17px system-ui,sans-serif;text-anchor:middle}
+ .sig-a{fill:#14110f;font:700 18px system-ui,sans-serif;text-anchor:middle}
+ .sig-b{fill:#f6eed6;font:700 17px system-ui,sans-serif;text-anchor:middle}
+ .sig-c{fill:#c9a227;font:700 17px system-ui,sans-serif;text-anchor:middle}
+ .cab{fill:#f5f1e8;font:700 21px Georgia,serif}
+ .leg{fill:#9a9184;font:400 12.5px system-ui,sans-serif}
+ .legf{fill:#c9a227;font:600 12.5px system-ui,sans-serif}
+ .fonte{fill:#6f6759;font:400 10.5px system-ui,sans-serif}
+ @media (prefers-color-scheme: light){
+   .bg{fill:#faf8f5} .uf{fill:#ece8e0;stroke:#dcd7cd} .sig{fill:#8a8272}
+   .uf-b{fill:#8d7522;stroke:#6f5c18} .sig-b{fill:#fdf8e8}
+   .uf-c{fill:#f6eeda;stroke:#b8972a} .sig-c{fill:#6b5518}
+   .cab{fill:#14110f} .leg{fill:#6b6255} .legf{fill:#7d6512} .fonte{fill:#8a8272}
+ }
+</style>
+<rect class="bg" width="853" height="821"/>
+<text class="cab" x="36" y="44">Onde a Alphaville está</text>
+<text class="leg" x="36" y="70">20 estados e o Distrito Federal verificados praça por praça, em três</text>
+<text class="leg" x="36" y="88">níveis de evidência. Cada bloco traz a praça e a fonte ao passar o mouse.</text>
+<g>
+<rect class="uf" x="174" y="112" width="62" height="62" rx="7"/>
+<text class="sig" x="205" y="149">RR</text>
+</g>
+<g>
+<rect class="uf" x="312" y="112" width="62" height="62" rx="7"/>
+<text class="sig" x="343" y="149">AP</text>
+</g>
+<g>
+<title>AM — expansão de 2000; o FRE cita o estado sem nomear o projeto</title>
+<rect class="uf-b" x="105" y="181" width="62" height="62" rx="7"/>
+<text class="sig-b" x="136" y="218">AM</text>
+</g>
+<g>
+<rect class="uf" x="243" y="181" width="62" height="62" rx="7"/>
+<text class="sig" x="274" y="218">PA</text>
+</g>
+<g>
+<title>MA — Alphaville Araçagy, em Paço do Lumiar: 426 lotes, pela Alphaville Urbanismo com a PLANC</title>
+<rect class="uf-c" x="312" y="181" width="62" height="62" rx="7"/>
+<text class="sig-c" x="343" y="218">MA</text>
+</g>
+<g>
+<title>CE — Eusébio: Ceará 5 e 6 e comercial 7 e 8 (4 produtos)</title>
+<rect class="uf-a" x="381" y="181" width="62" height="62" rx="7"/>
+<text class="sig-a" x="412" y="218">CE</text>
+</g>
+<g>
+<title>RN — Alphaville Natal, em Pium (Parnamirim), com associação e CEP próprios</title>
+<rect class="uf-c" x="450" y="181" width="62" height="62" rx="7"/>
+<text class="sig-c" x="481" y="218">RN</text>
+</g>
+<g>
+<rect class="uf" x="36" y="250" width="62" height="62" rx="7"/>
+<text class="sig" x="67" y="287">AC</text>
+</g>
+<g>
+<rect class="uf" x="105" y="250" width="62" height="62" rx="7"/>
+<text class="sig" x="136" y="287">RO</text>
+</g>
+<g>
+<title>TO — Alphaville Palmas 1 — FRE 2020 e 2024</title>
+<rect class="uf-b" x="243" y="250" width="62" height="62" rx="7"/>
+<text class="sig-b" x="274" y="287">TO</text>
+</g>
+<g>
+<title>PI — Teresina 2 e 3 e Alphaville Piauí (3 produtos)</title>
+<rect class="uf-a" x="312" y="250" width="62" height="62" rx="7"/>
+<text class="sig-a" x="343" y="287">PI</text>
+</g>
+<g>
+<title>PB — Alphaville Paraíba e Alphaville Campina Grande — FRE 2020</title>
+<rect class="uf-b" x="450" y="250" width="62" height="62" rx="7"/>
+<text class="sig-b" x="481" y="287">PB</text>
+</g>
+<g>
+<title>MT — Loteamento Alphaville Cuiabá I e II, bairro registrado nos Correios (CEP 78061)</title>
+<rect class="uf-c" x="174" y="319" width="62" height="62" rx="7"/>
+<text class="sig-c" x="205" y="356">MT</text>
+</g>
+<g>
+<title>GO — Alphaville Flamboyant (Goiânia) e Alphaville Anápolis — FRE 2020</title>
+<rect class="uf-b" x="243" y="319" width="62" height="62" rx="7"/>
+<text class="sig-b" x="274" y="356">GO</text>
+</g>
+<g>
+<title>BA — Guarajuba 4 e Litoral Norte 4, em Camaçari (2 produtos)</title>
+<rect class="uf-a" x="312" y="319" width="62" height="62" rx="7"/>
+<text class="sig-a" x="343" y="356">BA</text>
+</g>
+<g>
+<title>PE — Terras Alpha Caruaru — FRE 2024 e release de 2020</title>
+<rect class="uf-b" x="381" y="319" width="62" height="62" rx="7"/>
+<text class="sig-b" x="412" y="356">PE</text>
+</g>
+<g>
+<title>AL — Maceió: anunciado em out/2019 como o primeiro do estado, mais de 300 lotes</title>
+<rect class="uf-c" x="450" y="319" width="62" height="62" rx="7"/>
+<text class="sig-c" x="481" y="356">AL</text>
+</g>
+<g>
+<title>MS — Terras Alpha Campo Grande — FRE 2024 e 2026</title>
+<rect class="uf-b" x="174" y="388" width="62" height="62" rx="7"/>
+<text class="sig-b" x="205" y="425">MS</text>
+</g>
+<g>
+<title>DF — Alphaville Planalto Central 2</title>
+<rect class="uf-a" x="243" y="388" width="62" height="62" rx="7"/>
+<text class="sig-a" x="274" y="425">DF</text>
+</g>
+<g>
+<title>MG — Uberaba e Betim (2 produtos)</title>
+<rect class="uf-a" x="312" y="388" width="62" height="62" rx="7"/>
+<text class="sig-a" x="343" y="425">MG</text>
+</g>
+<g>
+<title>SE — Alphaville Aracaju e Terras Alpha Sergipe 3 — FRE 2024 e 2026</title>
+<rect class="uf-b" x="381" y="388" width="62" height="62" rx="7"/>
+<text class="sig-b" x="412" y="425">SE</text>
+</g>
+<g>
+<title>SP — Indaiatuba, Campinas, Votorantim, Ribeirão Preto e Dom Pedro (5 produtos)</title>
+<rect class="uf-a" x="243" y="457" width="62" height="62" rx="7"/>
+<text class="sig-a" x="274" y="494">SP</text>
+</g>
+<g>
+<title>RJ — Alphaville Recreio dos Bandeirantes, cerca de 2.700 lotes, e Alphaville Barra</title>
+<rect class="uf-c" x="312" y="457" width="62" height="62" rx="7"/>
+<text class="sig-c" x="343" y="494">RJ</text>
+</g>
+<g>
+<title>ES — Três Praias, em Guarapari</title>
+<rect class="uf-a" x="381" y="457" width="62" height="62" rx="7"/>
+<text class="sig-a" x="412" y="494">ES</text>
+</g>
+<g>
+<title>PR — Cascavel 2 e 3, Campo Largo e Ponta Grossa (4 produtos)</title>
+<rect class="uf-a" x="243" y="526" width="62" height="62" rx="7"/>
+<text class="sig-a" x="274" y="563">PR</text>
+</g>
+<g>
+<title>SC — o próprio site informa nenhum empreendimento no estado</title>
+<rect class="uf" x="243" y="595" width="62" height="62" rx="7"/>
+<text class="sig" x="274" y="632">SC</text>
+</g>
+<g>
+<title>RS — Alphaville Gravataí e Porto Alegre, bairros consolidados; também Pelotas</title>
+<rect class="uf-c" x="243" y="664" width="62" height="62" rx="7"/>
+<text class="sig-c" x="274" y="701">RS</text>
+</g>
+<rect class="uf-a" x="543" y="118" width="18" height="18" rx="4"/>
+<text class="legf" x="569" y="132">lote à venda em 04/10/2026</text>
+<text class="leg" x="569" y="149">catálogo do site oficial</text>
+<rect class="uf-b" x="543" y="168" width="18" height="18" rx="4"/>
+<text class="legf" x="569" y="182">empreendimento nomeado na CVM</text>
+<text class="leg" x="569" y="199">Formulário de Referência e releases</text>
+<rect class="uf-c" x="543" y="218" width="18" height="18" rx="4"/>
+<text class="legf" x="569" y="232">confirmado em fonte pública</text>
+<text class="leg" x="569" y="249">fora dos documentos da CVM</text>
+<rect class="uf" x="543" y="268" width="18" height="18" rx="4"/>
+<text class="legf" x="569" y="282">não verificado</text>
+<text class="leg" x="569" y="299">AC, AP, PA, RO, RR e SC</text>
+<text class="leg" x="543" y="336">Quatro números, e os três primeiros</text>
+<text class="leg" x="543" y="355">são da própria companhia:</text>
+<text class="leg" x="543" y="374"></text>
+<text class="legf" x="543" y="393">23 estados + DF — "está presente em", no</text>
+<text class="leg" x="543" y="412">Formulário de Referência. A frase aparece</text>
+<text class="leg" x="543" y="431">igual em 2020, 2024 e 2026, e nunca lista</text>
+<text class="leg" x="543" y="450">quais. No mesmo documento, "130</text>
+<text class="leg" x="543" y="469">empreendimentos" virou 138 e o 23 não se</text>
+<text class="leg" x="543" y="488">mexeu.</text>
+<text class="leg" x="543" y="507"></text>
+<text class="legf" x="543" y="526">18 estados — onde está o landbank hoje</text>
+<text class="leg" x="543" y="545">(ITR do 2T26, 13/08/2026).</text>
+<text class="leg" x="543" y="564"></text>
+<text class="legf" x="543" y="583">6 estados — onde saíram as entregas de</text>
+<text class="leg" x="543" y="602">2025 (ITR do 4T25, 31/03/2026).</text>
+<text class="leg" x="543" y="621"></text>
+<text class="legf" x="543" y="640">20 estados + DF — o que este mapa</text>
+<text class="leg" x="543" y="659">conseguiu verificar, com a fonte de cada</text>
+<text class="leg" x="543" y="678">praça no hover.</text>
+<text class="fonte" x="36" y="779">Fontes: Formulário de Referência da Alphaville S.A. (versões de 2020, 2024 e 2026), ITR do 2T26 e do 4T25 e o catálogo de produtos do site</text>
+<text class="fonte" x="36" y="795">oficial alphaville.com.br, lido em 04/10/2026. Nível de fonte pública: registro de CEP dos Correios, associação de moradores do próprio</text>
+<text class="fonte" x="36" y="811">empreendimento e imprensa local datada. Levantamento da Imobiliária Viv&#39;América.</text>
+</svg>
