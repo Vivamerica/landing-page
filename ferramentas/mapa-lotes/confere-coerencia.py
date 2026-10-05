@@ -14,6 +14,12 @@ P = 'C:/Users/Usuario/Desktop/landing-page/mapa-lotes-indaiatuba/index.html'
 s = io.open(P, encoding='utf-8', newline='').read()
 
 LINHA = re.compile(r"^ *\{ b:'([^']+)',\s+q:'([^']+)',\s*l:'([^']+)'([^\n]*)\n", re.M)
+
+# Loteamento marcado com `oculto:true` saiu do mapa (vendeu), mas o dado continua
+# no arquivo para poder voltar. Nao adianta cobrar coerencia de quem ninguem ve —
+# so que o verificador DIZ quantos pulou, em vez de calar: cap silencioso vira
+# "esta tudo certo" quando na verdade nem foi olhado.
+OCULTOS = set(re.findall(r"id:'([^']+)'\s*,\s*oculto:true", s))
 num = lambda linha, nome: (lambda g: float(g.group(1)) if g else None)(
     re.search(r'\b' + nome + r':(-?[\d.]+)', linha))
 
@@ -49,8 +55,12 @@ def taxa_implicita(saldo, parcela, n):
 
 
 total = 0
+pulados = 0
 for m in LINHA.finditer(s):
     b, q, l, resto = m.groups()
+    if b in OCULTOS:
+        pulados += 1
+        continue
     ident = '%s %s-%s' % (b, q, l)
     total += 1
     vista, prazo = num(resto, 'vista'), num(resto, 'prazo')
@@ -63,7 +73,12 @@ for m in LINHA.finditer(s):
     if entrada is not None and base is not None and entrada >= base:
         achados['entrada maior que o total'].append(
             '%s (entrada R$ %.2f de R$ %.2f)' % (ident, entrada, base))
-    if 'soVista:true' in resto and nx:
+    # O que torna o lote contraditorio e ter PARCELA, nao ter nx: o nx e
+    # opcional no template (`x.nx || 96`). Enquanto esta regra exigia nx, os 22
+    # lotes da Vista Verde passaram invisiveis por meses — todos com parcela
+    # correta e escondida atras de um "somente a vista". Mesma familia do bug
+    # do espaco no Araras: o verificador que nao verifica e pior que nenhum.
+    if 'soVista:true' in resto and (nx or parcela):
         achados['soVista e parcelado ao mesmo tempo'].append(ident)
     # Cada loteamento tem a sua taxa, entao nao adianta cravar uma. O que vale
     # cobrar e COERENCIA DENTRO DO MESMO EMPREENDIMENTO: derivamos a taxa que a
@@ -78,7 +93,11 @@ for m in LINHA.finditer(s):
         achados['sem preco e sem observacao'].append(ident)
 
 # ── a taxa de cada lote contra a mediana dos irmaos ──────────────────
-print('%d lotes conferidos\n' % total)
+print('%d lotes conferidos' % total)
+if pulados:
+    print('%d lote(s) PULADOS por estarem em loteamento oculto: %s'
+          % (pulados, ', '.join(sorted(OCULTOS))))
+print()
 print('taxa mensal implicita por empreendimento:')
 for b in sorted(taxas):
     v = sorted(t for _, t in taxas[b])

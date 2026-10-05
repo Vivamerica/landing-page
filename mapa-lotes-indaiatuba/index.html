@@ -244,15 +244,15 @@ const BAIRROS = [
   { id:'montecarmelo', nome:'Residencial Monte Carmelo', sub:'loteamento aberto · 1.051 lotes · a prazo em até 96x', landing:'/monte-carmelo-indaiatuba/', cond:'entrada de 10% e saldo em 24, 48 ou 96x conforme o lote, relatório Dominium de 02/09/2026', overlay:{ url:'images/montecarmelo.png', bounds:[[-23.097591481,-47.290771730],[-23.088961221,-47.279840990]] } },
   { id:'ravello', fechado:true, nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 02/09/2026', overlay:{ url:'images/ravello.png', bounds:[[-23.084077694,-47.249446812],[-23.073393991,-47.234171390]] } },
   { id:'diitalia', nome:'Jardim Di Italia', sub:'loteamento · 404 lotes · a prazo em 60x', landing:'/di-italia-indaiatuba/', cond:'entrada de 20% e saldo em 60x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/diitalia.png', bounds:[[-23.103579757,-47.263075029],[-23.099470643,-47.259032939]] } },
-  { id:'canarios',   nome:'Vila dos Canários', overlay:{ url:'images/canarios.png', bounds:[[-23.108921899,-47.268419712],[-23.107101849,-47.266723574]] } },
+  { id:'canarios', tab:'out/2026',   nome:'Vila dos Canários', overlay:{ url:'images/canarios.png', bounds:[[-23.108921899,-47.268419712],[-23.107101849,-47.266723574]] } },
   { id:'zarah-safira', fechado:true, nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes · entrega dez/2026', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.104061777,-47.269326681],[-23.097995146,-47.262840271]] } },
   { id:'zarah-rubi', fechado:true, nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098524045,-47.265731433],[-23.093995123,-47.261693425]] } },
   { id:'zarah-perola', fechado:true, nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099411964,-47.270175998],[-23.094030998,-47.265280434]] } },
-  { id:'bemtevi',    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104009900,-47.269992856],[-23.100875636,-47.266748130]] } },
-  { id:'andorinhas', nome:'Jardim das Andorinhas', overlay:{ url:'images/andorinhas.png', bounds:[[-23.108521524,-47.272461516],[-23.104284716,-47.269854118]] } },
-  { id:'araras',     nome:'Jardim das Araras', overlay:{ url:'images/araras.png', bounds:[[-23.096617254,-47.289265394],[-23.087239678,-47.276216447]] } },
-  { id:'campobonito',nome:'Parque Campo Bonito', sub:'lotes 12x · glebas na Av. Clóvis Ferraz de Camargo', centro:[-23.09681,-47.27876], overlay:{ url:'images/campobonito.png', bounds:[[-23.100125839,-47.282674074],[-23.092201813,-47.270022308]] } },
-  { id:'barnabe',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City', overlay:{ url:'images/barnabe.png', bounds:[[-23.092843825,-47.284648472],[-23.083629713,-47.272626536]] } },
+  { id:'bemtevi', oculto:true /* saiu da tabela Vista Verde de out/2026 = vendido; dado mantido */,    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104009900,-47.269992856],[-23.100875636,-47.266748130]] } },
+  { id:'andorinhas', tab:'out/2026', nome:'Jardim das Andorinhas', overlay:{ url:'images/andorinhas.png', bounds:[[-23.108521524,-47.272461516],[-23.104284716,-47.269854118]] } },
+  { id:'araras', tab:'out/2026',     nome:'Jardim das Araras', overlay:{ url:'images/araras.png', bounds:[[-23.096617254,-47.289265394],[-23.087239678,-47.276216447]] } },
+  { id:'campobonito', tab:'out/2026',nome:'Parque Campo Bonito', sub:'lotes 12x · glebas na Av. Clóvis Ferraz de Camargo', centro:[-23.09681,-47.27876], overlay:{ url:'images/campobonito.png', bounds:[[-23.100125839,-47.282674074],[-23.092201813,-47.270022308]] } },
+  { id:'barnabe', tab:'out/2026',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City', overlay:{ url:'images/barnabe.png', bounds:[[-23.092843825,-47.284648472],[-23.083629713,-47.272626536]] } },
   { id:'bomsucesso', nome:'Jardim Bom Sucesso', sub:'loteamento · 1 lote misto disponível, segregado em C01-A e C01-B (nota de 08/09/2026)', cond:'entrada de 20% e saldo em 72x, conforme nota de 08/09/2026', overlay:{ url:'images/bomsucesso.png', bounds:[[-23.118272070,-47.266759110],[-23.103705813,-47.257188239]] } },
   { id:'granreserve', fechado:true, nome:'Park Gran Reserve', sub:'loteamento fechado · 2 lotes disponíveis (relatório de 01/10/2026)', cond:'entrada mínima R$ 130.000,00 + 36 parcelas (relatório SECE de 04/09/2026)', overlay:{ url:'images/granreserve.png', bounds:[[-23.079409228,-47.192662164],[-23.066101439,-47.177031096]] } },
   { id:'vistareal', fechado:true, nome:'Jardim Park Vista Real', sub:'loteamento fechado · 29 lotes disponíveis (relatório de 04/09/2026)', cond:'entrada mínima (cerca de 20%) e saldo em 36 parcelas, conforme relatório SECE de 04/09/2026; lote A-16 só à vista', overlay:{ url:'images/vistareal.png', bounds:[[-23.073044564,-47.195643662],[-23.068200034,-47.188678744]] } },
@@ -1267,9 +1267,9 @@ const LOTES = [
   { b:'diitalia', q:'L', l:'29', m2:267.50, tipo:'RESIDENCIAL', pm2:1400, vista:374500.00, prazo:392333.33, entrada:78466.67, parcela:5231.11, nx:60, ep:20, ll:[-23.101357,-47.259271] },
   { b:'diitalia', q:'L', l:'30', m2:237.52, tipo:'RESIDENCIAL', pm2:1400, vista:332528.00, prazo:348362.67, entrada:69672.53, parcela:4644.84, nx:60, ep:20, ll:[-23.101299,-47.259328] },
   // Vila dos Canários — pinos reposicionados pela planta do loteamento (Prefeitura), tabela do Fabio
-  { b:'canarios', q:'A', l:'1',  m2:227.95, tipo:'RESIDENCIAL', pm2:1200,    vista:273540.00, entrada:41031.00,  parcela:3778.93,  ll:[-23.107254,-47.268240], soVista:true },
-  { b:'canarios', q:'A', l:'16', m2:225.73, tipo:'RESIDENCIAL', pm2:1200,    vista:270876.00, entrada:40631.40,  parcela:3742.13,  ll:[-23.107286,-47.267130], soVista:true },
-  { b:'canarios', q:'D', l:'17', m2:201.20, tipo:'RESIDENCIAL', pm2:1200,    vista:241440.00, entrada:36216.00,  parcela:3335.47,  ll:[-23.108583,-47.266926], soVista:true },
+  { b:'canarios', q:'A', l:'1',  m2:227.95, tipo:'RESIDENCIAL', pm2:1200,    vista:273540.00, entrada:41031.00,  parcela:3778.93, nx:96,  ll:[-23.107254,-47.268240] },
+  { b:'canarios', q:'A', l:'16', m2:225.73, tipo:'RESIDENCIAL', pm2:1200,    vista:270876.00, entrada:40631.40,  parcela:3742.13, nx:96,  ll:[-23.107286,-47.267130] },
+  { b:'canarios', q:'D', l:'17', m2:201.20, tipo:'RESIDENCIAL', pm2:1200,    vista:241440.00, entrada:36216.00,  parcela:3335.47, nx:96,  ll:[-23.108583,-47.266926] },
   // Parque Zarah — Safira (fase 1): tabela Zarin de out/2026 gerada em 01/10 (180x), posição pelo número do lote e área impressa na planta; 3 lotes sem posição na planta
   { b:'zarah-safira', q:'3', l:'23', m2:204.32, tipo:'RESIDENCIAL', pm2:1685.82, vista:344446.80, entrada:41333.62, parcela:3637.87, nx:180, ep:12, ll:[-23.102716,-47.266246], tabela:true, obs:'Valor de tabela Zarin de out/2026: ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e correção mensal pelo IPCA; consulte a condição à vista' },
   { b:'zarah-safira', q:'3', l:'24', m2:338.11, tipo:'RESIDENCIAL', pm2:1685.82, vista:569992.67, entrada:68399.12, parcela:6019.97, nx:180, ep:12, ll:[-23.102640,-47.266278], tabela:true, obs:'Valor de tabela Zarin de out/2026: ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e correção mensal pelo IPCA; consulte a condição à vista' },
@@ -1938,19 +1938,19 @@ const LOTES = [
   // Jardim Bem-Te-Vi — planta original do loteamento georreferenciada (casamento com o OpenStreetMap/satélite); pinos reposicionados pela planta
   { b:'bemtevi', q:'D',  l:'1 e 2', m2:414.30, tipo:'MISTO',    pm2:1400,    vista:580020.00, entrada:87003.00,  parcela:8012.93,  ll:[-23.102432,-47.268847], soVista:true },
   // Jardim das Andorinhas — planta original do loteamento georreferenciada (casamento com o OpenStreetMap/satélite); pinos reposicionados pela planta
-  { b:'andorinhas', q:'E', l:'11', m2:210.65, tipo:'MISTO',     pm2:1300,    vista:273845.00, entrada:41076.75,  parcela:3783.15,  ll:[-23.105316,-47.270125], soVista:true },
-  { b:'andorinhas', q:'E', l:'12', m2:213.15, tipo:'MISTO',     pm2:1300,    vista:277095.00, entrada:41564.25,  parcela:3828.04,  ll:[-23.105386,-47.270118], soVista:true },
+  { b:'andorinhas', q:'E', l:'11', m2:210.65, tipo:'MISTO',     pm2:1300,    vista:273845.00, entrada:41076.75,  parcela:3783.15, nx:96,  ll:[-23.105316,-47.270125] },
+  { b:'andorinhas', q:'E', l:'12', m2:213.15, tipo:'MISTO',     pm2:1300,    vista:277095.00, entrada:41564.25,  parcela:3828.04, nx:96,  ll:[-23.105386,-47.270118] },
   // Jardim das Araras — planta original do loteamento georreferenciada (casamento com o OpenStreetMap/satélite); pinos reposicionados pela planta
-  { b:'araras',  q:'13', l:'30', m2:255.19, tipo:'COMERCIAL',   pm2:1500,    vista:382785.00, entrada:57417.75,  parcela:5288.14,  ll:[-23.092101,-47.277656], soVista:true },
+  { b:'araras',  q:'13', l:'30', m2:255.19, tipo:'COMERCIAL',   pm2:1500,    vista:382785.00, entrada:57417.75,  parcela:5288.14, nx:96,  ll:[-23.092101,-47.277656] },
   { b:'araras',  q:'15', l:'1',  m2:217.43, tipo:'COMERCIAL',   pm2:1300,    vista:282659.00, entrada:null,      parcela:null,     soVista:true, ll:[-23.092855,-47.282159] },
-  { b:'araras',  q:'17', l:'1',  m2:1393.10,tipo:'MISTO',       pm2:1000,    vista:1393100.00,entrada:208965.00, parcela:19245.56, ll:[-23.092335,-47.283440], soVista:true },
-  { b:'araras',  q:'17', l:'2',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, ll:[-23.092443,-47.283126], soVista:true },
-  { b:'araras',  q:'17', l:'3',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, ll:[-23.092658,-47.282904], soVista:true },
-  { b:'araras',  q:'18', l:'6',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, ll:[-23.091820,-47.283937], soVista:true },
-  { b:'araras',  q:'18', l:'7',  m2:1564.31,tipo:'MISTO',       pm2:1000,    vista:1564310.00,entrada:234646.50, parcela:21610.81, ll:[-23.091952,-47.283754], soVista:true },
-  { b:'araras',  q:'19', l:'1',  m2:1924.50,tipo:'MISTO',       pm2:1000,    vista:1924500.00,entrada:288675.00, parcela:26586.80, ll:[-23.089450,-47.286830], soVista:true },
-  { b:'araras',  q:'19', l:'2',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, ll:[-23.089525,-47.286606], soVista:true },
-  { b:'araras',  q:'19', l:'3',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, ll:[-23.089727,-47.286346], soVista:true },
+  { b:'araras',  q:'17', l:'1',  m2:1393.10,tipo:'MISTO',       pm2:1000,    vista:1393100.00,entrada:208965.00, parcela:19245.56, nx:96, ll:[-23.092335,-47.283440] },
+  { b:'araras',  q:'17', l:'2',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, nx:96, ll:[-23.092443,-47.283126] },
+  { b:'araras',  q:'17', l:'3',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, nx:96, ll:[-23.092658,-47.282904] },
+  { b:'araras',  q:'18', l:'6',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, nx:96, ll:[-23.091820,-47.283937] },
+  { b:'araras',  q:'18', l:'7',  m2:1564.31,tipo:'MISTO',       pm2:1000,    vista:1564310.00,entrada:234646.50, parcela:21610.81, nx:96, ll:[-23.091952,-47.283754] },
+  { b:'araras',  q:'19', l:'1',  m2:1924.50,tipo:'MISTO',       pm2:1000,    vista:1924500.00,entrada:288675.00, parcela:26586.80, nx:96, ll:[-23.089450,-47.286830] },
+  { b:'araras',  q:'19', l:'2',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, nx:96, ll:[-23.089525,-47.286606] },
+  { b:'araras',  q:'19', l:'3',  m2:1500,   tipo:'MISTO',       pm2:1000,    vista:1500000.00,entrada:225000.00, parcela:20722.37, nx:96, ll:[-23.089727,-47.286346] },
   // Parque Campo Bonito — planta original do loteamento georreferenciada (casamento com o OpenStreetMap/satélite); pinos reposicionados pela planta
   { b:'campobonito', q:'A', l:'7C-1', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, nx:96, obs:'Gleba A 7C-1, próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
   { b:'campobonito', q:'A', l:'7C-2', m2:1675.73, tipo:'GLEBA', pm2:1300,    vista:2178449.00,entrada:326767.35, parcela:30095.09, nx:96, obs:'Gleba A 7C-2, próx. à Paróquia São João Paulo II (Av. Clóvis Ferraz de Camargo, 930, segundo a Arquidiocese de Campinas) — posição exata a confirmar.' },
@@ -1961,13 +1961,13 @@ const LOTES = [
   { b:'campobonito', q:'28', l:'22', m2:151.20, tipo:'MISTO', pm2:1450,    vista:219240.00, entrada:32886.00,  parcela:16557.33, nx:12, ll:[-23.099579,-47.272178] },
   // Parque Barnabé (Smart City) — planta original do loteamento georreferenciada (OpenStreetMap/satélite); pinos reposicionados pela planta
   { b:'barnabe', q:'32', l:'4',  m2:172.54, tipo:'COMERCIAL',     pm2:1300,    vista:224302.00, entrada:null,      parcela:null,     soVista:true, ll:[-23.090403,-47.276357] },
-  { b:'barnabe', q:'11', l:'1',  m2:214.12, tipo:'COMERCIAL',   pm2:1300,    vista:278356.00, entrada:41753.40,  parcela:3845.46,  ll:[-23.086827,-47.277307], soVista:true },
-  { b:'barnabe', q:'33', l:'8',  m2:302.69, tipo:'MISTO',       pm2:1100,    vista:332959.00, entrada:49943.85,  parcela:4599.80,  ll:[-23.090122,-47.275328], soVista:true },
-  { b:'barnabe', q:'38', l:'22', m2:238.49, tipo:'COMERCIAL',   pm2:1250,    vista:298112.50, entrada:44716.88,  parcela:4118.40,  ll:[-23.091480,-47.273968], soVista:true },
-  { b:'barnabe', q:'44', l:'1',  m2:256.62, tipo:'COMERCIAL',   pm2:1250,    vista:320775.00, entrada:48116.25,  parcela:4431.48,  ll:[-23.088988,-47.281631], soVista:true },
-  { b:'barnabe', q:'47', l:'1',  m2:243.07, tipo:'COMERCIAL',   pm2:1250,    vista:303837.50, entrada:45575.63,  parcela:4197.49,  ll:[-23.089481,-47.280073], soVista:true },
-  { b:'barnabe', q:'54', l:'25', m2:328.47, tipo:'COMERCIAL',   pm2:1250,    vista:410587.50, entrada:61588.13,  parcela:5672.23,  ll:[-23.091579,-47.276739], soVista:true },
-  { b:'barnabe', q:'56', l:'17', m2:297.23, tipo:'RESIDENCIAL', pm2:1133.33, vista:336860.66, entrada:50529.10,  parcela:4653.70,  ll:[-23.084777,-47.282450], soVista:true },
+  { b:'barnabe', q:'11', l:'1',  m2:214.12, tipo:'COMERCIAL',   pm2:1300,    vista:278356.00, entrada:41753.40,  parcela:3845.46, nx:96,  ll:[-23.086827,-47.277307] },
+  { b:'barnabe', q:'33', l:'8',  m2:302.69, tipo:'MISTO',       pm2:1100,    vista:332959.00, entrada:49943.85,  parcela:4599.80, nx:96,  ll:[-23.090122,-47.275328] },
+  { b:'barnabe', q:'38', l:'22', m2:238.49, tipo:'COMERCIAL',   pm2:1250,    vista:298112.50, entrada:44716.88,  parcela:4118.40, nx:96,  ll:[-23.091480,-47.273968] },
+  { b:'barnabe', q:'44', l:'1',  m2:256.62, tipo:'COMERCIAL',   pm2:1250,    vista:320775.00, entrada:48116.25,  parcela:4431.48, nx:96,  ll:[-23.088988,-47.281631] },
+  { b:'barnabe', q:'47', l:'1',  m2:243.07, tipo:'COMERCIAL',   pm2:1250,    vista:303837.50, entrada:45575.63,  parcela:4197.49, nx:96,  ll:[-23.089481,-47.280073] },
+  { b:'barnabe', q:'54', l:'25', m2:328.47, tipo:'COMERCIAL',   pm2:1250,    vista:410587.50, entrada:61588.13,  parcela:5672.23, nx:96,  ll:[-23.091579,-47.276739] },
+  { b:'barnabe', q:'56', l:'17', m2:297.23, tipo:'RESIDENCIAL', pm2:1133.33, vista:336860.66, entrada:50529.10,  parcela:4653.70, nx:96,  ll:[-23.084777,-47.282450] },
   // Jardim Bom Sucesso — lote misto C01 segregado em A e B (nota da loteadora de 08/09/2026; entrada 20% + 72x)
   { b:'bomsucesso', q:'C', l:'01-A', m2:1085.85, tipo:'MISTO', pm2:1500, vista:1628775.00, entrada:325755.00, parcela:26060.00, nx:72, ep:20, ll:[-23.116734,-47.260595], obs:'lote C01 segregado pela loteadora em A e B' },
   { b:'bomsucesso', q:'C', l:'01-B', m2:500.00, tipo:'MISTO', pm2:1500, vista:750000.00, entrada:150000.00, parcela:12000.00, nx:72, ep:20, ll:[-23.116767,-47.260383], obs:'lote C01 segregado pela loteadora em A e B' },
@@ -2630,8 +2630,12 @@ let termo = '';
 const semAcento = t => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 // um lote entra no mapa e na lista quando passa nos tres filtros: especie do loteamento, tipo de lote e busca livre
 function passa(x) {
-  if (!ativos.has(x.tipo)) return false;
   const b = bairroDe(x.b);
+  // Loteamento oculto: saiu da tabela da loteadora, logo vendeu, e some do mapa.
+  // O dado NAO e apagado — ficam os lotes, os pinos e a planta no arquivo. Se os
+  // lotes voltarem na proxima tabela, basta tirar o `oculto:true` do bairro.
+  if (b && b.oculto) return false;
+  if (!ativos.has(x.tipo)) return false;
   if (!ativosLot.has(especieDe(b))) return false;
   if (!termo) return true;
   const alvo = semAcento(`${b ? b.nome : ''} ${b && b.sub ? b.sub : ''} quadra ${x.q} q${x.q} lote ${x.l} l${x.l} ${TIPOS[x.tipo][0]} ${m2Txt(x)}`);
@@ -2777,6 +2781,7 @@ const htmlBairro = (b, ls) => `<div><b>${b.nome}</b><span>${ls.length} lote${ls.
 const iconeBairro = (b, ls, baixo) => L.divIcon({ className: 'pino-bairro' + (baixo ? ' baixo' : ''), html: htmlBairro(b, ls), iconSize: null, iconAnchor: [0, 0] });
 const iconeMini = (b, ls) => L.divIcon({ className: 'pino-bairro-mini', html: `<div>${ls.length}</div>`, iconSize: null, iconAnchor: [0, 0] });
 BAIRROS.forEach(b => {
+  if (b.oculto) return;   // nem pino de bairro nem planta: o loteamento sai inteiro do mapa
   const ls = LOTES.filter(x => x.b === b.id);
   const pts = ls.flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
   const centro = pts.length ? L.latLngBounds(pts).getCenter() : (b.centro ? L.latLng(b.centro) : null);
