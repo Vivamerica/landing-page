@@ -121,16 +121,98 @@ EXTRA = '''
     figure.grafico{margin:2rem 0;}
     figure.grafico img{width:100%;height:auto;border:1px solid var(--linha,#e6e1d6);border-radius:.5rem;}
     figure.grafico figcaption{font-size:.8rem;color:#8a8272;margin-top:.5rem;}
-    table.tabela{width:100%;border-collapse:collapse;margin:1.4rem 0;font-size:.93rem;}
+
+    /* O mapa de estados tem texto miúdo dentro do desenho. Encolhido para a
+       largura de um celular ele fica ilegível, então abaixo de 620px a FIGURA
+       rola de lado com o desenho num tamanho que ainda se lê — a página, não. */
+    @media(max-width:620px){
+      figure.grafico{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      figure.grafico img{width:620px;max-width:none;}
+      figure.grafico figcaption{position:sticky;left:0;}
+    }
+
+    /* Tabela: contêiner que rola, para a tabela nunca empurrar a página. */
+    .tabela-rolagem{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.4rem 0;}
+    table.tabela{width:100%;border-collapse:collapse;margin:0;font-size:.93rem;}
     table.tabela th{background:#14110f;color:#f5f1e8;text-align:left;padding:.6rem .8rem;font-weight:600;}
     table.tabela td{border-bottom:1px solid var(--linha,#e6e1d6);padding:.6rem .8rem;}
-    p.fonte-tabela{font-size:.8rem;color:#8a8272;margin-top:-.8rem;}
+    /* No celular, empilhar lê melhor que rolar de lado: cada linha vira um
+       cartão e o cabeçalho da coluna reaparece como rótulo de cada campo. */
+    @media(max-width:560px){
+      .tabela-rolagem{overflow:visible;}
+      table.tabela thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+      /* o CSS compartilhado do blog põe min-width:640px nas tabelas, para elas
+         rolarem dentro do contêiner. Empilhado isso tem de sair, senão a tabela
+         segue com 640px e é ela que empurra a página de lado. */
+      table.tabela,table.tabela tbody,table.tabela tr,table.tabela td{display:block;width:auto;min-width:0;}
+      table.tabela tr{border:1px solid var(--linha,#e6e1d6);border-radius:.5rem;margin-bottom:.8rem;padding:.3rem .9rem .7rem;}
+      table.tabela td{border:0;padding:.45rem 0;}
+      table.tabela td::before{content:attr(data-r);display:block;font-size:.72rem;text-transform:uppercase;
+        letter-spacing:.06em;color:#8a8272;margin-bottom:.12rem;}
+    }
+    p.fonte-tabela{font-size:.8rem;color:#8a8272;margin-top:.4rem;}
+
+    /* Linha do tempo vertical, em fundo claro. Vertical porque numa tela de
+       celular a horizontal obriga a encolher a fonte até sumir; na vertical a
+       rolagem natural da página já é o eixo do tempo. */
+    .lt{margin:2.2rem 0;padding:1.5rem 1.1rem 1.2rem;background:#fbf8f1;
+      border:1px solid var(--linha,#e6e1d6);border-radius:.7rem;}
+    .lt-tit{margin:0 0 1.3rem;font:700 1.25rem Georgia,serif;color:#14110f;}
+    .lt-lista{list-style:none;margin:0;padding:0 0 0 1.9rem;position:relative;}
+    .lt-lista::before{content:'';position:absolute;left:.42rem;top:.6rem;bottom:.6rem;width:2px;
+      background:linear-gradient(#e3d19a,#c9a227);}
+    .lt-item{position:relative;padding:0 0 1.5rem;}
+    .lt-item:last-child{padding-bottom:0;}
+    .lt-item::before{content:'';position:absolute;left:-1.62rem;top:.5rem;width:.6rem;height:.6rem;
+      border-radius:50%;background:#c9a227;box-shadow:0 0 0 3px #fbf8f1;}
+    .lt-marco::before{width:.85rem;height:.85rem;left:-1.75rem;top:.4rem;background:#14110f;}
+    .lt-ano{margin:0 0 .1rem;font:700 1.35rem Georgia,serif;color:#a8841a;}
+    .lt-txt b{display:block;font-size:1.06rem;line-height:1.35;color:#14110f;}
+    .lt-txt span{display:block;margin-top:.15rem;font-size:.95rem;color:#6b6255;}
+    .lt-fonte{margin:1.3rem 0 0;font-size:.8rem;color:#8a8272;}
+    @media(min-width:720px){
+      .lt{padding:1.9rem 1.9rem 1.5rem;}
+      .lt-ano{font-size:1.5rem;}
+      .lt-txt b{font-size:1.12rem;}
+      .lt-txt span{font-size:1rem;}
+    }
+    /* A revelação só existe depois que o JS marca .lt-anima. Sem JS, ou para
+       quem pediu menos movimento, a linha do tempo nasce inteira visível —
+       conteúdo nenhum pode depender de script para ser lido. */
+    @media(prefers-reduced-motion:no-preference){
+      .lt-anima .lt-item{opacity:0;transform:translateY(14px);
+        transition:opacity .5s ease,transform .5s ease;}
+      .lt-anima .lt-item.vis{opacity:1;transform:none;}
+    }
+
     ul.numeros li{margin-bottom:.4rem;}
     p.cta-inline{margin:1.6rem 0;}
     p.cta-inline a{display:inline-block;background:var(--ouro,#c9a227);color:#14110f;font-weight:700;
       padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;}
 '''
+
+# Revelação da linha do tempo conforme a rolagem. Entra como <script> no fim do
+# corpo e é defensivo: se não houver IntersectionObserver, não marca nada e tudo
+# fica visível. O que já está na tela ao carregar aparece de imediato.
+SCRIPT_LT = '''<script>
+(function(){
+  var lt = document.querySelector('.lt');
+  if (!lt || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  lt.classList.add('lt-anima');
+  var itens = lt.querySelectorAll('.lt-item');
+  var obs = new IntersectionObserver(function(ent){
+    ent.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+  [].forEach.call(itens, function(li){ obs.observe(li); });
+  // Rede de segurança: conteúdo nenhum pode ficar invisível porque um observer
+  // não disparou. Passados 2,5s, o que ainda estiver escondido aparece.
+  setTimeout(function(){ [].forEach.call(itens, function(li){ li.classList.add('vis'); }); }, 2500);
+})();
+</script>
+'''
 s = s.replace('  </style>', EXTRA + '  </style>', 1)
+s = s.replace('</body>', SCRIPT_LT + '</body>', 1)
 
 os.makedirs(DEST, exist_ok=True)
 io.open(DEST + 'index.html', 'w', encoding='utf-8', newline='').write(s)

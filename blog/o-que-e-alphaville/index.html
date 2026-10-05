@@ -150,10 +150,70 @@
     figure.grafico{margin:2rem 0;}
     figure.grafico img{width:100%;height:auto;border:1px solid var(--linha,#e6e1d6);border-radius:.5rem;}
     figure.grafico figcaption{font-size:.8rem;color:#8a8272;margin-top:.5rem;}
-    table.tabela{width:100%;border-collapse:collapse;margin:1.4rem 0;font-size:.93rem;}
+
+    /* O mapa de estados tem texto miúdo dentro do desenho. Encolhido para a
+       largura de um celular ele fica ilegível, então abaixo de 620px a FIGURA
+       rola de lado com o desenho num tamanho que ainda se lê — a página, não. */
+    @media(max-width:620px){
+      figure.grafico{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      figure.grafico img{width:620px;max-width:none;}
+      figure.grafico figcaption{position:sticky;left:0;}
+    }
+
+    /* Tabela: contêiner que rola, para a tabela nunca empurrar a página. */
+    .tabela-rolagem{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.4rem 0;}
+    table.tabela{width:100%;border-collapse:collapse;margin:0;font-size:.93rem;}
     table.tabela th{background:#14110f;color:#f5f1e8;text-align:left;padding:.6rem .8rem;font-weight:600;}
     table.tabela td{border-bottom:1px solid var(--linha,#e6e1d6);padding:.6rem .8rem;}
-    p.fonte-tabela{font-size:.8rem;color:#8a8272;margin-top:-.8rem;}
+    /* No celular, empilhar lê melhor que rolar de lado: cada linha vira um
+       cartão e o cabeçalho da coluna reaparece como rótulo de cada campo. */
+    @media(max-width:560px){
+      .tabela-rolagem{overflow:visible;}
+      table.tabela thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+      /* o CSS compartilhado do blog põe min-width:640px nas tabelas, para elas
+         rolarem dentro do contêiner. Empilhado isso tem de sair, senão a tabela
+         segue com 640px e é ela que empurra a página de lado. */
+      table.tabela,table.tabela tbody,table.tabela tr,table.tabela td{display:block;width:auto;min-width:0;}
+      table.tabela tr{border:1px solid var(--linha,#e6e1d6);border-radius:.5rem;margin-bottom:.8rem;padding:.3rem .9rem .7rem;}
+      table.tabela td{border:0;padding:.45rem 0;}
+      table.tabela td::before{content:attr(data-r);display:block;font-size:.72rem;text-transform:uppercase;
+        letter-spacing:.06em;color:#8a8272;margin-bottom:.12rem;}
+    }
+    p.fonte-tabela{font-size:.8rem;color:#8a8272;margin-top:.4rem;}
+
+    /* Linha do tempo vertical, em fundo claro. Vertical porque numa tela de
+       celular a horizontal obriga a encolher a fonte até sumir; na vertical a
+       rolagem natural da página já é o eixo do tempo. */
+    .lt{margin:2.2rem 0;padding:1.5rem 1.1rem 1.2rem;background:#fbf8f1;
+      border:1px solid var(--linha,#e6e1d6);border-radius:.7rem;}
+    .lt-tit{margin:0 0 1.3rem;font:700 1.25rem Georgia,serif;color:#14110f;}
+    .lt-lista{list-style:none;margin:0;padding:0 0 0 1.9rem;position:relative;}
+    .lt-lista::before{content:'';position:absolute;left:.42rem;top:.6rem;bottom:.6rem;width:2px;
+      background:linear-gradient(#e3d19a,#c9a227);}
+    .lt-item{position:relative;padding:0 0 1.5rem;}
+    .lt-item:last-child{padding-bottom:0;}
+    .lt-item::before{content:'';position:absolute;left:-1.62rem;top:.5rem;width:.6rem;height:.6rem;
+      border-radius:50%;background:#c9a227;box-shadow:0 0 0 3px #fbf8f1;}
+    .lt-marco::before{width:.85rem;height:.85rem;left:-1.75rem;top:.4rem;background:#14110f;}
+    .lt-ano{margin:0 0 .1rem;font:700 1.35rem Georgia,serif;color:#a8841a;}
+    .lt-txt b{display:block;font-size:1.06rem;line-height:1.35;color:#14110f;}
+    .lt-txt span{display:block;margin-top:.15rem;font-size:.95rem;color:#6b6255;}
+    .lt-fonte{margin:1.3rem 0 0;font-size:.8rem;color:#8a8272;}
+    @media(min-width:720px){
+      .lt{padding:1.9rem 1.9rem 1.5rem;}
+      .lt-ano{font-size:1.5rem;}
+      .lt-txt b{font-size:1.12rem;}
+      .lt-txt span{font-size:1rem;}
+    }
+    /* A revelação só existe depois que o JS marca .lt-anima. Sem JS, ou para
+       quem pediu menos movimento, a linha do tempo nasce inteira visível —
+       conteúdo nenhum pode depender de script para ser lido. */
+    @media(prefers-reduced-motion:no-preference){
+      .lt-anima .lt-item{opacity:0;transform:translateY(14px);
+        transition:opacity .5s ease,transform .5s ease;}
+      .lt-anima .lt-item.vis{opacity:1;transform:none;}
+    }
+
     ul.numeros li{margin-bottom:.4rem;}
     p.cta-inline{margin:1.6rem 0;}
     p.cta-inline a{display:inline-block;background:var(--ouro,#c9a227);color:#14110f;font-weight:700;
@@ -301,8 +361,8 @@ que hoje tem 53.</p>
 
 <!--GEN:cta-topo-->
       <div class="cta-topo">
-        <p>Veja o que está disponível em Indaiatuba agora</p>
-        <a href="/" data-emp="cta-topo">Ver imóveis disponíveis</a>
+        <p>Lotes do Alphaville Indaiatuba disponíveis agora</p>
+        <a href="/alphaville-indaiatuba/" data-emp="cta-topo">Ver imóveis disponíveis</a>
       </div>
     <!--/GEN:cta-topo-->
     <h2 id="origem">1973: dois engenheiros e uma fazenda em Barueri</h2>
@@ -328,24 +388,35 @@ brasileiro de vida em condomínio foi batizado com o nome de uma cidade onde nin
 <p>A ironia é boa demais para passar batido, mas também explica algo do projeto: Alphaville foi
 concebido como <em>cidade planejada</em>, não como bairro que cresce sozinho. O controle é o produto.</p>
 
-<figure class="grafico">
-  <img src="images/linha-do-tempo.svg" alt="Linha do tempo da Alphaville de 1973 a 2025, com os marcos registrados no Formulário de Referência" width="1180" height="560" loading="lazy">
-  <figcaption>Os marcos que a companhia registra no Formulário de Referência entregue à CVM.</figcaption>
-</figure>
+<section class="lt" aria-label="Linha do tempo da Alphaville, de 1973 a 2025">
+  <h3 class="lt-tit">De 1973 a 2025</h3>
+  <ol class="lt-lista">
+    <li class="lt-item lt-marco"><p class="lt-ano">1973</p><div class="lt-txt"><b>Primeiro Alphaville, em Barueri</b><span>Renato Albuquerque e Yojiro Takaoka</span></div></li>
+    <li class="lt-item"><p class="lt-ano">1997</p><div class="lt-txt"><b>Sai de Barueri</b><span>primeiro projeto fora: Campinas</span></div></li>
+    <li class="lt-item"><p class="lt-ano">1998</p><div class="lt-txt"><b>Chega a Minas</b><span>Alphaville Lagoa dos Ingleses, em Belo Horizonte</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2000</p><div class="lt-txt"><b>Vai para o Norte e o Nordeste</b><span>Paraná, Goiás, Bahia e Amazonas</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2006</p><div class="lt-txt"><b>Gafisa entra</b><span>com 60% das ações</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2009</p><div class="lt-txt"><b>Nasce o Terras Alpha</b><span>linha de lotes menores</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2013</p><div class="lt-txt"><b>Pátria e Blackstone</b><span>compram 70% da companhia</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2015</p><div class="lt-txt"><b>100 projetos lançados</b></div></li>
+    <li class="lt-item lt-marco"><p class="lt-ano">2020</p><div class="lt-txt"><b>Abre capital na B3</b><span>com o código AVLL3</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2025</p><div class="lt-txt"><b>Recorde de entregas</b><span>8 empreendimentos e 2.047 lotes</span></div></li>
+  </ol>
+  <p class="lt-fonte">Marcos registrados no Formulário de Referência entregue à CVM, versão de 30/06/2026.</p>
+</section>
 
 <!--GEN:oferta-->
       <div class="bo-inline">
-        <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
+        <img loading="lazy" decoding="async" src="/alphaville-indaiatuba/images/hero.jpg" alt="Alphaville Indaiatuba — Indaiatuba">
         <div class="bo-inline-txt">
           <span class="bo-eyebrow">Disponível agora em Indaiatuba</span>
-          <h4>Uni Residencial</h4>
-          <p class="bo-spec">2 dorm c/ suíte · sacada · vaga coberta · Masotti</p>
-          <p class="bo-preco">A partir de <b>R$ 279.990</b></p>
+          <h4>Alphaville Indaiatuba</h4>
+          <p class="bo-spec">Itaici · 131 lotes de 511 a 1.249 m² · clube com piscina de raias · Alphaville</p>
+          <p class="bo-preco">A partir de <b>R$ 888.939</b></p>
           <div class="bo-acoes">
-            <a class="bo-btn-primario" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">Ver o empreendimento</a>
-            <a class="bo-btn-wpp" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20o%20Uni%20Residencial%20no%20blog%20da%20Viv'Am%C3%A9rica%20e%20quero%20saber%20mais." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="bo-btn-primario" href="/alphaville-indaiatuba/" data-emp="alphaville-indaiatuba">Ver o empreendimento</a>
+            <a class="bo-btn-wpp" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20o%20Alphaville%20Indaiatuba%20no%20blog%20da%20Viv'Am%C3%A9rica%20e%20quero%20saber%20mais." target="_blank" rel="noopener">WhatsApp</a>
           </div>
-          <a class="bo-todos" href="/apartamentos-na-planta-indaiatuba/" data-emp="apartamentos-na-planta">Ver todos os apartamentos na planta →</a>
         </div>
       </div>
     <!--/GEN:oferta-->
@@ -409,14 +480,16 @@ com esse nome na cidade, mas não encontramos nada que o ligue à companhia.</p>
 <p>Esta é a parte que quase ninguém sabe, e que muda o que você está comprando. A companhia opera
 <b>três linhas de produto</b>, separadas pelo tamanho do lote:</p>
 
+<div class="tabela-rolagem">
 <table class="tabela">
   <thead><tr><th>Linha</th><th>Lote</th><th>Posicionamento</th></tr></thead>
   <tbody>
-    <tr><td><b>Alphaville</b></td><td>a partir de 360 m²</td><td>residencial de alto padrão</td></tr>
-    <tr><td><b>Terras Alpha</b></td><td>250 a 360 m²</td><td>lotes médios</td></tr>
-    <tr><td><b>Jardim Alpha</b></td><td>200 a 250 m²</td><td>lote de entrada</td></tr>
+    <tr><td data-r="Linha"><b>Alphaville</b></td><td data-r="Lote">a partir de 360 m²</td><td data-r="Posicionamento">residencial de alto padrão</td></tr>
+    <tr><td data-r="Linha"><b>Terras Alpha</b></td><td data-r="Lote">250 a 360 m²</td><td data-r="Posicionamento">lotes médios</td></tr>
+    <tr><td data-r="Linha"><b>Jardim Alpha</b></td><td data-r="Lote">200 a 250 m²</td><td data-r="Posicionamento">lote de entrada</td></tr>
   </tbody>
 </table>
+</div>
 
 <p class="fonte-tabela">Fonte: Formulário de Referência da Alphaville S.A., versão de 30/06/2026.
 A companhia registra no INPI, entre outras, as marcas "Alphaville", "Terras Alpha", "Jardim Alpha",
@@ -537,33 +610,33 @@ fiscaliza o mercado de capitais. São documentos auditados, datados e públicos:
       <aside class="bo-aside">
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
-        <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
-          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
+        <a class="bo-card" href="/porteira-de-ferro-indaiatuba/" data-emp="porteira-de-ferro-indaiatuba">
+          <img loading="lazy" decoding="async" src="/porteira-de-ferro-indaiatuba/images/hero.jpg" alt="Porteira de Ferro — Indaiatuba">
           <div class="bo-corpo">
-            <span class="bo-selo">Loteamento</span>
-            <h4>Residencial Monte Carmelo</h4>
-            <p class="bo-spec">Loteamento aberto · entrada de R$ 16.000 · 96x</p>
-            <p class="bo-preco">A partir de <b>R$ 145.000</b></p>
+            <span class="bo-selo">Cond. fechado</span>
+            <h4>Porteira de Ferro</h4>
+            <p class="bo-spec">Último lote · 103 lotes a partir de 500 m² · Club House no casarão</p>
+            <p class="bo-preco">A partir de <b>R$ 1.300.000</b></p>
             <span class="bo-btn">Ver detalhes →</span>
           </div>
         </a>
-        <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
-          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki — Indaiatuba">
+        <a class="bo-card" href="/lagos-de-helvetia-indaiatuba/" data-emp="lagos-de-helvetia-indaiatuba">
+          <img loading="lazy" decoding="async" src="/lagos-de-helvetia-indaiatuba/images/hero.jpg" alt="Lagos de Helvetia — Indaiatuba">
           <div class="bo-corpo">
-            <span class="bo-selo">Alto padrão</span>
-            <h4>Aurora — Park Meraki</h4>
-            <p class="bo-spec">101 a 152 m² · 4 torres · 32 áreas de lazer</p>
-            <p class="bo-preco">A partir de <b>R$ 758.850</b></p>
+            <span class="bo-selo">Cond. fechado</span>
+            <h4>Lagos de Helvetia</h4>
+            <p class="bo-spec">Helvetia · 44 lotes de 501 a 2.015 m² · lago e clube</p>
+            <p class="bo-preco">A partir de <b>R$ 901.800</b></p>
             <span class="bo-btn">Ver detalhes →</span>
           </div>
         </a>
-        <a class="bo-card" href="/gran-vic-tangara-indaiatuba/" data-emp="gran-vic-tangara-indaiatuba">
-          <img loading="lazy" decoding="async" src="/gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará — Indaiatuba">
+        <a class="bo-card" href="/residencial-ravello-indaiatuba/" data-emp="residencial-ravello-indaiatuba">
+          <img loading="lazy" decoding="async" src="/residencial-ravello-indaiatuba/images/hero.jpg" alt="Residencial Ravello — Indaiatuba">
           <div class="bo-corpo">
-            <span class="bo-selo">MCMV · FGTS</span>
-            <h4>Gran Vic Tangará</h4>
-            <p class="bo-spec">2 dorm · 47,22 m² · 78 unidades (set/2026) · entrega nov/2028</p>
-            <p class="bo-preco">A partir de <b>R$ 330.000</b></p>
+            <span class="bo-selo">Cond. fechado</span>
+            <h4>Residencial Ravello</h4>
+            <p class="bo-spec">710 lotes · 27 itens: SPA, Wine Bar, Fire Pit</p>
+            <p class="bo-preco">A partir de <b>R$ 714.000</b></p>
             <span class="bo-btn">Ver detalhes →</span>
           </div>
         </a>
@@ -619,5 +692,21 @@ fiscaliza o mercado de capitais. São documentos auditados, datados e públicos:
       }
     });
   </script>
+<script>
+(function(){
+  var lt = document.querySelector('.lt');
+  if (!lt || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  lt.classList.add('lt-anima');
+  var itens = lt.querySelectorAll('.lt-item');
+  var obs = new IntersectionObserver(function(ent){
+    ent.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+  [].forEach.call(itens, function(li){ obs.observe(li); });
+  // Rede de segurança: conteúdo nenhum pode ficar invisível porque um observer
+  // não disparou. Passados 2,5s, o que ainda estiver escondido aparece.
+  setTimeout(function(){ [].forEach.call(itens, function(li){ li.classList.add('vis'); }); }, 2500);
+})();
+</script>
 </body>
 </html>

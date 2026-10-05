@@ -51,10 +51,22 @@ brasileiro de vida em condomínio foi batizado com o nome de uma cidade onde nin
 <p>A ironia é boa demais para passar batido, mas também explica algo do projeto: Alphaville foi
 concebido como <em>cidade planejada</em>, não como bairro que cresce sozinho. O controle é o produto.</p>
 
-<figure class="grafico">
-  <img src="images/linha-do-tempo.svg" alt="Linha do tempo da Alphaville de 1973 a 2025, com os marcos registrados no Formulário de Referência" width="1180" height="560" loading="lazy">
-  <figcaption>Os marcos que a companhia registra no Formulário de Referência entregue à CVM.</figcaption>
-</figure>
+<section class="lt" aria-label="Linha do tempo da Alphaville, de 1973 a 2025">
+  <h3 class="lt-tit">De 1973 a 2025</h3>
+  <ol class="lt-lista">
+    <li class="lt-item lt-marco"><p class="lt-ano">1973</p><div class="lt-txt"><b>Primeiro Alphaville, em Barueri</b><span>Renato Albuquerque e Yojiro Takaoka</span></div></li>
+    <li class="lt-item"><p class="lt-ano">1997</p><div class="lt-txt"><b>Sai de Barueri</b><span>primeiro projeto fora: Campinas</span></div></li>
+    <li class="lt-item"><p class="lt-ano">1998</p><div class="lt-txt"><b>Chega a Minas</b><span>Alphaville Lagoa dos Ingleses, em Belo Horizonte</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2000</p><div class="lt-txt"><b>Vai para o Norte e o Nordeste</b><span>Paraná, Goiás, Bahia e Amazonas</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2006</p><div class="lt-txt"><b>Gafisa entra</b><span>com 60% das ações</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2009</p><div class="lt-txt"><b>Nasce o Terras Alpha</b><span>linha de lotes menores</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2013</p><div class="lt-txt"><b>Pátria e Blackstone</b><span>compram 70% da companhia</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2015</p><div class="lt-txt"><b>100 projetos lançados</b></div></li>
+    <li class="lt-item lt-marco"><p class="lt-ano">2020</p><div class="lt-txt"><b>Abre capital na B3</b><span>com o código AVLL3</span></div></li>
+    <li class="lt-item"><p class="lt-ano">2025</p><div class="lt-txt"><b>Recorde de entregas</b><span>8 empreendimentos e 2.047 lotes</span></div></li>
+  </ol>
+  <p class="lt-fonte">Marcos registrados no Formulário de Referência entregue à CVM, versão de 30/06/2026.</p>
+</section>
 
 <h2 id="escala">O tamanho da coisa hoje</h2>
 
@@ -116,14 +128,16 @@ com esse nome na cidade, mas não encontramos nada que o ligue à companhia.</p>
 <p>Esta é a parte que quase ninguém sabe, e que muda o que você está comprando. A companhia opera
 <b>três linhas de produto</b>, separadas pelo tamanho do lote:</p>
 
+<div class="tabela-rolagem">
 <table class="tabela">
   <thead><tr><th>Linha</th><th>Lote</th><th>Posicionamento</th></tr></thead>
   <tbody>
-    <tr><td><b>Alphaville</b></td><td>a partir de 360 m²</td><td>residencial de alto padrão</td></tr>
-    <tr><td><b>Terras Alpha</b></td><td>250 a 360 m²</td><td>lotes médios</td></tr>
-    <tr><td><b>Jardim Alpha</b></td><td>200 a 250 m²</td><td>lote de entrada</td></tr>
+    <tr><td data-r="Linha"><b>Alphaville</b></td><td data-r="Lote">a partir de 360 m²</td><td data-r="Posicionamento">residencial de alto padrão</td></tr>
+    <tr><td data-r="Linha"><b>Terras Alpha</b></td><td data-r="Lote">250 a 360 m²</td><td data-r="Posicionamento">lotes médios</td></tr>
+    <tr><td data-r="Linha"><b>Jardim Alpha</b></td><td data-r="Lote">200 a 250 m²</td><td data-r="Posicionamento">lote de entrada</td></tr>
   </tbody>
 </table>
+</div>
 
 <p class="fonte-tabela">Fonte: Formulário de Referência da Alphaville S.A., versão de 30/06/2026.
 A companhia registra no INPI, entre outras, as marcas "Alphaville", "Terras Alpha", "Jardim Alpha",

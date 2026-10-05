@@ -46,11 +46,21 @@ const porSlug = s => APTOS.concat(LOTES).find(e => e.slug === s);
 const mcmv    = () => comPreco(APTOS).filter(e => /MCMV/i.test(e.t || ''));
 const altoP   = () => comPreco(APTOS).filter(e => /Alto padr/i.test(e.t || ''));
 const lotes   = () => comPreco(LOTES);
+// condomínios fechados do mais caro para o mais barato: é o público do
+// artigo de marca (Alphaville), que não tem nada a ver com MCMV
+const fechados = () => comPreco(LOTES).filter(e => /fechado/i.test(e.t || '')).reverse();
 
 // tema → lista de empreendimentos. O 1º vai no card DENTRO do texto;
 // os demais vão na coluna lateral — por isso a lista tem 4, para o
 // destaque do texto não se repetir na lateral.
 const TEMAS = [
+  // Artigo de marca de alto padrão. Vem ANTES dos demais porque, sem ele, o
+  // artigo do Alphaville caía no tema genérico e abria com o apartamento MCMV
+  // mais barato da base — público nenhum em comum com quem pesquisa Alphaville.
+  { re: /alphaville/, nome: 'Alphaville',
+    url: '/alphaville-indaiatuba/', chamada: 'Lotes do Alphaville Indaiatuba disponíveis agora',
+    pega: () => [porSlug('alphaville-indaiatuba'),
+                 ...fechados().filter(e => e.slug !== 'alphaville-indaiatuba').slice(0, 3)] },
   { re: /minha-casa|mcmv|fgts|quem-tem-direito|como-comprar-apartamento|casa-propria-motorista/, nome: 'MCMV',
     url: '/?f=mcmv', chamada: 'Apartamentos Minha Casa Minha Vida disponíveis em Indaiatuba',
     pega: () => mcmv().slice(0, 4) },
@@ -67,8 +77,10 @@ const TEMAS = [
     url: '/?f=fechado', chamada: 'Condomínios fechados disponíveis em Indaiatuba',
     pega: () => [porSlug('terras-de-san-marino-indaiatuba') || lotes()[2], lotes()[0], mcmv()[0], altoP()[0]] },
 ];
+// Fallback pelo NOME, nunca por índice: enquanto era TEMAS[2], bastou inserir um
+// tema novo no começo da lista para o artigo do hospital trocar de oferta sozinho.
 const paraTema = slug => {
-  const t = TEMAS.find(t => t.re.test(slug)) || TEMAS[2];
+  const t = TEMAS.find(t => t.re.test(slug)) || TEMAS.find(t => t.nome === 'panorama');
   return { nome: t.nome, url: t.url, chamada: t.chamada, itens: t.pega().filter(Boolean) };
 };
 

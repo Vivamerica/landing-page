@@ -48,20 +48,26 @@ s.append('<desc>Marcos da Alphaville segundo o Formulário de Referência entreg
          'fundação em 1973 em Barueri, primeiro projeto fora em 1997, entrada da Gafisa em 2006, '
          'compra de 70% por Pátria e Blackstone em 2013, abertura de capital em 2020 e recorde de '
          'entregas em 2025.</desc>')
+# Fundo CLARO por padrão (decisão do Fabio, 05/10/2026). Este SVG não aparece
+# mais dentro do artigo — a linha do tempo virou HTML vertical, que se lê no
+# celular. Ele continua existindo como og:image, o cartão que aparece quando o
+# link é compartilhado, e cartão de compartilhamento não tem modo escuro.
+# As fontes subiram um ponto: no cartão o desenho aparece reduzido.
 s.append('''<style>
- .bg{fill:#14110f}
- .eixo{stroke:#3a342c;stroke-width:2}
- .tick{stroke:#5a5247;stroke-width:1}
- .ano{fill:#c9a227;font:700 15px Georgia,serif}
- .tit{fill:#f5f1e8;font:600 13px system-ui,sans-serif}
- .sub{fill:#9a9184;font:400 11.5px system-ui,sans-serif}
+ .bg{fill:#faf8f5}
+ .eixo{stroke:#d9d4cb;stroke-width:2}
+ .tick{stroke:#c9c3b8;stroke-width:1}
+ .ano{fill:#a8841a;font:700 16px Georgia,serif}
+ .tit{fill:#14110f;font:600 14px system-ui,sans-serif}
+ .sub{fill:#6b6255;font:400 12.5px system-ui,sans-serif}
  .ponto{fill:#c9a227}
- .pontoG{fill:#f5f1e8}
- .cab{fill:#f5f1e8;font:700 20px Georgia,serif}
- .fonte{fill:#6f6759;font:400 10.5px system-ui,sans-serif}
- @media (prefers-color-scheme: light){
-   .bg{fill:#faf8f5} .tit{fill:#14110f} .sub{fill:#6b6255} .pontoG{fill:#14110f}
-   .eixo{stroke:#d9d4cb} .tick{stroke:#c9c3b8} .cab{fill:#14110f} .fonte{fill:#8a8272}
+ .pontoG{fill:#14110f}
+ .cab{fill:#14110f;font:700 21px Georgia,serif}
+ .fonte{fill:#8a8272;font:400 11px system-ui,sans-serif}
+ @media (prefers-color-scheme: dark){
+   .bg{fill:#14110f} .tit{fill:#f5f1e8} .sub{fill:#9a9184} .pontoG{fill:#f5f1e8}
+   .eixo{stroke:#3a342c} .tick{stroke:#5a5247} .cab{fill:#f5f1e8} .fonte{fill:#6f6759}
+   .ano{fill:#c9a227}
  }
 </style>''')
 s.append('<rect class="bg" width="%d" height="%d"/>' % (L, A))
