@@ -19,7 +19,9 @@ MODELO = R + 'blog/indaiatuba-ou-campinas/index.html'
 DEST = R + 'blog/' + SLUG + '/'
 BASE = 'https://lancamentos.imoveisvivamerica.com.br/'
 URL = BASE + 'blog/' + SLUG + '/'
-IMG = URL + 'images/linha-do-tempo.svg'
+# PNG, nao SVG: WhatsApp, Facebook e LinkedIn nao renderizam SVG como previa de
+# link — o link saia sem imagem nenhuma. Gerado por ferramentas/alphaville-og.py.
+IMG = URL + 'images/og.png'
 
 s = io.open(MODELO, encoding='utf-8', newline='').read()
 
