@@ -20,6 +20,11 @@ LINHA = re.compile(r"^ *\{ b:'([^']+)',\s+q:'([^']+)',\s*l:'([^']+)'([^\n]*)\n",
 # so que o verificador DIZ quantos pulou, em vez de calar: cap silencioso vira
 # "esta tudo certo" quando na verdade nem foi olhado.
 OCULTOS = set(re.findall(r"id:'([^']+)'\s*,\s*oculto:true", s))
+# Bairro marcado com `casas:true` vende casa, nao lote. O popup monta o titulo
+# com `modelo` e a metragem com `casa` (area construida); sem um dos dois o
+# texto sai pela metade e o mapa nao quebra — ninguem ve. A busca para no
+# proximo `{ id:` porque ha linha com dois bairros.
+CASAS = set(re.findall(r"\{ id:'([^']+)',(?:(?!\{ id:')[^\n])*?\bcasas:true", s))
 num = lambda linha, nome: (lambda g: float(g.group(1)) if g else None)(
     re.search(r'\b' + nome + r':(-?[\d.]+)', linha))
 
@@ -30,6 +35,7 @@ achados = {
     'taxa fora do padrao do empreendimento': [],
     'pm2 nao bate com vista/m2': [],
     'sem preco e sem observacao': [],
+    'casa sem modelo ou sem area construida': [],
 }
 taxas = {}
 
@@ -91,12 +97,16 @@ for m in LINHA.finditer(s):
             '%s (%.0f contra %.0f)' % (ident, vista / m2, pm2))
     if vista is None and 'obs:' not in resto:
         achados['sem preco e sem observacao'].append(ident)
+    if b in CASAS and (not re.search(r"\bmodelo:'[^']+'", resto) or num(resto, 'casa') is None):
+        achados['casa sem modelo ou sem area construida'].append(ident)
 
 # ── a taxa de cada lote contra a mediana dos irmaos ──────────────────
 print('%d lotes conferidos' % total)
 if pulados:
     print('%d lote(s) PULADOS por estarem em loteamento oculto: %s'
           % (pulados, ', '.join(sorted(OCULTOS))))
+if CASAS:
+    print('bairro(s) em modo casa: %s' % ', '.join(sorted(CASAS)))
 print()
 print('taxa mensal implicita por empreendimento:')
 for b in sorted(taxas):

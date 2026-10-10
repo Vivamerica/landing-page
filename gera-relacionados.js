@@ -15,15 +15,15 @@
    Ritual: entrou/saiu empreendimento → node gera-relacionados.js
    (e o identidade.js cuida do estilo pela camada de marca).
    Ordem completa: gera-folheto → gera-observatorio → gera-home →
-   gera-apartamentos → gera-blog-ofertas → gera-blog-indice →
-   gera-relacionados → identidade.js (último).
+   gera-apartamentos → gera-alphaville → gera-blog-ofertas →
+   gera-blog-indice → gera-relacionados → identidade.js (último).
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
 const R = __dirname + '/';
 
-function extrair(nome) {
-  const src = fs.readFileSync(R + 'gera-folheto.js', 'utf8');
+function extrair(nome, arquivo = 'gera-folheto.js') {
+  const src = fs.readFileSync(R + arquivo, 'utf8');
   const ini = src.indexOf('const ' + nome + ' = ');
   const fim = src.indexOf('\n];', ini) + 2;
   return eval('(' + src.slice(ini + ('const ' + nome + ' = ').length, fim) + ')');
@@ -43,6 +43,17 @@ const aptos = APTOS.map(e => ({ n: e.n, slug: e.slug })).concat(EXTRAS_APTOS)
   .filter(e => fs.existsSync(R + e.slug + '/index.html'));
 const lotes = LOTES.map(e => ({ n: e.n, slug: e.slug }))
   .filter(e => fs.existsSync(R + e.slug + '/index.html'));
+
+// Empreendimentos Alphaville (gera-alphaville.js): a página principal /alphaville/
+// e as landings de outras cidades. Elas não estão na fonte única (que é só
+// Indaiatuba) e, sem isto, ficariam sem malha e sem página nenhuma apontando
+// para elas.
+const ALPHA = fs.existsSync(R + 'gera-alphaville.js') ? extrair('ALPHAVILLE', 'gera-alphaville.js') : [];
+const alphaFora = ALPHA
+  .filter(e => e.slug && e.cidade !== 'Indaiatuba' && fs.existsSync(R + e.slug + '/index.html'))
+  .map(e => ({ n: e.n + ' (' + e.cidade + ')', slug: e.slug }));
+const alpha = (fs.existsSync(R + 'alphaville/index.html')
+  ? [{ n: 'Empreendimentos Alphaville', slug: 'alphaville' }] : []).concat(alphaFora);
 
 const GUIAS = [
   ['Apartamentos na planta', '/apartamentos-na-planta-indaiatuba/'],
@@ -64,7 +75,8 @@ function malhaPara(slugAtual) {
     <div class="malha-in">
       <p class="malha-titulo">Todos os lançamentos em Indaiatuba</p>
       <div class="malha-grupo"><span class="malha-rotulo">Apartamentos</span>${aptos.map(li).join('')}</div>
-      <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span>${lotes.map(li).join('')}</div>
+      <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span>${lotes.map(li).join('')}</div>${alpha.length ? `
+      <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span>${alpha.map(li).join('')}</div>` : ''}
       <div class="malha-grupo"><span class="malha-rotulo">Guias</span>${GUIAS.map(([n, u]) => '<a href="' + u + '">' + n + '</a>').join('')}</div>
     </div>
   </section>
@@ -74,10 +86,10 @@ function malhaPara(slugAtual) {
 // páginas de categoria também recebem a malha (02/09/2026): os dois hubs de
 // lote e a página de apartamentos na planta. O hub /lancamentos-indaiatuba/
 // não existe mais (301 para a home).
-const CATEGORIAS = ['apartamentos-na-planta-indaiatuba', 'loteamentos-em-indaiatuba', 'condominios-fechados-indaiatuba']
+const CATEGORIAS = ['apartamentos-na-planta-indaiatuba', 'loteamentos-em-indaiatuba', 'condominios-fechados-indaiatuba', 'alphaville']
   .filter(s => fs.existsSync(R + s + '/index.html'));
 
-const alvos = aptos.concat(lotes).map(e => e.slug).concat(CATEGORIAS);
+const alvos = aptos.concat(lotes).concat(alphaFora).map(e => e.slug).concat(CATEGORIAS);
 let feitos = 0, criados = 0;
 for (const slug of alvos) {
   const f = R + slug + '/index.html';

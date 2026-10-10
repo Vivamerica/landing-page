@@ -16,7 +16,7 @@
       página de apartamentos leem daqui o "tabela de <mês/ano>");
    4. rodar o ritual completo, nesta ordem: gera-folheto →
       gera-observatorio → gera-home → gera-apartamentos →
-      gera-blog-ofertas → gera-blog-indice → gera-relacionados →
+      gera-alphaville → gera-blog-ofertas → gera-blog-indice → gera-relacionados →
       identidade.js (último) && commit && push && ping IndexNow.
    ═══════════════════════════════════════════════════════════════════ */
 

@@ -44,10 +44,11 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
   2. `node gera-observatorio.js` — EDICAO + Observatório
   3. `node gera-home.js` — home (title/description/H1/selos/cards) + os dois hubs de lote (grade, m², destaque, "Atualizado em")
   4. `node gera-apartamentos.js` — página inteira `/apartamentos-na-planta-indaiatuba/`
-  5. `node gera-blog-ofertas.js` — cards/CTA/menu dos artigos
-  6. `node gera-blog-indice.js` — `blog/index.html`
-  7. `node gera-relacionados.js` — malha todas↔todas (landings + 3 páginas de categoria)
-  8. **por último** `node identidade.js` (exit 0; guardas de acento e imagem; repõe a camada de marca nas páginas regeradas)
+  5. `node gera-alphaville.js` — página inteira `/alphaville/` (lê o preço de Indaiatuba na fonte única; os de outras cidades ficam no próprio gerador, com o mês da tabela)
+  6. `node gera-blog-ofertas.js` — cards/CTA/menu dos artigos
+  7. `node gera-blog-indice.js` — `blog/index.html`
+  8. `node gera-relacionados.js` — malha todas↔todas (landings + páginas de categoria + Alphaville de outras cidades)
+  9. **por último** `node identidade.js` (exit 0; guardas de acento e imagem; repõe a camada de marca nas páginas regeradas)
 
 ---
 
@@ -83,7 +84,7 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 
 ## 5. GIT & DEPLOY
 
-- [ ] `git add .`
+- [ ] `git add` **pelo caminho nominal** de cada arquivo (nunca `git add .` nem `-A`); config novo em `ferramentas/…/configs/` precisa de `git add -f`
 - [ ] `git commit -m "Adiciona landing page [Nome]"`
 - [ ] `git push origin main`
 - [ ] ✅ Netlify faz deploy automático (~30 segundos)

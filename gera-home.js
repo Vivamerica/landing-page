@@ -33,8 +33,8 @@
      node gera-folheto.js && node gera-observatorio.js && node gera-home.js
    e site, folheto, folder e observatório saem coerentes por construção.
    Ordem completa: gera-folheto → gera-observatorio → gera-home →
-   gera-apartamentos → gera-blog-ofertas → gera-blog-indice →
-   gera-relacionados → identidade.js (último).
+   gera-apartamentos → gera-alphaville → gera-blog-ofertas →
+   gera-blog-indice → gera-relacionados → identidade.js (último).
 
    ÚNICO dado manual daqui: AVAL (nota e nº de avaliações do Google —
    não existe API conectada; o Fabio avisa quando mudar).

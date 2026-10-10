@@ -14,8 +14,8 @@
    Menu padrão do site (02/09/2026): Apartamentos · Loteamentos ·
    Condomínios · Blog; "Lançamentos de Imóveis" → home.
    Ordem completa: gera-folheto → gera-observatorio → gera-home →
-   gera-apartamentos → gera-blog-ofertas → gera-blog-indice →
-   gera-relacionados → identidade.js (último).
+   gera-apartamentos → gera-alphaville → gera-blog-ofertas →
+   gera-blog-indice → gera-relacionados → identidade.js (último).
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');

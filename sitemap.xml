@@ -20,12 +20,24 @@
   </url>
   <url>
     <loc>https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lancamentos.imoveisvivamerica.com.br/apartamentos-na-planta-indaiatuba/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lancamentos.imoveisvivamerica.com.br/alphaville/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lancamentos.imoveisvivamerica.com.br/casas-alphaville-dom-pedro-0-campinas/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

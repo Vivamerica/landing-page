@@ -43,7 +43,7 @@
 
    Ritual (ordem completa no CHECKLIST-NOVA-PAGINA.md):
      gera-folheto → gera-observatorio → gera-home → gera-apartamentos →
-     gera-blog-ofertas → gera-blog-indice → gera-relacionados → identidade
+     gera-alphaville → gera-blog-ofertas → gera-blog-indice → gera-relacionados → identidade
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
@@ -261,12 +261,15 @@ const jsonFaq = {
 const jsonAgente = AGENTE;
 
 // malha anterior (preenchida pelo gera-relacionados), preservada entre rodadas
-let malhaAnterior = '';
+let malhaAnterior = '', marcaAnterior = '';
 const ARQ = R + SLUG + '/index.html';
 if (fs.existsSync(ARQ)) {
   const old = fs.readFileSync(ARQ, 'utf8');
   const i = old.indexOf('<!--GEN:malha-->'), j = old.indexOf('<!--/GEN:malha-->');
   if (i >= 0 && j > i) malhaAnterior = old.slice(i + '<!--GEN:malha-->'.length, j);
+  // camada de marca (identidade.js): preservada como a malha. Sem isto, rodar este gerador
+  // sozinho publicava a página sem a tipografia da marca (aconteceu em 09/10/2026).
+  marcaAnterior = (old.match(/\n?\s*<style id="marca">[\s\S]*?<\/style>/) || [''])[0];
 }
 
 const HTML = `<!DOCTYPE html>
@@ -501,7 +504,14 @@ ${FAQ.map(f => `      <details><summary>${esc(f.q)}</summary><p>${f.a}</p></deta
 `;
 
 fs.mkdirSync(R + SLUG, { recursive: true });
-fs.writeFileSync(ARQ, HTML, 'utf8');
+// repõe a camada de marca no mesmo ponto em que o identidade.js a injeta (depois do 1º </style>)
+let SAIDA = HTML;
+if (marcaAnterior && !SAIDA.includes('id="marca"')) {
+  const k = SAIDA.indexOf('</style>');
+  if (k > 0) SAIDA = SAIDA.slice(0, k + 8) + marcaAnterior + SAIDA.slice(k + 8);
+}
+fs.writeFileSync(ARQ, SAIDA, 'utf8');
+if (!SAIDA.includes('id="marca"')) console.log('  ATENCAO: pagina sem a camada de marca; rode node identidade.js antes de publicar');
 console.log('gera-apartamentos: ' + todos.length + ' cards (' + N + ' ativos, ' + NP + ' com preco, ' + esgotados.length + ' esgotados) · tabela ' + mesLongo);
 console.log('  title ' + TITLE.length + ' chars · description ' + DESC.length + ' chars');
 console.log('  secoes: ' + SECOES.map(s => s.id + '=' + ativos.filter(s.pega).length).join(' · '));

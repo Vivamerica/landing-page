@@ -89,7 +89,7 @@
   // blog e a quermesse caem no texto generico — sem esta guarda, a pagina de
   // obrigado do cupom mandaria "Vi o Cupom garantido!", que e o <title> dela.
   // Por isso o ENDERECO decide SE ha empreendimento, e o titulo so NOMEIA.
-  var SEM_EMPREENDIMENTO = ['blog', 'quermesse', 'qrcode',
+  var SEM_EMPREENDIMENTO = ['blog', 'quermesse', 'qrcode', 'alphaville',
                             'condominios-fechados-indaiatuba',
                             'loteamentos-em-indaiatuba',
                             'apartamentos-na-planta-indaiatuba',

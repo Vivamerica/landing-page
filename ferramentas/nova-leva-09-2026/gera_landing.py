@@ -7,6 +7,18 @@ malha no marcador <!--GEN:malha-->, identidade.js confere a marca).
 
 Uso (Python do venv, fora do scratchpad):
     python gera_landing.py configs/izzi-residence-indaiatuba.json
+
+Campos opcionais do config (quem não usa nenhum sai idêntico ao que saía antes):
+    cidade            padrão "Indaiatuba"; entra no addressLocality, no título do iframe do mapa e no "name" do
+                      schema (só quando o nome do empreendimento ainda não traz a cidade)
+    categoria         "apartamentos", "alphaville" (breadcrumb visível e BreadcrumbList pelo /alphaville/) ou
+                      qualquer outra (condomínios fechados)
+    endereco_schema   sem ele o schema sai sem streetAddress
+    hero.credito      linha pequena no pé do hero (ex.: "Imagem ilustrativa")
+    nap_privacidade   true = link da Política de Privacidade na linha NAP do rodapé
+    secoes[].lista    lista de itens (ficha resumida) depois dos parágrafos
+    secoes[].figuras  grupos de imagens dentro da seção: {"classe": "galeria" | "plantas" | "duo" | "faixa",
+                      "ampliar": true (a imagem abre inteira em outra aba), "itens": [{arq, alt, w, h, leg, pos}]}
 """
 import json, os, re, sys, html
 from urllib.parse import quote
@@ -72,10 +84,89 @@ def paragrafos(lista, classe='prosa'):
     return ''.join('    <p class="%s">%s</p>\n' % (classe, e(p)) for p in (lista or []))
 
 
-def bloco_mapa(m, nome):
+def tem_cidade(nome, cidade):
+    return cidade.lower() in nome.lower()
+
+
+def lista(itens):
+    if not itens:
+        return ''
+    return '    <ul class="lista-ficha">\n%s    </ul>\n' % ''.join('      <li>%s</li>\n' % e(x) for x in itens)
+
+
+def figuras(grupos):
+    """Imagens dentro de uma seção. "galeria" recorta em 4:3 (padrão da casa); "plantas", "duo" e "faixa"
+    mostram a imagem inteira."""
+    out = ''
+    for g in grupos or []:
+        classe = g.get('classe', 'galeria')
+        figs = ''
+        for f in g['itens']:
+            pos = ' style="object-position:%s;"' % f['pos'] if f.get('pos') else ''
+            img = '<img src="images/%s" alt="%s" width="%d" height="%d" loading="lazy"%s>' % (f['arq'], e(f['alt']), f['w'], f['h'], pos)
+            if g.get('ampliar'):
+                img = '<a href="images/%s" target="_blank" rel="noopener" aria-label="Ampliar a imagem: %s">%s</a>' % (f['arq'], e(f['leg']), img)
+            figs += '      <figure>%s<figcaption>%s</figcaption></figure>\n' % (img, e(f['leg']))
+        out += '    <div class="%s" style="margin-top:1.8rem;">\n%s    </div>\n' % ('galeria' if classe == 'galeria' else 'figs ' + classe, figs)
+    return out
+
+
+# estilos dos campos opcionais; só entram na página que usa algum deles
+ESTILO_EXTRA = '''  <style id="landing-extra">
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.72);margin:0 0 1rem;}
+    .breadcrumb a{color:rgba(255,255,255,.85);text-decoration:none;}
+    .breadcrumb a:hover{color:var(--gold);}
+    .hero-credito{font-size:.7rem;letter-spacing:.06em;color:rgba(255,255,255,.62);margin:1.4rem 0 0;}
+    .nota{font-size:.88rem;color:var(--gray);max-width:60rem;margin-top:1.2rem;}
+    .lista-ficha{columns:2 280px;column-gap:2.4rem;padding:0;margin:1.4rem 0 0;list-style:none;max-width:60rem;}
+    .lista-ficha li{padding:.32rem 0 .32rem 1.2rem;position:relative;font-size:.95rem;break-inside:avoid;}
+    .lista-ficha li::before{content:"";position:absolute;left:0;top:.85em;width:7px;height:7px;background:var(--gold);}
+    .galeria figure{min-width:0;}
+    .galeria img{width:100%;}
+    .figs{display:grid;gap:1rem;}
+    .figs figure{margin:0;min-width:0;}
+    .figs img{width:100%;height:auto;}
+    .figs a{display:block;}
+    .figs figcaption{font-size:.78rem;color:var(--gray);padding-top:.4rem;}
+    .figs.plantas{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .figs.plantas img{border:1px solid var(--border);background:#fff;}
+    .figs.duo{grid-template-columns:minmax(0,3fr) minmax(0,2fr);align-items:start;}
+    .figs.faixa img{aspect-ratio:1920/391;object-fit:cover;}
+    /* o ".ficha-tecnica div" do bloco herdado também pega o .container e tira a margem lateral no celular */
+    .ficha-tecnica .container{padding:0 5%;border-bottom:0;}
+    /* marca comprida + menu + botão só cabem acima de ~1120 px; abaixo disso o menu some (os links estão no rodapé) */
+    @media (max-width:1140px){ .nav-site{display:none;} }
+    @media (max-width:680px){
+      .figs.plantas,.figs.duo{grid-template-columns:minmax(0,1fr);}
+      .figs.faixa img{aspect-ratio:5/2;}
+    }
+    @media (max-width:480px){
+      header{gap:.6rem;}
+      header .brand{font-size:1.05rem;letter-spacing:.08em;}
+      header .brand small{letter-spacing:.16em;}
+      .btn-header{padding:.55rem .8rem;font-size:.68rem;letter-spacing:.08em;}
+    }
+    @media (max-width:345px){
+      header .brand{font-size:.92rem;letter-spacing:.05em;}
+      header .brand small{font-size:.54rem;letter-spacing:.08em;}
+      .btn-header{padding:.5rem .6rem;font-size:.62rem;letter-spacing:.04em;}
+    }
+  </style>
+'''
+
+
+ESTILO_NAV = '    /* marca comprida + menu + botão só cabem acima de ~1120 px; abaixo disso o menu some (os links estão no rodapé) */\n    @media (max-width:1140px){ .nav-site{display:none;} }\n'
+ESTILO_CAB = '    @media (max-width:480px){\n      header{gap:.6rem;}\n      header .brand{font-size:1.05rem;letter-spacing:.08em;}\n      header .brand small{letter-spacing:.16em;}\n      .btn-header{padding:.55rem .8rem;font-size:.68rem;letter-spacing:.08em;}\n    }\n    @media (max-width:345px){\n      header .brand{font-size:.92rem;letter-spacing:.05em;}\n      header .brand small{font-size:.54rem;letter-spacing:.08em;}\n      .btn-header{padding:.5rem .6rem;font-size:.62rem;letter-spacing:.04em;}\n    }\n'
+assert ESTILO_NAV in ESTILO_EXTRA and ESTILO_CAB in ESTILO_EXTRA
+
+
+def bloco_mapa(m, nome, cidade='Indaiatuba'):
     """Mapa do Google sob demanda: o iframe só nasce no clique (mesmo padrão do Espaço Conceição)."""
     from urllib.parse import quote
     rota = 'https://www.google.com/maps/dir/?api=1&destination=' + quote(m.get('rota', nome), safe='')
+    # opcional: link para o bairro no mapa de lotes do site (mapa.lotes = {url, texto})
+    lotes = m.get('lotes')
+    extra = ('    <p><a class="mapa-rota" href="%s">%s &rarr;</a></p>\n' % (e(lotes['url']), e(lotes['texto']))) if lotes else ''
     return ('    <div class="mapa-box" data-src="%s" data-titulo="%s">\n'
             '      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do %s">\n'
             '        <span class="mapa-ic" aria-hidden="true"></span>\n'
@@ -83,14 +174,15 @@ def bloco_mapa(m, nome):
             '        <span class="mapa-s">O mapa é carregado do Google apenas quando você clica.</span>\n'
             '      </button>\n    </div>\n'
             '    <p><a class="mapa-rota" href="%s" target="_blank" rel="noopener">Traçar rota até aqui &rarr;</a></p>\n'
-            ) % (e(m['embed']), e('Mapa do ' + nome + ('' if 'Indaiatuba' in nome else ', Indaiatuba')), e(nome), e(rota))
+            ) % (e(m['embed']), e('Mapa do ' + nome + ('' if tem_cidade(nome, cidade) else ', ' + cidade)), e(nome), e(rota)) + extra
 
 
-def secao(sc, mapa=None, nome=''):
+def secao(sc, mapa=None, nome='', cidade='Indaiatuba'):
     classe = sc.get('classe', '')
     attrs = (' class="%s"' % classe if classe else '') + (' id="%s"' % sc['id'] if sc.get('id') else '')
     corpo = '    <p class="label">%s</p>\n    <h2>%s</h2>\n' % (e(sc['label']), e(sc['h2']))
     corpo += paragrafos(sc.get('paragrafos'))
+    corpo += lista(sc.get('lista'))
     corpo += numeros(sc.get('numeros'))
     corpo += tabela(sc.get('tabela'))
     corpo += cards(sc.get('cards'))
@@ -98,8 +190,9 @@ def secao(sc, mapa=None, nome=''):
         corpo += '    <h3 style="margin-top:2.2rem;">%s</h3>\n' % e(sc['tabela2_titulo'])
         corpo += paragrafos(sc.get('tabela2_paragrafos'))
         corpo += tabela(sc['tabela2'])
+    corpo += figuras(sc.get('figuras'))
     if mapa and sc.get('id') == 'localizacao':
-        corpo += bloco_mapa(mapa, nome)
+        corpo += bloco_mapa(mapa, nome, cidade)
     corpo += paragrafos(sc.get('notas'), 'nota')
     if sc.get('cta'):
         corpo += '    <p style="margin-top:1.4rem;"><a class="btn" href="%s" target="_blank" rel="noopener">%s</a></p>\n' % (wa(sc['cta']['msg']), e(sc['cta']['texto']))
@@ -112,8 +205,13 @@ def main(caminho_cfg):
     url = BASE + slug + '/'
     img = url + 'images/hero.jpg'
     estilo, svg, js_mapa = bloco_modelo()
-    cat_nome, cat_url = (('Apartamentos na planta', 'apartamentos-na-planta-indaiatuba/') if c['categoria'] == 'apartamentos'
-                         else ('Condomínios fechados', 'condominios-fechados-indaiatuba/'))
+    cidade = c.get('cidade', 'Indaiatuba')
+    alphaville = c['categoria'] == 'alphaville'
+    cat_nome, cat_url = {'apartamentos': ('Apartamentos na planta', 'apartamentos-na-planta-indaiatuba/'),
+                         'alphaville': ('Empreendimentos Alphaville', 'alphaville/'),
+                         }.get(c['categoria'], ('Condomínios fechados', 'condominios-fechados-indaiatuba/'))
+    if alphaville and not os.path.exists(RAIZ + cat_url + 'index.html'):
+        print('!! ATENÇÃO: o breadcrumb aponta para /%s, que ainda não existe no repositório' % cat_url)
 
     # ── schema ──
     s = []
@@ -121,7 +219,9 @@ def main(caminho_cfg):
         {"@type": "ListItem", "position": 1, "name": "Início", "item": BASE},
         {"@type": "ListItem", "position": 2, "name": cat_nome, "item": BASE + cat_url},
         {"@type": "ListItem", "position": 3, "name": c['nome']}]})
-    principal = {"@context": "https://schema.org", "@type": c['schema_tipo'], "name": c['nome'] + ' Indaiatuba',
+    # a cidade só entra no nome quando ele ainda não a traz (saía "Alphaville Indaiatuba Indaiatuba")
+    principal = {"@context": "https://schema.org", "@type": c['schema_tipo'],
+                 "name": c['nome'] if tem_cidade(c['nome'], cidade) else c['nome'] + ' ' + cidade,
                  "description": c['schema_desc'], "url": url, "image": img}
     if c.get('unidades_total'):
         principal['numberOfAccommodationUnits'] = c['unidades_total']
@@ -130,8 +230,10 @@ def main(caminho_cfg):
     if c.get('mapa'):
         from urllib.parse import quote
         principal['hasMap'] = 'https://www.google.com/maps/search/?api=1&query=' + quote(c['mapa'].get('rota', c['nome']), safe='')
-    principal['address'] = {"@type": "PostalAddress", "streetAddress": c['endereco_schema'],
-                            "addressLocality": "Indaiatuba", "addressRegion": "SP", "addressCountry": "BR"}
+    principal['address'] = {"@type": "PostalAddress"}
+    if c.get('endereco_schema'):
+        principal['address']['streetAddress'] = c['endereco_schema']
+    principal['address'].update({"addressLocality": cidade, "addressRegion": "SP", "addressCountry": "BR"})
     if c.get('preco_min') is not None:
         oferta = {"@type": "AggregateOffer", "availability": "https://schema.org/InStock", "priceCurrency": "BRL",
                   "lowPrice": c['preco_min'], "highPrice": c['preco_max'], "description": c['oferta_desc']}
@@ -177,6 +279,11 @@ def main(caminho_cfg):
            '  <link rel="icon" type="image/png" href="/favicon.png">\n\n']
     out += [jsonld(o) + '\n' for o in s]
     out.append(estilo)
+    if (alphaville or c['hero'].get('credito')
+            or any(sc.get('lista') or sc.get('figuras') for sc in c['secoes'])):
+        # as regras do cabeçalho (menu até 1140 px, marca reduzida no celular) existem por causa da
+        # marca comprida das páginas da categoria alphaville; as outras ficam com o cabeçalho do modelo
+        out.append(ESTILO_EXTRA if alphaville else ESTILO_EXTRA.replace(ESTILO_NAV, '').replace(ESTILO_CAB, ''))
     out.append('</head>\n<body>\n\n')
     out.append('<a href="%s"\n   class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">\n  %s\n</a>\n\n' % (wa(c['wa_flutuante']), svg))
     out.append('<header>\n  <div class="brand">%s<small>%s</small></div>\n' % (e(c['marca_topo'][0]), e(c['marca_topo'][1])))
@@ -185,14 +292,20 @@ def main(caminho_cfg):
                '    <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>\n    <a href="/blog/">Blog</a>\n  </nav>\n')
     out.append('  <a href="%s"\n     class="btn-header" target="_blank" rel="noopener">Quero a tabela</a>\n</header>\n\n' % wa(c['wa_topo']))
     h = c['hero']
-    out.append('<section class="hero">\n  <div class="container">\n    <p class="eyebrow">%s</p>\n' % e(h['eyebrow']))
+    out.append('<section class="hero">\n  <div class="container">\n')
+    if alphaville:
+        out.append('    <p class="breadcrumb"><a href="/">Início</a> › <a href="/%s">%s</a> › %s</p>\n' % (cat_url, e(cat_nome), e(c['nome'])))
+    out.append('    <p class="eyebrow">%s</p>\n' % e(h['eyebrow']))
     out.append('    <h1>%s<span>%s</span></h1>\n    <p class="lead">%s</p>\n' % (e(c['nome']), e(h['sub']), e(h['lead'])))
     out.append('    <p class="preco">%s<small>%s</small></p>\n' % (e(h['preco']), e(h['preco_nota'])))
-    out.append('    <a class="btn" href="%s" target="_blank" rel="noopener">%s</a>\n  </div>\n</section>\n\n' % (wa(h['cta_msg']), e(h['cta_texto'])))
+    out.append('    <a class="btn" href="%s" target="_blank" rel="noopener">%s</a>\n' % (wa(h['cta_msg']), e(h['cta_texto'])))
+    if h.get('credito'):
+        out.append('    <p class="hero-credito">%s</p>\n' % e(h['credito']))
+    out.append('  </div>\n</section>\n\n')
 
     for sc in c['secoes']:
         if not sc.get('skip'):
-            out.append(secao(sc, c.get('mapa'), c['nome']))
+            out.append(secao(sc, c.get('mapa'), c['nome'], cidade))
         if sc.get('depois') == 'galeria' and c.get('galeria'):
             g = c['galeria']
             figs = ''.join('      <figure><img src="images/%s" alt="%s" width="%d" height="%d" loading="lazy"><figcaption>%s</figcaption></figure>\n'
@@ -227,7 +340,8 @@ def main(caminho_cfg):
                '    <a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a> ·\n    <a href="/blog/">Blog</a>\n  </p>\n' % BASE)
     out.append('  <p style="margin-top:12px;">\n    %s\n  </p>\n' % e(r['legal']))
     out.append('<p class="nap">Imobiliária Viv\'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · '
-               '<a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>\n</footer>\n\n')
+               '<a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a>%s</p>\n</footer>\n\n'
+               % (' · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a>' if c.get('nap_privacidade') else ''))
     if c.get('mapa') and js_mapa:
         js = js_mapa.replace("f.title = 'Mapa do Espaço Conceição, Rua Três Marias, 254, Indaiatuba';",
                              "f.title = this.dataset.titulo || 'Mapa';")

@@ -20,8 +20,8 @@
    Ritual: node gera-folheto.js && node gera-observatorio.js &&
            node gera-home.js && node gera-blog-ofertas.js
    Ordem completa: gera-folheto → gera-observatorio → gera-home →
-   gera-apartamentos → gera-blog-ofertas → gera-blog-indice →
-   gera-relacionados → identidade.js (último).
+   gera-apartamentos → gera-alphaville → gera-blog-ofertas →
+   gera-blog-indice → gera-relacionados → identidade.js (último).
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
@@ -57,8 +57,10 @@ const TEMAS = [
   // Artigo de marca de alto padrão. Vem ANTES dos demais porque, sem ele, o
   // artigo do Alphaville caía no tema genérico e abria com o apartamento MCMV
   // mais barato da base — público nenhum em comum com quem pesquisa Alphaville.
+  // A barra do topo leva à página principal do Alphaville (/alphaville/), que
+  // lista todos os empreendimentos; os cards continuam sendo os de Indaiatuba.
   { re: /alphaville/, nome: 'Alphaville',
-    url: '/alphaville-indaiatuba/', chamada: 'Lotes do Alphaville Indaiatuba disponíveis agora',
+    url: '/alphaville/', chamada: 'Todos os empreendimentos Alphaville', botao: 'Ver os empreendimentos',
     pega: () => [porSlug('alphaville-indaiatuba'),
                  ...fechados().filter(e => e.slug !== 'alphaville-indaiatuba').slice(0, 3)] },
   { re: /minha-casa|mcmv|fgts|quem-tem-direito|como-comprar-apartamento|casa-propria-motorista/, nome: 'MCMV',
@@ -81,7 +83,8 @@ const TEMAS = [
 // tema novo no começo da lista para o artigo do hospital trocar de oferta sozinho.
 const paraTema = slug => {
   const t = TEMAS.find(t => t.re.test(slug)) || TEMAS.find(t => t.nome === 'panorama');
-  return { nome: t.nome, url: t.url, chamada: t.chamada, itens: t.pega().filter(Boolean) };
+  return { nome: t.nome, url: t.url, chamada: t.chamada, botao: t.botao || 'Ver imóveis disponíveis',
+           itens: t.pega().filter(Boolean) };
 };
 
 // ─── HTML dos cards ───
@@ -205,7 +208,7 @@ let feitos = 0, pulados = [];
 
 arquivos.forEach(({ slug, caminho }) => {
   let h = fs.readFileSync(caminho, 'utf8');
-  const { nome, url, chamada, itens } = paraTema(slug);
+  const { nome, url, chamada, botao, itens } = paraTema(slug);
   if (!itens.length) { pulados.push(slug + ' (sem empreendimento)'); return; }
 
   // 1. CSS e rastreio — SUBSTITUÍDOS a cada rodada, para que ajuste de
@@ -294,7 +297,7 @@ arquivos.forEach(({ slug, caminho }) => {
   gen('cta-topo',
     '\n      <div class="cta-topo">' +
     '\n        <p>' + chamada + '</p>' +
-    '\n        <a href="' + url + '" data-emp="cta-topo">Ver imóveis disponíveis</a>' +
+    '\n        <a href="' + url + '" data-emp="cta-topo">' + botao + '</a>' +
     '\n      </div>\n    ');
 
   fs.writeFileSync(caminho, h, 'utf8');

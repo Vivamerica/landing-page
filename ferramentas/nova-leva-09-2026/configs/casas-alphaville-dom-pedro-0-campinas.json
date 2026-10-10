@@ -1,0 +1,662 @@
+{
+  "slug": "casas-alphaville-dom-pedro-0-campinas",
+  "nome": "Casas Alphaville Dom Pedro 0",
+  "categoria": "alphaville",
+  "cidade": "Campinas",
+  "data": "2026-10-09",
+  "title": "Casas Alphaville Dom Pedro 0 | 288 a 362 m² em Campinas",
+  "description": "Casas Alphaville Dom Pedro 0, em Campinas: casas de 288 a 362 m² em área reservada do residencial. Tabela de out/2026 a partir de R$ 3.306.135.",
+  "keywords": "casas alphaville dom pedro 0, casas alphaville campinas, alphaville dom pedro zero casas, casa em condominio fechado campinas, casa alphaville campinas preco, casa abaporu, casa amazonia, casa guaras",
+  "schema_tipo": "RealEstateListing",
+  "schema_desc": "Área reservada de 42 casas dentro do residencial Alphaville Dom Pedro 0, em Campinas/SP, com realização da Alphaville e da Incorpi. Segundo a Alphaville, são 5 modelos de casa, com 288 a 362 m² construídos. A tabela de vendas vigente a partir de outubro/2026 lista 5 casas, de R$ 3.306.135 a R$ 4.251.740, com a intermediação imobiliária incluída no preço.",
+  "preco_min": null,
+  "lazer": [
+    "Spa e sauna",
+    "Academia",
+    "Espaço gourmet",
+    "Bar",
+    "Espaço coworking",
+    "Salão de jogos infantil",
+    "Salão de jogos adulto",
+    "Sala de reunião",
+    "Espaço kids",
+    "Salão de festas",
+    "Piscina infantil",
+    "Raia de 25 m",
+    "Piscina prainha com borda infinita",
+    "Playground",
+    "Churrasqueira",
+    "Quadra de tênis",
+    "Campo de futebol",
+    "Quadra de beach tennis",
+    "Quadra poliesportiva"
+  ],
+  "marca_topo": [
+    "CASAS ALPHAVILLE",
+    "Dom Pedro 0 · Campinas"
+  ],
+  "nap_privacidade": true,
+  "wa_flutuante": "Olá! Tenho interesse no Casas Alphaville Dom Pedro 0 em Campinas. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de preços do Casas Alphaville Dom Pedro 0 com as casas disponíveis.",
+  "hero": {
+    "eyebrow": "Campinas/SP · residencial Alphaville Dom Pedro 0",
+    "sub": "Casas de 288 a 362 m² · realização Alphaville e Incorpi",
+    "lead": "Uma área reservada de 42 casas dentro do residencial Alphaville Dom Pedro 0, em Campinas. São 5 modelos de casa, e a tabela de vendas de outubro/2026 traz 5 unidades de três deles, cada uma com o seu preço.",
+    "preco": "A partir de R$ 3.306.135",
+    "preco_nota": "tabela de vendas de outubro/2026 · intermediação imobiliária incluída",
+    "cta_msg": "Olá! Quero a tabela de preços do Casas Alphaville Dom Pedro 0 com as casas disponíveis.",
+    "cta_texto": "Ver casas e valores",
+    "credito": "Imagem ilustrativa"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Uma área reservada de 42 casas dentro do Alphaville Dom Pedro 0",
+      "paragrafos": [
+        "O Casas Alphaville Dom Pedro 0 é uma área reservada de casas dentro do residencial Alphaville Dom Pedro 0, em Campinas/SP. A realização é da Alphaville e da Incorpi. Segundo a Alphaville, são 42 casas em 5 modelos, com 288 a 362 m² construídos.",
+        "O residencial Alphaville Dom Pedro 0, em que as casas ficam, foi entregue em outubro de 2025, e o conjunto das casas em dezembro de 2025, segundo a divulgação de resultados da Alphaville do 4º trimestre de 2025. Quem compra uma das casas usa o clube e o lazer do residencial inteiro, descritos mais abaixo.",
+        "Esta página é da Imobiliária Viv'América, que intermedeia a venda. A tabela de outubro/2026 traz casas de três modelos (Amazônia, Guarás e Abaporu), e é deles que temos planta e ficha técnica. A situação de cada casa, incluindo o habite-se (a autorização da prefeitura para ocupar o imóvel), é confirmada no atendimento."
+      ],
+      "numeros": [
+        {
+          "n": "42",
+          "p": "casas, segundo a Alphaville"
+        },
+        {
+          "n": "5",
+          "p": "modelos de casa"
+        },
+        {
+          "n": "288 a 362 m²",
+          "p": "de área construída"
+        },
+        {
+          "n": "5",
+          "p": "casas na tabela de out/2026"
+        }
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "itens": [
+            {
+              "arq": "aerea-alphaville-dom-pedro-0.jpg",
+              "alt": "Foto aérea do residencial Alphaville Dom Pedro 0, em Campinas, com a portaria em primeiro plano",
+              "w": 1280,
+              "h": 885,
+              "leg": "Vista aérea do Alphaville Dom Pedro 0: a portaria em primeiro plano, o clube ao fundo, à esquerda, e as casas ao fundo, à direita, junto à mata."
+            },
+            {
+              "arq": "implantacao.jpg",
+              "alt": "Implantação ilustrada do residencial Alphaville Dom Pedro 0 com a área das casas destacada em azul",
+              "w": 982,
+              "h": 1132,
+              "leg": "Implantação do residencial, com a área das casas em azul. Imagem ilustrativa."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "casas",
+      "classe": "cream",
+      "label": "Casas à venda",
+      "h2": "As 5 casas da tabela de outubro/2026",
+      "paragrafos": [
+        "A tabela de vendas vigente a partir de outubro/2026 lista cinco casas, de três modelos. A área construída e a área do terreno abaixo são as da própria tabela."
+      ],
+      "tabela": {
+        "legenda": "Tabela de vendas vigente a partir de outubro/2026",
+        "cab": [
+          "Casa",
+          "Preço",
+          "Quadra e lote",
+          "Área construída",
+          "Terreno"
+        ],
+        "num": [
+          1,
+          3,
+          4
+        ],
+        "linhas": [
+          [
+            "Amazônia",
+            "R$ 3.306.135",
+            "AA13",
+            "287,5 m²",
+            "413,3 m²"
+          ],
+          [
+            "Guarás",
+            "R$ 3.866.280",
+            "AA2",
+            "330,0 m²",
+            "403,8 m²"
+          ],
+          [
+            "Abaporu",
+            "R$ 4.251.740",
+            "Z08",
+            "362,9 m²",
+            "414,1 m²"
+          ],
+          [
+            "Abaporu",
+            "R$ 4.251.740",
+            "Z12",
+            "362,9 m²",
+            "417,8 m²"
+          ],
+          [
+            "Abaporu",
+            "R$ 4.251.740",
+            "Z14",
+            "362,9 m²",
+            "417,8 m²"
+          ]
+        ]
+      },
+      "notas": [
+        "O preço de cada casa já inclui a intermediação imobiliária, e a tabela está sujeita a alteração sem aviso. O código da unidade junta a quadra e o lote: AA13 é o lote 13 da quadra AA.",
+        "As condições de pagamento e a situação de cada casa são confirmadas no atendimento."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de preços do Casas Alphaville Dom Pedro 0 com as casas disponíveis.",
+        "texto": "Pedir a tabela completa"
+      }
+    },
+    {
+      "id": "modelos",
+      "label": "Modelos",
+      "h2": "Três modelos com planta e ficha técnica",
+      "paragrafos": [
+        "Dos 5 modelos de casa, três aparecem na tabela de outubro/2026 e têm material completo: Amazônia, Guarás e Abaporu. Os três têm 3 suítes no piso superior. Dos outros dois, Colombina e Tropical, não recebemos planta, metragem nem preço.",
+        "As imagens das casas são ilustrativas. Piscina, mobília, decoração e equipamentos que aparecem nelas e nas plantas servem de referência: o que acompanha cada casa é confirmado no atendimento.",
+        "A tabela define a configuração de cada unidade: \"térreo com varanda\" na Amazônia AA13 e \"varanda menor, sala estendida\" na Guarás AA2 e nas três Abaporu. As plantas abaixo são as do material de divulgação e podem ser diferentes das da unidade à venda. Peça a planta da casa que interessa."
+      ]
+    },
+    {
+      "id": "casa-amazonia",
+      "classe": "cream",
+      "label": "Modelo Amazônia",
+      "h2": "Casa Amazônia: 3 suítes e garagem para 2 carros e moto",
+      "paragrafos": [
+        "No material de divulgação, a Casa Amazônia tem 288,80 m² e 3 suítes. Na tabela de outubro/2026, a unidade AA13 aparece com 287,5 m² construídos, em terreno de 413,3 m², por R$ 3.306.135."
+      ],
+      "lista": [
+        "Hall de entrada com acesso ao lavabo",
+        "Salas de estar, sala de jantar e área gourmet",
+        "Cozinha com área de serviço e despensa",
+        "Banheiro de serviço que atende a área externa",
+        "Garagem coberta para 2 carros e moto, com acesso social",
+        "3 suítes no piso superior, 2 com closet",
+        "Suíte master com closet e sala de banho",
+        "Home office, sala de TV íntima e copa"
+      ],
+      "figuras": [
+        {
+          "classe": "galeria",
+          "itens": [
+            {
+              "arq": "casa-amazonia-fachada.jpg",
+              "alt": "Imagem ilustrativa da fachada da Casa Amazônia, com garagem coberta",
+              "w": 898,
+              "h": 898,
+              "leg": "Fachada. Imagem ilustrativa.",
+              "pos": "50% 62%"
+            },
+            {
+              "arq": "casa-amazonia-fundos.jpg",
+              "alt": "Imagem ilustrativa dos fundos da Casa Amazônia, com a área social aberta para o jardim",
+              "w": 1280,
+              "h": 853,
+              "leg": "Fundos, com a área social aberta para o jardim. Imagem ilustrativa."
+            },
+            {
+              "arq": "casa-amazonia-living.jpg",
+              "alt": "Imagem ilustrativa das salas de estar e de jantar integradas da Casa Amazônia",
+              "w": 982,
+              "h": 655,
+              "leg": "Estar e jantar integrados. Imagem ilustrativa."
+            }
+          ]
+        },
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "casa-amazonia-planta-terreo.jpg",
+              "alt": "Planta ilustrativa do pavimento térreo da Casa Amazônia",
+              "w": 1745,
+              "h": 844,
+              "leg": "Planta do pavimento térreo. Imagem ilustrativa; toque para ampliar."
+            },
+            {
+              "arq": "casa-amazonia-planta-superior.jpg",
+              "alt": "Planta ilustrativa do pavimento superior da Casa Amazônia, com 3 suítes",
+              "w": 1749,
+              "h": 862,
+              "leg": "Planta do pavimento superior. Imagem ilustrativa; toque para ampliar."
+            }
+          ]
+        }
+      ],
+      "notas": [
+        "A planta do térreo mostrada no material é a opção em que a varanda fica incorporada às salas; a tabela descreve a unidade AA13 como \"térreo com varanda\". Confirme a planta da unidade no atendimento."
+      ]
+    },
+    {
+      "id": "casa-guaras",
+      "label": "Modelo Guarás",
+      "h2": "Casa Guarás: 3 suítes, pé-direito duplo e garagem para 3 carros",
+      "paragrafos": [
+        "No material de divulgação, a Casa Guarás tem 329,98 m² e 3 suítes. Na tabela de outubro/2026, a unidade AA2 aparece com 330,0 m² construídos, em terreno de 403,8 m², por R$ 3.866.280."
+      ],
+      "lista": [
+        "Hall de entrada com lavabo",
+        "Salas de jantar e de estar integradas à varanda gourmet",
+        "Pé-direito duplo na sala principal",
+        "Cozinha com área de serviço e banheiro que atende a área externa",
+        "Despensa e depósito",
+        "Garagem coberta para 3 carros, com acesso social",
+        "Espaço para instalação de elevador tipo plataforma",
+        "3 suítes com closet no piso superior",
+        "Suíte master com estar, closet e sala de banho",
+        "Home office, home cinema, copa e roupeiros"
+      ],
+      "figuras": [
+        {
+          "classe": "galeria",
+          "itens": [
+            {
+              "arq": "casa-guaras-fachada.jpg",
+              "alt": "Imagem ilustrativa da fachada da Casa Guarás, com garagem coberta para 3 carros",
+              "w": 898,
+              "h": 898,
+              "leg": "Fachada. Imagem ilustrativa.",
+              "pos": "50% 62%"
+            },
+            {
+              "arq": "casa-guaras-living.jpg",
+              "alt": "Imagem ilustrativa da sala com pé-direito duplo da Casa Guarás, integrada à varanda",
+              "w": 1440,
+              "h": 960,
+              "leg": "Sala com pé-direito duplo, integrada à varanda. Imagem ilustrativa."
+            },
+            {
+              "arq": "casa-guaras-varanda-gourmet.jpg",
+              "alt": "Imagem ilustrativa da varanda gourmet da Casa Guarás",
+              "w": 1280,
+              "h": 853,
+              "leg": "Varanda gourmet. Imagem ilustrativa."
+            }
+          ]
+        },
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "casa-guaras-planta-terreo.jpg",
+              "alt": "Planta ilustrativa do pavimento térreo da Casa Guarás",
+              "w": 1492,
+              "h": 935,
+              "leg": "Planta do pavimento térreo. Imagem ilustrativa; toque para ampliar."
+            },
+            {
+              "arq": "casa-guaras-planta-superior.jpg",
+              "alt": "Planta ilustrativa do pavimento superior da Casa Guarás, com 3 suítes",
+              "w": 1517,
+              "h": 908,
+              "leg": "Planta do pavimento superior. Imagem ilustrativa; toque para ampliar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "casa-abaporu",
+      "classe": "cream",
+      "label": "Modelo Abaporu",
+      "h2": "Casa Abaporu: 3 suítes, home cinema e garagem para 3 carros",
+      "paragrafos": [
+        "No material de divulgação, a Casa Abaporu tem 362,92 m² e 3 suítes. Na tabela de outubro/2026 há três unidades (Z08, Z12 e Z14), com 362,9 m² construídos, em terrenos de 414,1 a 417,8 m², por R$ 4.251.740 cada.",
+        "O material traz ainda duas variações de térreo para a Abaporu: uma com home office e despensa, outra com a varanda inteira, em que a sala de jantar fica integrada à varanda gourmet e a um estar externo. As duas preveem espaço para instalação de elevador tipo plataforma."
+      ],
+      "lista": [
+        "Hall de entrada com lavabo",
+        "Salas de estar, com pé-direito duplo na sala principal",
+        "Sala de jantar integrada à varanda gourmet",
+        "Cozinha com despensa e área de serviço preparada para 2 máquinas lava e seca",
+        "Banheiro de serviço que atende a área externa",
+        "Depósito",
+        "Garagem coberta para 3 carros, com acesso social",
+        "3 suítes no piso superior",
+        "Suíte master com estar, closet e sala de banho",
+        "Home cinema, home office, copa e roupeiro"
+      ],
+      "figuras": [
+        {
+          "classe": "galeria",
+          "itens": [
+            {
+              "arq": "casa-abaporu-fachada.jpg",
+              "alt": "Imagem ilustrativa da fachada da Casa Abaporu, com garagem coberta para 3 carros",
+              "w": 898,
+              "h": 898,
+              "leg": "Fachada. Imagem ilustrativa.",
+              "pos": "50% 62%"
+            },
+            {
+              "arq": "casa-abaporu-fundos.jpg",
+              "alt": "Imagem ilustrativa dos fundos da Casa Abaporu, com a varanda gourmet aberta para o jardim",
+              "w": 1280,
+              "h": 853,
+              "leg": "Fundos, com a varanda gourmet aberta para o jardim. Imagem ilustrativa."
+            },
+            {
+              "arq": "casa-abaporu-living.jpg",
+              "alt": "Imagem ilustrativa das salas de estar e de jantar da Casa Abaporu",
+              "w": 862,
+              "h": 575,
+              "leg": "Estar e jantar. Imagem ilustrativa."
+            }
+          ]
+        },
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "casa-abaporu-planta-terreo.jpg",
+              "alt": "Planta ilustrativa do pavimento térreo da Casa Abaporu",
+              "w": 1616,
+              "h": 1009,
+              "leg": "Planta do pavimento térreo. Imagem ilustrativa; toque para ampliar."
+            },
+            {
+              "arq": "casa-abaporu-planta-superior.jpg",
+              "alt": "Planta ilustrativa do pavimento superior da Casa Abaporu, com 3 suítes",
+              "w": 1601,
+              "h": 958,
+              "leg": "Planta do pavimento superior. Imagem ilustrativa; toque para ampliar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clube",
+      "label": "Clube",
+      "h2": "O clube fica em um casarão do século XIX",
+      "paragrafos": [
+        "O clube do residencial Alphaville Dom Pedro 0 funciona em um casarão histórico do século XIX, que foi restaurado. Segundo a Alphaville, o casarão inspirou a arquitetura e o paisagismo do residencial, e o conjunto tem mais de 200 mil m² de áreas verdes.",
+        "As fotos abaixo são do casarão e do clube. O clube e o lazer são do residencial inteiro, e não exclusivos das 42 casas."
+      ],
+      "figuras": [
+        {
+          "classe": "faixa",
+          "itens": [
+            {
+              "arq": "casarao-original.jpg",
+              "alt": "Foto do casarão do século XIX do Alphaville Dom Pedro 0, com varanda e telhado de barro",
+              "w": 1920,
+              "h": 391,
+              "leg": "Casarão original"
+            }
+          ]
+        },
+        {
+          "classe": "galeria",
+          "itens": [
+            {
+              "arq": "casarao-restaurado-noite.jpg",
+              "alt": "Foto aérea noturna do casarão restaurado do Alphaville Dom Pedro 0, entre palmeiras iluminadas",
+              "w": 1280,
+              "h": 958,
+              "leg": "Casarão restaurado e árvores centenárias"
+            },
+            {
+              "arq": "casarao-entrada.jpg",
+              "alt": "Foto da escadaria e da entrada do casarão restaurado, com portas e pinhas azuis",
+              "w": 1280,
+              "h": 985,
+              "leg": "Entrada do casarão restaurado"
+            },
+            {
+              "arq": "clube-piscina.jpg",
+              "alt": "Foto da piscina do clube do Alphaville Dom Pedro 0, com raia e espreguiçadeiras",
+              "w": 960,
+              "h": 1280,
+              "leg": "Piscina"
+            },
+            {
+              "arq": "clube-playground.jpg",
+              "alt": "Foto do playground de madeira do Alphaville Dom Pedro 0",
+              "w": 598,
+              "h": 1064,
+              "leg": "Playground",
+              "pos": "50% 35%"
+            },
+            {
+              "arq": "clube-coworking.jpg",
+              "alt": "Foto do espaço de coworking do clube, com painel de madeira, mesas e cadeiras",
+              "w": 1080,
+              "h": 1440,
+              "leg": "Coworking",
+              "pos": "50% 70%"
+            },
+            {
+              "arq": "clube-salao-de-jogos.jpg",
+              "alt": "Foto do salão de jogos adulto do clube, com mesa de sinuca e estar",
+              "w": 646,
+              "h": 861,
+              "leg": "Salão de jogos adulto",
+              "pos": "50% 60%"
+            }
+          ]
+        }
+      ],
+      "depois": "lazer"
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Em Campinas, a 2 minutos do Galleria Shopping, segundo a Alphaville",
+      "paragrafos": [
+        "O Casas Alphaville Dom Pedro 0 fica em Campinas/SP, dentro do residencial Alphaville Dom Pedro 0. O material não informa logradouro nem número; o mapa abaixo marca a área das casas. Os tempos de deslocamento a seguir são os divulgados pela Alphaville, sem indicação do meio de transporte nem do horário."
+      ],
+      "cards": [
+        {
+          "t": "1 a 2 minutos",
+          "p": "Tauste (1), Galleria Shopping (2) e Sam's Club (2), segundo a Alphaville"
+        },
+        {
+          "t": "5 a 8 minutos",
+          "p": "Leroy Merlin (5) e Shopping Iguatemi (8), segundo a Alphaville"
+        },
+        {
+          "t": "15 minutos",
+          "p": "Parque Dom Pedro Shopping, segundo a Alphaville"
+        }
+      ],
+      "cta": {
+        "msg": "Olá! Quero agendar uma visita ao Casas Alphaville Dom Pedro 0.",
+        "texto": "Agendar uma visita"
+      }
+    },
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "O que a tabela diz sobre o pagamento",
+      "paragrafos": [
+        "A tabela de vendas de outubro/2026 traz o preço de cada casa, de R$ 3.306.135 a R$ 4.251.740, já com a intermediação imobiliária incluída. Sobre o pagamento, ela diz apenas o seguinte:"
+      ],
+      "cards": [
+        {
+          "t": "Entrada",
+          "p": "As parcelas da entrada são fixas."
+        },
+        {
+          "t": "Depois do habite-se",
+          "p": "As parcelas passam a ser corrigidas todo mês pelo IPCA, o índice oficial de inflação, calculado pelo IBGE, e têm juros, conforme o contrato."
+        },
+        {
+          "t": "O que a tabela não informa",
+          "p": "Percentual de entrada, número de parcelas e taxa de juros não constam da tabela. Essas condições são passadas no atendimento."
+        }
+      ],
+      "notas": [
+        "A tabela vale a partir de outubro/2026 e está sujeita a alteração sem aviso."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de preços do Casas Alphaville Dom Pedro 0 com as casas disponíveis.",
+        "texto": "Pedir tabela e condições"
+      }
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    }
+  ],
+  "lazer_bloco": {
+    "h2": "O lazer do residencial, segundo a Alphaville",
+    "intro": "A Alphaville lista 23 itens de lazer e de apoio no residencial Alphaville Dom Pedro 0. Eles são de uso de todo o residencial, e não exclusivos das casas.",
+    "itens": [
+      "Spa e sauna",
+      "Vestiários",
+      "Academia",
+      "Espaço gourmet",
+      "Bar",
+      "Espaço coworking",
+      "Salão de jogos infantil",
+      "Salão de jogos adulto",
+      "Sala de reunião",
+      "Espaço kids",
+      "Salão de festas",
+      "Piscina infantil",
+      "Raia de 25 m",
+      "Piscina prainha com borda infinita",
+      "Playground",
+      "Churrasqueira",
+      "Quadra de tênis",
+      "Campo de futebol",
+      "Quadra de beach tennis",
+      "Quadra poliesportiva",
+      "Triagem",
+      "Bicicletário",
+      "Estacionamento"
+    ],
+    "nota": "Lista divulgada pela Alphaville para o residencial Alphaville Dom Pedro 0."
+  },
+  "ficha": [
+    [
+      "Realização",
+      "Alphaville e Incorpi"
+    ],
+    [
+      "Tipo",
+      "Casas em área reservada do residencial Alphaville Dom Pedro 0"
+    ],
+    [
+      "Localização",
+      "Campinas/SP"
+    ],
+    [
+      "Total de casas",
+      "42, segundo a Alphaville"
+    ],
+    [
+      "Modelos",
+      "5: Abaporu, Amazônia, Colombina, Guarás e Tropical"
+    ],
+    [
+      "Área construída",
+      "288 a 362 m², segundo a Alphaville"
+    ],
+    [
+      "Casas na tabela de outubro/2026",
+      "5: Amazônia AA13, Guarás AA2 e Abaporu Z08, Z12 e Z14"
+    ],
+    [
+      "Terrenos das casas da tabela",
+      "403,8 a 417,8 m²"
+    ],
+    [
+      "Preços na tabela",
+      "R$ 3.306.135 a R$ 4.251.740, com a intermediação imobiliária incluída"
+    ],
+    [
+      "Pagamento",
+      "Entrada em parcelas fixas; depois do habite-se, parcelas corrigidas pelo IPCA, com juros, conforme o contrato"
+    ],
+    [
+      "Situação do residencial",
+      "Residencial entregue em outubro de 2025 e conjunto das casas em dezembro de 2025, segundo a divulgação de resultados da Alphaville do 4º trimestre de 2025"
+    ],
+    [
+      "Situação de cada casa",
+      "Confirmada no atendimento"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa uma casa no Casas Alphaville Dom Pedro 0?",
+      "a": "Na tabela de vendas vigente a partir de outubro/2026, os preços vão de R$ 3.306.135 (Casa Amazônia, unidade AA13) a R$ 4.251.740 (Casa Abaporu, unidades Z08, Z12 e Z14); a Casa Guarás, unidade AA2, custa R$ 3.866.280. O preço já inclui a intermediação imobiliária, e a tabela está sujeita a alteração sem aviso."
+    },
+    {
+      "q": "Quantas casas tem o Casas Alphaville Dom Pedro 0?",
+      "a": "São 42 casas, segundo a Alphaville, em uma área reservada dentro do residencial Alphaville Dom Pedro 0, em Campinas. A tabela de vendas de outubro/2026 lista 5 delas."
+    },
+    {
+      "q": "Quais são os modelos e as metragens das casas?",
+      "a": "São 5 modelos, com 288 a 362 m² construídos, segundo a Alphaville. Temos planta e ficha técnica de três: Casa Amazônia (288,80 m² no material de divulgação e 287,5 m² na tabela), Casa Guarás (329,98 m²) e Casa Abaporu (362,92 m²), todas com 3 suítes no piso superior. Dos modelos Colombina e Tropical não recebemos metragem nem preço."
+    },
+    {
+      "q": "As casas do Casas Alphaville Dom Pedro 0 estão prontas?",
+      "a": "O residencial Alphaville Dom Pedro 0 foi entregue em outubro de 2025, e o conjunto das casas em dezembro de 2025, segundo a divulgação de resultados da Alphaville do 4º trimestre de 2025; no catálogo da companhia, o Casas Alphaville Dom Pedro 0 aparece como entregue. A situação de cada casa, incluindo o habite-se, não consta da tabela de vendas e é confirmada no atendimento."
+    },
+    {
+      "q": "Quem realiza o Casas Alphaville Dom Pedro 0?",
+      "a": "A realização é da Alphaville e da Incorpi. A Imobiliária Viv'América (CRECI 47394-J) é uma imobiliária independente, que intermedeia a venda; esta página não é o site oficial da incorporadora."
+    },
+    {
+      "q": "O que está incluído no preço da tabela?",
+      "a": "O valor da tabela é o preço do imóvel somado à intermediação imobiliária. A entrada é paga em parcelas fixas; depois do habite-se, as parcelas são corrigidas mensalmente pelo IPCA, o índice oficial de inflação, calculado pelo IBGE, com juros, conforme o contrato. Percentual de entrada, prazo e taxa não constam da tabela e são informados no atendimento. Piscina, mobília e equipamentos que aparecem nas imagens são ilustrativos: o que acompanha cada casa é confirmado no atendimento."
+    },
+    {
+      "q": "Que lazer tem o residencial Alphaville Dom Pedro 0?",
+      "a": "Segundo a Alphaville, o residencial tem um clube instalado em um casarão do século XIX restaurado e, entre os itens de lazer, spa e sauna, academia, espaço gourmet, bar, coworking, salões de jogos, salão de festas, piscina infantil, raia de 25 m e piscina prainha com borda infinita, além de playground, churrasqueira, campo de futebol e quadras de tênis, de beach tennis e poliesportiva. O lazer é de todo o residencial, e não exclusivo das casas."
+    },
+    {
+      "q": "Onde fica o Casas Alphaville Dom Pedro 0?",
+      "a": "Em Campinas/SP, dentro do residencial Alphaville Dom Pedro 0. Segundo a Alphaville, fica a 2 minutos do Galleria Shopping, a 8 do Shopping Iguatemi e a 15 do Parque Dom Pedro Shopping. O material não informa logradouro nem número; o mapa desta página marca a área das casas."
+    }
+  ],
+  "cta": {
+    "h2": "Quer conhecer as casas do Alphaville Dom Pedro 0?",
+    "p": "Enviamos a tabela de outubro/2026 com as cinco casas, as plantas de cada modelo e as condições de pagamento, e agendamos a sua visita.",
+    "msg": "Olá! Tenho interesse no Casas Alphaville Dom Pedro 0 em Campinas. Pode me enviar mais informações?"
+  },
+  "rodape": {
+    "marca": "CASAS ALPHAVILLE DOM PEDRO 0",
+    "linha": "Casas Alphaville Dom Pedro 0 · casas de 288 a 362 m² em área reservada do residencial Alphaville Dom Pedro 0 · Campinas, SP",
+    "realizacao": "Realização Alphaville e Incorpi",
+    "legal": "As imagens das casas e as plantas são ilustrativas: piscina, mobília, decoração e equipamentos servem de referência, e o projeto pode sofrer alterações. Número de casas, modelos, metragens, lazer e tempos de deslocamento conforme divulgado pela Alphaville. Preços conforme a tabela de vendas vigente a partir de outubro/2026, com a intermediação imobiliária incluída, sujeitos a alteração sem aviso; as condições de pagamento e a situação de cada casa são confirmadas no atendimento. Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da incorporadora. Página publicada em out/2026."
+  },
+  "geo": [
+    -22.861422,
+    -47.013344
+  ],
+  "mapa": {
+    "rota": "-22.861422,-47.013344",
+    "embed": "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s-22.861422,-47.013344!6i16",
+    "lotes": {
+      "url": "/mapa-lotes-indaiatuba/#dompedro0",
+      "texto": "Ver as 5 casas no mapa de lotes"
+    }
+  }
+}

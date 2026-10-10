@@ -262,6 +262,7 @@ const BAIRROS = [
   { id:'paulista3', nome:'Jardim Paulista III', sub:'loteamento · 32 lotes disponíveis (tabela de lançamento 96x, recebida em 08/09/2026)', cond:'entrada de 15% (20% ou 50% em alguns lotes) e saldo em 96 parcelas corrigidas pelo IPCA, conforme a tabela; parcela indicada é a da tabela', overlay:{ url:'images/paulista3.png', bounds:[[-23.133154295,-47.257973782],[-23.124453714,-47.249506540]] } },
   { id:'vilafahl', nome:'Residencial Vila Fahl', sub:'loteamento · 67 lotes da Fase 1 (48 residenciais e 19 comerciais) · a prazo em até 96x', landing:'/vila-fahl-indaiatuba/', cond:'sinal de 10% e saldo em até 96 parcelas, tabela da Fase 1 recebida em 17/09/2026; à vista com 5% de desconto', overlay:{ url:'images/vilafahl.png', bounds:[[-23.092794000,-47.259482094],[-23.084804457,-47.248773204]] } },
   { id:'porteiraferro', fechado:true, nome:'Porteira de Ferro', sub:'loteamento fechado · último lote da tabela de 17/09/2026 · a prazo em até 36x', landing:'/porteira-de-ferro-indaiatuba/', cond:'sinal de 35% e saldo em até 36 parcelas: até 12 sem juros e sem correção; em 24 e 36 há juros de 0,80% a.m. (Price) e correção anual pelo IPCA; à vista com 5% de desconto', overlay:{ url:'images/porteiraferro.png', bounds:[[-23.065958882,-47.191108355],[-23.059816259,-47.187124968]] } }, { id:'villeprovence', fechado:true, nome:'Ville de Provence', sub:'loteamento fechado Urban Square · 319 lotes na tabela de set/2026 · a prazo em até 96x', landing:'/ville-de-provence-indaiatuba/', tab:'set/2026', cond:'sinal de 10% e saldo em até 12 parcelas sem juros e sem correção, ou de 24 a 96 parcelas com juros de 0,8% a.m. e IPCA (anual até 36 meses, mensal acima disso); tabela gerada em 12/09/2026', overlay:{ url:'images/villeprovence.png', bounds:[[-23.052708048,-47.210856198],[-23.041990492,-47.202805368]] } },
+  { id:'dompedro0', fechado:true, cidade:'Campinas', casas:true, centro:[-22.861422,-47.013344], nome:'Casas Alphaville Dom Pedro 0', sub:'Campinas · casas de 288 a 362 m² · realização Alphaville e Incorpi', landing:'/casas-alphaville-dom-pedro-0-campinas/', tab:'out/2026', notaTab:'inclui a intermediação' },
  
 ];
 const LOTES = [
@@ -2611,6 +2612,12 @@ const LOTES = [
       { b:'villeprovence', q:'X', l:'6', m2:364.96, tipo:'RESIDENCIAL', pm2:1770, vista:645979.20, entrada:64597.92, parcela:8699.40, nx:96, ep:10, ll:[-23.045974,-47.204296], tabela:true, obs:'Valor de tabela de set/2026: sinal de 10% e saldo em até 12 parcelas sem juros, ou de 24 a 96 parcelas com juros de 0,8% a.m. e correção pelo IPCA' },
       { b:'villeprovence', q:'X', l:'4', m2:369.47, tipo:'RESIDENCIAL', pm2:1770, vista:653961.90, entrada:65396.19, parcela:8806.91, nx:96, ep:10, ll:[-23.046038,-47.204572], tabela:true, obs:'Valor de tabela de set/2026: sinal de 10% e saldo em até 12 parcelas sem juros, ou de 24 a 96 parcelas com juros de 0,8% a.m. e correção pelo IPCA' },
       { b:'villeprovence', q:'C1', l:'2', m2:498.64, tipo:'RESIDENCIAL', pm2:1770, vista:882592.80, entrada:88259.28, parcela:11885.88, nx:96, ep:10, ll:[-23.049654,-47.207155], tabela:true, obs:'Valor de tabela de set/2026: sinal de 10% e saldo em até 12 parcelas sem juros, ou de 24 a 96 parcelas com juros de 0,8% a.m. e correção pelo IPCA' },
+  // Casas Alphaville Dom Pedro 0 (Campinas) — tabela de vendas vigente a partir de out/2026, valor com a intermediação incluída. Modo casa (bairro com casas:true): m2 = terreno, casa = área construída, modelo = nome da casa. Sem georreferência por casa: pinos em posição aproximada, em volta do ponto do empreendimento.
+  { b:'dompedro0', q:'AA', l:'13', m2:413.3, tipo:'RESIDENCIAL', vista:3306135.00, ll:[-22.861249,-47.013344], tabela:true, modelo:'Amazônia', casa:287.5, obs:'Posição aproximada dentro da área das Casas: o pino não indica o lote exato. Áreas conforme a tabela de vendas de out/2026. A situação de cada casa é confirmada no atendimento.' },
+  { b:'dompedro0', q:'AA', l:'2', m2:403.8, tipo:'RESIDENCIAL', vista:3866280.00, ll:[-22.861381,-47.013147], tabela:true, modelo:'Guarás', casa:330.0, obs:'Posição aproximada dentro da área das Casas: o pino não indica o lote exato. Áreas conforme a tabela de vendas de out/2026. A situação de cada casa é confirmada no atendimento.' },
+  { b:'dompedro0', q:'Z', l:'08', m2:414.1, tipo:'RESIDENCIAL', vista:4251740.00, ll:[-22.861595,-47.013222], tabela:true, modelo:'Abaporu', casa:362.9, obs:'Posição aproximada dentro da área das Casas: o pino não indica o lote exato. Áreas conforme a tabela de vendas de out/2026. A situação de cada casa é confirmada no atendimento.' },
+  { b:'dompedro0', q:'Z', l:'12', m2:417.8, tipo:'RESIDENCIAL', vista:4251740.00, ll:[-22.861595,-47.013466], tabela:true, modelo:'Abaporu', casa:362.9, obs:'Posição aproximada dentro da área das Casas: o pino não indica o lote exato. Áreas conforme a tabela de vendas de out/2026. A situação de cada casa é confirmada no atendimento.' },
+  { b:'dompedro0', q:'Z', l:'14', m2:417.8, tipo:'RESIDENCIAL', vista:4251740.00, ll:[-22.861381,-47.013541], tabela:true, modelo:'Abaporu', casa:362.9, obs:'Posição aproximada dentro da área das Casas: o pino não indica o lote exato. Áreas conforme a tabela de vendas de out/2026. A situação de cada casa é confirmada no atendimento.' },
 ];
 
 // ─── UTILIDADES ────────────────────────────────────────────────────────────────
@@ -2621,6 +2628,16 @@ const bairroDe = id => BAIRROS.find(b => b.id === id);
 const temPreco = x => x.vista != null;
 const m2Txt = x => x.m2 != null ? num(x.m2) + ' m²' : 'metragem a confirmar';                                                            // lote sem tabela: "preço sob consulta"
 const precoTxt = x => temPreco(x) ? brl0(x.vista) : 'sob consulta';
+// Modo casa: bairro com `casas:true` vende casa, nao lote. So' o texto muda — `m2` segue sendo o terreno, `casa` e' a
+// area construida e `modelo` o nome da casa. Bairro sem a marca sai exatamente como sempre saiu.
+const ehCasa = x => { const b = bairroDe(x.b); return !!(b && b.casas); };
+const unidTxt = (b, n) => (b && b.casas ? 'casa' : 'lote') + (n > 1 ? 's' : '');
+const casaTxt = x => x.modelo ? 'Casa ' + x.modelo : 'Casa';
+const tituloTxt = x => (ehCasa(x) ? casaTxt(x) + ' · ' : '') + `Quadra ${x.q} · Lote ${x.l}`;
+const rotuloTxt = (x, sep) => ehCasa(x) ? `${casaTxt(x)} · ${x.q}${x.l}` : `Q${x.q}${sep}L${x.l}`;
+const areaCurtaTxt = x => ehCasa(x) && x.casa != null ? num(x.casa) + ' m² de casa' : m2Txt(x);
+const areaTxt = x => ehCasa(x) && x.casa != null && x.m2 != null ? `${num(x.casa)} m² de casa em terreno de ${num(x.m2)} m²` : areaCurtaTxt(x);
+const foraDaBase = b => !!(b && b.cidade && b.cidade !== 'Indaiatuba');   // o mapa e' de Indaiatuba; bairro de outra cidade traz `cidade`
 const desdeTxt = ls => { const v = ls.filter(temPreco).map(x => x.vista); return v.length ? 'desde ' + brl0(Math.min(...v)) : 'preços sob consulta'; };
 const minTxt = ls => { const v = ls.filter(temPreco).map(x => x.vista); return v.length ? brl0(Math.min(...v)) + '+' : 'consulte'; };
 LOTES.forEach((x, i) => { x.id = x.b + '-q' + x.q.toLowerCase() + '-l' + x.l.toLowerCase().replace(/\s+/g, ''); x.i = i; });
@@ -2638,7 +2655,8 @@ function passa(x) {
   if (!ativos.has(x.tipo)) return false;
   if (!ativosLot.has(especieDe(b))) return false;
   if (!termo) return true;
-  const alvo = semAcento(`${b ? b.nome : ''} ${b && b.sub ? b.sub : ''} quadra ${x.q} q${x.q} lote ${x.l} l${x.l} ${TIPOS[x.tipo][0]} ${m2Txt(x)}`);
+  const extra = (b && b.cidade ? ' ' + b.cidade : '') + (b && b.casas ? ` ${casaTxt(x)} ${x.q}${x.l} ${areaTxt(x)}` : '');   // busca por cidade, por "casa" e pelo nome do modelo
+  const alvo = semAcento(`${b ? b.nome : ''} ${b && b.sub ? b.sub : ''} quadra ${x.q} q${x.q} lote ${x.l} l${x.l} ${TIPOS[x.tipo][0]} ${m2Txt(x)}${extra}`);
   return termo.split(/\s+/).every(t => alvo.includes(t));
 }
 
@@ -2734,22 +2752,33 @@ L.control.scale({ imperial: false }).addTo(mapa);
 })();
 
 // o contêiner pode nascer sem tamanho (aba em segundo plano, fontes carregando): recalcula e reenquadra
-function enquadrarTudo() { const pts = LOTES.flatMap(x => x.ll ? [x.ll] : []); if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.15), { animate: false }); }
+// A vista inicial e' a de Indaiatuba: bairro de outra cidade e bairro oculto ficam fora do enquadramento. Um pino a
+// dezenas de km afastaria o mapa e os loteamentos virariam bolinhas. Outra cidade abre pelo link (#id) ou pela lista.
+const naVistaInicial = x => { const b = bairroDe(x.b); return !(b && (b.oculto || foraDaBase(b))); };
+function enquadrarTudo() { const pts = LOTES.flatMap(x => x.ll && naVistaInicial(x) ? [x.ll] : []); if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.15), { animate: false }); }
 window.addEventListener('resize', () => mapa.invalidateSize());
 window.addEventListener('load', () => mapa.invalidateSize());
 
 const camada = L.layerGroup().addTo(mapa);
 const marcadores = {};
 function popupHtml(x) {
-  const b = bairroDe(x.b); const t = TIPOS[x.tipo];
-  const wa = 'https://wa.me/5519989769457?text=' + encodeURIComponent(`Olá! Vi no mapa o lote Quadra ${x.q}, Lote ${x.l} no ${b.nome} (${m2Txt(x)}${temPreco(x) ? ', ' + brl(x.vista) + ' à vista' : ''}) e quero mais informações.`);
-  return `<div class="pp"><h3>Quadra ${x.q} · Lote ${x.l}</h3><div class="sub">${b.nome}${b.sub ? ' · ' + b.sub : ''}</div>
+  const b = bairroDe(x.b); const t = TIPOS[x.tipo]; const casa = ehCasa(x);
+  const msg = casa
+    ? `Olá! Vi no mapa a ${casaTxt(x)} (quadra ${x.q}, lote ${x.l}) do ${b.nome}${b.cidade ? ', em ' + b.cidade : ''}. Pode me enviar mais informações?`
+    : `Olá! Vi no mapa o lote Quadra ${x.q}, Lote ${x.l} no ${b.nome} (${m2Txt(x)}${temPreco(x) ? ', ' + brl(x.vista) + ' à vista' : ''}) e quero mais informações.`;
+  const wa = 'https://wa.me/5519989769457?text=' + encodeURIComponent(msg);
+  // Casa: a tabela nao traz percentual de entrada, prazo nem taxa, entao o popup nao simula nada (os padroes
+  // `x.ep || 15` e `x.nx || 96` sao de lote). Linha com preco e sem entrada ou parcela cai na mesma frase.
+  const semSimulacao = casa || (temPreco(x) && !x.soVista && (x.entrada == null || x.parcela == null));
+  const condicao = semSimulacao ? '<dt>Condição</dt><dd>Condições de pagamento no atendimento</dd>'
+    : !temPreco(x) ? '<dt>Condição</dt><dd>tabela a pedir à loteadora</dd>' : x.soVista ? '<dt>Condição</dt><dd>somente à vista</dd>' : `<dt>Entrada ${x.ep || 15}%</dt><dd>${brl(x.entrada)}</dd><dt>Parcelas</dt><dd>${x.nx || 96}x de ${brl(x.parcela)} <small>(${x.cond || b.cond || '1% a.m. incluído · correção mensal pelo IPCA'})</small></dd>`;
+  return `<div class="pp"><h3>${tituloTxt(x)}</h3><div class="sub">${b.nome}${b.sub ? ' · ' + b.sub : ''}</div>
     <div class="preco">${temPreco(x) ? brl(x.vista) + (x.tabela ? ' <small>valor de tabela</small>' : ' <small>à vista</small>') : 'Preço sob consulta'}</div>
-    <dl><dt>Metragem</dt><dd>${m2Txt(x)}</dd>${x.pm2 != null ? `<dt>Valor do m²</dt><dd>${brl(x.pm2)}</dd>` : ''}<dt>Tipo</dt><dd>${t[0]}</dd>
-    ${x.prazo ? `<dt>A prazo</dt><dd>${brl(x.prazo)}</dd>` : ''}${!temPreco(x) ? '<dt>Condição</dt><dd>tabela a pedir à loteadora</dd>' : x.soVista ? '<dt>Condição</dt><dd>somente à vista</dd>' : `<dt>Entrada ${x.ep || 15}%</dt><dd>${brl(x.entrada)}</dd><dt>Parcelas</dt><dd>${x.nx || 96}x de ${brl(x.parcela)} <small>(${x.cond || b.cond || '1% a.m. incluído · correção mensal pelo IPCA'})</small></dd>`}</dl>${b.landing ? `<a class="lnk" href="${b.landing}">Página do empreendimento →</a>` : ''}
+    <dl><dt>Metragem</dt><dd>${areaTxt(x)}</dd>${x.pm2 != null && !casa ? `<dt>Valor do m²</dt><dd>${brl(x.pm2)}</dd>` : ''}<dt>Tipo</dt><dd>${t[0]}</dd>
+    ${x.prazo && !casa ? `<dt>A prazo</dt><dd>${brl(x.prazo)}</dd>` : ''}${condicao}</dl>${b.landing ? `<a class="lnk" href="${b.landing}">Página do empreendimento →</a>` : ''}
     ${x.obs ? '<div class="obs">' + x.obs + '</div>' : ''}
-    <a class="wa" data-origem="lote" data-lote="${x.id}" href="${wa}" target="_blank" rel="noopener">Falar sobre este lote</a>
-    <div class="fonte">${temPreco(x) ? (x.tabela ? 'Valor de tabela de ' : 'Preço à vista de ') + (b.tab || 'set/2026') + ', sujeito a alteração sem aviso. ' : ''}Posição do pino aproximada.</div></div>`;
+    <a class="wa" data-origem="lote" data-lote="${x.id}" href="${wa}" target="_blank" rel="noopener">Falar sobre ${casa ? 'esta casa' : 'este lote'}</a>
+    <div class="fonte">${temPreco(x) ? (x.tabela ? 'Valor de tabela de ' : 'Preço à vista de ') + (b.tab || 'set/2026') + (b.notaTab ? ' (' + b.notaTab + ')' : '') + ', sujeito a alteração sem aviso. ' : ''}Posição do pino aproximada.</div></div>`;
 }
 function desenhar() {
   camada.clearLayers();
@@ -2764,7 +2793,7 @@ function desenhar() {
     if (x.ll) {
       const mk = L.circleMarker(x.ll, { radius: 9, color: '#fff', weight: 2, fillColor: cor, fillOpacity: .95 }).addTo(camada);
       mk.bindPopup(popupHtml(x), { maxWidth: 320 });
-      mk.bindTooltip(`Q${x.q} L${x.l} · ${precoTxt(x)}`, { permanent: false, direction: 'top', offset: [0, -8], className: 'rotulo' });
+      mk.bindTooltip(`${rotuloTxt(x, ' ')} · ${precoTxt(x)}`, { permanent: false, direction: 'top', offset: [0, -8], className: 'rotulo' });
       if (!x.poly) marcadores[x.id] = mk;
     }
   });
@@ -2777,7 +2806,7 @@ mapa.createPane('plantas'); mapa.getPane('plantas').style.zIndex = 350;   // aba
 const camadaBairros = L.layerGroup();
 const plantas = {};
 const pinosBairro = {};
-const htmlBairro = (b, ls) => `<div><b>${b.nome}</b><span>${ls.length} lote${ls.length > 1 ? 's' : ''} · ${desdeTxt(ls)}</span></div>`;
+const htmlBairro = (b, ls) => `<div><b>${b.nome}</b><span>${ls.length} ${unidTxt(b, ls.length)} · ${desdeTxt(ls)}</span></div>`;
 const iconeBairro = (b, ls, baixo) => L.divIcon({ className: 'pino-bairro' + (baixo ? ' baixo' : ''), html: htmlBairro(b, ls), iconSize: null, iconAnchor: [0, 0] });
 const iconeMini = (b, ls) => L.divIcon({ className: 'pino-bairro-mini', html: `<div>${ls.length}</div>`, iconSize: null, iconAnchor: [0, 0] });
 BAIRROS.forEach(b => {
@@ -2918,9 +2947,12 @@ function arrumarRotulos() {
     cabeca._grupo = n > 1 ? m.membros.map(it => it.b.id) : null;
     cabeca.setIcon(L.divIcon({ className: 'pino-bairro-mini' + (n > 1 ? ' grupo' : ''), html: `<div>${total}</div>`, iconSize: null, iconAnchor: [0, 0] }));
     cabeca.setZIndexOffset(500);
+    // grupo so' de loteamentos fala "loteamentos · lotes"; se entrar bairro de casas, a conta sai separada
+    const casas = m.membros.reduce((t, it) => t + (it.b.casas ? it.ls.length : 0), 0);
+    const quanto = !casas ? `${total} lotes` : casas === total ? `${total} casas` : `${total - casas} ${unidTxt(null, total - casas)} e ${casas} ${unidTxt({ casas: true }, casas)}`;
     const dica = n > 1
-      ? `${n} loteamentos · ${total} lotes<br>${m.membros.map(it => it.b.nome).join('<br>')}<br><i>clique para aproximar</i>`
-      : `${m.membros[0].b.nome} · ${total} lote${total > 1 ? 's' : ''}`;
+      ? `${n} ${casas ? 'empreendimentos' : 'loteamentos'} · ${quanto}<br>${m.membros.map(it => it.b.nome).join('<br>')}<br><i>clique para aproximar</i>`
+      : `${m.membros[0].b.nome} · ${total} ${unidTxt(m.membros[0].b, total)}`;
     if (!cabeca.getTooltip()) cabeca.bindTooltip(dica, { direction: 'top', offset: [0, -14], className: 'rotulo' });
     else cabeca.setTooltipContent(dica);
   });
@@ -2965,11 +2997,11 @@ function montarLista() {
     if (!ls.length) return;
     const pinados = ls.filter(x => x.ll || x.poly).length;
     const div = document.createElement('div'); div.className = 'bairro' + (bairroAtivo === b.id ? ' ativo' : ''); div.dataset.id = b.id;
-    div.innerHTML = `<button type="button"><span><b>${b.nome}</b><small>${ls.length} lote${ls.length > 1 ? 's' : ''}${pinados < ls.length ? ' · ' + pinados + ' no mapa' : ''}${b.landing ? ' · lançamento' : ''}</small></span><span class="n">${minTxt(ls)}</span></button><div class="lotes"></div>`;
+    div.innerHTML = `<button type="button"><span><b>${b.nome}</b><small>${ls.length} ${unidTxt(b, ls.length)}${pinados < ls.length ? ' · ' + pinados + ' no mapa' : ''}${foraDaBase(b) ? ' · ' + b.cidade : ''}${b.landing && !b.casas ? ' · lançamento' : ''}</small></span><span class="n">${minTxt(ls)}</span></button><div class="lotes"></div>`;
     const cont = div.querySelector('.lotes');
     ls.sort(cmp).forEach(x => {
       const el = document.createElement('div'); el.className = 'lote' + (x.ll || x.poly ? '' : ' sempino'); el.dataset.id = x.id;
-      el.innerHTML = `<i style="background:${TIPOS[x.tipo][2]}"></i><span><span class="q">Q${x.q}·L${x.l}</span> ${m2Txt(x)}${x.ll || x.poly ? '' : ' · <em>sem pino</em>'}</span><span class="v">${precoTxt(x)}</span>`;
+      el.innerHTML = `<i style="background:${TIPOS[x.tipo][2]}"></i><span><span class="q">${rotuloTxt(x, '·')}</span> ${areaCurtaTxt(x)}${x.ll || x.poly ? '' : ' · <em>sem pino</em>'}</span><span class="v">${precoTxt(x)}</span>`;
       el.onclick = ev => { ev.stopPropagation(); irParaLote(x); };
       cont.appendChild(el);
     });
@@ -2992,7 +3024,7 @@ function irParaBairro(id, forcar) {
 function irParaLote(x) {
   document.querySelectorAll('.lote').forEach(d => d.classList.toggle('sel', d.dataset.id === x.id));
   const m = marcadores[x.id];
-  if (!m) { alert('Este lote ainda não tem posição no mapa. Fale conosco pelo WhatsApp para mais detalhes.'); return; }
+  if (!m) { alert((ehCasa(x) ? 'Esta casa' : 'Este lote') + ' ainda não tem posição no mapa. Fale conosco pelo WhatsApp para mais detalhes.'); return; }
   const ll = x.ll || (x.poly && L.latLngBounds(x.poly).getCenter());
   mapa.setView(ll, 18, { animate: false });
   setTimeout(() => m.openPopup(), 250);
