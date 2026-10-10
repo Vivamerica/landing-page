@@ -42,15 +42,15 @@
     "IZZI",
     "Residence"
   ],
-  "wa_flutuante": "Olá! Quero a tabela atualizada do Izzi Residence.",
-  "wa_topo": "Olá! Tenho interesse no Izzi Residence. Quero a tabela e as condições.",
+  "wa_flutuante": "Olá! Tenho interesse no Izzi Residence em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de preços do Izzi Residence com as unidades disponíveis.",
   "hero": {
     "eyebrow": "Centro · Indaiatuba/SP",
     "sub": "Compactos e gardens · mall de serviços no térreo · GPCI",
     "lead": "Duas torres no Centro, na esquina das ruas 24 de Maio, Humaitá e Oswaldo Cruz, com minimercado e mall de serviços no térreo e piscina no alto de cada torre. Plantas de 39,90 a 43,97 m² e gardens de 66 m² no térreo.",
     "preco": "A partir de R$ 371.862,27",
     "preco_nota": "tabela GPCI de setembro/2026 · entrega prevista jun/2028",
-    "cta_msg": "Olá! Quero a tabela do Izzi Residence e as unidades da tabela de setembro.",
+    "cta_msg": "Olá! Quero a tabela de preços do Izzi Residence com as unidades disponíveis.",
     "cta_texto": "Ver unidades e valores"
   },
   "secoes": [
@@ -217,7 +217,7 @@
         "Até o habite-se o saldo devedor é corrigido pelo INCC (Índice Nacional de Custo da Construção). Depois do habite-se incidem IGP-M e juros de 1% ao mês. O financiamento depende da análise e da aprovação de crédito da Caixa."
       ],
       "cta": {
-        "msg": "Olá! Quero a tabela completa do Izzi Residence com andar e valor de cada unidade.",
+        "msg": "Olá! Quero a tabela de preços do Izzi Residence com as unidades disponíveis.",
         "texto": "Pedir a tabela completa"
       }
     },
@@ -428,7 +428,7 @@
   "cta": {
     "h2": "Quer ver as unidades do Izzi Residence?",
     "p": "Mandamos a tabela com andar, torre, planta e valor de cada uma das unidades listadas, e explicamos as duas modalidades de pagamento.",
-    "msg": "Olá! Quero falar sobre o Izzi Residence no Centro de Indaiatuba."
+    "msg": "Olá! Tenho interesse no Izzi Residence em Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "IZZI RESIDENCE",

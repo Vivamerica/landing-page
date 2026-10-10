@@ -21,8 +21,8 @@
     "Loteamento fechado"
   ],
   "lazer": [],
-  "wa_flutuante": "Olá! Quero a tabela de lotes do Jardim Dona Maria Cândida.",
-  "wa_topo": "Olá! Tenho interesse no Jardim Dona Maria Cândida. Quero a tabela de lotes atualizada.",
+  "wa_flutuante": "Olá! Tenho interesse no Jardim Dona Maria Cândida em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Jardim Dona Maria Cândida com quadra, metragem e valor.",
   "geo": [
     -23.089415,
     -47.244579
@@ -37,7 +37,7 @@
     "lead": "Lotes de 300 a 472 m² com a infraestrutura pronta: asfalto, calçada, iluminação e rede de água e esgoto já executados. Na lista de 08/09/2026 restam 180 lotes dos 771 do projeto. Entrada de 10% e saldo em até 60 parcelas.",
     "preco": "A partir de R$ 600.000",
     "preco_nota": "lote de 300 m² · tabela Asseplan Narezzi válida a partir de 01/07/2025 — confirme o valor atual",
-    "cta_msg": "Olá! Quero a tabela de lotes do Jardim Dona Maria Cândida.",
+    "cta_msg": "Olá! Quero a tabela de lotes do Jardim Dona Maria Cândida com quadra, metragem e valor.",
     "cta_texto": "Ver lotes e valores"
   },
   "secoes": [
@@ -213,7 +213,7 @@
   "cta": {
     "h2": "Quer ver os lotes do Jardim Dona Maria Cândida?",
     "p": "Mandamos a lista com quadra, metragem e valor dos 180 lotes disponíveis, e marcamos a visita ao loteamento.",
-    "msg": "Olá! Quero ver os lotes disponíveis no Jardim Dona Maria Cândida."
+    "msg": "Olá! Tenho interesse no Jardim Dona Maria Cândida em Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "Asseplan Narezzi",

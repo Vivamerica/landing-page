@@ -54,15 +54,15 @@
     "PARQUE",
     "das Águas"
   ],
-  "wa_flutuante": "Olá! Quero a tabela atualizada do Residencial Parque das Águas.",
-  "wa_topo": "Olá! Tenho interesse no Residencial Parque das Águas. Quero a tabela e as condições.",
+  "wa_flutuante": "Olá! Tenho interesse no Residencial Parque das Águas em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de preços do Residencial Parque das Águas com as unidades disponíveis.",
   "hero": {
     "eyebrow": "Rua João Manoel Ruz Peres · Indaiatuba/SP",
     "sub": "2 dormitórios · lago e complexo aquático · GPCI",
     "lead": "Três torres com 400 apartamentos de 2 dormitórios, em um terreno de quase 30 mil m² com lago, piscina com borda infinita e mais de 30 espaços de lazer. Plantas de 46,13 a 50,60 m² e gardens no térreo.",
     "preco": "A partir de R$ 309.119,89",
     "preco_nota": "tabela GPCI de setembro/2026 · incorporação registrada",
-    "cta_msg": "Olá! Quero a tabela do Residencial Parque das Águas e as condições de pagamento.",
+    "cta_msg": "Olá! Quero simular o pagamento de uma unidade do Residencial Parque das Águas.",
     "cta_texto": "Ver unidades e condições"
   },
   "secoes": [
@@ -240,7 +240,7 @@
         "As tabelas não informam entrada, parcelas, índice de correção nem data de entrega. Essas condições são passadas no atendimento, com a data da versão em vigor."
       ],
       "cta": {
-        "msg": "Olá! Quero as condições de pagamento e a data de entrega do Residencial Parque das Águas.",
+        "msg": "Olá! Quero simular o pagamento e saber a previsão de entrega de uma unidade do Residencial Parque das Águas.",
         "texto": "Pedir condições e entrega"
       }
     },
@@ -498,7 +498,7 @@
   "cta": {
     "h2": "Quer ver as unidades do Parque das Águas?",
     "p": "Mandamos as três tabelas com torre, andar, vista, vagas e valor de cada apartamento, e as condições de pagamento em vigor.",
-    "msg": "Olá! Quero falar sobre o Residencial Parque das Águas em Indaiatuba."
+    "msg": "Olá! Tenho interesse no Residencial Parque das Águas em Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "PARQUE DAS ÁGUAS",

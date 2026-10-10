@@ -21,8 +21,8 @@
     "ALPHAVILLE",
     "Indaiatuba"
   ],
-  "wa_flutuante": "Olá! Quero a tabela de lotes do Alphaville Indaiatuba.",
-  "wa_topo": "Olá! Tenho interesse no Alphaville Indaiatuba. Quero a tabela de lotes e as condições.",
+  "wa_flutuante": "Olá! Tenho interesse no Alphaville Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Alphaville Indaiatuba com quadra, metragem e valor.",
   "hero": {
     "eyebrow": "Itaici · Indaiatuba/SP",
     "sub": "Condomínio fechado de lotes · Grupo Alphaville",
@@ -176,7 +176,7 @@
         "As custas de escrituração desse lote são R$ 45.582,63, cobradas à parte. A tabela não informa desconto à vista nem taxa de condomínio; peça essas condições no atendimento."
       ],
       "cta": {
-        "msg": "Olá! Quero a tabela completa do Alphaville Indaiatuba com todos os lotes e a simulação de pagamento.",
+        "msg": "Olá! Quero a tabela de lotes do Alphaville Indaiatuba com quadra, metragem e valor.",
         "texto": "Pedir a tabela completa"
       }
     },
@@ -416,7 +416,7 @@
   "cta": {
     "h2": "Quer ver os lotes do Alphaville Indaiatuba?",
     "p": "Mandamos a tabela com quadra, metragem, valor e custas de cada um dos 131 lotes, e simulamos as duas opções de pagamento.",
-    "msg": "Olá! Quero falar sobre os lotes do Alphaville Indaiatuba no Itaici."
+    "msg": "Olá! Tenho interesse no Alphaville Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "ALPHAVILLE INDAIATUBA",

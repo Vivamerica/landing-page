@@ -25,15 +25,15 @@
     "Indaiatuba"
   ],
   "lazer": [],
-  "wa_flutuante": "Olá! Quero falar sobre os lotes do Ville de Provence.",
-  "wa_topo": "Olá! Tenho interesse no Ville de Provence. Pode me passar a tabela e as condições?",
+  "wa_flutuante": "Olá! Tenho interesse no Ville de Provence em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Ville de Provence com quadra, metragem e valor.",
   "hero": {
     "eyebrow": "Loteamento fechado · Indaiatuba/SP",
     "sub": "Lotes de 360 a 617 m² · Urban Square",
     "lead": "Loteamento fechado da Urban Square em Indaiatuba, com mais de 53 mil m² de área de lazer e mais de 168 mil m² de áreas verdes. Na tabela de setembro/2026 há 319 lotes à venda, a R$ 1.770 o metro quadrado.",
     "preco": "R$ 637.200,00",
     "preco_nota": "lote de 360,00 m² · R$ 1.770/m² · tabela de set/2026",
-    "cta_msg": "Olá! Quero a tabela do Ville de Provence e as condições de pagamento.",
+    "cta_msg": "Olá! Quero a tabela de lotes do Ville de Provence com quadra, metragem e valor.",
     "cta_texto": "Pedir a tabela"
   },
   "secoes": [
@@ -374,7 +374,7 @@
   "cta": {
     "h2": "Quer a tabela do Ville de Provence?",
     "p": "Mandamos a tabela de setembro/2026 com os 319 lotes, confirmamos com a Urban Square quais seguem disponíveis e simulamos o pagamento de 12 a 96 parcelas.",
-    "msg": "Olá! Quero a tabela do Ville de Provence e uma simulação de pagamento."
+    "msg": "Olá! Tenho interesse no Ville de Provence em Indaiatuba. Pode me enviar mais informações?"
   },
   "home": {
     "tipo": "lote",

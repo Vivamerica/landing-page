@@ -42,15 +42,15 @@
     "ARTEMIS",
     "Residencial"
   ],
-  "wa_flutuante": "Olá! Quero a tabela atualizada do Artemis Residencial.",
-  "wa_topo": "Olá! Tenho interesse no Artemis Residencial. Quero a tabela e as condições.",
+  "wa_flutuante": "Olá! Tenho interesse no Artemis Residencial em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de preços do Artemis Residencial com as unidades disponíveis.",
   "hero": {
     "eyebrow": "Park Meraki · Indaiatuba/SP",
     "sub": "3 dormitórios com suíte · 2 vagas · GPCI",
     "lead": "Duas torres de 19 andares no Park Meraki, com 8 apartamentos por andar e uma Casa de Campo de acesso próprio como área de lazer. Plantas de 63,85 e 64,44 m² com três dormitórios, uma suíte e duas vagas.",
     "preco": "A partir de R$ 555.170,71",
     "preco_nota": "tabela GPCI de setembro/2026 · entrega prevista abr/2028 (T1) e set/2028 (T2)",
-    "cta_msg": "Olá! Quero a tabela do Artemis Residencial e as unidades disponíveis.",
+    "cta_msg": "Olá! Quero a tabela de preços do Artemis Residencial com as unidades disponíveis.",
     "cta_texto": "Ver unidades e valores"
   },
   "secoes": [
@@ -200,7 +200,7 @@
         "Até o habite-se o saldo devedor é corrigido pelo INCC (Índice Nacional de Custo da Construção). Depois do habite-se incidem IGP-M e juros de 1% ao mês. O financiamento do saldo depende da análise e da aprovação de crédito do banco."
       ],
       "cta": {
-        "msg": "Olá! Quero a tabela completa do Artemis Residencial com torre, andar e valor de cada unidade.",
+        "msg": "Olá! Quero a tabela de preços do Artemis Residencial com as unidades disponíveis.",
         "texto": "Pedir a tabela completa"
       }
     },
@@ -435,7 +435,7 @@
   "cta": {
     "h2": "Quer ver as unidades do Artemis Residencial?",
     "p": "Mandamos a tabela com torre, andar, posição, vagas e valor de cada unidade listada, e simulamos as duas formas de pagamento.",
-    "msg": "Olá! Quero falar sobre o Artemis Residencial no Park Meraki."
+    "msg": "Olá! Tenho interesse no Artemis Residencial em Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "ARTEMIS RESIDENCIAL",

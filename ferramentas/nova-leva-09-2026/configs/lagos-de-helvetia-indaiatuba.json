@@ -21,8 +21,8 @@
     "LAGOS DE HELVETIA",
     "Indaiatuba"
   ],
-  "wa_flutuante": "Olá! Quero a tabela de lotes do Lagos de Helvetia.",
-  "wa_topo": "Olá! Tenho interesse no Lagos de Helvetia. Quero a tabela de lotes e as condições.",
+  "wa_flutuante": "Olá! Tenho interesse no Lagos de Helvetia em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Lagos de Helvetia com quadra, metragem e valor.",
   "hero": {
     "eyebrow": "Região de Helvetia · Indaiatuba/SP",
     "sub": "Condomínio de lotes · GPCI Empreendimentos",
@@ -197,7 +197,7 @@
         "A tabela é de 01/07/2026 e avisa que os preços podem mudar sem aviso prévio. Os planos de 24 meses em diante têm as parcelas corrigidas pelo IPCA. Desconto à vista e taxa mensal não constam do material; peça essas condições no atendimento."
       ],
       "cta": {
-        "msg": "Olá! Quero a tabela atualizada do Lagos de Helvetia e a simulação de pagamento de um lote.",
+        "msg": "Olá! Quero a tabela de lotes do Lagos de Helvetia com quadra, metragem e valor.",
         "texto": "Pedir a tabela atualizada"
       }
     },
@@ -478,7 +478,7 @@
   "cta": {
     "h2": "Quer ver os lotes do Lagos de Helvetia?",
     "p": "Confirmamos com a GPCI quais lotes seguem disponíveis e simulamos o plano de pagamento que cabe no seu orçamento.",
-    "msg": "Olá! Quero falar sobre os lotes do Lagos de Helvetia."
+    "msg": "Olá! Tenho interesse no Lagos de Helvetia em Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "LAGOS DE HELVETIA",

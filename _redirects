@@ -12,3 +12,7 @@ https://jdmonte-carmelo-indaiatuba.com.br/* https://lancamentos.imoveisvivameric
 # 07/09/2026: hub que foi anunciado na home em mai-jun/2026 e nunca existiu (404 desde entao) -> categoria de loteamentos
 /loteamentos-abertos-indaiatuba/* /loteamentos-em-indaiatuba/ 301
 /loteamentos-abertos-indaiatuba /loteamentos-em-indaiatuba/ 301
+
+# 09/10/2026: folheto de julho saiu do ar (configuracao de produto desatualizada, retirada a pedido
+# da construtora). O link antigo leva ao folheto atual.
+/Folheto-Lancamentos-Indaiatuba-Julho2026.pdf /Folheto-Lancamentos-Indaiatuba.pdf 301

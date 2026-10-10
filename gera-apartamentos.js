@@ -16,7 +16,8 @@
    responde por apartamentos PRONTOS de revenda — link cruzado aqui.
 
    REGRAS DE CLASSIFICAÇÃO (derivadas só de p, t e s — nada inventado):
-   - #2-dormitorios      t começa com "MCMV" OU s contém "2 dorm"
+   - #2-dormitorios      s declara "2 dorm"; só sem contagem declarada em s vale
+                         t começar com "MCMV" (o Uni é MCMV de 1 dormitório)
    - #3-suites-alto-padrao t === "Alto padrão" OU s contém "3 suítes"
    - #ate-300-mil        p <= 300.000
    - #300-a-600-mil      300.000 < p <= 600.000
@@ -97,7 +98,11 @@ const semTags = s => String(s).replace(/<[^>]+>/g, '');
 // ("(set/2026)" e "tabela ago/2026" são datas de tabela/estoque, não de entrega — 04/09/2026).
 const RE_DATA = /entrega\s+(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/(\d{4})\b/i;
 const eMCMV = e => /^MCMV/.test(e.t || '');
-const e2dorm = e => eMCMV(e) || /2 dorm/i.test(e.s || '');
+// Quando a spec DECLARA a contagem de dormitorios, ela manda. Pela regra antiga (MCMV OU
+// contagem na spec), todo MCMV caia na secao de dois dormitorios mesmo quando a spec dizia
+// outra coisa (out/2026, comunicado de construtora corrigindo a configuracao de um produto).
+const dormsDeclarados = e => { const m = (e.s || '').match(/(\d)\s*dorm/i); return m ? +m[1] : null; };
+const e2dorm = e => { const d = dormsDeclarados(e); return d !== null ? d === 2 : eMCMV(e); };
 const e3suites = e => e.t === 'Alto padrão' || /3 su[ií]tes/i.test(e.s || '');
 const faixa = e => !e.p ? null : e.p <= 300000 ? 'ate-300-mil' : e.p <= 600000 ? '300-a-600-mil' : 'acima-de-600-mil';
 function fase(e) {
@@ -176,7 +181,7 @@ function card(e) {
 
 // ─── seções por âncora ───
 const SECOES = [
-  { id: '2-dormitorios', titulo: 'Apartamentos de 2 dormitórios (Minha Casa Minha Vida)', sub: 'Enquadrados no Minha Casa Minha Vida (MCMV) ou com planta de 2 dormitórios na tabela.', pega: e => e2dorm(e) },
+  { id: '2-dormitorios', titulo: 'Apartamentos de 2 dormitórios', sub: 'Com planta de 2 dormitórios na tabela da construtora, vários dentro do Minha Casa Minha Vida (MCMV).', pega: e => e2dorm(e) },
   { id: '3-suites-alto-padrao', titulo: 'Apartamentos de 3 suítes e alto padrão', sub: 'Alto padrão pela tabela da construtora ou planta de 3 suítes.', pega: e => e3suites(e) },
   { id: 'ate-300-mil', titulo: 'Até R$ 300 mil', sub: 'Preço "a partir de" na tabela de ' + mesLongo + '.', pega: e => faixa(e) === 'ate-300-mil' },
   { id: '300-a-600-mil', titulo: 'De R$ 300 mil a R$ 600 mil', sub: 'Preço "a partir de" na tabela de ' + mesLongo + '.', pega: e => faixa(e) === '300-a-600-mil' },

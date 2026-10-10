@@ -3,7 +3,7 @@ const OUT = 'C:/Users/Usuario/Desktop/landing-page/folheto-lancamentos.html';
 
 const APTOS = [
   { n:'Uni Residencial', c:'Masotti', p:279990, img:'uni-residencial-indaiatuba/images/hero.jpg',
-    s:'2 dorm c/ suíte · sacada · vaga coberta', t:'MCMV · FGTS', slug:'uni-residencial-indaiatuba' },
+    s:'1 dormitório · sacada · vaga para carro', t:'MCMV · FGTS', slug:'uni-residencial-indaiatuba' },
   { n:'Residencial Parque das Águas', c:'GPCI', p:309120, img:'parque-das-aguas-indaiatuba/images/hero.jpg', s:'2 dorm · 46 a 72 m² · 3 torres · lago e complexo aquático', t:'Lançamento', slug:'parque-das-aguas-indaiatuba' },
   { n:'Gran Vic Tangará', c:'VIC Engenharia', p:330000, img:'gran-vic-tangara-indaiatuba/images/hero.jpg',
     s:'2 dorm · 47,22 m² · 78 unidades (set/2026) · entrega nov/2028', t:'MCMV · FGTS', slug:'gran-vic-tangara-indaiatuba' },
@@ -113,13 +113,19 @@ const cardContato = `
       </div>
     </article>`;
 
-const comPreco = APTOS.filter(e => e.p);
+const porPreco = (a, b) => a.p - b.p;
+const comPreco = APTOS.filter(e => e.p).sort(porPreco);
 const semPreco = APTOS.filter(e => !e.p);
 const ordenados = [...comPreco, ...semPreco];   // preço crescente; sem preço no fim
 const POR_PAG = 8;                               // 2 colunas x 4 linhas de 59mm
 const DEST_SLOTS = 2;                            // o bloco "Por que comprar" ocupa 2 vagas
 const paginasApto = [];
 for (let i = 0; i < ordenados.length; i += POR_PAG) paginasApto.push(ordenados.slice(i, i + POR_PAG));
+// Lotes também de 8 em 8: a página A4 tem overflow:hidden, e um 9º card some
+// sem aviso (com 13 lotes, sumiam 5 e o rodapé com o aviso legal).
+const lotesOrd = [...LOTES.filter(e => e.p).sort(porPreco), ...LOTES.filter(e => !e.p)];
+const paginasLote = [];
+for (let i = 0; i < lotesOrd.length; i += POR_PAG) paginasLote.push(lotesOrd.slice(i, i + POR_PAG));
 const construtoras = new Set([...APTOS, ...LOTES].map(e => e.c.split(' · ')[0].trim())).size;
 const menorGeral = Math.min(...[...APTOS, ...LOTES].filter(e => e.p).map(e => e.p));
 const maiorApto = Math.max(...comPreco.map(e => e.p));
@@ -266,21 +272,26 @@ ${paginasApto.map((pg, i) => {
 </section>
 
 `;
-}).join('')}<!-- ═══ LOTES ═══ -->
+}).join('')}${paginasLote.map((pg, i) => {
+  const ultima = i === paginasLote.length - 1;
+  const extra = ultima && pg.length < POR_PAG ? cardContato : '';
+  const conta = paginasLote.length > 1 ? ` · ${i + 1} de ${paginasLote.length}` : '';
+  return `<!-- ═══ LOTES ${i + 1} ═══ -->
 <section class="pg">
-  <div class="hd"><h2>🏞️ <span>Lotes e Condomínios Fechados</span></h2><span class="cnt">do menor ao maior investimento</span></div>
-  <div class="grid">${LOTES.map(e => card(e, true)).join('')}${LOTES.length < 8 ? cardContato : ''}</div>
+  <div class="hd"><h2>🏞️ <span>Lotes e Condomínios Fechados</span></h2><span class="cnt">do menor ao maior investimento${conta}</span></div>
+  <div class="grid">${pg.map(e => card(e, true)).join('')}${extra}</div>
   <div class="pe">
     <span>Imagens ilustrativas. Preços e condições sujeitos a alteração sem aviso prévio.</span>
     <span>Edição <b>${edicao}</b></span>
   </div>
 </section>
 
-</body></html>`;
+`;
+}).join('')}</body></html>`;
 
 fs.writeFileSync(OUT, HTML, 'utf8');
 console.log('Folheto gerado.');
 console.log(`  Pagina 1: capa`);
 paginasApto.forEach((pg, i) => console.log(`  Pagina ${i + 2}: ${pg.length} apartamentos${i === paginasApto.length - 1 ? ' (+ contato/destaque se couber)' : ''}`));
-console.log(`  Pagina ${paginasApto.length + 2}: ${LOTES.length} lotes` + (LOTES.length < 8 ? ' + contato' : ''));
+paginasLote.forEach((pg, i) => console.log(`  Pagina ${paginasApto.length + 2 + i}: ${pg.length} lotes${i === paginasLote.length - 1 && pg.length < POR_PAG ? ' + contato' : ''}`));
 console.log(`  Total de empreendimentos: ${APTOS.length + LOTES.length}`);

@@ -44,7 +44,8 @@ s = re.sub(r'("headline":\s*")[^"]*(")', r'\g<1>%s\g<2>' % TITULO, s, count=1)
 s = re.sub(r'("description":\s*")[^"]*(")', r'\g<1>%s\g<2>' % DESC, s, count=1)
 s = re.sub(r'("image":\s*")[^"]*(")', r'\g<1>%s\g<2>' % IMG, s, count=1)
 s = re.sub(r'("datePublished":\s*")[^"]*(")', r'\g<1>%s\g<2>' % HOJE, s, count=1)
-s = re.sub(r'("dateModified":\s*")[^"]*(")', r'\g<1>%s\g<2>' % HOJE, s, count=1)
+# dateModified: a ultima mudanca de conteudo (indice de topicos e CTA proprio)
+s = re.sub(r'("dateModified":\s*")[^"]*(")', r'\g<1>%s\g<2>' % '2026-10-09', s, count=1)
 s = re.sub(r'("mainEntityOfPage":\s*")[^"]*(")', r'\g<1>%s\g<2>' % URL, s, count=1)
 
 # ── JSON-LD: o bloco Dataset do modelo vira citacao das fontes ─────
@@ -187,6 +188,15 @@ EXTRA = '''
       .lt-anima .lt-item.vis{opacity:1;transform:none;}
     }
 
+    /* Índice de tópicos: só texto, sem links. */
+    nav.indice{margin:1.8rem 0 2.2rem;padding:1.1rem 1.3rem;background:#fbf8f1;
+      border:1px solid var(--linha,#e6e1d6);border-radius:.7rem;}
+    nav.indice p{margin:0 0 .55rem;font:700 .78rem/1 system-ui,sans-serif;letter-spacing:.12em;
+      text-transform:uppercase;color:#a8841a;}
+    nav.indice ol{margin:0;padding-left:1.35rem;}
+    nav.indice li{margin:.32rem 0;font-size:.97rem;line-height:1.4;color:#3b352c;}
+    @media(min-width:720px){nav.indice ol{columns:2;column-gap:2.2rem;}
+      nav.indice li{break-inside:avoid;}}
     ul.numeros li{margin-bottom:.4rem;}
     p.cta-inline{margin:1.6rem 0;}
     p.cta-inline a{display:inline-block;background:var(--ouro,#c9a227);color:#14110f;font-weight:700;
@@ -213,6 +223,12 @@ SCRIPT_LT = '''<script>
 })();
 </script>
 '''
+# CTA final: o do MODELO e' do comparativo Indaiatuba x Campinas. Sem trocar, o
+# leitor do Alphaville mandaria a mensagem do outro artigo, e o funil (que
+# atribui a origem pelo texto) creditaria o artigo errado.
+for velho, novo in (('<h2>Escolheu Indaiatuba? A gente monta a lista com você</h2>', '<h2>Quer um lote no Alphaville Indaiatuba? A gente mostra os disponíveis</h2>'), ('<p>Diga a faixa de investimento e quem mora com você — a gente organiza os lançamentos que caem na sua conta, com preço aberto e sem cadastro.</p>', '<p>Diga o tamanho de lote e a faixa de investimento — a gente separa os lotes do Alphaville Indaiatuba que cabem na sua conta, com preço aberto e sem cadastro.</p>'), ('text=Ol%C3%A1!%20Li%20o%20comparativo%20Indaiatuba%20ou%20Campinas%20e%20quero%20conhecer%20os%20lan%C3%A7amentos%20de%20Indaiatuba.', 'text=Ol%C3%A1!%20Li%20o%20artigo%20sobre%20o%20Alphaville%20e%20quero%20ver%20os%20lotes%20do%20Alphaville%20Indaiatuba.')):
+    assert s.count(velho) == 1, 'CTA do MODELO mudou: ' + velho[:60]
+    s = s.replace(velho, novo)
 s = s.replace('  </style>', EXTRA + '  </style>', 1)
 s = s.replace('</body>', SCRIPT_LT + '</body>', 1)
 

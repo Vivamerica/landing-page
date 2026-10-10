@@ -28,7 +28,22 @@ CVM. Não usamos o site institucional para número nenhum — a página de hist�
 de atualização e ainda fala em "mais de 47 anos" de existência para uma empresa fundada em 1973,
 que hoje tem 53.</p>
 
-<h2 id="origem">1973: dois engenheiros e uma fazenda em Barueri</h2>
+<nav class="indice" aria-label="Tópicos deste artigo">
+  <p>Neste artigo</p>
+  <ol>
+    <li>A trajetória: de 1973 a 2025</li>
+    <li>O tamanho da companhia hoje</li>
+    <li>Em quantos estados está — e por que os números não batem</li>
+    <li>As três linhas de produto: Alphaville, Terras Alpha e Jardim Alpha</li>
+    <li>O que a marca "Alphaville" passou a significar</li>
+    <li>Loteamento fechado × condomínio: o que muda na sua conta</li>
+    <li>O que se sente ao comprar: desejo de um lado, debate do outro</li>
+    <li>O Alphaville em Indaiatuba</li>
+    <li>De onde saiu cada número</li>
+  </ol>
+</nav>
+
+<h2 id="origem">1. 1973: dois engenheiros e uma fazenda em Barueri</h2>
 
 <p>O Formulário de Referência descreve a origem em uma frase:</p>
 
@@ -68,7 +83,7 @@ concebido como <em>cidade planejada</em>, não como bairro que cresce sozinho. O
   <p class="lt-fonte">Marcos registrados no Formulário de Referência entregue à CVM, versão de 30/06/2026.</p>
 </section>
 
-<h2 id="escala">O tamanho da coisa hoje</h2>
+<h2 id="escala">2. O tamanho da coisa hoje</h2>
 
 <p>Os números abaixo são os da versão mais recente do Formulário de Referência:</p>
 
@@ -84,7 +99,7 @@ de 130 empreendimentos" e "mais de 46 anos de atuação". No de 2026, são 138 e
 seja: oito entregas a mais em seis anos, com um 2025 que sozinho respondeu por oito delas — a
 retomada depois da reformulação do modelo de negócio feita em 2019.</p>
 
-<h2 id="estados">Em quantos estados, afinal?</h2>
+<h2 id="estados">3. Em quantos estados, afinal?</h2>
 
 <p>Aqui vale parar, porque a própria companhia dá três respostas diferentes — e nenhuma delas vem
 com a lista.</p>
@@ -123,7 +138,7 @@ nome do produto. O segundo: "Alphaville" virou nome genérico de condomínio, e 
 chamado Alphaville que não é da Alphaville S.A. Belém ficou de fora por isso — existe um condomínio
 com esse nome na cidade, mas não encontramos nada que o ligue à companhia.</p>
 
-<h2 id="linhas">Nem todo Alphaville é Alphaville</h2>
+<h2 id="linhas">4. Nem todo Alphaville é Alphaville</h2>
 
 <p>Esta é a parte que quase ninguém sabe, e que muda o que você está comprando. A companhia opera
 <b>três linhas de produto</b>, separadas pelo tamanho do lote:</p>
@@ -152,7 +167,7 @@ os atributos de um centro urbano em uma mesma região" — residencial, comercia
 mesmo complexo. A Cidade Alpha Ceará, em Eusébio, na região metropolitana de Fortaleza, é o exemplo
 que os documentos mais citam.</p>
 
-<h2 id="sinonimo">O que "Alphaville" quer dizer hoje</h2>
+<h2 id="sinonimo">5. O que "Alphaville" quer dizer hoje</h2>
 
 <p>A resposta está escrita pela própria empresa, num documento em que mentir é crime:</p>
 
@@ -170,7 +185,7 @@ pesquisa de terceiro.</p>
 argumento de ser "um alphaville" sem ter relação alguma com a empresa. Vale conferir a marca no
 contrato, não no anúncio.</p>
 
-<h2 id="juridico">Loteamento fechado não é condomínio — e isso muda a sua conta</h2>
+<h2 id="juridico">6. Loteamento fechado não é condomínio — e isso muda a sua conta</h2>
 
 <p>Aqui está o ponto técnico que mais confunde comprador, e que vale para qualquer empreendimento
 desse tipo, com ou sem a marca Alphaville.</p>
@@ -195,7 +210,7 @@ um diferencial de valorização dos projetos."
 <p>Antes de assinar, pergunte sob qual das duas leis o empreendimento foi aprovado. A resposta está
 na matrícula e no memorial de incorporação, não no material de vendas.</p>
 
-<h2 id="sentimento">O sentimento: desejo de um lado, debate do outro</h2>
+<h2 id="sentimento">7. O sentimento: desejo de um lado, debate do outro</h2>
 
 <p>Falar em Alphaville desperta duas reações, e ignorar uma delas seria desonesto.</p>
 
@@ -219,7 +234,7 @@ literatura própria — e sai mais seguro da decisão, não menos.</p>
 onde o sentimento é proibido, e virou, no Brasil, o nome do lugar onde as pessoas dizem que se
 sentem em casa.</p>
 
-<h2 id="indaiatuba">E em Indaiatuba?</h2>
+<h2 id="indaiatuba">8. E em Indaiatuba?</h2>
 
 <p>O <b>Alphaville Indaiatuba</b> fica no bairro do Itaici e é da <b>linha principal</b> — a de lote
 a partir de 360 m². Na tabela de setembro de 2026 são 131 lotes à venda, de 511 a 1.249 m², de
@@ -235,7 +250,7 @@ do Alphaville Indaiatuba, com metragem e valor &rarr;</a></p>
 <a href="/mapa-lotes-indaiatuba/">mapa de lotes</a> mostra os 131 lotes do Alphaville posicionados um
 a um, ao lado de mais de 2.300 lotes de outros 25 loteamentos de Indaiatuba, com preço em cada um.</p>
 
-<h2 id="fontes">De onde saiu cada número</h2>
+<h2 id="fontes">9. De onde saiu cada número</h2>
 
 <p>Todos os dados de empreendimentos, estados, cidades e linhas de produto deste artigo vêm de
 documentos que a Alphaville S.A. entrega à Comissão de Valores Mobiliários — a autarquia federal que

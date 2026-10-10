@@ -33,15 +33,15 @@
     "360",
     "Home · Office · Mall"
   ],
-  "wa_flutuante": "Olá! Quero os valores do 360 Home Office Mall.",
-  "wa_topo": "Olá! Tenho interesse no 360 Home Office Mall. Quero os valores e as condições.",
+  "wa_flutuante": "Olá! Tenho interesse no 360 Home Office Mall em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
   "hero": {
     "eyebrow": "Avenida 9 de Julho, 55 · Park Meraki",
     "sub": "Residencial, office, corporate e mall · HINC",
     "lead": "Um complexo de uso misto no Park Meraki: uma torre residencial com 111 unidades de 39,73 a 128,36 m², uma torre de salas, uma torre corporativa e um mall de 19 lojas na base. O lazer do residencial fica no alto da torre, com piscina, sky garden e sky deck.",
     "preco": "Valores sob consulta",
     "preco_nota": "incorporação registrada em 21/08/2026 · tabela no atendimento",
-    "cta_msg": "Olá! Quero os valores e as unidades do 360 Home Office Mall.",
+    "cta_msg": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
     "cta_texto": "Pedir valores e unidades"
   },
   "secoes": [
@@ -184,7 +184,7 @@
         "O material que recebemos da incorporadora não traz tabela de preços, condições de pagamento nem data de entrega. Por isso não publicamos valores nesta página. Pelo WhatsApp mandamos a tabela em vigor, com a data da versão, para as unidades residenciais, as salas, os conjuntos corporativos e as lojas."
       ],
       "cta": {
-        "msg": "Olá! Quero a tabela do 360 Home Office Mall com os valores das unidades.",
+        "msg": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
         "texto": "Pedir a tabela"
       }
     },
@@ -449,7 +449,7 @@
   "cta": {
     "h2": "Quer os valores do 360 Home Office Mall?",
     "p": "Mandamos a tabela em vigor das unidades residenciais, salas, conjuntos e lojas, e as condições de pagamento.",
-    "msg": "Olá! Quero falar sobre o 360 Home Office Mall no Park Meraki."
+    "msg": "Olá! Tenho interesse no 360 Home Office Mall em Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "360 HOME · OFFICE · MALL",
