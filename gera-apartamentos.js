@@ -5,7 +5,8 @@
    no mesmo padrão do gera-observatorio.js: lê APTOS do gera-folheto.js
    (fonte única), EXTRAS_APTOS do gera-relacionados.js (landings vivas de
    apartamento fora da fonte única — esgotados), EDICAO do
-   gera-observatorio.js (mês da tabela) e o nó RealEstateAgent da home
+   gera-observatorio.js (mês da edição; o mês da tabela de cada
+   apartamento vem do campo tab da fonte única) e o nó RealEstateAgent da home
    (index.html), para que a entidade seja a mesma em todo o site.
 
    Nasceu em 02/09/2026 com a decisão "opção B": a home é a única dona
@@ -32,7 +33,10 @@
    sem faixa/fase.
 
    Tabela-resumo: dormitórios, m² e entrega/fase são lidos de s por regex;
-   o que não está em s vira "—".
+   o que não está em s vira "—". A coluna "Tabela" é o mês de tab.
+
+   Escassez: o selo "Últimas N unidades (data)" só sai quando a fonte única
+   traz est (até 60) E estEm (data da contagem); sem data, não há selo.
 
    Ordem: cards por preço crescente; sem preço no fim; esgotados por último.
 
@@ -68,18 +72,8 @@ const EXTRAS = extrair('gera-relacionados.js', 'EXTRAS_APTOS')
   .filter(e => fs.existsSync(R + e.slug + '/index.html'));
 const EDICAO = extrair('gera-observatorio.js', 'EDICAO');
 
-// nó RealEstateAgent copiado da home — mesma entidade em todo o site
-function agenteDaHome() {
-  const home = fs.readFileSync(R + 'index.html', 'utf8');
-  const re = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
-  let m;
-  while ((m = re.exec(home))) {
-    let o; try { o = JSON.parse(m[1]); } catch (e) { continue; }
-    if (o && o['@type'] === 'RealEstateAgent') return o;
-  }
-  throw new Error('RealEstateAgent nao achado em index.html');
-}
-const AGENTE = agenteDaHome();
+// entidade única (nó RealEstateAgent com @id) e tag GA4 com guarda: fonte única em identidade.js
+const { blocoEntidade, GA4 } = require('./identidade.js');
 
 // ─── utilitários ───
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
@@ -88,8 +82,13 @@ const mil = n => n >= 1e6
   : 'R$ ' + Math.round(n / 1000) + ' mil';
 const MES_ABREV = { '01': 'jan', '02': 'fev', '03': 'mar', '04': 'abr', '05': 'mai', '06': 'jun',
   '07': 'jul', '08': 'ago', '09': 'set', '10': 'out', '11': 'nov', '12': 'dez' };
-const mesAbrev = MES_ABREV[EDICAO.iso.slice(5, 7)] + '/' + EDICAO.ano;   // ago/2026
 const mesLongo = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;           // agosto/2026
+const mesExtenso = EDICAO.mes.toLowerCase() + ' de ' + EDICAO.ano;      // agosto de 2026
+// Mês da tabela de CADA apartamento: vem do campo tab da fonte única; preço sem tab é
+// tabela de pré-lançamento. O mês da edição (EDICAO) só dá nome à edição da página:
+// nunca é carimbado como mês da tabela nem do estoque de um produto.
+const mesDe = iso => MES_ABREV[iso.slice(5, 7)] + '/' + iso.slice(0, 4);   // 2026-09 -> set/2026
+const tabDe = e => e.tab ? 'tabela ' + mesDe(e.tab) : 'tabela de pré-lançamento';
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const semTags = s => String(s).replace(/<[^>]+>/g, '');
 
@@ -128,7 +127,8 @@ function dormsTexto(e) {
   return '—';
 }
 function m2Texto(e) {
-  const m = (e.s || '').match(/(\d+(?:,\d+)?(?:\s*a\s*\d+(?:,\d+)?)?)\s*m²/);
+  // "65 a 91 m²" e também "63,85 e 64,44 m²" (duas plantas): sem o "e", só a 2ª metragem aparecia
+  const m = (e.s || '').match(/(\d+(?:,\d+)?(?:\s*(?:a|e)\s*\d+(?:,\d+)?)?)\s*m²/);
   return m ? m[1].replace(/\s+/g, ' ') + ' m²' : '—';
 }
 
@@ -142,10 +142,16 @@ const menor = comPreco.reduce((a, b) => a.p < b.p ? a : b);
 const maior = comPreco.reduce((a, b) => a.p > b.p ? a : b);
 const N = APTOS.length;
 const NP = comPreco.length;
+// guardas da fonte única: preço sem mês de tabela só vale em pré-lançamento declarado,
+// e contagem de estoque sem data (estEm) não vira selo de escassez
+const semMes = comPreco.filter(e => !e.tab && !/pré-lançamento/i.test(e.prox || ''));
+if (semMes.length) throw new Error('preco sem mes de tabela (campo tab) e sem pre-lancamento em prox: ' + semMes.map(e => e.n).join(', '));
+const semDataEst = ativos.filter(e => typeof e.est === 'number' && !e.estEm);
 
 // ─── textos de SEO (com guarda de tamanho) ───
 const TITLE = `Apartamentos na Planta em Indaiatuba ${EDICAO.ano} | ${N} Lançamentos`;
-const DESC = `Os ${N} apartamentos em lançamento de Indaiatuba SP com preço na tela, sem cadastro: a partir de ${mil(menor.p)} (tabela ${mesAbrev}), do popular ao alto padrão.`;
+// o preço citado leva o mês da tabela DELE (ou "pré-lançamento"), não o mês da edição
+const DESC = `${N} apartamentos em lançamento em Indaiatuba SP, ${NP} com preço na tela, sem cadastro: a partir de ${mil(menor.p)} (${menor.tab ? 'tabela ' + mesDe(menor.tab) : 'pré-lançamento'}), do popular ao alto padrão.`;
 const H1 = `Apartamentos na planta em Indaiatuba: ${N} lançamentos, ${NP} com preço aberto`;
 if (TITLE.length > 60) throw new Error('title com ' + TITLE.length + ' caracteres (max 60): ' + TITLE);
 if (DESC.length < 120 || DESC.length > 155) throw new Error('description com ' + DESC.length + ' caracteres (120-155): ' + DESC);
@@ -157,19 +163,22 @@ const badgeTxt = e => e.esgotado ? e.t : e.t;
 
 function card(e) {
   const preco = e.esgotado
-    ? `<p class="preco preco-sc"><span>estoque</span><strong>100% vendido (${mesAbrev})</strong><em>veja as alternativas no mesmo complexo</em></p>`
+    ? `<p class="preco preco-sc"><span>estoque</span><strong>100% vendido${e.estEm ? ' (' + esc(e.estEm) + ')' : ''}</strong><em>veja as alternativas no mesmo complexo</em></p>`
     : e.p
-      ? `<p class="preco"><span>a partir de</span><strong>${brl(e.p)}</strong><em>tabela ${mesAbrev}</em></p>`
-      : `<p class="preco preco-sc"><span>tabela</span><strong>Pré-lançamento · consulte</strong><em>peça em primeira mão</em></p>`;
-  const est = (typeof e.est === 'number' && e.est <= 60)
-    ? `<span class="est">Últimas ${e.est} unidades (${mesAbrev})</span>` : '';
+      ? `<p class="preco"><span>a partir de</span><strong>${brl(e.p)}</strong><em>${tabDe(e)}</em></p>`
+      : (e.t === 'Pré-lançamento'
+          ? `<p class="preco preco-sc"><span>tabela</span><strong>Pré-lançamento · consulte</strong><em>peça em primeira mão</em></p>`
+          : `<p class="preco preco-sc"><span>tabela</span><strong>Sob consulta</strong><em>peça a tabela em vigor</em></p>`);
+  // selo de escassez só com a data da contagem (estEm da fonte única); sem data, sem selo
+  const temSelo = typeof e.est === 'number' && e.est <= 60 && !!e.estEm;
+  const est = temSelo ? `<span class="est">Últimas ${e.est} unidades (${esc(e.estEm)})</span>` : '';
   return `
       <article class="card" id="c-${e.slug}">
         <a href="/${e.slug}/" class="card-img"><img loading="lazy" decoding="async" src="/${e.img}" alt="${esc(e.n)} — apartamento em Indaiatuba" width="400" height="220"><span class="badge ${badgeCls(e)}">${esc(badgeTxt(e))}</span>${est}</a>
         <div class="card-b">
           <p class="constr">${esc(e.c)}</p>
           <h3><a href="/${e.slug}/">${esc(e.n)}</a></h3>
-          <p class="specs">${esc(e.est ? (e.s || '').replace(/\s*·\s*últimas \d+ unidades/i, '') : e.s)}</p>
+          <p class="specs">${esc(temSelo ? (e.s || '').replace(/\s*·\s*últimas \d+ unidades(\s*\([^)]*\))?/i, '') : e.s)}</p>
           ${preco}
           <div class="acoes">
             <a class="btn-card" href="/${e.slug}/">${e.esgotado ? 'Ver a página' : e.p ? 'Ver detalhes e preços' : 'Ver o empreendimento'}</a>
@@ -183,9 +192,9 @@ function card(e) {
 const SECOES = [
   { id: '2-dormitorios', titulo: 'Apartamentos de 2 dormitórios', sub: 'Com planta de 2 dormitórios na tabela da construtora, vários dentro do Minha Casa Minha Vida (MCMV).', pega: e => e2dorm(e) },
   { id: '3-suites-alto-padrao', titulo: 'Apartamentos de 3 suítes e alto padrão', sub: 'Alto padrão pela tabela da construtora ou planta de 3 suítes.', pega: e => e3suites(e) },
-  { id: 'ate-300-mil', titulo: 'Até R$ 300 mil', sub: 'Preço "a partir de" na tabela de ' + mesLongo + '.', pega: e => faixa(e) === 'ate-300-mil' },
-  { id: '300-a-600-mil', titulo: 'De R$ 300 mil a R$ 600 mil', sub: 'Preço "a partir de" na tabela de ' + mesLongo + '.', pega: e => faixa(e) === '300-a-600-mil' },
-  { id: 'acima-de-600-mil', titulo: 'Acima de R$ 600 mil', sub: 'Preço "a partir de" na tabela de ' + mesLongo + '.', pega: e => faixa(e) === 'acima-de-600-mil' },
+  { id: 'ate-300-mil', titulo: 'Até R$ 300 mil', sub: 'Preço "a partir de", com o mês da tabela de cada construtora.', pega: e => faixa(e) === 'ate-300-mil' },
+  { id: '300-a-600-mil', titulo: 'De R$ 300 mil a R$ 600 mil', sub: 'Preço "a partir de", com o mês da tabela de cada construtora.', pega: e => faixa(e) === '300-a-600-mil' },
+  { id: 'acima-de-600-mil', titulo: 'Acima de R$ 600 mil', sub: 'Preço "a partir de", com o mês da tabela de cada construtora.', pega: e => faixa(e) === 'acima-de-600-mil' },
   { id: 'pre-lancamento', titulo: 'Pré-lançamento', sub: 'Tabela ainda não publicada pela construtora — quem entra agora escolhe unidade antes.', pega: e => fase(e) === 'pre-lancamento' },
   { id: 'em-obras', titulo: 'Em obras, com data de entrega na tabela', sub: 'Só entram aqui os que informam a previsão de entrega na tabela oficial.', pega: e => fase(e) === 'em-obras' },
   { id: 'pronto', titulo: 'Pronto para morar', sub: 'Recém-entregue: chaves e mudança imediata.', pega: e => fase(e) === 'pronto' },
@@ -194,9 +203,9 @@ function secao(sc) {
   const itens = ativos.filter(sc.pega);
   const lista = itens.length
     ? `<ul class="lista">${itens.map(e => `
-        <li><a href="/${e.slug}/"><b>${esc(e.n)}</b><span>${esc(e.c)}</span><em>${e.p ? 'a partir de ' + brl(e.p) : 'tabela sob consulta'}</em></a></li>`).join('')}
+        <li><a href="/${e.slug}/"><b>${esc(e.n)}</b><span>${esc(e.c)}</span><em>${e.p ? 'a partir de ' + brl(e.p) + ' · ' + tabDe(e) : 'tabela sob consulta'}</em></a></li>`).join('')}
       </ul>`
-    : `<p class="vazio">Nenhum apartamento nesta condição na tabela de ${mesLongo}.</p>`;
+    : `<p class="vazio">Nenhum apartamento nesta condição em ${mesLongo}.</p>`;
   return `
     <section class="sec" id="${sc.id}">
       <h2>${sc.titulo} <small>${itens.length}</small></h2>
@@ -212,6 +221,7 @@ const linha = e => `
           <td>${dormsTexto(e)}</td>
           <td class="num">${m2Texto(e)}</td>
           <td class="num">${e.p ? '<strong>' + brl(e.p) + '</strong>' : '<span class="sc">sob consulta</span>'}</td>
+          <td class="num">${e.p ? (e.tab ? mesDe(e.tab) : 'pré-lançamento') : '—'}</td>
           <td>${entregaTexto(e)}</td>
           <td>${esc(e.c)}</td>
         </tr>`;
@@ -226,24 +236,24 @@ emObras.sort((a, b) => (+a.m[2] * 100 + ordemMes[a.m[1].toLowerCase()]) - (+b.m[
 
 const FAQ = [
   { q: 'Quanto custa um apartamento na planta em Indaiatuba?',
-    a: `Na tabela de ${mesLongo}, os ${NP} apartamentos em lançamento com preço publicado vão de ${brl(menor.p)} (${menor.n}, ${menor.c}) a ${brl(maior.p)} (${maior.n}, ${maior.c}). É o preço "a partir de" — a menor unidade disponível na data da tabela; outros ${N - NP} ainda não têm tabela publicada pela construtora.` },
+    a: `Em ${mesExtenso}, os ${NP} apartamentos em lançamento com preço publicado vão de ${brl(menor.p)} (${menor.n}, ${menor.c}, ${tabDe(menor)}) a ${brl(maior.p)} (${maior.n}, ${maior.c}, ${tabDe(maior)}). É o preço "a partir de" — a menor unidade disponível na data de cada tabela; outros ${N - NP} ainda não têm tabela publicada pela construtora.` },
   { q: 'Dá para usar FGTS ou Minha Casa Minha Vida em apartamento na planta?',
     a: `Nos apartamentos enquadrados no Minha Casa Minha Vida (${ativos.filter(eMCMV).map(e => e.n).join(', ')}), o saldo do FGTS pode ser usado como entrada ou abatimento e o financiamento é pela Caixa Econômica Federal. O enquadramento depende da renda familiar e da análise de crédito do banco — a imobiliária faz a simulação, mas quem aprova é a Caixa.` },
   { q: 'Qual a diferença entre apartamento na planta e apartamento pronto?',
     a: `Na planta, você compra antes ou durante a obra: paga a entrada parcelada direto com a construtora, escolhe andar e posição e recebe as chaves na data prevista em contrato, com o saldo corrigido pelo Índice Nacional de Custo da Construção (INCC) até a entrega. Pronto, você financia e muda na hora, sem prazo de obra. Esta página reúne os apartamentos na planta, em obras e recém-entregues em lançamento; os apartamentos prontos de revenda estão no site principal da Viv'América.` },
   { q: 'Quais apartamentos entregam antes?',
     a: (prontos.length ? `Pronto para morar hoje: ${prontos.map(e => e.n).join(', ')}. ` : '') +
-       (emObras.length ? `Entre os que informam a data na tabela de ${mesLongo}: ${emObras.map(x => x.e.n + ' (' + x.m[1].toLowerCase() + '/' + x.m[2] + ')').join(', ')}. ` : '') +
-       `Os demais não trazem previsão de entrega na tabela — confirme na landing de cada um ou no WhatsApp.` },
+       (emObras.length ? `Entre os que informam a data de entrega na tabela da construtora: ${emObras.map(x => x.e.n + ' (' + x.m[1].toLowerCase() + '/' + x.m[2] + ')').join(', ')}. ` : '') +
+       `Os demais não trazem previsão de entrega na tabela — confirme na página de cada um ou no WhatsApp.` },
   { q: 'Como funciona a entrada parcelada na compra na planta?',
-    a: `A entrada é dividida com a própria construtora enquanto a obra anda, e o saldo é financiado na entrega. Exemplos publicados nas landings: no Vívere Residencial, sinal de R$ 5.000 mais 36 parcelas de R$ 876,59 direto com a Masotti; no Storia Congesa, 13% de entrada em 3 parcelas, 22% em mensais e 65% financiado na entrega. Cada construtora tem a sua tabela — peça a simulação com o valor da sua unidade.` },
+    a: `A entrada é dividida com a própria construtora enquanto a obra anda, e o saldo é financiado na entrega. Exemplos publicados nas páginas dos empreendimentos: no Vívere Residencial, sinal de R$ 5.000 mais 36 parcelas de R$ 876,59 direto com a Masotti; no Storia Congesa, 13% de entrada em 3 parcelas, 22% em mensais e 65% financiado na entrega. Cada construtora tem a sua tabela — peça a simulação com o valor da sua unidade.` },
 ];
 
 // ─── schemas ───
 const jsonItemList = {
   '@context': 'https://schema.org', '@type': 'ItemList',
   name: 'Apartamentos na planta em Indaiatuba SP',
-  description: `Apartamentos em lançamento, em obras e recém-entregues representados pela Imobiliária Viv'América em Indaiatuba. Tabela de ${mesLongo}.`,
+  description: `Apartamentos em lançamento, em obras e recém-entregues representados pela Imobiliária Viv'América em Indaiatuba. Edição de ${mesLongo} do Observatório de Preços.`,
   numberOfItems: todos.length,
   itemListElement: todos.map((e, i) => ({ '@type': 'ListItem', position: i + 1, name: e.n, url: ABS + '/' + e.slug + '/' })),
 };
@@ -258,8 +268,6 @@ const jsonFaq = {
   '@context': 'https://schema.org', '@type': 'FAQPage',
   mainEntity: FAQ.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: semTags(f.a) } })),
 };
-const jsonAgente = AGENTE;
-
 // malha anterior (preenchida pelo gera-relacionados), preservada entre rodadas
 let malhaAnterior = '', marcaAnterior = '';
 const ARQ = R + SLUG + '/index.html';
@@ -294,9 +302,7 @@ const HTML = `<!DOCTYPE html>
   <meta name="twitter:image" content="${ABS}/${menor.img}">
   <link rel="canonical" href="${URL}">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <script type="application/ld+json">
-  ${JSON.stringify(jsonAgente)}
-  </script>
+  ${blocoEntidade()}
   <script type="application/ld+json">
   ${JSON.stringify(jsonItemList)}
   </script>
@@ -306,18 +312,7 @@ const HTML = `<!DOCTYPE html>
   <script type="application/ld+json">
   ${JSON.stringify(jsonFaq)}
   </script>
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-40C0379NPR');
-    document.addEventListener('click', function(e) {
-      var el = e.target.closest('a[href*="wa.me"]');
-      if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
-    });
-  </script>
+${GA4}
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <style>
@@ -381,7 +376,7 @@ const HTML = `<!DOCTYPE html>
     .lista em{font-style:normal;font-size:.84rem;margin-top:.2rem}
     .vazio{color:var(--muted);font-size:.9rem}
     .tabela-wrap{overflow-x:auto;background:#fff;border:1px solid var(--linha);border-radius:4px}
-    table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:720px}
+    table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:800px}
     th{text-align:left;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#8a8272;padding:.8rem 1rem;border-bottom:2px solid var(--preto);background:var(--creme)}
     td{padding:.65rem 1rem;border-bottom:1px solid #eee9db;vertical-align:top}
     tr:last-child td{border-bottom:none}
@@ -423,7 +418,7 @@ const HTML = `<!DOCTYPE html>
       <p class="breadcrumb"><a href="/">Início</a> › Apartamentos na planta</p>
       <h1>${esc(H1)}</h1>
       <p class="lede">Aqui estão os apartamentos <strong>na planta, em obras ou recém-entregues</strong> que a Viv'América representa em Indaiatuba — do Minha Casa Minha Vida (MCMV), com uso do Fundo de Garantia do Tempo de Serviço (FGTS), ao alto padrão — com o preço "a partir de" aberto, sem cadastro, e link para a página completa de cada um. Procura apartamento pronto de revenda? Está no site principal: <a href="${SITE_PRONTOS}">apartamentos à venda em Indaiatuba</a>.</p>
-      <span class="pill">Tabela de ${mesLongo} · ${N} lançamentos · ${NP} com preço</span>
+      <span class="pill">Edição de ${mesLongo} · ${N} lançamentos · ${NP} com preço</span>
     </div>
   </section>
 
@@ -442,7 +437,7 @@ const HTML = `<!DOCTYPE html>
 
   <div class="section">
     <h2 id="todos">Todos os apartamentos na planta em Indaiatuba <small>${todos.length} páginas · do menor ao maior preço</small></h2>
-    <p class="sub">Ordem por preço "a partir de" da tabela de ${mesLongo}; pré-lançamentos sem tabela ao final; os esgotados ficam por último, com a página no ar para quem procura o nome.</p>
+    <p class="sub">Ordem por preço "a partir de", cada um com o mês da tabela da construtora; sem tabela pública ao final${esgotados.length ? '; os esgotados ficam por último, com a página no ar para quem procura o nome' : ''}.</p>
     <div class="grid">${todos.map(card).join('')}
     </div>
 
@@ -450,15 +445,15 @@ ${SECOES.map(secao).join('\n')}
 
     <section class="sec" id="tabela">
       <h2>Tabela-resumo <small>${N} apartamentos</small></h2>
-      <p class="tabela-mes">Tabela de ${mesLongo}</p>
+      <p class="tabela-mes">Edição de ${mesLongo}</p>
       <div class="tabela-wrap">
         <table>
-          <thead><tr><th>Empreendimento</th><th>Dormitórios</th><th>m²</th><th>A partir de</th><th>Entrega / fase</th><th>Incorporadora</th></tr></thead>
+          <thead><tr><th>Empreendimento</th><th>Dormitórios</th><th>m²</th><th>A partir de</th><th>Tabela</th><th>Entrega / fase</th><th>Incorporadora</th></tr></thead>
           <tbody>${ativos.map(linha).join('')}
           </tbody>
         </table>
       </div>
-      <p class="sub" style="margin-top:.8rem">"—" = a tabela oficial não informa. Preço "a partir de" é o da menor unidade disponível na data da tabela e pode variar por andar, posição e condição de pagamento. A movimentação mês a mês está no <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a>.</p>
+      <p class="sub" style="margin-top:.8rem">"—" = a tabela oficial não informa. A coluna "Tabela" traz o mês da tabela de cada construtora; "pré-lançamento" é tabela de pré-lançamento, sujeita a reajuste no lançamento oficial. Preço "a partir de" é o da menor unidade disponível na data da tabela e pode variar por andar, posição e condição de pagamento. A movimentação mês a mês está no <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a>.</p>
     </section>
 
     <div class="cruzado">
@@ -497,7 +492,7 @@ ${FAQ.map(f => `      <details><summary>${esc(f.q)}</summary><p>${f.a}</p></deta
       <a href="/blog/">Blog</a>
     </div>
     <p>© ${EDICAO.ano} Imobiliária Viv'América · Apartamentos na planta em Indaiatuba SP · CRECI 47394-J</p>
-  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
+  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
   </footer>
 </body>
 </html>
@@ -512,6 +507,7 @@ if (marcaAnterior && !SAIDA.includes('id="marca"')) {
 }
 fs.writeFileSync(ARQ, SAIDA, 'utf8');
 if (!SAIDA.includes('id="marca"')) console.log('  ATENCAO: pagina sem a camada de marca; rode node identidade.js antes de publicar');
-console.log('gera-apartamentos: ' + todos.length + ' cards (' + N + ' ativos, ' + NP + ' com preco, ' + esgotados.length + ' esgotados) · tabela ' + mesLongo);
+console.log('gera-apartamentos: ' + todos.length + ' cards (' + N + ' ativos, ' + NP + ' com preco, ' + esgotados.length + ' esgotados) · edicao ' + mesLongo);
+if (semDataEst.length) console.log('  ATENCAO: est sem estEm (sem data nao sai selo de escassez): ' + semDataEst.map(e => e.n).join(', '));
 console.log('  title ' + TITLE.length + ' chars · description ' + DESC.length + ' chars');
 console.log('  secoes: ' + SECOES.map(s => s.id + '=' + ativos.filter(s.pega).length).join(' · '));

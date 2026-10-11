@@ -23,6 +23,42 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://lancamentos.imoveisvivamerica.com.br/"},{"@type":"ListItem","position":2,"name":"Sobre"}]}
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/sobre/",
+    "name": "Sobre a Imobiliária Viv'América — Indaiatuba/SP",
+    "inLanguage": "pt-BR",
+    "dateModified": "2026-10-11",
+    "mainEntity": {
+      "@type": "RealEstateAgent",
+      "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+      "name": "Imobiliária Viv'América"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://lancamentos.imoveisvivamerica.com.br/sobre/#fabio-correia",
+    "name": "Fabio Correia",
+    "jobTitle": "Corretor de imóveis",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "CRECI",
+      "value": "303686-F"
+    },
+    "url": "https://lancamentos.imoveisvivamerica.com.br/sobre/#fabio-correia",
+    "image": "https://lancamentos.imoveisvivamerica.com.br/images/fabio-correia.jpg",
+    "worksFor": {
+      "@type": "RealEstateAgent",
+      "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+      "name": "Imobiliária Viv'América"
+    }
+  }
+  </script>
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,7 +134,11 @@
     footer a { color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 0.6rem; }
     footer a:hover { color: var(--dourado); }
     .footer-links { margin-bottom: 1rem; }
-    @media (max-width: 600px) { nav { display: none; } }
+    .autor { display: flex; gap: 1.4rem; align-items: flex-start; flex-wrap: wrap; margin: 1rem 0 1.5rem; }
+    .autor img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; flex: none; }
+    .autor-texto { flex: 1 1 260px; min-width: 0; }
+    .atualizado { font-size: 0.85rem; color: #777; }
+    @media (max-width: 600px) { nav { display: none; } .autor img { width: 120px; height: 120px; } }
   </style>
   <style id="marca">
     /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
@@ -138,38 +178,61 @@
                font-weight:300; white-space:nowrap; }
     .malha a:hover { color:#C9A227; }
   </style>
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
+  <script id="ga4">
+    // GA4 só em produção: localhost, 127.0.0.1 e previews *.netlify.app ficam fora da medição
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-40C0379NPR');
-    // Rastrear cliques no WhatsApp como conversão
-    document.addEventListener('click', function(e) {
+    (function () {
+      if (/localhost|127\.0\.0\.1|netlify\.app$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR';
+      document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
+    })();
+    // whatsapp_click: rótulo do botão, posição (hero|meio|flutuante|rodape|barra) e página de origem
+    document.addEventListener('click', function (e) {
       var el = e.target.closest('a[href*="wa.me"]');
-      if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
+      if (!el) return;
+      var pos = el.getAttribute('data-cta') ||
+        ({ topo: 'hero', flutuante: 'flutuante', lote: 'meio', lista: 'rodape' })[el.getAttribute('data-origem')] ||
+        (el.closest('.wa-float, .wa-float-home, .float-wpp, .whats-flutuante') ? 'flutuante' :
+         el.closest('.bo-barra, .barra-wa') ? 'barra' :
+         el.closest('header, .hero, #hero, .topo, .cta-topo, .article-hero') ? 'hero' :
+         el.closest('footer, .cta, .cta-section, .cta-final') ? 'rodape' : 'meio');
+      var p = {
+        event_category: 'conversao',
+        event_label: ((el.textContent || '').replace(/\s+/g, ' ').trim() || el.getAttribute('aria-label') || '').slice(0, 100),
+        cta_pos: pos,
+        origem: location.pathname
+      };
+      if (el.getAttribute('data-lote')) p.lote = el.getAttribute('data-lote');
+      gtag('event', 'whatsapp_click', p);
     });
   </script>
+  <!--GEN:entidade-->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
+    "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
     "name": "Imobiliária Viv'América",
-    "legalName": "Imobiliária Viva América Ltda - ME",
-    "alternateName": "Imóveis Viva América",
-    "description": "Especialista em lançamentos imobiliários em Indaiatuba SP. Apartamentos MCMV, condomínios fechados, loteamentos e imóveis de alto padrão, sempre com preço de tabela e mês de referência.",
-    "url": "https://lancamentos.imoveisvivamerica.com.br/sobre/",
-    "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
-    "telephone": "+5519989769457",
-    "email": "financeiro@imoveisvivamerica.com.br",
+    "alternateName": [
+      "Viv'América Imóveis",
+      "Imobiliária Viva América"
+    ],
+    "legalName": "Imobiliaria Viva America Ltda - ME",
     "taxID": "57.213.317/0001-23",
     "identifier": {
       "@type": "PropertyValue",
       "propertyID": "CRECI",
       "value": "47394-J"
     },
-    "priceRange": "R$ 145.000 – R$ 1.750.014",
+    "description": "Imobiliária de Indaiatuba/SP (CRECI 47394-J) que comercializa lançamentos imobiliários: apartamentos na planta, loteamentos e condomínios fechados, com o preço da tabela oficial e o mês de referência em cada página.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/",
+    "logo": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
+    "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
+    "telephone": "+5519989769457",
+    "email": "financeiro@imoveisvivamerica.com.br",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Av. Higienópolis, 70 - Jardim União",
@@ -185,7 +248,13 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
         "opens": "08:30",
         "closes": "18:00"
       },
@@ -203,8 +272,8 @@
       "Condomínios fechados e loteamentos em Indaiatuba"
     ],
     "sameAs": [
-      "https://www.facebook.com/imoveisvivamerica",
       "https://www.instagram.com/imoveisvivamerica",
+      "https://www.facebook.com/imoveisvivamerica",
       "https://www.youtube.com/@ImoveisVivAmerica",
       "https://www.linkedin.com/company/imobiliaria-vivamerica"
     ],
@@ -217,6 +286,7 @@
     }
   }
   </script>
+  <!--/GEN:entidade-->
 </head>
 <body>
 
@@ -250,7 +320,7 @@
     <div class="vantagem-grid">
       <div class="vantagem-card">
         <h4>Razão social</h4>
-        <p>Imobiliária Viva América Ltda - ME</p>
+        <p>Imobiliaria Viva America Ltda - ME</p>
       </div>
       <div class="vantagem-card">
         <h4>CNPJ</h4>
@@ -262,7 +332,7 @@
       </div>
       <div class="vantagem-card">
         <h4>Endereço</h4>
-        <p>Av. Higienópolis, 70 – Jardim União<br>Indaiatuba/SP</p>
+        <p>Av. Higienópolis, 70 – Jardim União<br>Indaiatuba/SP, CEP 13348-671</p>
       </div>
       <div class="vantagem-card">
         <h4>WhatsApp</h4>
@@ -278,9 +348,14 @@
       </div>
     </div>
 
-    <h2>Responsável pelo conteúdo</h2>
-    <div class="highlight-box">
-      <p><strong>Fabio Correia — CRECI 303686-F.</strong> Corretor de imóveis da Viv'América, responde pelos textos, preços e estoque publicados neste site. Erro, preço desatualizado ou dúvida sobre uma página: escreva para <a href="mailto:financeiro@imoveisvivamerica.com.br">financeiro@imoveisvivamerica.com.br</a> ou chame no <a href="https://wa.me/5519989769457">WhatsApp (19) 98976-9457</a>.</p>
+    <h2 id="fabio-correia">Responsável pelo conteúdo: Fabio Correia</h2>
+    <div class="autor">
+      <img src="/images/fabio-correia.jpg" srcset="/images/fabio-correia.jpg 1x, /images/fabio-correia-2x.jpg 2x" width="160" height="160" alt="Fabio Correia, corretor de imóveis da Imobiliária Viv'América" loading="lazy" decoding="async">
+      <div class="autor-texto">
+        <p><strong>Fabio Correia — CRECI 303686-F.</strong> Corretor de imóveis da Imobiliária Viv'América (CRECI 47394-J), responde pelos textos, preços e estoque publicados neste site e assina os artigos do <a href="/blog/">blog</a>.</p>
+        <p>Erro, preço desatualizado ou dúvida sobre uma página: escreva para <a href="mailto:financeiro@imoveisvivamerica.com.br">financeiro@imoveisvivamerica.com.br</a> ou chame no <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20Sobre%20do%20site%20de%20lan%C3%A7amentos.%20Pode%20me%20ajudar%3F">WhatsApp (19) 98976-9457</a>.</p>
+        <p class="atualizado">Página atualizada em 11/10/2026.</p>
+      </div>
     </div>
 
     <h2>Como trabalhamos</h2>

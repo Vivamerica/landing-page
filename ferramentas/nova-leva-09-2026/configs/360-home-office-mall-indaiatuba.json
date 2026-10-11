@@ -3,8 +3,10 @@
   "nome": "360 Home Office Mall",
   "categoria": "apartamentos",
   "data": "2026-09-16",
+  "atualizado": "2026-10-11",
+  "fonte_tabela": "sem tabela pública em out/2026 · incorporação registrada em 21/08/2026",
   "title": "360 Home Office Mall Indaiatuba | Park Meraki · HINC",
-  "description": "360 Home Office Mall, Park Meraki: torre residencial com 111 unidades de 39,73 a 128,36 m², mais office, corporate e mall. Incorporação registrada em ago/2026.",
+  "description": "360 Home Office Mall, Park Meraki: 111 unidades residenciais de 39,73 a 128,36 m², mais office, corporate e mall. Incorporação registrada em ago/2026.",
   "keywords": "360 home office mall indaiatuba, 360 indaiatuba, hinc indaiatuba, studio park meraki, apartamento 1 suite indaiatuba, sala comercial park meraki, laje corporativa indaiatuba, loja park meraki, duplex indaiatuba",
   "schema_tipo": "ApartmentComplex",
   "schema_desc": "Complexo de uso misto na Avenida 9 de Julho, 55, no Park Meraki, em Indaiatuba/SP, com três torres (residencial, office e corporate) sobre um mall de 19 lojas, em terreno de 5.752,43 m². A torre residencial tem 111 unidades: 108 apartamentos tipo de 39,73 a 60,73 m² e 3 duplex de 68,54 a 128,36 m², com suíte. Lazer no alto da torre com piscina, sky garden e sky deck. Incorporação HINC, construção HCON, registrada sob R.04 da matrícula 156.803 em 21/08/2026.",
@@ -37,12 +39,16 @@
   "wa_topo": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
   "hero": {
     "eyebrow": "Avenida 9 de Julho, 55 · Park Meraki",
-    "sub": "Residencial, office, corporate e mall · HINC",
+    "sub": "Residencial, office, corporate e mall no Park Meraki, em Indaiatuba",
     "lead": "Um complexo de uso misto no Park Meraki: uma torre residencial com 111 unidades de 39,73 a 128,36 m², uma torre de salas, uma torre corporativa e um mall de 19 lojas na base. O lazer do residencial fica no alto da torre, com piscina, sky garden e sky deck.",
     "preco": "Valores sob consulta",
-    "preco_nota": "incorporação registrada em 21/08/2026 · tabela no atendimento",
+    "preco_nota": "sem tabela pública em out/2026 · condições no atendimento · incorporação registrada em 21/08/2026",
     "cta_msg": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
-    "cta_texto": "Pedir valores e unidades"
+    "cta_texto": "Pedir valores e unidades",
+    "cta2": {
+      "msg": "Olá! Quero agendar uma visita ao 360 Home Office Mall.",
+      "texto": "Agendar visita"
+    }
   },
   "secoes": [
     {
@@ -449,7 +455,12 @@
   "cta": {
     "h2": "Quer os valores do 360 Home Office Mall?",
     "p": "Mandamos a tabela em vigor das unidades residenciais, salas, conjuntos e lojas, e as condições de pagamento.",
-    "msg": "Olá! Tenho interesse no 360 Home Office Mall em Indaiatuba. Pode me enviar mais informações?"
+    "msg": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
+    "texto": "Pedir a tabela",
+    "visita": {
+      "msg": "Olá! Quero agendar uma visita ao 360 Home Office Mall.",
+      "texto": "Agendar visita"
+    }
   },
   "rodape": {
     "marca": "360 HOME · OFFICE · MALL",

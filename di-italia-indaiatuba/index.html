@@ -31,7 +31,7 @@
     "@type": "RealEstateListing",
     "name": "Jardim Residencial Di Italia",
     "description": "Loteamento aberto em Indaiatuba SP com 404 lotes a partir de 150 m². Lotes residenciais e mistos. 45 lotes disponíveis (relatório Dominium de 01/10/2026).",
-    "dateModified": "2026-09-04",
+    "dateModified": "2026-10-11",
     "url": "https://lancamentos.imoveisvivamerica.com.br/di-italia-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/di-italia-indaiatuba/images/mapa.jpg",
     "geo": {
@@ -267,6 +267,8 @@
     }
     .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; background: #25D366; color: #fff; width: 60px; height: 60px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.5); text-decoration: none; }
+    /* linha de procedência sob o H1: data da última mudança de texto · fonte da tabela · quem responde */
+    .hero p.procedencia,p.procedencia{font-size:.76rem;letter-spacing:.04em;line-height:1.5;opacity:.88;color:rgba(255,255,255,.92);margin:.1rem auto 1rem;max-width:720px;text-transform:none;font-weight:400;}
   </style>
   <style id="marca">
     /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
@@ -306,17 +308,35 @@
                font-weight:300; white-space:nowrap; }
     .malha a:hover { color:#C9A227; }
   </style>
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
+  <script id="ga4">
+    // GA4 só em produção: localhost, 127.0.0.1 e previews *.netlify.app ficam fora da medição
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-40C0379NPR');
-    // Rastrear cliques no WhatsApp como conversão
-    document.addEventListener('click', function(e) {
+    (function () {
+      if (/localhost|127\.0\.0\.1|netlify\.app$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR';
+      document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
+    })();
+    // whatsapp_click: rótulo do botão, posição (hero|meio|flutuante|rodape|barra) e página de origem
+    document.addEventListener('click', function (e) {
       var el = e.target.closest('a[href*="wa.me"]');
-      if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
+      if (!el) return;
+      var pos = el.getAttribute('data-cta') ||
+        ({ topo: 'hero', flutuante: 'flutuante', lote: 'meio', lista: 'rodape' })[el.getAttribute('data-origem')] ||
+        (el.closest('.wa-float, .wa-float-home, .float-wpp, .whats-flutuante') ? 'flutuante' :
+         el.closest('.bo-barra, .barra-wa') ? 'barra' :
+         el.closest('header, .hero, #hero, .topo, .cta-topo, .article-hero') ? 'hero' :
+         el.closest('footer, .cta, .cta-section, .cta-final') ? 'rodape' : 'meio');
+      var p = {
+        event_category: 'conversao',
+        event_label: ((el.textContent || '').replace(/\s+/g, ' ').trim() || el.getAttribute('aria-label') || '').slice(0, 100),
+        cta_pos: pos,
+        origem: location.pathname
+      };
+      if (el.getAttribute('data-lote')) p.lote = el.getAttribute('data-lote');
+      gtag('event', 'whatsapp_click', p);
     });
   </script>
   <script type="application/ld+json">
@@ -339,41 +359,90 @@
       "url": "https://lancamentos.imoveisvivamerica.com.br/di-italia-indaiatuba/",
       "seller": {
         "@type": "RealEstateAgent",
-        "name": "Imobiliária Viv'América",
-        "telephone": "+5519989769457"
+        "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+        "name": "Imobiliária Viv'América"
       }
     }
   }
   </script>
+  <!--GEN:entidade-->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
+    "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
     "name": "Imobiliária Viv'América",
-    "alternateName": "Viv'América Imóveis",
-    "description": "Imobiliária especializada em lançamentos imobiliários em Indaiatuba/SP: apartamentos MCMV e alto padrão, condomínios fechados de lotes e loteamentos abertos. Simulação de financiamento gratuita pela Caixa Econômica Federal com uso de FGTS.",
-    "url": "https://imoveisvivamerica.com.br",
+    "alternateName": [
+      "Viv'América Imóveis",
+      "Imobiliária Viva América"
+    ],
+    "legalName": "Imobiliaria Viva America Ltda - ME",
+    "taxID": "57.213.317/0001-23",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "CRECI",
+      "value": "47394-J"
+    },
+    "description": "Imobiliária de Indaiatuba/SP (CRECI 47394-J) que comercializa lançamentos imobiliários: apartamentos na planta, loteamentos e condomínios fechados, com o preço da tabela oficial e o mês de referência em cada página.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/",
     "logo": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
-    "image": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
+    "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
     "telephone": "+5519989769457",
     "email": "financeiro@imoveisvivamerica.com.br",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Av. Higienópolis, 70 - Jardim União",
       "addressLocality": "Indaiatuba",
       "addressRegion": "SP",
+      "postalCode": "13348-671",
       "addressCountry": "BR"
     },
     "areaServed": {
       "@type": "City",
-      "name": "Indaiatuba",
-      "containedInPlace": { "@type": "State", "name": "São Paulo" }
+      "name": "Indaiatuba"
     },
-    "priceRange": "R$ 145.000 – R$ 1.750.014",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "knowsAbout": [
+      "Lançamentos imobiliários em Indaiatuba",
+      "Minha Casa Minha Vida",
+      "Financiamento Caixa e uso de FGTS",
+      "Condomínios fechados e loteamentos em Indaiatuba"
+    ],
     "sameAs": [
-      "https://lancamentos.imoveisvivamerica.com.br/"
-    ]
+      "https://www.instagram.com/imoveisvivamerica",
+      "https://www.facebook.com/imoveisvivamerica",
+      "https://www.youtube.com/@ImoveisVivAmerica",
+      "https://www.linkedin.com/company/imobiliaria-vivamerica"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5519989769457",
+      "contactType": "sales",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
   }
   </script>
+  <!--/GEN:entidade-->
 </head>
 <body>
 
@@ -400,6 +469,7 @@
     <img src="images/logo.svg" alt="Logotipo do Jardim Residencial Di Itália, loteamento da Dominium em Indaiatuba" class="hero-logo" width="180" height="180">
     <span class="hero-badge-urgencia">⚡ 45 lotes disponíveis (out/2026)</span>
     <h1>Jardim Residencial <span>Di Itália</span><br>Loteamento em Indaiatuba</h1>
+    <p class="procedencia">Atualizado em 11/10/2026 · relatório de estoque Dominium de 01/10/2026 · Fabio Correia, CRECI 303686-F</p>
     <p>Loteamento aberto da Dominium em Indaiatuba. Lotes residenciais e mistos a partir de 150 m², infraestrutura concluída. Residencial de 150 m² por R$ 210.000 à vista (tabela de 01/10/2026).</p>
     <div class="hero-btns">
       <a href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20Di%20Italia%20com%20quadra%2C%20metragem%20e%20valor." class="btn-wpp-hero">
@@ -415,7 +485,7 @@
   <div class="stat"><strong>404</strong><span>Lotes no total</span></div>
   <div class="stat urgente"><strong>45</strong><span>Lotes disponíveis (01/10/2026)</span></div>
   <div class="stat"><strong>150m²</strong><span>Lotes a partir de</span></div>
-  <div class="stat"><strong>R$ 210 mil</strong><span>À vista · 150 m² (set/2026)</span></div>
+  <div class="stat"><strong>R$ 210 mil</strong><span>À vista · 150 m² (01/10/2026)</span></div>
   <div class="stat"><strong>Pronto</strong><span>para construir</span></div>
 </div>
 
@@ -423,7 +493,7 @@
   <div class="content-section">
     <h2>Jardim Residencial Di Itália: um bairro extremamente bem localizado</h2>
     <p>O Di Itália é um <strong>loteamento aberto</strong> da Dominium em Indaiatuba SP, com 404 lotes divididos entre residenciais e mistos (residencial + comercial). Com infraestrutura completa e aprovação municipal, o empreendimento está em fase de conclusão — o que significa que você pode <strong>planejar a construção imediatamente</strong> após a compra.</p>
-    <p>São <strong>45 lotes disponíveis (01/10/2026)</strong> — 28 residenciais e 16 mistos, segundo o relatório de lotes disponíveis da Dominium/GRBU Empreendimentos SPE (Sociedade de Propósito Específico) emitido em 01/10/2026. O bairro já tem a maior parte dos 404 lotes vendida e vizinhança em formação.</p>
+    <p>São <strong>45 lotes disponíveis (01/10/2026)</strong> — 30 residenciais e 15 mistos, segundo o relatório de lotes disponíveis da Dominium/GRBU Empreendimentos SPE (Sociedade de Propósito Específico) emitido em 01/10/2026. O bairro já tem a maior parte dos 404 lotes vendida e vizinhança em formação.</p>
 
     <div class="highlight-box">
       <p><strong>Pronto para construir:</strong> infraestrutura de asfalto, rede de água, esgoto, energia e iluminação concluída. Sem esperar obras de implantação.</p>
@@ -447,7 +517,7 @@
       <div><dt>Preço a partir de</dt><dd>R$ 210.000 à vista — lote residencial de 150 m² (tabela set/2026, relatório de 01/10/2026)</dd></div>
       <div><dt>Situação</dt><dd>pronto para construir — infraestrutura concluída (asfalto, água, esgoto, energia e iluminação)</dd></div>
     </dl>
-    <p class="ficha-nota">Dados confirmados nas tabelas e fichas das incorporadoras; atualizados pela Imobiliária Viv'América (CRECI 47394-J) em setembro de 2026.</p>
+    <p class="ficha-nota">Dados confirmados nas tabelas e fichas das incorporadoras; atualizados pela Imobiliária Viv'América (CRECI 47394-J) em outubro de 2026.</p>
   </div>
 </section>
 <style>
@@ -572,7 +642,7 @@
         </tbody>
       </table>
     </div>
-    <p style="font-size:0.8rem;margin:0.8rem 0 0;">Em 01/10/2026 eram 44 lotes; um saiu e dois voltaram ao estoque. Preços sujeitos a alteração pela incorporadora sem aviso prévio.</p>
+    <p style="font-size:0.8rem;margin:0.8rem 0 0;">Em 04/09/2026 eram 44 lotes; um saiu e dois voltaram ao estoque. Preços sujeitos a alteração pela incorporadora sem aviso prévio.</p>
   </div>
 </section>
 
@@ -639,6 +709,18 @@
   </div>
 </section>
 
+<section class="mudou" aria-labelledby="mudou-h2">
+  <div style="max-width:860px;margin:0 auto;padding:2.4rem 5%;">
+    <h2 id="mudou-h2" style="font-size:1.2rem;margin:0 0 .7rem;">O que mudou nesta página</h2>
+    <ul style="margin:0;padding-left:1.1rem;font-size:.92rem;line-height:1.65;">
+      <li><time datetime="2026-10-01">01/10/2026</time> — Relatório de estoque Dominium de 01/10/2026: 45 lotes disponíveis (antes 44, em 04/09).</li>
+      <li><time datetime="2026-09-04">04/09/2026</time> — Tabela Dominium de setembro/2026: 44 lotes disponíveis; residencial de 150 m² a R$ 210.000 à vista (antes R$ 188.000).</li>
+      <li><time datetime="2026-08-15">15/08/2026</time> — Tabela Dominium de 14-15/08/2026: 43 lotes disponíveis, a partir de R$ 188.000 (antes 59 lotes a partir de R$ 180.000).</li>
+      <li><time datetime="2026-05-17">17/05/2026</time> — Página publicada.</li>
+    </ul>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-geo" style="background:#fff;padding:3.5rem 5%;">
   <style>
@@ -666,7 +748,7 @@
       <p>O Di Italia é um loteamento aberto em Indaiatuba/SP, sem portaria nem taxa de condomínio, com lotes residenciais e mistos (que permitem uso residencial e comercial).</p></details>
 
     <details><summary>Quantos lotes ainda estão disponíveis?</summary>
-      <p>São 45 lotes disponíveis em 01/10/2026 (30 residenciais e 15 mistos), segundo o relatório de lotes disponíveis da Dominium. Em 14/08/2026 eram 43; um lote voltou ao estoque. Confirme a disponibilidade do dia com a Imobiliária Viv'América.</p></details>
+      <p>São 45 lotes disponíveis em 01/10/2026 (30 residenciais e 15 mistos), segundo o relatório de lotes disponíveis da Dominium. Em 04/09/2026 eram 44; um lote saiu e dois voltaram ao estoque. Confirme a disponibilidade do dia com a Imobiliária Viv'América.</p></details>
 
     <details><summary>Como funciona o parcelamento dos lotes?</summary>
       <p>O lote residencial de 150 m² pode ser pago em R$ 220.000 a prazo, com entrada de R$ 44.000 e saldo em 60 parcelas diretas com a incorporadora (tabela de 01/10/2026). Para lotes mistos e residenciais maiores, a Imobiliária Viv'América envia a condição a prazo vigente.</p></details>
@@ -681,7 +763,7 @@
     {"@type":"Question","name":"Qual o preço dos lotes no Di Italia em 2026?","acceptedAnswer":{"@type":"Answer","text":"O lote residencial de 150 m² custa R$ 210.000 à vista ou R$ 220.000 a prazo (entrada de R$ 44.000 e 60 parcelas). Os lotes mistos vão de R$ 250.185 (166,79 m²) a R$ 445.050 (296,70 m²). Valores da tabela Dominium de 01/10/2026, sujeitos a alteração."}},
     {"@type":"Question","name":"É possível construir imediatamente no Di Italia?","acceptedAnswer":{"@type":"Answer","text":"Sim. O Jardim Di Italia já está com a infraestrutura pronta para construir, o que permite iniciar a obra logo após a compra, sem esperar a conclusão do loteamento."}},
     {"@type":"Question","name":"O Di Italia é loteamento aberto ou condomínio fechado?","acceptedAnswer":{"@type":"Answer","text":"O Di Italia é um loteamento aberto em Indaiatuba/SP, sem portaria nem taxa de condomínio, com lotes residenciais e mistos (que permitem uso residencial e comercial)."}},
-    {"@type":"Question","name":"Quantos lotes ainda estão disponíveis?","acceptedAnswer":{"@type":"Answer","text":"São 45 lotes disponíveis em 01/10/2026 (30 residenciais e 15 mistos), segundo o relatório de lotes disponíveis da Dominium. Em 14/08/2026 eram 43; um lote voltou ao estoque. Confirme a disponibilidade do dia com a Imobiliária Viv'América."}},
+    {"@type":"Question","name":"Quantos lotes ainda estão disponíveis?","acceptedAnswer":{"@type":"Answer","text":"São 45 lotes disponíveis em 01/10/2026 (30 residenciais e 15 mistos), segundo o relatório de lotes disponíveis da Dominium. Em 04/09/2026 eram 44; um lote saiu e dois voltaram ao estoque. Confirme a disponibilidade do dia com a Imobiliária Viv'América."}},
     {"@type":"Question","name":"Como funciona o parcelamento dos lotes?","acceptedAnswer":{"@type":"Answer","text":"O lote residencial de 150 m² pode ser pago em R$ 220.000 a prazo, com entrada de R$ 44.000 e saldo em 60 parcelas diretas com a incorporadora (tabela de 01/10/2026). Para lotes mistos e residenciais maiores, a Imobiliária Viv'América envia a condição a prazo vigente."}}
   ]
 }
@@ -717,7 +799,7 @@
         <div class="outro-card-body">
           <span class="outro-badge-cond">Condomínio Fechado</span>
           <h3>Alpnach Residence</h3>
-          <p>322 lotes a partir de 300 m², 28 disponíveis (01/10/2026), piscina coberta e SPA.</p>
+          <p>322 lotes a partir de 300 m², 19 disponíveis (01/10/2026), piscina coberta e SPA.</p>
           <div class="outro-price">A partir de R$ 510.000 (01/10/2026)</div>
           <span class="btn-outro">Ver Detalhes</span>
         </div>
@@ -805,6 +887,8 @@
       <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span><a href="/maria-candida-indaiatuba/">Jardim Dona Maria Cândida</a><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a><a href="/parque-zarah-indaiatuba/">Parque Zarah</a><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a><a href="/alpnach-indaiatuba/">Alpnach Residence</a><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a><a href="/ville-de-provence-indaiatuba/">Ville de Provence</a><a href="/alphaville-indaiatuba/">Alphaville Indaiatuba</a><a href="/lagos-de-helvetia-indaiatuba/">Lagos de Helvetia</a><a href="/porteira-de-ferro-indaiatuba/">Porteira de Ferro</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span><a href="/alphaville/">Empreendimentos Alphaville</a><a href="/casas-alphaville-dom-pedro-0-campinas/">Casas Alphaville Dom Pedro 0 (Campinas)</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dados e listas</span><a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a><a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z de loteamentos e bairros</a><a href="/imprensa-e-dados/">Dados abertos e imprensa</a></div>
     </div>
   </section>
   <!--/GEN:malha-->

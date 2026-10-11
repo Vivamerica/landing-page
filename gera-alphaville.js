@@ -96,18 +96,8 @@ function extrair(arquivo, nome) {
 }
 const FONTE_UNICA = extrair('gera-folheto.js', 'APTOS').concat(extrair('gera-folheto.js', 'LOTES'));
 
-// nó RealEstateAgent copiado da home — mesma entidade em todo o site
-function agenteDaHome() {
-  const home = fs.readFileSync(R + 'index.html', 'utf8');
-  const re = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
-  let m;
-  while ((m = re.exec(home))) {
-    let o; try { o = JSON.parse(m[1]); } catch (e) { continue; }
-    if (o && o['@type'] === 'RealEstateAgent') return o;
-  }
-  throw new Error('RealEstateAgent nao achado em index.html');
-}
-const AGENTE = agenteDaHome();
+// entidade única (nó RealEstateAgent com @id) e tag GA4 com guarda: fonte única em identidade.js
+const { blocoEntidade, GA4 } = require('./identidade.js');
 
 // ─── utilitários ───
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
@@ -254,8 +244,6 @@ const jsonFaq = {
   '@context': 'https://schema.org', '@type': 'FAQPage',
   mainEntity: FAQ.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: semTags(f.a) } })),
 };
-const jsonAgente = AGENTE;
-
 // malha anterior (preenchida pelo gera-relacionados), preservada entre rodadas
 let malhaAnterior = '', marcaAnterior = '';
 const ARQ = R + SLUG + '/index.html';
@@ -293,9 +281,7 @@ const HTML = `<!DOCTYPE html>
   <meta name="twitter:image" content="${ABS}/${IMG_OG}">
   <link rel="canonical" href="${URL}">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <script type="application/ld+json">
-  ${JSON.stringify(jsonAgente)}
-  </script>
+  ${blocoEntidade()}
   <script type="application/ld+json">
   ${JSON.stringify(jsonItemList)}
   </script>
@@ -305,18 +291,7 @@ const HTML = `<!DOCTYPE html>
   <script type="application/ld+json">
   ${JSON.stringify(jsonFaq)}
   </script>
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-40C0379NPR');
-    document.addEventListener('click', function(e) {
-      var el = e.target.closest('a[href*="wa.me"]');
-      if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
-    });
-  </script>
+${GA4}
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <style>

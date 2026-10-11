@@ -24,6 +24,10 @@ URL = BASE + 'blog/' + SLUG + '/'
 IMG = URL + 'images/og.png'
 
 s = io.open(MODELO, encoding='utf-8', newline='').read()
+# a casca traz a tag GA4 com guarda de host e o bloco da entidade única, os dois
+# escritos pelo identidade.js; sem eles o artigo nasceria sem medição e sem NAP
+assert '<script id="ga4">' in s, 'o modelo perdeu a tag GA4 (<script id="ga4">): rode node identidade.js'
+assert '<!--GEN:entidade-->' in s, 'o modelo não tem o bloco <!--GEN:entidade-->: rode node identidade.js'
 
 # ── metadados ───────────────────────────────────────────────────────
 s = re.sub(r'<title>.*?</title>', '<title>%s</title>' % TITULO, s, count=1)
@@ -55,7 +59,7 @@ DATASET = '''{
     "name": "Alphaville: história, escala e linhas de produto segundo os documentos da CVM",
     "description": "Levantamento sobre a Alphaville S.A. a partir de documentos entregues à Comissão de Valores Mobiliários: fundação em 1973, 138 empreendimentos entregues em mais de 70 cidades e 23 estados, e as três linhas de produto por metragem de lote.",
     "url": "%s",
-    "author": {"@type":"Organization","name":"Imobiliária Viv'América","url":"%s"},
+    "author": {"@type":"RealEstateAgent","@id":"https://imoveisvivamerica.com.br/#imobiliaria","name":"Imobiliária Viv'América"},
     "isAccessibleForFree": true,
     "citation": [
       "Alphaville S.A. — Formulário de Referência, versão 3, entregue à CVM em 30/06/2026",
@@ -67,7 +71,7 @@ DATASET = '''{
       "Lei nº 6.766/1979 (parcelamento do solo urbano)",
       "Lei nº 13.465/2017, art. 1.358-A do Código Civil (condomínio de lotes)"
     ]
-  }''' % (URL, BASE)
+  }''' % URL
 s = re.sub(r'\{\s*"@context": "https://schema\.org",\s*"@type": "Dataset".*?\n  \}',
            DATASET, s, count=1, flags=re.S)
 

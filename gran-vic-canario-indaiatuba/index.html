@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
 <script src="/atrib.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gran Vic Canário Indaiatuba: últimas 3 unidades, R$ 352 mil</title>
+  <title>Gran Vic Canário Indaiatuba: últimas 3 (set/26), R$ 352 mil</title>
   <meta name="description" content="Gran Vic Canário: últimas 3 unidades (set/2026), 2 dorms, 47,22 m², a partir de R$ 352.135 na tabela VIC de 02/09/2026. MCMV Faixa 3, aceita FGTS.">
   <meta name="keywords" content="gran vic canário indaiatuba, gran vic canário preço, gran vic canário tabela, vic engenharia indaiatuba, parque dos pássaros indaiatuba, apartamento 2 dormitórios indaiatuba, mcmv faixa 3 indaiatuba, apartamento na planta jardim bom sucesso indaiatuba">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Gran Vic Canário Indaiatuba: últimas 3 unidades, R$ 352 mil">
+  <meta property="og:title" content="Gran Vic Canário Indaiatuba: últimas 3 (set/26), R$ 352 mil">
   <meta property="og:description" content="Gran Vic Canário: últimas 3 unidades (set/2026), 2 dorms, 47,22 m², a partir de R$ 352.135 na tabela VIC de 02/09/2026. MCMV Faixa 3, aceita FGTS.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/images/hero.jpg">
@@ -16,7 +16,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Imobiliária Viv'América">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gran Vic Canário Indaiatuba: últimas 3 unidades, R$ 352 mil">
+  <meta name="twitter:title" content="Gran Vic Canário Indaiatuba: últimas 3 (set/26), R$ 352 mil">
   <meta name="twitter:description" content="Gran Vic Canário: últimas 3 unidades (set/2026), 2 dorms, 47,22 m², a partir de R$ 352.135 na tabela VIC de 02/09/2026. MCMV Faixa 3, aceita FGTS.">
   <meta name="twitter:image" content="https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/images/hero.jpg">
   <link rel="canonical" href="https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/">
@@ -33,7 +33,7 @@
     "description": "Últimas 3 unidades (set/2026) do Gran Vic Canário, VIC Engenharia, em Indaiatuba SP: apartamentos de 2 dormitórios com 47,22 m², Torre 03, a partir de R$ 352.135 na tabela VIC de 02/09/2026. Minha Casa Minha Vida Faixa 3. Entrega do Módulo 03 prevista para 16/05/2028.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/images/hero.jpg",
-    "dateModified": "2026-09-04",
+    "dateModified": "2026-10-11",
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": -23.107197,
@@ -62,8 +62,8 @@
     },
     "seller": {
       "@type": "RealEstateAgent",
-      "name": "Imobiliária Viv'América",
-      "telephone": "+5519989769457"
+      "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+      "name": "Imobiliária Viv'América"
     }
   }
   </script>
@@ -88,8 +88,8 @@
       "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/",
       "seller": {
         "@type": "RealEstateAgent",
-        "name": "Imobiliária Viv'América",
-        "telephone": "+5519989769457"
+        "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+        "name": "Imobiliária Viv'América"
       }
     }
   }
@@ -334,6 +334,8 @@
       0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
       50% { box-shadow: 0 4px 36px rgba(37,211,102,0.85); }
     }
+    /* linha de procedência sob o H1: data da última mudança de texto · fonte da tabela · quem responde */
+    .hero p.procedencia,p.procedencia{font-size:.76rem;letter-spacing:.04em;line-height:1.5;opacity:.88;color:rgba(255,255,255,.92);margin:.1rem auto 1rem;max-width:720px;text-transform:none;font-weight:400;}
   </style>
   <style id="marca">
     /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
@@ -373,19 +375,115 @@
                font-weight:300; white-space:nowrap; }
     .malha a:hover { color:#C9A227; }
   </style>
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
+  <script id="ga4">
+    // GA4 só em produção: localhost, 127.0.0.1 e previews *.netlify.app ficam fora da medição
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-40C0379NPR');
-    // Rastrear cliques no WhatsApp como conversão
-    document.addEventListener('click', function(e) {
+    (function () {
+      if (/localhost|127\.0\.0\.1|netlify\.app$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR';
+      document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
+    })();
+    // whatsapp_click: rótulo do botão, posição (hero|meio|flutuante|rodape|barra) e página de origem
+    document.addEventListener('click', function (e) {
       var el = e.target.closest('a[href*="wa.me"]');
-      if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
+      if (!el) return;
+      var pos = el.getAttribute('data-cta') ||
+        ({ topo: 'hero', flutuante: 'flutuante', lote: 'meio', lista: 'rodape' })[el.getAttribute('data-origem')] ||
+        (el.closest('.wa-float, .wa-float-home, .float-wpp, .whats-flutuante') ? 'flutuante' :
+         el.closest('.bo-barra, .barra-wa') ? 'barra' :
+         el.closest('header, .hero, #hero, .topo, .cta-topo, .article-hero') ? 'hero' :
+         el.closest('footer, .cta, .cta-section, .cta-final') ? 'rodape' : 'meio');
+      var p = {
+        event_category: 'conversao',
+        event_label: ((el.textContent || '').replace(/\s+/g, ' ').trim() || el.getAttribute('aria-label') || '').slice(0, 100),
+        cta_pos: pos,
+        origem: location.pathname
+      };
+      if (el.getAttribute('data-lote')) p.lote = el.getAttribute('data-lote');
+      gtag('event', 'whatsapp_click', p);
     });
   </script>
+  <!--GEN:entidade-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+    "name": "Imobiliária Viv'América",
+    "alternateName": [
+      "Viv'América Imóveis",
+      "Imobiliária Viva América"
+    ],
+    "legalName": "Imobiliaria Viva America Ltda - ME",
+    "taxID": "57.213.317/0001-23",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "CRECI",
+      "value": "47394-J"
+    },
+    "description": "Imobiliária de Indaiatuba/SP (CRECI 47394-J) que comercializa lançamentos imobiliários: apartamentos na planta, loteamentos e condomínios fechados, com o preço da tabela oficial e o mês de referência em cada página.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/",
+    "logo": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
+    "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
+    "telephone": "+5519989769457",
+    "email": "financeiro@imoveisvivamerica.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Higienópolis, 70 - Jardim União",
+      "addressLocality": "Indaiatuba",
+      "addressRegion": "SP",
+      "postalCode": "13348-671",
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Indaiatuba"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "knowsAbout": [
+      "Lançamentos imobiliários em Indaiatuba",
+      "Minha Casa Minha Vida",
+      "Financiamento Caixa e uso de FGTS",
+      "Condomínios fechados e loteamentos em Indaiatuba"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/imoveisvivamerica",
+      "https://www.facebook.com/imoveisvivamerica",
+      "https://www.youtube.com/@ImoveisVivAmerica",
+      "https://www.linkedin.com/company/imobiliaria-vivamerica"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5519989769457",
+      "contactType": "sales",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
+  }
+  </script>
+  <!--/GEN:entidade-->
 </head>
 <body>
 
@@ -408,7 +506,8 @@
     <div class="hero-content">
       <img src="images/logo.jpg" alt="Logo do Gran Vic Canário, VIC Engenharia — Parque dos Pássaros, Indaiatuba" class="hero-logo" width="1005" height="769">
       <div class="hero-badge">Voltou ao estoque · Minha Casa Minha Vida (MCMV) Faixa 3 · Parque dos Pássaros · Indaiatuba/SP</div>
-      <h1>Gran Vic Canário — apartamentos de 2 dormitórios em Indaiatuba<span>últimas 3 unidades (set/2026) · a partir de R$ 352.135</span></h1>
+      <h1>Gran Vic Canário — apartamentos de 2 dormitórios em Indaiatuba <span>últimas 3 unidades (set/2026) · a partir de R$ 352.135</span></h1>
+      <p class="procedencia">Atualizado em 11/10/2026 · tabela VIC de 02/09/2026 · Fabio Correia, CRECI 303686-F</p>
       <p>Três apartamentos da Torre 03 voltaram à tabela da VIC Engenharia em 02/09/2026: 2 dormitórios, 47,22 m², varanda e vaga demarcada. Aceita FGTS (Fundo de Garantia do Tempo de Serviço) e entra no MCMV Faixa 3. Entrega do Módulo 03 prevista para 16/05/2028.</p>
       <a href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20Gran%20Vic%20Can%C3%A1rio%20em%20Indaiatuba.%20Pode%20me%20enviar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn-hero" target="_blank" rel="noopener">Falar sobre o Gran Vic Canário →</a>
     </div>
@@ -855,6 +954,8 @@
       <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span><a href="/maria-candida-indaiatuba/">Jardim Dona Maria Cândida</a><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a><a href="/parque-zarah-indaiatuba/">Parque Zarah</a><a href="/di-italia-indaiatuba/">Jardim Di Italia</a><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a><a href="/alpnach-indaiatuba/">Alpnach Residence</a><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a><a href="/ville-de-provence-indaiatuba/">Ville de Provence</a><a href="/alphaville-indaiatuba/">Alphaville Indaiatuba</a><a href="/lagos-de-helvetia-indaiatuba/">Lagos de Helvetia</a><a href="/porteira-de-ferro-indaiatuba/">Porteira de Ferro</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span><a href="/alphaville/">Empreendimentos Alphaville</a><a href="/casas-alphaville-dom-pedro-0-campinas/">Casas Alphaville Dom Pedro 0 (Campinas)</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dados e listas</span><a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a><a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z de loteamentos e bairros</a><a href="/imprensa-e-dados/">Dados abertos e imprensa</a></div>
     </div>
   </section>
   <!--/GEN:malha-->

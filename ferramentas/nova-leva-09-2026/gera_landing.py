@@ -15,7 +15,18 @@ Campos opcionais do config (quem não usa nenhum sai idêntico ao que saía ante
                       qualquer outra (condomínios fechados)
     endereco_schema   sem ele o schema sai sem streetAddress
     hero.credito      linha pequena no pé do hero (ex.: "Imagem ilustrativa")
-    nap_privacidade   true = link da Política de Privacidade na linha NAP do rodapé
+    hero.cta2         segundo botão do hero: {"msg": "...", "texto": "Agendar visita"} (molde "visita")
+    cta.texto         rótulo do botão do bloco final (padrão "Falar no WhatsApp")
+    cta.visita        segundo botão do bloco final: {"msg": "...", "texto": "Agendar visita"}
+    atualizado        data (AAAA-MM-DD) da última mudança de TEXTO da página; alimenta o "Atualizado em" da linha
+                      de procedência sob o H1 e o dateModified do WebPage. Sem ele, vale "data". Só muda quando
+                      o texto principal muda (não em ajuste de rodapé, malha ou link).
+    fonte_tabela      "tabela GPCI de set/2026", "relatório de estoque Dominium de 01/10/2026", "sem tabela pública
+                      em out/2026"... entra na linha de procedência: Atualizado em · fonte · Fabio Correia, CRECI
+    nap_privacidade   false = SEM o link da Política de Privacidade na linha NAP (desde 03/10/2026 toda página tem)
+
+Regra da casa (CHECKLIST 1b): o H1 sai "Nome — hero.sub", e hero.sub tem de terminar com "em Indaiatuba"
+(ou trazer a cidade); o gerador avisa quando a cidade não aparece no H1.
     secoes[].lista    lista de itens (ficha resumida) depois dos parágrafos
     secoes[].figuras  grupos de imagens dentro da seção: {"classe": "galeria" | "plantas" | "duo" | "faixa",
                       "ampliar": true (a imagem abre inteira em outra aba), "itens": [{arq, alt, w, h, leg, pos}]}
@@ -41,13 +52,25 @@ def bloco_modelo():
     ini = s.index('  <link rel="preconnect" href="https://fonts.googleapis.com">')
     fim = s.index('</head>')
     estilo = s[ini:fim]
+    # a tag GA4 com guarda de host (<script id="ga4">, fonte única em identidade.js) vem dentro
+    # do trecho de estilo do modelo; sem ela a landing nova nasceria sem medição
+    assert '<script id="ga4">' in estilo, 'o modelo perdeu a tag GA4 (<script id="ga4">): rode node identidade.js'
+    # o nó RealEstateAgent único do site (marcador GEN:entidade, escrito pelo identidade.js)
+    m = re.search(r'<!--GEN:entidade-->[\s\S]*?<!--/GEN:entidade-->', s)
+    assert m, 'o modelo não tem o bloco <!--GEN:entidade-->: rode node identidade.js'
+    entidade = m.group(0)
     svg = re.search(r'<svg viewBox="0 0 24 24" fill="white".*?</svg>', s, re.S).group(0)
     # o CSS e o JS do mapa sob demanda, se existirem no modelo
     js_mapa = ''
     m = re.search(r'<script>\n// o iframe do Google só nasce no clique.*?</script>', s, re.S)
     if m:
         js_mapa = m.group(0)
-    return estilo, svg, js_mapa
+    return estilo, svg, js_mapa, entidade
+
+
+# referência à entidade única (o nó completo está no bloco GEN:entidade de toda página)
+REF_IMOB = {"@type": "RealEstateAgent", "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+            "name": "Imobiliária Viv'América"}
 
 
 def jsonld(obj):
@@ -88,6 +111,12 @@ def tem_cidade(nome, cidade):
     return cidade.lower() in nome.lower()
 
 
+def data_br(iso):
+    """2026-10-10 -> 10/10/2026"""
+    a, m, d = iso.split('-')
+    return '%s/%s/%s' % (d, m, a)
+
+
 def lista(itens):
     if not itens:
         return ''
@@ -111,7 +140,10 @@ def figuras(grupos):
     return out
 
 
-# estilos dos campos opcionais; só entram na página que usa algum deles
+# estilos próprios do gerador, num <style id="landing-extra"> logo antes do </head>. Três partes:
+#   campos opcionais (breadcrumb, crédito, lista, figuras): só na página que usa algum deles
+#   ESTILO_NAV (o menu some até 1140 px): só na categoria alphaville
+#   ESTILO_CAB (marca e botão menores no celular): em TODA página
 ESTILO_EXTRA = '''  <style id="landing-extra">
     .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.72);margin:0 0 1rem;}
     .breadcrumb a{color:rgba(255,255,255,.85);text-decoration:none;}
@@ -204,7 +236,7 @@ def main(caminho_cfg):
     slug = c['slug']
     url = BASE + slug + '/'
     img = url + 'images/hero.jpg'
-    estilo, svg, js_mapa = bloco_modelo()
+    estilo, svg, js_mapa, entidade = bloco_modelo()
     cidade = c.get('cidade', 'Indaiatuba')
     alphaville = c['categoria'] == 'alphaville'
     cat_nome, cat_url = {'apartamentos': ('Apartamentos na planta', 'apartamentos-na-planta-indaiatuba/'),
@@ -239,8 +271,7 @@ def main(caminho_cfg):
                   "lowPrice": c['preco_min'], "highPrice": c['preco_max'], "description": c['oferta_desc']}
         if c.get('offer_count'):
             oferta['offerCount'] = c['offer_count']
-        oferta['offeredBy'] = {"@type": "RealEstateAgent", "name": "Imobiliária Viv'América",
-                               "url": "https://imoveisvivamerica.com.br", "telephone": "+5519989769457"}
+        oferta['offeredBy'] = dict(REF_IMOB)
         principal['offers'] = oferta
     if c.get('lazer'):
         principal['amenityFeature'] = [{"@type": "LocationFeatureSpecification", "name": x} for x in c['lazer']]
@@ -251,18 +282,12 @@ def main(caminho_cfg):
                   "brand": {"@type": "Brand", "name": c['marca']},
                   "offers": {"@type": "Offer", "url": url, "price": c['preco_min'], "priceCurrency": "BRL",
                              "availability": "https://schema.org/InStock",
-                             "seller": {"@type": "RealEstateAgent", "name": "Imobiliária Viv'América", "url": "https://imoveisvivamerica.com.br"}}})
+                             "seller": dict(REF_IMOB)}})
     s.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q['q'], "acceptedAnswer": {"@type": "Answer", "text": q['a']}} for q in c['faq']]})
-    s.append({"@context": "https://schema.org", "@type": "RealEstateAgent", "name": "Imobiliária Viv'América",
-              "alternateName": "Viv'América Imóveis", "description": "Imobiliária especializada em lançamentos imobiliários em Indaiatuba/SP.",
-              "url": "https://imoveisvivamerica.com.br", "telephone": "+5519989769457",
-              "email": "financeiro@imoveisvivamerica.com.br",
-              "address": {"@type": "PostalAddress", "addressLocality": "Indaiatuba", "addressRegion": "SP", "addressCountry": "BR"},
-              "areaServed": {"@type": "City", "name": "Indaiatuba", "containedInPlace": {"@type": "State", "name": "São Paulo"}},
-              "sameAs": [BASE]})
+    atualizado = c.get('atualizado', c['data'])
     s.append({"@context": "https://schema.org", "@type": "WebPage", "name": c['title'], "url": url, "inLanguage": "pt-BR",
-              "datePublished": c['data'], "dateModified": c['data'],
+              "datePublished": c['data'], "dateModified": atualizado,
               "isPartOf": {"@type": "WebSite", "name": "Lançamentos Viv'América", "url": BASE}})
 
     t, d = e(c['title']), e(c['description'])
@@ -278,12 +303,16 @@ def main(caminho_cfg):
            '  <meta name="twitter:image" content="%s">\n  <link rel="canonical" href="%s">\n' % (img, url),
            '  <link rel="icon" type="image/png" href="/favicon.png">\n\n']
     out += [jsonld(o) + '\n' for o in s]
+    out.append('  ' + entidade + '\n\n')
     out.append(estilo)
     if (alphaville or c['hero'].get('credito')
             or any(sc.get('lista') or sc.get('figuras') for sc in c['secoes'])):
-        # as regras do cabeçalho (menu até 1140 px, marca reduzida no celular) existem por causa da
-        # marca comprida das páginas da categoria alphaville; as outras ficam com o cabeçalho do modelo
-        out.append(ESTILO_EXTRA if alphaville else ESTILO_EXTRA.replace(ESTILO_NAV, '').replace(ESTILO_CAB, ''))
+        # o menu até 1140 px existe por causa da marca comprida das páginas da categoria alphaville
+        out.append(ESTILO_EXTRA if alphaville else ESTILO_EXTRA.replace(ESTILO_NAV, ''))
+    else:
+        # ESTILO_CAB vai em toda página: com o cabeçalho do modelo, marca de 16 ou 17 letras mais o botão
+        # "Quero a tabela" passam de 375 px e a página rola de lado no celular; não depende da categoria
+        out.append('  <style id="landing-extra">\n' + ESTILO_CAB + '  </style>\n')
     out.append('</head>\n<body>\n\n')
     out.append('<a href="%s"\n   class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">\n  %s\n</a>\n\n' % (wa(c['wa_flutuante']), svg))
     out.append('<header>\n  <div class="brand">%s<small>%s</small></div>\n' % (e(c['marca_topo'][0]), e(c['marca_topo'][1])))
@@ -296,9 +325,24 @@ def main(caminho_cfg):
     if alphaville:
         out.append('    <p class="breadcrumb"><a href="/">Início</a> › <a href="/%s">%s</a> › %s</p>\n' % (cat_url, e(cat_nome), e(c['nome'])))
     out.append('    <p class="eyebrow">%s</p>\n' % e(h['eyebrow']))
-    out.append('    <h1>%s<span>%s</span></h1>\n    <p class="lead">%s</p>\n' % (e(c['nome']), e(h['sub']), e(h['lead'])))
+    # H1 = "Nome — tipo em Indaiatuba" (CHECKLIST 1b); o travessão separa o nome do tipo. O espaço antes do
+    # <span> é para quem lê o HTML sem CSS (sem ele o texto sai "Nome— tipo"); na tela o span é um bloco
+    if not tem_cidade(c['nome'] + ' ' + h['sub'], cidade):
+        print('!! ATENÇÃO: o H1 não traz a cidade (%s): "%s — %s"' % (cidade, c['nome'], h['sub']))
+    out.append('    <h1>%s <span>— %s</span></h1>\n' % (e(c['nome']), e(h['sub'])))
+    # linha de procedência: data da última mudança de texto · fonte da tabela · quem responde
+    if not c.get('fonte_tabela'):
+        print('!! ATENÇÃO: config sem fonte_tabela; a linha de procedência sai sem a fonte')
+    out.append('    <p class="procedencia">Atualizado em %s%s · Fabio Correia, CRECI 303686-F</p>\n'
+               % (data_br(atualizado), (' · ' + e(c['fonte_tabela'])) if c.get('fonte_tabela') else ''))
+    out.append('    <p class="lead">%s</p>\n' % e(h['lead']))
     out.append('    <p class="preco">%s<small>%s</small></p>\n' % (e(h['preco']), e(h['preco_nota'])))
-    out.append('    <a class="btn" href="%s" target="_blank" rel="noopener">%s</a>\n' % (wa(h['cta_msg']), e(h['cta_texto'])))
+    if h.get('cta2'):
+        out.append('    <div class="hero-btns">\n      <a class="btn" href="%s" target="_blank" rel="noopener">%s</a>\n'
+                   '      <a class="btn btn-outline" href="%s" target="_blank" rel="noopener">%s</a>\n    </div>\n'
+                   % (wa(h['cta_msg']), e(h['cta_texto']), wa(h['cta2']['msg']), e(h['cta2']['texto'])))
+    else:
+        out.append('    <a class="btn" href="%s" target="_blank" rel="noopener">%s</a>\n' % (wa(h['cta_msg']), e(h['cta_texto'])))
     if h.get('credito'):
         out.append('    <p class="hero-credito">%s</p>\n' % e(h['credito']))
     out.append('  </div>\n</section>\n\n')
@@ -328,8 +372,15 @@ def main(caminho_cfg):
     faq = ''.join('    <details>\n      <summary>%s</summary>\n      <p>%s</p>\n    </details>\n' % (e(q['q']), e(q['a'])) for q in c['faq'])
     out.append('<section class="faq-geo">\n  <div class="container">\n    <p class="faq-label">Perguntas frequentes</p>\n'
                '    <h2 class="faq-h2">Perguntas frequentes sobre o %s</h2>\n%s  </div>\n</section>\n\n' % (e(c['nome']), faq))
-    out.append('<section class="cta-section" id="contato">\n  <h2>%s</h2>\n  <p>%s</p>\n  <a class="btn" href="%s" target="_blank" rel="noopener">Falar no WhatsApp</a>\n</section>\n\n'
-               % (e(c['cta']['h2']), e(c['cta']['p']), wa(c['cta']['msg'])))
+    cta = c['cta']
+    botao1 = '<a class="btn" href="%s" target="_blank" rel="noopener">%s</a>' % (wa(cta['msg']), e(cta.get('texto', 'Falar no WhatsApp')))
+    if cta.get('visita'):
+        botoes = ('  <div class="hero-btns cta-btns">\n    %s\n    <a class="btn btn-outline" href="%s" target="_blank" rel="noopener">%s</a>\n  </div>\n'
+                  % (botao1, wa(cta['visita']['msg']), e(cta['visita']['texto'])))
+    else:
+        botoes = '  %s\n' % botao1
+    out.append('<section class="cta-section" id="contato">\n  <h2>%s</h2>\n  <p>%s</p>\n%s</section>\n\n'
+               % (e(cta['h2']), e(cta['p']), botoes))
     out.append('<!--GEN:malha-->\n  <!--/GEN:malha-->\n\n')
     r = c['rodape']
     out.append('<footer>\n  <p class="brand-f">%s</p>\n  <p>\n    %s<br>\n' % (e(r['marca']), e(r['linha'])))
@@ -341,7 +392,7 @@ def main(caminho_cfg):
     out.append('  <p style="margin-top:12px;">\n    %s\n  </p>\n' % e(r['legal']))
     out.append('<p class="nap">Imobiliária Viv\'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · '
                '<a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a>%s</p>\n</footer>\n\n'
-               % (' · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a>' if c.get('nap_privacidade') else ''))
+               % (' · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a>' if c.get('nap_privacidade', True) else ''))
     if c.get('mapa') and js_mapa:
         js = js_mapa.replace("f.title = 'Mapa do Espaço Conceição, Rua Três Marias, 254, Indaiatuba';",
                              "f.title = this.dataset.titulo || 'Mapa';")

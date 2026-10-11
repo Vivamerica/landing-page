@@ -8,19 +8,36 @@
    - <title>, description, og/twitter e <!--GEN:h1--> da home: a home é a
      única dona do termo "lançamentos imobiliários indaiatuba" (decisão
      de 02/09/2026, opção B); o número no título/H1 nunca envelhece à mão
+   - <!--GEN:lede-->     1º parágrafo do hero como resposta direta (N com
+                         preço, apartamento e lote mais baratos, próximos)
    - <!--GEN:selos-->    selos do hero (avaliações, contagens, menores preços)
    - <!--GEN:obscard-->  card do Observatório (m² médio + altas do mês)
-   - contadores dos cabeçalhos de seção (N empreendimentos / loteamentos)
+   - <!--GEN:proximos--> seção "Próximos lançamentos" (APTOS com campo prox:
+                         situação informada pela incorporadora, com data ou
+                         "não divulgada" — nunca "em breve" sem fonte)
+   - <!--GEN:faq-barato--> e <!--GEN:faq-proximos--> respostas do FAQ;
+     o FAQPage JSON-LD da home é regerado dos <details> visíveis
+   - contadores dos cabeçalhos de seção (N empreendimentos em #apartamentos
+     e em #lotes; padrão que não casar vira aviso, não silêncio)
    - preço dentro de cada card, casado pelo slug: data-preco, o
-     "A partir de R$", o R$/m² e o preço no texto do botão de WhatsApp
+     "A partir de R$", o R$/m² e o preço no texto do botão de WhatsApp;
+     nos lotes, também a metragem ("A partir de N m²" e o m² da mensagem)
+   - escassez dos cards: "Últimas N unidades (data)" e "Ver as N unidades"
+     saem de est + estEm da fonte única (data da contagem, nunca o mês da
+     edição); nos hubs, sem estEm não sai selo
 
    E nos DOIS HUBS DE LOTE (loteamentos-em-indaiatuba/ e
    condominios-fechados-indaiatuba/), a partir de LOTES + EDICAO:
    - <title>, description, og/twitter, <!--GEN:h1--> com contagem viva
    - <!--GEN:hubgrid-->   grade de cards ordenada por R$/m² (loteamentos =
-                          os 8 lotes com selo aberto/fechado; condomínios =
-                          só t 'Cond. fechado')
-   - <!--GEN:faq-m2-->    resposta do m² (min/média/max com mês da tabela)
+                          dois grupos com H2 — abertos / fechados e
+                          condomínios de lotes —, cada um com sua grade;
+                          condomínios = os mesmos fechados do 2º grupo,
+                          condomínios de lotes e loteamentos fechados, em
+                          uma grade); cada card traz o mês da própria tabela
+   - <!--GEN:faq-m2-->    resposta do m² (min/média/max, com o mês da tabela
+                          de cada empreendimento citado)
+   - <!--GEN:faq-mudou--> exemplo de variação de preço do mês (MOVIMENTOS)
    - <!--GEN:destaque-->  preço de destaque (Terras de San Marino / menor
                           condomínio) — um valor só, o da fonte única
    - <!--GEN:atualizado-->"Atualizado em mês/ano" + dateModified do Article
@@ -69,19 +86,28 @@ const mil = n => n >= 1e6
   : 'R$ ' + Math.round(n / 1000) + ' mil';
 const MES_ABREV = { '01': 'jan', '02': 'fev', '03': 'mar', '04': 'abr', '05': 'mai', '06': 'jun',
   '07': 'jul', '08': 'ago', '09': 'set', '10': 'out', '11': 'nov', '12': 'dez' };
-const mesAbrev = MES_ABREV[EDICAO.iso.slice(5, 7)] + '/' + EDICAO.ano;   // ago/2026
-const mesLongo = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;           // agosto/2026
+const mesAbrev = MES_ABREV[EDICAO.iso.slice(5, 7)] + '/' + EDICAO.ano;   // out/2026
+const mesLongo = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;           // outubro/2026
+const mesExtenso = EDICAO.mes.toLowerCase() + ' de ' + EDICAO.ano;      // outubro de 2026
+const hojeBR = EDICAO.lastmod.split('-').reverse().join('/');           // 10/10/2026
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const todos = APTOS.concat(LOTES);
 const total = todos.length;
 const construtoras = new Set(todos.map(e => e.c.split(' · ')[0].trim())).size;
 const comPreco = todos.filter(e => e.p);
 const menor = Math.min(...comPreco.map(e => e.p));
-const menorApto = Math.min(...APTOS.filter(e => e.p).map(e => e.p));
-const menorLote = Math.min(...LOTES.map(e => e.p));
+const aptoMin = APTOS.filter(e => e.p).reduce((a, b) => a.p < b.p ? a : b);
+const aptoMax = APTOS.filter(e => e.p).reduce((a, b) => a.p > b.p ? a : b);
+const loteMin = LOTES.reduce((a, b) => a.p < b.p ? a : b);
+const menorApto = aptoMin.p;
+const menorLote = loteMin.p;
 const m2s = LOTES.map(l => l.p / l.m2);
 const m2Medio = Math.round(m2s.reduce((a, b) => a + b, 0) / m2s.length);
 const altas = MOVIMENTOS.filter(m => m.para > m.de).length;
+const proximos = APTOS.filter(e => e.prox);
+const lista = arr => arr.length <= 1 ? arr.join('') : arr.slice(0, -1).join(', ') + ' e ' + arr[arr.length - 1];
+const WA = '5519989769457';
+const waInteresse = n => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Olá! Tenho interesse no ' + n + ' em Indaiatuba. Pode me enviar mais informações?');
 
 let h = fs.readFileSync(R + 'index.html', 'utf8');
 let feitos = [], falhas = [];
@@ -89,7 +115,7 @@ let feitos = [], falhas = [];
 // FAQ do m², seção de regiões). O dateModified do Article usa a maior entre
 // esta data e EDICAO.lastmod — nunca a data do build, para não "atualizar"
 // sem mudar nada. Mudou o hub de verdade? Troque aqui e no sitemap.
-const HUBS_ALTERADOS_EM = '2026-09-02';
+const HUBS_ALTERADOS_EM = '2026-10-11';   // 11/10: o hub de condomínios passa a listar também os loteamentos fechados; mês da tabela em cada card; H1 novos
 
 // ─── 0. metadados vivos: title/description/og/twitter/H1 ───
 // Funções compartilhadas com os hubs de lote (abaixo). O title tem teto de
@@ -115,7 +141,7 @@ function genEm(html, marca, conteudo) {
 }
 
 const HOME_TITLE = `Lançamentos imobiliários em Indaiatuba ${EDICAO.ano}: ${comPreco.length} com preço`;
-const HOME_DESC = `Os ${total} lançamentos de Indaiatuba SP com preço na tela, sem cadastro: apartamentos a partir de ${mil(menorApto)} e lotes a partir de ${mil(menorLote)} (tabela ${mesAbrev}).`;
+const HOME_DESC = `${total} lançamentos em Indaiatuba SP, ${comPreco.length} com preço na tela: de ${mil(menorLote)} (lote) a ${mil(aptoMax.p)} (apartamento), sem cadastro. Tabela atualizada em ${hojeBR}.`;
 h = metaVivo(h, 'home', HOME_TITLE, HOME_DESC);
 feitos.push('title/description');
 
@@ -127,7 +153,10 @@ function gen(marca, conteudo) {
   feitos.push(marca);
 }
 
-gen('h1', `Lançamentos imobiliários em Indaiatuba: ${total} empreendimentos, ${comPreco.length} com preço aberto`);
+gen('h1', `Lançamentos imobiliários em Indaiatuba: ${total} empreendimentos, ${comPreco.length} com preço aberto (edição de ${mesAbrev})`);
+
+const mcmvApto = /MCMV/.test(aptoMin.t) ? ' — Minha Casa Minha Vida (MCMV)' + (/FGTS/.test(aptoMin.t) ? ', com uso do Fundo de Garantia do Tempo de Serviço (FGTS)' : '') : '';
+gen('lede', `<strong>Resposta direta:</strong> em ${mesExtenso}, a Imobiliária Viv'América representa ${total} lançamentos em Indaiatuba, ${comPreco.length} com preço aberto na tabela. O apartamento mais barato é o ${esc(aptoMin.n)} (${esc(aptoMin.c)}), a partir de ${brl(aptoMin.p)}${mcmvApto}; o lote mais barato é o do ${esc(loteMin.n)} (${esc(loteMin.c)}), a partir de ${brl(loteMin.p)} por ${loteMin.m2} m². Os ${proximos.length} <a href="#proximos-lancamentos" style="color:#C9A227">próximos lançamentos</a>, ainda sem tabela definitiva, estão listados abaixo. Apartamentos prontos de revenda ficam no <a href="https://imoveisvivamerica.com.br/site/venda/indaiatuba/apartamentos" style="color:#C9A227">site principal</a>.`);
 
 gen('selos', `
           <span class="selo-h"><b>★ ${AVAL.nota}</b> no Google · ${AVAL.n} avaliações</span>
@@ -136,17 +165,75 @@ gen('selos', `
         `);
 
 gen('obscard', `
-        <p class="oc-t">Observatório · ${EDICAO.mes.toLowerCase()}/${EDICAO.ano}</p>
+        <p class="oc-t">Observatório · ${mesLongo}</p>
         <p class="oc-m2">${brl(m2Medio)}<small>/m² médio do lote</small></p>
         <p class="oc-linha"><b>${altas} empreendimento${altas === 1 ? '' : 's'}</b> ${altas === 1 ? 'subiu' : 'subiram'} o preço de entrada neste mês</p>
         <a href="/precos-lancamentos-indaiatuba/">Ver a tabela completa →</a>
       `);
 
+// ─── 1b. próximos lançamentos: só o que a incorporadora informou, com data ou "não divulgada" ───
+gen('proximos', `
+      <h2 id="proximos-h2">Próximos lançamentos em Indaiatuba (sem tabela definitiva)</h2>
+      <p class="proximos-sub">Os ${proximos.length} empreendimentos que a Viv'América representa e ainda não têm tabela definitiva, com o que cada incorporadora informou até ${hojeBR}. Quando não há data divulgada, dizemos isso. Assim que a tabela sair, o preço entra na <a href="/precos-lancamentos-indaiatuba/">tabela de preços do mês</a>.</p>
+      <div class="tabela-wrap">
+        <table>
+          <caption>Próximos lançamentos em Indaiatuba — situação informada pelas incorporadoras, edição de ${mesLongo} (${hojeBR}).</caption>
+          <thead><tr><th>Empreendimento</th><th>Incorporadora</th><th>Situação em ${mesAbrev}</th><th>Preço</th><th>Contato</th></tr></thead>
+          <tbody>${proximos.map(e => `
+            <tr>
+              <td><a class="nome" href="/${e.slug}/">${esc(e.n)}</a><br><small>${esc(e.s)}</small></td>
+              <td data-l="Incorporadora">${esc(e.c)}</td>
+              <td data-l="Situação em ${mesAbrev}">${esc(e.prox)}</td>
+              <td data-l="Preço">${e.p ? 'a partir de <strong>' + brl(e.p) + '</strong> (pré-lançamento)' : '<strong>sob consulta</strong>'}</td>
+              <td><a class="wa" href="${waInteresse(e.n)}" target="_blank" rel="noopener" aria-label="Pedir informações sobre ${esc(e.n)} no WhatsApp">Pedir informações</a></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    `);
+
+// ─── 1c. FAQ da home: respostas geradas + FAQPage regerado dos <details> visíveis ───
+gen('faq-barato', `Entre os lançamentos representados pela Imobiliária Viv'América em ${mesExtenso}, o lote mais barato é o do ${esc(loteMin.n)} (${esc(loteMin.c)}), a partir de ${brl(loteMin.p)} por ${loteMin.m2} m², e o apartamento mais barato é o ${esc(aptoMin.n)} (${esc(aptoMin.c)}), a partir de ${brl(aptoMin.p)}${/MCMV/.test(aptoMin.t) ? ', enquadrado no Minha Casa Minha Vida' : ''}, em Indaiatuba/SP. Os ${comPreco.length} preços estão abertos na tabela de ${mesLongo} do Observatório de Preços.`);
+gen('faq-proximos', `Em ${mesExtenso}, os próximos lançamentos representados pela Viv'América em Indaiatuba são: ${proximos.map(e => esc(e.n) + ' (' + esc(e.c) + ') — ' + esc(e.prox)).join('; ')}. A data de lançamento, quando a incorporadora informa, está indicada em cada um; a tabela entra nesta página assim que for liberada.`);
+const mcmv = APTOS.filter(e => e.p && /MCMV/.test(e.t)).sort((a, b) => a.p - b.p);
+// mês da tabela de CADA empreendimento (campo tab da fonte única). O mês da edição
+// (mesAbrev/mesLongo) dá nome à edição; nunca vira mês da tabela nem do estoque de um produto.
+const mesDe = iso => MES_ABREV[iso.slice(5, 7)] + '/' + iso.slice(0, 4);   // 2026-09 -> set/2026
+const tabDe = e => e.tab ? 'tabela de ' + mesDe(e.tab) : 'tabela de pré-lançamento';
+gen('faq-mcmv', `Sim. Em ${mesExtenso} há ${mcmv.length} apartamentos enquadrados no MCMV (Minha Casa Minha Vida) com preço aberto em Indaiatuba: ${lista(mcmv.map(e => esc(e.n) + ' (' + esc(e.c) + ' — ' + esc(e.s) + ' — a partir de ' + brl(e.p) + ', ' + tabDe(e) + ')'))}. Todos permitem financiamento pela Caixa e uso do FGTS (Fundo de Garantia do Tempo de Serviço) como entrada ou abatimento, conforme as regras do Fundo, a renda familiar e a análise de crédito do banco. Preço e estoque são os da tabela de cada construtora, na data indicada em cada um.`);
+
+// ─── 1d. ItemList JSON-LD da home gerado da fonte única (nome, tipo, construtora, preço e mês da tabela) ───
+const itemList = JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'ItemList',
+  name: 'Lançamentos imobiliários em Indaiatuba SP',
+  description: `Empreendimentos representados pela Imobiliária Viv'América em Indaiatuba: apartamentos MCMV, alto padrão, condomínios fechados e loteamentos. Edição de ${mesLongo} do Observatório de Preços.`,
+  numberOfItems: total,
+  itemListElement: APTOS.filter(e => e.p).sort((a, b) => a.p - b.p).concat(APTOS.filter(e => !e.p), LOTES.slice().sort((a, b) => a.p - b.p)).map((e, i) => ({
+    '@type': 'ListItem', position: i + 1,
+    name: `${e.n} — ${LOTES.includes(e) ? tipoLoteSchema(e) : 'apartamento'} ${e.c} em Indaiatuba · ${e.s}${e.p ? ' · a partir de ' + brl(e.p) + ' (' + tabDe(e) + ')' : ' · tabela sob consulta'}`,
+    url: 'https://lancamentos.imoveisvivamerica.com.br/' + e.slug + '/',
+  })),
+});
+function tipoLoteSchema(e) { return /^Loteamento fechado/i.test(e.s) ? 'loteamento fechado' : e.t === 'Cond. fechado' ? 'condomínio fechado de lotes' : /fechado/i.test(e.s) ? 'loteamento fechado' : 'loteamento aberto'; }
+let itemListOk = false;
+h = h.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (bloco, corpo) => {
+  let o; try { o = JSON.parse(corpo); } catch (e) { return bloco; }
+  if (!o || o['@type'] !== 'ItemList') return bloco;
+  itemListOk = true;
+  return '<script type="application/ld+json">\n  ' + itemList + '\n  </script>';
+});
+if (itemListOk) feitos.push('ItemList (' + total + ' itens)'); else falhas.push('ItemList');
+
 // ─── 2. contadores das seções ───
-h = h.replace(/<span class="cat-count">\d+ empreendimentos · do menor ao maior investimento<\/span>/,
-  `<span class="cat-count">${APTOS.length} empreendimentos · do menor ao maior investimento</span>`);
-h = h.replace(/<span class="cat-count">\d+ loteamentos? · do menor ao maior investimento<\/span>/,
-  `<span class="cat-count">${LOTES.length} loteamentos · do menor ao maior investimento</span>`);
+// Cada contador é casado pelo id do cabeçalho da sua seção, aceite o texto
+// "empreendimentos" ou "loteamentos"; padrão que não casa entra em "nao achei".
+const contador = (id, n) => {
+  const re = new RegExp('(<div class="cat-header" id="' + id + '">[\\s\\S]{0,300}?<span class="cat-count">)\\d+( (?:empreendimentos|loteamentos?) · )');
+  if (!re.test(h)) { falhas.push('contador #' + id); return; }
+  h = h.replace(re, (m0, antes, depois) => antes + n + ' empreendimentos · ');
+};
+contador('apartamentos', APTOS.length);
+contador('lotes', LOTES.length);
 feitos.push('contadores');
 
 // ─── 3. preço dentro de cada card, casado pelo slug ───
@@ -167,15 +254,26 @@ todos.forEach(e => {
       '<strong class="pm2">' + brl(Math.round(e.p / e.m2)) + '/m²</strong>');
     card = card.replace(/data-pm2="\d+"/, 'data-pm2="' + Math.round(e.p / e.m2) + '"');
   }
-  // preco dentro do texto do WhatsApp (URL-encoded: R%24%20 + numero com %2E? nao — usa . literal codificado como .)
+  // preco dentro do texto do WhatsApp (URL-encoded: R%24%20 + numero com . literal)
   card = card.replace(/de%20R%24%20[\d.]+/g, 'de%20R%24%20' + e.p.toLocaleString('pt-BR'));
+  // metragem do menor lote (m2 da fonte única): "A partir de N m²" do card e o ", N m²"
+  // da mensagem de WhatsApp. Só nos lotes e só onde o card usa esse formato.
+  if (e.m2 && LOTES.includes(e)) {
+    const m2txt = e.m2.toLocaleString('pt-BR');
+    card = card.replace(/(<p class="card-meta">A partir de )[\d.,]+( m²)/, '$1' + m2txt + '$2');
+    card = card.replace(/(de%20R%24%20[\d.]+%2C%20)[\d.]+(?:%2C\d+)?(%20m%C2%B2)/g, '$1' + encodeURIComponent(m2txt) + '$2');
+  }
 
   h = h.slice(0, ini) + card + h.slice(fim);
   precosOk++;
 });
 feitos.push('precos em ' + precosOk + ' cards');
 
-// ─── 4. estoque: "Últimas N" sincronizado nos cards da home ───
+// ─── 4. estoque: "Últimas N unidades (data)" sincronizado nos cards da home ───
+// O número vem de est e a data de estEm (data da contagem na fonte única), nunca do
+// mês da edição. O botão "Ver as N unidades" acompanha o mesmo número.
+const semDataEst = todos.filter(e => typeof e.est === 'number' && !e.estEm);
+if (semDataEst.length) falhas.push('estEm (data da contagem) de ' + semDataEst.map(e => e.n).join(', '));
 let estHome = 0;
 todos.forEach(e => {
   if (typeof e.est !== 'number' || !e.slug) return;
@@ -184,7 +282,10 @@ todos.forEach(e => {
   const ini = h.lastIndexOf('<article', i);
   const fim = h.indexOf('</article>', i);
   let card = h.slice(ini, fim);
-  const novo = card.replace(/Últimas \d+(\s*·| Unidades| unidades)/, 'Últimas ' + e.est + '$1');
+  const novo = card
+    .replace(/Últimas \d+(?:( [Uu]nidades)|(?=\s*[·(<]))( \([^)]*\))?/, (m0, un, data) =>
+      'Últimas ' + e.est + (un || ' unidades') + (e.estEm ? ' (' + e.estEm + ')' : (data || '')))
+    .replace(/(class="btn-card">Ver as )\d+( unidades<)/, '$1' + e.est + '$2');
   if (novo !== card) { h = h.slice(0, ini) + novo + h.slice(fim); estHome++; }
 });
 feitos.push('estoque em ' + estHome + ' badges da home');
@@ -233,28 +334,15 @@ todos.forEach(e => {
 });
 feitos.push('JSON-LD (sem priceValidUntil, brand Brand) em ' + ldLand + ' landings');
 
-fs.writeFileSync(R + 'index.html', h, 'utf8');
-
-// ─── 6. hubs de lote gerados da fonte única ───
-// (o antigo "hubgrid" alimentava /lancamentos-indaiatuba/, que virou 301
-//  para a home em 02/09/2026; a página de apartamentos na planta é gerada
-//  inteira pelo gera-apartamentos.js)
-const porM2 = arr => arr.slice().sort((x, y) => (x.p / x.m2) - (y.p / y.m2));
-const tipoLote = e => e.t === 'Cond. fechado' ? 'Condomínio fechado' : 'Loteamento aberto';
-const seloEst = e => (typeof e.est === 'number' && e.est <= 60)
-  ? ' · últimas ' + e.est + ' unidades (' + mesAbrev + ')' : '';
-const m2Stats = arr => {
-  const v = arr.map(l => l.p / l.m2);
-  const min = arr.reduce((a, b) => a.p / a.m2 < b.p / b.m2 ? a : b);
-  const max = arr.reduce((a, b) => a.p / a.m2 > b.p / b.m2 ? a : b);
-  return { min, max, medio: Math.round(v.reduce((a, b) => a + b, 0) / v.length) };
-};
+// ─── FAQPage regerado do que a pessoa lê (home: <details>; hubs: .faq-item) ───
 const faqDeVisivel = html => {
-  // regera o FAQPage a partir dos .faq-item (h3 + p) que a pessoa lê
+  const limpa = s => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
   const itens = [];
-  const re = /<div class="faq-item">\s*<h3>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/g;
+  const reItem = /<div class="faq-item">\s*<h3>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/g;
+  const reDet = /<details>\s*<summary>([\s\S]*?)<\/summary>\s*<p>([\s\S]*?)<\/p>\s*<\/details>/g;
   let m;
-  while ((m = re.exec(html))) itens.push({ q: m[1].replace(/<[^>]+>/g, '').trim(), a: m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() });
+  while ((m = reItem.exec(html))) itens.push({ q: limpa(m[1]), a: limpa(m[2]) });
+  while ((m = reDet.exec(html))) itens.push({ q: limpa(m[1]), a: limpa(m[2]) });
   if (!itens.length) return html;
   const novo = JSON.stringify({
     '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -265,6 +353,38 @@ const faqDeVisivel = html => {
     return (o && o['@type'] === 'FAQPage') ? '<script type="application/ld+json">\n  ' + novo + '\n  </script>' : bloco;
   });
 };
+h = faqDeVisivel(h);
+feitos.push('FAQPage da home regerado dos <details>');
+
+fs.writeFileSync(R + 'index.html', h, 'utf8');
+
+// ─── 6. hubs de lote gerados da fonte única ───
+// (o antigo "hubgrid" alimentava /lancamentos-indaiatuba/, que virou 301
+//  para a home em 02/09/2026; a página de apartamentos na planta é gerada
+//  inteira pelo gera-apartamentos.js)
+const porM2 = arr => arr.slice().sort((x, y) => (x.p / x.m2) - (y.p / y.m2));
+// rótulo pelo que a landing diz: "Loteamento fechado" no início do s vence o t
+const tipoLote = e => /^Loteamento fechado/i.test(e.s) ? 'Loteamento fechado'
+  : e.t === 'Cond. fechado' ? 'Condomínio fechado'
+  : /fechado/i.test(e.s) ? 'Loteamento fechado' : 'Loteamento aberto';
+// selo de escassez só com a data da contagem (estEm da fonte única); sem data, sem selo
+const seloEst = e => (typeof e.est === 'number' && e.est <= 60 && e.estEm)
+  ? ' · últimas ' + e.est + ' unidades (' + esc(e.estEm) + ')' : '';
+// mês da tabela de cada lote, impresso no card e ao lado de cada preço citado no texto
+// (no card, só quando as specs ainda não dizem de que tabela é o dado)
+const tabLote = e => (e.tab && !/tabela de /i.test(e.s || '')) ? ' · tabela de ' + mesDe(e.tab) : '';
+const virgTab = e => e.tab ? ', tabela de ' + mesDe(e.tab) : '';
+const comTab = e => esc(e.n) + virgTab(e);
+// as specs já dizem a metragem dos lotes? então o card não repete "lotes a partir de N m²"
+// (N é o lote de menor preço, que pode não ser o menor lote do empreendimento)
+const areaNoS = e => /lotes?\s+(?:de|a partir de)\s+[\d.,]+/i.test(e.s || '');
+const m2De = e => brl(Math.round(e.p / e.m2));
+const m2Stats = arr => {
+  const v = arr.map(l => l.p / l.m2);
+  const min = arr.reduce((a, b) => a.p / a.m2 < b.p / b.m2 ? a : b);
+  const max = arr.reduce((a, b) => a.p / a.m2 > b.p / b.m2 ? a : b);
+  return { min, max, medio: Math.round(v.reduce((a, b) => a + b, 0) / v.length) };
+};
 
 // card no estilo de cada hub (classes CSS já existentes em cada página)
 const cardLoteamentos = e => `
@@ -273,7 +393,7 @@ const cardLoteamentos = e => `
         <div class="listing-card-body">
           <p class="listing-card-badge">${tipoLote(e)}${seloEst(e)}</p>
           <h3>${esc(e.n)}</h3>
-          <p>${esc(e.c)} · ${esc(e.s)}</p>
+          <p>${esc(e.c)} · ${esc(e.s)}${tabLote(e)}</p>
           <div class="listing-card-footer">
             <span class="listing-card-price">A partir de ${brl(e.p)} · ${brl(Math.round(e.p / e.m2))}/m²</span>
             <span class="listing-card-cta">Ver detalhes →</span>
@@ -282,34 +402,59 @@ const cardLoteamentos = e => `
       </a>`;
 const cardCondominios = e => `
       <a href="/${e.slug}/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/${e.img}" width="800" height="450" alt="${esc(e.n)} — condomínio fechado em Indaiatuba">
+        <img loading="lazy" decoding="async" src="/${e.img}" width="800" height="450" alt="${esc(e.n)} — ${tipoLote(e).toLowerCase()} em Indaiatuba">
         <div class="card-body">
           <span class="card-badge">${tipoLote(e)}${seloEst(e)}</span>
           <h3>${esc(e.n)}</h3>
-          <p>${esc(e.c)} · ${esc(e.s)} · lotes a partir de ${e.m2} m²</p>
+          <p>${esc(e.c)} · ${esc(e.s)}${areaNoS(e) ? '' : ' · lotes a partir de ' + e.m2 + ' m²'}${tabLote(e)}</p>
           <div class="card-price">A partir de ${brl(e.p)} · ${brl(Math.round(e.p / e.m2))}/m²</div>
           <span class="btn-card">Ver detalhes</span>
         </div>
       </a>`;
 
-const conds = LOTES.filter(e => e.t === 'Cond. fechado');
+const abertos = LOTES.filter(e => tipoLote(e) === 'Loteamento aberto');
+const fechados = LOTES.filter(e => tipoLote(e) !== 'Loteamento aberto');
+// Hub de condomínios: todos os fechados, isto é, condomínios de lotes E loteamentos
+// fechados, cada card com o rótulo que a loteadora usa. Texto com contagem diz os
+// dois nomes ("condomínios e loteamentos fechados"); o title fica sem contagem.
+const conds = fechados;
 const terras = LOTES.find(e => e.slug === 'terras-de-san-marino-indaiatuba');
-const sL = m2Stats(LOTES), sC = m2Stats(conds);
+const sL = m2Stats(LOTES), sC = m2Stats(conds), sA = m2Stats(abertos), sF = m2Stats(fechados);
+// exemplo de variação do mês para o FAQ "valorizar": só lotes, só o que está em MOVIMENTOS
+const movLotes = MOVIMENTOS.filter(m => LOTES.some(l => l.n === m.n));
+const faqMudou = 'Não prometemos valorização nem prazo. O que publicamos é o preço de cada loteamento, aberto na tabela do Observatório de Preços e atualizado mensalmente. '
+  + (movLotes.length
+    ? 'Na edição de ' + mesLongo + ', por exemplo, ' + lista(movLotes.map(m => m.n + ' ' + (m.para > m.de ? 'passou' : 'caiu') + ' de ' + brl(m.de) + ' para ' + brl(m.para) + ' (' + m.causa + ')')) + '. '
+    : 'Na edição de ' + mesLongo + ' nenhum loteamento mudou o preço de entrada entre duas tabelas oficiais. ')
+  + 'Compare antes de decidir.';
 const HUBS = [
   {
-    arq: 'loteamentos-em-indaiatuba/index.html', lista: porM2(LOTES), card: cardLoteamentos,
-    title: `Lotes e Loteamentos em Indaiatuba ${EDICAO.ano}: ${LOTES.length} com preço aberto`,
-    desc: `Os ${LOTES.length} loteamentos e condomínios de lotes de Indaiatuba SP com preço aberto: terrenos a partir de ${mil(menorLote)}, m² de ${brl(Math.round(sL.min.p / sL.min.m2))} a ${brl(Math.round(sL.max.p / sL.max.m2))} (tabela ${mesAbrev}).`,
-    h1: `Loteamentos e terrenos em Indaiatuba: ${LOTES.length} com preço aberto`,
-    faqM2: `Nos ${LOTES.length} loteamentos em lançamento monitorados no Observatório de Preços (tabela de ${mesLongo}), o m² de lote vai de ${brl(Math.round(sL.min.p / sL.min.m2))} (${sL.min.n}, ${tipoLote(sL.min).toLowerCase()}) a ${brl(Math.round(sL.max.p / sL.max.m2))} (${sL.max.n}, ${tipoLote(sL.max).toLowerCase()}), com média de ${brl(sL.medio)}/m². Loteamento aberto fica na faixa de baixo; condomínio fechado com portaria e lazer, na de cima. O preço é o "a partir de" da menor unidade na data da tabela.`,
+    arq: 'loteamentos-em-indaiatuba/index.html',
+    title: `Loteamentos em Indaiatuba: ${LOTES.length} lançamentos desde ${mil(menorLote)}`,
+    desc: `Os ${LOTES.length} loteamentos e condomínios de lotes em lançamento em Indaiatuba, com preço aberto: lote desde ${mil(menorLote)}, m² de ${brl(Math.round(sL.min.p / sL.min.m2))} a ${brl(Math.round(sL.max.p / sL.max.m2))} (edição ${mesAbrev}).`,
+    h1: `Loteamentos em Indaiatuba: ${LOTES.length} com lote a partir de ${mil(menorLote)}${loteMin.tab ? ' (' + mesDe(loteMin.tab) + ')' : ''}`,
+    grid: `
+    <h2 id="loteamentos-abertos">Loteamentos abertos em Indaiatuba: ${abertos.length} com preço aberto</h2>
+    <p style="color:var(--gray);line-height:1.8;">Entre os lançamentos que representamos, o m² dos loteamentos abertos vai de ${m2De(sA.min)} (${comTab(sA.min)}) a ${m2De(sA.max)} (${comTab(sA.max)}).</p>
+    <div class="listings-grid">${porM2(abertos).map(cardLoteamentos).join('')}
+    </div>
+    <h2 id="loteamentos-fechados">Loteamentos fechados e condomínios de lotes em Indaiatuba: ${fechados.length} com preço aberto</h2>
+    <p style="color:var(--gray);line-height:1.8;">Portaria, ruas de uso restrito e lazer interno já no preço: o m² vai de ${m2De(sF.min)} (${comTab(sF.min)}) a ${m2De(sF.max)} (${comTab(sF.max)}). O rótulo de cada card é o que a própria loteadora usa (loteamento fechado ou condomínio de lotes).</p>
+    <div class="listings-grid">${porM2(fechados).map(cardLoteamentos).join('')}
+    </div>
+    `,
+    faqM2: `Nos ${LOTES.length} loteamentos em lançamento monitorados no Observatório de Preços (edição de ${mesLongo}), o m² de lote vai de ${m2De(sL.min)} (${sL.min.n}, ${tipoLote(sL.min).toLowerCase()}${virgTab(sL.min)}) a ${m2De(sL.max)} (${sL.max.n}, ${tipoLote(sL.max).toLowerCase()}${virgTab(sL.max)}), com média de ${brl(sL.medio)}/m². Nos ${abertos.length} loteamentos abertos, o m² vai de ${m2De(sA.min)} a ${m2De(sA.max)}; nos ${fechados.length} loteamentos fechados e condomínios de lotes, com portaria e lazer, de ${m2De(sF.min)} a ${m2De(sF.max)}. O preço é o "a partir de" da menor unidade na data da tabela de cada um.`,
+    faqMudou,
     destaque: brl(terras ? terras.p : menorLote),
   },
   {
-    arq: 'condominios-fechados-indaiatuba/index.html', lista: porM2(conds), card: cardCondominios,
-    title: `Condomínios Fechados em Indaiatuba ${EDICAO.ano}: ${conds.length} com preço aberto`,
-    desc: `Os ${conds.length} condomínios fechados de lotes de Indaiatuba SP com preço aberto: terrenos a partir de ${mil(Math.min(...conds.map(e => e.p)))}, m² de ${brl(Math.round(sC.min.p / sC.min.m2))} a ${brl(Math.round(sC.max.p / sC.max.m2))} (tabela ${mesAbrev}).`,
-    h1: `Condomínios fechados de lotes em Indaiatuba: ${conds.length} com preço aberto`,
-    faqM2: `Nos ${conds.length} condomínios fechados em lançamento monitorados no Observatório de Preços (tabela de ${mesLongo}), o m² de lote vai de ${brl(Math.round(sC.min.p / sC.min.m2))} (${sC.min.n}) a ${brl(Math.round(sC.max.p / sC.max.m2))} (${sC.max.n}), com média de ${brl(sC.medio)}/m² — já com portaria, ruas privativas e lazer interno no preço. O preço é o "a partir de" da menor unidade na data da tabela.`,
+    arq: 'condominios-fechados-indaiatuba/index.html',
+    title: `Condomínios Fechados em Indaiatuba ${EDICAO.ano}: lotes com preço`,
+    desc: `Os ${conds.length} condomínios e loteamentos fechados de Indaiatuba SP com preço aberto: terrenos a partir de ${mil(Math.min(...conds.map(e => e.p)))}, m² de ${m2De(sC.min)} a ${m2De(sC.max)} (edição ${mesAbrev}).`,
+    h1: `Condomínios e loteamentos fechados em Indaiatuba: ${conds.length} com preço aberto`,
+    grid: porM2(conds).map(cardCondominios).join('') + '\n    ',
+    faqM2: `Nos ${conds.length} condomínios e loteamentos fechados em lançamento monitorados no Observatório de Preços (edição de ${mesLongo}), o m² de lote vai de ${m2De(sC.min)} (${comTab(sC.min)}) a ${m2De(sC.max)} (${comTab(sC.max)}), com média de ${brl(sC.medio)}/m², já com portaria e lazer interno no preço. O preço é o "a partir de" da menor unidade na data da tabela de cada um.`,
+    faqMudou,
     destaque: brl(Math.min(...conds.map(e => e.p))),
   },
 ];
@@ -320,16 +465,17 @@ for (const hub of HUBS) {
   const antes = s;
   s = metaVivo(s, hub.arq, hub.title, hub.desc);
   const partes = [];
-  const g = (marca, conteudo) => { const r = genEm(s, marca, conteudo); if (r === null) falhas.push(hub.arq + ' ' + marca); else { s = r; partes.push(marca); } };
+  const g = (marca, conteudo, opcional) => { const r = genEm(s, marca, conteudo); if (r === null) { if (!opcional) falhas.push(hub.arq + ' ' + marca); } else { s = r; partes.push(marca); } };
   g('h1', esc(hub.h1));
-  g('hubgrid', hub.lista.map(hub.card).join('') + '\n    ');
+  g('hubgrid', hub.grid);
   g('faq-m2', hub.faqM2);
+  g('faq-mudou', hub.faqMudou, true);   // só o hub de loteamentos tem o marcador
   g('destaque', hub.destaque);
   g('atualizado', 'Atualizado em ' + mesLongo);
   s = s.replace(/"dateModified":\s*"\d{4}-\d{2}-\d{2}"/, '"dateModified": "' + (HUBS_ALTERADOS_EM > EDICAO.lastmod ? HUBS_ALTERADOS_EM : EDICAO.lastmod) + '"');
   s = faqDeVisivel(s);
   if (s !== antes) fs.writeFileSync(arq, s, 'utf8');
-  feitos.push(hub.arq.split('/')[0] + ' (' + hub.lista.length + ' cards; ' + partes.join(',') + ')');
+  feitos.push(hub.arq.split('/')[0] + ' (' + partes.join(',') + ')');
 }
 if (fs.existsSync(R + 'lancamentos-indaiatuba')) {
   // Guarda dura: o hub virou 301 para a home (opção B, 02/09/2026). Se a pasta
@@ -340,4 +486,4 @@ if (fs.existsSync(R + 'lancamentos-indaiatuba')) {
 }
 console.log('gera-home: ' + feitos.join(' · '));
 if (falhas.length) console.log('ATENCAO, nao achei: ' + falhas.join(', '));
-console.log('selos: ' + total + ' lanc / ' + construtoras + ' construtoras / menor ' + brl(menor) + ' / m2 medio ' + brl(m2Medio) + ' / ' + altas + ' altas');
+console.log('selos: ' + total + ' lanc / ' + construtoras + ' construtoras / menor ' + brl(menor) + ' / m2 medio ' + brl(m2Medio) + ' / ' + altas + ' altas / proximos: ' + proximos.map(e => e.n).join(', '));

@@ -2,26 +2,65 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa de Lotes à Venda em Indaiatuba com Preço | Viv'América</title>
   <meta name="description" content="Lotes à venda em Indaiatuba no mapa, quadra a quadra: metragem, preço de cada terreno, de 150 m² e desde R$ 145.000 (tabelas oficiais das loteadoras).">
   <meta name="robots" content="index, follow">
+  <meta name="author" content="Fabio Correia, CRECI 303686-F">
+  <meta property="og:title" content="Mapa de Lotes à Venda em Indaiatuba com Preço | Viv'América">
+  <meta property="og:description" content="Lotes à venda em Indaiatuba no mapa, quadra a quadra: metragem, preço de cada terreno, de 150 m² e desde R$ 145.000 (tabelas oficiais das loteadoras).">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Imobiliária Viv'América">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/images/og.png">
+  <meta name="twitter:title" content="Mapa de Lotes à Venda em Indaiatuba com Preço | Viv'América">
+  <meta name="twitter:description" content="Lotes à venda em Indaiatuba no mapa, quadra a quadra: metragem, preço de cada terreno, de 150 m² e desde R$ 145.000 (tabelas oficiais das loteadoras).">
   <link rel="canonical" href="https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/">
   <link rel="icon" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
+  <script id="ga4">
+    // GA4 só em produção: localhost, 127.0.0.1 e previews *.netlify.app ficam fora da medição
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-40C0379NPR');
+    (function () {
+      if (/localhost|127\.0\.0\.1|netlify\.app$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR';
+      document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
+    })();
+    // whatsapp_click: rótulo do botão, posição (hero|meio|flutuante|rodape|barra) e página de origem
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('a[href*="wa.me"]');
+      if (!el) return;
+      var pos = el.getAttribute('data-cta') ||
+        ({ topo: 'hero', flutuante: 'flutuante', lote: 'meio', lista: 'rodape' })[el.getAttribute('data-origem')] ||
+        (el.closest('.wa-float, .wa-float-home, .float-wpp, .whats-flutuante') ? 'flutuante' :
+         el.closest('.bo-barra, .barra-wa') ? 'barra' :
+         el.closest('header, .hero, #hero, .topo, .cta-topo, .article-hero') ? 'hero' :
+         el.closest('footer, .cta, .cta-section, .cta-final') ? 'rodape' : 'meio');
+      var p = {
+        event_category: 'conversao',
+        event_label: ((el.textContent || '').replace(/\s+/g, ' ').trim() || el.getAttribute('aria-label') || '').slice(0, 100),
+        cta_pos: pos,
+        origem: location.pathname
+      };
+      if (el.getAttribute('data-lote')) p.lote = el.getAttribute('data-lote');
+      gtag('event', 'whatsapp_click', p);
+    });
   </script>
   <style>
     :root{--preto:#161616;--ouro:#C9A227;--creme:#F7F5F0;--cinza:#6b665c;--borda:#e6e1d6;--res:#2e7d5b;--mis:#b8641b;--com:#1f5fa8;--ave:#7a3fb5;--gle:#8a6d1f}
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
+    html{height:100%}
+    body{min-height:100%}
     body{font-family:'Josefin Sans',system-ui,sans-serif;color:var(--preto);background:var(--creme);display:flex;flex-direction:column}
     a{color:inherit}
     header{background:var(--preto);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 1rem;flex:none}
@@ -29,7 +68,7 @@
     .marca b{color:var(--ouro);font-weight:400}
     header h1{font-family:'Poiret One',cursive;font-weight:400;font-size:1.05rem;letter-spacing:.06em;text-align:center;flex:1}
     header .wa{background:#25D366;color:#fff;text-decoration:none;font-weight:700;font-size:.78rem;padding:.5rem .8rem;border-radius:999px;white-space:nowrap}
-    main{flex:1;display:grid;grid-template-columns:340px 1fr;min-height:0}
+    main{flex:none;height:calc(100vh - 48px - var(--intro,0px));height:calc(100dvh - 48px - var(--intro,0px));min-height:420px;display:grid;grid-template-columns:340px 1fr}
     aside{border-right:1px solid var(--borda);background:#fff;display:flex;flex-direction:column;min-height:0}
     .filtros{padding:.5rem .8rem;border-bottom:1px solid var(--borda)}
     .filtros p{font-size:.72rem;color:var(--cinza);margin-bottom:.4rem;letter-spacing:.08em;text-transform:uppercase}
@@ -103,7 +142,7 @@
       .float-wpp span{display:none}
       .float-wpp svg{width:26px;height:26px}
       main{display:block;position:relative}
-      #mapa{height:calc(100dvh - 48px);min-height:420px}
+      #mapa{height:calc(100dvh - 48px - var(--intro,0px));min-height:420px}
       aside{position:fixed;top:0;left:0;height:100dvh;width:min(80vw,360px);z-index:1200;border-right:0;
             box-shadow:0 0 30px rgba(0,0,0,.35);transform:translateX(-102%);transition:transform .25s ease}
       aside.aberta{transform:none}
@@ -179,7 +218,130 @@
       .rosa-dica{display:none}
     }
     @media(prefers-reduced-motion:reduce){.solar{transition:none}.rosa-btn{transition:none}}
+    /* ── BLOCO INDEXÁVEL: resumo acima do mapa, lista e FAQ abaixo; barra de contato no celular ── */
+    .intro{background:#fff;border-bottom:1px solid var(--borda);padding:.55rem 1rem;flex:none}
+    .intro-txt{max-width:1160px;margin:0 auto;font-size:.8rem;line-height:1.45;color:var(--preto)}
+    .intro-txt a{color:var(--com)}
+    .intro-lnk{white-space:nowrap;font-weight:700}
+    .guia{background:#fff;border-top:1px solid var(--borda);padding:2rem 1rem 3rem;flex:none}
+    .guia-in{max-width:1160px;margin:0 auto;min-width:0}
+    .guia h2{font-family:'Poiret One',cursive;font-weight:400;letter-spacing:.06em;font-size:1.5rem;margin:1.6rem 0 .6rem}
+    .guia p{font-size:.92rem;line-height:1.55;margin:0 0 .8rem;color:var(--preto)}
+    .guia .proc{font-size:.74rem;color:var(--cinza)}
+    .guia a{color:var(--com)}
+    .tabela-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.6rem 0 1rem}
+    .guia table{border-collapse:collapse;width:100%;min-width:720px;font-size:.84rem}
+    .guia caption{caption-side:bottom;text-align:left;font-size:.72rem;color:var(--cinza);padding:.5rem 0}
+    .guia th,.guia td{border-bottom:1px solid var(--borda);padding:.45rem .5rem;text-align:left;vertical-align:top}
+    .guia th{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cinza);font-weight:600}
+    .guia td small{color:var(--cinza)}
+    .wa-lin{display:inline-block;background:#25D366;color:#fff!important;text-decoration:none;font-weight:700;font-size:.74rem;padding:.3rem .6rem;border-radius:999px;white-space:nowrap}
+    .guia .nota{font-size:.78rem;color:var(--cinza)}
+    .faq-item{border-bottom:1px solid var(--borda);padding:.7rem 0}
+    .faq-item h3{font-size:.95rem;margin:0 0 .3rem}
+    .faq-item p{margin:0}
+    .guia .links{font-size:.84rem;margin-top:1.2rem}
+    .guia .voltar{font-weight:700}
+    .guia .nap{font-size:.72rem;color:var(--cinza);margin-top:1.6rem}
+    .tab-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.35rem .6rem;padding:.3rem .4rem .5rem;font-size:.72rem;color:var(--cinza)}
+    .tab-cta span{min-width:0}
+    .btn-tab{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:700;font-size:.72rem;padding:.35rem .7rem;border-radius:999px;white-space:nowrap}
+    .barra-wa{display:none}
+    @media(max-width:760px){
+      .intro{padding:.5rem .8rem}
+      .intro-txt{font-size:.74rem;line-height:1.4}
+      .guia{padding:1.4rem .8rem 7.5rem}
+      .guia table{min-width:640px}
+      .float-wpp{display:none}
+      .barra-wa{display:flex;align-items:center;justify-content:center;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:1150;
+                background:#25D366;color:#fff;text-decoration:none;font:700 .82rem 'Josefin Sans',sans-serif;letter-spacing:.03em;
+                padding:.85rem 1rem;box-shadow:0 -4px 18px rgba(0,0,0,.18);min-width:0}
+      .barra-wa svg{width:20px;height:20px;fill:#fff;flex:0 0 auto}
+      .barra-wa span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+      body.gaveta .barra-wa{opacity:0;pointer-events:none}
+      .btn-lista{bottom:4.2rem}
+      .leaflet-bottom{bottom:3.4rem}
+      .solar-rodape{bottom:8rem}
+    }
   </style>
+  <!--GEN:entidade-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+    "name": "Imobiliária Viv'América",
+    "alternateName": [
+      "Viv'América Imóveis",
+      "Imobiliária Viva América"
+    ],
+    "legalName": "Imobiliaria Viva America Ltda - ME",
+    "taxID": "57.213.317/0001-23",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "CRECI",
+      "value": "47394-J"
+    },
+    "description": "Imobiliária de Indaiatuba/SP (CRECI 47394-J) que comercializa lançamentos imobiliários: apartamentos na planta, loteamentos e condomínios fechados, com o preço da tabela oficial e o mês de referência em cada página.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/",
+    "logo": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
+    "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
+    "telephone": "+5519989769457",
+    "email": "financeiro@imoveisvivamerica.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Higienópolis, 70 - Jardim União",
+      "addressLocality": "Indaiatuba",
+      "addressRegion": "SP",
+      "postalCode": "13348-671",
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Indaiatuba"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "knowsAbout": [
+      "Lançamentos imobiliários em Indaiatuba",
+      "Minha Casa Minha Vida",
+      "Financiamento Caixa e uso de FGTS",
+      "Condomínios fechados e loteamentos em Indaiatuba"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/imoveisvivamerica",
+      "https://www.facebook.com/imoveisvivamerica",
+      "https://www.youtube.com/@ImoveisVivAmerica",
+      "https://www.linkedin.com/company/imobiliaria-vivamerica"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5519989769457",
+      "contactType": "sales",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
+  }
+  </script>
+  <!--/GEN:entidade-->
 </head>
 <body>
 <header>
@@ -187,6 +349,11 @@
   <h1>Mapa de lotes à venda em Indaiatuba</h1>
   <a class="wa" data-origem="topo" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20o%20mapa%20de%20lotes%20em%20Indaiatuba%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">WhatsApp</a>
 </header>
+<!--GEN:mapa-resumo-->
+<section class="intro" id="intro" aria-label="Resumo do mapa de lotes">
+  <p class="intro-txt"><strong>Resposta direta:</strong> 2.313 lotes à venda com preço à vista em 23 loteamentos e condomínios de Indaiatuba, pelas tabelas das loteadoras (data em cada um). O menor preço por m² no mapa é o do <a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a>, loteamento aberto: R$ 967/m² (lote de 150 m² por R$ 145.000 à vista, tabela de 01/10/2026). <a class="intro-lnk" href="#lista-loteamentos">Lista com o preço de cada loteamento ↓</a></p>
+</section>
+<!--/GEN:mapa-resumo-->
 <main>
   <aside id="painel">
     <div class="gaveta-topo"><b>Bairros e lotes</b><button type="button" id="btnFechar" aria-label="Fechar">×</button></div>
@@ -219,7 +386,62 @@
     <div class="solar-rodape">O norte está sempre para cima neste mapa. O sol <b>nasce à direita</b> da tela, cruza o céu pelo <b>norte</b> e <b>se põe à esquerda</b> — por isso o lado escuro é o poente.</div>
   </div>
 </main>
+<!--GEN:mapa-lista-->
+<section class="guia" id="lista-loteamentos" data-gerado="2026-10-11">
+  <div class="guia-in">
+    <p class="proc">Lista gerada em 11/10/2026 a partir das tabelas e relatórios das loteadoras (data na coluna Tabela) · Fabio Correia, CRECI 303686-F · Imobiliária Viv'América, CRECI 47394-J</p>
+    <h2>Os loteamentos no mapa, do menor ao maior R$/m²</h2>
+    <p>A coluna R$/m² traz o menor preço por m² de cada loteamento; a coluna seguinte, o lote de menor valor. Nem sempre é o mesmo lote. Os preços são à vista, pela tabela indicada em cada linha; o parcelamento aparece no pino de cada lote quando a tabela informa. Clique no nome para abrir a ficha; o botão pede a tabela completa pelo WhatsApp.</p>
+    <div class="tabela-wrap">
+      <table>
+        <caption>23 loteamentos e condomínios, 2.313 lotes com preço no mapa · tabelas das loteadoras, data por linha · lista gerada em 11/10/2026</caption>
+        <thead><tr><th>Loteamento</th><th>Tipo</th><th>Lotes no mapa</th><th>R$/m² a partir de</th><th>Lote a partir de (à vista)</th><th>Tabela</th><th>Pedir a tabela</th></tr></thead>
+        <tbody>
+        <tr><td><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a></td><td>Aberto</td><td>585</td><td>R$ 967</td><td>R$ 145.000</td><td>01/10/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Residencial%20Monte%20Carmelo%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Jardim das Araras</td><td>Aberto</td><td>10</td><td>R$ 1.000</td><td>R$ 282.659</td><td>out/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20das%20Araras%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Parque Barnabé (Smart City)</td><td>Aberto</td><td>8</td><td>R$ 1.100</td><td>R$ 224.302</td><td>out/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Parque%20Barnab%C3%A9%20%28Smart%20City%29%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Park Gran Reserve</td><td>Fechado</td><td>2</td><td>R$ 1.133</td><td>R$ 364.000</td><td>01/10/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Park%20Gran%20Reserve%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/alphaville-indaiatuba/">Alphaville Indaiatuba</a></td><td>Fechado</td><td>131</td><td>R$ 1.136</td><td>R$ 888.939</td><td>set/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Alphaville%20Indaiatuba%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/parque-zarah-indaiatuba/">Parque Zarah</a><br><small>fases Safira (fase 1), Rubi (fase 2), Pérola (fase 3)</small></td><td>Fechado</td><td>662</td><td>R$ 1.156</td><td>R$ 211.050</td><td>out/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Parque%20Zarah%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Jardim Residencial Viena</td><td>Fechado</td><td>1</td><td>R$ 1.198</td><td>R$ 550.000</td><td>04/09/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20Residencial%20Viena%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Vila dos Canários</td><td>Aberto</td><td>3</td><td>R$ 1.200</td><td>R$ 241.440</td><td>out/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Vila%20dos%20Can%C3%A1rios%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Jardim Park Vista Real</td><td>Fechado</td><td>28</td><td>R$ 1.298</td><td>R$ 325.000</td><td>01/10/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20Park%20Vista%20Real%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Jardim das Andorinhas</td><td>Aberto</td><td>2</td><td>R$ 1.300</td><td>R$ 273.845</td><td>out/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20das%20Andorinhas%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Parque Campo Bonito</td><td>Aberto</td><td>7</td><td>R$ 1.300</td><td>R$ 219.240</td><td>out/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Parque%20Campo%20Bonito%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/di-italia-indaiatuba/">Jardim Di Italia</a></td><td>Aberto</td><td>45</td><td>R$ 1.400</td><td>R$ 210.000</td><td>01/10/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20Di%20Italia%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Jardim Paulista III</td><td>Aberto</td><td>32</td><td>R$ 1.400</td><td>R$ 275.100</td><td>08/09/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20Paulista%20III%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Jardim Bom Sucesso</td><td>Aberto</td><td>2</td><td>R$ 1.500</td><td>R$ 750.000</td><td>08/09/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20Bom%20Sucesso%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td>Jardim Residencial Veneza</td><td>Aberto</td><td>1</td><td>R$ 1.500</td><td>R$ 337.095</td><td>01/10/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20Residencial%20Veneza%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a></td><td>Fechado</td><td>2</td><td>R$ 1.567</td><td>R$ 642.375</td><td>29/09/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20da%20Reserva%20Bot%C3%A2nica%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a></td><td>Fechado</td><td>187</td><td>R$ 1.600</td><td>R$ 714.000</td><td>01/10/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Residencial%20Ravello%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a></td><td>Fechado</td><td>19</td><td>R$ 1.650</td><td>R$ 247.500</td><td>02/09/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Terras%20de%20San%20Marino%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/alpnach-indaiatuba/">Alpnach Residence</a></td><td>Fechado</td><td>19</td><td>R$ 1.700</td><td>R$ 510.000</td><td>01/10/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Alpnach%20Residence%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/ville-de-provence-indaiatuba/">Ville de Provence</a></td><td>Fechado</td><td>319</td><td>R$ 1.770</td><td>R$ 637.200</td><td>set/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Ville%20de%20Provence%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a></td><td>Aberto</td><td>67</td><td>R$ 1.825</td><td>R$ 273.750</td><td>17/09/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Residencial%20Vila%20Fahl%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/maria-candida-indaiatuba/">Jardim Dona Maria Cândida</a></td><td>Fechado</td><td>180</td><td>R$ 2.000</td><td>R$ 600.000</td><td>jul/2025</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Jardim%20Dona%20Maria%20C%C3%A2ndida%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        <tr><td><a href="/porteira-de-ferro-indaiatuba/">Porteira de Ferro</a></td><td>Fechado</td><td>1</td><td>R$ 2.500</td><td>R$ 1.300.000</td><td>17/09/2026</td><td><a class="wa-lin" data-origem="lista" href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Quero%20a%20tabela%20de%20lotes%20do%20Porteira%20de%20Ferro%20com%20quadra%2C%20metragem%20e%20valor." target="_blank" rel="noopener">WhatsApp</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nota">O mapa também mostra Casas Alphaville Dom Pedro 0 (Campinas), que são casas e não lotes; por isso ficam fora da tabela. <a href="/casas-alphaville-dom-pedro-0-campinas/">Ficha das casas</a>.</p>
+    <h2>Perguntas frequentes sobre o mapa de lotes</h2>
+    <div class="faq-item"><h3>Quantos lotes e loteamentos estão no mapa de lotes de Indaiatuba?</h3><p>Em 11/10/2026 o mapa mostra 2.313 lotes com preço à vista em 23 loteamentos e condomínios de Indaiatuba (o Parque Zarah entra com as fases Safira, Rubi e Pérola). Cada lote traz quadra, número, metragem, tipo (residencial, misto, comercial ou gleba) e o preço da tabela da loteadora.</p></div>
+    <div class="faq-item"><h3>Qual é o lote mais barato por m² no mapa?</h3><p>O do Residencial Monte Carmelo, loteamento aberto: R$ 967/m² (lote de 150 m² por R$ 145.000 à vista, tabela de 01/10/2026). Na outra ponta está o do Porteira de Ferro, loteamento fechado: R$ 2.500/m² (lote de 520 m² por R$ 1.300.000 à vista, tabela de 17/09/2026).</p></div>
+    <div class="faq-item"><h3>Os preços do mapa são à vista ou a prazo?</h3><p>À vista, como estão nas tabelas e relatórios das loteadoras, com a data de cada tabela na lista acima. Quando a tabela informa entrada e número de parcelas, o pino do lote mostra a simulação. Os valores podem mudar sem aviso e o parcelamento é confirmado no atendimento.</p></div>
+    <div class="faq-item"><h3>O pino mostra a posição exata do lote?</h3><p>Não: a posição do pino é aproximada. A quadra e o número do lote são os da tabela da loteadora e, na maioria dos loteamentos, a planta sobreposta ao mapa ajuda a localizar. A situação de cada lote é confirmada no atendimento.</p></div>
+    <div class="faq-item"><h3>Como peço a tabela completa de um loteamento?</h3><p>Pelo WhatsApp (19) 98976-9457. O botão de cada loteamento na lista acima já envia o pedido com o nome do empreendimento, e a tabela chega com quadra, metragem e valor.</p></div>
+    <p class="links">Veja também: <a href="/loteamentos-em-indaiatuba/">Loteamentos em Indaiatuba, com preços</a> · <a href="/condominios-fechados-indaiatuba/">Condomínios fechados de lotes</a> · <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a> · <a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z dos loteamentos e bairros</a> · <a href="/imprensa-e-dados/">Dados abertos do Observatório (CSV e JSON)</a> · <a href="/">Todos os lançamentos de Indaiatuba</a></p>
+    <p><a class="voltar" href="#mapa">Voltar ao mapa</a></p>
+    <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/","name":"Mapa de Lotes à Venda em Indaiatuba com Preço | Viv'América","description":"Lotes à venda em Indaiatuba no mapa, quadra a quadra: metragem, preço de cada terreno, de 150 m² e desde R$ 145.000 (tabelas oficiais das loteadoras).","inLanguage":"pt-BR","image":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/images/og.png","dateModified":"2026-10-11","author":{"@type":"Person","@id":"https://lancamentos.imoveisvivamerica.com.br/sobre/#fabio-correia","name":"Fabio Correia","jobTitle":"Corretor de imóveis","identifier":{"@type":"PropertyValue","propertyID":"CRECI","value":"303686-F"},"url":"https://lancamentos.imoveisvivamerica.com.br/sobre/#fabio-correia","image":"https://lancamentos.imoveisvivamerica.com.br/images/fabio-correia.jpg","worksFor":{"@type":"RealEstateAgent","@id":"https://imoveisvivamerica.com.br/#imobiliaria","name":"Imobiliária Viv'América"}},"publisher":{"@type":"RealEstateAgent","@id":"https://imoveisvivamerica.com.br/#imobiliaria","name":"Imobiliária Viv'América"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Loteamentos no mapa de lotes de Indaiatuba, do menor ao maior preço por m²","numberOfItems":23,"itemListOrder":"https://schema.org/ItemListOrderAscending","itemListElement":[{"@type":"ListItem","position":1,"name":"Residencial Monte Carmelo","url":"https://lancamentos.imoveisvivamerica.com.br/monte-carmelo-indaiatuba/"},{"@type":"ListItem","position":2,"name":"Jardim das Araras","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#araras"},{"@type":"ListItem","position":3,"name":"Parque Barnabé (Smart City)","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#barnabe"},{"@type":"ListItem","position":4,"name":"Park Gran Reserve","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#granreserve"},{"@type":"ListItem","position":5,"name":"Alphaville Indaiatuba","url":"https://lancamentos.imoveisvivamerica.com.br/alphaville-indaiatuba/"},{"@type":"ListItem","position":6,"name":"Parque Zarah","url":"https://lancamentos.imoveisvivamerica.com.br/parque-zarah-indaiatuba/"},{"@type":"ListItem","position":7,"name":"Jardim Residencial Viena","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#viena"},{"@type":"ListItem","position":8,"name":"Vila dos Canários","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#canarios"},{"@type":"ListItem","position":9,"name":"Jardim Park Vista Real","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#vistareal"},{"@type":"ListItem","position":10,"name":"Jardim das Andorinhas","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#andorinhas"},{"@type":"ListItem","position":11,"name":"Parque Campo Bonito","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#campobonito"},{"@type":"ListItem","position":12,"name":"Jardim Di Italia","url":"https://lancamentos.imoveisvivamerica.com.br/di-italia-indaiatuba/"},{"@type":"ListItem","position":13,"name":"Jardim Paulista III","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#paulista3"},{"@type":"ListItem","position":14,"name":"Jardim Bom Sucesso","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#bomsucesso"},{"@type":"ListItem","position":15,"name":"Jardim Residencial Veneza","url":"https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/#veneza"},{"@type":"ListItem","position":16,"name":"Reserva Botânica","url":"https://lancamentos.imoveisvivamerica.com.br/reserva-botanica-indaiatuba/"},{"@type":"ListItem","position":17,"name":"Residencial Ravello","url":"https://lancamentos.imoveisvivamerica.com.br/residencial-ravello-indaiatuba/"},{"@type":"ListItem","position":18,"name":"Terras de San Marino","url":"https://lancamentos.imoveisvivamerica.com.br/terras-de-san-marino-indaiatuba/"},{"@type":"ListItem","position":19,"name":"Alpnach Residence","url":"https://lancamentos.imoveisvivamerica.com.br/alpnach-indaiatuba/"},{"@type":"ListItem","position":20,"name":"Ville de Provence","url":"https://lancamentos.imoveisvivamerica.com.br/ville-de-provence-indaiatuba/"},{"@type":"ListItem","position":21,"name":"Residencial Vila Fahl","url":"https://lancamentos.imoveisvivamerica.com.br/vila-fahl-indaiatuba/"},{"@type":"ListItem","position":22,"name":"Jardim Dona Maria Cândida","url":"https://lancamentos.imoveisvivamerica.com.br/maria-candida-indaiatuba/"},{"@type":"ListItem","position":23,"name":"Porteira de Ferro","url":"https://lancamentos.imoveisvivamerica.com.br/porteira-de-ferro-indaiatuba/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quantos lotes e loteamentos estão no mapa de lotes de Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"Em 11/10/2026 o mapa mostra 2.313 lotes com preço à vista em 23 loteamentos e condomínios de Indaiatuba (o Parque Zarah entra com as fases Safira, Rubi e Pérola). Cada lote traz quadra, número, metragem, tipo (residencial, misto, comercial ou gleba) e o preço da tabela da loteadora."}},{"@type":"Question","name":"Qual é o lote mais barato por m² no mapa?","acceptedAnswer":{"@type":"Answer","text":"O do Residencial Monte Carmelo, loteamento aberto: R$ 967/m² (lote de 150 m² por R$ 145.000 à vista, tabela de 01/10/2026). Na outra ponta está o do Porteira de Ferro, loteamento fechado: R$ 2.500/m² (lote de 520 m² por R$ 1.300.000 à vista, tabela de 17/09/2026)."}},{"@type":"Question","name":"Os preços do mapa são à vista ou a prazo?","acceptedAnswer":{"@type":"Answer","text":"À vista, como estão nas tabelas e relatórios das loteadoras, com a data de cada tabela na lista acima. Quando a tabela informa entrada e número de parcelas, o pino do lote mostra a simulação. Os valores podem mudar sem aviso e o parcelamento é confirmado no atendimento."}},{"@type":"Question","name":"O pino mostra a posição exata do lote?","acceptedAnswer":{"@type":"Answer","text":"Não: a posição do pino é aproximada. A quadra e o número do lote são os da tabela da loteadora e, na maioria dos loteamentos, a planta sobreposta ao mapa ajuda a localizar. A situação de cada lote é confirmada no atendimento."}},{"@type":"Question","name":"Como peço a tabela completa de um loteamento?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp (19) 98976-9457. O botão de cada loteamento na lista acima já envia o pedido com o nome do empreendimento, e a tabela chega com quadra, metragem e valor."}}]}</script>
+</section>
+<!--/GEN:mapa-lista-->
 <button class="btn-lista" id="btnLista" type="button">Bairros e lotes</button>
+<!-- Celular: barra fixa que nomeia o loteamento filtrado (molde de tabela do funil); sem filtro, fala do mapa. -->
+<a class="barra-wa" id="barraWa" data-origem="barra" data-geral="https://wa.me/5519989769457?text=Ol%C3%A1!%20Estou%20vendo%20o%20mapa%20de%20lotes%20de%20Indaiatuba%20e%20quero%20falar%20com%20um%20corretor." href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Estou%20vendo%20o%20mapa%20de%20lotes%20de%20Indaiatuba%20e%20quero%20falar%20com%20um%20corretor." target="_blank" rel="noopener" aria-label="Falar sobre lotes no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.19-.31a8.26 8.26 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.83c0 4.54-3.7 8.23-8.23 8.23m4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.6.19 1.14.17 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28"/></svg><span>Falar sobre lotes em Indaiatuba</span></a>
 <div id="overlay"></div>
 <div id="tracar">
   <b>Modo traçar</b> — desenhe o polígono do lote (ícone de polígono no mapa), informe o id (ex.: <code>barnabe-q11-l1</code>) e copie o JSON abaixo para o arquivo de dados.
@@ -240,25 +462,25 @@ const BAIRROS = [
   { id:'sanmarino', fechado:true, nome:'Terras de San Marino', sub:'condomínio fechado em lançamento · a prazo em 60x', landing:'/terras-de-san-marino-indaiatuba/', cond:'juros de 1% a.m. na tabela PRICE · correção anual pelo IGP-M', overlay:{ url:'images/sanmarino.png', bounds:[[-23.103290271,-47.263758441],[-23.095355547,-47.254242201]] } },
   { id:'reserva-botanica', fechado:true, centro:[-23.0521707,-47.2250614], nome:'Reserva Botânica', sub:'loteamento fechado · últimas 2 unidades (tabela Zarin de 29/09/2026) · liberação para construção em nov/2026', landing:'/reserva-botanica-indaiatuba/', cond:'entrada de cerca de 11,4% e saldo em até 120 parcelas pela Tabela Price a 1% a.m., tabela Zarin de 29/09/2026', tab:'29/09/2026' , overlay:{ url:'images/reserva-botanica.png', bounds:[[-23.053719764,-47.228424906],[-23.051006649,-47.224251357]] } },
   { id:'alphaville', fechado:true, centro:[-23.127250,-47.202278], nome:'Alphaville Indaiatuba', sub:'condomínio fechado · 131 lotes disponíveis (tabela set/2026) · a prazo em 60x', landing:'/alphaville-indaiatuba/', cond:'ato de 20% e saldo em 60 mensais sem juros, corrigido pelo IPCA, tabela Alphaville de set/2026', tab:'set/2026', overlay:{ url:'images/alphaville.png', bounds:[[-23.134029075,-47.208051304],[-23.119010830,-47.194755628]] } },
-  { id:'alpnach', fechado:true, nome:'Alpnach Residence', sub:'condomínio fechado · 322 lotes · a prazo em 48x', landing:'/alpnach-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/alpnach.png', bounds:[[-23.084263640,-47.239591167],[-23.075924888,-47.230968063]] } },
-  { id:'montecarmelo', nome:'Residencial Monte Carmelo', sub:'loteamento aberto · 1.051 lotes · a prazo em até 96x', landing:'/monte-carmelo-indaiatuba/', cond:'entrada de 10% e saldo em 24, 48 ou 96x conforme o lote, relatório Dominium de 02/09/2026', overlay:{ url:'images/montecarmelo.png', bounds:[[-23.097591481,-47.290771730],[-23.088961221,-47.279840990]] } },
-  { id:'ravello', fechado:true, nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 02/09/2026', overlay:{ url:'images/ravello.png', bounds:[[-23.084077694,-47.249446812],[-23.073393991,-47.234171390]] } },
-  { id:'diitalia', nome:'Jardim Di Italia', sub:'loteamento · 404 lotes · a prazo em 60x', landing:'/di-italia-indaiatuba/', cond:'entrada de 20% e saldo em 60x, conforme relatório Dominium de 04/09/2026', overlay:{ url:'images/diitalia.png', bounds:[[-23.103579757,-47.263075029],[-23.099470643,-47.259032939]] } },
+  { id:'alpnach', fechado:true, tab:'01/10/2026', nome:'Alpnach Residence', sub:'condomínio fechado · 322 lotes · a prazo em 48x', landing:'/alpnach-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 01/10/2026', overlay:{ url:'images/alpnach.png', bounds:[[-23.084263640,-47.239591167],[-23.075924888,-47.230968063]] } },
+  { id:'montecarmelo', tab:'01/10/2026', nome:'Residencial Monte Carmelo', sub:'loteamento aberto · 1.051 lotes · a prazo em até 96x', landing:'/monte-carmelo-indaiatuba/', cond:'entrada de 10% e saldo em 24, 48 ou 96x conforme o lote, relatório Dominium de 01/10/2026', overlay:{ url:'images/montecarmelo.png', bounds:[[-23.097591481,-47.290771730],[-23.088961221,-47.279840990]] } },
+  { id:'ravello', fechado:true, tab:'01/10/2026', nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 01/10/2026', overlay:{ url:'images/ravello.png', bounds:[[-23.084077694,-47.249446812],[-23.073393991,-47.234171390]] } },
+  { id:'diitalia', tab:'01/10/2026', nome:'Jardim Di Italia', sub:'loteamento · 404 lotes · a prazo em 60x', landing:'/di-italia-indaiatuba/', cond:'entrada de 20% e saldo em 60x, conforme relatório Dominium de 01/10/2026', overlay:{ url:'images/diitalia.png', bounds:[[-23.103579757,-47.263075029],[-23.099470643,-47.259032939]] } },
   { id:'canarios', tab:'out/2026',   nome:'Vila dos Canários', overlay:{ url:'images/canarios.png', bounds:[[-23.108921899,-47.268419712],[-23.107101849,-47.266723574]] } },
-  { id:'zarah-safira', fechado:true, nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes · entrega dez/2026', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.104061777,-47.269326681],[-23.097995146,-47.262840271]] } },
-  { id:'zarah-rubi', fechado:true, nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098524045,-47.265731433],[-23.093995123,-47.261693425]] } },
-  { id:'zarah-perola', fechado:true, nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099411964,-47.270175998],[-23.094030998,-47.265280434]] } },
-  { id:'bemtevi', oculto:true /* saiu da tabela Vista Verde de out/2026 = vendido; dado mantido */,    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104009900,-47.269992856],[-23.100875636,-47.266748130]] } },
+  { id:'zarah-safira', fechado:true, tab:'out/2026', nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes · entrega dez/2026', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.104061777,-47.269326681],[-23.097995146,-47.262840271]] } },
+  { id:'zarah-rubi', fechado:true, tab:'out/2026', nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098524045,-47.265731433],[-23.093995123,-47.261693425]] } },
+  { id:'zarah-perola', fechado:true, tab:'out/2026', nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes · entrega dez/2028', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de out/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099411964,-47.270175998],[-23.094030998,-47.265280434]] } },
+  { id:'bemtevi', oculto:true /* fora da tabela de out/2026; dado mantido */,    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104009900,-47.269992856],[-23.100875636,-47.266748130]] } },
   { id:'andorinhas', tab:'out/2026', nome:'Jardim das Andorinhas', overlay:{ url:'images/andorinhas.png', bounds:[[-23.108521524,-47.272461516],[-23.104284716,-47.269854118]] } },
   { id:'araras', tab:'out/2026',     nome:'Jardim das Araras', overlay:{ url:'images/araras.png', bounds:[[-23.096617254,-47.289265394],[-23.087239678,-47.276216447]] } },
   { id:'campobonito', tab:'out/2026',nome:'Parque Campo Bonito', sub:'lotes 12x · glebas na Av. Clóvis Ferraz de Camargo', centro:[-23.09681,-47.27876], overlay:{ url:'images/campobonito.png', bounds:[[-23.100125839,-47.282674074],[-23.092201813,-47.270022308]] } },
   { id:'barnabe', tab:'out/2026',    nome:'Parque Barnabé (Smart City)', sub:'loteamento Smart City', overlay:{ url:'images/barnabe.png', bounds:[[-23.092843825,-47.284648472],[-23.083629713,-47.272626536]] } },
   { id:'bomsucesso', nome:'Jardim Bom Sucesso', sub:'loteamento · 1 lote misto disponível, segregado em C01-A e C01-B (nota de 08/09/2026)', cond:'entrada de 20% e saldo em 72x, conforme nota de 08/09/2026', overlay:{ url:'images/bomsucesso.png', bounds:[[-23.118272070,-47.266759110],[-23.103705813,-47.257188239]] } },
-  { id:'granreserve', fechado:true, nome:'Park Gran Reserve', sub:'loteamento fechado · 2 lotes disponíveis (relatório de 01/10/2026)', cond:'entrada mínima R$ 130.000,00 + 36 parcelas (relatório SECE de 04/09/2026)', overlay:{ url:'images/granreserve.png', bounds:[[-23.079409228,-47.192662164],[-23.066101439,-47.177031096]] } },
-  { id:'vistareal', fechado:true, nome:'Jardim Park Vista Real', sub:'loteamento fechado · 29 lotes disponíveis (relatório de 04/09/2026)', cond:'entrada mínima (cerca de 20%) e saldo em 36 parcelas, conforme relatório SECE de 04/09/2026; lote A-16 só à vista', overlay:{ url:'images/vistareal.png', bounds:[[-23.073044564,-47.195643662],[-23.068200034,-47.188678744]] } },
+  { id:'granreserve', fechado:true, tab:'01/10/2026', nome:'Park Gran Reserve', sub:'loteamento fechado · 2 lotes disponíveis (relatório de 01/10/2026)', cond:'entrada mínima R$ 130.000,00 + 36 parcelas (relatório SECE de 04/09/2026)', overlay:{ url:'images/granreserve.png', bounds:[[-23.079409228,-47.192662164],[-23.066101439,-47.177031096]] } },
+  { id:'vistareal', fechado:true, tab:'01/10/2026', nome:'Jardim Park Vista Real', sub:'loteamento fechado · 28 lotes disponíveis (relatório de 01/10/2026)', cond:'entrada mínima (cerca de 20%) e saldo em 36 parcelas, conforme relatório SECE de 04/09/2026; lote A-16 só à vista', overlay:{ url:'images/vistareal.png', bounds:[[-23.073044564,-47.195643662],[-23.068200034,-47.188678744]] } },
   { id:'viena', fechado:true, nome:'Jardim Residencial Viena', sub:'loteamento fechado · 1 lote disponível (relatório de 04/09/2026)', cond:'somente à vista, conforme relatório SECE de 04/09/2026', overlay:{ url:'images/viena.png', bounds:[[-23.071391689,-47.253206438],[-23.066973314,-47.246145907]] } },
-  { id:'veneza', nome:'Jardim Residencial Veneza', sub:'loteamento · 1 lote disponível (relatório de 01/10/2026)', cond:'somente à vista, conforme relatório SECE de 04/09/2026', overlay:{ url:'images/veneza.png', bounds:[[-23.103417160,-47.256340185],[-23.097138619,-47.248041714]] } },
-  { id:'mariacandida', fechado:true, nome:'Jardim Residencial Dona Maria Cândida', sub:'loteamento fechado · 180 lotes disponíveis (lista de 08/09/2026) · a prazo em até 60x', tab:'jul/2025', cond:'entrada de 10% no ato e saldo em até 60x, tabela Asseplan Narezzi válida a partir de 01/07/2025; contratos com prazo acima de 12 meses são reajustados anualmente pelo IPCA, quando positivo', overlay:{ url:'images/mariacandida.png', bounds:[[-23.093366137,-47.248778098],[-23.086446163,-47.238755644]] } },
+  { id:'veneza', tab:'01/10/2026', nome:'Jardim Residencial Veneza', sub:'loteamento · 1 lote disponível (relatório de 01/10/2026)', cond:'somente à vista, conforme relatório SECE de 04/09/2026', overlay:{ url:'images/veneza.png', bounds:[[-23.103417160,-47.256340185],[-23.097138619,-47.248041714]] } },
+  { id:'mariacandida', fechado:true, nome:'Jardim Residencial Dona Maria Cândida', landing:'/maria-candida-indaiatuba/', sub:'loteamento fechado · 180 lotes disponíveis (lista de 08/09/2026) · a prazo em até 60x', tab:'jul/2025', cond:'entrada de 10% no ato e saldo em até 60x, tabela Asseplan Narezzi válida a partir de 01/07/2025; contratos com prazo acima de 12 meses são reajustados anualmente pelo IPCA, quando positivo', overlay:{ url:'images/mariacandida.png', bounds:[[-23.093366137,-47.248778098],[-23.086446163,-47.238755644]] } },
   { id:'paulista3', nome:'Jardim Paulista III', sub:'loteamento · 32 lotes disponíveis (tabela de lançamento 96x, recebida em 08/09/2026)', cond:'entrada de 15% (20% ou 50% em alguns lotes) e saldo em 96 parcelas corrigidas pelo IPCA, conforme a tabela; parcela indicada é a da tabela', overlay:{ url:'images/paulista3.png', bounds:[[-23.133154295,-47.257973782],[-23.124453714,-47.249506540]] } },
   { id:'vilafahl', nome:'Residencial Vila Fahl', sub:'loteamento · 67 lotes da Fase 1 (48 residenciais e 19 comerciais) · a prazo em até 96x', landing:'/vila-fahl-indaiatuba/', cond:'sinal de 10% e saldo em até 96 parcelas, tabela da Fase 1 recebida em 17/09/2026; à vista com 5% de desconto', overlay:{ url:'images/vilafahl.png', bounds:[[-23.092794000,-47.259482094],[-23.084804457,-47.248773204]] } },
   { id:'porteiraferro', fechado:true, nome:'Porteira de Ferro', sub:'loteamento fechado · último lote da tabela de 17/09/2026 · a prazo em até 36x', landing:'/porteira-de-ferro-indaiatuba/', cond:'sinal de 35% e saldo em até 36 parcelas: até 12 sem juros e sem correção; em 24 e 36 há juros de 0,80% a.m. (Price) e correção anual pelo IPCA; à vista com 5% de desconto', overlay:{ url:'images/porteiraferro.png', bounds:[[-23.065958882,-47.191108355],[-23.059816259,-47.187124968]] } }, { id:'villeprovence', fechado:true, nome:'Ville de Provence', sub:'loteamento fechado Urban Square · 319 lotes na tabela de set/2026 · a prazo em até 96x', landing:'/ville-de-provence-indaiatuba/', tab:'set/2026', cond:'sinal de 10% e saldo em até 12 parcelas sem juros e sem correção, ou de 24 a 96 parcelas com juros de 0,8% a.m. e IPCA (anual até 36 meses, mensal acima disso); tabela gerada em 12/09/2026', overlay:{ url:'images/villeprovence.png', bounds:[[-23.052708048,-47.210856198],[-23.041990492,-47.202805368]] } },
@@ -286,7 +508,7 @@ const LOTES = [
   { b:'sanmarino', q:'K', l:'6', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.100568,-47.259838] },
   { b:'sanmarino', q:'K', l:'9', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.100693,-47.259662] },
   { b:'sanmarino', q:'K', l:'12', m2:150.00, tipo:'RESIDENCIAL', pm2:1650, vista:247500.00, prazo:262500.00, entrada:52500.00, parcela:4671.33, nx:60, ep:20, ll:[-23.100817,-47.259486] },
-  // Alpnach Residence — relatório de lotes disponíveis Dominium/Lugano de 04/09/2026 (à vista; 5 lotes com opção a prazo: entrada 20% + 48x)
+  // Alpnach Residence — relatório de lotes disponíveis Dominium/Lugano de 01/10/2026 (à vista; 5 lotes com opção a prazo: entrada 20% + 48x)
   // Alphaville Indaiatuba — tabela de vendas de setembro/2026 (131 lotes disponíveis).
   // Posição marcada no editor de pinos em 02/10/2026, sobre a planta georreferenciada
   // (resíduo de 5,9 m nos três pontos de controle). O vão entre lotes de número vizinho
@@ -447,7 +669,7 @@ const LOTES = [
   { b:'alpnach', q:'P', l:'10', m2:370.42, tipo:'RESIDENCIAL', pm2:1700, vista:629714.00, prazo:666756.00, entrada:133351.20, parcela:11112.60, nx:48, ep:20, ll:[-23.080803,-47.236811] },
   { b:'alpnach', q:'P', l:'6', m2:375.00, tipo:'RESIDENCIAL', pm2:1700, vista:637500.00, prazo:675000.00, entrada:135000.00, parcela:11250.00, ll:[-23.080857,-47.236300], nx:48, ep:20 },
   { b:'alpnach', q:'P', l:'20', m2:390.73, tipo:'RESIDENCIAL', pm2:1700, vista:664241.00, ll:[-23.080657,-47.235665], soVista:true },
-  // Residencial Monte Carmelo — relatório de lotes disponíveis Dominium/Lugano de 02/09/2026 (entrada 10% + 24/48/96x conforme o lote)
+  // Residencial Monte Carmelo — relatório de lotes disponíveis Dominium/Lugano de 01/10/2026 (entrada 10% + 24/48/96x conforme o lote)
   { b:'montecarmelo', q:'D', l:'17', m2:150.00, tipo:'MISTO', pm2:1200, vista:180000.00, prazo:195000.00, entrada:19500.00, parcela:3656.25, nx:48, ep:10, ll:[-23.095401,-47.285267] },
       { b:'montecarmelo', q:'D', l:'19', m2:150.00, tipo:'MISTO', pm2:1200, vista:180000.00, prazo:195000.00, entrada:19500.00, parcela:3656.25, nx:48, ep:10, ll:[-23.095294,-47.285358] },
       { b:'montecarmelo', q:'D', l:'18', m2:150.00, tipo:'MISTO', pm2:1200, vista:180000.00, prazo:195000.00, entrada:19500.00, parcela:3656.25, nx:48, ep:10, ll:[-23.095347,-47.285312] },
@@ -1033,7 +1255,7 @@ const LOTES = [
   { b:'montecarmelo', q:'T', l:'53', m2:150.00, tipo:'MISTO', pm2:1200, vista:180000.00, prazo:195000.00, entrada:19500.00, parcela:3656.25, nx:48, ep:10, ll:[-23.091093,-47.285998] },
   { b:'montecarmelo', q:'T', l:'54', m2:209.05, tipo:'MISTO', pm2:1200, vista:250860.00, prazo:271765.00, entrada:27176.50, parcela:5095.59, nx:48, ep:10, ll:[-23.091153,-47.285945] },
       { b:'montecarmelo', q:'B', l:'48', m2:150.00, tipo:'MISTO', pm2:1200, vista:180000.00, prazo:195000.00, entrada:19500.00, parcela:3656.25, nx:48, ep:10 },
-  // Residencial Ravello — relatório de lotes disponíveis Dominium/Lugano de 02/09/2026 (entrada 20% + 48x; 9 lotes somente à vista)
+  // Residencial Ravello — relatório de lotes disponíveis Dominium/Lugano de 01/10/2026 (entrada 20% + 48x; 9 lotes somente à vista)
   { b:'ravello', q:'A', l:'1', m2:1029.42, tipo:'RESIDENCIAL', pm2:1700, vista:1750014.00, prazo:1852956.00, entrada:370591.20, parcela:30882.60, nx:48, ep:20, ll:[-23.076135,-47.237694] },
   { b:'ravello', q:'A', l:'2', m2:572.56, tipo:'RESIDENCIAL', pm2:1700, vista:973352.00, prazo:1030608.00, entrada:206121.60, parcela:17176.80, nx:48, ep:20, ll:[-23.075959,-47.237644] },
   { b:'ravello', q:'A', l:'3', m2:589.15, tipo:'RESIDENCIAL', pm2:1700, vista:1001555.00, prazo:1060470.00, entrada:212094.00, parcela:17674.50, nx:48, ep:20, ll:[-23.075834,-47.237592] },
@@ -1221,7 +1443,7 @@ const LOTES = [
   { b:'ravello', q:'Z', l:'35', m2:420.00, tipo:'RESIDENCIAL', pm2:1700, vista:714000.00, prazo:756000.00, entrada:151200.00, parcela:12600.00, nx:48, ep:20, ll:[-23.082351,-47.245350] },
   { b:'ravello', q:'Z', l:'37', m2:420.00, tipo:'RESIDENCIAL', pm2:1700, vista:714000.00, prazo:756000.00, entrada:151200.00, parcela:12600.00, nx:48, ep:20, ll:[-23.082340,-47.245079] },
   { b:'ravello', q:'Z', l:'38', m2:630.11, tipo:'RESIDENCIAL', pm2:1700, vista:1071187.00, prazo:1134198.00, entrada:226839.60, parcela:18903.30, nx:48, ep:20, ll:[-23.082336,-47.244925] },
-  // Jardim Di Italia — relatório de lotes disponíveis Dominium/Lugano de 04/09/2026 (à vista; 5 lotes com opção a prazo: entrada 20% + 60x)
+  // Jardim Di Italia — relatório de lotes disponíveis Dominium/Lugano de 01/10/2026 (à vista; 5 lotes com opção a prazo: entrada 20% + 60x)
   { b:'diitalia', q:'C', l:'5', m2:150.00, tipo:'RESIDENCIAL', pm2:1400, vista:210000.00, ll:[-23.100756,-47.262413], soVista:true },
   { b:'diitalia', q:'C', l:'7', m2:150.00, tipo:'RESIDENCIAL', pm2:1400, vista:210000.00, prazo:220000.00, entrada:44000.00, parcela:2933.33, nx:60, ep:20, ll:[-23.100841,-47.262297] },
   { b:'diitalia', q:'C', l:'9', m2:150.00, tipo:'RESIDENCIAL', pm2:1400, vista:210000.00, ll:[-23.100925,-47.262180], soVista:true },
@@ -1972,10 +2194,10 @@ const LOTES = [
   // Jardim Bom Sucesso — lote misto C01 segregado em A e B (nota da loteadora de 08/09/2026; entrada 20% + 72x)
   { b:'bomsucesso', q:'C', l:'01-A', m2:1085.85, tipo:'MISTO', pm2:1500, vista:1628775.00, entrada:325755.00, parcela:26060.00, nx:72, ep:20, ll:[-23.116734,-47.260595], obs:'lote C01 segregado pela loteadora em A e B' },
   { b:'bomsucesso', q:'C', l:'01-B', m2:500.00, tipo:'MISTO', pm2:1500, vista:750000.00, entrada:150000.00, parcela:12000.00, nx:72, ep:20, ll:[-23.116767,-47.260383], obs:'lote C01 segregado pela loteadora em A e B' },
-  // Park Gran Reserve — relatório SECE de 04/09/2026 (entrada mínima + 36x)
+  // Park Gran Reserve — lotes disponíveis no relatório de 01/10/2026; condição do relatório SECE de 04/09/2026 (entrada mínima + 36x)
   { b:'granreserve', q:'34', l:'24', m2:551.87, tipo:'RESIDENCIAL', pm2:1133, vista:625452.67, prazo:643848.30, entrada:130000.00, parcela:14273.56, nx:36, ep:20, ll:[-23.069447,-47.180913] },
   { b:'granreserve', q:'23', l:'9', m2:208.17, tipo:'RESIDENCIAL', pm2:1749, vista:364000.00, soVista:true },
-  // Jardim Park Vista Real — relatório SECE de 04/09/2026 (entrada mínima + 36x; A-16 só à vista)
+  // Jardim Park Vista Real — lotes disponíveis no relatório de 01/10/2026; condição do relatório SECE de 04/09/2026 (entrada mínima + 36x; A-16 só à vista)
   { b:'vistareal', q:'A', l:'1', m2:300.65, tipo:'RESIDENCIAL', pm2:1300, vista:390845.00, prazo:390845.00, entrada:80000.00, parcela:8634.58, nx:36, ep:20, ll:[-23.068572,-47.189939] },
   { b:'vistareal', q:'A', l:'4', m2:330.29, tipo:'RESIDENCIAL', pm2:1302, vista:430000.00, prazo:430000.00, entrada:86000.00, parcela:9555.56, nx:36, ep:20, ll:[-23.068853,-47.189795] },
   { b:'vistareal', q:'A', l:'7', m2:408.44, tipo:'RESIDENCIAL', pm2:1300, vista:530972.00, prazo:530972.00, entrada:110000.00, parcela:11693.67, nx:36, ep:21, ll:[-23.069352,-47.189778] },
@@ -2006,7 +2228,7 @@ const LOTES = [
   { b:'vistareal', q:'K', l:'3', m2:511.24, tipo:'RESIDENCIAL', pm2:1301, vista:665000.00, prazo:665000.00, entrada:135000.00, parcela:14722.22, nx:36, ep:20, ll:[-23.072209,-47.192210] },
   // Jardim Residencial Viena — relatório SECE de 04/09/2026 (só à vista)
   { b:'viena', q:'B', l:'8', m2:459.08, tipo:'RESIDENCIAL', pm2:1198, vista:550000.00, entrada:null, parcela:null, soVista:true, ll:[-23.067959,-47.247343] },
-  // Jardim Residencial Veneza — relatório SECE de 04/09/2026 (só à vista)
+  // Jardim Residencial Veneza — lote disponível no relatório de 01/10/2026; condição do relatório SECE de 04/09/2026 (só à vista)
   { b:'veneza', q:'C', l:'18', m2:224.73, tipo:'MISTO', pm2:1500, vista:337095.00, ll:[-23.100107,-47.255604], soVista:true },
   // Jardim Residencial Dona Maria Cândida — lista de disponíveis de 08/09/2026, SEM tabela de preços (preço e metragem a confirmar)
   { b:'mariacandida', q:'A1', l:'1', m2:300.81, tipo:'RESIDENCIAL', pm2:2000, vista:601620.00, prazo:807373.80, entrada:60162.00, parcela:12453.53, nx:60, ep:10, ll:[-23.090708,-47.245589], obs:'lista de disponíveis de 08/09/2026; valor proporcional à metragem, conforme a tabela de 01/07/2025' },
@@ -2640,6 +2862,12 @@ const areaTxt = x => ehCasa(x) && x.casa != null && x.m2 != null ? `${num(x.casa
 const foraDaBase = b => !!(b && b.cidade && b.cidade !== 'Indaiatuba');   // o mapa e' de Indaiatuba; bairro de outra cidade traz `cidade`
 const desdeTxt = ls => { const v = ls.filter(temPreco).map(x => x.vista); return v.length ? 'desde ' + brl0(Math.min(...v)) : 'preços sob consulta'; };
 const minTxt = ls => { const v = ls.filter(temPreco).map(x => x.vista); return v.length ? brl0(Math.min(...v)) + '+' : 'consulte'; };
+// Pedido de tabela no molde do funil: "tabela de lotes" para loteamento, "tabela de preços" para bairro de casas.
+const nomeCurto = b => b.nome.split(' — ')[0];
+const artigoDe = b => (nomeCurto(b) === 'Reserva Botânica' ? 'da' : 'do');
+const waTabela = b => 'https://wa.me/5519989769457?text=' + encodeURIComponent(b.casas
+  ? `Olá! Quero a tabela de preços ${artigoDe(b)} ${nomeCurto(b)} com as casas disponíveis.`
+  : `Olá! Quero a tabela de lotes ${artigoDe(b)} ${nomeCurto(b)} com quadra, metragem e valor.`);
 LOTES.forEach((x, i) => { x.id = x.b + '-q' + x.q.toLowerCase() + '-l' + x.l.toLowerCase().replace(/\s+/g, ''); x.i = i; });
 const ativos = new Set(Object.keys(TIPOS));
 const ativosLot = new Set(Object.keys(LOTEAM));
@@ -2757,6 +2985,11 @@ L.control.scale({ imperial: false }).addTo(mapa);
 const naVistaInicial = x => { const b = bairroDe(x.b); return !(b && (b.oculto || foraDaBase(b))); };
 function enquadrarTudo() { const pts = LOTES.flatMap(x => x.ll && naVistaInicial(x) ? [x.ll] : []); if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.15), { animate: false }); }
 window.addEventListener('resize', () => mapa.invalidateSize());
+// O resumo acima do mapa tem altura variável; o mapa ocupa o resto da tela.
+const intro = document.getElementById('intro');
+function medirIntro() { document.documentElement.style.setProperty('--intro', (intro ? intro.offsetHeight : 0) + 'px'); mapa.invalidateSize(); }
+medirIntro(); window.addEventListener('resize', medirIntro);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(medirIntro);
 window.addEventListener('load', () => mapa.invalidateSize());
 
 const camada = L.layerGroup().addTo(mapa);
@@ -2999,6 +3232,8 @@ function montarLista() {
     const div = document.createElement('div'); div.className = 'bairro' + (bairroAtivo === b.id ? ' ativo' : ''); div.dataset.id = b.id;
     div.innerHTML = `<button type="button"><span><b>${b.nome}</b><small>${ls.length} ${unidTxt(b, ls.length)}${pinados < ls.length ? ' · ' + pinados + ' no mapa' : ''}${foraDaBase(b) ? ' · ' + b.cidade : ''}${b.landing && !b.casas ? ' · lançamento' : ''}</small></span><span class="n">${minTxt(ls)}</span></button><div class="lotes"></div>`;
     const cont = div.querySelector('.lotes');
+    // menor preço à vista do filtro atual e o pedido da tabela completa, por loteamento
+    cont.insertAdjacentHTML('beforeend', `<div class="tab-cta"><span>${ls.some(temPreco) ? desdeTxt(ls) + ' à vista · tabela de ' + (b.tab || 'set/2026') : 'preços sob consulta'}</span><a class="btn-tab" data-origem="gaveta" href="${waTabela(b)}" target="_blank" rel="noopener">Quero a tabela ${artigoDe(b)} ${nomeCurto(b)}</a></div>`);
     ls.sort(cmp).forEach(x => {
       const el = document.createElement('div'); el.className = 'lote' + (x.ll || x.poly ? '' : ' sempino'); el.dataset.id = x.id;
       el.innerHTML = `<i style="background:${TIPOS[x.tipo][2]}"></i><span><span class="q">${rotuloTxt(x, '·')}</span> ${areaCurtaTxt(x)}${x.ll || x.poly ? '' : ' · <em>sem pino</em>'}</span><span class="v">${precoTxt(x)}</span>`;
@@ -3010,9 +3245,20 @@ function montarLista() {
   });
   if (!lista.children.length) lista.innerHTML = '<p class="vazio">Nenhum lote com esses filtros. Tente limpar a busca ou ligar mais tipos de lote.</p>';
 }
+// Barra fixa do celular: com um loteamento escolhido, pede a tabela dele; sem escolha, fala do mapa.
+const barraWa = document.getElementById('barraWa');
+function atualizarBarra() {
+  if (!barraWa) return;
+  const b = bairroAtivo ? bairroDe(bairroAtivo) : null;
+  barraWa.href = b ? waTabela(b) : barraWa.dataset.geral;
+  barraWa.querySelector('span').textContent = b
+    ? (b.casas ? 'Falar sobre ' + nomeCurto(b) : 'Falar sobre lotes ' + (artigoDe(b) === 'da' ? 'na' : 'no') + ' ' + nomeCurto(b))
+    : 'Falar sobre lotes em Indaiatuba';
+}
 function irParaBairro(id, forcar) {
   bairroAtivo = (!forcar && bairroAtivo === id) ? null : id;
   document.querySelectorAll('.bairro').forEach(d => d.classList.toggle('ativo', d.dataset.id === bairroAtivo));
+  atualizarBarra();
   if (!bairroAtivo) return;
   const b = bairroDe(id);
   const pts = LOTES.filter(x => x.b === id && passa(x)).flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
@@ -3076,21 +3322,5 @@ if (new URLSearchParams(location.search).get('tracar') === '1') {
 <a class="float-wpp" data-origem="flutuante" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Estou%20vendo%20o%20mapa%20de%20lotes%20de%20Indaiatuba%20e%20quero%20falar%20com%20um%20corretor." target="_blank" rel="noopener"
    aria-label="Falar com um corretor no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.19-.31a8.26 8.26 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.83c0 4.54-3.7 8.23-8.23 8.23m4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.6.19 1.14.17 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28"/></svg><span>Falar com um corretor</span></a>
 
-<script>
-// Fonte unica do evento de contato: cobre o link do topo, o flutuante e o de
-// cada lote. Antes so o popup media, e por isso o numero de setembro saiu baixo.
-document.addEventListener('click', function (e) {
-  var el = e.target.closest('a[href*="wa.me"]');
-  if (!el) return;
-  try {
-    gtag('event', 'whatsapp_click', {
-      event_category: 'conversao',
-      event_label: 'mapa-lotes',
-      origem: el.dataset.origem || 'outro',
-      lote: el.dataset.lote || ''
-    });
-  } catch (err) {}
-});
-</script>
 </body>
 </html>

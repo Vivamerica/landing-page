@@ -41,13 +41,23 @@ const TEMA_POR_SLUG = {
   'quanto-custa-morar-em-indaiatuba':                { tag: 'Custo de vida',          cat: 'morar' },
   'morar-em-indaiatuba-trabalhar-em-sao-paulo':      { tag: 'SP × Indaiatuba',        cat: 'morar' },
   'desvantagens-de-morar-em-indaiatuba':             { tag: 'Análise honesta',        cat: 'morar' },
-  'morar-em-indaiatuba-e-seguro':                    { tag: 'Segurança · Página-dado', cat: 'seguranca' },
+  'morar-em-indaiatuba-e-seguro':                    { tag: 'Segurança · Dados', cat: 'seguranca' },
   'melhores-bairros-para-morar-indaiatuba':          { tag: 'Bairros',                cat: 'bairros' },
   'indaiatuba-ou-sorocaba':                          { tag: 'Comparativo',            cat: 'comparativos' },
   'indaiatuba-ou-campinas':                          { tag: 'Comparativo',            cat: 'comparativos' },
   'hospital-parque-dos-passaros-indaiatuba':         { tag: 'Cidade · Obra pública',  cat: 'cidade' },
   'apartamento-ou-lote-indaiatuba':                  { tag: 'Investimento',           cat: 'investimento' },
   'o-que-e-alphaville':                              { tag: 'Mercado · Marca',        cat: 'mercado' },
+  // dinheiro e financiamento (artigos de out/2026)
+  'renda-necessaria-financiar-imovel':               { tag: 'Financiamento',          cat: 'dinheiro' },
+  'itbi-escritura-registro-indaiatuba':              { tag: 'Custos da compra',       cat: 'dinheiro' },
+  'fgts-classe-media-imovel-600-mil':                { tag: 'FGTS · Classe Média',    cat: 'fgts' },
+  'incc-parcela-na-planta':                          { tag: 'Na planta',              cat: 'dinheiro' },
+  'depois-das-chaves-o-que-muda-no-pagamento':       { tag: 'Depois das chaves',      cat: 'dinheiro' },
+  'patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida': { tag: 'Proteção da obra', cat: 'dinheiro' },
+  'quanto-custa-construir-em-indaiatuba-cub-2026':   { tag: 'Construir no lote',      cat: 'dinheiro' },
+  'condominio-de-lotes-ou-loteamento-fechado':       { tag: 'Lotes e condomínios',    cat: 'dinheiro' },
+  'comprar-na-planta-ou-pronto-para-morar':          { tag: 'Planta ou pronto',       cat: 'dinheiro' },
 };
 const DESTAQUES = new Set([
   'morar-em-indaiatuba', 'minha-casa-minha-vida-indaiatuba', 'como-usar-fgts-comprar-imovel-indaiatuba',
@@ -56,7 +66,7 @@ const CATEGORIAS = [
   ['', 'Todos'], ['mcmv', 'Minha Casa Minha Vida'], ['fgts', 'FGTS'],
   ['morar', 'Morar em Indaiatuba'], ['bairros', 'Bairros'], ['seguranca', 'Segurança'],
   ['comparativos', 'Comparativos'], ['investimento', 'Investimento'], ['cidade', 'Vida na cidade'],
-  ['mercado', 'Mercado'],
+  ['mercado', 'Mercado'], ['dinheiro', 'Dinheiro e financiamento'],
 ];
 const MESES = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
 
@@ -191,16 +201,26 @@ const html = `<!DOCTYPE html>
     footer a:hover{color:var(--dourado);}
   </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
+  <script id="ga4">
+    // GA4 só em produção: localhost, 127.0.0.1 e previews *.netlify.app ficam fora da medição
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-40C0379NPR');
-    document.addEventListener('click', function(e) {
+    (function () {
+      if (/localhost|127\\.0\\.0\\.1|netlify\\.app$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR';
+      document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
+    })();
+    document.addEventListener('click', function (e) {
       var el = e.target.closest('a[href*="wa.me"]');
-      if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
+      if (!el) return;
+      gtag('event', 'whatsapp_click', {
+        event_category: 'conversao',
+        event_label: (el.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 100),
+        cta_pos: el.getAttribute('data-cta') || (el.closest('footer') ? 'rodape' : 'meio'),
+        origem: 'blog'
+      });
     });
   </script>
 </head>
@@ -248,7 +268,7 @@ ${artigos.map(cardHtml).join('\n')}
       <a href="/blog/">Blog</a>
     </div>
     <p>© 2026 Imobiliária Viv'América · Lançamentos imobiliários em Indaiatuba SP</p>
-  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a></p>
+  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
   </footer>
 
   <script>
@@ -270,9 +290,10 @@ ${artigos.map(cardHtml).join('\n')}
       var b = ev.target.closest('.tema-chip');
       if (b) filtra(b.dataset.cat);
     });
-    // deep-link: /blog/?c=mcmv abre já filtrado
+    // deep-link: /blog/?c=mcmv abre já filtrado. O atrib.js usa o mesmo ?c= para o código
+    // de campanha: só filtra quando o valor é um dos temas dos botões acima.
     var c = new URLSearchParams(location.search).get('c');
-    if (c) filtra(c);
+    if (c && [].some.call(chips, function(ch){ return ch.dataset.cat === c; })) filtra(c);
   })();
   </script>
 </body>

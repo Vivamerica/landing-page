@@ -22,6 +22,19 @@ Ordem, por empreendimento (exemplos em dados/):
    dados/zarah-safira-mascara-cfg.json + dados/zarah-safira-cheio-overlay-cfg.json (0,4 m/px, 32 cores, 366 KB).
 8. confere-overlay.py images/<id>.png <id>-bounds.json conf.jpg 17  (planta sobre o satelite Esri, sem precisar do site)
 9. patch-mapa-bairro.py <id> <id>-bairro.txt <id>-lotes.js "comentario"  (idempotente) e node checa-mapa-js.js
+10. gera-lista-indexavel.py (idempotente): reescreve o bloco indexável da página — resumo acima do mapa, tabela dos
+    loteamentos por R$/m², FAQ e JSON-LD (WebPage/ItemList/FAQPage) — a partir de BAIRROS/LOTES. Roda depois de QUALQUER
+    mudança de dado (passos 9, dominium-atualiza.py, *-atualiza.py); a data "gerada em" só avança quando o conteúdo muda.
+    Antes de rodar, quando a tabela ou o relatório de um bairro muda, acertar À MÃO em BAIRROS o `tab` (data da tabela:
+    é o que o popup, a gaveta e a lista mostram; sem ele o mapa cai num mês fixo) e o `sub` (lotes disponíveis e data).
+    Os scripts *-atualiza.py só mexem nas linhas dos lotes. O gerador avisa ("AVISO:") quando um bairro visível está
+    sem `tab` e a data do mapa não bate com a da lista, e quando o "N lotes disponíveis" do `sub` não bate com os lotes
+    do arquivo; ele não corrige sozinho.
+    O dateModified do JSON-LD é do gera-sitemap.js (lastmod da página): o gerador só o grava quando reescreve o bloco;
+    rodado sem mudança de dado, deixa o arquivo como está. O autor e a imobiliária entram no JSON-LD pelo @id da
+    entidade única, com os mesmos campos do identidade.js.
+    O og:image (images/og.png, 1200x630) é um print do mapa com faixa de título e a data da lista: refazer com
+    gera-og.py quando os números do resumo ou a data "gerada em" mudarem.
 Regras: nunca citar a fonte "Vista Verde"; precos a vista do relatorio; lotes sem "nx" recebem soVista:true.
 
 ## Desenho solido (padrao escolhido pelo Fabio em 05/09/2026: lotes verdes, ruas cinza, divisas escuras, sem texto)

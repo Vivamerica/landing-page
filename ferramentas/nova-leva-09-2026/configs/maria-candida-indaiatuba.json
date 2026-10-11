@@ -3,6 +3,8 @@
   "nome": "Jardim Dona Maria Cândida",
   "categoria": "loteamentos",
   "data": "2026-10-04",
+  "atualizado": "2026-10-11",
+  "fonte_tabela": "tabela Asseplan Narezzi de 01/07/2025 · lista de lotes de 08/09/2026",
   "title": "Jardim Dona Maria Cândida | lotes de 300 m² em Indaiatuba",
   "description": "Loteamento fechado da Asseplan Narezzi em Indaiatuba, com obras concluídas: 180 lotes de 300 a 472 m², desde R$ 600.000, com 10% de entrada e 60x.",
   "keywords": "jardim dona maria candida, maria candida indaiatuba, lote indaiatuba, loteamento fechado indaiatuba, asseplan narezzi, lote pronto para construir indaiatuba",
@@ -33,7 +35,7 @@
   },
   "hero": {
     "eyebrow": "Indaiatuba/SP · Asseplan Narezzi",
-    "sub": "Loteamento fechado · obras concluídas",
+    "sub": "Loteamento fechado com obras concluídas em Indaiatuba",
     "lead": "Lotes de 300 a 472 m² com a infraestrutura pronta: asfalto, calçada, iluminação e rede de água e esgoto já executados. Na lista de 08/09/2026 restam 180 lotes dos 771 do projeto. Entrada de 10% e saldo em até 60 parcelas.",
     "preco": "A partir de R$ 600.000",
     "preco_nota": "lote de 300 m² · tabela Asseplan Narezzi válida a partir de 01/07/2025 — confirme o valor atual",

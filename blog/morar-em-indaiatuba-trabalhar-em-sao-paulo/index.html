@@ -30,12 +30,55 @@
     "headline": "Morar em Indaiatuba e trabalhar em São Paulo: vale a pena? (2026)",
     "description": "Análise real do deslocamento Indaiatuba-SP: tempo, custo mensal, rotas, para quem faz sentido e quando não compensa.",
     "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
-    "author": {"@type":"Organization","name":"Imobiliária Viv'América"}, "reviewedBy": {"@type":"Person","name":"Fabio Correia","jobTitle":"Corretor de imóveis, CRECI 303686-F","image":"https://lancamentos.imoveisvivamerica.com.br/images/fabio-correia.jpg","url":"https://lancamentos.imoveisvivamerica.com.br/sobre/","worksFor":{"@type":"Organization","name":"Imobiliária Viv'América"}},
-    "publisher": {"@type":"Organization","name":"Imobiliária Viv'América","logo":{"@type":"ImageObject","url":"https://lancamentos.imoveisvivamerica.com.br/favicon.png"}},
+    "author": {
+      "@type": "Person",
+      "@id": "https://lancamentos.imoveisvivamerica.com.br/sobre/#fabio-correia",
+      "name": "Fabio Correia",
+      "jobTitle": "Corretor de imóveis",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "CRECI",
+        "value": "303686-F"
+      },
+      "url": "https://lancamentos.imoveisvivamerica.com.br/sobre/#fabio-correia",
+      "image": "https://lancamentos.imoveisvivamerica.com.br/images/fabio-correia.jpg",
+      "worksFor": {
+        "@type": "RealEstateAgent",
+        "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+        "name": "Imobiliária Viv'América"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Person",
+      "@id": "https://lancamentos.imoveisvivamerica.com.br/sobre/#fabio-correia",
+      "name": "Fabio Correia",
+      "jobTitle": "Corretor de imóveis",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "CRECI",
+        "value": "303686-F"
+      },
+      "url": "https://lancamentos.imoveisvivamerica.com.br/sobre/#fabio-correia",
+      "image": "https://lancamentos.imoveisvivamerica.com.br/images/fabio-correia.jpg",
+      "worksFor": {
+        "@type": "RealEstateAgent",
+        "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+        "name": "Imobiliária Viv'América"
+      }
+    },
+    "publisher": {
+      "@type": "RealEstateAgent",
+      "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+      "name": "Imobiliária Viv'América"
+    },
     "datePublished": "2026-07-02",
-    "dateModified": "2026-07-02",
+    "dateModified": "2026-10-11",
     "mainEntityOfPage": "https://lancamentos.imoveisvivamerica.com.br/blog/morar-em-indaiatuba-trabalhar-em-sao-paulo/",
-    "isPartOf": {"@type":"BlogPosting","url":"https://lancamentos.imoveisvivamerica.com.br/blog/morar-em-indaiatuba/","name":"Morar em Indaiatuba: guia completo 2026"}
+    "isPartOf": {
+      "@type": "BlogPosting",
+      "url": "https://lancamentos.imoveisvivamerica.com.br/blog/morar-em-indaiatuba/",
+      "name": "Morar em Indaiatuba: guia completo 2026"
+    }
   }
   </script>
   <script type="application/ld+json">
@@ -168,12 +211,30 @@
     .malha a:hover { color:#C9A227; }
   </style>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
+  <script id="ga4">
+    // GA4 só em produção: localhost, 127.0.0.1 e previews *.netlify.app ficam fora da medição
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
-    document.addEventListener('click', function(e){var el=e.target.closest('a[href*="wa.me"]');if(el){gtag('event','whatsapp_click',{event_category:'conversao',event_label:document.title});}});
+    (function () {
+      if (/localhost|127\.0\.0\.1|netlify\.app$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR';
+      document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
+    })();
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('a[href*="wa.me"]');
+      if (!el) return;
+      var pos = el.getAttribute('data-cta') ||
+        (el.closest('.cta-topo') ? 'hero' : el.closest('.bo-barra') ? 'barra' :
+         el.closest('footer, .cta') ? 'rodape' : 'meio');
+      gtag('event', 'whatsapp_click', {
+        event_category: 'conversao',
+        event_label: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 100),
+        cta_pos: pos,
+        origem: location.pathname.replace(/^\/blog\//, '').replace(/\/$/, '') || 'blog'
+      });
+    });
   </script>
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
@@ -216,6 +277,21 @@
     .bo-btn-primario:hover,.bo-btn-wpp:hover{opacity:.9;}
     .bo-todos{display:inline-block;margin-top:.6rem;font-size:.8rem;font-weight:800;color:#8f7418;text-decoration:none;}
     .bo-todos:hover{color:#161616;}
+    /* tabela por faixa de preço (comparativos e cluster "morar") */
+    .bo-faixa{background:#FBF8F0;border:1px solid #E4D9BC;border-radius:4px;padding:1rem;margin:2rem 0;min-width:0;}
+    .bo-tab{width:100%;min-width:460px;border-collapse:collapse;font-size:.86rem;margin:.6rem 0 0;}
+    .bo-tab caption{caption-side:bottom;text-align:left;font-size:.74rem;color:#666;padding:.55rem 0 0;line-height:1.4;}
+    .bo-tab th,.bo-tab td{border-bottom:1px solid #E4D9BC;padding:.5rem .6rem;text-align:left;vertical-align:top;line-height:1.4;}
+    .bo-tab thead th{background:#161616;color:#fff;font-weight:700;}
+    .bo-tab tbody th{font-weight:700;color:#161616;white-space:nowrap;}
+    .bo-tab a{color:#1565C0;font-weight:700;text-decoration:none;}
+    .bo-tab small{color:#777;font-size:.78rem;}
+    /* CTA do topo: WhatsApp com a intenção do artigo + link da lista */
+    .cta-topo-acoes{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;}
+    .cta-topo a.cta-wpp{background:#25D366;color:#fff;}
+    .cta-topo a.cta-wpp:hover{background:#1ebe5a;}
+    /* barra fixa do celular: só aparece em telas estreitas */
+    .bo-barra{display:none;}
     @media(max-width:1100px){
       .blog-layout{grid-template-columns:1fr;max-width:780px;gap:1.5rem;}
       .bo-aside{position:static;flex-direction:row;overflow-x:auto;padding-bottom:.5rem;min-width:0;max-width:100%;
@@ -223,11 +299,98 @@
       .bo-aside .bo-card{min-width:230px;scroll-snap-align:start;}
       .bo-aside-titulo{display:none;}
     }
+    @media(max-width:680px){
+      .bo-barra{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:95;align-items:center;gap:.7rem;
+        background:#161616;color:#fff;padding:.55rem 4% calc(.55rem + env(safe-area-inset-bottom));
+        box-shadow:0 -4px 14px rgba(0,0,0,.25);}
+      .bo-barra span{flex:1 1 0;min-width:0;font-size:.8rem;line-height:1.3;font-weight:300;}
+      .bo-barra-wpp{flex:0 0 auto;background:#25D366;color:#fff;font-weight:800;font-size:.84rem;text-decoration:none;
+        padding:.6rem .95rem;border-radius:4px;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap;}
+      footer{padding-bottom:5.5rem;}
+    }
     @media(max-width:560px){
       .bo-inline{flex-direction:column;align-items:flex-start;}
       .bo-inline img{width:100%;height:150px;}
     }
   </style>
+  <!--GEN:entidade-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+    "name": "Imobiliária Viv'América",
+    "alternateName": [
+      "Viv'América Imóveis",
+      "Imobiliária Viva América"
+    ],
+    "legalName": "Imobiliaria Viva America Ltda - ME",
+    "taxID": "57.213.317/0001-23",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "CRECI",
+      "value": "47394-J"
+    },
+    "description": "Imobiliária de Indaiatuba/SP (CRECI 47394-J) que comercializa lançamentos imobiliários: apartamentos na planta, loteamentos e condomínios fechados, com o preço da tabela oficial e o mês de referência em cada página.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/",
+    "logo": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
+    "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
+    "telephone": "+5519989769457",
+    "email": "financeiro@imoveisvivamerica.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Higienópolis, 70 - Jardim União",
+      "addressLocality": "Indaiatuba",
+      "addressRegion": "SP",
+      "postalCode": "13348-671",
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Indaiatuba"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "knowsAbout": [
+      "Lançamentos imobiliários em Indaiatuba",
+      "Minha Casa Minha Vida",
+      "Financiamento Caixa e uso de FGTS",
+      "Condomínios fechados e loteamentos em Indaiatuba"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/imoveisvivamerica",
+      "https://www.facebook.com/imoveisvivamerica",
+      "https://www.youtube.com/@ImoveisVivAmerica",
+      "https://www.linkedin.com/company/imobiliaria-vivamerica"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5519989769457",
+      "contactType": "sales",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
+  }
+  </script>
+  <!--/GEN:entidade-->
 </head>
 <body>
   <header>
@@ -246,7 +409,7 @@
     <div class="wrap">
       <span class="tag">Indaiatuba × São Paulo</span>
       <h1>Morar em Indaiatuba e trabalhar em São Paulo: vale a pena em 2026?</h1>
-      <p class="meta">Atualizado em julho de 2026 · Imobiliária Viv'América · CRECI 47394-J</p>
+      <p class="meta">Atualizado em 11/10/2026 · Imobiliária Viv'América · CRECI 47394-J</p>
     </div>
   </section>
 
@@ -258,8 +421,11 @@
 
     <!--GEN:cta-topo-->
       <div class="cta-topo">
-        <p>Condomínios fechados disponíveis em Indaiatuba</p>
-        <a href="/?f=fechado" data-emp="cta-topo">Ver imóveis disponíveis</a>
+        <p>Lançamentos de Indaiatuba por faixa de preço, com tabela aberta</p>
+        <div class="cta-topo-acoes">
+          <a class="cta-wpp" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20conhecer%20os%20lan%C3%A7amentos%20de%20Indaiatuba%20por%20faixa%20de%20pre%C3%A7o." data-cta="hero" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a href="/precos-lancamentos-indaiatuba/" data-emp="cta-topo">Ver a tabela de preços</a>
+        </div>
       </div>
     <!--/GEN:cta-topo-->
 
@@ -277,17 +443,21 @@
     </ul>
 
     <!--GEN:oferta-->
-      <div class="bo-inline">
-        <img loading="lazy" decoding="async" src="/images/hero.jpg" alt="Terras de San Marino — Indaiatuba">
-        <div class="bo-inline-txt">
-          <span class="bo-eyebrow">Disponível agora em Indaiatuba</span>
-          <h4>Terras de San Marino</h4>
-          <p class="bo-spec">546 lotes · 19 disponíveis (espelho 02/09/2026) · 16.164 m² de lazer resort · Armigh · Best Business</p>
-          <p class="bo-preco">A partir de <b>R$ 247.500</b></p>
-          <div class="bo-acoes">
-            <a class="bo-btn-primario" href="/terras-de-san-marino-indaiatuba/" data-emp="terras-de-san-marino-indaiatuba">Ver o empreendimento</a>
-            <a class="bo-btn-wpp" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20o%20Terras%20de%20San%20Marino%20no%20blog%20da%20Viv'Am%C3%A9rica%20e%20quero%20saber%20mais." target="_blank" rel="noopener">WhatsApp</a>
-          </div>
+      <div class="bo-faixa">
+        <span class="bo-eyebrow">Lançamentos em Indaiatuba por faixa de preço</span>
+        <div class="tab-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%"><table class="bo-tab">
+          <caption>Menor preço "a partir de" em cada faixa, entre os lançamentos que representamos · tabelas das incorporadoras reunidas no Observatório de Preços, edição de outubro/2026</caption>
+          <thead><tr><th>Faixa</th><th>Apartamento</th><th>Lote</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">Até R$ 300 mil</th><td><a href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">Uni Residencial</a> · R$ 279.990</td><td><a href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">Residencial Monte Carmelo</a> · R$ 145.000 <small>e mais 4</small></td></tr>
+          <tr><th scope="row">R$ 300 mil a R$ 500 mil</th><td><a href="/viva-parque-aura-indaiatuba/" data-emp="viva-parque-aura-indaiatuba">Viva Parque Aura</a> · R$ 300.854 <small>e mais 10</small></td><td>—</td></tr>
+          <tr><th scope="row">R$ 500 mil a R$ 1 milhão</th><td><a href="/manai-bosque-indaiatuba/" data-emp="manai-bosque-indaiatuba">Manai Bosque</a> · R$ 505.941 <small>e mais 4</small></td><td><a href="/alpnach-indaiatuba/" data-emp="alpnach-indaiatuba">Alpnach Residence</a> · R$ 510.000 <small>e mais 6</small></td></tr>
+          <tr><th scope="row">Acima de R$ 1 milhão</th><td><a href="/espaco-conceicao-indaiatuba/" data-emp="espaco-conceicao-indaiatuba">Espaço Conceição</a> · R$ 1.023.557 <small>e mais 1</small></td><td><a href="/porteira-de-ferro-indaiatuba/" data-emp="porteira-de-ferro-indaiatuba">Porteira de Ferro</a> · R$ 1.300.000</td></tr>
+          </tbody>
+        </table></div>
+        <div class="bo-acoes">
+          <a class="bo-btn-primario" href="/precos-lancamentos-indaiatuba/" data-emp="observatorio-faixa">Ver a tabela completa</a>
+          <a class="bo-btn-wpp" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20conhecer%20os%20lan%C3%A7amentos%20de%20Indaiatuba%20por%20faixa%20de%20pre%C3%A7o." data-cta="meio" target="_blank" rel="noopener">Pedir por faixa no WhatsApp</a>
         </div>
       </div>
     <!--/GEN:oferta-->
@@ -455,13 +625,7 @@
     <h2>Já decidiu que faz sentido? Onde comprar</h2>
     <p>Se você vai fazer o trajeto, escolha um imóvel que <strong>facilite</strong> a saída rápida para as rodovias:</p>
     <ul>
-      <li><strong>Perto do acesso à Santos Dumont/Bandeirantes:</strong> Parque dos Pássaros — onde estão <a href="/aurora-indaiatuba/">Aurora</a>
-      <a href="/manai-bosque-indaiatuba/">Manai Bosque</a>
-      <a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a>
-      <a href="/parque-zarah-indaiatuba/">Parque Zarah</a>
-      <a href="/itamaraca-indaiatuba/">Itamaracá</a>
-      <a href="/spazio-italia-indaiatuba/">Spazio Italia</a>
-      <a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a>, <a href="/gran-vic-canario-indaiatuba/">Canário</a> e <a href="/gran-vic-colibri-indaiatuba/">Colibri</a>. Saída rápida para a rodovia;</li>
+      <li><strong>Perto do acesso à Santos Dumont/Bandeirantes:</strong> Parque dos Pássaros — onde estão <a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a>, <a href="/gran-vic-canario-indaiatuba/">Canário</a> e <a href="/gran-vic-colibri-indaiatuba/">Colibri</a>. Saída rápida para a rodovia;</li>
       <li><strong>Bom custo-benefício com FGTS:</strong> <a href="/uni-residencial-indaiatuba/">Uni Residencial</a> (MCMV, próximo ao Parque Ecológico);</li>
       <li><strong>Alto padrão:</strong> <a href="/helade-indaiatuba/">Hélade</a> no Park Meraki — perfil executivo compatível com salários da capital;</li>
       <li><strong>Casa em condomínio fechado:</strong> <a href="/alpnach-indaiatuba/">Alpnach Residence</a> ou <a href="/residencial-ravello-indaiatuba/">Ravello</a> — construir para o longo prazo faz sentido se você vai investir em qualidade de vida da família.</li>
@@ -470,7 +634,7 @@
 
     <h2>Continue lendo</h2>
     <ul>
-      <li><a href="/blog/morar-em-indaiatuba-e-bom/">Morar em Indaiatuba é bom? Vantagens honestas</a>;</li>
+      <li><a href="/blog/morar-em-indaiatuba-e-bom/">Vale a pena morar em Indaiatuba? Prós e contras honestos</a>;</li>
       <li><a href="/blog/desvantagens-de-morar-em-indaiatuba/">Desvantagens honestas de morar em Indaiatuba</a>;</li>
       <li><a href="/blog/quanto-custa-morar-em-indaiatuba/">Quanto custa morar em Indaiatuba: planilha 2026</a>;</li>
       <li><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Melhores bairros para morar em Indaiatuba</a>.</li>
@@ -498,16 +662,6 @@
       <aside class="bo-aside">
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
-        <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
-          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
-          <div class="bo-corpo">
-            <span class="bo-selo">Loteamento</span>
-            <h4>Residencial Monte Carmelo</h4>
-            <p class="bo-spec">Loteamento aberto · entrada de R$ 16.000 · 96x</p>
-            <p class="bo-preco">A partir de <b>R$ 145.000</b></p>
-            <span class="bo-btn">Ver detalhes →</span>
-          </div>
-        </a>
         <a class="bo-card" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">
           <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
           <div class="bo-corpo">
@@ -518,6 +672,16 @@
             <span class="bo-btn">Ver detalhes →</span>
           </div>
         </a>
+        <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
+          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
+          <div class="bo-corpo">
+            <span class="bo-selo">Loteamento</span>
+            <h4>Residencial Monte Carmelo</h4>
+            <p class="bo-spec">Loteamento aberto · entrada de R$ 16.000 · 96x</p>
+            <p class="bo-preco">A partir de <b>R$ 145.000</b></p>
+            <span class="bo-btn">Ver detalhes →</span>
+          </div>
+        </a>
         <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
           <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki — Indaiatuba">
           <div class="bo-corpo">
@@ -525,6 +689,16 @@
             <h4>Aurora — Park Meraki</h4>
             <p class="bo-spec">101 a 152 m² · 4 torres · 32 áreas de lazer</p>
             <p class="bo-preco">A partir de <b>R$ 758.850</b></p>
+            <span class="bo-btn">Ver detalhes →</span>
+          </div>
+        </a>
+        <a class="bo-card" href="/parque-zarah-indaiatuba/" data-emp="parque-zarah-indaiatuba">
+          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah — Indaiatuba">
+          <div class="bo-corpo">
+            <span class="bo-selo">Cond. fechado</span>
+            <h4>Parque Zarah</h4>
+            <p class="bo-spec">3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028</p>
+            <p class="bo-preco">A partir de <b>R$ 211.050</b></p>
             <span class="bo-btn">Ver detalhes →</span>
           </div>
         </a>
@@ -583,5 +757,11 @@
       }
     });
   </script>
+  <!--GEN:barra-->
+  <div class="bo-barra" role="complementary" aria-label="Contato rápido">
+    <span>Lançamentos por faixa de preço</span>
+    <a class="bo-barra-wpp" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20conhecer%20os%20lan%C3%A7amentos%20de%20Indaiatuba%20por%20faixa%20de%20pre%C3%A7o." data-cta="barra" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </div>
+  <!--/GEN:barra-->
 </body>
 </html>

@@ -55,3 +55,9 @@ seo/
 
 # material bruto extraído de books (não é do site)
 ferramentas/nova-leva-09-2026/imagens-extraidas/
+
+# Dados abertos do Observatorio de Precos (CSV e JSON da edicao do mes):
+# excecao nominal, so' dado publico ja' exibido na pagina. Nenhum outro
+# .csv ou .json passa por aqui.
+!imprensa-e-dados/dados-lancamentos-indaiatuba-*.csv
+!imprensa-e-dados/dados-lancamentos-indaiatuba-*.json

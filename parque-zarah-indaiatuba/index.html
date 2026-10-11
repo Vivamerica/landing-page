@@ -32,17 +32,42 @@
     "description": "Condomínio fechado Zarin em Indaiatuba/SP com inspiração persa, em três fases: Safira (Fase 1, em obras, entrega prevista dez/2026), Rubi e Pérola (Fases 2 e 3, entrega prevista dez/2028). 662 lotes disponíveis na tabela de outubro/2026, de 150 m² a 409 m², a partir de R$ 211.050 (lote misto) e R$ 218.588 (residencial). Mais de 15 áreas de lazer: pool house, piscina, salão de festas, salão de jogos, brinquedoteca, academia, playground, pet place, horta, praça, smart store, quiosque, quadra poliesportiva, beach tennis, portaria e delivery.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/parque-zarah-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/parque-zarah-indaiatuba/images/hero-portaria.jpg",
-    "dateModified": "2026-09-04",
+    "dateModified": "2026-10-11",
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": -23.102323,
       "longitude": -47.268795
     },
     "hasMap": "https://www.google.com/maps/search/?api=1&query=-23.102323,-47.268795",
-    "address": {"@type":"PostalAddress","streetAddress":"Avenida Manoel Ruz Peres","addressLocality":"Indaiatuba","addressRegion":"SP","postalCode":"13348-855","addressCountry":"BR"},
-    "floorSize": {"@type":"QuantitativeValue","minValue":150,"maxValue":409.37,"unitCode":"MTK"},
-    "offers": {"@type":"Offer","priceCurrency":"BRL","price":"211050","availability":"https://schema.org/InStock","priceSpecification":{"@type":"PriceSpecification","description":"Tabela de outubro/2026 (gerada em 01/10/2026): lotes a partir de R$ 211.050 (lote misto de 150 m², fase Pérola) e residenciais a partir de R$ 218.588; ato de 12% + 180 parcelas mensais pela Tabela Price (juros 1% a.m.) com correção mensal pelo IPCA (Índice Nacional de Preços ao Consumidor Amplo). Cadastro sujeito a aprovação de crédito. Tabela sujeita a alteração sem aviso prévio."}},
-    "broker": {"@type":"RealEstateAgent","name":"Imobiliária Viv'América","telephone":"+5519989769457","url":"https://lancamentos.imoveisvivamerica.com.br/"}
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida Manoel Ruz Peres",
+      "addressLocality": "Indaiatuba",
+      "addressRegion": "SP",
+      "postalCode": "13348-855",
+      "addressCountry": "BR"
+    },
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "minValue": 150,
+      "maxValue": 409.37,
+      "unitCode": "MTK"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "BRL",
+      "price": "211050",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "description": "Tabela de outubro/2026 (gerada em 01/10/2026): lotes a partir de R$ 211.050 (lote misto de 150 m², fase Pérola) e residenciais a partir de R$ 218.588; ato de 12% + 180 parcelas mensais pela Tabela Price (juros 1% a.m.) com correção mensal pelo IPCA (Índice Nacional de Preços ao Consumidor Amplo). Cadastro sujeito a aprovação de crédito. Tabela sujeita a alteração sem aviso prévio."
+      }
+    },
+    "broker": {
+      "@type": "RealEstateAgent",
+      "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+      "name": "Imobiliária Viv'América"
+    }
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,6 +214,8 @@
     .fase-body .btn-gold{margin-top:auto;justify-content:center;padding:.85rem 1.2rem;font-size:.88rem}
     .fase-nota{font-size:.8rem;color:var(--texto-claro);margin-top:1.4rem;line-height:1.6;max-width:900px}
     .preco-sub{font-size:.9rem;color:rgba(255,255,255,.82);margin:.2rem auto .6rem;max-width:560px;line-height:1.55}
+    /* linha de procedência sob o H1: data da última mudança de texto · fonte da tabela · quem responde */
+    .hero p.procedencia,p.procedencia{font-size:.76rem;letter-spacing:.04em;line-height:1.5;opacity:.88;color:rgba(255,255,255,.92);margin:.1rem auto 1rem;max-width:720px;text-transform:none;font-weight:400;}
   </style>
   <style id="marca">
     /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
@@ -228,11 +255,36 @@
                font-weight:300; white-space:nowrap; }
     .malha a:hover { color:#C9A227; }
   </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR"></script>
-  <script>
-    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-    gtag('js',new Date());gtag('config','G-40C0379NPR');
-    document.addEventListener('click',function(e){var el=e.target.closest('a[href*="wa.me"]');if(el){gtag('event','whatsapp_click',{event_category:'conversao',event_label:document.title})}});
+  <script id="ga4">
+    // GA4 só em produção: localhost, 127.0.0.1 e previews *.netlify.app ficam fora da medição
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      if (/localhost|127\.0\.0\.1|netlify\.app$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR';
+      document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
+    })();
+    // whatsapp_click: rótulo do botão, posição (hero|meio|flutuante|rodape|barra) e página de origem
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('a[href*="wa.me"]');
+      if (!el) return;
+      var pos = el.getAttribute('data-cta') ||
+        ({ topo: 'hero', flutuante: 'flutuante', lote: 'meio', lista: 'rodape' })[el.getAttribute('data-origem')] ||
+        (el.closest('.wa-float, .wa-float-home, .float-wpp, .whats-flutuante') ? 'flutuante' :
+         el.closest('.bo-barra, .barra-wa') ? 'barra' :
+         el.closest('header, .hero, #hero, .topo, .cta-topo, .article-hero') ? 'hero' :
+         el.closest('footer, .cta, .cta-section, .cta-final') ? 'rodape' : 'meio');
+      var p = {
+        event_category: 'conversao',
+        event_label: ((el.textContent || '').replace(/\s+/g, ' ').trim() || el.getAttribute('aria-label') || '').slice(0, 100),
+        cta_pos: pos,
+        origem: location.pathname
+      };
+      if (el.getAttribute('data-lote')) p.lote = el.getAttribute('data-lote');
+      gtag('event', 'whatsapp_click', p);
+    });
   </script>
   <script type="application/ld+json">
   {
@@ -249,46 +301,95 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": "BRL",
-      "price": "210000",
+      "price": "211050",
       "availability": "https://schema.org/InStock",
       "url": "https://lancamentos.imoveisvivamerica.com.br/parque-zarah-indaiatuba/",
       "seller": {
         "@type": "RealEstateAgent",
-        "name": "Imobiliária Viv'América",
-        "telephone": "+5519989769457"
+        "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+        "name": "Imobiliária Viv'América"
       }
     }
   }
   </script>
+  <!--GEN:entidade-->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
+    "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
     "name": "Imobiliária Viv'América",
-    "alternateName": "Viv'América Imóveis",
-    "description": "Imobiliária especializada em lançamentos imobiliários em Indaiatuba/SP: apartamentos MCMV e alto padrão, condomínios fechados de lotes e loteamentos abertos. Simulação de financiamento gratuita pela Caixa Econômica Federal com uso de FGTS.",
-    "url": "https://imoveisvivamerica.com.br",
+    "alternateName": [
+      "Viv'América Imóveis",
+      "Imobiliária Viva América"
+    ],
+    "legalName": "Imobiliaria Viva America Ltda - ME",
+    "taxID": "57.213.317/0001-23",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "CRECI",
+      "value": "47394-J"
+    },
+    "description": "Imobiliária de Indaiatuba/SP (CRECI 47394-J) que comercializa lançamentos imobiliários: apartamentos na planta, loteamentos e condomínios fechados, com o preço da tabela oficial e o mês de referência em cada página.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/",
     "logo": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
-    "image": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
+    "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
     "telephone": "+5519989769457",
     "email": "financeiro@imoveisvivamerica.com.br",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Av. Higienópolis, 70 - Jardim União",
       "addressLocality": "Indaiatuba",
       "addressRegion": "SP",
+      "postalCode": "13348-671",
       "addressCountry": "BR"
     },
     "areaServed": {
       "@type": "City",
-      "name": "Indaiatuba",
-      "containedInPlace": { "@type": "State", "name": "São Paulo" }
+      "name": "Indaiatuba"
     },
-    "priceRange": "R$ 145.000 – R$ 1.750.014",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "knowsAbout": [
+      "Lançamentos imobiliários em Indaiatuba",
+      "Minha Casa Minha Vida",
+      "Financiamento Caixa e uso de FGTS",
+      "Condomínios fechados e loteamentos em Indaiatuba"
+    ],
     "sameAs": [
-      "https://lancamentos.imoveisvivamerica.com.br/"
-    ]
+      "https://www.instagram.com/imoveisvivamerica",
+      "https://www.facebook.com/imoveisvivamerica",
+      "https://www.youtube.com/@ImoveisVivAmerica",
+      "https://www.linkedin.com/company/imobiliaria-vivamerica"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5519989769457",
+      "contactType": "sales",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
   }
   </script>
+  <!--/GEN:entidade-->
 </head>
 <body>
 <header>
@@ -308,6 +409,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-monogram">Parque Zarah <span class="hero-tipo">— Condomínio fechado de lotes em 3 fases · Indaiatuba</span></h1>
+    <p class="procedencia">Atualizado em 11/10/2026 · tabela Zarin de out/2026 (gerada em 01/10/2026) · Fabio Correia, CRECI 303686-F</p>
     <p class="hero-tagline">Inspiração<br>persa em cada<br>detalhe<em>Zarin · Indaiatuba · Safira, Rubi e Pérola</em></p>
     <div class="hero-divider"></div>
     <p>Condomínio fechado em três fases — Safira, Rubi e Pérola — com 662 lotes disponíveis de 150 a 409 m² (tabela out/2026), mais de 15 áreas de lazer, pool house, beach tennis, quadra poliesportiva, salão de festas e brinquedoteca. A partir de R$ 211,1 mil (lote misto) · residencial a partir de R$ 218,6 mil (tabela out/2026). Safira em obras, entrega prevista dez/2026; Rubi e Pérola, dez/2028.</p>
@@ -363,9 +465,9 @@
       <table class="fases-tab">
         <thead><tr><th>Fase</th><th>Lotes disponíveis (out/2026)</th><th>Residencial a partir de</th><th>Lote misto a partir de</th><th>Metragens</th><th>Entrega prevista</th></tr></thead>
         <tbody>
-          <tr><td><strong>1 · Safira</strong><small>em obras · quadras 3 a 13</small></td><td>49<small>de 420 do projeto</small></td><td>R$ 251.615<small>150 m²</small></td><td>R$ 369.739<small>315 m² · só 1 lote</small></td><td>150 a 344 m²</td><td><strong>dez/2026</strong></td></tr>
-          <tr><td><strong>2 · Rubi</strong><small>lançamento · quadras 30 a 43</small></td><td>226<small>de 493 do projeto</small></td><td>R$ 224.574<small>160 m² · padrão 150 m² por R$ 225.000</small></td><td>R$ 285.459<small>247 m² · o maior chega a R$ 432.692</small></td><td>150 a 409 m²</td><td><strong>dez/2028</strong></td></tr>
-          <tr><td><strong>3 · Pérola</strong><small>lançamento · quadras 14 a 29</small></td><td>394<small>de 657 do projeto</small></td><td>R$ 218.588<small>150 m² com viela sanitária · padrão 150 m² por R$ 225.000</small></td><td>R$ 211.050<small>150 m² · menor preço da tabela</small></td><td>150 a 366 m²</td><td><strong>dez/2028</strong></td></tr>
+          <tr><td><strong>1 · Safira</strong><small>em obras · quadras 3 a 13</small></td><td>50<small>de 420 do projeto</small></td><td>R$ 252.873<small>150 m²</small></td><td>R$ 371.587<small>315 m² · só 1 lote</small></td><td>150 a 344 m²</td><td><strong>dez/2026</strong></td></tr>
+          <tr><td><strong>2 · Rubi</strong><small>lançamento · quadras 30 a 43</small></td><td>223<small>de 493 do projeto</small></td><td>R$ 225.697<small>160 m² · padrão 150 m² por R$ 226.125</small></td><td>R$ 285.459<small>247 m² · o maior chega a R$ 434.855</small></td><td>150 a 409 m²</td><td><strong>dez/2028</strong></td></tr>
+          <tr><td><strong>3 · Pérola</strong><small>lançamento · quadras 14 a 29</small></td><td>389<small>de 657 do projeto</small></td><td>R$ 218.588<small>150 m² com viela sanitária · padrão 150 m² por R$ 226.125</small></td><td>R$ 211.050<small>150 m² · menor preço da tabela</small></td><td>150 a 366 m²</td><td><strong>dez/2028</strong></td></tr>
         </tbody>
       </table>
     </div>
@@ -376,11 +478,11 @@
           <span class="fase-badge obras">Fase 1 · em obras</span>
           <h3>Safira</h3>
           <p class="fase-sub">Quadras 3 a 13 · 420 lotes no projeto urbanístico (jan/2023)</p>
-          <div class="fase-preco">R$ 251.615<small>residencial de 150 m² · a partir de · tabela out/2026</small></div>
+          <div class="fase-preco">R$ 252.873<small>residencial de 150 m² · a partir de · tabela out/2026</small></div>
           <dl class="fase-dl">
-            <div><dt>Lotes disponíveis (out/2026)</dt><dd>49 — 48 residenciais e 1 misto</dd></div>
-            <div><dt>Metragens</dt><dd>150 a 344 m² · maior valor R$ 567.157 (338 m²)</dd></div>
-            <div><dt>Lote misto</dt><dd>1 lote, de 315 m², por R$ 369.739</dd></div>
+            <div><dt>Lotes disponíveis (out/2026)</dt><dd>50 — 49 residenciais e 1 misto</dd></div>
+            <div><dt>Metragens</dt><dd>150 a 344 m² · maior valor R$ 569.993 (338 m²)</dd></div>
+            <div><dt>Lote misto</dt><dd>1 lote, de 315 m², por R$ 371.587</dd></div>
             <div><dt>Entrega prevista</dt><dd>dez/2026</dd></div>
             <div><dt>Condições</dt><dd>ato 12% + 180 mensais · Price 1% a.m. + IPCA</dd></div>
           </dl>
@@ -393,12 +495,12 @@
           <span class="fase-badge lanc">Fase 2 · lançamento</span>
           <h3>Rubi</h3>
           <p class="fase-sub">Quadras 30 a 43 · 493 lotes no projeto urbanístico (jan/2023)</p>
-          <div class="fase-preco">R$ 225.000<small>residencial de 150 m² · tabela out/2026</small></div>
+          <div class="fase-preco">R$ 226.125<small>residencial de 150 m² · tabela out/2026</small></div>
           <dl class="fase-dl">
-            <div><dt>Lotes disponíveis (out/2026)</dt><dd>226 — 192 residenciais e 34 mistos</dd></div>
+            <div><dt>Lotes disponíveis (out/2026)</dt><dd>223 — 190 residenciais e 33 mistos</dd></div>
             <div><dt>Metragens</dt><dd>150 a 409 m² · maior valor R$ 575.984 (409 m²)</dd></div>
-            <div><dt>Residencial mais barato</dt><dd>R$ 224.574 (160 m², quadra 31)</dd></div>
-            <div><dt>Lote misto (frente para via externa)</dt><dd>de 247 a 333 m², de R$ 285.459 a 432.692</dd></div>
+            <div><dt>Residencial mais barato</dt><dd>R$ 225.697 (160 m², quadra 31)</dd></div>
+            <div><dt>Lote misto (frente para via externa)</dt><dd>de 247 a 333 m², de R$ 285.459 a 434.855</dd></div>
             <div><dt>Entrega prevista</dt><dd>dez/2028</dd></div>
             <div><dt>Condições</dt><dd>ato 12% + 180 mensais · Price 1% a.m. + IPCA</dd></div>
           </dl>
@@ -413,9 +515,9 @@
           <p class="fase-sub">Quadras 14 a 29 · 657 lotes no projeto urbanístico (jan/2023)</p>
           <div class="fase-preco">R$ 211.050<small>lote misto de 150 m² · menor preço da tabela out/2026</small></div>
           <dl class="fase-dl">
-            <div><dt>Lotes disponíveis (out/2026)</dt><dd>394 — 372 residenciais e 22 mistos</dd></div>
-            <div><dt>Metragens</dt><dd>150 a 366 m² · maior valor R$ 549.360 (366 m²)</dd></div>
-            <div><dt>Residencial</dt><dd>150 m² por R$ 225.000 · R$ 218.588 nos 17 lotes com viela sanitária (quadras 17 e 23)</dd></div>
+            <div><dt>Lotes disponíveis (out/2026)</dt><dd>389 — 372 residenciais e 17 mistos</dd></div>
+            <div><dt>Metragens</dt><dd>150 a 366 m² · maior valor R$ 552.107 (366 m²)</dd></div>
+            <div><dt>Residencial</dt><dd>150 m² por R$ 226.125 · R$ 218.588 em 16 lotes de 150 m² com viela sanitária (quadras 17 e 23)</dd></div>
             <div><dt>Lote misto (frente para via externa)</dt><dd>de 150 a 273 m², de R$ 211.050 (150 m², quadra 27) a R$ 316.040 (273 m², quadra 14)</dd></div>
             <div><dt>Entrega prevista</dt><dd>dez/2028</dd></div>
             <div><dt>Condições</dt><dd>ato 12% + 180 mensais · Price 1% a.m. + IPCA</dd></div>
@@ -487,7 +589,7 @@
     <div class="preco-card">
       <span class="preco-tipo">Parque Zarah · menor preço da tabela out/2026</span>
       <div class="preco-valor">R$ 211.050<small>lote misto de 150 m² · Pérola (Fase 3) · ato R$ 25.326 + 180x de R$ 2.229,00</small></div>
-      <p class="preco-sub">Residencial a partir de R$ 218.588 (150 m² com viela sanitária, Pérola) · lote residencial padrão de 150 m² por R$ 225.000 na Rubi e na Pérola e R$ 251.615 na Safira</p>
+      <p class="preco-sub">Residencial a partir de R$ 218.588 (150 m² com viela sanitária, Pérola) · lote residencial padrão de 150 m² por R$ 226.125 na Rubi e na Pérola e R$ 252.873 na Safira</p>
       <div class="pgto-grid">
         <div class="pgto-card"><div class="pgto-pct">12%</div><div class="pgto-label">Ato</div></div>
         <div class="pgto-card"><div class="pgto-pct">180x</div><div class="pgto-label">Mensais</div></div>
@@ -515,7 +617,7 @@
       <div><dt>Preço a partir de</dt><dd>R$ 211.050 — lote misto de 150 m² (tabela de 01/10/2026) · residencial a partir de R$ 218.588</dd></div>
       <div><dt>Situação</dt><dd>Safira em obras · Rubi e Pérola em lançamento</dd></div>
     </dl>
-    <p class="ficha-nota">Dados confirmados nas tabelas e fichas das incorporadoras; atualizados pela Imobiliária Viv'América (CRECI 47394-J) em setembro de 2026.</p>
+    <p class="ficha-nota">Dados confirmados nas tabelas e fichas das incorporadoras; atualizados pela Imobiliária Viv'América (CRECI 47394-J) em outubro de 2026.</p>
   </div>
 </section>
 <style>
@@ -527,12 +629,25 @@
   .ficha-lista dd{margin:0}
   .ficha-nota{font-size:.85rem;opacity:.75;margin-top:1rem;max-width:70ch}
 </style>
+<section class="mudou" aria-labelledby="mudou-h2">
+  <div style="max-width:860px;margin:0 auto;padding:2.4rem 5%;">
+    <h2 id="mudou-h2" style="font-size:1.2rem;margin:0 0 .7rem;">O que mudou nesta página</h2>
+    <ul style="margin:0;padding-left:1.1rem;font-size:.92rem;line-height:1.65;">
+      <li><time datetime="2026-10-01">01/10/2026</time> — Tabela Zarin de outubro/2026 (gerada em 01/10/2026): 662 lotes disponíveis; lote a partir de R$ 211.050.</li>
+      <li><time datetime="2026-09-29">29/09/2026</time> — Tabela Zarin de 29/09/2026: 669 lotes disponíveis e novo preço inicial de R$ 210.000 (antes R$ 172.500).</li>
+      <li><time datetime="2026-09-18">18/09/2026</time> — Tabela Zarin de 18/09/2026: 685 lotes disponíveis (antes 734).</li>
+      <li><time datetime="2026-09-03">03/09/2026</time> — Tabela de setembro/2026 nas 3 fases (Safira, Rubi e Pérola).</li>
+      <li><time datetime="2026-07-28">28/07/2026</time> — Página publicada.</li>
+    </ul>
+  </div>
+</section>
+
 <section class="section" style="background:#fff;">
   <div class="faq-geo">
     <span class="faq-label">Dúvidas frequentes</span>
     <h2 class="faq-h2">Perguntas frequentes sobre o Parque Zarah</h2>
-    <details><summary>Quanto custa um lote no Parque Zarah?</summary><p>A tabela de outubro/2026 (gerada em 01/10/2026) começa em R$ 211.050, num lote misto de 150 m² da fase Pérola (ato de R$ 25.326 + 180 parcelas de R$ 2.229,00). O lote residencial padrão de 150 m² sai por R$ 225.000 nas fases Rubi e Pérola (R$ 218.588 nos lotes com viela sanitária da Pérola) e por R$ 251.615 na Safira; o residencial mais barato da tabela é um lote de 150 m² com viela sanitária da Pérola por R$ 218.588. O maior valor é R$ 575.984 (409 m², Rubi). Ato de 12% + 180 mensais pela Tabela Price (juros 1% a.m.) com correção mensal pelo IPCA. A tabela pode ser alterada sem aviso prévio — solicite a atualizada com a Viv'América.</p></details>
-    <details><summary>Qual a diferença entre as fases Safira, Rubi e Pérola?</summary><p>São três etapas de obra do mesmo condomínio, com mapas e cronogramas próprios. A Safira (Fase 1, quadras 3 a 13) está em obras, com entrega prevista para dez/2026, e tinha 57 lotes disponíveis em out/2026 — o residencial de 150 m² custa R$ 251.615. A Rubi (Fase 2, quadras 30 a 43) e a Pérola (Fase 3, quadras 14 a 29) são as frentes novas, com entrega prevista para dez/2028, 268 e 409 lotes disponíveis (out/2026) e residencial de 150 m² por R$ 225.000. Portaria, lazer e condições de pagamento são os mesmos nas três.</p></details>
+    <details><summary>Quanto custa um lote no Parque Zarah?</summary><p>A tabela de outubro/2026 (gerada em 01/10/2026) começa em R$ 211.050, num lote misto de 150 m² da fase Pérola (ato de R$ 25.326 + 180 parcelas de R$ 2.229,00). O lote residencial padrão de 150 m² sai por R$ 226.125 nas fases Rubi e Pérola (R$ 218.588 nos lotes com viela sanitária da Pérola) e por R$ 252.873 na Safira; o residencial mais barato da tabela é um lote de 150 m² com viela sanitária da Pérola por R$ 218.588. O maior valor é R$ 575.984 (409 m², Rubi). Ato de 12% + 180 mensais pela Tabela Price (juros 1% a.m.) com correção mensal pelo IPCA. A tabela pode ser alterada sem aviso prévio — solicite a atualizada com a Viv'América.</p></details>
+    <details><summary>Qual a diferença entre as fases Safira, Rubi e Pérola?</summary><p>São três etapas de obra do mesmo condomínio, com mapas e cronogramas próprios. A Safira (Fase 1, quadras 3 a 13) está em obras, com entrega prevista para dez/2026, e tinha 50 lotes disponíveis em out/2026 — o residencial de 150 m² custa R$ 252.873. A Rubi (Fase 2, quadras 30 a 43) e a Pérola (Fase 3, quadras 14 a 29) são as frentes novas, com entrega prevista para dez/2028, 223 e 389 lotes disponíveis (out/2026) e residencial de 150 m² por R$ 226.125. Portaria, lazer e condições de pagamento são os mesmos nas três.</p></details>
     <details><summary>O que é lote misto?</summary><p>É o lote de uso misto, que admite residência ou comércio, localizado na borda do condomínio com frente para a via externa — a tabela o chama de "externo". Em out/2026 ele custa menos que o residencial interno de mesma metragem: 150 m² a partir de R$ 211.050 na Pérola; na Rubi os mistos começam em 247 m², por R$ 285.459. As regras de uso comercial seguem a convenção do condomínio e a legislação municipal; confirme com a Viv'América antes de comprar para esse fim.</p></details>
     <details><summary>Onde fica o Parque Zarah?</summary><p>O Parque Zarah fica em Indaiatuba/SP, na Avenida Manoel Ruz Peres, Jardim Residencial Veneza (endereço do projeto urbanístico). É um condomínio fechado incorporado pelo Grupo Zarin, em três fases: Safira em obras, Rubi e Pérola em lançamento.</p></details>
     <details><summary>Qual a metragem dos lotes?</summary><p>Os lotes vão de 150 m² a 409 m² (tabela out/2026). A maior parte é de 150 m²; os maiores chegam a 344 m² na Safira, 409 m² na Rubi e 366 m² na Pérola. Consulte a disponibilidade com a Viv'América.</p></details>
@@ -544,8 +659,8 @@
 </section>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Quanto custa um lote no Parque Zarah?","acceptedAnswer":{"@type":"Answer","text":"A tabela de outubro/2026 (gerada em 01/10/2026) começa em R$ 211.050, num lote misto de 150 m² da fase Pérola (ato de R$ 25.326 + 180 parcelas de R$ 2.229,00). O lote residencial padrão de 150 m² sai por R$ 225.000 nas fases Rubi e Pérola (R$ 218.588 nos lotes com viela sanitária da Pérola) e por R$ 251.615 na Safira; o residencial mais barato é um lote de 150 m² com viela sanitária da Pérola por R$ 218.588. O maior valor é R$ 575.984 (409 m², Rubi). Ato de 12% + 180 mensais pela Tabela Price (juros 1% a.m.) com correção mensal pelo IPCA (Índice Nacional de Preços ao Consumidor Amplo). A tabela pode ser alterada sem aviso prévio."}},
-{"@type":"Question","name":"Qual a diferença entre as fases Safira, Rubi e Pérola?","acceptedAnswer":{"@type":"Answer","text":"São três etapas de obra do mesmo condomínio, com mapas e cronogramas próprios. A Safira (Fase 1, quadras 3 a 13) está em obras, com entrega prevista para dez/2026, e tinha 57 lotes disponíveis em out/2026 — o residencial de 150 m² custa R$ 251.615. A Rubi (Fase 2, quadras 30 a 43) e a Pérola (Fase 3, quadras 14 a 29) são as frentes novas, com entrega prevista para dez/2028, 268 e 409 lotes disponíveis (out/2026) e residencial de 150 m² por R$ 225.000. Portaria, lazer e condições de pagamento são os mesmos nas três."}},
+{"@type":"Question","name":"Quanto custa um lote no Parque Zarah?","acceptedAnswer":{"@type":"Answer","text":"A tabela de outubro/2026 (gerada em 01/10/2026) começa em R$ 211.050, num lote misto de 150 m² da fase Pérola (ato de R$ 25.326 + 180 parcelas de R$ 2.229,00). O lote residencial padrão de 150 m² sai por R$ 226.125 nas fases Rubi e Pérola (R$ 218.588 nos lotes com viela sanitária da Pérola) e por R$ 252.873 na Safira; o residencial mais barato da tabela é um lote de 150 m² com viela sanitária da Pérola por R$ 218.588. O maior valor é R$ 575.984 (409 m², Rubi). Ato de 12% + 180 mensais pela Tabela Price (juros 1% a.m.) com correção mensal pelo IPCA. A tabela pode ser alterada sem aviso prévio — solicite a atualizada com a Viv'América."}},
+{"@type":"Question","name":"Qual a diferença entre as fases Safira, Rubi e Pérola?","acceptedAnswer":{"@type":"Answer","text":"São três etapas de obra do mesmo condomínio, com mapas e cronogramas próprios. A Safira (Fase 1, quadras 3 a 13) está em obras, com entrega prevista para dez/2026, e tinha 50 lotes disponíveis em out/2026 — o residencial de 150 m² custa R$ 252.873. A Rubi (Fase 2, quadras 30 a 43) e a Pérola (Fase 3, quadras 14 a 29) são as frentes novas, com entrega prevista para dez/2028, 223 e 389 lotes disponíveis (out/2026) e residencial de 150 m² por R$ 226.125. Portaria, lazer e condições de pagamento são os mesmos nas três."}},
 {"@type":"Question","name":"O que é lote misto?","acceptedAnswer":{"@type":"Answer","text":"É o lote de uso misto, que admite residência ou comércio, localizado na borda do condomínio com frente para a via externa — a tabela o chama de \"externo\". Em out/2026 ele custa menos que o residencial interno de mesma metragem: 150 m² a partir de R$ 211.050 na Pérola; na Rubi os mistos começam em 247 m², por R$ 285.459. As regras de uso comercial seguem a convenção do condomínio e a legislação municipal."}},
 {"@type":"Question","name":"Onde fica o Parque Zarah?","acceptedAnswer":{"@type":"Answer","text":"O Parque Zarah fica em Indaiatuba/SP, na Avenida Manoel Ruz Peres, Jardim Residencial Veneza (endereço do projeto urbanístico). É um condomínio fechado incorporado pelo Grupo Zarin, em três fases: Safira em obras, Rubi e Pérola em lançamento."}},
 {"@type":"Question","name":"Qual a metragem dos lotes?","acceptedAnswer":{"@type":"Answer","text":"Os lotes vão de 150 m² a 409 m² (tabela out/2026). Os maiores chegam a 344 m² na Safira, 409 m² na Rubi e 366 m² na Pérola."}},
@@ -568,7 +683,7 @@
     <span class="sec-label">Outros lançamentos</span>
     <h2 class="title">Conheça outros <em>condomínios e loteamentos</em></h2>
     <div class="outros-grid">
-      <a href="/reserva-botanica-indaiatuba/" class="outro-card"><img src="../reserva-botanica-indaiatuba/images/hero-reserva.jpg" alt="Reserva Botânica Zarin"><div class="outro-body"><span class="outro-badge">Zarin · Últimas 3 unidades (jul/2026)</span><h3>Reserva Botânica</h3><p>Loteamento fechado Zarin em Indaiatuba, últimas 3 unidades (tabela jul/2026), lotes de 340 a 457 m² a partir de R$ 532.563.</p><span class="btn-outro">Ver detalhes</span></div></a>
+      <a href="/reserva-botanica-indaiatuba/" class="outro-card"><img src="../reserva-botanica-indaiatuba/images/hero-reserva.jpg" alt="Reserva Botânica Zarin"><div class="outro-body"><span class="outro-badge">Zarin · Últimas 2 unidades (29/09/2026)</span><h3>Reserva Botânica</h3><p>Loteamento fechado Zarin em Indaiatuba, últimas 2 unidades (tabela de 29/09/2026), lotes de 410 a 457 m² a partir de R$ 642.375.</p><span class="btn-outro">Ver detalhes</span></div></a>
       <a href="/terras-de-san-marino-indaiatuba/" class="outro-card"><img src="../images/hero.jpg" alt="Terras de San Marino"><div class="outro-body"><span class="outro-badge">Cond. Fechado · Resort</span><h3>Terras de San Marino</h3><p>546 lotes a partir de 150 m² com lazer estilo resort. A partir de R$ 247.500.</p><span class="btn-outro">Ver detalhes</span></div></a>
       <a href="/alpnach-indaiatuba/" class="outro-card"><img src="../alpnach-indaiatuba/images/hero.jpg" alt="Alpnach Residence"><div class="outro-body"><span class="outro-badge">Alto Padrão</span><h3>Alpnach Residence</h3><p>322 lotes a partir de 300 m². Maior complexo de lazer em condomínio de Indaiatuba.</p><span class="btn-outro">Ver detalhes</span></div></a>
     </div>
@@ -643,6 +758,8 @@
       <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span><a href="/maria-candida-indaiatuba/">Jardim Dona Maria Cândida</a><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a><a href="/di-italia-indaiatuba/">Jardim Di Italia</a><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a><a href="/alpnach-indaiatuba/">Alpnach Residence</a><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a><a href="/ville-de-provence-indaiatuba/">Ville de Provence</a><a href="/alphaville-indaiatuba/">Alphaville Indaiatuba</a><a href="/lagos-de-helvetia-indaiatuba/">Lagos de Helvetia</a><a href="/porteira-de-ferro-indaiatuba/">Porteira de Ferro</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span><a href="/alphaville/">Empreendimentos Alphaville</a><a href="/casas-alphaville-dom-pedro-0-campinas/">Casas Alphaville Dom Pedro 0 (Campinas)</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dados e listas</span><a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a><a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z de loteamentos e bairros</a><a href="/imprensa-e-dados/">Dados abertos e imprensa</a></div>
     </div>
   </section>
   <!--/GEN:malha-->
@@ -678,7 +795,7 @@
 <p style="margin-top:8px;font-size:.75rem;opacity:.6;">Novo: <a href="https://lancamentos.imoveisvivamerica.com.br/viva-parque-aura-indaiatuba/">Viva Parque Aura</a></p>
 <p style="margin-top:8px;font-size:.75rem;opacity:.6;">Novo: <a href="https://lancamentos.imoveisvivamerica.com.br/arete-home-indaiatuba/">Areté Home</a></p>
 <p style="margin-top:8px;font-size:.75rem;opacity:.6;">Novo: <a href="https://lancamentos.imoveisvivamerica.com.br/vila-fahl-indaiatuba/">Vila Fahl</a></p>
-<p style="margin-top:8px;font-size:.75rem;opacity:.6;">Novo: <a href="https://lancamentos.imoveisvivamerica.com.br/vivere-indaiatuba/">Vívere Residencial — últimas 3 unidades (01/10/2026), pronto</a></p>
+<p style="margin-top:8px;font-size:.75rem;opacity:.6;">Novo: <a href="https://lancamentos.imoveisvivamerica.com.br/vivere-indaiatuba/">Vívere Residencial — últimas 3 unidades (18/09/2026), pronto</a></p>
 <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
 </footer>
 <style>

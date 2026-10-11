@@ -29,10 +29,15 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 - [ ] `<title>` ≤ 60 caracteres, com preço arredondado (`R$ 331 mil`) + mês da tabela (`set/2026`)
 - [ ] `<meta name="description">` com 120–155 caracteres; o número (preço/tipologia/bairro) antes do caractere 120
 - [ ] `og:title` = `twitter:title` = `<title>`; `og:description` = `twitter:description` = description
-- [ ] `<h1>` = nome do empreendimento + tipo + "em Indaiatuba" (ex.: `Parque Zarah — Condomínio fechado de lotes em Indaiatuba`); **um só por página** — slogan vai em `<p class="hero-tagline">`
+- [ ] `<h1>` = `Nome — tipo em Indaiatuba` (+ bairro quando houver), ex.: `Parque Zarah — Condomínio fechado de lotes em Indaiatuba`, `Vívere Residencial — apartamentos prontos para morar em Indaiatuba · Jardim Veneza`; **um só por página** — slogan vai em `<p class="hero-tagline">`. Nas landings geradas o H1 sai de `nome` + `hero.sub` do config (o `gera_landing.py` avisa quando a cidade não aparece)
+- [ ] **Linha de procedência** logo abaixo do `<h1>`, em texto: `<p class="procedencia">Atualizado em dd/mm/aaaa · tabela <incorporadora> de mm/aaaa · Fabio Correia, CRECI 303686-F</p>` (a fonte pode ser "relatório de estoque Dominium de 01/10/2026", "tabela de pré-lançamento Masotti" ou "sem tabela pública em out/2026"). "Atualizado em" = data do **último commit que mudou o texto** da ficha — não o da malha, rodapé ou link de WhatsApp — e `dateModified` do JSON-LD leva a mesma data. Nas geradas, campos `atualizado` e `fonte_tabela` do config
+- [ ] **Hero no padrão do site**: 1º parágrafo = "Resposta direta" (2–3 frases: o que é, a partir de quanto, tipologia/metragem, entrega ou "a confirmar", de quem é o dado); linha `<p class="hero-preco">a partir de R$ X · condição resumida · tabela de mm/aaaa</p>` lida da fonte única (`p` e `tab` do `gera-folheto.js`; sem `tab`, usa-se o `prox` — nunca inventar o mês); "N unidades disponíveis (dd/mm)" só se a fonte única tiver `est` com data; pré-lançamento sem tabela → "condições de pré-lançamento — solicite a tabela"
+- [ ] **Botões**: hero e bloco final com botão 1 = tabela (molde tabela) e botão 2 = "Agendar visita" (molde visita); flutuante com o molde interesse. Os 6 moldes estão no cabeçalho de `ferramentas/wa-padroniza.py`; antes de publicar, `py -3.12 ferramentas/wa-padroniza.py` (ensaio) não pode listar troca (`*`) nas páginas tocadas
+- [ ] **Bloco "O que mudou"** (changelog datado, 1 linha por mudança, lida do `git log`) nas fichas principais; nada de "em breve", "últimas unidades", "pré-reservas abertas" ou "vagas limitadas" sem data
+- [ ] FAQ visível = `FAQPage` 1:1 (o validador avisa quando a resposta visível difere do schema); `RealEstateListing` e `Product` com a mesma disponibilidade e o mesmo preço
 - [ ] **Nunca** prometer valorização, aprovação de crédito ou prazo; todo número com fonte e data-base (fatos de preço só os registrados no `gera-observatorio.js`)
-- [ ] Toda escassez (`últimas N unidades`, `X% vendido`, `N lotes disponíveis`) carrega mês/ano: `últimas 5 unidades (set/2026)`; o N vem da fonte única (`est` em `gera-folheto.js`)
-- [ ] `lastmod` (sitemap) e `dateModified` (BlogPosting) só mudam quando o texto principal muda — não em ajuste de rodapé/card
+- [ ] Toda escassez (`últimas N unidades`, `X% vendido`, `N lotes disponíveis`) carrega mês/ano: `últimas 5 unidades (set/2026)`; o N vem da fonte única (`est` em `gera-folheto.js`) e a data da contagem vai em `estEm` no mesmo item (dd/mm/aaaa, ou mmm/aaaa quando a fonte só traz o mês); sem `estEm` os geradores não imprimem o selo
+- [ ] `lastmod` (sitemap), `dateModified` (JSON-LD) e o "Atualizado em" visível só mudam quando o texto principal muda — não em ajuste de rodapé/card/malha/botão de WhatsApp. Quem decide é o `gera-sitemap.js`, lendo do `git` o último commit que mudou o texto (página alterada na árvore de trabalho = hoje) e alinhando os três campos; a guarda 5 do `identidade.js` falha (exit 1) quando divergem. Nunca escreva essas datas à mão nem edite o `sitemap.xml`
 - [ ] `brand` do `Product` no JSON-LD é `{"@type":"Brand","name":"…"}` (Organization dá tipo inválido no Search Console)
 - [ ] Toda imagem referenciada (`<img src>`, `og:image`, `url()` de CSS, `image` do JSON-LD) existe no disco — a guarda do `node identidade.js` falha com exit 1 se faltar
 - [ ] Todo bloco `<script type="application/ld+json">` passa em `JSON.parse`
@@ -48,21 +53,16 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
   6. `node gera-blog-ofertas.js` — cards/CTA/menu dos artigos
   7. `node gera-blog-indice.js` — `blog/index.html`
   8. `node gera-relacionados.js` — malha todas↔todas (landings + páginas de categoria + Alphaville de outras cidades)
-  9. **por último** `node identidade.js` (exit 0; guardas de acento e imagem; repõe a camada de marca nas páginas regeradas)
+  9. `node gera-sitemap.js` — `sitemap.xml` inteiro (toda página do site entra sozinha; `lastmod` lido do `git`) e alinha `dateModified` + "Atualizado em" nas páginas; página nova sem commit sai com a data de hoje
+  10. **por último** `node identidade.js` (exit 0; guardas de acento, imagem, GA4, entidade e datas; repõe a camada de marca nas páginas regeradas)
 
 ---
 
 ## 2. SITEMAP
 
-- [ ] Adicionar nova URL em `sitemap.xml`:
-```xml
-<url>
-  <loc>https://lancamentos.imoveisvivamerica.com.br/nome-slug/</loc>
-  <lastmod>AAAA-MM-DD</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-</url>
-```
+- [ ] Nada a escrever à mão: o `sitemap.xml` é gerado inteiro pelo `node gera-sitemap.js` (passo 9 do ritual). Toda pasta com `index.html` entra sozinha, fora `ferramentas/`, `qrcode/`, `quermesse/` e páginas `noindex`; `lastmod` = data do último commit que mudou o texto principal (página ainda sem commit = hoje)
+- [ ] `changefreq`/`priority` saem da `TABELA` do gerador; página nova recebe o padrão do tipo (landing `weekly`/`0.9`, artigo `monthly`/`0.8`, demais `monthly`/`0.5`) e entra no fim da lista — para outro valor, acrescente a linha na `TABELA`
+- [ ] Na página: `dateModified` em todo JSON-LD e "Atualizado em dd/mm/aaaa" na linha de procedência (`p.procedencia`) ou de meta do artigo (`p.meta`) — o gerador alinha os dois com o `lastmod`; nas landings geradas, o campo `atualizado` do config deve trazer a mesma data (senão o `gera_landing.py` reescreve a antiga e o `gera-sitemap.js` corrige de novo a cada rodada)
 
 ---
 

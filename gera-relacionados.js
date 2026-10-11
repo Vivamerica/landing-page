@@ -66,6 +66,29 @@ const GUIAS = [
   ['Tabela de preços', '/precos-lancamentos-indaiatuba/'],
 ];
 
+// Dados e listas (10/10/2026): páginas de apoio que não são guia nem ficha e
+// que, sem este grupo, só recebiam link do sitemap — o mapa de lotes, a lista
+// oficial A–Z da Prefeitura e os dados abertos do Observatório (CSV/JSON).
+// Só entra o que existe no disco: a malha nunca aponta para página ausente.
+const DADOS = [
+  ['Mapa de lotes', 'mapa-lotes-indaiatuba'],
+  ['Lista oficial A–Z de loteamentos e bairros', 'loteamentos-e-bairros-de-indaiatuba'],
+  ['Dados abertos e imprensa', 'imprensa-e-dados'],
+].filter(([, s]) => fs.existsSync(R + s + '/index.html')).map(([n, s]) => [n, '/' + s + '/']);
+
+// Dinheiro e financiamento (11/10/2026): os guias de custo e financiamento do
+// blog. Sem este grupo só recebiam link do índice do blog e do sitemap.
+// Mesma regra do grupo acima: só entra o que existe no disco.
+const DINHEIRO = [
+  ['Quanto ganhar para financiar', 'renda-necessaria-financiar-imovel'],
+  ['ITBI, escritura e registro', 'itbi-escritura-registro-indaiatuba'],
+  ['Na planta ou pronto?', 'comprar-na-planta-ou-pronto-para-morar'],
+  ['Condomínio de lotes ou loteamento fechado', 'condominio-de-lotes-ou-loteamento-fechado'],
+  ['Quanto custa construir', 'quanto-custa-construir-em-indaiatuba-cub-2026'],
+  ['Depois das chaves', 'depois-das-chaves-o-que-muda-no-pagamento'],
+  ['Patrimônio de afetação', 'patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida'],
+].filter(([, s]) => fs.existsSync(R + 'blog/' + s + '/index.html')).map(([n, s]) => [n, '/blog/' + s + '/']);
+
 function malhaPara(slugAtual) {
   const li = e => (e.slug === slugAtual)
     ? ''
@@ -77,7 +100,9 @@ function malhaPara(slugAtual) {
       <div class="malha-grupo"><span class="malha-rotulo">Apartamentos</span>${aptos.map(li).join('')}</div>
       <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span>${lotes.map(li).join('')}</div>${alpha.length ? `
       <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span>${alpha.map(li).join('')}</div>` : ''}
-      <div class="malha-grupo"><span class="malha-rotulo">Guias</span>${GUIAS.map(([n, u]) => '<a href="' + u + '">' + n + '</a>').join('')}</div>
+      <div class="malha-grupo"><span class="malha-rotulo">Guias</span>${GUIAS.map(([n, u]) => '<a href="' + u + '">' + n + '</a>').join('')}</div>${DINHEIRO.length ? `
+      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span>${DINHEIRO.map(([n, u]) => '<a href="' + u + '">' + n + '</a>').join('')}</div>` : ''}${DADOS.length ? `
+      <div class="malha-grupo"><span class="malha-rotulo">Dados e listas</span>${DADOS.map(([n, u]) => '<a href="' + u + '">' + n + '</a>').join('')}</div>` : ''}
     </div>
   </section>
   `;
@@ -107,4 +132,4 @@ for (const slug of alvos) {
   feitos++;
 }
 console.log('gera-relacionados: malha em ' + feitos + ' paginas (' + criados + ' marcadores novos; ' + CATEGORIAS.length + ' de categoria) · ' +
-  (aptos.length + lotes.length) + ' empreendimentos + ' + GUIAS.length + ' guias por página');
+  (aptos.length + lotes.length) + ' empreendimentos + ' + GUIAS.length + ' guias + ' + DADOS.length + ' dados/listas por página');
