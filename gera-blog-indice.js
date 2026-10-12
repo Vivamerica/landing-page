@@ -57,6 +57,7 @@ const TEMA_POR_SLUG = {
   'patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida': { tag: 'Proteção da obra', cat: 'dinheiro' },
   'quanto-custa-construir-em-indaiatuba-cub-2026':   { tag: 'Construir no lote',      cat: 'dinheiro' },
   'condominio-de-lotes-ou-loteamento-fechado':       { tag: 'Lotes e condomínios',    cat: 'dinheiro' },
+  'condominios-em-indaiatuba-por-bairro':            { tag: 'Condomínios por bairro', cat: 'bairros' },
   'comprar-na-planta-ou-pronto-para-morar':          { tag: 'Planta ou pronto',       cat: 'dinheiro' },
 };
 const DESTAQUES = new Set([
@@ -121,20 +122,29 @@ const schemaCrumb = {
   ],
 };
 
+// title até 60 caracteres e description de 120 a 155 (CHECKLIST 1b); fora disso o gerador para
+const TITLE = "Guia do Mercado Imobiliário de Indaiatuba | Blog Viv'América";
+const DESC = 'Guias para morar, comprar e financiar imóvel em Indaiatuba: MCMV, FGTS, bairros, segurança, custo de vida e comparativos, com dados e fontes, sem cadastro.';
+if (TITLE.length > 60) throw new Error('title com ' + TITLE.length + ' caracteres (max 60): ' + TITLE);
+if (DESC.length < 120 || DESC.length > 155) throw new Error('description com ' + DESC.length + ' caracteres (120-155): ' + DESC);
+
 const html = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
 <script src="/atrib.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Guia do Mercado Imobiliário de Indaiatuba | Viv'América</title>
-  <meta name="description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba: MCMV, FGTS, bairros, segurança, custo de vida e comparativos — com dados e fontes, sem cadastro.">
+  <title>${TITLE}</title>
+  <meta name="description" content="${DESC}">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Blog | Guia do Mercado Imobiliário de Indaiatuba | Viv'América">
-  <meta property="og:description" content="Guias sobre morar, comprar e financiar imóvel em Indaiatuba: MCMV, FGTS, bairros, segurança, custo de vida e comparativos — com dados e fontes, sem cadastro.">
+  <meta property="og:title" content="${TITLE}">
+  <meta property="og:description" content="${DESC}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${ABS}/blog/">
   <meta property="og:site_name" content="Imobiliária Viv'América">
+  <meta property="og:image" content="${ABS}/images/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="${ABS}/images/hero.jpg">
   <link rel="canonical" href="${ABS}/blog/">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,7 +168,8 @@ const html = `<!DOCTYPE html>
     nav a:hover,nav a.on{color:var(--dourado);}
     nav a.nav-cta{border:1px solid var(--dourado);color:var(--dourado);padding:.45rem .9rem;border-radius:4px;}
     nav a.nav-cta:hover{background:var(--dourado);color:var(--preto);}
-    @media(max-width:680px){nav a{margin-left:.9rem;font-size:.7rem;}nav a:not(.nav-cta){display:none;}}
+    @media(max-width:680px){nav a{margin-left:.9rem;font-size:.7rem;}}
+    @media(max-width:920px){nav a:not(.nav-cta){display:none;}}
     .hero-blog{background:var(--preto);color:#fff;text-align:center;padding:clamp(3rem,7vw,4.5rem) 5% clamp(2.4rem,5vw,3.2rem);}
     .hero-blog .label{color:var(--dourado);text-transform:uppercase;letter-spacing:.3em;font-size:0.72rem;font-weight:600;}
     .hero-blog h1{font-family:'Poiret One',cursive;font-weight:400;letter-spacing:.12em;text-transform:uppercase;font-size:clamp(1.5rem,3.6vw,2.5rem);max-width:900px;margin:1rem auto .9rem;line-height:1.3;}

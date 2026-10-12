@@ -41,11 +41,21 @@ for i, (ini, bid) in enumerate(achados):
     }
 
 # ── lotes sem posicao ───────────────────────────────────────────────
+# Modo corrigir: `--corrigir=<id>[,<id>]` traz TODOS os lotes desses bairros; os que ja
+# tem posicao entram no editor como pinos marcados (arrastaveis), gravados em pinos.json.
+CORRIGIR = set()
+for _a in sys.argv[1:]:
+    if _a.startswith('--corrigir='):
+        CORRIGIR |= set(x for x in _a.split('=', 1)[1].split(',') if x)
+ja_postos = {}
 pend = {}
 for m in re.finditer(r"^ *\{ b:'([^']+)',\s+q:'([^']+)',\s*l:'([^']+)'([^\n]*)\n", s, re.M):
     bid, q, l, resto = m.groups()
-    if 'll:[' in resto:
+    mll = re.search(r'll:\[([-\d.]+),([-\d.]+)\]', resto)
+    if mll and bid not in CORRIGIR:
         continue
+    if mll:
+        ja_postos['%s|%s-%s' % (bid, q, l)] = [float(mll.group(1)), float(mll.group(2))]
     f = lambda n: (lambda g: float(g.group(1)) if g else None)(re.search(r'\b' + n + r':([\d.]+)', resto))
     # nem todo lote tem numero puro: o Bom Sucesso usa 01-A, 01-B. Quem nao for
     # numerico entra na lista para marcacao manual, mas fica fora da
@@ -83,4 +93,8 @@ for bid, lotes in sorted(pend.items()):
           'com planta' if b['overlay'] else 'sem planta (marcar sobre o satelite)'))
 
 json.dump(saida, io.open(AQUI + '/dados.json', 'w', encoding='utf-8', newline=''), ensure_ascii=False)
+if CORRIGIR:
+    # o editor relê o pinos.json ao abrir: as posicoes atuais viram os pinos de partida
+    json.dump(ja_postos, io.open(AQUI + '/pinos.json', 'w', encoding='utf-8', newline=''), ensure_ascii=False, indent=1)
+    print('modo corrigir (%s): %d pino(s) atuais gravados em pinos.json' % (', '.join(sorted(CORRIGIR)), len(ja_postos)))
 print('\n-> dados.json (%d bairro(s), %d sugestoes)' % (len(saida['bairros']), len(sug)))

@@ -34,7 +34,7 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 - [ ] **Hero no padrão do site**: 1º parágrafo = "Resposta direta" (2–3 frases: o que é, a partir de quanto, tipologia/metragem, entrega ou "a confirmar", de quem é o dado); linha `<p class="hero-preco">a partir de R$ X · condição resumida · tabela de mm/aaaa</p>` lida da fonte única (`p` e `tab` do `gera-folheto.js`; sem `tab`, usa-se o `prox` — nunca inventar o mês); "N unidades disponíveis (dd/mm)" só se a fonte única tiver `est` com data; pré-lançamento sem tabela → "condições de pré-lançamento — solicite a tabela"
 - [ ] **Botões**: hero e bloco final com botão 1 = tabela (molde tabela) e botão 2 = "Agendar visita" (molde visita); flutuante com o molde interesse. Os 6 moldes estão no cabeçalho de `ferramentas/wa-padroniza.py`; antes de publicar, `py -3.12 ferramentas/wa-padroniza.py` (ensaio) não pode listar troca (`*`) nas páginas tocadas
 - [ ] **Bloco "O que mudou"** (changelog datado, 1 linha por mudança, lida do `git log`) nas fichas principais; nada de "em breve", "últimas unidades", "pré-reservas abertas" ou "vagas limitadas" sem data
-- [ ] FAQ visível = `FAQPage` 1:1 (o validador avisa quando a resposta visível difere do schema); `RealEstateListing` e `Product` com a mesma disponibilidade e o mesmo preço
+- [ ] FAQ visível = `FAQPage` 1:1 (o validador acusa erro quando diferem; `node gera-faq.js` corrige copiando o visível); `RealEstateListing` e `Product` com a mesma disponibilidade e o mesmo preço
 - [ ] **Nunca** prometer valorização, aprovação de crédito ou prazo; todo número com fonte e data-base (fatos de preço só os registrados no `gera-observatorio.js`)
 - [ ] Toda escassez (`últimas N unidades`, `X% vendido`, `N lotes disponíveis`) carrega mês/ano: `últimas 5 unidades (set/2026)`; o N vem da fonte única (`est` em `gera-folheto.js`) e a data da contagem vai em `estEm` no mesmo item (dd/mm/aaaa, ou mmm/aaaa quando a fonte só traz o mês); sem `estEm` os geradores não imprimem o selo
 - [ ] `lastmod` (sitemap), `dateModified` (JSON-LD) e o "Atualizado em" visível só mudam quando o texto principal muda — não em ajuste de rodapé/card/malha/botão de WhatsApp. Quem decide é o `gera-sitemap.js`, lendo do `git` o último commit que mudou o texto (página alterada na árvore de trabalho = hoje) e alinhando os três campos; a guarda 5 do `identidade.js` falha (exit 1) quando divergem. Nunca escreva essas datas à mão nem edite o `sitemap.xml`
@@ -45,6 +45,7 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 - [ ] Breadcrumb (visível + `BreadcrumbList`): apartamento = `Início › Apartamentos na planta › <Nome>`; lote = `Início › Loteamentos › <Nome>`; condomínio fechado = `Início › Condomínios fechados › <Nome>`
 - [ ] Nada aponta para `/lancamentos-indaiatuba/` (hub extinto em 02/09/2026, 301 para a home — a home é a única dona de "lançamentos imobiliários indaiatuba"). Só `_redirects` cita a URL.
 - [ ] Ritual de fechamento, **nesta ordem** (gera-folder.js entra logo após o gera-folheto — o folder-verso ficou com Dominium/preços velhos em 04/09 por não estar na corrente) (cada gerador é idempotente; rodada duas vezes, a 2ª não muda nada):
+  0. `python ferramentas/hero-leve.py` — versões leves (.webp) da foto de abertura e das miniaturas; só gera o que falta ou ficou mais velho que o original. Vem antes dos geradores, que só usam a miniatura leve se o arquivo existir
   1. `node gera-folheto.js` — fonte única (APTOS/LOTES)
   2. `node gera-observatorio.js` — EDICAO + Observatório
   3. `node gera-home.js` — home (title/description/H1/selos/cards) + os dois hubs de lote (grade, m², destaque, "Atualizado em")
@@ -53,14 +54,17 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
   6. `node gera-blog-ofertas.js` — cards/CTA/menu dos artigos
   7. `node gera-blog-indice.js` — `blog/index.html`
   8. `node gera-relacionados.js` — malha todas↔todas (landings + páginas de categoria + Alphaville de outras cidades)
-  9. `node gera-sitemap.js` — `sitemap.xml` inteiro (toda página do site entra sozinha; `lastmod` lido do `git`) e alinha `dateModified` + "Atualizado em" nas páginas; página nova sem commit sai com a data de hoje
-  10. **por último** `node identidade.js` (exit 0; guardas de acento, imagem, GA4, entidade e datas; repõe a camada de marca nas páginas regeradas)
+  9. `python ferramentas/hero-leve.py --aplicar <pasta do site>` — põe a foto de abertura leve (o recorte de celular e, de 1441 px de tela em diante, a foto original) e as miniaturas leves no HTML das páginas escritas à mão; a 2ª rodada tem de dizer "0 reescritas"
+  10. `node gera-faq.js` — `FAQPage` de cada página regravado a partir do FAQ visível (o visível manda)
+  11. `python ferramentas/mapa-lotes/gera-lista-indexavel.py` — lista indexável do mapa de lotes (tabela, resumo e perguntas da página do mapa)
+  12. `node gera-sitemap.js` — `sitemap.xml` inteiro (toda página do site entra sozinha; `lastmod` lido do `git`) e alinha `dateModified` + "Atualizado em" nas páginas; página nova sem commit sai com a data de hoje
+  13. **por último** `node identidade.js` (exit 0; guardas de acento, imagem, GA4, entidade e datas; repõe a camada de marca nas páginas regeradas)
 
 ---
 
 ## 2. SITEMAP
 
-- [ ] Nada a escrever à mão: o `sitemap.xml` é gerado inteiro pelo `node gera-sitemap.js` (passo 9 do ritual). Toda pasta com `index.html` entra sozinha, fora `ferramentas/`, `qrcode/`, `quermesse/` e páginas `noindex`; `lastmod` = data do último commit que mudou o texto principal (página ainda sem commit = hoje)
+- [ ] Nada a escrever à mão: o `sitemap.xml` é gerado inteiro pelo `node gera-sitemap.js` (passo 12 do ritual). Toda pasta com `index.html` entra sozinha, fora `ferramentas/`, `qrcode/`, `quermesse/` e páginas `noindex`; `lastmod` = data do último commit que mudou o texto principal (página ainda sem commit = hoje)
 - [ ] `changefreq`/`priority` saem da `TABELA` do gerador; página nova recebe o padrão do tipo (landing `weekly`/`0.9`, artigo `monthly`/`0.8`, demais `monthly`/`0.5`) e entra no fim da lista — para outro valor, acrescente a linha na `TABELA`
 - [ ] Na página: `dateModified` em todo JSON-LD e "Atualizado em dd/mm/aaaa" na linha de procedência (`p.procedencia`) ou de meta do artigo (`p.meta`) — o gerador alinha os dois com o `lastmod`; nas landings geradas, o campo `atualizado` do config deve trazer a mesma data (senão o `gera_landing.py` reescreve a antiga e o `gera-sitemap.js` corrige de novo a cada rodada)
 
@@ -92,6 +96,7 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 ---
 
 ## 6. GOOGLE SEARCH CONSOLE 👤
+- [ ] Sempre que uma publicação mudar preço, estoque ou contagem no `<title>` de uma ficha ou página de categoria, pedir a indexação dessa URL no mesmo dia (Inspeção de URL → Solicitar indexação). O sitemap sozinho não traz o Google de volta a tempo.
 
 - [ ] Acessar: https://search.google.com/search-console
 - [ ] Ir em **Sitemaps** → confirmar que o sitemap foi reprocessado

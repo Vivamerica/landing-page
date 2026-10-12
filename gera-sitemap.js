@@ -19,9 +19,10 @@
       "Atualizado em mês/ano" dos hubs de lote é do gera-home.js e fica
       como está; a guarda do identidade.js aceita a granularidade de mês.
 
-   Ritual (ordem): gera-folheto → gera-observatorio → gera-home →
+   Ritual (ordem): hero-leve.py → gera-folheto → gera-observatorio → gera-home →
    gera-apartamentos → gera-alphaville → gera-blog-ofertas → gera-blog-indice →
-   gera-relacionados → node gera-sitemap.js → node identidade.js (último; a
+   gera-relacionados → hero-leve.py --aplicar → gera-faq → mapa-lotes/gera-lista-indexavel.py →
+   node gera-sitemap.js → node identidade.js (último; a
    guarda 5 dele falha quando lastmod, dateModified e "Atualizado em" divergem).
    Idempotente: rodado duas vezes, a segunda não muda nada. Nunca edite o
    sitemap.xml à mão — a próxima rodada desfaz.
@@ -188,6 +189,7 @@ function limparLd(v) {
   if (Array.isArray(v)) return v.filter(x => !ehImobiliaria(x)).map(limparLd);
   if (!ehObj(v)) return v;
   if (ehImobiliaria(v) || ehAutor(v)) return 'ENTIDADE';          // a entidade é da camada de marca
+  if (/FAQPage/.test(tipos(v))) return 'FAQ';                      // sai do FAQ visível (gera-faq.js), que já entra no texto
   const o = {};
   for (const k of Object.keys(v).sort()) {
     if (k === 'dateModified' || k === '@id') continue;
@@ -207,7 +209,8 @@ function fingerprint(html) {
   h = h.replace(GEN_CHROME, ' ');
   h = h.replace(/<!--[\s\S]*?-->/g, ' ');
   // linha de procedência (fichas), linha de data/autor (blog) e selos "atualizado em": são a data da página, não o texto
-  h = h.replace(/<(p|span|div)\b[^>]*class="[^"]*\b(?:procedencia|meta|atualizado)\b[^"]*"[^>]*>[\s\S]*?<\/\1>/gi, ' ');
+  // a classe casa como palavra inteira: antes "card-meta" também casava, e o texto dos cards da home ficava fora da impressão digital
+  h = h.replace(/<(p|span|div)\b[^>]*class="(?:[^"]*\s)?(?:procedencia|meta|atualizado)(?:\s[^"]*)?"[^>]*>[\s\S]*?<\/\1>/gi, ' ');
   h = h.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ');
   h = h.replace(/<link\b[^>]*>/gi, m => /rel="canonical"/.test(m) ? m : ' ');
   h = h.replace(/<nav\b[\s\S]*?<\/nav>/gi, ' ');
@@ -225,7 +228,8 @@ function fingerprint(html) {
   const hrefs = [];
   h.replace(/\shref="([^"]+)"/g, (m, u) => { hrefs.push(u); return m; });
   const srcs = [];
-  h.replace(/<img\b[^>]*\ssrc="([^"]+)"/gi, (m, u) => { srcs.push(u); return m; });
+  // a variante leve da mesma imagem (-640/-1280 .webp) não é mudança de texto
+  h.replace(/<img\b[^>]*\ssrc="([^"]+)"/gi, (m, u) => { srcs.push(u.replace(/(?:-(?:640|1280|m))?\.(?:jpe?g|png|webp)$/i, '')); return m; });
   const texto = h.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
   return [titulo, desc, hrefs.join('|'), srcs.join('|'), ld.filter(Boolean).join('|'), texto].join('\n');
 }

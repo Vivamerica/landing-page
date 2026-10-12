@@ -92,6 +92,26 @@ const tabDe = e => e.tab ? 'tabela ' + mesDe(e.tab) : 'tabela de pré-lançament
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const semTags = s => String(s).replace(/<[^>]+>/g, '');
 
+// ─── miniatura leve do card ───
+// O card usa <nome>-640.webp (gravado por ferramentas/hero-leve.py ao lado do original) quando o
+// arquivo existe; sem ele sai o original, como antes. Largura e altura vêm do cabeçalho do .webp.
+function dimWebp(arq) {
+  const b = Buffer.alloc(30);
+  const fd = fs.openSync(arq, 'r');
+  try { fs.readSync(fd, b, 0, 30, 0); } finally { fs.closeSync(fd); }
+  if (b.toString('latin1', 0, 4) !== 'RIFF' || b.toString('latin1', 8, 12) !== 'WEBP') return null;
+  const tipo = b.toString('latin1', 12, 16);
+  if (tipo === 'VP8 ') return { w: b.readUInt16LE(26) & 0x3fff, h: b.readUInt16LE(28) & 0x3fff };
+  if (tipo === 'VP8L') { const n = b.readUInt32LE(21); return { w: (n & 0x3fff) + 1, h: ((n >>> 14) & 0x3fff) + 1 }; }
+  if (tipo === 'VP8X') return { w: 1 + b.readUIntLE(24, 3), h: 1 + b.readUIntLE(27, 3) };
+  return null;
+}
+function miniatura(img) {
+  const leve = img.replace(/\.(jpe?g|png)$/i, '-640.webp');
+  const d = leve !== img && fs.existsSync(R + leve) ? dimWebp(R + leve) : null;
+  return d ? { src: leve, w: d.w, h: d.h } : null;
+}
+
 // ─── classificação (regras no cabeçalho) ───
 // Só vale como ENTREGA a data precedida da palavra "entrega" nas specs da fonte única
 // ("(set/2026)" e "tabela ago/2026" são datas de tabela/estoque, não de entrega — 04/09/2026).
@@ -172,9 +192,10 @@ function card(e) {
   // selo de escassez só com a data da contagem (estEm da fonte única); sem data, sem selo
   const temSelo = typeof e.est === 'number' && e.est <= 60 && !!e.estEm;
   const est = temSelo ? `<span class="est">Últimas ${e.est} unidades (${esc(e.estEm)})</span>` : '';
+  const mini = miniatura(e.img);
   return `
       <article class="card" id="c-${e.slug}">
-        <a href="/${e.slug}/" class="card-img"><img loading="lazy" decoding="async" src="/${e.img}" alt="${esc(e.n)} — apartamento em Indaiatuba" width="400" height="220"><span class="badge ${badgeCls(e)}">${esc(badgeTxt(e))}</span>${est}</a>
+        <a href="/${e.slug}/" class="card-img"><img loading="lazy" decoding="async" src="/${mini ? mini.src : e.img}" alt="${esc(e.n)} — apartamento em Indaiatuba" width="${mini ? mini.w : 400}" height="${mini ? mini.h : 220}"><span class="badge ${badgeCls(e)}">${esc(badgeTxt(e))}</span>${est}</a>
         <div class="card-b">
           <p class="constr">${esc(e.c)}</p>
           <h3><a href="/${e.slug}/">${esc(e.n)}</a></h3>

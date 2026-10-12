@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 # Mapa de lotes: botao de contato sempre visivel + medicao correta (01/10/2026).
 #
-# POR QUE: em setembro o mapa foi a 3a pagina mais visitada (75 sessoes, 161
-# page_views, 136 scrolls) e registrou 1 contato. A auditoria do HTML achou duas
-# causas, nao uma:
+# POR QUE: o mapa recebia visita e quase nao gerava contato. A auditoria do HTML
+# achou duas causas, nao uma:
 #
 #   1. `header .wa{display:none}` dentro de @media(max-width:760px) — no celular
 #      o UNICO botao de WhatsApp da pagina desaparece. Quem entra pelo telefone
@@ -12,8 +11,8 @@
 #
 #   2. o link do header (linha 116) nao dispara gtag. Diferente das landings, o
 #      mapa nao tem o listener delegado em a[href*="wa.me"] — so o onclick inline
-#      do popup do lote. Ou seja: clique no topo nunca foi contado. O "1 contato"
-#      e subcontagem, nao necessariamente a verdade do mes.
+#      do popup do lote. Ou seja: clique no topo nunca foi contado. A contagem
+#      de contatos do mapa era subcontagem.
 #
 # O QUE MUDA:
 #   - botao flutuante fixo no canto inferior direito (pill com rotulo no desktop,

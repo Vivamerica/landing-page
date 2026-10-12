@@ -147,6 +147,11 @@ const TEMAS = [
     url: '/precos-lancamentos-indaiatuba/', chamada: 'Lançamentos de Indaiatuba com preço aberto e condições de pagamento', curta: 'Lançamentos com preço aberto',
     botao: 'Ver a tabela de preços',
     pega: () => mcmv().slice(0, 4) },
+  // guia dos condomínios fechados por bairro: a oferta são os fechados com preço, do mais barato ao mais caro
+  { re: /condominios-em-indaiatuba-por-bairro/, nome: 'fechados', card: 'emp', msg: MSG.lotes,
+    url: '/condominios-fechados-indaiatuba/', chamada: 'Condomínios e loteamentos fechados de Indaiatuba com preço aberto',
+    curta: 'Lotes em condomínio fechado', botao: 'Ver os condomínios',
+    pega: () => fechados().reverse().slice(0, 4) },
   { re: /quanto-custa-construir|condominio-de-lotes/, nome: 'dinheiro-lotes', card: 'emp', msg: MSG.lotes,
     url: '/loteamentos-em-indaiatuba/', chamada: 'Lotes à venda em Indaiatuba: loteamentos e condomínios com preço aberto',
     curta: 'Lotes à venda em Indaiatuba', botao: 'Ver os loteamentos',
@@ -171,6 +176,31 @@ const paraTema = slug => {
            itens: t.pega().filter(Boolean) };
 };
 
+// ─── miniatura leve dos cards ───
+// O card usa <nome>-640.webp (gravado por ferramentas/hero-leve.py ao lado do original) quando o
+// arquivo existe, já com width e height lidos do cabeçalho do .webp; sem ele sai o original, como antes.
+function dimWebp(arq) {
+  const b = Buffer.alloc(30);
+  const fd = fs.openSync(arq, 'r');
+  try { fs.readSync(fd, b, 0, 30, 0); } finally { fs.closeSync(fd); }
+  if (b.toString('latin1', 0, 4) !== 'RIFF' || b.toString('latin1', 8, 12) !== 'WEBP') return null;
+  const tipo = b.toString('latin1', 12, 16);
+  if (tipo === 'VP8 ') return { w: b.readUInt16LE(26) & 0x3fff, h: b.readUInt16LE(28) & 0x3fff };
+  if (tipo === 'VP8L') { const n = b.readUInt32LE(21); return { w: (n & 0x3fff) + 1, h: ((n >>> 14) & 0x3fff) + 1 }; }
+  if (tipo === 'VP8X') return { w: 1 + b.readUIntLE(24, 3), h: 1 + b.readUIntLE(27, 3) };
+  return null;
+}
+function miniatura(img) {
+  const leve = img.replace(/\.(jpe?g|png)$/i, '-640.webp');
+  const d = leve !== img && fs.existsSync(R + leve) ? dimWebp(R + leve) : null;
+  return d ? { src: leve, w: d.w, h: d.h } : null;
+}
+// a <img> do card: mesma tag de sempre; com o .webp no disco, muda o src e entram width e height
+function imgCard(e) {
+  const m = miniatura(e.img);
+  return `<img loading="lazy" decoding="async" src="/${m ? m.src : e.img}" alt="${e.n} — Indaiatuba"${m ? ` width="${m.w}" height="${m.h}"` : ''}>`;
+}
+
 // ─── HTML dos cards ───
 function cardLateral(e) {
   const preco = e.p ? 'A partir de <b>' + brl(e.p) + '</b>' : 'Tabela sob consulta';
@@ -180,7 +210,7 @@ function cardLateral(e) {
     : '<span class="bo-selo">' + e.t + '</span>';
   return `
         <a class="bo-card" href="/${e.slug}/" data-emp="${e.slug}">
-          <img loading="lazy" decoding="async" src="/${e.img}" alt="${e.n} — Indaiatuba">
+          ${imgCard(e)}
           <div class="bo-corpo">
             ${selo}
             <h4>${e.n}</h4>
@@ -202,7 +232,7 @@ function cardTexto(e) {
     : e.t === 'Lançamento' ? 'Em lançamento em Indaiatuba' : 'Disponível agora em Indaiatuba';
   return `
       <div class="bo-inline">
-        <img loading="lazy" decoding="async" src="/${e.img}" alt="${e.n} — Indaiatuba">
+        ${imgCard(e)}
         <div class="bo-inline-txt">
           <span class="bo-eyebrow">${rotulo}</span>
           <h4>${e.n}</h4>
@@ -257,7 +287,7 @@ ${linhas}
 const CSS = `
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
-    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
+    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 min(5%,60px);display:grid;
       grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
     .blog-layout > article{max-width:none;margin:0;padding:0;min-width:0;}
     /* min-width:0 — item flex herda min-content do filho mais largo (a tabela

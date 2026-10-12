@@ -94,12 +94,12 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"O novo hospital de Indaiatuba fica no Bairro Bom Sucesso?","acceptedAnswer":{"@type":"Answer","text":"Não exatamente. O terreno fica na Av. Luiz Bruno Petrilli, dentro do loteamento Parque dos Pássaros — que, na Lista de Loteamentos da Prefeitura, é distinto do Jardim Bom Sucesso, embora sejam vizinhos e a mesma avenida sirva os dois. O apelido 'no Bom Sucesso' circula porque o endereço postal do complexo residencial vizinho usa 'Jardim Bom Sucesso'."}},
-      {"@type":"Question","name":"Quando o hospital fica pronto?","acceptedAnswer":{"@type":"Answer","text":"A Prefeitura anunciou entrega prevista para 2027. A pedra fundamental foi lançada em 03/12/2024, o projeto foi reafirmado em 11/12/2025 pela Secretaria de Planejamento Urbano e Engenharia, e o terreno está em preparação desde 2025. É obra anunciada, ainda em fase inicial."}},
-      {"@type":"Question","name":"Quantos leitos terá?","acceptedAnswer":{"@type":"Answer","text":"58 leitos, conforme a Prefeitura de Indaiatuba (notícia 33728, de 28/11/2024). O objetivo declarado é atender a região do Parque Campo Bonito e aliviar a demanda da UPA Morada do Sol e do Hospital Augusto de Oliveira Camargo."}},
-      {"@type":"Question","name":"É hospital público ou privado?","acceptedAnswer":{"@type":"Answer","text":"Segundo a Prefeitura, o hospital é uma parceria da Prefeitura de Indaiatuba com um empreendedor local. O nome do empreendedor privado não foi divulgado nas notas oficiais consultadas até 29/08/2026."}},
-      {"@type":"Question","name":"Quantas torres a VIC vai construir na região?","acceptedAnswer":{"@type":"Answer","text":"Segundo a Prefeitura, no lançamento simultâneo com a pedra fundamental do hospital, o residencial Parque dos Pássaros da VIC Engenharia tem 8 condomínios e 2.276 apartamentos MCMV — não 20 torres. Um dos condomínios já em vendas é o Gran Vic Andorinha (Av. Luiz Bruno Petrilli, 600)."}},
-      {"@type":"Question","name":"Um hospital anunciado valoriza os imóveis do entorno?","acceptedAnswer":{"@type":"Answer","text":"Esta página não faz projeção de preço nem promete valorização. O que se pode dizer, factualmente, é que a chegada de equipamento público de saúde costuma entrar na avaliação de quem compra imóvel na região — mas o efeito de preço depende de muitos outros fatores (oferta futura na região, macroeconomia, condições de crédito) e não é uma consequência automática."}}
+      {"@type":"Question","name":"O novo hospital fica no Bairro Bom Sucesso?","acceptedAnswer":{"@type":"Answer","text":"Não exatamente. O terreno fica na Av. Luiz Bruno Petrilli, dentro do loteamento Parque dos Pássaros — que, na Lista de Loteamentos da Prefeitura, é distinto do Jardim Bom Sucesso, embora vizinhos. O apelido \"no Bom Sucesso\" circula porque o endereço postal do complexo residencial vizinho usa esse nome."}},
+      {"@type":"Question","name":"Quando o hospital fica pronto?","acceptedAnswer":{"@type":"Answer","text":"Entrega prevista para 2027, conforme a Prefeitura. Pedra fundamental em 03/12/2024, projeto reafirmado em 11/12/2025. Obra anunciada, em fase inicial."}},
+      {"@type":"Question","name":"Quantos leitos terá?","acceptedAnswer":{"@type":"Answer","text":"58 leitos. Objetivo declarado pela Prefeitura: atender a região do Parque Campo Bonito e aliviar a UPA Morada do Sol e o Hospital Augusto de Oliveira Camargo."}},
+      {"@type":"Question","name":"É hospital público ou privado?","acceptedAnswer":{"@type":"Answer","text":"Parceria da Prefeitura com um empreendedor local. O nome do parceiro privado não foi divulgado nas notas oficiais consultadas até 29/08/2026."}},
+      {"@type":"Question","name":"Quantas torres a VIC vai construir na região?","acceptedAnswer":{"@type":"Answer","text":"Segundo a Prefeitura, o Parque dos Pássaros tem 8 condomínios e 2.276 apartamentos MCMV — não 20 torres. O Gran Vic Andorinha, já em vendas, é um deles."}},
+      {"@type":"Question","name":"Um hospital anunciado valoriza os imóveis do entorno?","acceptedAnswer":{"@type":"Answer","text":"Esta página não faz projeção de preço nem promete valorização. Equipamento público de saúde costuma entrar na avaliação de quem compra imóvel na região, mas o efeito depende de vários fatores — e não é uma consequência automática."}}
     ]
   }
   </script>
@@ -223,7 +223,7 @@
   </script>
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
-    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
+    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 min(5%,60px);display:grid;
       grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
     .blog-layout > article{max-width:none;margin:0;padding:0;min-width:0;}
     /* min-width:0 — item flex herda min-content do filho mais largo (a tabela
@@ -421,7 +421,7 @@
 
     <!--GEN:oferta-->
       <div class="bo-inline">
-        <img loading="lazy" decoding="async" src="/gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará — Indaiatuba">
+        <img loading="lazy" decoding="async" src="/gran-vic-tangara-indaiatuba/images/hero-640.webp" alt="Gran Vic Tangará — Indaiatuba" width="640" height="426">
         <div class="bo-inline-txt">
           <span class="bo-eyebrow">Disponível agora em Indaiatuba</span>
           <h4>Gran Vic Tangará</h4>
@@ -507,7 +507,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">
-          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Uni Residencial</h4>
@@ -517,7 +517,7 @@
           </div>
         </a>
         <a class="bo-card" href="/gran-vic-colibri-indaiatuba/" data-emp="gran-vic-colibri-indaiatuba">
-          <img loading="lazy" decoding="async" src="/gran-vic-colibri-indaiatuba/images/hero.jpg" alt="Gran Vic Colibri — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/gran-vic-colibri-indaiatuba/images/hero-640.webp" alt="Gran Vic Colibri — Indaiatuba" width="640" height="376">
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Gran Vic Colibri</h4>
@@ -527,7 +527,7 @@
           </div>
         </a>
         <a class="bo-card" href="/itamaraca-indaiatuba/" data-emp="itamaraca-indaiatuba">
-          <img loading="lazy" decoding="async" src="/itamaraca-indaiatuba/images/hero.jpg" alt="Itamaracá Residencial — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/itamaraca-indaiatuba/images/hero-640.webp" alt="Itamaracá Residencial — Indaiatuba" width="640" height="573">
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Itamaracá Residencial</h4>

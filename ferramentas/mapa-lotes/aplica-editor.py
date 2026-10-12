@@ -78,7 +78,7 @@ for bid, cfg in plantas.items():
     print('     overlay gravado')
 
 # ── pinos ───────────────────────────────────────────────────────────
-postos, ja, nao = 0, 0, []
+postos, ja, nao, movidos = 0, 0, [], []
 for k, c in pinos.items():
     bid, lote = k.split('|', 1)
     q, l = lote.rsplit('-', 1)
@@ -89,7 +89,15 @@ for k, c in pinos.items():
         continue
     linha = m.group(1)
     if 'll:[' in linha:
-        ja += 1
+        # lote que ja tinha posicao: so regrava se o pino foi movido de verdade (mais de 30 cm)
+        a = re.search(r'll:\[([-\d.]+),([-\d.]+)\]', linha)
+        dist = math.hypot((c[0] - float(a.group(1))) * 110574.0,
+                          (c[1] - float(a.group(2))) * 111320.0 * math.cos(math.radians(c[0])))
+        if dist < 0.3:
+            ja += 1
+            continue
+        s = s.replace(linha, linha.replace(a.group(0), 'll:[%.6f,%.6f]' % (c[0], c[1]), 1), 1)
+        movidos.append((dist, k))
         continue
     # o `ll` entra antes do primeiro campo de rodape da linha; lote so a vista
     # nao tem `tabela:true` nem `nx:`, so `soVista:true` — e ha linha que nao
@@ -108,7 +116,9 @@ for k, c in pinos.items():
     s = s.replace(linha, nova, 1)
     postos += 1
 
-print('\npinos: %d a gravar, %d ja tinham posicao' % (postos, ja))
+print('\npinos: %d a gravar, %d reposicionados, %d sem mudanca' % (postos, len(movidos), ja))
+for dist, k in sorted(movidos, reverse=True)[:12]:
+    print('   movido %6.1f m  %s' % (dist, k))
 if nao:
     print('NAO ENCONTRADOS (%d): %s' % (len(nao), ', '.join(nao[:8])))
 

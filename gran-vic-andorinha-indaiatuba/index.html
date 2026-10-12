@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
 <script src="/atrib.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="image" href="images/hero-m.webp" type="image/webp" media="(max-width:700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-1280.webp" type="image/webp" media="(min-width:701px)" fetchpriority="high">
   <title>Gran Vic Andorinha | últimas 2 unidades · R$ 372 mil set/26</title>
   <meta name="description" content="Gran Vic Andorinha em Indaiatuba: últimas 2 unidades (set/2026) a partir de R$ 372.119. 2 dorms com suíte, 51,42 m², MCMV Faixa 3, entrega fev/2028.">
   <meta name="keywords" content="gran vic andorinha indaiatuba, gran vic andorinha preço, vic engenharia indaiatuba, parque dos pássaros indaiatuba, apartamento 2 dormitórios suíte indaiatuba, minha casa minha vida faixa 3 indaiatuba, apartamento na planta indaiatuba, jardim bom sucesso indaiatuba">
@@ -34,7 +36,7 @@
     "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-andorinha-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-andorinha-indaiatuba/images/hero.jpg",
     "datePosted": "2026-09-04",
-    "dateModified": "2026-09-10",
+    "dateModified": "2026-10-11",
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": -23.108448,
@@ -134,7 +136,8 @@
 
     /* HERO */
     .hero { position: relative; min-height: clamp(480px,70vh,680px); display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: url('images/hero.jpg') center/cover no-repeat; }
+    .hero-bg { position: absolute; inset: 0; background: url('images/hero-1280.webp') center/cover no-repeat; }
+    @media (max-width:700px){.hero-bg{background: url('images/hero-m.webp') center/cover no-repeat}}
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,26,8,0.82) 0%, rgba(44,26,8,0.55) 50%, rgba(44,26,8,0.85) 100%); }
     .hero-content { position: relative; z-index: 2; padding: clamp(2rem,6vw,4rem) 5%; max-width: 820px; margin: 0 auto; }
     .hero-logo { width: clamp(90px,16vw,140px); border-radius: 10px; margin-bottom: 1.2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
@@ -403,7 +406,7 @@
         <span class="hero-units">Últimas 2 unidades · set/2026</span>
       </div>
       <h1 style="margin-top:0.8rem;">Gran Vic Andorinha —<br><span>Apartamentos em Indaiatuba</span></h1>
-      <p class="procedencia">Atualizado em 10/09/2026 · tabela VIC de 02/09/2026 · Fabio Correia, CRECI 303686-F</p>
+      <p class="procedencia">Atualizado em 11/10/2026 · tabela VIC de 02/09/2026 · Fabio Correia, CRECI 303686-F</p>
       <p>2 dormitórios com suíte e varanda, 51,42 m², Minha Casa Minha Vida (MCMV) Faixa 3. Apenas 2 unidades na Torre 01 a partir de R$ 372.119 (tabela VIC de 02/09/2026). Entrega do Módulo 01 prevista para 25/02/2028.</p>
       <a href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Vi%20o%20Gran%20Vic%20Andorinha%20e%20quero%20saber%20sobre%20as%202%20%C3%BAltimas%20unidades%20da%20Torre%2001." class="btn-hero" target="_blank" rel="noopener">Falar sobre o Gran Vic Andorinha →</a>
     </div>
@@ -553,7 +556,7 @@
       <p>O complexo da VIC Engenharia tem mais 3 empreendimentos no mesmo bairro planejado — preços "a partir de" conforme tabelas VIC de set/2026.</p>
       <div class="alt-grid">
         <a class="alt-card" href="/gran-vic-canario-indaiatuba/">
-          <img loading="lazy" decoding="async" src="../gran-vic-canario-indaiatuba/images/lazer-aereo.jpg" alt="Vista aérea da piscina e quadra do Gran Vic Canário em Indaiatuba" width="851" height="851">
+          <img loading="lazy" decoding="async" src="../gran-vic-canario-indaiatuba/images/lazer-aereo-640.webp" alt="Vista aérea da piscina e quadra do Gran Vic Canário em Indaiatuba" width="640" height="640">
           <div class="alt-body">
             <span class="alt-badge">MCMV · últimas 3 (set/2026)</span>
             <h3>Gran Vic Canário</h3>
@@ -562,7 +565,7 @@
           </div>
         </a>
         <a class="alt-card" href="/gran-vic-tangara-indaiatuba/">
-          <img loading="lazy" decoding="async" src="../gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Fachada do Gran Vic Tangará em Indaiatuba" width="1280" height="853">
+          <img loading="lazy" decoding="async" src="../gran-vic-tangara-indaiatuba/images/hero-640.webp" alt="Fachada do Gran Vic Tangará em Indaiatuba" width="640" height="426">
           <div class="alt-body">
             <span class="alt-badge">MCMV · Disponível</span>
             <h3>Gran Vic Tangará</h3>
@@ -571,7 +574,7 @@
           </div>
         </a>
         <a class="alt-card" href="/gran-vic-colibri-indaiatuba/">
-          <img loading="lazy" decoding="async" src="../gran-vic-colibri-indaiatuba/images/hero.jpg" alt="Fachada do Gran Vic Colibri em Indaiatuba" width="1280" height="753">
+          <img loading="lazy" decoding="async" src="../gran-vic-colibri-indaiatuba/images/hero-640.webp" alt="Fachada do Gran Vic Colibri em Indaiatuba" width="640" height="376">
           <div class="alt-body">
             <span class="alt-badge">MCMV · Disponível</span>
             <h3>Gran Vic Colibri</h3>
@@ -633,7 +636,7 @@
 
   <!-- CTA -->
   <section class="cta-section" id="contato">
-    <h2>Quer reservar uma das 2 últimas unidades do Gran Vic Andorinha?</h2>
+    <h2>Quer reservar uma das 2 últimas unidades do Gran Vic Andorinha? <small style="display:block;font-size:.55em;font-weight:400;letter-spacing:.04em;margin-top:.4em;">Contagem da tabela VIC de 02/09/2026</small></h2>
     <p>Fale com nosso consultor: confirmamos a disponibilidade dos aptos 1204 e 1304 na VIC e enviamos a tabela completa de 02/09/2026.</p>
     <a href="https://wa.me/5519989769457?text=Ol%C3%A1%21%20Vi%20o%20Gran%20Vic%20Andorinha%20e%20quero%20saber%20sobre%20as%202%20%C3%BAltimas%20unidades%20da%20Torre%2001." class="btn-wpp" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -710,8 +713,8 @@
       <div class="malha-grupo"><span class="malha-rotulo">Apartamentos</span><a href="/uni-residencial-indaiatuba/">Uni Residencial</a><a href="/parque-das-aguas-indaiatuba/">Residencial Parque das Águas</a><a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a><a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a><a href="/itamaraca-indaiatuba/">Itamaracá Residencial</a><a href="/gran-vic-canario-indaiatuba/">Gran Vic Canário</a><a href="/vivere-indaiatuba/">Vívere Residencial</a><a href="/izzi-residence-indaiatuba/">Izzi Residence</a><a href="/spazio-italia-indaiatuba/">Spazio Italia</a><a href="/artemis-residencial-indaiatuba/">Artemis Residencial</a><a href="/aurora-indaiatuba/">Aurora — Park Meraki</a><a href="/storia-congesa-indaiatuba/">Storia Congesa</a><a href="/arete-home-indaiatuba/">Areté Home</a><a href="/espaco-conceicao-indaiatuba/">Espaço Conceição</a><a href="/helade-indaiatuba/">Hélade — Park Meraki</a><a href="/viva-parque-aura-indaiatuba/">Viva Parque Aura</a><a href="/viva-parque-sense-indaiatuba/">Viva Parque Sense</a><a href="/manai-bosque-indaiatuba/">Manai Bosque</a><a href="/seasons-indaiatuba/">Congesa Seasons</a><a href="/360-home-office-mall-indaiatuba/">360 Home Office Mall</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span><a href="/maria-candida-indaiatuba/">Jardim Dona Maria Cândida</a><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a><a href="/parque-zarah-indaiatuba/">Parque Zarah</a><a href="/di-italia-indaiatuba/">Jardim Di Italia</a><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a><a href="/alpnach-indaiatuba/">Alpnach Residence</a><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a><a href="/ville-de-provence-indaiatuba/">Ville de Provence</a><a href="/alphaville-indaiatuba/">Alphaville Indaiatuba</a><a href="/lagos-de-helvetia-indaiatuba/">Lagos de Helvetia</a><a href="/porteira-de-ferro-indaiatuba/">Porteira de Ferro</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span><a href="/alphaville/">Empreendimentos Alphaville</a><a href="/casas-alphaville-dom-pedro-0-campinas/">Casas Alphaville Dom Pedro 0 (Campinas)</a></div>
-      <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
-      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/condominios-em-indaiatuba-por-bairro/">Condomínios por bairro</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a><a href="/blog/fgts-classe-media-imovel-600-mil/">Classe Média do FGTS</a><a href="/blog/incc-parcela-na-planta/">INCC na parcela</a><a href="/blog/como-se-inscrever-minha-casa-minha-vida-indaiatuba/">Inscrição no Minha Casa Minha Vida</a><a href="/blog/casa-propria-motorista-de-aplicativo/">Casa própria para motorista de aplicativo</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Dados e listas</span><a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a><a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z de loteamentos e bairros</a><a href="/imprensa-e-dados/">Dados abertos e imprensa</a></div>
     </div>
   </section>

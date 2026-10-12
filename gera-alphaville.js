@@ -159,14 +159,35 @@ if (TITLE.length > 60) throw new Error('title com ' + TITLE.length + ' caractere
 if (DESC.length < 120 || DESC.length > 155) throw new Error('description com ' + DESC.length + ' caracteres (120-155): ' + DESC);
 const IMG_OG = comPagina[0].img;
 
+// ─── miniatura leve do card ───
+// O card usa <nome>-640.webp (gravado por ferramentas/hero-leve.py ao lado do original) quando o
+// arquivo existe; sem ele sai o original, como antes. Largura e altura vêm do cabeçalho do .webp.
+function dimWebp(arq) {
+  const b = Buffer.alloc(30);
+  const fd = fs.openSync(arq, 'r');
+  try { fs.readSync(fd, b, 0, 30, 0); } finally { fs.closeSync(fd); }
+  if (b.toString('latin1', 0, 4) !== 'RIFF' || b.toString('latin1', 8, 12) !== 'WEBP') return null;
+  const tipo = b.toString('latin1', 12, 16);
+  if (tipo === 'VP8 ') return { w: b.readUInt16LE(26) & 0x3fff, h: b.readUInt16LE(28) & 0x3fff };
+  if (tipo === 'VP8L') { const n = b.readUInt32LE(21); return { w: (n & 0x3fff) + 1, h: ((n >>> 14) & 0x3fff) + 1 }; }
+  if (tipo === 'VP8X') return { w: 1 + b.readUIntLE(24, 3), h: 1 + b.readUIntLE(27, 3) };
+  return null;
+}
+function miniatura(img) {
+  const leve = img.replace(/\.(jpe?g|png)$/i, '-640.webp');
+  const d = leve !== img && fs.existsSync(R + leve) ? dimWebp(R + leve) : null;
+  return d ? { src: leve, w: d.w, h: d.h } : null;
+}
+
 // ─── bloco 1: cards com página completa ───
 function card(e) {
   const preco = e.p
     ? `<p class="preco"><span>a partir de</span><strong>${brl(e.p)}</strong><em>tabela de ${e.tabela}${e.nota ? ' · ' + esc(e.nota) : ''}</em></p>`
     : `<p class="preco preco-sc"><span>tabela</span><strong>Sob consulta</strong><em>peça no atendimento</em></p>`;
+  const mini = miniatura(e.img);
   return `
         <article class="card" id="c-${e.slug}">
-          <a href="/${e.slug}/" class="card-img"><img loading="lazy" decoding="async" src="/${e.img}" alt="${esc(e.n)}, em ${esc(e.praca)}${e.ilustrativa ? ' (imagem ilustrativa)' : ''}" width="640" height="360"><span class="badge">${esc(e.fase)}</span>${e.ilustrativa ? '<span class="ilustr">Imagem ilustrativa</span>' : ''}</a>
+          <a href="/${e.slug}/" class="card-img"><img loading="lazy" decoding="async" src="/${mini ? mini.src : e.img}" alt="${esc(e.n)}, em ${esc(e.praca)}${e.ilustrativa ? ' (imagem ilustrativa)' : ''}" width="${mini ? mini.w : 640}" height="${mini ? mini.h : 360}"><span class="badge">${esc(e.fase)}</span>${e.ilustrativa ? '<span class="ilustr">Imagem ilustrativa</span>' : ''}</a>
           <div class="card-b">
             <p class="constr">${esc(e.praca)} · linha ${esc(e.linha)}</p>
             <h3><a href="/${e.slug}/">${esc(e.n)}</a></h3>

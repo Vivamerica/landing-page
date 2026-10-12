@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
 <script src="/atrib.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="image" href="aurora-indaiatuba/images/hero-casa-de-campo-piscina-m.webp" type="image/webp" media="(max-width:700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="aurora-indaiatuba/images/hero-casa-de-campo-piscina-1280.webp" type="image/webp" media="(min-width:701px) and (max-width:1440px)" fetchpriority="high">
+  <link rel="preload" as="image" href="aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" type="image/jpeg" media="(min-width:1441px)" fetchpriority="high">
   <title>Lançamentos imobiliários em Indaiatuba 2026: 32 com preço</title>
   <meta name="description" content="34 lançamentos em Indaiatuba SP, 32 com preço na tela: de R$ 145 mil (lote) a R$ 1,4 mi (apartamento), sem cadastro. Tabela atualizada em 10/10/2026.">
   <meta name="keywords" content="lançamentos imobiliários indaiatuba, apartamentos indaiatuba 2026, lotes indaiatuba sp, condomínio fechado indaiatuba, minha casa minha vida indaiatuba, comprar imóvel indaiatuba, financiamento caixa indaiatuba, lançamento apartamento indaiatuba">
@@ -136,11 +139,17 @@
     .hero {
       background:
         linear-gradient(100deg, rgba(16,16,16,.93) 0%, rgba(16,16,16,.74) 48%, rgba(16,16,16,.40) 100%),
-        url('aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg') center 65%/cover;
+        url('aurora-indaiatuba/images/hero-casa-de-campo-piscina-1280.webp') center 65%/cover;
       color: #fff;
       text-align: left;
       padding: clamp(26px, 4vw, 40px) 5%;
     }
+    @media (max-width:700px){.hero{background:
+        linear-gradient(100deg, rgba(16,16,16,.93) 0%, rgba(16,16,16,.74) 48%, rgba(16,16,16,.40) 100%),
+        url('aurora-indaiatuba/images/hero-casa-de-campo-piscina-m.webp') center 65%/cover}}
+    @media (min-width:1441px){.hero{background:
+        linear-gradient(100deg, rgba(16,16,16,.93) 0%, rgba(16,16,16,.74) 48%, rgba(16,16,16,.40) 100%),
+        url('aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg') center 65%/cover}}
     .nav-revenda { border:1px solid #C9A227; border-radius:8px; padding:.4rem .9rem;
       color:#F7D77E !important; font-weight:700; white-space:nowrap }
     .hero-in { max-width: 1200px; margin: 0 auto; display:flex; gap:2.2rem;
@@ -539,7 +548,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="279990" data-faixa="a"
                data-dorms="1" data-mcmv="1" data-status="lancamento" data-constr="Masotti">
         <a href="/uni-residencial-indaiatuba/" class="card-img-link">
-          <img src="uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial Indaiatuba" loading="lazy" width="640" height="360" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#1565C0;color:#fff;">MCMV · Aceita FGTS</span>
@@ -561,7 +570,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="300854" data-faixa="b"
                data-dorms="2" data-mcmv="0" data-status="lancamento" data-constr="Pinheiro · RDZ · iBen">
         <a href="/viva-parque-aura-indaiatuba/" class="card-img-link">
-          <img src="viva-parque-aura-indaiatuba/images/hero.jpg" alt="Viva Parque Aura Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="viva-parque-aura-indaiatuba/images/hero-640.webp" alt="Viva Parque Aura Indaiatuba" loading="lazy" width="640" height="481" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#2C4032;color:#C9A78A;">Lançamento</span>
@@ -583,7 +592,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="309120" data-faixa="b"
                data-dorms="2" data-mcmv="0" data-status="" data-constr="GPCI">
         <a href="/parque-das-aguas-indaiatuba/" class="card-img-link">
-          <img src="parque-das-aguas-indaiatuba/images/hero.jpg" alt="Perspectiva ilustrada das torres do Residencial Parque das Águas ao entardecer" loading="lazy" width="400" height="200">
+          <img src="parque-das-aguas-indaiatuba/images/hero-640.webp" alt="Perspectiva ilustrada das torres do Residencial Parque das Águas ao entardecer" loading="lazy" width="640" height="458" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#14140F;color:#D9CFC0;">Lançamento · 3 torres</span>
@@ -605,7 +614,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="330000" data-faixa="b"
                data-dorms="2" data-mcmv="1" data-status="lancamento" data-constr="VIC Engenharia">
         <a href="/gran-vic-tangara-indaiatuba/" class="card-img-link">
-          <img src="gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="gran-vic-tangara-indaiatuba/images/hero-640.webp" alt="Gran Vic Tangará Indaiatuba" loading="lazy" width="640" height="426" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#c0392b;color:#fff;">60% Vendido (ago/2026) · MCMV</span>
@@ -627,7 +636,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="334479" data-faixa="b"
                data-dorms="2" data-mcmv="1" data-status="lancamento" data-constr="VIC Engenharia">
         <a href="/gran-vic-colibri-indaiatuba/" class="card-img-link">
-          <img src="gran-vic-colibri-indaiatuba/images/hero.jpg" alt="Gran Vic Colibri Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="gran-vic-colibri-indaiatuba/images/hero-640.webp" alt="Gran Vic Colibri Indaiatuba" loading="lazy" width="640" height="376" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#c0392b;color:#fff;">MCMV c/ Suíte</span>
@@ -649,7 +658,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="345107" data-faixa="b"
                data-dorms="2" data-mcmv="1" data-status="lancamento" data-constr="Zarin">
         <a href="/itamaraca-indaiatuba/" class="card-img-link">
-          <img src="itamaraca-indaiatuba/images/hero.jpg" alt="Itamaracá Residencial Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="itamaraca-indaiatuba/images/hero-640.webp" alt="Itamaracá Residencial Indaiatuba" loading="lazy" width="640" height="573" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#1e4025;color:#d97542;">Lançamento · MCMV</span>
@@ -671,7 +680,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="352135" data-faixa="b"
                data-dorms="2" data-mcmv="1" data-status="lancamento" data-constr="VIC Engenharia">
         <a href="/gran-vic-canario-indaiatuba/" class="card-img-link">
-          <img src="gran-vic-canario-indaiatuba/images/hero.jpg" alt="Gran Vic Canário Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="gran-vic-canario-indaiatuba/images/hero-640.webp" alt="Gran Vic Canário Indaiatuba" loading="lazy" width="640" height="316" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#c0392b;color:#fff;">Últimas 3 Unidades (02/09/2026) · MCMV</span>
@@ -693,7 +702,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="352552" data-faixa="b"
                data-dorms="2" data-mcmv="1" data-status="pronto" data-constr="Masotti">
         <a href="/vivere-indaiatuba/" class="card-img-link">
-          <img src="vivere-indaiatuba/images/hero.jpg" alt="Vívere Residencial Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="vivere-indaiatuba/images/hero-640.webp" alt="Vívere Residencial Indaiatuba" loading="lazy" width="640" height="510" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#f26b1d;color:#fff;">Últimas 3 unidades (18/09/2026) · Pronto para morar</span>
@@ -715,7 +724,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="371862" data-faixa="b"
                data-dorms="" data-mcmv="0" data-status="obras" data-constr="GPCI">
         <a href="/izzi-residence-indaiatuba/" class="card-img-link">
-          <img src="izzi-residence-indaiatuba/images/hero.jpg" alt="Perspectiva ilustrada da fachada do Izzi Residence com o mall de serviços no térreo" loading="lazy" width="400" height="200">
+          <img src="izzi-residence-indaiatuba/images/hero-640.webp" alt="Perspectiva ilustrada da fachada do Izzi Residence com o mall de serviços no térreo" loading="lazy" width="640" height="297" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#14140F;color:#D9CFC0;">Lançamento · Centro</span>
@@ -737,7 +746,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="372119" data-faixa="b"
                data-dorms="2" data-mcmv="1" data-status="lancamento" data-constr="VIC Engenharia">
         <a href="/gran-vic-andorinha-indaiatuba/" class="card-img-link">
-          <img src="gran-vic-andorinha-indaiatuba/images/hero.jpg" alt="Gran Vic Andorinha Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="gran-vic-andorinha-indaiatuba/images/hero-640.webp" alt="Gran Vic Andorinha Indaiatuba" loading="lazy" width="640" height="315" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#c0392b;color:#fff;">Últimas 2 Unidades (02/09/2026) · MCMV</span>
@@ -759,7 +768,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="404886" data-faixa="b"
                data-dorms="3" data-mcmv="0" data-status="lancamento" data-constr="Pinheiro · RDZ · iBen">
         <a href="/viva-parque-sense-indaiatuba/" class="card-img-link">
-          <img src="viva-parque-sense-indaiatuba/images/hero.jpg" alt="Viva Parque Sense Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="viva-parque-sense-indaiatuba/images/hero-640.webp" alt="Viva Parque Sense Indaiatuba" loading="lazy" width="640" height="712" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#2C4032;color:#C9A78A;">Lançamento</span>
@@ -781,7 +790,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="429961" data-faixa="b"
                data-dorms="2" data-mcmv="0" data-status="lancamento" data-constr="Zarin">
         <a href="/spazio-italia-indaiatuba/" class="card-img-link">
-          <img src="spazio-italia-indaiatuba/images/hero.jpg" alt="Spazio Italia Residencial Clube Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="spazio-italia-indaiatuba/images/hero-640.webp" alt="Spazio Italia Residencial Clube Indaiatuba" loading="lazy" width="640" height="360" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#1e4028;color:#b93646;">Lançamento · Clube</span>
@@ -803,7 +812,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="505941" data-faixa="b"
                data-dorms="3" data-mcmv="0" data-status="lancamento" data-constr="Masotti">
         <a href="/manai-bosque-indaiatuba/" class="card-img-link">
-          <img src="manai-bosque-indaiatuba/images/vista-aerea-real.jpg" alt="Manai Bosque Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="manai-bosque-indaiatuba/images/vista-aerea-real-640.webp" alt="Manai Bosque Indaiatuba" loading="lazy" width="640" height="445" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#1a3a1f;color:#C9A227;">Lançamento</span>
@@ -825,7 +834,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="555171" data-faixa="b"
                data-dorms="3" data-mcmv="0" data-status="obras" data-constr="GPCI">
         <a href="/artemis-residencial-indaiatuba/" class="card-img-link">
-          <img src="artemis-residencial-indaiatuba/images/hero.jpg" alt="Perspectiva ilustrada aérea das torres do Artemis Residencial no Park Meraki" loading="lazy" width="400" height="200">
+          <img src="artemis-residencial-indaiatuba/images/hero-640.webp" alt="Perspectiva ilustrada aérea das torres do Artemis Residencial no Park Meraki" loading="lazy" width="640" height="457" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#14140F;color:#D9CFC0;">Lançamento · Park Meraki</span>
@@ -847,7 +856,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="758850" data-faixa="c"
                data-dorms="3" data-mcmv="0" data-status="breve" data-constr="Masotti">
         <a href="/aurora-indaiatuba/" class="card-img-link">
-          <img src="aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="aurora-indaiatuba/images/hero-casa-de-campo-piscina-640.webp" alt="Aurora — Park Meraki Indaiatuba" loading="lazy" width="640" height="445" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#0a1929;color:#C9A227;">Breve Lançamento · Alto Padrão</span>
@@ -869,7 +878,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="981000" data-faixa="c"
                data-dorms="2" data-mcmv="0" data-status="obras" data-constr="Congesa">
         <a href="/storia-congesa-indaiatuba/" class="card-img-link">
-          <img src="storia-congesa-indaiatuba/images/hero.jpg" alt="Storia Congesa Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="storia-congesa-indaiatuba/images/hero-640.webp" alt="Storia Congesa Indaiatuba" loading="lazy" width="640" height="360" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#1A1611;color:#C9A96A;">Entrega Dez/2026</span>
@@ -891,7 +900,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="991005" data-faixa="c"
                data-dorms="3" data-mcmv="0" data-status="lancamento" data-constr="PERPLAN">
         <a href="/arete-home-indaiatuba/" class="card-img-link">
-          <img src="arete-home-indaiatuba/images/hero.jpg" alt="Areté Home Indaiatuba PERPLAN Park Meraki" loading="lazy" width="400" height="200">
+          <img src="arete-home-indaiatuba/images/hero-640.webp" alt="Areté Home Indaiatuba PERPLAN Park Meraki" loading="lazy" width="640" height="776" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#14140F;color:#D9CFC0;">Lançamento · Torre Única</span>
@@ -913,7 +922,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="1023557" data-faixa="c"
                data-dorms="3" data-mcmv="0" data-status="" data-constr="Masotti">
         <a href="/espaco-conceicao-indaiatuba/" class="card-img-link">
-          <img src="espaco-conceicao-indaiatuba/images/hero.jpg" alt="Apartamento decorado do Espaço Conceição Indaiatuba, Masotti" loading="lazy" width="400" height="200">
+          <img src="espaco-conceicao-indaiatuba/images/hero-640.webp" alt="Apartamento decorado do Espaço Conceição Indaiatuba, Masotti" loading="lazy" width="640" height="480" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#14140F;color:#D9CFC0;">Alto padrão · 2 torres</span>
@@ -935,7 +944,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="1391504" data-faixa="d"
                data-dorms="3" data-mcmv="0" data-status="obras" data-constr="PERPLAN">
         <a href="/helade-indaiatuba/" class="card-img-link">
-          <img src="helade-indaiatuba/images/hero.jpg" alt="Hélade — Park Meraki Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="helade-indaiatuba/images/hero-640.webp" alt="Hélade — Park Meraki Indaiatuba" loading="lazy" width="640" height="711" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#0C0C0C;color:#C8A44A;">Alto Padrão · Entrega Mar/2027</span>
@@ -964,7 +973,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="" data-faixa="consulte"
                data-dorms="3" data-mcmv="0" data-status="pre" data-constr="Congesa">
         <a href="/seasons-indaiatuba/" class="card-img-link">
-          <img src="seasons-indaiatuba/images/hero.jpg" alt="Congesa Seasons Natural Wellness Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="seasons-indaiatuba/images/hero-640.webp" alt="Congesa Seasons Natural Wellness Indaiatuba" loading="lazy" width="640" height="320" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#A15E2C;color:#fff;">Pré-Lançamento</span>
@@ -986,7 +995,7 @@
       <article class="listing-card" data-tipo="apartamento" data-preco="" data-faixa=""
                data-dorms="1" data-mcmv="0" data-status="" data-constr="HINC">
         <a href="/360-home-office-mall-indaiatuba/" class="card-img-link">
-          <img src="360-home-office-mall-indaiatuba/images/hero.jpg" alt="Perspectiva ilustrada das torres do 360 Home Office Mall ao pôr do sol" loading="lazy" width="400" height="200">
+          <img src="360-home-office-mall-indaiatuba/images/hero-640.webp" alt="Perspectiva ilustrada das torres do 360 Home Office Mall ao pôr do sol" loading="lazy" width="640" height="481" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#14140F;color:#D9CFC0;">Lançamento · uso misto</span>
@@ -1017,7 +1026,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="145000" data-faixa="a"
                data-lote="aberto" data-status="lancamento" data-constr="Dominium" data-pm2="967">
         <a href="/monte-carmelo-indaiatuba/" class="card-img-link">
-          <img src="monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="monte-carmelo-indaiatuba/images/hero-640.webp" alt="Residencial Monte Carmelo Indaiatuba" loading="lazy" width="640" height="800" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#d4520a;color:#fff;">O Mais Acessível</span>
@@ -1039,7 +1048,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="211050" data-faixa="a"
                data-lote="fechado" data-status="obras" data-constr="Zarin" data-pm2="1407">
         <a href="/parque-zarah-indaiatuba/" class="card-img-link">
-          <img src="parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah Indaiatuba" loading="lazy" width="640" height="360" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#1a3a2a;color:#c8a45a;">Cond. Fechado · Fase 1 em obras</span>
@@ -1061,7 +1070,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="210000" data-faixa="a"
                data-lote="aberto" data-status="lancamento" data-constr="Dominium" data-pm2="1400">
         <a href="/di-italia-indaiatuba/" class="card-img-link">
-          <img src="di-italia-indaiatuba/images/hero.jpg" alt="Jardim Di Italia Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="di-italia-indaiatuba/images/hero-640.webp" alt="Jardim Di Italia Indaiatuba" loading="lazy" width="640" height="300" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#c0392b;color:#fff;">45 lotes disponíveis (01/10/2026)</span>
@@ -1083,7 +1092,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="247500" data-faixa="a"
                data-lote="fechado" data-status="lancamento" data-constr="Armigh · Best Business" data-pm2="1650">
         <a href="/terras-de-san-marino-indaiatuba/" class="card-img-link">
-          <img src="images/hero.jpg" alt="Terras de San Marino Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="images/hero-640.webp" alt="Terras de San Marino Indaiatuba" loading="lazy" width="640" height="357" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#C62828;color:#fff;">19 lotes disponíveis (02/09/2026)</span>
@@ -1105,7 +1114,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="273750" data-faixa="a"
                data-lote="fechado" data-status="lancamento" data-constr="Vila Fahl" data-pm2="1825">
         <a href="/vila-fahl-indaiatuba/" class="card-img-link">
-          <img src="vila-fahl-indaiatuba/images/hero.jpg" alt="Residencial Vila Fahl Indaiatuba lotes" loading="lazy" width="400" height="200">
+          <img src="vila-fahl-indaiatuba/images/hero-640.webp" alt="Residencial Vila Fahl Indaiatuba lotes" loading="lazy" width="640" height="464" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#0E3547;color:#F5B95C;">Residencial e Comercial · 96x</span>
@@ -1127,14 +1136,14 @@
       <article class="listing-card" data-tipo="lote" data-preco="510000" data-faixa="b"
                data-lote="fechado" data-status="lancamento" data-constr="Dominium" data-pm2="1700">
         <a href="/alpnach-indaiatuba/" class="card-img-link">
-          <img src="alpnach-indaiatuba/images/hero.jpg" alt="Alpnach Residence Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="alpnach-indaiatuba/images/hero-640.webp" alt="Alpnach Residence Indaiatuba" loading="lazy" width="640" height="360" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#C9A227;color:#161616;">Condomínio Fechado</span>
           <p class="card-constr">Dominium</p>
           <h3><a href="/alpnach-indaiatuba/">Alpnach Residence</a></h3>
           <p class="card-meta">A partir de 300 m² · <strong class="pm2">R$ 1.700/m²</strong></p>
-          <p class="card-desc">322 lotes a partir de 300 m² · 19 lotes disponíveis (01/10/2026) · o maior complexo de lazer da região: piscina coberta, coworking, mini mercado 24h.</p>
+          <p class="card-desc">322 lotes a partir de 300 m² · 19 lotes disponíveis (01/10/2026) · mais de 17 espaços de lazer: piscina coberta, coworking, mini mercado 24h.</p>
           <div class="card-price">A partir de <strong>R$ 510.000</strong></div>
           <div class="card-actions">
             <a href="/alpnach-indaiatuba/" class="btn-card">Ver detalhes</a>
@@ -1149,7 +1158,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="600000" data-faixa="b"
                data-lote="fechado" data-status="pronto" data-constr="Asseplan Narezzi" data-pm2="2000">
         <a href="/maria-candida-indaiatuba/" class="card-img-link">
-          <img src="maria-candida-indaiatuba/images/hero.jpg" alt="Portaria do Jardim Dona Maria Cândida em Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="maria-candida-indaiatuba/images/hero-640.webp" alt="Portaria do Jardim Dona Maria Cândida em Indaiatuba" loading="lazy" width="640" height="422" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#1F7A3F;color:#fff;">Pronto para construir</span>
@@ -1171,7 +1180,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="642375" data-faixa="b"
                data-lote="fechado" data-status="obras" data-constr="Zarin" data-pm2="1567">
         <a href="/reserva-botanica-indaiatuba/" class="card-img-link">
-          <img src="reserva-botanica-indaiatuba/images/hero.jpg" alt="Residencial Reserva Botânica Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="reserva-botanica-indaiatuba/images/hero-640.webp" alt="Residencial Reserva Botânica Indaiatuba" loading="lazy" width="640" height="1138" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#b8672f;color:#fff;">Últimas 2 unidades (29/09/2026)</span>
@@ -1193,7 +1202,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="714000" data-faixa="c"
                data-lote="fechado" data-status="lancamento" data-constr="Dominium" data-pm2="1700">
         <a href="/residencial-ravello-indaiatuba/" class="card-img-link">
-          <img src="residencial-ravello-indaiatuba/images/hero.jpg" alt="Residencial Ravello Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="residencial-ravello-indaiatuba/images/hero-640.webp" alt="Residencial Ravello Indaiatuba" loading="lazy" width="640" height="360" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#C9A227;color:#161616;">Condomínio Fechado</span>
@@ -1214,7 +1223,7 @@
        <article class="listing-card" data-tipo="lote" data-preco="888939" data-faixa="c"
                data-lote="fechado" data-status="lancamento" data-constr="Alphaville" data-pm2="1693">
         <a href="/alphaville-indaiatuba/" class="card-img-link">
-          <img src="alphaville-indaiatuba/images/hero.jpg" alt="Perspectiva ilustrada da piscina do clube do Alphaville Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="alphaville-indaiatuba/images/hero-640.webp" alt="Perspectiva ilustrada da piscina do clube do Alphaville Indaiatuba" loading="lazy" width="640" height="591" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#C9A227;color:#161616;">Condomínio Fechado</span>
@@ -1236,7 +1245,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="901800" data-faixa="c"
                data-lote="fechado" data-status="lancamento" data-constr="GPCI" data-pm2="1800">
         <a href="/lagos-de-helvetia-indaiatuba/" class="card-img-link">
-          <img src="lagos-de-helvetia-indaiatuba/images/hero.jpg" alt="Perspectiva ilustrada aérea do clube e do lago do Lagos de Helvetia" loading="lazy" width="400" height="200">
+          <img src="lagos-de-helvetia-indaiatuba/images/hero-640.webp" alt="Perspectiva ilustrada aérea do clube e do lago do Lagos de Helvetia" loading="lazy" width="640" height="354" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#C9A227;color:#161616;">Condomínio Fechado</span>
@@ -1258,7 +1267,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="637200" data-faixa="c"
                data-lote="fechado" data-status="lancamento" data-constr="Urban Square" data-pm2="1770">
         <a href="/ville-de-provence-indaiatuba/" class="card-img-link">
-          <img src="ville-de-provence-indaiatuba/images/hero.jpg" alt="Perspectiva da portaria do Ville de Provence, em Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="ville-de-provence-indaiatuba/images/hero-640.webp" alt="Perspectiva da portaria do Ville de Provence, em Indaiatuba" loading="lazy" width="640" height="256" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge">Lançamento</span>
@@ -1279,7 +1288,7 @@
       <article class="listing-card" data-tipo="lote" data-preco="1300000" data-faixa="c"
                data-lote="fechado" data-status="lancamento" data-constr="GPCI" data-pm2="2500">
         <a href="/porteira-de-ferro-indaiatuba/" class="card-img-link">
-          <img src="porteira-de-ferro-indaiatuba/images/hero.jpg" alt="Foto aérea do Porteira de Ferro, em Indaiatuba" loading="lazy" width="400" height="200">
+          <img src="porteira-de-ferro-indaiatuba/images/hero-640.webp" alt="Foto aérea do Porteira de Ferro, em Indaiatuba" loading="lazy" width="640" height="430" decoding="async">
         </a>
         <div class="card-body">
           <span class="card-badge" style="background:#C9A227;color:#161616;">Último lote (17/09/2026)</span>
@@ -1370,7 +1379,7 @@
         <a href="/blog/morar-em-indaiatuba/" class="pillar-card">
           <span class="pillar-icon">🌆</span>
           <h3>Morar em Indaiatuba: Guia Completo</h3>
-          <p>Vale a pena? Custo, segurança, bairros e comparativo com outras cidades. Nosso guia mais completo.</p>
+          <p>Custo, segurança, bairros e comparativo com outras cidades. Nosso guia mais completo.</p>
         </a>
         <a href="/blog/" class="pillar-card">
           <span class="pillar-icon"></span>

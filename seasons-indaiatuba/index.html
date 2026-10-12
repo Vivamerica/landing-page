@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
 <script src="/atrib.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="image" href="images/hero-m.webp" type="image/webp" media="(max-width:700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-1280.webp" type="image/webp" media="(min-width:701px) and (max-width:1440px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero.jpg" type="image/jpeg" media="(min-width:1441px)" fetchpriority="high">
   <title>Congesa Seasons Indaiatuba | 4 Tipologias · Pré-lançamento</title>
   <meta name="description" content="Congesa Seasons, pré-lançamento em Indaiatuba (Villa dos Pinheiros): 3 blocos, 4 tipologias — 3 dorm, 3 suítes, Penthouse e Maison — e hobby box em todas.">
   <meta name="keywords" content="congesa seasons indaiatuba, seasons natural wellness, apartamento indaiatuba 3 suites, penthouse indaiatuba, maison indaiatuba, apartamento villa dos pinheiros, apartamento colegio progresso, congesa novo lancamento, seasons pre-lancamento indaiatuba">
@@ -32,7 +35,7 @@
     "@type": "ApartmentComplex",
     "dateModified": "2026-10-11",
     "name": "Congesa Seasons Natural Wellness",
-    "description": "Empreendimento pré-lançamento em três blocos na região mais exclusiva de Indaiatuba (próximo à Villa dos Pinheiros, Colégio Progresso e Arena Deco). Quatro tipologias: 3 dorm com 1 suíte e lavabo, 3 suítes com lavabo, Penthouses e Maisons, todas com hobby box. Paisagismo Wellness biofílico e Fitness em parceria com a Companhia Athlética.",
+    "description": "Empreendimento pré-lançamento em três blocos em Indaiatuba (próximo à Villa dos Pinheiros, Colégio Progresso e Arena Deco). Quatro tipologias: 3 dorm com 1 suíte e lavabo, 3 suítes com lavabo, Penthouses e Maisons, todas com hobby box. Paisagismo Wellness biofílico e Fitness em parceria com a Companhia Athlética.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/seasons-indaiatuba/",
     "image": "https://lancamentos.imoveisvivamerica.com.br/seasons-indaiatuba/images/hero.jpg",
     "geo": {
@@ -142,7 +145,9 @@
       display: flex; align-items: center; justify-content: center; text-align: center;
       background: var(--earth2); overflow: hidden;
     }
-    .hero-bg { position: absolute; inset: 0; background: url('images/hero.jpg') center/cover no-repeat; opacity: .55; }
+    .hero-bg { position: absolute; inset: 0; background: url('images/hero-1280.webp') center/cover no-repeat; opacity: .55; }
+    @media (max-width:700px){.hero-bg{background: url('images/hero-m.webp') center/cover no-repeat}}
+    @media (min-width:1441px){.hero-bg{background: url('images/hero.jpg') center/cover no-repeat}}
     .hero::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(180deg, rgba(31,22,16,.5) 0%, rgba(31,22,16,.15) 40%, rgba(31,22,16,.9) 100%);
@@ -492,7 +497,7 @@
     <h1>Congesa <em>Seasons</em> <span style="display:block;font-size:.42em;letter-spacing:.12em;margin-top:.5em;color:rgba(255,255,255,.85)">— Apartamentos de 3 dormitórios, penthouses e maisons em Indaiatuba</span></h1>
     <p class="procedencia">Atualizado em 11/10/2026 · pré-lançamento · sem tabela pública em out/2026 · Fabio Correia, CRECI 303686-F</p>
     <p class="hero-tagline">Prepare-se para o inimaginável.</p>
-    <p class="hero-sub">Três blocos residenciais em uma das regiões mais exclusivas de Indaiatuba. Quatro tipologias: 3 dormitórios com 1 suíte, 3 suítes com lavabo, Penthouses e Maisons — todas com hobby box.</p>
+    <p class="hero-sub">Três blocos residenciais em Indaiatuba, entre a Villa dos Pinheiros, o Colégio Progresso e a Arena Deco. Quatro tipologias: 3 dormitórios com 1 suíte, 3 suítes com lavabo, Penthouses e Maisons — todas com hobby box.</p>
     <p class="hero-loc">Região Villa dos Pinheiros · Colégio Progresso · Indaiatuba SP</p>
     <p class="hero-preco">Condições de pré-lançamento — solicite a tabela · sem tabela pública em out/2026</p>
     <div class="hero-btns">
@@ -522,7 +527,7 @@
         <p class="sec-label">Sobre o Empreendimento</p>
         <h2 class="sec-title">Um diálogo entre o tempo e a vida</h2>
         <p class="sec-desc">
-          Nasce um projeto onde memórias são criadas e cada fase da vida encontra o seu espaço. O Congesa Seasons Natural Wellness é a materialização de um olhar que sempre esteve à frente do seu tempo — agora aplicado ao bem-estar, à permanência e à vitalidade. Localizado na região mais exclusiva de Indaiatuba, entre a Villa dos Pinheiros, o Colégio Progresso e a Arena Deco.
+          Nasce um projeto onde memórias são criadas e cada fase da vida encontra o seu espaço. O Congesa Seasons Natural Wellness é a materialização de um olhar que sempre esteve à frente do seu tempo — agora aplicado ao bem-estar, à permanência e à vitalidade. Localizado em Indaiatuba, entre a Villa dos Pinheiros, o Colégio Progresso e a Arena Deco.
         </p>
         <div class="pills">
           <div class="pill">3 Blocos residenciais</div>
@@ -685,7 +690,7 @@
         <p class="sec-label">Parceria de Bem-Estar</p>
         <h2 class="sec-title">Companhia Athlética assinando o seu circuito de esporte</h2>
         <p class="brand-athletica">Excelência em Movimento.</p>
-        <p class="sec-desc">Há mais de quatro décadas, a Companhia Athlética é referência em saúde, esporte e qualidade de vida. No Congesa Seasons, essa parceria inspirou a criação de um verdadeiro circuito de esporte e bem-estar — da recreação à performance — estimulando corpo e mente em harmonia. O resultado é uma experiência completa em cada ambiente do condomínio.</p>
+        <p class="sec-desc">No Congesa Seasons, a parceria com a Companhia Athlética inspirou a criação de um verdadeiro circuito de esporte e bem-estar — da recreação à performance — estimulando corpo e mente em harmonia. O resultado é uma experiência completa em cada ambiente do condomínio.</p>
       </div>
     </div>
   </div>
@@ -711,7 +716,7 @@
     <div class="loc-grid">
       <div>
         <p class="sec-label">Localização Exclusiva</p>
-        <h2 class="sec-title">A localização mais exclusiva e privilegiada de Indaiatuba</h2>
+        <h2 class="sec-title">Entre a Villa dos Pinheiros, o Colégio Progresso e a Arena Deco</h2>
         <p class="sec-desc">Situado na região mais nobre da cidade, o Novo Congesa vai além de seu endereço: é a tradução de um estilo de vida. Vizinho de referências como Villa dos Pinheiros, Red House School, Colégio Progresso e Arena Deco — a poucos minutos do irmão Storia Congesa e da Av. Conceição.</p>
         <ul class="poi-list">
           <li><span>Storia Congesa (empreendimento irmão)</span><strong>a poucos minutos</strong></li>
@@ -763,19 +768,19 @@
       <p>São quatro tipologias: apartamentos de 3 dormitórios com 1 suíte e lavabo (2 vagas), 3 suítes com lavabo (3 vagas), Penthouses com piscina privativa (3 a 4 vagas) e Maisons — apartamentos-jardim no térreo com quintal e piscina privativa (2 a 3 vagas). Todas as unidades vêm com hobby box incluso.</p></details>
 
     <details><summary>Onde fica o Congesa Seasons em Indaiatuba?</summary>
-      <p>Na região mais exclusiva de Indaiatuba, entre a Villa dos Pinheiros, Red House School, Colégio Progresso e Arena Deco — próximo à Av. Conceição e ao empreendimento irmão Storia Congesa.</p></details>
+      <p>Em Indaiatuba, entre a Villa dos Pinheiros, Red House School, Colégio Progresso e Arena Deco — próximo à Av. Conceição e ao empreendimento irmão Storia Congesa.</p></details>
 
     <details><summary>Qual o preço dos apartamentos no Congesa Seasons?</summary>
-      <p>O Congesa Seasons Natural Wellness está em fase de pré-lançamento e a tabela de preços será divulgada em breve. Cadastre-se com a Viv'América pelo WhatsApp para receber as condições em primeira mão, com preços de tabela inicial e reserva das melhores unidades.</p></details>
+      <p>O Congesa Seasons Natural Wellness está em fase de pré-lançamento e não tinha tabela pública em out/2026. Cadastre-se com a Viv'América pelo WhatsApp para receber a tabela quando a Congesa divulgar.</p></details>
 
     <details><summary>O que é o Paisagismo Wellness do Seasons?</summary>
       <p>O paisagismo do Congesa Seasons transcende a função decorativa. É um ecossistema projetado para nutrir corpo e mente com design biofílico — priorizando espécies nativas adaptadas ao clima local, que criam microclimas termicamente confortáveis e atraem pássaros e borboletas, transformando o condomínio em um refúgio de biodiversidade urbana.</p></details>
 
     <details><summary>Como funciona a parceria com a Companhia Athlética?</summary>
-      <p>A Companhia Athlética — referência em saúde e performance há mais de 40 anos — inspirou a criação do circuito de esporte e bem-estar do Seasons. São ambientes projetados para cobrir todas as intensidades, da recreação à performance, estimulando corpo e mente em harmonia.</p></details>
+      <p>A Companhia Athlética inspirou a criação do circuito de esporte e bem-estar do Seasons. São ambientes projetados para cobrir todas as intensidades, da recreação à performance, estimulando corpo e mente em harmonia.</p></details>
 
     <details><summary>Quem é a construtora Congesa?</summary>
-      <p>A Congesa é uma incorporadora nascida em Indaiatuba em 1993, com 32 anos de história e mais de 30 empreendimentos entregues — Reserva Alpha, Hub Cambuí, Authoria, Atmosphera, Mood, Storia e Vivio Cambuí. Possui certificação PBQP-H, ISO 9001 e Selo NDT concedido pela Caixa Econômica Federal.</p></details>
+      <p>A Congesa é uma incorporadora nascida em Indaiatuba em 1993, com 32 anos de história e mais de 30 empreendimentos entregues — Reserva Alpha, Hub Cambuí, Authoria, Atmosphera, Mood e Vivio Cambuí. Possui certificação PBQP-H, ISO 9001 e Selo NDT concedido pela Caixa Econômica Federal.</p></details>
   </div>
 </section>
 
@@ -784,12 +789,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Quais tipologias o Congesa Seasons oferece?","acceptedAnswer":{"@type":"Answer","text":"Quatro tipologias: 3 dormitórios com 1 suíte e lavabo (2 vagas), 3 suítes com lavabo (3 vagas), Penthouses com piscina privativa (3 a 4 vagas) e Maisons com jardim e piscina privativa (2 a 3 vagas). Todas com hobby box."}},
-    {"@type":"Question","name":"Onde fica o Congesa Seasons em Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"Na região mais exclusiva de Indaiatuba, entre a Villa dos Pinheiros, Red House School, Colégio Progresso e Arena Deco — próximo à Av. Conceição e ao empreendimento irmão Storia Congesa."}},
-    {"@type":"Question","name":"Qual o preço dos apartamentos no Congesa Seasons?","acceptedAnswer":{"@type":"Answer","text":"O Seasons está em fase de pré-lançamento — a tabela será divulgada em breve. Cadastre-se com a Viv'América para receber as condições em primeira mão."}},
-    {"@type":"Question","name":"O que é o Paisagismo Wellness do Seasons?","acceptedAnswer":{"@type":"Answer","text":"Um ecossistema com design biofílico e espécies nativas que criam microclimas termicamente confortáveis, atraem pássaros e borboletas e transformam o condomínio em refúgio de biodiversidade urbana."}},
-    {"@type":"Question","name":"Como funciona a parceria com a Companhia Athlética?","acceptedAnswer":{"@type":"Answer","text":"A Companhia Athlética inspirou a criação do circuito de esporte e bem-estar do Seasons — ambientes para todas as intensidades, da recreação à performance."}},
-    {"@type":"Question","name":"Quem é a construtora Congesa?","acceptedAnswer":{"@type":"Answer","text":"Incorporadora nascida em Indaiatuba em 1993, com 32 anos e mais de 30 empreendimentos entregues. Certificação PBQP-H, ISO 9001 e Selo NDT da Caixa Econômica Federal."}}
+    {"@type":"Question","name":"Quais tipologias o Congesa Seasons oferece?","acceptedAnswer":{"@type":"Answer","text":"São quatro tipologias: apartamentos de 3 dormitórios com 1 suíte e lavabo (2 vagas), 3 suítes com lavabo (3 vagas), Penthouses com piscina privativa (3 a 4 vagas) e Maisons — apartamentos-jardim no térreo com quintal e piscina privativa (2 a 3 vagas). Todas as unidades vêm com hobby box incluso."}},
+    {"@type":"Question","name":"Onde fica o Congesa Seasons em Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"Em Indaiatuba, entre a Villa dos Pinheiros, Red House School, Colégio Progresso e Arena Deco — próximo à Av. Conceição e ao empreendimento irmão Storia Congesa."}},
+    {"@type":"Question","name":"Qual o preço dos apartamentos no Congesa Seasons?","acceptedAnswer":{"@type":"Answer","text":"O Congesa Seasons Natural Wellness está em fase de pré-lançamento e não tinha tabela pública em out/2026. Cadastre-se com a Viv'América pelo WhatsApp para receber a tabela quando a Congesa divulgar."}},
+    {"@type":"Question","name":"O que é o Paisagismo Wellness do Seasons?","acceptedAnswer":{"@type":"Answer","text":"O paisagismo do Congesa Seasons transcende a função decorativa. É um ecossistema projetado para nutrir corpo e mente com design biofílico — priorizando espécies nativas adaptadas ao clima local, que criam microclimas termicamente confortáveis e atraem pássaros e borboletas, transformando o condomínio em um refúgio de biodiversidade urbana."}},
+    {"@type":"Question","name":"Como funciona a parceria com a Companhia Athlética?","acceptedAnswer":{"@type":"Answer","text":"A Companhia Athlética inspirou a criação do circuito de esporte e bem-estar do Seasons. São ambientes projetados para cobrir todas as intensidades, da recreação à performance, estimulando corpo e mente em harmonia."}},
+    {"@type":"Question","name":"Quem é a construtora Congesa?","acceptedAnswer":{"@type":"Answer","text":"A Congesa é uma incorporadora nascida em Indaiatuba em 1993, com 32 anos de história e mais de 30 empreendimentos entregues — Reserva Alpha, Hub Cambuí, Authoria, Atmosphera, Mood e Vivio Cambuí. Possui certificação PBQP-H, ISO 9001 e Selo NDT concedido pela Caixa Econômica Federal."}}
   ]
 }
 </script>
@@ -876,8 +881,8 @@
       <div class="malha-grupo"><span class="malha-rotulo">Apartamentos</span><a href="/uni-residencial-indaiatuba/">Uni Residencial</a><a href="/parque-das-aguas-indaiatuba/">Residencial Parque das Águas</a><a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a><a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a><a href="/itamaraca-indaiatuba/">Itamaracá Residencial</a><a href="/gran-vic-canario-indaiatuba/">Gran Vic Canário</a><a href="/vivere-indaiatuba/">Vívere Residencial</a><a href="/izzi-residence-indaiatuba/">Izzi Residence</a><a href="/gran-vic-andorinha-indaiatuba/">Gran Vic Andorinha</a><a href="/spazio-italia-indaiatuba/">Spazio Italia</a><a href="/artemis-residencial-indaiatuba/">Artemis Residencial</a><a href="/aurora-indaiatuba/">Aurora — Park Meraki</a><a href="/storia-congesa-indaiatuba/">Storia Congesa</a><a href="/arete-home-indaiatuba/">Areté Home</a><a href="/espaco-conceicao-indaiatuba/">Espaço Conceição</a><a href="/helade-indaiatuba/">Hélade — Park Meraki</a><a href="/viva-parque-aura-indaiatuba/">Viva Parque Aura</a><a href="/viva-parque-sense-indaiatuba/">Viva Parque Sense</a><a href="/manai-bosque-indaiatuba/">Manai Bosque</a><a href="/360-home-office-mall-indaiatuba/">360 Home Office Mall</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span><a href="/maria-candida-indaiatuba/">Jardim Dona Maria Cândida</a><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a><a href="/parque-zarah-indaiatuba/">Parque Zarah</a><a href="/di-italia-indaiatuba/">Jardim Di Italia</a><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a><a href="/alpnach-indaiatuba/">Alpnach Residence</a><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a><a href="/ville-de-provence-indaiatuba/">Ville de Provence</a><a href="/alphaville-indaiatuba/">Alphaville Indaiatuba</a><a href="/lagos-de-helvetia-indaiatuba/">Lagos de Helvetia</a><a href="/porteira-de-ferro-indaiatuba/">Porteira de Ferro</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span><a href="/alphaville/">Empreendimentos Alphaville</a><a href="/casas-alphaville-dom-pedro-0-campinas/">Casas Alphaville Dom Pedro 0 (Campinas)</a></div>
-      <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
-      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/condominios-em-indaiatuba-por-bairro/">Condomínios por bairro</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a><a href="/blog/fgts-classe-media-imovel-600-mil/">Classe Média do FGTS</a><a href="/blog/incc-parcela-na-planta/">INCC na parcela</a><a href="/blog/como-se-inscrever-minha-casa-minha-vida-indaiatuba/">Inscrição no Minha Casa Minha Vida</a><a href="/blog/casa-propria-motorista-de-aplicativo/">Casa própria para motorista de aplicativo</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Dados e listas</span><a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a><a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z de loteamentos e bairros</a><a href="/imprensa-e-dados/">Dados abertos e imprensa</a></div>
     </div>
   </section>

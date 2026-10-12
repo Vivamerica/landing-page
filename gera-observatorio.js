@@ -371,7 +371,9 @@ const HTML = `<!DOCTYPE html>
 <meta property="og:title" content="${esc(TITLE)}">
 <meta property="og:description" content="${esc(DESC)}">
 <meta property="og:url" content="${URL}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg">
 <meta name="twitter:title" content="${esc(TITLE)}">
 <meta name="twitter:description" content="${esc(DESC)}">
 <meta property="og:locale" content="pt_BR">

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
 <script src="/atrib.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="image" href="images/hero-casa-de-campo-piscina-m.webp" type="image/webp" media="(max-width:700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-casa-de-campo-piscina-1280.webp" type="image/webp" media="(min-width:701px) and (max-width:1440px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-casa-de-campo-piscina.jpg" type="image/jpeg" media="(min-width:1441px)" fetchpriority="high">
   <title>Aurora Indaiatuba | Apartamentos Masotti · 101 a 152 m²</title>
   <meta name="description" content="Aurora, Park Meraki: 461 apartamentos de 101 a 152 m² em 4 torres, casa de campo com piscina privativa e 32 áreas de lazer. Desde R$ 758.850 (set/2026).">
   <meta name="keywords" content="aurora indaiatuba, aurora masotti, aurora park meraki, apartamento park meraki indaiatuba, breve lançamento indaiatuba, apartamento 101 metros indaiatuba, apartamento garden indaiatuba, casa de campo condomínio indaiatuba, beach tennis condomínio indaiatuba, masotti aurora, anderson leite arquitetura, edu leal paisagismo, apartamento 2 suítes indaiatuba, chafic josé saif indaiatuba, lançamento 2027 indaiatuba, aurora a arte de viver">
@@ -121,9 +124,11 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('images/hero-casa-de-campo-piscina.jpg') center center/cover no-repeat;
+      background: url('images/hero-casa-de-campo-piscina-1280.webp') center center/cover no-repeat;
       filter: brightness(0.9);
     }
+    @media (max-width:700px){.hero-bg{background: url('images/hero-casa-de-campo-piscina-m.webp') center center/cover no-repeat}}
+    @media (min-width:1441px){.hero-bg{background: url('images/hero-casa-de-campo-piscina.jpg') center center/cover no-repeat}}
     .hero-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to bottom, rgba(10,25,41,0.7) 0%, rgba(10,25,41,0.5) 40%, rgba(10,25,41,0.85) 100%);
@@ -824,10 +829,10 @@
   <div class="container-wide">
     <span class="sec-label">32 áreas de lazer</span>
     <h2 class="title">O clube que <em>completa a sua vida</em></h2>
-    <p class="lead">Áreas comuns entregues equipadas e decoradas — do complexo de piscinas com duas raias semi-olímpicas às casas de campo com piscina privativa. Um dos pacotes de lazer mais completos de Indaiatuba.</p>
+    <p class="lead">Áreas comuns entregues equipadas e decoradas — do complexo de piscinas com duas raias semi-olímpicas às casas de campo com piscina privativa.</p>
 
     <div class="lazer-hero">
-      <img src="images/hero-casa-de-campo-piscina.jpg" alt="Casa de Campo com piscina privativa — diferencial exclusivo do Aurora Indaiatuba">
+      <img src="images/hero-casa-de-campo-piscina-1280.webp" alt="Casa de Campo com piscina privativa — diferencial exclusivo do Aurora Indaiatuba">
       <div class="lazer-hero-label"><strong>Diferencial exclusivo</strong>Casa de Campo com piscina privativa</div>
     </div>
 
@@ -1031,9 +1036,9 @@
 <!-- ASSINATURAS -->
 <section class="section">
   <div class="container-wide" style="text-align:center;">
-    <span class="sec-label">Um time de referência</span>
-    <h2 class="title">Assinaturas de <em>arquitetos renomados</em></h2>
-    <p class="lead" style="margin-left:auto; margin-right:auto;">Fachada, áreas comuns e paisagismo assinados por profissionais consagrados do interior de São Paulo.</p>
+    <span class="sec-label">Quem assina o projeto</span>
+    <h2 class="title">As <em>assinaturas</em> do projeto</h2>
+    <p class="lead" style="margin-left:auto; margin-right:auto;">Fachada, áreas comuns e paisagismo com projeto assinado.</p>
     <div class="assinaturas-grid">
       <div class="assinatura">
         <div class="assinatura-role">Arquitetura</div>
@@ -1048,7 +1053,7 @@
       <div class="assinatura">
         <div class="assinatura-role">Incorporação e construção</div>
         <div class="assinatura-nome">Masotti Investimentos</div>
-        <p class="assinatura-desc">Entre as 100 maiores construtoras do Brasil, com portfólio robusto em Indaiatuba.</p>
+        <p class="assinatura-desc">Responsável pela incorporação e pela obra do Aurora.</p>
       </div>
     </div>
   </div>
@@ -1102,7 +1107,7 @@
       <p>A arquitetura da fachada e das áreas comuns é assinada por Anderson Leite. O paisagismo é assinado por Edu Leal (Carlos Eduardo Belizario de Alcantara Leal), com plantio de árvores nativas em todo o pavimento de lazer. As áreas comuns são entregues equipadas e decoradas, seguindo projeto integrado dos arquitetos.</p></details>
 
     <details><summary>Qual é a incorporadora e o alvará do Aurora?</summary>
-      <p>O Aurora é incorporado pela Aurora Empreendimentos Imobiliários SPE Ltda (CNPJ 21.551.241/0001-07), integrante do grupo Masotti Investimentos, uma das construtoras de referência do interior paulista. O empreendimento tem Alvará 1697/2025 da Prefeitura Municipal de Indaiatuba. O registro de imóveis está em fase de regularização, conforme Lei 4.591/1964.</p></details>
+      <p>O Aurora é incorporado pela Aurora Empreendimentos Imobiliários SPE Ltda (CNPJ 21.551.241/0001-07), integrante do grupo Masotti Investimentos. O empreendimento tem Alvará 1697/2025 da Prefeitura Municipal de Indaiatuba. O registro de imóveis está em fase de regularização, conforme Lei 4.591/1964.</p></details>
   </div>
 </section>
 
@@ -1112,15 +1117,15 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type":"Question","name":"Qual o preço do Aurora Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"O Aurora está em fase de pré-lançamento (BREVE LANÇAMENTO) com condições especiais a partir de R$ 758.850 para a planta Kit padrão de 101 m² com 1 suíte + 2 dormitórios. Essa tabela é de pré-lançamento e está sujeita a reajuste no lançamento oficial. Fale com a Viv'América para receber a tabela atualizada e a disponibilidade em cada torre."}},
-    {"@type":"Question","name":"Onde fica o Aurora?","acceptedAnswer":{"@type":"Answer","text":"O Aurora fica na Estrada Municipal Chafic José Saif, s/n, no Jardim Park Meraki, em Indaiatuba/SP. Fica a 2,5 km do Parque Ecológico, 3,5 km do Polo Shopping, 4,5 km do centro de Indaiatuba e 18,5 km do Aeroporto de Viracopos, com acesso direto às rodovias Santos Dumont, Anhanguera e Bandeirantes."}},
-    {"@type":"Question","name":"Quantos apartamentos e torres tem o Aurora?","acceptedAnswer":{"@type":"Answer","text":"São 4 torres com Térreo + 19 pavimentos, totalizando 461 apartamentos. Cada torre tem 2 elevadores, e cada apartamento tem 2 vagas de garagem (cobertas e descobertas), somando 922 vagas de moradores mais 39 vagas de visitantes e 5 vagas elétricas com infra para expansão."}},
-    {"@type":"Question","name":"Quais são as plantas do Aurora?","acceptedAnswer":{"@type":"Answer","text":"A planta padrão tem 101 m² com 4 opções de Kit personalizado: Kit 1 (1 suíte + 2 dorms), Kit 2 (2 suítes + 1 dorm), Kit 3 (1 suíte + 2 dorms + lavabo), Kit 4 (2 suítes + lavabo + sala estendida). Há ainda coberturas Garden de 135 m² a 152 m², com jardim privativo no térreo. Todas as tipologias têm ponto para ar-condicionado na sala e nos dormitórios, água quente na cozinha, medidor individual de água, fechadura eletrônica e tomada USB nos dormitórios."}},
-    {"@type":"Question","name":"Quais são as áreas de lazer do Aurora?","acceptedAnswer":{"@type":"Answer","text":"São 32 áreas de lazer entregues equipadas e decoradas: complexo de piscinas com 2 raias semi-olímpicas, hidromassagem, quadra de beach tennis, quadra poliesportiva, 2 casas de campo com piscina privativa (diferencial exclusivo), salão de festas, fire place, 2 churrasqueiras, 2 playgrounds, pub, coworking, home cinema, spinning, academia, salão de jogos, espaço kids, pet place, sauna úmida e seca, pergolado, praça do espelho d'água, praça das jabuticabeiras, oficina, market, burguer house, bicicletário, pomar e coleta seletiva."}},
-    {"@type":"Question","name":"Quando será a entrega do Aurora?","acceptedAnswer":{"@type":"Answer","text":"A obra da Torre 1 começa em maio/2027 com entrega prevista para dezembro/2029 e tolerância contratual de 180 dias. Após a Torre 1, cada uma das outras 3 torres é entregue a cada 6 meses, com previsão de entrega final do empreendimento em junho/2031."}},
-    {"@type":"Question","name":"Qual o valor do condomínio no Aurora?","acceptedAnswer":{"@type":"Answer","text":"O condomínio mensal estimado é de R$ 650, competitivo para o padrão de lazer entregue, graças a escolhas como iluminação LED, sensores de presença, preparação para fotovoltaica, medidor de água individual e áreas comuns entregues equipadas e decoradas."}},
+    {"@type":"Question","name":"Onde fica o Aurora?","acceptedAnswer":{"@type":"Answer","text":"O Aurora fica na Estrada Municipal Chafic José Saif, s/n, no Jardim Park Meraki, em Indaiatuba/SP — bairro planejado da cidade. Fica a 2,5 km do Parque Ecológico, 3,5 km do Polo Shopping, 4,5 km do centro de Indaiatuba e 18,5 km do Aeroporto de Viracopos, com acesso direto às rodovias Santos Dumont, Anhanguera e Bandeirantes."}},
+    {"@type":"Question","name":"Quantos apartamentos e torres tem o Aurora?","acceptedAnswer":{"@type":"Answer","text":"São 4 torres com Térreo + 19 pavimentos, totalizando 461 apartamentos. Cada torre tem 2 elevadores, e cada apartamento tem 2 vagas de garagem (cobertas + descobertas), somando 922 vagas de moradores mais 39 vagas de visitantes (2 PCD, 2 idosos) e 5 vagas elétricas com infra para expansão."}},
+    {"@type":"Question","name":"Quais são as plantas do Aurora?","acceptedAnswer":{"@type":"Answer","text":"A planta padrão tem 101 m² com 4 opções de Kit personalizado: Kit 1 (1 suíte + 2 dorms), Kit 2 (2 suítes + 1 dorm), Kit 3 (1 suíte + 2 dorms + lavabo), Kit 4 (2 suítes + lavabo + sala estendida). Há ainda coberturas Garden de 135 m² a 152 m², com jardim privativo no térreo. Todas as tipologias têm ponto para ar-condicionado (sala e todos os dormitórios), infra para aquecedor a gás, água quente na cozinha, medidor individual de água, fechadura eletrônica e tomada USB nos dormitórios."}},
+    {"@type":"Question","name":"Quais são as áreas de lazer do Aurora?","acceptedAnswer":{"@type":"Answer","text":"São 32 áreas de lazer entregues equipadas e decoradas: complexo de piscinas com 2 raias semi-olímpicas, hidromassagem, quadra de beach tennis, quadra poliesportiva, 2 casas de campo com piscina privativa (diferencial exclusivo do Aurora), salão de festas, fire place, 2 churrasqueiras, 2 playgrounds, pub, coworking, home cinema, spinning, academia, salão de jogos, espaço kids, pet place, sauna úmida + seca com vestiários, pergolado, praça do espelho d'água, praça das jabuticabeiras, oficina, market, burguer house, espaço delivery, bicicletário, pomar e coleta seletiva."}},
+    {"@type":"Question","name":"Quando será a entrega do Aurora?","acceptedAnswer":{"@type":"Answer","text":"A obra da Torre 1 começa em maio/2027 com entrega prevista para dezembro/2029 e tolerância contratual de 180 dias. Após a Torre 1, cada uma das outras 3 torres é entregue a cada 6 meses, com previsão de entrega final do empreendimento em jun/2031."}},
+    {"@type":"Question","name":"Qual o valor do condomínio no Aurora?","acceptedAnswer":{"@type":"Answer","text":"O condomínio mensal estimado é de R$ 650, competitivo para o padrão de lazer entregue, graças a escolhas como iluminação LED, sensores de presença, preparação para fotovoltaica, medidor de água individual e áreas comuns entregues equipadas e decoradas (o condomínio não paga a mobília no futuro)."}},
     {"@type":"Question","name":"O Aurora possui patrimônio de afetação?","acceptedAnswer":{"@type":"Answer","text":"Segundo a Masotti, todos os seus empreendimentos são registrados com patrimônio de afetação (Lei 10.931/2004), regime que separa os recursos da obra do caixa da incorporadora. No Aurora, o registro de imóveis está em regularização: a afetação passa a constar da matrícula com a averbação no Registro de Imóveis. Peça a certidão da matrícula antes de assinar."}},
-    {"@type":"Question","name":"Como funciona o fluxo de pagamento durante a obra?","acceptedAnswer":{"@type":"Answer","text":"O fluxo padrão de pré-lançamento é: 10% no ato (parcelado em 3), 45 parcelas mensais equivalentes a 13% do valor, 3 parcelas anuais somando 7%, e 70% pagos via financiamento bancário (Caixa, Itaú ou outro banco) na entrega das chaves."}},
-    {"@type":"Question","name":"Quem assina o projeto de arquitetura e paisagismo?","acceptedAnswer":{"@type":"Answer","text":"A arquitetura da fachada e das áreas comuns é assinada por Anderson Leite. O paisagismo é assinado por Edu Leal (Carlos Eduardo Belizario de Alcantara Leal), com plantio de árvores nativas. As áreas comuns são entregues equipadas e decoradas."}},
+    {"@type":"Question","name":"Como funciona o fluxo de pagamento durante a obra?","acceptedAnswer":{"@type":"Answer","text":"O fluxo padrão de pré-lançamento é: 10% no ato (parcelado em 3), 45 parcelas mensais equivalentes a 13% do valor, 3 parcelas anuais somando 7%, e 70% pagos via financiamento bancário (Caixa, Itaú ou outro banco de escolha do cliente) na entrega das chaves. Fale com a Viv'América para receber a simulação personalizada."}},
+    {"@type":"Question","name":"Quem assina o projeto de arquitetura e paisagismo?","acceptedAnswer":{"@type":"Answer","text":"A arquitetura da fachada e das áreas comuns é assinada por Anderson Leite. O paisagismo é assinado por Edu Leal (Carlos Eduardo Belizario de Alcantara Leal), com plantio de árvores nativas em todo o pavimento de lazer. As áreas comuns são entregues equipadas e decoradas, seguindo projeto integrado dos arquitetos."}},
     {"@type":"Question","name":"Qual é a incorporadora e o alvará do Aurora?","acceptedAnswer":{"@type":"Answer","text":"O Aurora é incorporado pela Aurora Empreendimentos Imobiliários SPE Ltda (CNPJ 21.551.241/0001-07), integrante do grupo Masotti Investimentos. O empreendimento tem Alvará 1697/2025 da Prefeitura Municipal de Indaiatuba. O registro de imóveis está em fase de regularização, conforme Lei 4.591/1964."}}
   ]
 }
@@ -1149,7 +1154,7 @@
     <h2 class="title">Conheça outros <em>empreendimentos</em> em Indaiatuba</h2>
     <div class="outros-grid">
       <a href="/helade-indaiatuba/" class="outro-card">
-        <img src="../helade-indaiatuba/images/hero.jpg" alt="Hélade Park Meraki">
+        <img src="../helade-indaiatuba/images/hero-640.webp" alt="Hélade Park Meraki" width="640" height="711" loading="lazy" decoding="async">
         <div class="outro-body">
           <span class="outro-badge">Alto padrão · Park Meraki</span>
           <h3>Hélade</h3>
@@ -1158,7 +1163,7 @@
         </div>
       </a>
       <a href="/gran-vic-tangara-indaiatuba/" class="outro-card">
-        <img src="../gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Gran Vic Tangará">
+        <img src="../gran-vic-tangara-indaiatuba/images/hero-640.webp" alt="Gran Vic Tangará" width="640" height="426" loading="lazy" decoding="async">
         <div class="outro-body">
           <span class="outro-badge">MCMV Faixa 3</span>
           <h3>Gran Vic Tangará</h3>
@@ -1167,7 +1172,7 @@
         </div>
       </a>
       <a href="/uni-residencial-indaiatuba/" class="outro-card">
-        <img loading="lazy" decoding="async" src="../uni-residencial-indaiatuba/images/piscina.jpg" alt="Uni Residencial">
+        <img loading="lazy" decoding="async" src="../uni-residencial-indaiatuba/images/piscina-640.webp" alt="Uni Residencial" width="640" height="360">
         <div class="outro-body">
           <span class="outro-badge">MCMV · Parque Ecológico</span>
           <h3>Uni Residencial</h3>
@@ -1248,8 +1253,8 @@
       <div class="malha-grupo"><span class="malha-rotulo">Apartamentos</span><a href="/uni-residencial-indaiatuba/">Uni Residencial</a><a href="/parque-das-aguas-indaiatuba/">Residencial Parque das Águas</a><a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a><a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a><a href="/itamaraca-indaiatuba/">Itamaracá Residencial</a><a href="/gran-vic-canario-indaiatuba/">Gran Vic Canário</a><a href="/vivere-indaiatuba/">Vívere Residencial</a><a href="/izzi-residence-indaiatuba/">Izzi Residence</a><a href="/gran-vic-andorinha-indaiatuba/">Gran Vic Andorinha</a><a href="/spazio-italia-indaiatuba/">Spazio Italia</a><a href="/artemis-residencial-indaiatuba/">Artemis Residencial</a><a href="/storia-congesa-indaiatuba/">Storia Congesa</a><a href="/arete-home-indaiatuba/">Areté Home</a><a href="/espaco-conceicao-indaiatuba/">Espaço Conceição</a><a href="/helade-indaiatuba/">Hélade — Park Meraki</a><a href="/viva-parque-aura-indaiatuba/">Viva Parque Aura</a><a href="/viva-parque-sense-indaiatuba/">Viva Parque Sense</a><a href="/manai-bosque-indaiatuba/">Manai Bosque</a><a href="/seasons-indaiatuba/">Congesa Seasons</a><a href="/360-home-office-mall-indaiatuba/">360 Home Office Mall</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span><a href="/maria-candida-indaiatuba/">Jardim Dona Maria Cândida</a><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a><a href="/parque-zarah-indaiatuba/">Parque Zarah</a><a href="/di-italia-indaiatuba/">Jardim Di Italia</a><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a><a href="/alpnach-indaiatuba/">Alpnach Residence</a><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a><a href="/ville-de-provence-indaiatuba/">Ville de Provence</a><a href="/alphaville-indaiatuba/">Alphaville Indaiatuba</a><a href="/lagos-de-helvetia-indaiatuba/">Lagos de Helvetia</a><a href="/porteira-de-ferro-indaiatuba/">Porteira de Ferro</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span><a href="/alphaville/">Empreendimentos Alphaville</a><a href="/casas-alphaville-dom-pedro-0-campinas/">Casas Alphaville Dom Pedro 0 (Campinas)</a></div>
-      <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
-      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/condominios-em-indaiatuba-por-bairro/">Condomínios por bairro</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a><a href="/blog/fgts-classe-media-imovel-600-mil/">Classe Média do FGTS</a><a href="/blog/incc-parcela-na-planta/">INCC na parcela</a><a href="/blog/como-se-inscrever-minha-casa-minha-vida-indaiatuba/">Inscrição no Minha Casa Minha Vida</a><a href="/blog/casa-propria-motorista-de-aplicativo/">Casa própria para motorista de aplicativo</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Dados e listas</span><a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a><a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z de loteamentos e bairros</a><a href="/imprensa-e-dados/">Dados abertos e imprensa</a></div>
     </div>
   </section>
@@ -1310,7 +1315,7 @@ img.lb-click:hover{filter:brightness(1.05)}
     img.classList.add('lb-click');
     img.addEventListener('click',function(){
       var l=document.getElementById('lb');
-      document.getElementById('lb-img').src=img.src;
+      document.getElementById('lb-img').src=img.src.replace(/-1280\.webp$/,'.jpg');
       document.getElementById('lb-img').alt=img.alt||'';
       l.classList.add('open');
       document.body.style.overflow='hidden';

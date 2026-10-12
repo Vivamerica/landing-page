@@ -386,10 +386,32 @@ const m2Stats = arr => {
   return { min, max, medio: Math.round(v.reduce((a, b) => a + b, 0) / v.length) };
 };
 
+// miniatura leve do card: usa <nome>-640.webp (gravado por ferramentas/hero-leve.py ao lado do
+// original) quando o arquivo existe; sem ele sai o original, como antes. Largura e altura vêm do
+// cabeçalho do .webp.
+function dimWebp(arq) {
+  const b = Buffer.alloc(30);
+  const fd = fs.openSync(arq, 'r');
+  try { fs.readSync(fd, b, 0, 30, 0); } finally { fs.closeSync(fd); }
+  if (b.toString('latin1', 0, 4) !== 'RIFF' || b.toString('latin1', 8, 12) !== 'WEBP') return null;
+  const tipo = b.toString('latin1', 12, 16);
+  if (tipo === 'VP8 ') return { w: b.readUInt16LE(26) & 0x3fff, h: b.readUInt16LE(28) & 0x3fff };
+  if (tipo === 'VP8L') { const n = b.readUInt32LE(21); return { w: (n & 0x3fff) + 1, h: ((n >>> 14) & 0x3fff) + 1 }; }
+  if (tipo === 'VP8X') return { w: 1 + b.readUIntLE(24, 3), h: 1 + b.readUIntLE(27, 3) };
+  return null;
+}
+function miniatura(img) {
+  const leve = img.replace(/\.(jpe?g|png)$/i, '-640.webp');
+  const d = leve !== img && fs.existsSync(R + leve) ? dimWebp(R + leve) : null;
+  return d ? { src: leve, w: d.w, h: d.h } : null;
+}
+// atributos src, width e height da <img> do card (800x450 é a reserva de espaço de sempre, usada sem o .webp)
+const imgCard = e => { const m = miniatura(e.img); return m ? `src="/${m.src}" width="${m.w}" height="${m.h}"` : `src="/${e.img}" width="800" height="450"`; };
+
 // card no estilo de cada hub (classes CSS já existentes em cada página)
 const cardLoteamentos = e => `
       <a href="/${e.slug}/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/${e.img}" width="800" height="450" alt="${esc(e.n)} — ${tipoLote(e)} em Indaiatuba">
+        <img loading="lazy" decoding="async" ${imgCard(e)} alt="${esc(e.n)} — ${tipoLote(e)} em Indaiatuba">
         <div class="listing-card-body">
           <p class="listing-card-badge">${tipoLote(e)}${seloEst(e)}</p>
           <h3>${esc(e.n)}</h3>
@@ -402,7 +424,7 @@ const cardLoteamentos = e => `
       </a>`;
 const cardCondominios = e => `
       <a href="/${e.slug}/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/${e.img}" width="800" height="450" alt="${esc(e.n)} — ${tipoLote(e).toLowerCase()} em Indaiatuba">
+        <img loading="lazy" decoding="async" ${imgCard(e)} alt="${esc(e.n)} — ${tipoLote(e).toLowerCase()} em Indaiatuba">
         <div class="card-body">
           <span class="card-badge">${tipoLote(e)}${seloEst(e)}</span>
           <h3>${esc(e.n)}</h3>

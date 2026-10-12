@@ -98,11 +98,11 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"Dá para morar em Indaiatuba e trabalhar em São Paulo?","acceptedAnswer":{"@type":"Answer","text":"Sim, mas é preciso planejamento. Indaiatuba fica a cerca de 100 km de São Paulo pelas rodovias Bandeirantes e Anhanguera, com tempo médio de 1h15 a 1h45 dependendo do horário e da região de destino em SP. É viável para quem trabalha em modelo híbrido (2-3 dias na capital), para quem tem trabalho em Alphaville/Barueri (mais próximas) ou para profissionais que priorizam qualidade de vida da família. Para trabalho 100% presencial diariamente no centro/zona sul de São Paulo, o desgaste físico e o custo se tornam significativos."}},
-      {"@type":"Question","name":"Quanto tempo demora de Indaiatuba a São Paulo?","acceptedAnswer":{"@type":"Answer","text":"Depende do horário e da região destino. Média sem trânsito: 1h15 até Alphaville/Barueri, 1h30 até a Marginal Pinheiros, 1h45 até o centro de SP, 2h+ para zona leste. Em horário de pico (7h-9h ida, 17h-19h30 volta), some 30 a 60 minutos ao tempo. Domingo à noite no retorno do interior é o pior horário — pode chegar a 2h30 até Barueri."}},
-      {"@type":"Question","name":"Quanto custa por mês fazer o trajeto Indaiatuba-São Paulo?","acceptedAnswer":{"@type":"Answer","text":"Para trabalho 5 dias por semana, o custo mensal aproximado é de R$ 2.500 a R$ 3.700, incluindo pedágio (R$ 700-900), combustível (R$ 1.200-1.800) e manutenção diluída (R$ 300-500). Em modelo híbrido (2-3 dias), fica em R$ 1.000 a R$ 1.800. Ônibus rodoviário é alternativa (R$ 900-1.400/mês) para quem não quer dirigir. Trem/ônibus completo com transbordo em Jundiaí ou Barueri também é opção."}},
-      {"@type":"Question","name":"Para quem morar em Indaiatuba e trabalhar em SP faz sentido?","acceptedAnswer":{"@type":"Answer","text":"Faz muito sentido para: (1) profissionais em modelo híbrido (2-3 dias presencial); (2) quem trabalha em Alphaville, Barueri, Osasco ou zona oeste (trajeto mais direto); (3) profissionais bem remunerados que valorizam qualidade de vida da família acima do tempo próprio; (4) casais onde só um trabalha em SP (o outro em Campinas/Indaiatuba); (5) quem trabalha em horários flexíveis fora do pico. Não faz sentido para: (1) trabalho presencial 5 dias por semana no centro/zona sul; (2) quem depende de transporte público 100%; (3) quem já tem desgaste físico ou de saúde."}},
-      {"@type":"Question","name":"Qual a melhor rota de Indaiatuba para São Paulo?","acceptedAnswer":{"@type":"Answer","text":"As duas principais são: (1) Rodovia dos Bandeirantes (SP-348) via SP-075 (Santos Dumont) — rota preferencial pela maioria, mais rápida e melhor conservada; (2) Rodovia Anhanguera (SP-330) via SP-075 — alternativa útil quando a Bandeirantes está congestionada. Ambas passam por Campinas, Jundiaí e chegam à Marginal Tietê. A escolha muitas vezes depende de radares/preços de pedágio no dia. Apps como Waze e Google Maps roteiam bem em tempo real."}}
+      {"@type":"Question","name":"Dá para morar em Indaiatuba e trabalhar em São Paulo?","acceptedAnswer":{"@type":"Answer","text":"Sim, mas é preciso planejamento. Indaiatuba fica a cerca de 100 km de São Paulo pelas rodovias Bandeirantes e Anhanguera, com tempo médio de 1h15 a 1h45 dependendo do horário e da região de destino em SP. É viável para quem trabalha em modelo híbrido, para quem tem trabalho em Alphaville/Barueri ou para profissionais que priorizam qualidade de vida da família."}},
+      {"@type":"Question","name":"Quanto tempo demora de Indaiatuba a São Paulo?","acceptedAnswer":{"@type":"Answer","text":"Depende do horário e da região destino. Média sem trânsito: 1h15 até Alphaville/Barueri, 1h30 até a Marginal Pinheiros, 1h45 até o centro de SP, 2h+ para zona leste. Em horário de pico, some 30 a 60 minutos. Domingo à noite no retorno do interior é o pior horário."}},
+      {"@type":"Question","name":"Quanto custa por mês fazer o trajeto Indaiatuba-São Paulo?","acceptedAnswer":{"@type":"Answer","text":"Para trabalho 5 dias por semana, o custo mensal aproximado é de R$ 2.500 a R$ 3.700, incluindo pedágio, combustível e manutenção diluída. Em modelo híbrido (2-3 dias), fica em R$ 1.000 a R$ 1.800. Ônibus rodoviário é alternativa (R$ 900-1.400/mês) para quem não quer dirigir."}},
+      {"@type":"Question","name":"Para quem morar em Indaiatuba e trabalhar em SP faz sentido?","acceptedAnswer":{"@type":"Answer","text":"Faz muito sentido para profissionais em modelo híbrido, quem trabalha em Alphaville/Barueri/zona oeste, profissionais bem remunerados que valorizam qualidade de vida da família, casais onde só um trabalha em SP, e quem tem horários flexíveis. Não faz sentido para trabalho 100% presencial diário no centro/zona sul."}},
+      {"@type":"Question","name":"Qual a melhor rota de Indaiatuba para São Paulo?","acceptedAnswer":{"@type":"Answer","text":"As duas principais são: Rodovia dos Bandeirantes via SP-075 (preferencial pela maioria, mais rápida) e Rodovia Anhanguera via SP-075 (alternativa útil quando a Bandeirantes está congestionada). Ambas passam por Campinas, Jundiaí e chegam à Marginal Tietê."}}
     ]
   }
   </script>
@@ -238,7 +238,7 @@
   </script>
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
-    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
+    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 min(5%,60px);display:grid;
       grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
     .blog-layout > article{max-width:none;margin:0;padding:0;min-width:0;}
     /* min-width:0 — item flex herda min-content do filho mais largo (a tabela
@@ -618,7 +618,7 @@
     <p>Se você trabalha remoto ou tem flexibilidade para escolher/mudar de emprego, considere que o corredor <strong>Campinas-Viracopos</strong> tem milhares de vagas qualificadas em multinacionais (SAP, DHL, Nestlé, IBM, etc.). Muitas vezes o "vou morar em Indaiatuba e trabalhar em SP" acaba virando "achei um emprego melhor em Campinas em 6 meses".</p>
 
     <div class="pilar-link">
-      <span class="label">Guia pilar</span>
+      <span class="label">Guia principal</span>
       <a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba: guia completo 2026 (o guia definitivo) →</a>
     </div>
 
@@ -663,7 +663,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">
-          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Uni Residencial</h4>
@@ -673,7 +673,7 @@
           </div>
         </a>
         <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
-          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero-640.webp" alt="Residencial Monte Carmelo — Indaiatuba" width="640" height="800">
           <div class="bo-corpo">
             <span class="bo-selo">Loteamento</span>
             <h4>Residencial Monte Carmelo</h4>
@@ -683,7 +683,7 @@
           </div>
         </a>
         <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
-          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina-640.webp" alt="Aurora — Park Meraki — Indaiatuba" width="640" height="445">
           <div class="bo-corpo">
             <span class="bo-selo">Alto padrão</span>
             <h4>Aurora — Park Meraki</h4>
@@ -693,7 +693,7 @@
           </div>
         </a>
         <a class="bo-card" href="/parque-zarah-indaiatuba/" data-emp="parque-zarah-indaiatuba">
-          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">Cond. fechado</span>
             <h4>Parque Zarah</h4>

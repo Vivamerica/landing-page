@@ -1,8 +1,6 @@
 # Pauta do blog — 10 temas, outubro/2026
 
-Critério: repetir o que faz o artigo do Minha Casa Minha Vida converter a 18,3%
-(11 contatos em 60 sessões em setembro, mais que qualquer ficha exceto Zarah e
-Di Italia). Olhando o que ele tem e os outros 21 não:
+Critério: repetir o que o artigo do Minha Casa Minha Vida tem e os outros 21 não:
 
 1. responde uma dúvida de **dinheiro**, não de lugar;
 2. termina em **empreendimento concreto com preço**, não em "fale conosco";

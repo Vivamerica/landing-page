@@ -15,7 +15,7 @@ HOJE = '2026-10-04'
 
 TITULO = 'O que é Alphaville? História, números e o que a marca virou'
 H1 = 'O que é Alphaville, afinal?'
-DESC = 'Alphaville nasceu em 1973 em Barueri e hoje tem 138 empreendimentos em 23 estados, segundo documentos da CVM. E por que o nome virou sinônimo de condomínio.'
+DESC = 'Alphaville nasceu em 1973 em Barueri e entregou 138 empreendimentos em 23 estados, segundo documentos da CVM. Por que o nome virou sinônimo de condomínio.'
 
 MIOLO = '''
 <p class="lead">Quando alguém diz que vai morar "num alphaville", raramente está falando da empresa.

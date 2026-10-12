@@ -57,10 +57,9 @@ Todas nesta pasta, rodar com `C:/Users/Usuario/Desktop/vivamerica/venv/Scripts/p
    Para lotes (alphaville, lagos-helvetia): breadcrumb e rodapé de condomínio → `/condominios-fechados-indaiatuba/`.
 2. Imagens: `<slug>/images/`, JPEG ≤1600 px, cada uma ≤ 260 KB (baixar a qualidade até caber), `hero.jpg` obrigatório,
    alt descritivo, width/height, loading="lazy". Legendas dizem "perspectiva ilustrada" quando for render.
-3. Registrar em `gera-folheto.js` (APTOS ou LOTES, ordem por preço; `p` inteiro arredondado; SEM `est` se ≥ 60).
+3. Registrar em `gera-folheto.js` (APTOS ou LOTES, ordem por preço; `p` inteiro arredondado; SEM `est` se ≥ 60; todo `est` leva `estEm`, a data da contagem, senão o selo de "últimas N" não sai).
 4. Ritual, nesta ordem, conferindo que NENHUM termina com stack trace:
-   `node gera-folheto.js; node gera-observatorio.js; node gera-home.js; node gera-apartamentos.js;
-    node gera-blog-ofertas.js; node gera-blog-indice.js; node gera-relacionados.js; node identidade.js`
+   o ritual completo do `CHECKLIST-NOVA-PAGINA.md` (passos 0 a 13; o `identidade.js` é sempre o último).
    Se `gera-home` disser "nao achei: card <slug>", inserir o card à mão em `index.html`
    (modelo: card do Espaço Conceição) e a entrada no ItemList, corrigindo `numberOfItems`.
 5. `sitemap.xml` (priority 0.9, lastmod do dia) e `llms.txt` (linha na seção certa + contadores de empreendimentos).
@@ -87,3 +86,8 @@ Todas nesta pasta, rodar com `C:/Users/Usuario/Desktop/vivamerica/venv/Scripts/p
 Atualizar `RELATORIO.md` nesta pasta: o que foi publicado (com links), o que ficou pendente e por quê,
 e as dúvidas que precisam dele (incorporadora do Parque das Águas, restrições de divulgação, tabela
 de julho do Lagos, 360 sem preço, Vargas sem material).
+
+## Imagens leves (desde 11/10/2026)
+Ficha nova ou regerada pelo `gera_landing.py`: depois de gerar, rodar `python ferramentas/hero-leve.py` (cria as versões .webp da abertura) e
+`python ferramentas/hero-leve.py --aplicar <pasta do site>` (põe os preload, o recorte de celular e a faixa de tela larga); só então o resto do ritual.
+Sem isso a ficha nova aponta para um .webp que ainda não existe e o `identidade.js` para com IMAGEM INEXISTENTE.

@@ -52,6 +52,9 @@ def bloco_modelo():
     ini = s.index('  <link rel="preconnect" href="https://fonts.googleapis.com">')
     fim = s.index('</head>')
     estilo = s[ini:fim]
+    # o <style id="landing-extra"> do modelo é só dele: o da ficha é escrito em main(). Copiado,
+    # a ficha saía com dois blocos e a regra do menu repetida.
+    estilo = re.sub(r'[ \t]*<style id="landing-extra">[\s\S]*?</style>\r?\n', '', estilo)
     # a tag GA4 com guarda de host (<script id="ga4">, fonte única em identidade.js) vem dentro
     # do trecho de estilo do modelo; sem ela a landing nova nasceria sem medição
     assert '<script id="ga4">' in estilo, 'o modelo perdeu a tag GA4 (<script id="ga4">): rode node identidade.js'
@@ -143,6 +146,7 @@ def figuras(grupos):
 # estilos próprios do gerador, num <style id="landing-extra"> logo antes do </head>. Três partes:
 #   campos opcionais (breadcrumb, crédito, lista, figuras): só na página que usa algum deles
 #   ESTILO_NAV (o menu some até 1140 px): só na categoria alphaville
+#   ESTILO_NAV_MEDIO (o menu some até 1040 px): nas demais fichas
 #   ESTILO_CAB (marca e botão menores no celular): em TODA página
 ESTILO_EXTRA = '''  <style id="landing-extra">
     .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.72);margin:0 0 1rem;}
@@ -189,6 +193,8 @@ ESTILO_EXTRA = '''  <style id="landing-extra">
 
 ESTILO_NAV = '    /* marca comprida + menu + botão só cabem acima de ~1120 px; abaixo disso o menu some (os links estão no rodapé) */\n    @media (max-width:1140px){ .nav-site{display:none;} }\n'
 ESTILO_CAB = '    @media (max-width:480px){\n      header{gap:.6rem;}\n      header .brand{font-size:1.05rem;letter-spacing:.08em;}\n      header .brand small{letter-spacing:.16em;}\n      .btn-header{padding:.55rem .8rem;font-size:.68rem;letter-spacing:.08em;}\n    }\n    @media (max-width:345px){\n      header .brand{font-size:.92rem;letter-spacing:.05em;}\n      header .brand small{font-size:.54rem;letter-spacing:.08em;}\n      .btn-header{padding:.5rem .6rem;font-size:.62rem;letter-spacing:.04em;}\n    }\n'
+# nas demais fichas a marca é mais curta, mas marca + menu + botão ainda não cabem entre 761 e ~1000 px
+ESTILO_NAV_MEDIO = '    /* marca + menu + botão só cabem acima de ~1000 px; abaixo disso o menu some (os links estão no rodapé) */\n    @media (max-width:1040px){ .nav-site{display:none;} }\n'
 assert ESTILO_NAV in ESTILO_EXTRA and ESTILO_CAB in ESTILO_EXTRA
 
 
@@ -308,11 +314,11 @@ def main(caminho_cfg):
     if (alphaville or c['hero'].get('credito')
             or any(sc.get('lista') or sc.get('figuras') for sc in c['secoes'])):
         # o menu até 1140 px existe por causa da marca comprida das páginas da categoria alphaville
-        out.append(ESTILO_EXTRA if alphaville else ESTILO_EXTRA.replace(ESTILO_NAV, ''))
+        out.append(ESTILO_EXTRA if alphaville else ESTILO_EXTRA.replace(ESTILO_NAV, ESTILO_NAV_MEDIO))
     else:
         # ESTILO_CAB vai em toda página: com o cabeçalho do modelo, marca de 16 ou 17 letras mais o botão
         # "Quero a tabela" passam de 375 px e a página rola de lado no celular; não depende da categoria
-        out.append('  <style id="landing-extra">\n' + ESTILO_CAB + '  </style>\n')
+        out.append('  <style id="landing-extra">\n' + ESTILO_NAV_MEDIO + ESTILO_CAB + '  </style>\n')
     out.append('</head>\n<body>\n\n')
     out.append('<a href="%s"\n   class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">\n  %s\n</a>\n\n' % (wa(c['wa_flutuante']), svg))
     out.append('<header>\n  <div class="brand">%s<small>%s</small></div>\n' % (e(c['marca_topo'][0]), e(c['marca_topo'][1])))

@@ -120,10 +120,10 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"Morar em Indaiatuba é seguro?","acceptedAnswer":{"@type":"Answer","text":"Pelos dados municipais disponíveis, Indaiatuba tem uma das menores taxas de homicídio entre as cidades grandes do Brasil: 5,6 homicídios estimados por 100 mil habitantes em 2024, segundo o Atlas da Violência 2026 (Ipea/FBSP, Tabela 3.7), e 6 a 7 ocorrências de homicídio doloso por ano em 2022–2024 segundo o portal da SSP-SP. Taxa de homicídio não mede tudo: roubos, furtos e sensação de segurança são dimensões diferentes, e as duas primeiras ainda não estão consolidadas nesta página."}},
-      {"@type":"Question","name":"Indaiatuba é a cidade mais segura do Brasil?","acceptedAnswer":{"@type":"Answer","text":"Depende do recorte — e ranking sem recorte declarado não vale nada. O Atlas da Violência 2026 não publica ranking; conferindo a tabela oficial (Tabela 3.7, ano-base 2024), Indaiatuba tem a menor taxa de homicídios estimados entre os 158 municípios brasileiros com mais de 200 mil habitantes — leitura derivada nossa sobre a tabela oficial. Onze municípios menores que 200 mil habitantes têm taxa inferior. Mudou a faixa populacional, muda a posição."}},
-      {"@type":"Question","name":"Existe dado de segurança por bairro em Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"Não. A SSP-SP publica estatísticas por município, nunca por bairro, e o Atlas da Violência também. Qualquer ranking de 'bairros mais seguros de Indaiatuba' que circule na internet não tem fonte oficial. Para pensar a escolha de bairro com critérios reais, veja o nosso guia de bairros."}},
-      {"@type":"Question","name":"Roubo e furto caíram em Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"Não confirmado nesta página, por enquanto. Circulam balanços da Prefeitura citando quedas, mas ainda não lemos essas séries diretamente no portal da SSP-SP, que é a fonte primária. Só publicamos número conferido na origem; roubo e furto entram na próxima revisão trimestral, lidos direto no portal."}}
+      {"@type":"Question","name":"Morar em Indaiatuba é seguro?","acceptedAnswer":{"@type":"Answer","text":"Pelos dados municipais, Indaiatuba tem uma das menores taxas de homicídio entre as cidades grandes do Brasil: 5,6 por 100 mil hab. em 2024 (Atlas 2026) e 6–7 ocorrências de homicídio doloso por ano em 2022–2024 (SSP-SP). Taxa de homicídio não mede tudo — roubos, furtos e percepção são dimensões diferentes."}},
+      {"@type":"Question","name":"Indaiatuba é a cidade mais segura do Brasil?","acceptedAnswer":{"@type":"Answer","text":"Depende do recorte. O Atlas não publica ranking; conferindo a tabela oficial, Indaiatuba tem a menor taxa entre os 158 municípios com mais de 200 mil habitantes (leitura derivada nossa). Onze municípios menores têm taxa inferior. Ranking sem recorte declarado não vale nada."}},
+      {"@type":"Question","name":"Existe dado de segurança por bairro?","acceptedAnswer":{"@type":"Answer","text":"Não. SSP-SP e Atlas publicam por município. Qualquer \"ranking de bairros seguros de Indaiatuba\" não tem fonte oficial — o nosso guia de bairros explica o que usar no lugar."}},
+      {"@type":"Question","name":"Roubo e furto caíram?","acceptedAnswer":{"@type":"Answer","text":"Ainda não confirmado aqui: os balanços que circulam são de release, e nós só publicamos o que lemos direto no portal da SSP. As séries de roubo e furto entram na próxima revisão trimestral."}}
     ]
   }
   </script>
@@ -249,7 +249,7 @@
   </script>
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
-    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
+    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 min(5%,60px);display:grid;
       grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
     .blog-layout > article{max-width:none;margin:0;padding:0;min-width:0;}
     /* min-width:0 — item flex herda min-content do filho mais largo (a tabela
@@ -563,7 +563,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">
-          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Uni Residencial</h4>
@@ -573,7 +573,7 @@
           </div>
         </a>
         <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
-          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero-640.webp" alt="Residencial Monte Carmelo — Indaiatuba" width="640" height="800">
           <div class="bo-corpo">
             <span class="bo-selo">Loteamento</span>
             <h4>Residencial Monte Carmelo</h4>
@@ -583,7 +583,7 @@
           </div>
         </a>
         <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
-          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina-640.webp" alt="Aurora — Park Meraki — Indaiatuba" width="640" height="445">
           <div class="bo-corpo">
             <span class="bo-selo">Alto padrão</span>
             <h4>Aurora — Park Meraki</h4>
@@ -593,7 +593,7 @@
           </div>
         </a>
         <a class="bo-card" href="/parque-zarah-indaiatuba/" data-emp="parque-zarah-indaiatuba">
-          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">Cond. fechado</span>
             <h4>Parque Zarah</h4>

@@ -99,7 +99,7 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type":"Question","name":"Quanto custa morar em Indaiatuba por mês?","acceptedAnswer":{"@type":"Answer","text":"Para uma família de 3 pessoas em imóvel de padrão médio, o custo mensal típico fica entre R$ 5.800 e R$ 9.950, incluindo aluguel de apartamento de 2 dormitórios, condomínio, contas de consumo, mercado, transporte e lazer. Para pessoa solteira em apartamento pequeno, o custo típico fica entre R$ 3.000 e R$ 4.500. Escola particular é o item que mais varia (R$ 1.500 a R$ 3.500 por filho)."}},
-      {"@type":"Question","name":"Morar em Indaiatuba é caro?","acceptedAnswer":{"@type":"Answer","text":"Indaiatuba tem custo de vida acima da média do interior paulista, principalmente por causa do preço dos imóveis (aluguel e compra). Mas é sensivelmente mais barata que Campinas, Jundiaí e São Paulo. É um dos custos-benefícios mais equilibrados da região metropolitana de Campinas para quem prioriza qualidade de vida."}},
+      {"@type":"Question","name":"Morar em Indaiatuba é caro?","acceptedAnswer":{"@type":"Answer","text":"Indaiatuba tem custo de vida acima da média do interior paulista, principalmente por causa do preço dos imóveis (aluguel e compra). Mas é sensivelmente mais barata que Campinas, Jundiaí e São Paulo."}},
       {"@type":"Question","name":"Quanto custa alugar apartamento em Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"Apartamento de 2 dormitórios em região central: R$ 1.500 a R$ 2.500 de aluguel + R$ 350 a R$ 700 de condomínio. Apartamento de 3 dormitórios: R$ 2.200 a R$ 3.500 de aluguel. Alto padrão: acima de R$ 4.000. Valores de referência para julho de 2026 — variam por bairro, andar e estado do imóvel."}},
       {"@type":"Question","name":"Vale mais a pena alugar ou comprar em Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"Depende do prazo. Para quem vai morar mais de 4-5 anos na cidade, comprar tende a ser mais vantajoso, especialmente usando o Minha Casa Minha Vida com FGTS — a parcela do financiamento fica próxima do valor do aluguel. Para prazos curtos ou incerteza sobre permanência, alugar dá flexibilidade. Fazemos simulações comparativas gratuitas."}}
     ]
@@ -235,7 +235,7 @@
   </script>
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
-    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
+    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 min(5%,60px);display:grid;
       grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
     .blog-layout > article{max-width:none;margin:0;padding:0;min-width:0;}
     /* min-width:0 — item flex herda min-content do filho mais largo (a tabela
@@ -520,15 +520,15 @@
     <h3>Cenário MCMV — Uni Residencial</h3>
     <ul>
       <li><a href="/uni-residencial-indaiatuba/">Uni Residencial</a>: apto de 1 dormitório, a partir de R$ 279.990;</li>
-      <li>Entrada com FGTS + subsídio pode ser expressivamente reduzida;</li>
+      <li>O saldo do FGTS pode entrar na contratação do financiamento e diminuir o valor financiado; não contamos com subsídio (veja o <a href="/blog/minha-casa-minha-vida-indaiatuba/">guia do Minha Casa Minha Vida</a>);</li>
       <li>Parcela financiada pela Caixa costuma ficar próxima do aluguel de um apto de 1 dormitório (R$ 1.100 a R$ 1.700);</li>
-      <li>Após ~30 anos: o imóvel é seu. No aluguel: de R$ 400 mil a R$ 610 mil pagos e nenhum patrimônio.</li>
+      <li>Ao fim do financiamento (até 35 anos), o imóvel é seu. Em 30 anos de aluguel nesses valores, sem reajuste: de R$ 396 mil a R$ 612 mil pagos e nenhum patrimônio.</li>
     </ul>
 
     <h3>Cenário Gran Vic Tangará</h3>
     <ul>
       <li><a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a>: MCMV, 2 dorms, 47,22 m², a partir de R$ 330.000 (tabela VIC de 02/09/2026; na Faixa 3, a partir de R$ 334.278);</li>
-      <li>Parcela costuma ficar entre R$ 1.700 e R$ 2.100 dependendo do subsídio e FGTS;</li>
+      <li>Na Faixa 3, financiando 80% (R$ 267.422,40) em 420 meses na tabela Price, a parcela fica em R$ 1.833,72 a 7,66% ao ano (cotista do FGTS) ou R$ 1.930,55 a 8,16%, sem seguros, taxas e TR (conta do <a href="/blog/mcmv-faixa-3-indaiatuba/">artigo da Faixa 3</a>); a Faixa 3 não tem subsídio;</li>
       <li>Equivalente a alugar um apto 2 dorms no Parque dos Pássaros — mas com o imóvel virando patrimônio.</li>
     </ul>
     <a class="destaque-link" href="/blog/como-usar-fgts-comprar-imovel-indaiatuba/">Ver: como usar o FGTS para comprar imóvel em Indaiatuba →</a>
@@ -619,10 +619,10 @@
       <tr><td>São Paulo (bairros médios)</td><td>R$ 8.000 – R$ 13.500</td></tr>
     </table>
     </div>
-    <p>Indaiatuba fica no meio-termo: mais cara que Sorocaba, mais barata que Campinas, Jundiaí e São Paulo — e com qualidade de vida superior à maioria delas.</p>
+    <p>Indaiatuba fica no meio-termo: mais cara que Sorocaba, mais barata que Campinas, Jundiaí e São Paulo.</p>
 
     <div class="pilar-link">
-      <span class="label">Guia pilar</span>
+      <span class="label">Guia principal</span>
       <a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba: guia completo 2026 (o guia definitivo) →</a>
     </div>
 
@@ -658,7 +658,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">
-          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Uni Residencial</h4>
@@ -668,7 +668,7 @@
           </div>
         </a>
         <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
-          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero-640.webp" alt="Residencial Monte Carmelo — Indaiatuba" width="640" height="800">
           <div class="bo-corpo">
             <span class="bo-selo">Loteamento</span>
             <h4>Residencial Monte Carmelo</h4>
@@ -678,7 +678,7 @@
           </div>
         </a>
         <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
-          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina-640.webp" alt="Aurora — Park Meraki — Indaiatuba" width="640" height="445">
           <div class="bo-corpo">
             <span class="bo-selo">Alto padrão</span>
             <h4>Aurora — Park Meraki</h4>
@@ -688,7 +688,7 @@
           </div>
         </a>
         <a class="bo-card" href="/parque-zarah-indaiatuba/" data-emp="parque-zarah-indaiatuba">
-          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">Cond. fechado</span>
             <h4>Parque Zarah</h4>
@@ -711,7 +711,7 @@
     <details><summary>Quanto custa morar em Indaiatuba por mês?</summary>
       <p>Para uma família de 3 pessoas em imóvel de padrão médio, o custo mensal típico fica entre R$ 5.800 e R$ 9.950, incluindo aluguel de apartamento de 2 dormitórios, condomínio, contas de consumo, mercado, transporte e lazer. Para pessoa solteira em apartamento pequeno, o custo típico fica entre R$ 3.000 e R$ 4.500. Escola particular é o item que mais varia (R$ 1.500 a R$ 3.500 por filho).</p></details>
     <details><summary>Morar em Indaiatuba é caro?</summary>
-      <p>Indaiatuba tem custo de vida acima da média do interior paulista, principalmente por causa do preço dos imóveis (aluguel e compra). Mas é sensivelmente mais barata que Campinas, Jundiaí e São Paulo. É um dos custos-benefícios mais equilibrados da região metropolitana de Campinas para quem prioriza qualidade de vida.</p></details>
+      <p>Indaiatuba tem custo de vida acima da média do interior paulista, principalmente por causa do preço dos imóveis (aluguel e compra). Mas é sensivelmente mais barata que Campinas, Jundiaí e São Paulo.</p></details>
     <details><summary>Quanto custa alugar apartamento em Indaiatuba?</summary>
       <p>Apartamento de 2 dormitórios em região central: R$ 1.500 a R$ 2.500 de aluguel + R$ 350 a R$ 700 de condomínio. Apartamento de 3 dormitórios: R$ 2.200 a R$ 3.500 de aluguel. Alto padrão: acima de R$ 4.000. Valores de referência para julho de 2026 — variam por bairro, andar e estado do imóvel.</p></details>
     <details><summary>Vale mais a pena alugar ou comprar em Indaiatuba?</summary>
@@ -720,7 +720,7 @@
 
   <section class="cta">
     <h2>Quer simular sua compra em Indaiatuba?</h2>
-    <p>Fale com a Imobiliária Viv'América. Comparamos gratuitamente para você: aluguel vs financiamento MCMV, uso do FGTS, subsídio disponível e qual empreendimento cabe no seu orçamento.</p>
+    <p>Fale com a Imobiliária Viv'América. Comparamos gratuitamente para você: aluguel vs financiamento MCMV, uso do FGTS, faixa do programa e qual empreendimento cabe no seu orçamento.</p>
     <a class="btn-wpp" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20simular%20aluguel%20vs%20financiamento%20em%20Indaiatuba." target="_blank" rel="noopener">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Simular no WhatsApp

@@ -14,9 +14,8 @@
 
    Ritual: entrou/saiu empreendimento → node gera-relacionados.js
    (e o identidade.js cuida do estilo pela camada de marca).
-   Ordem completa: gera-folheto → gera-observatorio → gera-home →
-   gera-apartamentos → gera-alphaville → gera-blog-ofertas →
-   gera-blog-indice → gera-relacionados → identidade.js (último).
+   Ordem completa: a do CHECKLIST-NOVA-PAGINA.md (este gerador vem depois do
+   gera-blog-indice e antes do hero-leve.py --aplicar; identidade.js por último).
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
@@ -62,6 +61,7 @@ const GUIAS = [
   ['Morar em Indaiatuba', '/blog/morar-em-indaiatuba/'],
   ['Minha Casa Minha Vida', '/blog/minha-casa-minha-vida-indaiatuba/'],
   ['Guia de bairros', '/blog/melhores-bairros-para-morar-indaiatuba/'],
+  ['Condomínios por bairro', '/blog/condominios-em-indaiatuba-por-bairro/'],
   ['Indaiatuba é segura?', '/blog/morar-em-indaiatuba-e-seguro/'],
   ['Tabela de preços', '/precos-lancamentos-indaiatuba/'],
 ];
@@ -87,6 +87,10 @@ const DINHEIRO = [
   ['Quanto custa construir', 'quanto-custa-construir-em-indaiatuba-cub-2026'],
   ['Depois das chaves', 'depois-das-chaves-o-que-muda-no-pagamento'],
   ['Patrimônio de afetação', 'patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida'],
+  ['Classe Média do FGTS', 'fgts-classe-media-imovel-600-mil'],
+  ['INCC na parcela', 'incc-parcela-na-planta'],
+  ['Inscrição no Minha Casa Minha Vida', 'como-se-inscrever-minha-casa-minha-vida-indaiatuba'],
+  ['Casa própria para motorista de aplicativo', 'casa-propria-motorista-de-aplicativo'],
 ].filter(([, s]) => fs.existsSync(R + 'blog/' + s + '/index.html')).map(([n, s]) => [n, '/blog/' + s + '/']);
 
 function malhaPara(slugAtual) {

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
 <script src="/atrib.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="image" href="images/hero-m.webp" type="image/webp" media="(max-width:700px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-1280.webp" type="image/webp" media="(min-width:701px) and (max-width:1440px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero.jpg" type="image/jpeg" media="(min-width:1441px)" fetchpriority="high">
   <title>Storia Congesa Indaiatuba | 70 a 114 m² · Previsão Dez/2026</title>
   <meta name="description" content="Storia Congesa, Indaiatuba: 186 apartamentos em 2 torres junto à Av. Conceição; 2 dorm com suíte (70,05 m²) desde R$ 981.000 (tabela jul/2026) e 3 suítes.">
   <meta name="keywords" content="storia congesa indaiatuba, apartamento indaiatuba 2 dormitorios, apartamento 3 suites indaiatuba, congesa indaiatuba, apartamento av conceicao indaiatuba, lancamento congesa 2026, storia av nove de julho, apartamento entrega 2026 indaiatuba">
@@ -155,9 +158,11 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('images/hero.jpg') center/cover no-repeat;
+      background: url('images/hero-1280.webp') center/cover no-repeat;
       opacity: .45;
     }
+    @media (max-width:700px){.hero-bg{background: url('images/hero-m.webp') center/cover no-repeat}}
+    @media (min-width:1441px){.hero-bg{background: url('images/hero.jpg') center/cover no-repeat}}
     .hero::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(180deg, rgba(15,13,10,.6) 0%, rgba(15,13,10,.2) 40%, rgba(15,13,10,.85) 100%);
@@ -584,7 +589,7 @@
         <p class="sec-label">Sobre o Empreendimento</p>
         <h2 class="sec-title">Sua história começa em uma das regiões mais nobres de Indaiatuba</h2>
         <p class="sec-desc">
-          O Storia Congesa nasce na região mais valorizada de Indaiatuba — a poucos passos da Avenida Conceição, com Oba Hortifruti, Padaria Suíça e Parque Ecológico ao redor. São duas torres com 186 apartamentos de 2 dormitórios (com 1 suíte, 70,05m²) e apartamentos de 3 suítes com lavabo (114,89m²), todos com 2 ou 3 vagas de garagem mais hobby box.
+          O Storia Congesa nasce a poucos passos da Avenida Conceição, com Oba Hortifruti, Padaria Suíça e Parque Ecológico ao redor. São duas torres com 186 apartamentos de 2 dormitórios (com 1 suíte, 70,05m²) e apartamentos de 3 suítes com lavabo (114,89m²), todos com 2 ou 3 vagas de garagem mais hobby box.
         </p>
         <div class="pills">
           <div class="pill">2 Torres · 2 e 3 dormitórios</div>
@@ -900,7 +905,7 @@
       <p>A previsão de entrega do Storia Congesa é dezembro de 2026. As parcelas são corrigidas mensalmente pelo INCC-DI até o Habite-se e depois pelo IGPM + 1%.</p></details>
 
     <details><summary>Onde fica o Storia Congesa em Indaiatuba?</summary>
-      <p>O Storia Congesa fica na Rua Nove de Julho com Rua Arara, na região mais nobre de Indaiatuba — próximo à Av. Conceição, Oba Hortifruti, Padaria Suíça e Parque Ecológico, na mesma região do Atmosphera Congesa e Authoria Congesa.</p></details>
+      <p>O Storia Congesa fica na Rua Nove de Julho com Rua Arara, em Indaiatuba — próximo à Av. Conceição, Oba Hortifruti, Padaria Suíça e Parque Ecológico, na mesma região do Atmosphera Congesa e Authoria Congesa.</p></details>
 
     <details><summary>Quantos apartamentos e quantas vagas o Storia tem?</summary>
       <p>São 186 apartamentos de 2 dormitórios com 1 suíte (70,05m², 2 vagas + hobby box) e apartamentos de 3 suítes com lavabo (114,89m², 3 vagas + hobby box), distribuídos em duas torres.</p></details>
@@ -918,12 +923,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Qual o preço dos apartamentos no Storia Congesa?","acceptedAnswer":{"@type":"Answer","text":"Os apartamentos de 2 dormitórios com 1 suíte (70,05m²) começam em R$ 981.000. Os de 3 suítes com lavabo (114,89m²) começam em R$ 1.683.000 (finais 52 a 62) e R$ 1.767.000 (final 151). Tabela vigente em julho/2026."}},
-    {"@type":"Question","name":"Quando será entregue o Storia Congesa?","acceptedAnswer":{"@type":"Answer","text":"A previsão de entrega é dezembro de 2026. As parcelas são corrigidas pelo INCC-DI até o Habite-se e depois pelo IGPM + 1%."}},
-    {"@type":"Question","name":"Onde fica o Storia Congesa em Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"Rua Nove de Julho com Rua Arara, na região mais nobre de Indaiatuba — próximo à Av. Conceição, Oba Hortifruti, Padaria Suíça e Parque Ecológico, na mesma região do Atmosphera Congesa e Authoria Congesa."}},
-    {"@type":"Question","name":"Quantos apartamentos e quantas vagas o Storia tem?","acceptedAnswer":{"@type":"Answer","text":"186 apartamentos de 2 dormitórios com 1 suíte (70,05m², 2 vagas + hobby box) e apartamentos de 3 suítes com lavabo (114,89m², 3 vagas + hobby box), distribuídos em duas torres."}},
-    {"@type":"Question","name":"Quem é a construtora Congesa?","acceptedAnswer":{"@type":"Answer","text":"A Congesa é uma incorporadora nascida em Indaiatuba em 1993, com 32 anos de história e mais de 30 empreendimentos entregues. Possui certificação PBQP-H, ISO 9001 e Selo NDT concedido pela Caixa Econômica Federal."}},
-    {"@type":"Question","name":"O Storia tem hobby box em todas as unidades?","acceptedAnswer":{"@type":"Answer","text":"Sim. Todas as unidades (2 dormitórios e 3 suítes) já vêm com 2 ou 3 vagas de garagem mais hobby box incluídos no valor."}}
+    {"@type":"Question","name":"Qual o preço dos apartamentos no Storia Congesa?","acceptedAnswer":{"@type":"Answer","text":"Os apartamentos de 2 dormitórios com 1 suíte (70,05m²) começam em R$ 981.000. Os de 3 suítes com lavabo (114,89m²) começam em R$ 1.683.000 (finais 52 a 62) e R$ 1.767.000 (final 151). Valores incluem intermediação imobiliária e tabela vigente em julho/2026."}},
+    {"@type":"Question","name":"Quando será entregue o Storia Congesa?","acceptedAnswer":{"@type":"Answer","text":"A previsão de entrega do Storia Congesa é dezembro de 2026. As parcelas são corrigidas mensalmente pelo INCC-DI até o Habite-se e depois pelo IGPM + 1%."}},
+    {"@type":"Question","name":"Onde fica o Storia Congesa em Indaiatuba?","acceptedAnswer":{"@type":"Answer","text":"O Storia Congesa fica na Rua Nove de Julho com Rua Arara, em Indaiatuba — próximo à Av. Conceição, Oba Hortifruti, Padaria Suíça e Parque Ecológico, na mesma região do Atmosphera Congesa e Authoria Congesa."}},
+    {"@type":"Question","name":"Quantos apartamentos e quantas vagas o Storia tem?","acceptedAnswer":{"@type":"Answer","text":"São 186 apartamentos de 2 dormitórios com 1 suíte (70,05m², 2 vagas + hobby box) e apartamentos de 3 suítes com lavabo (114,89m², 3 vagas + hobby box), distribuídos em duas torres."}},
+    {"@type":"Question","name":"Quem é a construtora Congesa?","acceptedAnswer":{"@type":"Answer","text":"A Congesa é uma incorporadora nascida em Indaiatuba em 1993, com 32 anos de história e mais de 30 empreendimentos entregues — Primavera, Reserva Alpha, Hub Cambuí, Authoria, Atmosphera, Mood e Vivio Cambuí. Possui certificação PBQP-H, ISO 9001 e Selo NDT concedido pela Caixa Econômica Federal."}},
+    {"@type":"Question","name":"O Storia tem hobby box em todas as unidades?","acceptedAnswer":{"@type":"Answer","text":"Sim. Todas as unidades do Storia Congesa (2 dormitórios e 3 suítes) já vêm com 2 ou 3 vagas de garagem mais hobby box incluídos no valor."}}
   ]
 }
 </script>
@@ -1010,8 +1015,8 @@
       <div class="malha-grupo"><span class="malha-rotulo">Apartamentos</span><a href="/uni-residencial-indaiatuba/">Uni Residencial</a><a href="/parque-das-aguas-indaiatuba/">Residencial Parque das Águas</a><a href="/gran-vic-tangara-indaiatuba/">Gran Vic Tangará</a><a href="/gran-vic-colibri-indaiatuba/">Gran Vic Colibri</a><a href="/itamaraca-indaiatuba/">Itamaracá Residencial</a><a href="/gran-vic-canario-indaiatuba/">Gran Vic Canário</a><a href="/vivere-indaiatuba/">Vívere Residencial</a><a href="/izzi-residence-indaiatuba/">Izzi Residence</a><a href="/gran-vic-andorinha-indaiatuba/">Gran Vic Andorinha</a><a href="/spazio-italia-indaiatuba/">Spazio Italia</a><a href="/artemis-residencial-indaiatuba/">Artemis Residencial</a><a href="/aurora-indaiatuba/">Aurora — Park Meraki</a><a href="/arete-home-indaiatuba/">Areté Home</a><a href="/espaco-conceicao-indaiatuba/">Espaço Conceição</a><a href="/helade-indaiatuba/">Hélade — Park Meraki</a><a href="/viva-parque-aura-indaiatuba/">Viva Parque Aura</a><a href="/viva-parque-sense-indaiatuba/">Viva Parque Sense</a><a href="/manai-bosque-indaiatuba/">Manai Bosque</a><a href="/seasons-indaiatuba/">Congesa Seasons</a><a href="/360-home-office-mall-indaiatuba/">360 Home Office Mall</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Lotes e condomínios</span><a href="/maria-candida-indaiatuba/">Jardim Dona Maria Cândida</a><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a><a href="/parque-zarah-indaiatuba/">Parque Zarah</a><a href="/di-italia-indaiatuba/">Jardim Di Italia</a><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a><a href="/alpnach-indaiatuba/">Alpnach Residence</a><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a><a href="/residencial-ravello-indaiatuba/">Residencial Ravello</a><a href="/ville-de-provence-indaiatuba/">Ville de Provence</a><a href="/alphaville-indaiatuba/">Alphaville Indaiatuba</a><a href="/lagos-de-helvetia-indaiatuba/">Lagos de Helvetia</a><a href="/porteira-de-ferro-indaiatuba/">Porteira de Ferro</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Alphaville</span><a href="/alphaville/">Empreendimentos Alphaville</a><a href="/casas-alphaville-dom-pedro-0-campinas/">Casas Alphaville Dom Pedro 0 (Campinas)</a></div>
-      <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
-      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Guias</span><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a><a href="/loteamentos-em-indaiatuba/">Loteamentos</a><a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba</a><a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa Minha Vida</a><a href="/blog/melhores-bairros-para-morar-indaiatuba/">Guia de bairros</a><a href="/blog/condominios-em-indaiatuba-por-bairro/">Condomínios por bairro</a><a href="/blog/morar-em-indaiatuba-e-seguro/">Indaiatuba é segura?</a><a href="/precos-lancamentos-indaiatuba/">Tabela de preços</a></div>
+      <div class="malha-grupo"><span class="malha-rotulo">Dinheiro e financiamento</span><a href="/blog/renda-necessaria-financiar-imovel/">Quanto ganhar para financiar</a><a href="/blog/itbi-escritura-registro-indaiatuba/">ITBI, escritura e registro</a><a href="/blog/comprar-na-planta-ou-pronto-para-morar/">Na planta ou pronto?</a><a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">Condomínio de lotes ou loteamento fechado</a><a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">Quanto custa construir</a><a href="/blog/depois-das-chaves-o-que-muda-no-pagamento/">Depois das chaves</a><a href="/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/">Patrimônio de afetação</a><a href="/blog/fgts-classe-media-imovel-600-mil/">Classe Média do FGTS</a><a href="/blog/incc-parcela-na-planta/">INCC na parcela</a><a href="/blog/como-se-inscrever-minha-casa-minha-vida-indaiatuba/">Inscrição no Minha Casa Minha Vida</a><a href="/blog/casa-propria-motorista-de-aplicativo/">Casa própria para motorista de aplicativo</a></div>
       <div class="malha-grupo"><span class="malha-rotulo">Dados e listas</span><a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a><a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z de loteamentos e bairros</a><a href="/imprensa-e-dados/">Dados abertos e imprensa</a></div>
     </div>
   </section>

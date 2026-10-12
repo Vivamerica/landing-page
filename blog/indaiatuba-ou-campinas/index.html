@@ -127,11 +127,11 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"Afinal, qual é melhor: Indaiatuba ou Campinas?","acceptedAnswer":{"@type":"Answer","text":"Depende do critério e do perfil. Nos indicadores oficiais reunidos aqui, Indaiatuba aparece à frente em taxa de homicídios estimados (Atlas da Violência 2026, ano-base 2024) e em IDEB 2025 tanto nos anos iniciais da rede municipal quanto nos anos finais da rede pública. Campinas oferece escala de metrópole — mais de 1,1 milhão de habitantes, universidades, hospitais de referência, aeroporto internacional. E, como as duas ficam a 22 km uma da outra, morar numa e usar serviços da outra é rotina."}},
-      {"@type":"Question","name":"Dá para morar em uma e trabalhar na outra?","acceptedAnswer":{"@type":"Answer","text":"Sim, e é comum. A Prefeitura de Indaiatuba informa 22 km de distância até Campinas — deslocamento diário para trabalho, faculdade ou aeroporto (Viracopos) é rotina para muita gente."}},
-      {"@type":"Question","name":"Qual é mais segura, pelo indicador oficial?","acceptedAnswer":{"@type":"Answer","text":"Pelo Atlas da Violência 2026 (Fórum Brasileiro de Segurança Pública / Ipea), com ano-base 2024, Indaiatuba tem taxa de homicídios estimados de 5,6 por 100 mil habitantes e Campinas de 14 por 100 mil. As duas ficam abaixo da média nacional citada no mesmo relatório (Brasil = 23,4/100 mil). Essa é a leitura oficial de homicídios; roubo, furto e sensação de segurança são dimensões diferentes."}},
-      {"@type":"Question","name":"E a educação básica, o que dizem os números?","acceptedAnswer":{"@type":"Answer","text":"O IDEB (Índice de Desenvolvimento da Educação Básica) é a nota oficial que o Inep, órgão do Ministério da Educação, publica a cada dois anos para a educação básica pública — vai de 0 a 10 e combina o quanto os alunos aprenderam (Prova Brasil) com o fluxo escolar. No IDEB 2025, os anos iniciais da rede municipal marcaram 7,5 em Indaiatuba e 5,8 em Campinas. Nos anos finais da rede pública (estadual + municipal + federal), Indaiatuba fechou 5,7 e Campinas 5,0. Fonte: QEdu, com dados do Inep. O IDEB mede a rede como um todo — na hora de escolher escola específica, o número relevante é o da unidade, não o da cidade."}},
-      {"@type":"Question","name":"Qual é mais barata para morar?","acceptedAnswer":{"@type":"Answer","text":"Não temos, para esta comparação, um índice oficial de custo de vida ou de preço de imóveis que use a mesma metodologia e o mesmo ano-base para as duas cidades. Como a regra aqui é comparar só na mesma régua, preferimos não comparar preço nesse formato — o comparativo direto de valor de imóvel exige fonte que não localizamos. Os preços dos lançamentos que representamos em Indaiatuba estão abertos no Observatório de Preços."}}
+      {"@type":"Question","name":"Afinal, qual é melhor: Indaiatuba ou Campinas?","acceptedAnswer":{"@type":"Answer","text":"Depende do critério e do perfil. Nos indicadores oficiais aqui reunidos, Indaiatuba aparece à frente em taxa de homicídios (Atlas 2026) e em IDEB 2025 nas duas etapas comparadas. Campinas oferece escala de metrópole. Como as duas ficam a 22 km, morar numa e usar serviços da outra é rotina."}},
+      {"@type":"Question","name":"Dá para morar em uma e trabalhar na outra?","acceptedAnswer":{"@type":"Answer","text":"Sim, e é comum. A Prefeitura de Indaiatuba informa 22 km de distância — trajeto diário para trabalho, faculdade ou Viracopos é rotina."}},
+      {"@type":"Question","name":"Qual é mais segura, pelo indicador oficial?","acceptedAnswer":{"@type":"Answer","text":"Pelo Atlas da Violência 2026 (ano-base 2024), Indaiatuba tem 5,6 homicídios estimados por 100 mil habitantes e Campinas 14 — as duas abaixo da média nacional (23,4). É a leitura oficial de homicídios; roubo, furto e sensação de segurança são dimensões diferentes."}},
+      {"@type":"Question","name":"E a educação básica, o que dizem os números?","acceptedAnswer":{"@type":"Answer","text":"O IDEB é a nota oficial do MEC/Inep para a educação básica pública (de 0 a 10), que combina o quanto os alunos aprenderam com o fluxo escolar. No IDEB 2025, os anos iniciais da rede municipal marcaram 7,5 em Indaiatuba e 5,8 em Campinas. Nos anos finais da rede pública, Indaiatuba fechou 5,7 e Campinas 5,0. O IDEB mede a rede como um todo, não escola específica."}},
+      {"@type":"Question","name":"Qual é mais barata para morar?","acceptedAnswer":{"@type":"Answer","text":"Não temos, nesta comparação, um índice oficial de custo de vida ou de preço de imóveis que use a mesma metodologia e o mesmo ano-base para as duas cidades. Como a regra aqui é comparar só na mesma régua, preferimos não comparar preço nesse formato."}}
     ]
   }
   </script>
@@ -144,7 +144,7 @@
     .logo-text{color:#fff;font-family:'Poiret One',cursive;font-weight:400;letter-spacing:.22em;text-transform:uppercase;font-size:clamp(0.9rem,2vw,1.05rem);text-decoration:none;}
     nav a{color:rgba(255,255,255,0.85);text-decoration:none;margin-left:1.6rem;font-size:0.78rem;letter-spacing:.08em;text-transform:uppercase;}
     nav a:hover{color:var(--dourado);}
-    @media(max-width:680px){nav{display:none;}}
+    @media(max-width:680px){header nav{display:none;}}
     .article-hero{background:var(--preto);color:#fff;padding:clamp(2.5rem,6vw,4rem) 5% clamp(2rem,4vw,3rem);}
     .article-hero .wrap{max-width:780px;margin:0 auto;}
     .article-hero .tag{display:inline-block;background:var(--dourado);color:var(--preto);font-size:0.72rem;font-weight:600;padding:0.3rem 0.8rem;text-transform:uppercase;letter-spacing:.14em;}
@@ -257,7 +257,7 @@
   </script>
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
-    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
+    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 min(5%,60px);display:grid;
       grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
     .blog-layout > article{max-width:none;margin:0;padding:0;min-width:0;}
     /* min-width:0 — item flex herda min-content do filho mais largo (a tabela
@@ -597,7 +597,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">
-          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Uni Residencial</h4>
@@ -607,7 +607,7 @@
           </div>
         </a>
         <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
-          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero-640.webp" alt="Residencial Monte Carmelo — Indaiatuba" width="640" height="800">
           <div class="bo-corpo">
             <span class="bo-selo">Loteamento</span>
             <h4>Residencial Monte Carmelo</h4>
@@ -617,7 +617,7 @@
           </div>
         </a>
         <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
-          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina-640.webp" alt="Aurora — Park Meraki — Indaiatuba" width="640" height="445">
           <div class="bo-corpo">
             <span class="bo-selo">Alto padrão</span>
             <h4>Aurora — Park Meraki</h4>
@@ -627,7 +627,7 @@
           </div>
         </a>
         <a class="bo-card" href="/parque-zarah-indaiatuba/" data-emp="parque-zarah-indaiatuba">
-          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">Cond. fechado</span>
             <h4>Parque Zarah</h4>

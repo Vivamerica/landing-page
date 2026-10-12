@@ -98,11 +98,11 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"Indaiatuba ou Sorocaba: qual é melhor para morar?","acceptedAnswer":{"@type":"Answer","text":"Depende do perfil. Indaiatuba tem IDH mais alto (0,788 vs 0,798 aproximadamente — ambas altas), índices de segurança superiores, é menor e mais tranquila, e fica mais próxima do Aeroporto de Viracopos e Campinas. Sorocaba é maior (mais de 700 mil habitantes contra 260 mil), tem oferta mais ampla de comércio, serviços especializados, universidades e transporte público. Para famílias que priorizam segurança, tranquilidade e proximidade com Campinas, Indaiatuba costuma ser a melhor escolha. Para quem quer mais opções urbanas, cursos superiores locais e vive de transporte público, Sorocaba pode fazer mais sentido."}},
+      {"@type":"Question","name":"Indaiatuba ou Sorocaba: qual é melhor para morar?","acceptedAnswer":{"@type":"Answer","text":"Depende do perfil. Indaiatuba tem índices de segurança superiores, é menor e mais tranquila, e fica mais próxima do Aeroporto de Viracopos e Campinas. Sorocaba é maior (mais de 700 mil habitantes contra 260 mil), tem oferta mais ampla de comércio, serviços especializados, universidades e transporte público. Para famílias que priorizam segurança, tranquilidade e proximidade com Campinas, Indaiatuba costuma ser a melhor escolha. Para quem quer mais opções urbanas, cursos superiores locais e vive de transporte público, Sorocaba pode fazer mais sentido."}},
       {"@type":"Question","name":"Indaiatuba é mais segura que Sorocaba?","acceptedAnswer":{"@type":"Answer","text":"Sim, segundo dados públicos consolidados. Indaiatuba historicamente registra índices de criminalidade (crimes contra o patrimônio e contra a pessoa) menores que Sorocaba na comparação por 100 mil habitantes, segundo estatísticas da SSP-SP e do IBGE. Isso se reflete também na percepção de segurança dos moradores e no mercado imobiliário local."}},
       {"@type":"Question","name":"Onde é mais barato morar: Indaiatuba ou Sorocaba?","acceptedAnswer":{"@type":"Answer","text":"Sorocaba é geralmente mais barata que Indaiatuba, especialmente em aluguel e compra de imóveis. A diferença fica na ordem de 15% a 25% em imóveis equivalentes. Em contrapartida, alguns serviços em Indaiatuba (planos de saúde, escolas particulares) costumam ser alinhados com Campinas — não necessariamente mais caros que Sorocaba."}},
       {"@type":"Question","name":"Qual cidade tem melhor educação: Indaiatuba ou Sorocaba?","acceptedAnswer":{"@type":"Answer","text":"Sorocaba tem oferta muito maior de ensino superior, com universidades federais, estaduais e privadas de grande porte (UFSCar, Facens, PUC, Uniso). Indaiatuba tem menos opções de ensino superior local, mas está a ~30 minutos de Campinas (Unicamp, PUC-Campinas). Em ensino básico e médio, ambas têm boa rede pública e particular, com custo alinhado."}},
-      {"@type":"Question","name":"Indaiatuba ou Sorocaba para quem trabalha em Campinas?","acceptedAnswer":{"@type":"Answer","text":"Indaiatuba, sem dúvida. Fica a cerca de 20 minutos do centro de Campinas pela rodovia Santos Dumont, enquanto Sorocaba está a 60-90 minutos de Campinas dependendo do trajeto. Indaiatuba também está a 15 minutos do Aeroporto de Viracopos, um dos maiores empregadores da região."}},
+      {"@type":"Question","name":"Indaiatuba ou Sorocaba para quem trabalha em Campinas?","acceptedAnswer":{"@type":"Answer","text":"Indaiatuba, sem dúvida. Fica a cerca de 20 minutos do centro de Campinas pela rodovia Santos Dumont, enquanto Sorocaba está a 60-90 minutos de Campinas dependendo do trajeto. Indaiatuba também está a 15 minutos do Aeroporto de Viracopos."}},
       {"@type":"Question","name":"Qual cidade tem mais oportunidades de trabalho?","acceptedAnswer":{"@type":"Answer","text":"Sorocaba tem economia mais diversificada e volume de vagas maior por ser cidade grande, com indústria, comércio, serviços e ensino superior. Indaiatuba tem parque industrial forte (Toyota, Unilever, John Deere e centenas de empresas) e proximidade com o corredor Campinas-Viracopos, o que oferece muitas oportunidades qualificadas. Para técnicos e profissionais da indústria, Indaiatuba pode ter salários mais competitivos."}}
     ]
   }
@@ -237,7 +237,7 @@
   </script>
   <style id="bo-estilo">
     /* Ofertas no blog — geradas por gera-blog-ofertas.js */
-    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 5%;display:grid;
+    .blog-layout{max-width:1200px;margin:2rem auto 3rem;padding:0 min(5%,60px);display:grid;
       grid-template-columns:minmax(0,780px) 310px;gap:3rem;justify-content:center;align-items:start;}
     .blog-layout > article{max-width:none;margin:0;padding:0;min-width:0;}
     /* min-width:0 — item flex herda min-content do filho mais largo (a tabela
@@ -481,9 +481,9 @@
         <td class="win-b">Grande (~700k) ✓</td>
       </tr>
       <tr>
-        <td>IDH-M (aproximado)</td>
-        <td class="win-a">Muito alto ✓</td>
-        <td>Muito alto</td>
+        <td>IDH-M (PNUD, 2010)</td>
+        <td>0,788 (alto)</td>
+        <td>0,798 (alto)</td>
       </tr>
       <tr>
         <td>Segurança percebida</td>
@@ -598,7 +598,7 @@
       <li>Tem <strong>filhos pequenos</strong> e valoriza tranquilidade;</li>
       <li>Prefere cidade <strong>média com trânsito moderado</strong>;</li>
       <li>Vai <strong>usar carro no dia a dia</strong> e não depende de transporte público;</li>
-      <li>Quer morar em um dos <strong>lançamentos imobiliários</strong> mais qualificados do interior paulista.</li>
+      <li>Quer um <strong>lançamento imobiliário</strong> com tabela e preço abertos.</li>
     </ul>
 
     <h3>Escolha Sorocaba se você:</h3>
@@ -614,7 +614,7 @@
     <div class="veredito">
       <h3>Nosso veredito</h3>
       <p>Se você já está considerando Indaiatuba a ponto de comparar com Sorocaba, provavelmente valoriza qualidade de vida, segurança e boas oportunidades imobiliárias — e Indaiatuba costuma ser a escolha que confirma essa decisão. Mas <strong>não é a resposta certa pra todo mundo</strong>: quem depende de transporte público, precisa de universidades locais ou tem orçamento muito apertado no imóvel pode encontrar em Sorocaba uma alternativa muito boa.</p>
-      <p>A boa notícia: nas duas cidades, quem compra bem no lançamento faz um bom negócio.</p>
+      <p>Nas duas cidades há lançamentos com tabela aberta: compare preço, prazo e contrato antes de decidir.</p>
     </div>
 
     <h2>Se a resposta for Indaiatuba: onde comprar</h2>
@@ -628,7 +628,7 @@
     <a class="destaque-link" href="/">Ver todos os lançamentos em Indaiatuba →</a>
 
     <div class="pilar-link">
-      <span class="label">Guia pilar</span>
+      <span class="label">Guia principal</span>
       <a href="/blog/morar-em-indaiatuba/">Morar em Indaiatuba: guia completo 2026 (o guia definitivo) →</a>
     </div>
 
@@ -662,7 +662,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">
-          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero.jpg" alt="Uni Residencial — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Uni Residencial</h4>
@@ -672,7 +672,7 @@
           </div>
         </a>
         <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
-          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero.jpg" alt="Residencial Monte Carmelo — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero-640.webp" alt="Residencial Monte Carmelo — Indaiatuba" width="640" height="800">
           <div class="bo-corpo">
             <span class="bo-selo">Loteamento</span>
             <h4>Residencial Monte Carmelo</h4>
@@ -682,7 +682,7 @@
           </div>
         </a>
         <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
-          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg" alt="Aurora — Park Meraki — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/hero-casa-de-campo-piscina-640.webp" alt="Aurora — Park Meraki — Indaiatuba" width="640" height="445">
           <div class="bo-corpo">
             <span class="bo-selo">Alto padrão</span>
             <h4>Aurora — Park Meraki</h4>
@@ -692,7 +692,7 @@
           </div>
         </a>
         <a class="bo-card" href="/parque-zarah-indaiatuba/" data-emp="parque-zarah-indaiatuba">
-          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero.jpg" alt="Parque Zarah — Indaiatuba">
+          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360">
           <div class="bo-corpo">
             <span class="bo-selo">Cond. fechado</span>
             <h4>Parque Zarah</h4>
@@ -713,7 +713,7 @@
   <section class="faq-geo">
     <h2 class="faq-h2">Perguntas frequentes</h2>
     <details><summary>Indaiatuba ou Sorocaba: qual é melhor para morar?</summary>
-      <p>Depende do perfil. Indaiatuba tem IDH mais alto, índices de segurança superiores, é menor e mais tranquila, e fica mais próxima do Aeroporto de Viracopos e Campinas. Sorocaba é maior (mais de 700 mil habitantes contra 260 mil), tem oferta mais ampla de comércio, serviços especializados, universidades e transporte público. Para famílias que priorizam segurança, tranquilidade e proximidade com Campinas, Indaiatuba costuma ser a melhor escolha. Para quem quer mais opções urbanas, cursos superiores locais e vive de transporte público, Sorocaba pode fazer mais sentido.</p></details>
+      <p>Depende do perfil. Indaiatuba tem índices de segurança superiores, é menor e mais tranquila, e fica mais próxima do Aeroporto de Viracopos e Campinas. Sorocaba é maior (mais de 700 mil habitantes contra 260 mil), tem oferta mais ampla de comércio, serviços especializados, universidades e transporte público. Para famílias que priorizam segurança, tranquilidade e proximidade com Campinas, Indaiatuba costuma ser a melhor escolha. Para quem quer mais opções urbanas, cursos superiores locais e vive de transporte público, Sorocaba pode fazer mais sentido.</p></details>
     <details><summary>Indaiatuba é mais segura que Sorocaba?</summary>
       <p>Sim, segundo dados públicos consolidados. Indaiatuba historicamente registra índices de criminalidade (crimes contra o patrimônio e contra a pessoa) menores que Sorocaba na comparação por 100 mil habitantes, segundo estatísticas da SSP-SP e do IBGE. Isso se reflete também na percepção de segurança dos moradores e no mercado imobiliário local.</p></details>
     <details><summary>Onde é mais barato morar: Indaiatuba ou Sorocaba?</summary>
@@ -721,7 +721,7 @@
     <details><summary>Qual cidade tem melhor educação: Indaiatuba ou Sorocaba?</summary>
       <p>Sorocaba tem oferta muito maior de ensino superior, com universidades federais, estaduais e privadas de grande porte (UFSCar, Facens, PUC, Uniso). Indaiatuba tem menos opções de ensino superior local, mas está a ~30 minutos de Campinas (Unicamp, PUC-Campinas). Em ensino básico e médio, ambas têm boa rede pública e particular, com custo alinhado.</p></details>
     <details><summary>Indaiatuba ou Sorocaba para quem trabalha em Campinas?</summary>
-      <p>Indaiatuba, sem dúvida. Fica a cerca de 20 minutos do centro de Campinas pela rodovia Santos Dumont, enquanto Sorocaba está a 60-90 minutos de Campinas dependendo do trajeto. Indaiatuba também está a 15 minutos do Aeroporto de Viracopos, um dos maiores empregadores da região.</p></details>
+      <p>Indaiatuba, sem dúvida. Fica a cerca de 20 minutos do centro de Campinas pela rodovia Santos Dumont, enquanto Sorocaba está a 60-90 minutos de Campinas dependendo do trajeto. Indaiatuba também está a 15 minutos do Aeroporto de Viracopos.</p></details>
     <details><summary>Qual cidade tem mais oportunidades de trabalho?</summary>
       <p>Sorocaba tem economia mais diversificada e volume de vagas maior por ser cidade grande, com indústria, comércio, serviços e ensino superior. Indaiatuba tem parque industrial forte (Toyota, Unilever, John Deere e centenas de empresas) e proximidade com o corredor Campinas-Viracopos, o que oferece muitas oportunidades qualificadas. Para técnicos e profissionais da indústria, Indaiatuba pode ter salários mais competitivos.</p></details>
   </section>
