@@ -3,21 +3,21 @@
   "nome": "Artemis Residencial",
   "categoria": "apartamentos",
   "data": "2026-09-16",
-  "atualizado": "2026-10-11",
-  "fonte_tabela": "tabela GPCI de set/2026",
+  "atualizado": "2026-10-12",
+  "fonte_tabela": "tabela GPCI de out/2026",
   "title": "Artemis Residencial Indaiatuba | 3 dorm · Park Meraki",
-  "description": "Artemis Residencial, Park Meraki: 2 torres, 320 apartamentos de 3 dorm com suíte e 2 vagas, de 63,85 e 64,44 m². Desde R$ 555.171 (tabela set/2026).",
+  "description": "Artemis Residencial, Park Meraki: 2 torres, 320 apartamentos de 3 dorm com suíte e 2 vagas, de 63,85 e 64,44 m². Desde R$ 555.171 (tabela out/2026).",
   "keywords": "artemis residencial indaiatuba, artemis gpci, apartamento park meraki, apartamento 3 dormitorios indaiatuba, apartamento 2 vagas indaiatuba, lancamento park meraki, apartamento com garden indaiatuba, gpci indaiatuba",
   "schema_tipo": "ApartmentComplex",
   "schema_desc": "Duas torres de térreo mais 19 pavimentos no Park Meraki, em Indaiatuba/SP, com 8 apartamentos por andar e 320 unidades no total. Plantas de 63,85 m² e 64,44 m² com 3 dormitórios, uma suíte e 2 vagas, com opção de 2 dormitórios e sala estendida; gardens no térreo de 92,39 m² a 107,97 m². Lazer com Casa de Campo de acesso próprio. Realização GPCI e IBEN. Entrega prevista para abril de 2028 (Torre 1) e setembro de 2028 (Torre 2).",
   "unidades_total": 320,
   "endereco_schema": "Park Meraki, junto à Avenida 9 de Julho",
   "preco_min": 555170.71,
-  "preco_max": 683000.0,
-  "offer_count": 140,
-  "oferta_desc": "Tabela GPCI de setembro/2026 com 140 unidades listadas (37 na Torre 1 e 103 na Torre 2), de R$ 555.170,71 a R$ 683.000,00. A tabela avisa que as unidades podem já não estar disponíveis. Correção pelo INCC até o habite-se.",
+  "preco_max": 683000,
+  "offer_count": 133,
+  "oferta_desc": "Tabela GPCI de outubro/2026 com 133 unidades listadas (36 na Torre 1 e 97 na Torre 2), de R$ 555.170,71 a R$ 683.000,00. A tabela avisa que as unidades podem já não estar disponíveis. Correção pelo INCC até o habite-se.",
   "produto_nome": "Artemis Residencial Indaiatuba — apartamento de 3 dormitórios com 63,85 m²",
-  "produto_desc": "Apartamentos de 3 dormitórios com uma suíte e 2 vagas, de 63,85 e 64,44 m², no Park Meraki, Indaiatuba/SP. Realização GPCI e IBEN. Tabela de setembro/2026.",
+  "produto_desc": "Apartamentos de 3 dormitórios com uma suíte e 2 vagas, de 63,85 e 64,44 m², no Park Meraki, Indaiatuba/SP. Realização GPCI e IBEN. Tabela de outubro/2026.",
   "marca": "GPCI",
   "lazer": [
     "Casa de Campo com acesso independente",
@@ -51,7 +51,7 @@
     "sub": "Apartamentos de 3 dormitórios com suíte no Park Meraki, em Indaiatuba",
     "lead": "Duas torres de 19 andares no Park Meraki, com 8 apartamentos por andar e uma Casa de Campo de acesso próprio como área de lazer. Plantas de 63,85 e 64,44 m² com três dormitórios, uma suíte e duas vagas.",
     "preco": "A partir de R$ 555.170,71",
-    "preco_nota": "tabela GPCI de setembro/2026 · entrega prevista abr/2028 (T1) e set/2028 (T2)",
+    "preco_nota": "tabela GPCI de outubro/2026 · entrega prevista abr/2028 (T1) e set/2028 (T2)",
     "cta_msg": "Olá! Quero a tabela de preços do Artemis Residencial com as unidades disponíveis.",
     "cta_texto": "Ver unidades e valores"
   },
@@ -77,8 +77,8 @@
           "p": "vagas por apartamento"
         },
         {
-          "n": "140",
-          "p": "unidades na tabela de set/2026"
+          "n": "133",
+          "p": "unidades na tabela de out/2026"
         }
       ],
       "depois": "galeria"
@@ -88,10 +88,10 @@
       "classe": "cream",
       "h2": "Três dormitórios com suíte em 63,85 e 64,44 m²",
       "paragrafos": [
-        "As plantas tipo têm três dormitórios, sendo uma suíte, e duas vagas de garagem. O material da incorporadora apresenta também a possibilidade de dois dormitórios com sala estendida, sem informar se há custo. No térreo ficam os apartamentos Giardino, com garden. Na tabela de setembro/2026, as unidades são estas:"
+        "As plantas tipo têm três dormitórios, sendo uma suíte, e duas vagas de garagem. O material da incorporadora apresenta também a possibilidade de dois dormitórios com sala estendida, sem informar se há custo. No térreo ficam os apartamentos Giardino, com garden. Na tabela de outubro/2026, as unidades são estas:"
       ],
       "tabela": {
-        "legenda": "Unidades da tabela GPCI de setembro/2026 por planta. Na Torre 1 os valores vão de R$ 611.758,80 a R$ 683.000,00; na Torre 2, de R$ 555.170,71 a R$ 616.716,67.",
+        "legenda": "Unidades da tabela GPCI de outubro/2026 por planta. Na Torre 1 os valores vão de R$ 611.758,80 a R$ 683.000,00; na Torre 2, de R$ 555.170,71 a R$ 616.716,67.",
         "cab": [
           "Planta",
           "Área privativa",
@@ -111,7 +111,7 @@
             "Meio (finais 02, 03, 06 e 07)",
             "63,85 m²",
             "3, com 1 suíte",
-            "92",
+            "89",
             "R$ 555.170,71",
             "R$ 673.236,11"
           ],
@@ -119,7 +119,7 @@
             "Ponta (finais 01, 04, 05 e 08)",
             "64,44 m²",
             "3, com 1 suíte",
-            "47",
+            "43",
             "R$ 560.300,72",
             "R$ 661.269,99"
           ],
@@ -136,7 +136,7 @@
       "cards": [
         {
           "t": "Gardens no térreo",
-          "p": "Os Giardino da Torre 2 têm 92,69 m² (ponta) e 92,39 m² (meio). Eles não aparecem na tabela de setembro/2026; pergunte pela disponibilidade."
+          "p": "Os Giardino da Torre 2 têm 92,69 m² (ponta) e 92,39 m² (meio). Eles não aparecem na tabela de outubro/2026; pergunte pela disponibilidade."
         },
         {
           "t": "Água e gás",
@@ -171,30 +171,33 @@
     {
       "id": "precos",
       "label": "Preços e condições",
-      "h2": "140 unidades na tabela de setembro/2026",
+      "h2": "133 unidades na tabela de outubro/2026",
       "paragrafos": [
-        "A tabela da GPCI de setembro/2026 lista 140 unidades: 37 na Torre 1 e 103 na Torre 2. Os valores vão de R$ 555.170,71 a R$ 683.000,00; a Torre 2, que tem entrega prevista mais tarde, concentra os valores menores. A tabela avisa que as unidades anunciadas podem já ter sido vendidas."
+        "A tabela da GPCI de outubro/2026 lista 133 unidades: 36 na Torre 1 e 97 na Torre 2. Os valores vão de R$ 555.170,71 a R$ 683.000,00; a Torre 2, que tem entrega prevista mais tarde, concentra os valores menores. A tabela avisa que as unidades anunciadas podem não estar mais disponíveis."
       ],
       "tabela2_titulo": "Duas formas de pagar",
       "tabela2_paragrafos": [
-        "As condições comerciais de setembro/2026 trazem duas modalidades, com as parcelas distribuídas no prazo de obra de cada torre."
+        "As condições comerciais de outubro/2026 trazem duas modalidades, com as parcelas distribuídas no prazo de obra de cada torre."
       ],
       "tabela2": {
         "cab": [
           "Modalidade",
           "Ato mínimo",
+          "Prazo de obra",
           "Parcelas durante a obra"
         ],
         "linhas": [
           [
             "Investidor",
             "20%",
-            "Até 18 mensais fixas sem correção pelo INCC-M, ou até 19 (Torre 1) e 24 (Torre 2) com correção"
+            "Torre 1: 18 meses; Torre 2: 23 meses",
+            "Até 18 mensais fixas sem correção pelo INCC-M, ou 23 mensais com correção pelo INCC-M"
           ],
           [
             "Financiamento futuro 30/70",
             "10%",
-            "Até 18 (Torre 1) e 23 (Torre 2) mensais corrigidas pelo INCC-M, com parcelas anuais, e o saldo financiado"
+            "Torre 1: 17 meses; Torre 2: 22 meses",
+            "Até 17 (Torre 1) ou 22 (Torre 2) mensais corrigidas pelo INCC-M, com parcelas anuais, e o saldo financiado"
           ]
         ]
       },
@@ -401,17 +404,17 @@
     ],
     [
       "Entrega prevista",
-      "Torre 1 em abril de 2028 e Torre 2 em setembro de 2028, conforme as condições comerciais de setembro/2026"
+      "Torre 1 em abril de 2028 e Torre 2 em setembro de 2028, conforme as condições comerciais de outubro/2026"
     ]
   ],
   "faq": [
     {
       "q": "Quanto custa um apartamento no Artemis Residencial?",
-      "a": "A tabela da GPCI de setembro/2026 lista 140 unidades, de R$ 555.170,71 a R$ 683.000,00. A planta Meio, de 63,85 m², começa em R$ 555.170,71 e a Ponta, de 64,44 m², em R$ 560.300,72. Na Torre 2 os valores vão até R$ 616.716,67; na Torre 1 começam em R$ 611.758,80. A tabela avisa que as unidades anunciadas podem já ter sido vendidas."
+      "a": "A tabela da GPCI de outubro/2026 lista 133 unidades, de R$ 555.170,71 a R$ 683.000,00. A planta Meio, de 63,85 m², começa em R$ 555.170,71 e a Ponta, de 64,44 m², em R$ 560.300,72. Na Torre 2 os valores vão até R$ 616.716,67; na Torre 1 começam em R$ 611.758,80. A tabela avisa que as unidades anunciadas podem não estar mais disponíveis."
     },
     {
       "q": "Como é o pagamento do Artemis Residencial?",
-      "a": "Pelas condições comerciais de setembro/2026 há duas modalidades. Na condição investidor, o ato é de no mínimo 20% e o restante sai durante a obra em até 18 parcelas fixas sem correção, ou em até 19 (Torre 1) e 24 (Torre 2) corrigidas pelo INCC-M. Na condição financiamento futuro 30/70, o ato é de no mínimo 10%, com até 18 (Torre 1) e 23 (Torre 2) parcelas corrigidas mais anuais, e o saldo é financiado, sujeito à aprovação de crédito do banco. Depois do habite-se o saldo passa a IGP-M mais juros de 1% ao mês."
+      "a": "Pelas condições comerciais de outubro/2026 há duas modalidades. Na condição investidor, o ato é de no mínimo 20% e o restante sai durante a obra em até 18 parcelas fixas sem correção, ou em 23 parcelas corrigidas pelo INCC-M; o prazo de obra indicado nessa condição é de 18 meses na Torre 1 e 23 meses na Torre 2. Na condição financiamento futuro 30/70, o ato é de no mínimo 10%, com até 17 (Torre 1) ou 22 (Torre 2) parcelas corrigidas pelo INCC-M mais anuais, e o saldo é financiado, sujeito à aprovação de crédito do banco; o prazo de obra indicado é de 17 meses na Torre 1 e 22 meses na Torre 2. Depois do habite-se o saldo passa a IGP-M mais juros de 1% ao mês."
     },
     {
       "q": "Quantos dormitórios têm os apartamentos do Artemis?",
@@ -423,7 +426,7 @@
     },
     {
       "q": "Quando o Artemis Residencial será entregue?",
-      "a": "A previsão é abril de 2028 para a Torre 1 e setembro de 2028 para a Torre 2, conforme as condições comerciais da GPCI com referência setembro/2026."
+      "a": "A previsão é abril de 2028 para a Torre 1 e setembro de 2028 para a Torre 2, conforme as condições comerciais da GPCI com referência outubro/2026."
     },
     {
       "q": "O que é a Casa de Campo do Artemis?",
@@ -443,7 +446,7 @@
     "marca": "ARTEMIS RESIDENCIAL",
     "linha": "Artemis Residencial · 2 torres, 320 apartamentos de 3 dormitórios com suíte, 63,85 e 64,44 m² · Park Meraki · Indaiatuba, SP",
     "realizacao": "Realização GPCI e IBEN",
-    "legal": "Perspectivas ilustradas; móveis, objetos e decoração são sugestão e não compõem o memorial descritivo. Preços e condições conforme a tabela GPCI e as condições comerciais de setembro/2026, com saldo corrigido pelo INCC até o habite-se e por IGP-M mais juros de 1% ao mês depois dele, sujeitos a alteração sem aviso; a disponibilidade das unidades é confirmada no atendimento. Empreendimento aprovado sob o protocolo nº 9724/23, declarado pela incorporadora em fase de registro de incorporação sobre a matrícula nº 138.533 do Registro de Imóveis de Indaiatuba/SP. Incorporadora responsável: Park Meraki 10 Empreendimentos e Participações SPE Ltda., CNPJ 48.834.043/0001-07. Página publicada em set/2026."
+    "legal": "Perspectivas ilustradas; móveis, objetos e decoração são sugestão e não compõem o memorial descritivo. Preços e condições conforme a tabela GPCI e as condições comerciais de outubro/2026, com saldo corrigido pelo INCC até o habite-se e por IGP-M mais juros de 1% ao mês depois dele, sujeitos a alteração sem aviso; a disponibilidade das unidades é confirmada no atendimento. Empreendimento aprovado sob o protocolo nº 9724/23, declarado pela incorporadora em fase de registro de incorporação sobre a matrícula nº 138.533 do Registro de Imóveis de Indaiatuba/SP. Incorporadora responsável: Park Meraki 10 Empreendimentos e Participações SPE Ltda., CNPJ 48.834.043/0001-07. Página publicada em set/2026."
   },
   "home": {
     "tipo": "apartamento",
@@ -456,11 +459,11 @@
     "meta": "63,85 e 64,44 m² · 3 dorm",
     "desc": "Duas torres de 19 andares no Park Meraki · 3 dormitórios com suíte · 2 vagas · Casa de Campo de acesso próprio · entrega prevista abr/2028 e set/2028.",
     "alt": "Perspectiva ilustrada aérea das torres do Artemis Residencial no Park Meraki",
-    "itemlist": "Artemis Residencial — 2 torres GPCI no Park Meraki, 320 apartamentos de 3 dorm com suíte, 63,85 e 64,44 m² · a partir de R$ 555.171 (tabela set/2026)"
+    "itemlist": "Artemis Residencial — 2 torres GPCI no Park Meraki, 320 apartamentos de 3 dorm com suíte, 63,85 e 64,44 m² · a partir de R$ 555.171 (tabela out/2026)"
   },
   "llms": {
     "secao": "apartamentos",
-    "linha": "Realização GPCI e IBEN no Park Meraki, Indaiatuba, junto à Avenida 9 de Julho (SPE Park Meraki 10 Empreendimentos e Participações Ltda., CNPJ 48.834.043/0001-07). Terreno de 10.752 m², 36.041,87 m² construídos, duas torres de térreo + 19 pavimentos, 8 apartamentos por andar, 320 unidades. Plantas Meio 63,85 m² e Ponta 64,44 m², 3 dormitórios com 1 suíte e 2 vagas (opção de 2 dormitórios com sala estendida); Giardino no térreo de 92,39 a 107,97 m². Lazer com Casa de Campo de acesso independente (piscina privativa, espaço gourmet, espelho d'água), piscina adulto e infantil, academia, quadra, brinquedoteca, minimercado; 12 vagas para carros elétricos. Tabela GPCI de setembro/2026 com 140 unidades (37 na Torre 1, 103 na Torre 2), de R$ 555.170,71 a R$ 683.000,00. Pagamento: investidor com ato de 20%, ou financiamento futuro 30/70 com ato de 10% e parcelas corrigidas pelo INCC-M durante a obra. INCC até o habite-se, depois IGP-M + 1% a.m. Entrega prevista abril/2028 (Torre 1) e setembro/2028 (Torre 2). Declarado pela incorporadora em fase de registro de incorporação (matrícula 138.533, protocolo 9724/23)."
+    "linha": "Realização GPCI e IBEN no Park Meraki, Indaiatuba, junto à Avenida 9 de Julho (SPE Park Meraki 10 Empreendimentos e Participações Ltda., CNPJ 48.834.043/0001-07). Terreno de 10.752 m², 36.041,87 m² construídos, duas torres de térreo + 19 pavimentos, 8 apartamentos por andar, 320 unidades. Plantas Meio 63,85 m² e Ponta 64,44 m², 3 dormitórios com 1 suíte e 2 vagas (opção de 2 dormitórios com sala estendida); Giardino no térreo de 92,39 a 107,97 m². Lazer com Casa de Campo de acesso independente (piscina privativa, espaço gourmet, espelho d'água), piscina adulto e infantil, academia, quadra, brinquedoteca, minimercado; 12 vagas para carros elétricos. Tabela GPCI de outubro/2026 com 133 unidades (36 na Torre 1, 97 na Torre 2), de R$ 555.170,71 a R$ 683.000,00. Pagamento: investidor com ato de 20%, ou financiamento futuro 30/70 com ato de 10% e parcelas corrigidas pelo INCC-M durante a obra. INCC até o habite-se, depois IGP-M + 1% a.m. Entrega prevista abril/2028 (Torre 1) e setembro/2028 (Torre 2). Declarado pela incorporadora em fase de registro de incorporação (matrícula 138.533, protocolo 9724/23)."
   },
   "geo": [
     -23.07959,

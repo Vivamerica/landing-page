@@ -35,6 +35,16 @@ Ordem, por empreendimento (exemplos em dados/):
     entidade única, com os mesmos campos do identidade.js.
     O og:image (images/og.png, 1200x630) é um print do mapa com faixa de título e a data da lista: refazer com
     gera-og.py quando os números do resumo ou a data "gerada em" mudarem.
+Atualizacao mensal de bairro que JA esta no mapa (tabela ou relatorio novo). Todos rodam primeiro sem --gravar,
+mostram quem sai, quem entra e quem muda, e so entram se a aritmetica da tabela fechar:
+    Dominium/Lugano      dominium-atualiza.py <bairro> <relatorio.pdf> [--gravar]
+    Parque Zarah         zarah-atualiza-2026-10-11.py <tabela.pdf> [--gravar]  (aceita lote que volta: repoe o pino que ele ja teve)
+    Terras de San Marino sanmarino-atualiza-2026-10-09.py <espelho.pdf> [--gravar]  (lote novo entra SEM pino)
+    Ville de Provence    villeprovence-atualiza-2026-10-03.py <tabela.pdf> [--gravar]  (mes e data do documento nas constantes)
+Lote novo sem posicao segura entra SEM pino (so na lista e na contagem): pino errado e pior que pino nenhum.
+Depois de qualquer *-atualiza.py: espelha-insumos-2026-10-12.py <id> [<id> ...] --gravar (iguala dados/<id>-bairro.txt
+e dados/<id>-lotes.js ao mapa; sem isso o passo 9 devolveria lote que ja saiu), acertar `tab`/`sub`/`cond` em BAIRROS
+e rodar o passo 10. O editor de pinos le editor-pinos/dados.json: regerar com editor-pinos/gera-dados.py.
 Regras: nunca citar a fonte "Vista Verde"; precos a vista do relatorio; lotes sem "nx" recebem soVista:true.
 
 ## Desenho solido (padrao escolhido pelo Fabio em 05/09/2026: lotes verdes, ruas cinza, divisas escuras, sem texto)

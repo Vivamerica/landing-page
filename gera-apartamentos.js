@@ -116,6 +116,12 @@ function miniatura(img) {
 // Só vale como ENTREGA a data precedida da palavra "entrega" nas specs da fonte única
 // ("(set/2026)" e "tabela ago/2026" são datas de tabela/estoque, não de entrega — 04/09/2026).
 const RE_DATA = /entrega\s+(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/(\d{4})\b/i;
+// Texto da entrega como a spec traz: uma data ("nov/2028") ou duas, quando o prazo muda de torre
+// para torre ("abr/2028 (Torre 1) e set/2028 (Torre 2)"). Com duas, a tabela-resumo e o FAQ mostram
+// as duas, para o preço "a partir de" não aparecer ao lado só da primeira. A fase e a ordem
+// continuam pela primeira data (RE_DATA).
+const RE_DATAS = /entrega\s+((?:jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/\d{4}(?:\s*\([^)]*\))?(?:\s+e\s+(?:jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/\d{4}(?:\s*\([^)]*\))?)?)/i;
+const datasEntrega = e => { const d = (e.s || '').match(RE_DATAS); return d ? d[1].replace(/[a-z]{3}(?=\/\d{4})/gi, x => x.toLowerCase()) : ''; };
 const eMCMV = e => /^MCMV/.test(e.t || '');
 // Quando a spec DECLARA a contagem de dormitorios, ela manda. Pela regra antiga (MCMV OU
 // contagem na spec), todo MCMV caia na secao de dois dormitorios mesmo quando a spec dizia
@@ -135,7 +141,8 @@ function entregaTexto(e) {
   if (f === 'pre-lancamento') return 'Pré-lançamento';
   if (f === 'pronto') return 'Pronto para morar';
   const m = (e.s || '').match(RE_DATA);
-  if (m) return 'Em obras · entrega ' + m[1].toLowerCase() + '/' + m[2];
+  // "previsão de entrega" quando a spec da fonte única diz assim; senão "entrega", como a spec
+  if (m) return 'Em obras · ' + (/previs[aã]o de entrega/i.test(e.s) ? 'previsão de entrega ' : 'entrega ') + (datasEntrega(e) || m[1].toLowerCase() + '/' + m[2]);
   return '—';
 }
 function dormsTexto(e) {
@@ -254,6 +261,8 @@ const emObras = ativos.filter(e => fase(e) === 'em-obras')
 const prontos = ativos.filter(e => fase(e) === 'pronto');
 const ordemMes = { jan: 1, fev: 2, mar: 3, abr: 4, mai: 5, jun: 6, jul: 7, ago: 8, set: 9, out: 10, nov: 11, dez: 12 };
 emObras.sort((a, b) => (+a.m[2] * 100 + ordemMes[a.m[1].toLowerCase()]) - (+b.m[2] * 100 + ordemMes[b.m[1].toLowerCase()]));
+// no FAQ, duas datas saem como "Torre 1: abr/2028 e Torre 2: set/2028" (sem parênteses dentro de parênteses)
+const entregaNoFaq = x => (datasEntrega(x.e) || x.m[1].toLowerCase() + '/' + x.m[2]).replace(/(\S+\/\d{4})\s*\(([^)]*)\)/g, '$2: $1');
 
 const FAQ = [
   { q: 'Quanto custa um apartamento na planta em Indaiatuba?',
@@ -264,10 +273,10 @@ const FAQ = [
     a: `Na planta, você compra antes ou durante a obra: paga a entrada parcelada direto com a construtora, escolhe andar e posição e recebe as chaves na data prevista em contrato, com o saldo corrigido pelo Índice Nacional de Custo da Construção (INCC) até a entrega. Pronto, você financia e muda na hora, sem prazo de obra. Esta página reúne os apartamentos na planta, em obras e recém-entregues em lançamento; os apartamentos prontos de revenda estão no site principal da Viv'América.` },
   { q: 'Quais apartamentos entregam antes?',
     a: (prontos.length ? `Pronto para morar hoje: ${prontos.map(e => e.n).join(', ')}. ` : '') +
-       (emObras.length ? `Entre os que informam a data de entrega na tabela da construtora: ${emObras.map(x => x.e.n + ' (' + x.m[1].toLowerCase() + '/' + x.m[2] + ')').join(', ')}. ` : '') +
+       (emObras.length ? `Entre os que informam a previsão de entrega na tabela da construtora: ${emObras.map(x => x.e.n + ' (' + entregaNoFaq(x) + ')').join(', ')}. ` : '') +
        `Os demais não trazem previsão de entrega na tabela — confirme na página de cada um ou no WhatsApp.` },
   { q: 'Como funciona a entrada parcelada na compra na planta?',
-    a: `A entrada é dividida com a própria construtora enquanto a obra anda, e o saldo é financiado na entrega. Exemplos publicados nas páginas dos empreendimentos: no Vívere Residencial, sinal de R$ 5.000 mais 36 parcelas de R$ 876,59 direto com a Masotti; no Storia Congesa, 13% de entrada em 3 parcelas, 22% em mensais e 65% financiado na entrega. Cada construtora tem a sua tabela — peça a simulação com o valor da sua unidade.` },
+    a: `A entrada é dividida com a própria construtora enquanto a obra anda, e o saldo é financiado na entrega. Exemplos publicados nas páginas dos empreendimentos: no Vívere Residencial, sinal de R$ 5.000 mais 36 parcelas de R$ 876,59 direto com a Masotti; no Storia Congesa, entrada de 35% em três parcelas (12% no ato, 11,5% em 30 dias e 11,5% em 60 dias) e 65% a financiar, pela tabela Congesa de outubro/2026. Cada construtora tem a sua tabela — peça a simulação com o valor da sua unidade.` },
 ];
 
 // ─── schemas ───

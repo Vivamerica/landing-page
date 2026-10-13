@@ -3,20 +3,20 @@
   "nome": "Lagos de Helvetia",
   "categoria": "condominios",
   "data": "2026-09-16",
-  "atualizado": "2026-10-11",
-  "fonte_tabela": "tabela GPCI de 01/07/2026",
+  "atualizado": "2026-10-12",
+  "fonte_tabela": "tabela GPCI de 10/10/2026",
   "title": "Lagos de Helvetia | lotes de 501 a 2.015 m² · Indaiatuba",
-  "description": "Lagos de Helvetia, em Indaiatuba: condomínio de lotes da GPCI com lago e clube. Tabela de 01/07/2026 com 44 lotes de 501 a 2.015 m², a R$ 1.800 o m².",
+  "description": "Lagos de Helvetia, em Indaiatuba: condomínio de lotes da GPCI com lago e clube. Tabela de 10/10/2026 com 36 lotes de 501 a 2.015 m², a R$ 1.800 o m².",
   "keywords": "lagos de helvetia, lagos de helvetia indaiatuba, lote helvetia indaiatuba, condominio fechado helvetia, gpci indaiatuba, terreno condominio indaiatuba, lote 500 m2 indaiatuba",
   "schema_tipo": "RealEstateListing",
-  "schema_desc": "Condomínio de lotes da GPCI Empreendimentos na região de Helvetia, em Indaiatuba/SP, com 169 lotes a partir de 500 m², lago integrado às áreas comuns, portaria e clube com piscinas adulto, infantil e coberta, academia com espaço pilates, saunas, salão de festas, quadras de tênis de saibro e de areia e campo de futebol. Tabela de 01/07/2026 com 44 lotes, de 501,00 a 2.015,04 m², a R$ 1.800 por m², de R$ 901.800,00 a R$ 3.627.072,00.",
+  "schema_desc": "Condomínio de lotes da GPCI Empreendimentos na região de Helvetia, em Indaiatuba/SP, com 169 lotes a partir de 500 m², lago integrado às áreas comuns, portaria e clube com piscinas adulto, infantil e coberta, academia com espaço pilates, saunas, salão de festas, quadras de tênis de saibro e de areia e campo de futebol. Tabela de 10/10/2026 com 36 lotes, de 501,00 a 2.015,04 m², a R$ 1.800 por m², de R$ 901.800,00 a R$ 3.627.072,00.",
   "endereco_schema": "Região de Helvetia",
-  "preco_min": 901800.0,
-  "preco_max": 3627072.0,
-  "offer_count": 44,
-  "oferta_desc": "Tabela Lagos de Helvetia de 01/07/2026 com 44 lotes, de R$ 901.800,00 (lote de 501,00 m²) a R$ 3.627.072,00 (lote A1, 2.015,04 m²), todos a R$ 1.800 por m². Ato de 10% e saldo em até 12 mensais sem juros e sem correção, ou ato de 20% e 24 mensais sem juros com correção anual pelo IPCA, ou ato de 10% e 36 a 96 mensais pela tabela Price com juros de 0,80% a.m. mais IPCA.",
+  "preco_min": 901800,
+  "preco_max": 3627072,
+  "offer_count": 36,
+  "oferta_desc": "Tabela Lagos de Helvetia de 10/10/2026 com 36 lotes, de R$ 901.800,00 (lote de 501,00 m²) a R$ 3.627.072,00 (lote A1, 2.015,04 m²), todos a R$ 1.800 por m². Ato de 10% e saldo em até 12 mensais sem juros e sem correção, ou ato de 20% e 24 mensais sem juros com correção anual pelo IPCA, ou ato de 10% e 36 a 96 mensais pela tabela Price com juros de 0,80% a.m. mais IPCA.",
   "produto_nome": "Lagos de Helvetia — lote de 501 m² em Indaiatuba",
-  "produto_desc": "Lotes de 501 a 2.015 m² em condomínio de lotes da GPCI na região de Helvetia, Indaiatuba/SP. Tabela de 01/07/2026.",
+  "produto_desc": "Lotes de 501 a 2.015 m² em condomínio de lotes da GPCI na região de Helvetia, Indaiatuba/SP. Tabela de 10/10/2026.",
   "marca": "GPCI Empreendimentos",
   "lazer": [],
   "marca_topo": [
@@ -28,9 +28,9 @@
   "hero": {
     "eyebrow": "Região de Helvetia · Indaiatuba/SP",
     "sub": "Condomínio fechado de lotes em Helvetia, Indaiatuba",
-    "lead": "169 lotes a partir de 500 m² em volta de um lago, com portaria e um clube de piscinas, saunas, academia e quadras. Na tabela de 01/07/2026 são 44 lotes à venda, todos a R$ 1.800 o metro quadrado.",
+    "lead": "169 lotes a partir de 500 m² em volta de um lago, com portaria e um clube de piscinas, saunas, academia e quadras. Na tabela de 10/10/2026 são 36 lotes à venda, todos a R$ 1.800 o metro quadrado.",
     "preco": "A partir de R$ 901.800,00",
-    "preco_nota": "tabela de 01/07/2026 · lote de 501,00 m²",
+    "preco_nota": "tabela de 10/10/2026 · lote de 501,00 m²",
     "cta_msg": "Olá! Quero a tabela de lotes do Lagos de Helvetia com quadra, metragem e valor.",
     "cta_texto": "Ver lotes e valores"
   },
@@ -48,8 +48,8 @@
           "p": "lotes no projeto"
         },
         {
-          "n": "44",
-          "p": "lotes na tabela de 01/07/2026"
+          "n": "36",
+          "p": "lotes na tabela de 10/10/2026"
         },
         {
           "n": "R$ 1.800",
@@ -65,12 +65,12 @@
     {
       "label": "Lotes",
       "classe": "cream",
-      "h2": "44 lotes à venda, de 501 a 2.015 m²",
+      "h2": "36 lotes à venda, de 501 a 2.015 m²",
       "paragrafos": [
-        "A tabela de 01/07/2026 traz lotes em 12 quadras (A, B, C, E, F, G, H, I, J, K, L e M), com o mesmo valor de R$ 1.800 por metro quadrado. As faixas de área são estas:"
+        "A tabela de 10/10/2026 traz lotes em 12 quadras (A, B, C, E, F, G, H, I, J, K, L e M), com o mesmo valor de R$ 1.800 por metro quadrado. As faixas de área são estas:"
       ],
       "tabela": {
-        "legenda": "Lotes da tabela Lagos de Helvetia de 01/07/2026, por faixa de área.",
+        "legenda": "Lotes da tabela Lagos de Helvetia de 10/10/2026, por faixa de área.",
         "cab": [
           "Faixa de área",
           "Lotes",
@@ -86,14 +86,14 @@
         "linhas": [
           [
             "Até 550 m²",
-            "29",
+            "23",
             "501,00 a 549,50 m²",
             "R$ 901.800,00",
             "R$ 989.100,00"
           ],
           [
             "De 550 a 750 m²",
-            "13",
+            "11",
             "597,21 a 717,09 m²",
             "R$ 1.074.978,00",
             "R$ 1.290.762,00"
@@ -110,11 +110,11 @@
       "cards": [
         {
           "t": "Metragem mais oferecida",
-          "p": "Lotes de 528,00 m², a R$ 950.400,00: são 16 na tabela, nas quadras F, G e H."
+          "p": "Lotes de 528,00 m², a R$ 950.400,00: são 10 na tabela, nas quadras F, G e H."
         },
         {
           "t": "Menor valor",
-          "p": "Seis lotes de 501,00 m² a R$ 901.800,00, nas quadras K e L (K12, K13, K14, L13, L15 e L16)."
+          "p": "Oito lotes de 501,00 m² a R$ 901.800,00, nas quadras K e L (K2, K3, K12, K13, K14, L13, L15 e L16)."
         },
         {
           "t": "Maior lote",
@@ -130,7 +130,7 @@
         },
         {
           "t": "Disponibilidade",
-          "p": "A própria tabela avisa que os lotes anunciados podem já ter sido vendidos. Confirme a quadra e o lote antes de simular."
+          "p": "A própria tabela avisa que os lotes anunciados podem não estar mais disponíveis. Confirme a quadra e o lote antes de simular."
         }
       ]
     },
@@ -147,7 +147,7 @@
       "label": "Preços e condições",
       "h2": "Do pagamento em 12 vezes ao saldo em 96 meses",
       "paragrafos": [
-        "A tabela de 01/07/2026 traz três formas de pagamento, calculadas sobre o valor do lote: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA (anual em 36 meses, mensal nos prazos maiores)."
+        "A tabela de 10/10/2026 traz três formas de pagamento, calculadas sobre o valor do lote: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA (anual em 36 meses, mensal nos prazos maiores)."
       ],
       "tabela2_titulo": "Exemplo com um lote de 501,00 m² (R$ 901.800,00)",
       "tabela2_paragrafos": [
@@ -196,7 +196,7 @@
         ]
       },
       "notas": [
-        "A tabela é de 01/07/2026 e avisa que os preços podem mudar sem aviso prévio. Os planos de 24 meses em diante têm as parcelas corrigidas pelo IPCA. Desconto à vista e taxa mensal não constam do material; peça essas condições no atendimento."
+        "A tabela é de 10/10/2026 e avisa que os preços podem mudar sem aviso prévio. Os planos de 24 meses em diante têm as parcelas corrigidas pelo IPCA. Desconto à vista e taxa mensal não constam do material; peça essas condições no atendimento."
       ],
       "cta": {
         "msg": "Olá! Quero a tabela de lotes do Lagos de Helvetia com quadra, metragem e valor.",
@@ -428,7 +428,7 @@
     ],
     [
       "Lotes na tabela",
-      "44, de 501,00 a 2.015,04 m² (01/07/2026)"
+      "36, de 501,00 a 2.015,04 m² (10/10/2026)"
     ],
     [
       "Projeto",
@@ -450,15 +450,15 @@
   "faq": [
     {
       "q": "Quanto custa um lote no Lagos de Helvetia?",
-      "a": "A tabela de 01/07/2026 lista 44 lotes, todos a R$ 1.800 por metro quadrado: de R$ 901.800,00, no lote de 501,00 m², a R$ 3.627.072,00, no lote A1, de 2.015,04 m². A tabela avisa que os preços podem mudar sem aviso prévio."
+      "a": "A tabela de 10/10/2026 lista 36 lotes, todos a R$ 1.800 por metro quadrado: de R$ 901.800,00, no lote de 501,00 m², a R$ 3.627.072,00, no lote A1, de 2.015,04 m². A tabela avisa que os preços podem mudar sem aviso prévio."
     },
     {
       "q": "Como é o pagamento dos lotes do Lagos de Helvetia?",
-      "a": "Há três formas na tabela de 01/07/2026: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA. Num lote de 501,00 m², o plano de 96 meses fica em R$ 90.180,00 de ato e 96 parcelas de R$ 12.144,54."
+      "a": "Há três formas na tabela de 10/10/2026: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA. Num lote de 501,00 m², o plano de 96 meses fica em R$ 90.180,00 de ato e 96 parcelas de R$ 12.144,54."
     },
     {
       "q": "Qual o tamanho dos lotes do Lagos de Helvetia?",
-      "a": "O projeto tem 169 lotes a partir de 500 m². Na tabela de 01/07/2026, os lotes à venda vão de 501,00 a 2.015,04 m², e a metragem mais oferecida é a de 528,00 m²."
+      "a": "O projeto tem 169 lotes a partir de 500 m². Na tabela de 10/10/2026, os lotes à venda vão de 501,00 a 2.015,04 m², e a metragem mais oferecida é a de 528,00 m²."
     },
     {
       "q": "Onde fica o Lagos de Helvetia?",
@@ -486,7 +486,7 @@
     "marca": "LAGOS DE HELVETIA",
     "linha": "Lagos de Helvetia · condomínio de lotes de 501 a 2.015 m² · Região de Helvetia · Indaiatuba, SP",
     "realizacao": "Realização GPCI Empreendimentos",
-    "legal": "Imagens meramente ilustrativas; o projeto pode sofrer alterações. Preços e condições conforme a tabela Lagos de Helvetia de 01/07/2026, sujeitos a alteração sem aviso prévio; nos planos de 24 meses em diante há correção pelo IPCA e, a partir de 36 meses, juros de 0,80% a.m. pela tabela Price. A disponibilidade dos lotes é confirmada com a GPCI no atendimento. Empreendimento de PECFLOR LTDA. (CNPJ 04.653.120/0001-49), aprovado pelo Decreto Municipal nº 15.326, de 28/11/2024, e registrado sob o nº R.04/143.178 no Registro de Imóveis de Indaiatuba/SP, conforme o book. Página publicada em set/2026."
+    "legal": "Imagens meramente ilustrativas; o projeto pode sofrer alterações. Preços e condições conforme a tabela Lagos de Helvetia de 10/10/2026, sujeitos a alteração sem aviso prévio; nos planos de 24 meses em diante há correção pelo IPCA e, a partir de 36 meses, juros de 0,80% a.m. pela tabela Price. A disponibilidade dos lotes é confirmada com a GPCI no atendimento. Empreendimento de PECFLOR LTDA. (CNPJ 04.653.120/0001-49), aprovado pelo Decreto Municipal nº 15.326, de 28/11/2024, e registrado sob o nº R.04/143.178 no Registro de Imóveis de Indaiatuba/SP, conforme o book. Página publicada em set/2026."
   },
   "home": {
     "tipo": "lote",
@@ -498,13 +498,13 @@
     "badge": "Condomínio Fechado",
     "badge_estilo": "background:#C9A227;color:#161616;",
     "meta": "Lotes de 501 a 2.015 m²",
-    "desc": "44 lotes na tabela de 01/07/2026 na região de Helvetia · lago e clube com piscina coberta, saunas e tênis de saibro · pagamento em até 96 meses.",
+    "desc": "36 lotes na tabela de 10/10/2026 na região de Helvetia · lago e clube com piscina coberta, saunas e tênis de saibro · pagamento em até 96 meses.",
     "alt": "Perspectiva ilustrada aérea do clube e do lago do Lagos de Helvetia",
-    "itemlist": "Lagos de Helvetia — condomínio de lotes da GPCI na região de Helvetia, 44 lotes de 501 a 2.015 m² · a partir de R$ 901.800 (tabela 01/07/2026)"
+    "itemlist": "Lagos de Helvetia — condomínio de lotes da GPCI na região de Helvetia, 36 lotes de 501 a 2.015 m² · a partir de R$ 901.800 (tabela 10/10/2026)"
   },
   "llms": {
     "secao": "condominios",
-    "linha": "Condomínio de lotes da GPCI Empreendimentos na região de Helvetia, Indaiatuba, com 169 lotes a partir de 500 m², lago integrado às áreas comuns, hípica vizinha, portaria e clube com piscinas adulto, infantil e coberta, academia com pilates, saunas, salão de festas, quadras de tênis de saibro e de areia e campo de futebol. Tabela de 01/07/2026 com 44 lotes de 501,00 a 2.015,04 m², todos a R$ 1.800/m², de R$ 901.800,00 a R$ 3.627.072,00. Pagamento: 10% + 12 mensais sem juros; 20% + 24 mensais com IPCA anual; ou 10% + 36 a 96 mensais pela Price a 0,80% a.m. + IPCA. Aprovado pelo Decreto 15.326/2024 e registrado sob R.04/143.178 (titular PECFLOR LTDA.). Entrega, endereço e taxa mensal não informados."
+    "linha": "Condomínio de lotes da GPCI Empreendimentos na região de Helvetia, Indaiatuba, com 169 lotes a partir de 500 m², lago integrado às áreas comuns, hípica vizinha, portaria e clube com piscinas adulto, infantil e coberta, academia com pilates, saunas, salão de festas, quadras de tênis de saibro e de areia e campo de futebol. Tabela de 10/10/2026 com 36 lotes de 501,00 a 2.015,04 m², todos a R$ 1.800/m², de R$ 901.800,00 a R$ 3.627.072,00. Pagamento: 10% + 12 mensais sem juros; 20% + 24 mensais com IPCA anual; ou 10% + 36 a 96 mensais pela Price a 0,80% a.m. + IPCA. Aprovado pelo Decreto 15.326/2024 e registrado sob R.04/143.178 (titular PECFLOR LTDA.). Entrega, endereço e taxa mensal não informados."
   },
   "geo": [
     -23.05492,

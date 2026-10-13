@@ -26,6 +26,13 @@ function extrair(nome) {
 }
 const APTOS = extrair('APTOS');
 const LOTES = extrair('LOTES');
+// mesma ordem do folheto A4: preço crescente; sem preço no fim
+const porPreco = (a, b) => a.p - b.p;
+const emOrdem = lista => [...lista.filter(e => e.p).sort(porPreco), ...lista.filter(e => !e.p)];
+const APTOS_ORD = emOrdem(APTOS);
+const LOTES_ORD = emOrdem(LOTES);
+// mesma conta do gera-folheto.js e do gera-home.js: o nome antes do " · " identifica a construtora
+const construtoras = new Set([...APTOS, ...LOTES].map(e => e.c.split(' · ')[0].trim())).size;
 
 const brl = n => n.toLocaleString('pt-BR');
 const qr = fs.readFileSync(R + 'qrcode/qr-vivamerica-branco.svg', 'utf8')
@@ -113,9 +120,9 @@ const CSS = `
   .preco em{display:block;font-style:normal;font-size:3.6pt;color:#8a8272;margin-top:.3mm}
   .preco-consulte strong{color:#a15e2c;font-size:6.4pt}
 
-  /* apartamentos: 12 cards, foto mais baixa. lotes: 8 cards, foto maior */
+  /* as duas grades acompanham a contagem: 2 colunas, linhas = metade arredondada para cima; com mais cards, foto mais baixa */
   .g-aptos{grid-template-rows:repeat(${Math.ceil(APTOS.length/2)},1fr)} .g-aptos .card-img{height:${APTOS.length>12?5:6}mm}
-  .g-lotes{grid-template-rows:repeat(4,1fr)} .g-lotes .card-img{height:11mm}
+  .g-lotes{grid-template-rows:repeat(${Math.ceil(LOTES.length/2)},1fr)} .g-lotes .card-img{height:${LOTES.length>8?5:11}mm}
 
   .pe{margin-top:2.4mm;border-top:.6pt solid #e3ddcd;padding-top:1.8mm;
       font-size:4.4pt;color:#8d8676;line-height:1.45}
@@ -150,7 +157,7 @@ const p1 = `
       <p class="capa-sub">Os ${APTOS.length + LOTES.length} empreendimentos que estão saindo do papel na cidade — apartamentos, loteamentos e condomínios fechados, reunidos em um só lugar.</p>
       <div class="capa-nums">
         <div><strong>${APTOS.length + LOTES.length}</strong><span>Empreendimentos</span></div>
-        <div><strong>6</strong><span>Construtoras</span></div>
+        <div><strong>${construtoras}</strong><span>Construtoras</span></div>
         <div><strong>145<small style="font-size:.62em"> mil</small></strong><span>A partir de R$</span></div>
       </div>
     </div>
@@ -179,8 +186,8 @@ const p2 = `
 <div class="painel esq creme">
   <div class="seg">
     <div class="hd"><h2>🏢 <span>Apartamentos</span></h2><span class="cnt">${APTOS.length} · menor ao maior</span></div>
-    <div class="grid g-aptos">${APTOS.map(e => card(e, false)).join('')}</div>
-    <div class="pe"><b>MCMV Faixa 3:</b> parte dos empreendimentos aceita FGTS como entrada e subsídio do governo.</div>
+    <div class="grid g-aptos">${APTOS_ORD.map(e => card(e, false)).join('')}</div>
+    <div class="pe"><b>MCMV Faixa 3:</b> parte dos empreendimentos se enquadra no programa e aceita FGTS como entrada; a Faixa 3 não tem subsídio.</div>
   </div>
 </div>`;
 
@@ -188,8 +195,8 @@ const p3 = `
 <div class="painel dir creme">
   <div class="seg">
     <div class="hd"><h2>🏞️ <span>Lotes e Condomínios</span></h2><span class="cnt">${LOTES.length} · menor ao maior</span></div>
-    <div class="grid g-lotes">${LOTES.map(e => card(e, true)).join('')}</div>
-    <div class="pe">Imagens ilustrativas. Preços e disponibilidade sujeitos a alteração sem aviso prévio. <b>Edição agosto/2026.</b></div>
+    <div class="grid g-lotes">${LOTES_ORD.map(e => card(e, true)).join('')}</div>
+    <div class="pe">Imagens ilustrativas. Preços e disponibilidade sujeitos a alteração sem aviso prévio. <b>Edição outubro/2026.</b></div>
   </div>
 </div>`;
 

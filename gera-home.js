@@ -167,7 +167,7 @@ gen('selos', `
 gen('obscard', `
         <p class="oc-t">Observatório · ${mesLongo}</p>
         <p class="oc-m2">${brl(m2Medio)}<small>/m² médio do lote</small></p>
-        <p class="oc-linha"><b>${altas} empreendimento${altas === 1 ? '' : 's'}</b> ${altas === 1 ? 'subiu' : 'subiram'} o preço de entrada neste mês</p>
+        <p class="oc-linha"><b>${altas} empreendimento${altas === 1 ? '' : 's'}</b> ${altas === 1 ? 'subiu' : 'subiram'} o preço de entrada nesta edição</p>
         <a href="/precos-lancamentos-indaiatuba/">Ver a tabela completa →</a>
       `);
 

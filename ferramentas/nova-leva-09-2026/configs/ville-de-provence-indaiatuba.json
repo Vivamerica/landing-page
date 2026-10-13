@@ -3,13 +3,13 @@
   "nome": "Ville de Provence",
   "categoria": "condominios",
   "data": "2026-09-30",
-  "atualizado": "2026-10-11",
-  "fonte_tabela": "tabela Urban Square de set/2026",
+  "atualizado": "2026-10-12",
+  "fonte_tabela": "tabela Urban Square de out/2026 (documento de 03/10/2026)",
   "title": "Ville de Provence Indaiatuba | lotes de 360 m²",
-  "description": "Ville de Provence, loteamento fechado da Urban Square em Indaiatuba: 319 lotes de 360 a 617 m² a partir de R$ 637.200 (tabela set/2026). Sinal 10% + 96x.",
+  "description": "Ville de Provence, loteamento fechado da Urban Square em Indaiatuba: 307 lotes de 360 a 617 m² a partir de R$ 637.200 (tabela out/2026). Sinal 10% + 96x.",
   "keywords": "ville de provence indaiatuba, ville de provence lotes, loteamento fechado indaiatuba, condominio fechado indaiatuba, lote 360 m2 indaiatuba, urban square indaiatuba, altos do mirim indaiatuba, lote alto padrao indaiatuba",
   "schema_tipo": "RealEstateListing",
-  "schema_desc": "Loteamento fechado da Urban Square em Indaiatuba/SP, com lotes a partir de 360 m², mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. A estrutura prevista inclui portaria principal, prédio administrativo, salão de festas, duas casas de campo, duas quadras de tênis, três quadras de beach tennis, complexo de piscinas com raia, piscina recreativa, piscina infantil, dois spas e prainha, piscina coberta e aquecida, academia, salão de jogos, brinquedoteca, pet place, pista de skate e fiação subterrânea. Na tabela de setembro/2026 há 319 lotes, de 360,00 a 616,90 m², a R$ 1.770 por m².",
+  "schema_desc": "Loteamento fechado da Urban Square em Indaiatuba/SP, com lotes a partir de 360 m², mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. A estrutura prevista inclui portaria principal, prédio administrativo, salão de festas, duas casas de campo, duas quadras de tênis, três quadras de beach tennis, complexo de piscinas com raia, piscina recreativa, piscina infantil, dois spas e prainha, piscina coberta e aquecida, academia, salão de jogos, brinquedoteca, pet place, pista de skate e fiação subterrânea. Na tabela de outubro/2026 (documento de 03/10/2026) há 307 lotes, de 360,00 a 616,90 m², a R$ 1.770 por m².",
   "endereco_schema": "Loteamento Ville de Provence",
   "geo": [
     -23.047349,
@@ -17,10 +17,10 @@
   ],
   "preco_min": 637200.0,
   "preco_max": 1091913.0,
-  "offer_count": 319,
-  "oferta_desc": "Tabela Ville de Provence de setembro/2026, a R$ 1.770 por m²: 319 lotes de 360,00 a 616,90 m², de R$ 637.200,00 a R$ 1.091.913,00. Pagamento com sinal de 10% e saldo em até 12 parcelas sem juros e sem correção, ou de 24 a 96 parcelas com juros de 0,8% ao mês e correção pelo IPCA — anual até 36 meses, mensal acima disso.",
+  "offer_count": 307,
+  "oferta_desc": "Tabela Ville de Provence de outubro/2026 (documento de 03/10/2026), a R$ 1.770 por m²: 307 lotes de 360,00 a 616,90 m², de R$ 637.200,00 a R$ 1.091.913,00. A tabela traz, em nota, a ressalva de que o valor do m² é válido para poucas unidades. Pagamento com sinal de 10% e saldo em até 12 parcelas sem juros e sem correção, ou de 24 a 96 parcelas com juros de 0,8% ao mês e correção pelo IPCA — pela nota da tabela, anual em prazo superior a 12 e inferior a 36 meses, mensal em prazo superior a 36.",
   "produto_nome": "Ville de Provence — lotes de 360 a 617 m² em Indaiatuba",
-  "produto_desc": "Lotes em loteamento fechado da Urban Square em Indaiatuba/SP, de 360,00 a 616,90 m², a R$ 1.770 por m² na tabela de setembro/2026.",
+  "produto_desc": "Lotes em loteamento fechado da Urban Square em Indaiatuba/SP, de 360,00 a 616,90 m², a R$ 1.770 por m² na tabela de outubro/2026 (documento de 03/10/2026).",
   "marca": "Urban Square",
   "marca_topo": [
     "VILLE DE PROVENCE",
@@ -32,24 +32,24 @@
   "hero": {
     "eyebrow": "Loteamento fechado · Indaiatuba/SP",
     "sub": "Loteamento fechado de lotes de 360 a 617 m² em Indaiatuba",
-    "lead": "Loteamento fechado da Urban Square em Indaiatuba, com mais de 53 mil m² de área de lazer e mais de 168 mil m² de áreas verdes. Na tabela de setembro/2026 há 319 lotes à venda, a R$ 1.770 o metro quadrado.",
+    "lead": "Loteamento fechado da Urban Square em Indaiatuba, com mais de 53 mil m² de área de lazer e mais de 168 mil m² de áreas verdes. Na tabela de outubro/2026 há 307 lotes à venda, a R$ 1.770 o metro quadrado.",
     "preco": "R$ 637.200,00",
-    "preco_nota": "lote de 360,00 m² · R$ 1.770/m² · tabela de set/2026",
+    "preco_nota": "lote de 360,00 m² · R$ 1.770/m² · tabela de out/2026",
     "cta_msg": "Olá! Quero a tabela de lotes do Ville de Provence com quadra, metragem e valor.",
     "cta_texto": "Pedir a tabela"
   },
   "secoes": [
     {
       "label": "O empreendimento",
-      "h2": "319 lotes, a partir de 360 m²",
+      "h2": "307 lotes, a partir de 360 m²",
       "paragrafos": [
         "O Ville de Provence é um loteamento fechado da Urban Square em Indaiatuba, com projeto inspirado na região da Provence, no sul da França. A arquitetura é assinada por Antonio Scarpa e o paisagismo por Roberto Riscala, ambos formados pela Universidade Presbiteriana Mackenzie.",
-        "Segundo o book da incorporadora, são mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. A tabela de setembro/2026 traz 319 lotes distribuídos em 30 quadras, de 360,00 a 616,90 m², todos ao mesmo preço por metro: R$ 1.770."
+        "Segundo o book da incorporadora, são mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. A tabela de outubro/2026 (documento de 03/10/2026) traz 307 lotes distribuídos em 28 quadras, de 360,00 a 616,90 m², todos ao mesmo preço por metro: R$ 1.770 (a tabela ressalva que esse valor é válido para poucas unidades)."
       ],
       "numeros": [
         {
-          "n": "319",
-          "p": "lotes na tabela de set/2026"
+          "n": "307",
+          "p": "lotes na tabela de out/2026"
         },
         {
           "n": "360 m²",
@@ -71,11 +71,11 @@
       "classe": "cream",
       "h2": "R$ 1.770 o metro quadrado, em toda a tabela",
       "paragrafos": [
-        "O preço por metro é o mesmo para todos os lotes, então o valor depende só da área. O menor lote da tabela, de 360,00 m², sai por R$ 637.200,00; o maior, de 616,90 m², por R$ 1.091.913,00.",
-        "O pagamento tem sinal de 10% e saldo parcelado. Em até 12 parcelas não há juros nem correção. De 24 a 96 parcelas incidem juros de 0,8% ao mês e correção pelo IPCA — anual quando o prazo fica entre 12 e 36 meses, mensal quando passa de 36."
+        "O preço por metro é o mesmo para todos os lotes, então o valor depende só da área. O menor lote da tabela, de 360,00 m², sai por R$ 637.200,00; o maior, de 616,90 m², por R$ 1.091.913,00. A tabela traz, em nota, a ressalva de que esse valor do m² é válido para poucas unidades, sem informar quantas.",
+        "O pagamento tem sinal de 10% e saldo parcelado. Em até 12 parcelas não há juros nem correção. De 24 a 96 parcelas incidem juros de 0,8% ao mês e correção pelo IPCA — pela nota da tabela, anual quando o prazo é superior a 12 e inferior a 36 meses, mensal quando é superior a 36. Em exatamente 36 parcelas, confirme conosco a periodicidade da correção antes de fechar."
       ],
       "tabela": {
-        "legenda": "Exemplo com o menor lote da tabela de setembro/2026: 360,00 m², com sinal de R$ 63.720,00.",
+        "legenda": "Exemplo com o menor lote da tabela de outubro/2026: 360,00 m², com sinal de R$ 63.720,00.",
         "cab": [
           "Parcelas",
           "Valor da parcela",
@@ -95,7 +95,7 @@
           [
             "36x",
             "R$ 18.397,08",
-            "0,8% a.m. + IPCA anual"
+            "0,8% a.m. + IPCA (periodicidade a confirmar)"
           ],
           [
             "48x",
@@ -129,10 +129,10 @@
       "label": "Áreas",
       "h2": "A maior parte dos lotes fica entre 360 e 400 m²",
       "paragrafos": [
-        "Dos 319 lotes da tabela, 242 têm entre 360 e 399 m². Lotes acima de 500 m² são minoria: 33 no total, e apenas 2 passam de 600 m²."
+        "Dos 307 lotes da tabela, 238 têm entre 360 e 399 m². Lotes acima de 500 m² são minoria: 32 no total, e apenas 2 passam de 600 m²."
       ],
       "tabela": {
-        "legenda": "Distribuição por área na tabela de setembro/2026.",
+        "legenda": "Distribuição por área na tabela de outubro/2026.",
         "cab": [
           "Faixa de área",
           "Lotes",
@@ -141,18 +141,18 @@
         "linhas": [
           [
             "360 a 399 m²",
-            "242",
-            "de R$ 637.200 a R$ 706.230"
+            "238",
+            "de R$ 637.200 a R$ 705.681"
           ],
           [
             "400 a 499 m²",
-            "44",
-            "de R$ 708.000 a R$ 882.593"
+            "37",
+            "de R$ 708.319 a R$ 880.292"
           ],
           [
             "500 a 599 m²",
-            "31",
-            "de R$ 885.000 a R$ 1.059.723"
+            "30",
+            "de R$ 901.443 a R$ 1.047.645"
           ],
           [
             "600 m² ou mais",
@@ -300,7 +300,7 @@
     ],
     [
       "Lotes na tabela",
-      "319, em 30 quadras (setembro/2026)"
+      "307, em 28 quadras (outubro/2026, documento de 03/10/2026)"
     ],
     [
       "Área dos lotes",
@@ -308,7 +308,7 @@
     ],
     [
       "Valor do m²",
-      "R$ 1.770, igual em toda a tabela"
+      "R$ 1.770, igual em toda a tabela; a tabela ressalva que o valor é válido para poucas unidades"
     ],
     [
       "Área de lazer",
@@ -342,19 +342,19 @@
   "faq": [
     {
       "q": "Quanto custa um lote no Ville de Provence?",
-      "a": "Na tabela de setembro/2026 o preço é de R$ 1.770 por metro quadrado, igual para todos os lotes. O menor, de 360,00 m², custa R$ 637.200,00 e o maior, de 616,90 m², R$ 1.091.913,00."
+      "a": "Na tabela de outubro/2026 o preço é de R$ 1.770 por metro quadrado, igual para todos os lotes. O menor, de 360,00 m², custa R$ 637.200,00 e o maior, de 616,90 m², R$ 1.091.913,00. A tabela traz, em nota, a ressalva de que esse valor do m² é válido para poucas unidades."
     },
     {
       "q": "Quantos lotes ainda estão disponíveis?",
-      "a": "A tabela de setembro/2026 traz 319 lotes, distribuídos em 30 quadras. A disponibilidade muda a cada atualização da incorporadora — confirme conosco antes de fechar."
+      "a": "A tabela de outubro/2026 (documento de 03/10/2026) traz 307 lotes, distribuídos em 28 quadras. A disponibilidade muda a cada atualização da incorporadora — confirme conosco antes de fechar."
     },
     {
       "q": "Como funciona o parcelamento?",
-      "a": "O sinal é de 10% do valor do lote e o saldo é parcelado. Em até 12 parcelas não há juros nem correção. De 24 a 96 parcelas há juros de 0,8% ao mês e correção pelo IPCA: anual quando o prazo fica entre 12 e 36 meses, mensal quando passa de 36."
+      "a": "O sinal é de 10% do valor do lote e o saldo é parcelado. Em até 12 parcelas não há juros nem correção. De 24 a 96 parcelas há juros de 0,8% ao mês e correção pelo IPCA: pela nota da tabela, anual quando o prazo é superior a 12 e inferior a 36 meses, mensal quando é superior a 36. Em exatamente 36 parcelas, confirme conosco a periodicidade da correção antes de fechar."
     },
     {
       "q": "Qual o tamanho dos lotes?",
-      "a": "De 360,00 a 616,90 m². A maior parte da tabela fica na faixa de 360 a 399 m²: são 242 dos 319 lotes. Acima de 500 m² são 33 lotes, e só 2 passam de 600 m²."
+      "a": "De 360,00 a 616,90 m². A maior parte da tabela fica na faixa de 360 a 399 m²: são 238 dos 307 lotes. Acima de 500 m² são 32 lotes, e só 2 passam de 600 m²."
     },
     {
       "q": "O Ville de Provence é um condomínio fechado?",
@@ -375,7 +375,7 @@
   ],
   "cta": {
     "h2": "Quer a tabela do Ville de Provence?",
-    "p": "Mandamos a tabela de setembro/2026 com os 319 lotes, confirmamos com a Urban Square quais seguem disponíveis e simulamos o pagamento de 12 a 96 parcelas.",
+    "p": "Mandamos a tabela de outubro/2026 com os 307 lotes, confirmamos com a Urban Square quais seguem disponíveis e simulamos o pagamento de 12 a 96 parcelas.",
     "msg": "Olá! Tenho interesse no Ville de Provence em Indaiatuba. Pode me enviar mais informações?"
   },
   "home": {
@@ -387,18 +387,18 @@
     "pm2": "1770",
     "badge": "Lançamento",
     "meta": "Lotes de 360 a 617 m²",
-    "desc": "Loteamento fechado da Urban Square · 319 lotes na tabela de set/2026 · mais de 53 mil m² de lazer · sinal de 10% e saldo em até 96x.",
+    "desc": "Loteamento fechado da Urban Square · 307 lotes na tabela de out/2026 · mais de 53 mil m² de lazer · sinal de 10% e saldo em até 96x.",
     "alt": "Perspectiva da portaria do Ville de Provence, em Indaiatuba",
-    "itemlist": "Ville de Provence — loteamento fechado da Urban Square em Indaiatuba, 319 lotes de 360 a 617 m² a partir de R$ 637.200 (tabela set/2026)"
+    "itemlist": "Ville de Provence — loteamento fechado da Urban Square em Indaiatuba, 307 lotes de 360 a 617 m² a partir de R$ 637.200 (tabela out/2026)"
   },
   "rodape": {
     "marca": "VILLE DE PROVENCE",
     "linha": "Ville de Provence · loteamento fechado com lotes de 360 a 617 m² · Indaiatuba, SP",
     "realizacao": "Realização Urban Square",
-    "legal": "Imagens meramente ilustrativas, com a vegetação representada em porte adulto; a vegetação é entregue em estágio inicial, conforme projeto específico, e os projetos podem sofrer alterações sem aviso prévio. Preços e condições conforme a tabela de setembro/2026, a R$ 1.770 por m², sujeitos a alteração sem aviso prévio; de 24 a 96 parcelas há juros de 0,80% a.m. e correção pelo IPCA (anual até 36 meses, mensal acima disso). A disponibilidade dos lotes é confirmada com a Urban Square. Loteamento aprovado pela Prefeitura Municipal de Indaiatuba pelo decreto nº 15.336, de 6 de dezembro de 2024. Documentação do loteamento disponível sob pedido."
+    "legal": "Imagens meramente ilustrativas, com a vegetação representada em porte adulto; a vegetação é entregue em estágio inicial, conforme projeto específico, e os projetos podem sofrer alterações sem aviso prévio. Preços e condições conforme a tabela de outubro/2026 (documento de 03/10/2026), a R$ 1.770 por m², sujeitos a alteração sem aviso prévio; a tabela informa que o valor do m² é válido para poucas unidades; de 24 a 96 parcelas há juros de 0,80% a.m. e correção pelo IPCA (anual em prazo superior a 12 e inferior a 36 meses, mensal em prazo superior a 36). A disponibilidade dos lotes é confirmada com a Urban Square. Loteamento aprovado pela Prefeitura Municipal de Indaiatuba pelo decreto nº 15.336, de 6 de dezembro de 2024. Documentação do loteamento disponível sob pedido."
   },
   "llms": {
     "secao": "condominios",
-    "linha": "Loteamento fechado da Urban Square em Indaiatuba, com lotes de 360,00 a 616,90 m², mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. Estrutura prevista: portaria principal e de serviços, prédio administrativo, complexo de piscinas (raia, recreativa, infantil, piscina de 350 m² com dois spas e prainha), piscina coberta e aquecida, academia, duas quadras de tênis, três de beach tennis, salão de festas com espaço gourmet, duas casas de campo, salão de jogos, brinquedoteca, pet place, pista de skate e fiação subterrânea. Arquitetura de Antonio Scarpa e paisagismo de Roberto Riscala. Tabela de setembro/2026 com 319 lotes em 30 quadras, a R$ 1.770/m², de R$ 637.200,00 (360,00 m²) a R$ 1.091.913,00 (616,90 m²); sinal de 10% e saldo em até 12 parcelas sem juros, ou de 24 a 96 parcelas com juros de 0,8% a.m. e IPCA. Aprovado pelo decreto municipal nº 15.336, de 06/12/2024. Em comercialização; documentação enviada sob pedido."
+    "linha": "Loteamento fechado da Urban Square em Indaiatuba, com lotes de 360,00 a 616,90 m², mais de 53.000 m² de área de lazer e mais de 168.000 m² de áreas verdes. Estrutura prevista: portaria principal e de serviços, prédio administrativo, complexo de piscinas (raia, recreativa, infantil, piscina de 350 m² com dois spas e prainha), piscina coberta e aquecida, academia, duas quadras de tênis, três de beach tennis, salão de festas com espaço gourmet, duas casas de campo, salão de jogos, brinquedoteca, pet place, pista de skate e fiação subterrânea. Arquitetura de Antonio Scarpa e paisagismo de Roberto Riscala. Tabela de outubro/2026 (documento de 03/10/2026) com 307 lotes em 28 quadras, a R$ 1.770/m², de R$ 637.200,00 (360,00 m²) a R$ 1.091.913,00 (616,90 m²); sinal de 10% e saldo em até 12 parcelas sem juros, ou de 24 a 96 parcelas com juros de 0,8% a.m. e IPCA. Aprovado pelo decreto municipal nº 15.336, de 06/12/2024. Em comercialização; documentação enviada sob pedido."
   }
 }

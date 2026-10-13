@@ -73,9 +73,9 @@
   .preco em{display:block;font-style:normal;font-size:3.6pt;color:#8a8272;margin-top:.3mm}
   .preco-consulte strong{color:#a15e2c;font-size:6.4pt}
 
-  /* apartamentos: 12 cards, foto mais baixa. lotes: 8 cards, foto maior */
-  .g-aptos{grid-template-rows:repeat(9,1fr)} .g-aptos .card-img{height:5mm}
-  .g-lotes{grid-template-rows:repeat(4,1fr)} .g-lotes .card-img{height:11mm}
+  /* as duas grades acompanham a contagem: 2 colunas, linhas = metade arredondada para cima; com mais cards, foto mais baixa */
+  .g-aptos{grid-template-rows:repeat(11,1fr)} .g-aptos .card-img{height:5mm}
+  .g-lotes{grid-template-rows:repeat(7,1fr)} .g-lotes .card-img{height:5mm}
 
   .pe{margin-top:2.4mm;border-top:.6pt solid #e3ddcd;padding-top:1.8mm;
       font-size:4.4pt;color:#8d8676;line-height:1.45}
@@ -84,7 +84,7 @@
 <body><div class="folha">
 <div class="painel esq creme">
   <div class="seg">
-    <div class="hd"><h2>🏢 <span>Apartamentos</span></h2><span class="cnt">17 · menor ao maior</span></div>
+    <div class="hd"><h2>🏢 <span>Apartamentos</span></h2><span class="cnt">21 · menor ao maior</span></div>
     <div class="grid g-aptos">
     <article class="card">
       <div class="card-img" style="background-image:url('uni-residencial-indaiatuba/images/hero.jpg')">
@@ -98,6 +98,28 @@
       </div>
     </article>
     <article class="card">
+      <div class="card-img" style="background-image:url('viva-parque-aura-indaiatuba/images/hero.jpg')">
+        <span class="badge b-lote">Lançamento</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">Pinheiro · RDZ · iBen</p>
+        <h3>Viva Parque Aura</h3>
+        
+        <div class="preco"><span>a partir de</span><strong>R$ 306.650</strong></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('parque-das-aguas-indaiatuba/images/hero.jpg')">
+        <span class="badge b-lote">Lançamento</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">GPCI</p>
+        <h3>Residencial Parque das Águas</h3>
+        
+        <div class="preco"><span>a partir de</span><strong>R$ 309.120</strong></div>
+      </div>
+    </article>
+    <article class="card">
       <div class="card-img" style="background-image:url('gran-vic-tangara-indaiatuba/images/hero.jpg')">
         <span class="badge b-mcmv">MCMV · FGTS</span>
       </div>
@@ -105,7 +127,7 @@
         <p class="constr">VIC Engenharia</p>
         <h3>Gran Vic Tangará</h3>
         
-        <div class="preco"><span>a partir de</span><strong>R$ 330.000</strong></div>
+        <div class="preco"><span>a partir de</span><strong>R$ 325.000</strong></div>
       </div>
     </article>
     <article class="card">
@@ -116,7 +138,7 @@
         <p class="constr">VIC Engenharia</p>
         <h3>Gran Vic Colibri</h3>
         
-        <div class="preco"><span>a partir de</span><strong>R$ 334.479</strong></div>
+        <div class="preco"><span>a partir de</span><strong>R$ 336.686</strong></div>
       </div>
     </article>
     <article class="card">
@@ -127,7 +149,7 @@
         <p class="constr">Zarin</p>
         <h3>Itamaracá Residencial</h3>
         
-        <div class="preco"><span>a partir de</span><strong>R$ 339.990</strong></div>
+        <div class="preco"><span>a partir de</span><strong>R$ 345.107</strong></div>
       </div>
     </article>
     <article class="card">
@@ -153,6 +175,17 @@
       </div>
     </article>
     <article class="card">
+      <div class="card-img" style="background-image:url('izzi-residence-indaiatuba/images/hero.jpg')">
+        <span class="badge b-lote">Lançamento</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">GPCI</p>
+        <h3>Izzi Residence</h3>
+        
+        <div class="preco"><span>a partir de</span><strong>R$ 371.862</strong></div>
+      </div>
+    </article>
+    <article class="card">
       <div class="card-img" style="background-image:url('gran-vic-andorinha-indaiatuba/images/hero.jpg')">
         <span class="badge b-mcmv">MCMV · FGTS</span>
       </div>
@@ -164,6 +197,17 @@
       </div>
     </article>
     <article class="card">
+      <div class="card-img" style="background-image:url('viva-parque-sense-indaiatuba/images/hero.jpg')">
+        <span class="badge b-lote">Lançamento</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">Pinheiro · RDZ · iBen</p>
+        <h3>Viva Parque Sense</h3>
+        
+        <div class="preco"><span>a partir de</span><strong>R$ 408.328</strong></div>
+      </div>
+    </article>
+    <article class="card">
       <div class="card-img" style="background-image:url('spazio-italia-indaiatuba/images/hero.jpg')">
         <span class="badge b-lote">Lançamento</span>
       </div>
@@ -171,7 +215,29 @@
         <p class="constr">Zarin</p>
         <h3>Spazio Italia</h3>
         
-        <div class="preco"><span>a partir de</span><strong>R$ 448.820</strong></div>
+        <div class="preco"><span>a partir de</span><strong>R$ 429.961</strong></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('manai-bosque-indaiatuba/images/vista-aerea-real.jpg')">
+        <span class="badge b-lote">Lançamento</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">Masotti</p>
+        <h3>Manai Bosque</h3>
+        
+        <div class="preco"><span>a partir de</span><strong>R$ 520.855</strong></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('artemis-residencial-indaiatuba/images/hero.jpg')">
+        <span class="badge b-lote">Lançamento</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">GPCI</p>
+        <h3>Artemis Residencial</h3>
+        
+        <div class="preco"><span>a partir de</span><strong>R$ 555.171</strong></div>
       </div>
     </article>
     <article class="card">
@@ -193,7 +259,7 @@
         <p class="constr">Congesa</p>
         <h3>Storia Congesa</h3>
         
-        <div class="preco"><span>a partir de</span><strong>R$ 981.000</strong></div>
+        <div class="preco"><span>a partir de</span><strong>R$ 921.000</strong></div>
       </div>
     </article>
     <article class="card">
@@ -215,7 +281,7 @@
         <p class="constr">Masotti</p>
         <h3>Espaço Conceição</h3>
         
-        <div class="preco"><span>a partir de</span><strong>R$ 1.023.557</strong></div>
+        <div class="preco"><span>a partir de</span><strong>R$ 1.030.310</strong></div>
       </div>
     </article>
     <article class="card">
@@ -230,39 +296,6 @@
       </div>
     </article>
     <article class="card">
-      <div class="card-img" style="background-image:url('viva-parque-aura-indaiatuba/images/hero.jpg')">
-        <span class="badge b-lote">Lançamento</span>
-      </div>
-      <div class="card-b">
-        <p class="constr">Pinheiro · RDZ · iBen</p>
-        <h3>Viva Parque Aura</h3>
-        
-        <div class="preco"><span>a partir de</span><strong>R$ 300.854</strong></div>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-img" style="background-image:url('viva-parque-sense-indaiatuba/images/hero.jpg')">
-        <span class="badge b-lote">Lançamento</span>
-      </div>
-      <div class="card-b">
-        <p class="constr">Pinheiro · RDZ · iBen</p>
-        <h3>Viva Parque Sense</h3>
-        
-        <div class="preco"><span>a partir de</span><strong>R$ 404.886</strong></div>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-img" style="background-image:url('manai-bosque-indaiatuba/images/vista-aerea-real.jpg')">
-        <span class="badge b-lote">Lançamento</span>
-      </div>
-      <div class="card-b">
-        <p class="constr">Masotti</p>
-        <h3>Manai Bosque</h3>
-        
-        <div class="preco"><span>a partir de</span><strong>R$ 505.941</strong></div>
-      </div>
-    </article>
-    <article class="card">
       <div class="card-img" style="background-image:url('seasons-indaiatuba/images/hero.jpg')">
         <span class="badge b-pre">Pré-lançamento</span>
       </div>
@@ -272,13 +305,24 @@
         
         <div class="preco preco-consulte"><span>tabela</span><strong>Sob consulta</strong></div>
       </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('360-home-office-mall-indaiatuba/images/hero.jpg')">
+        <span class="badge b-lote">Lançamento</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">HINC</p>
+        <h3>360 Home Office Mall</h3>
+        
+        <div class="preco preco-consulte"><span>tabela</span><strong>Sob consulta</strong></div>
+      </div>
     </article></div>
-    <div class="pe"><b>MCMV Faixa 3:</b> parte dos empreendimentos aceita FGTS como entrada e subsídio do governo.</div>
+    <div class="pe"><b>MCMV Faixa 3:</b> parte dos empreendimentos se enquadra no programa e aceita FGTS como entrada; a Faixa 3 não tem subsídio.</div>
   </div>
 </div>
 <div class="painel dir creme">
   <div class="seg">
-    <div class="hd"><h2>🏞️ <span>Lotes e Condomínios</span></h2><span class="cnt">8 · menor ao maior</span></div>
+    <div class="hd"><h2>🏞️ <span>Lotes e Condomínios</span></h2><span class="cnt">13 · menor ao maior</span></div>
     <div class="grid g-lotes">
     <article class="card">
       <div class="card-img" style="background-image:url('monte-carmelo-indaiatuba/images/hero.jpg')">
@@ -289,17 +333,6 @@
         <h3>Residencial Monte Carmelo</h3>
         <p class="specs">Loteamento aberto · entrada de R$ 16.000 · 96x</p>
         <div class="preco"><span>a partir de</span><strong>R$ 145.000</strong><em>R$ 967/m² · 150 m²</em></div>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-img" style="background-image:url('parque-zarah-indaiatuba/images/hero.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
-      </div>
-      <div class="card-b">
-        <p class="constr">Zarin</p>
-        <h3>Parque Zarah</h3>
-        <p class="specs">3 fases · residencial a partir de R$ 212 mil · Safira dez/2026 · Rubi e Pérola dez/2028</p>
-        <div class="preco"><span>a partir de</span><strong>R$ 210.000</strong><em>R$ 1.400/m² · 150 m²</em></div>
       </div>
     </article>
     <article class="card">
@@ -314,13 +347,24 @@
       </div>
     </article>
     <article class="card">
+      <div class="card-img" style="background-image:url('parque-zarah-indaiatuba/images/hero.jpg')">
+        <span class="badge b-cond">Cond. fechado</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">Zarin</p>
+        <h3>Parque Zarah</h3>
+        <p class="specs">3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028</p>
+        <div class="preco"><span>a partir de</span><strong>R$ 211.050</strong><em>R$ 1.407/m² · 150 m²</em></div>
+      </div>
+    </article>
+    <article class="card">
       <div class="card-img" style="background-image:url('images/hero.jpg')">
         <span class="badge b-cond">Cond. fechado</span>
       </div>
       <div class="card-b">
         <p class="constr">Armigh · Best Business</p>
         <h3>Terras de San Marino</h3>
-        <p class="specs">546 lotes · 19 disponíveis (espelho 02/09/2026) · 16.164 m² de lazer resort</p>
+        <p class="specs">546 lotes · 13 disponíveis (espelho 09/10/2026) · 16.164 m² de lazer resort</p>
         <div class="preco"><span>a partir de</span><strong>R$ 247.500</strong><em>R$ 1.650/m² · 150 m²</em></div>
       </div>
     </article>
@@ -342,8 +386,30 @@
       <div class="card-b">
         <p class="constr">Dominium</p>
         <h3>Alpnach Residence</h3>
-        <p class="specs">322 lotes · 28 disponíveis (04/09/2026) · piscina coberta · mini mercado 24h</p>
+        <p class="specs">322 lotes · 19 disponíveis (09/10/2026) · piscina coberta · mini mercado 24h</p>
         <div class="preco"><span>a partir de</span><strong>R$ 510.000</strong><em>R$ 1.700/m² · 300 m²</em></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('maria-candida-indaiatuba/images/portaria.jpg')">
+        <span class="badge b-lote">Loteamento</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">Asseplan Narezzi</p>
+        <h3>Jardim Dona Maria Cândida</h3>
+        <p class="specs">Loteamento fechado · obras concluídas · 180 lotes disponíveis (08/09/2026)</p>
+        <div class="preco"><span>a partir de</span><strong>R$ 600.000</strong><em>R$ 2.000/m² · 300 m²</em></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('ville-de-provence-indaiatuba/images/hero.jpg')">
+        <span class="badge b-cond">Cond. fechado</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">Urban Square</p>
+        <h3>Ville de Provence</h3>
+        <p class="specs">Loteamento fechado · 307 lotes de 360 a 617 m² · sinal de 10% e saldo em até 96x</p>
+        <div class="preco"><span>a partir de</span><strong>R$ 637.200</strong><em>R$ 1.770/m² · 360 m²</em></div>
       </div>
     </article>
     <article class="card">
@@ -353,8 +419,8 @@
       <div class="card-b">
         <p class="constr">Zarin</p>
         <h3>Reserva Botânica</h3>
-        <p class="specs">3 lotes de 340 a 457 m² · portaria 24h · 3 quadras</p>
-        <div class="preco"><span>a partir de</span><strong>R$ 532.563</strong><em>R$ 1.566/m² · 340 m²</em></div>
+        <p class="specs">Loteamento fechado · 2 lotes de 410 a 457 m² · portaria 24h · 3 quadras</p>
+        <div class="preco"><span>a partir de</span><strong>R$ 642.375</strong><em>R$ 1.567/m² · 410 m²</em></div>
       </div>
     </article>
     <article class="card">
@@ -367,7 +433,40 @@
         <p class="specs">710 lotes · 27 itens: SPA, Wine Bar, Fire Pit</p>
         <div class="preco"><span>a partir de</span><strong>R$ 714.000</strong><em>R$ 1.700/m² · 420 m²</em></div>
       </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('alphaville-indaiatuba/images/hero.jpg')">
+        <span class="badge b-cond">Cond. fechado</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">Alphaville</p>
+        <h3>Alphaville Indaiatuba</h3>
+        <p class="specs">Itaici · 131 lotes de 511 a 1.249 m² · clube com piscina de raias</p>
+        <div class="preco"><span>a partir de</span><strong>R$ 888.939</strong><em>R$ 1.693/m² · 525 m²</em></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('lagos-de-helvetia-indaiatuba/images/hero.jpg')">
+        <span class="badge b-cond">Cond. fechado</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">GPCI</p>
+        <h3>Lagos de Helvetia</h3>
+        <p class="specs">Helvetia · 36 lotes de 501 a 2.015 m² · lago e clube</p>
+        <div class="preco"><span>a partir de</span><strong>R$ 901.800</strong><em>R$ 1.800/m² · 501 m²</em></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="background-image:url('porteira-de-ferro-indaiatuba/images/hero.jpg')">
+        <span class="badge b-cond">Cond. fechado</span>
+      </div>
+      <div class="card-b">
+        <p class="constr">GPCI</p>
+        <h3>Porteira de Ferro</h3>
+        <p class="specs">Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m² · Club House no casarão</p>
+        <div class="preco"><span>a partir de</span><strong>R$ 1.300.000</strong><em>R$ 2.500/m² · 520 m²</em></div>
+      </div>
     </article></div>
-    <div class="pe">Imagens ilustrativas. Preços e disponibilidade sujeitos a alteração sem aviso prévio. <b>Edição agosto/2026.</b></div>
+    <div class="pe">Imagens ilustrativas. Preços e disponibilidade sujeitos a alteração sem aviso prévio. <b>Edição outubro/2026.</b></div>
   </div>
 </div></div></body></html>

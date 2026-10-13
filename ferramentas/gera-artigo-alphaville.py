@@ -192,7 +192,7 @@ do Alphaville Indaiatuba, com metragem e valor &rarr;</a></p>
 
 <p>Se quiser comparar com os outros condomínios fechados da cidade antes de decidir, o
 <a href="/mapa-lotes-indaiatuba/">mapa de lotes</a> mostra os 131 lotes do Alphaville posicionados um
-a um, ao lado de mais de 2.300 lotes de outros 25 loteamentos de Indaiatuba, com preço em cada um.</p>
+a um, ao lado de mais de 2.100 lotes de outros 22 loteamentos de Indaiatuba, com preço em cada um.</p>
 
 <h2 id="fontes">De onde saiu cada número</h2>
 

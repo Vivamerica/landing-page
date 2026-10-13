@@ -37,7 +37,7 @@ else:
 # llms.txt
 t, crlf = ler(R + 'llms.txt')
 if BASE + slug + '/' not in t:
-    titulo = {'apartamentos': '## Apartamentos', 'condominios': '## Condomínios fechados de lotes',
+    titulo = {'apartamentos': '## Apartamentos', 'condominios': '## Condomínios e loteamentos fechados',
               'loteamentos': '## Loteamentos abertos'}[c['llms']['secao']]
     i = t.index(titulo)
     fim = t.index('\n## ', i + 1)

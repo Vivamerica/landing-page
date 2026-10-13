@@ -33,7 +33,7 @@
 const fs = require('fs');
 const R = __dirname + '/';
 
-const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-10' };
+const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-12' };
 
 // estoque da EDIÇÃO ANTERIOR (setembro/2026), para o "antes e depois"
 // (saída = anterior - atual; o atual e a data dele vêm de est e estEm da fonte única).
@@ -46,27 +46,34 @@ const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-10
 //         mudar o est, o gerador para e pede a revisão da linha (não publica nota velha).
 // Não use "}" seguido de ";" dentro deste objeto: o gera-home.js recorta até o primeiro.
 const ESTOQUE_ANTERIOR = {
-  'monte-carmelo-indaiatuba':        { n: 568, data: '02/09/2026', fonte: 'relatório "Lotes disponíveis" da Dominium de 02/09/2026; atual: relatório de 01/10/2026', est: 585, nota: 'o relatório de 30/09/2026 tirou 7 lotes da lista e pôs 20 novos (581); o de 01/10/2026 lista 585 — nenhum preço mudou' },
-  'residencial-ravello-indaiatuba':  { n: 185, data: '02/09/2026', fonte: 'relatório de estoque Dominium de 02/09/2026; atual: relatório de 01/10/2026', est: 187, nota: 'saldo de 2 lotes a mais na lista de disponíveis entre os dois relatórios' },
-  'di-italia-indaiatuba':            { n: 44,  data: '04/09/2026', fonte: 'relatório Dominium de 04/09/2026; atual: relatório de 01/10/2026 (30 residenciais e 15 mistos)', est: 45, nota: '1 lote saiu da lista de disponíveis e 2 voltaram entre os dois relatórios' },
-  'alpnach-indaiatuba':              { n: 28,  data: '04/09/2026', fonte: 'relatório Dominium de 04/09/2026; atual: relatório de 01/10/2026', est: 19, saida: ['a menos na lista', 'a menos na lista'], nota: '13 lotes saíram da lista de disponíveis e 4 entraram entre os dois relatórios' },
-  'vivere-indaiatuba':               { n: 5,   data: '04/09/2026', fonte: 'confirmação da Masotti de 04/09/2026; atual: confirmação de 18/09/2026 (3 unidades, todas na Torre 7)', est: 3, saida: ['reservada', 'reservadas'], nota: 'reserva não é venda: as unidades voltam à lista de disponíveis se a reserva cair' },
-  'reserva-botanica-indaiatuba':     { n: 3,   data: '10/07/2026', fonte: 'tabela Zarin de 10/07/2026; atual: tabela de 29/09/2026', est: 2, nota: 'saiu o lote D-13, de 339,92 m², que era o mais barato' },
-  'terras-de-san-marino-indaiatuba': { n: 19,  data: '02/09/2026', fonte: 'espelho de vendas de 02/09/2026; sem espelho novo em outubro — o número repete' },
-  'gran-vic-canario-indaiatuba':     { n: 3,   data: '02/09/2026', fonte: 'tabela VIC de 02/09/2026; sem tabela nova em outubro — o número repete' },
+  'monte-carmelo-indaiatuba':        { n: 568, data: '02/09/2026', fonte: 'relatório "Lotes disponíveis" da Dominium de 02/09/2026; atual: relatório de 09/10/2026', est: 579, nota: 'o relatório de 30/09/2026 tirou 7 lotes da lista e pôs 20 novos (581); o de 01/10/2026 listava 585; o de 09/10/2026 lista 579 (6 saíram, nenhum entrou) — nenhum preço mudou' },
+  'residencial-ravello-indaiatuba':  { n: 185, data: '02/09/2026', fonte: 'relatório de estoque Dominium de 02/09/2026; atual: relatório de 09/10/2026', est: 180, saida: ['a menos na lista', 'a menos na lista'], nota: '10 lotes saíram da lista de disponíveis e 5 entraram entre os dois relatórios' },
+  'di-italia-indaiatuba':            { n: 44,  data: '04/09/2026', fonte: 'relatório Dominium de 04/09/2026; atual: relatório de 09/10/2026 (30 residenciais e 15 mistos)', est: 45, nota: '1 lote saiu da lista de disponíveis e 2 voltaram entre os dois relatórios' },
+  'alpnach-indaiatuba':              { n: 28,  data: '04/09/2026', fonte: 'relatório Dominium de 04/09/2026; atual: relatório de 09/10/2026', est: 19, saida: ['a menos na lista', 'a menos na lista'], nota: '14 lotes saíram da lista de disponíveis e 5 entraram entre os dois relatórios' },
+  'vivere-indaiatuba':               { n: 5,   data: '04/09/2026', fonte: 'confirmação da Masotti de 04/09/2026; atual: conferência de 12/10/2026 (2 unidades, na Torre 7)', est: 2, saida: ['a menos na lista', 'a menos na lista'], nota: 'entre as que saíram há unidades reservadas — reserva não é venda: a unidade volta à lista de disponíveis se a reserva cair' },
+  'reserva-botanica-indaiatuba':     { n: 3,   data: '10/07/2026', fonte: 'tabela Zarin de 10/07/2026; atual: tabela de 29/09/2026, conferida em 12/10/2026', est: 2, saida: ['a menos na tabela', 'a menos na tabela'], nota: 'saiu o lote D-13, de 339,92 m², que era o mais barato' },
+  'terras-de-san-marino-indaiatuba': { n: 19,  data: '02/09/2026', fonte: 'espelho de vendas de 02/09/2026; atual: espelho de 09/10/2026', est: 13, saida: ['a menos na lista', 'a menos na lista'], nota: '9 lotes saíram da lista de disponíveis e 3 entraram entre os dois espelhos' },
+  'gran-vic-canario-indaiatuba':     { n: 3,   data: '02/09/2026', fonte: 'tabela VIC de 02/09/2026; atual: tabela de 05/10/2026 (as mesmas 3 unidades da Torre 03)', est: 3 },
   'gran-vic-andorinha-indaiatuba':   { n: 2,   data: '02/09/2026', fonte: 'tabela VIC de 02/09/2026; sem tabela nova em outubro — o número repete' },
-  'itamaraca-indaiatuba':            { n: 206, data: 'jul/2026', fonte: 'tabela Zarin de julho/2026; atual: tabela de 01/10/2026 (168)', est: 168, nota: 'a tabela de julho listava as 206 unidades do projeto como disponíveis; a de outubro traz 168' },
+  'itamaraca-indaiatuba':            { n: 206, data: 'jul/2026', fonte: 'tabela Zarin de julho/2026; atual: tabela de outubro/2026 emitida em 11/10/2026 (166 disponíveis)', est: 166, saida: ['a menos na lista', 'a menos na lista'], nota: 'a tabela de julho listava as 206 unidades do projeto como disponíveis; a emitida em 11/10/2026 traz 166 disponíveis, 2 reservadas e 38 vendidas' },
   // 1ª medição em outubro/2026 (sem série anterior): Jardim Dona Maria Cândida (180, lista de
-  // 08/09/2026), Ville de Provence (319, tabela set/2026) e Alphaville Indaiatuba (131, tabela set/2026).
+  // 08/09/2026), Ville de Provence (307, tabela de outubro/2026 — documento de 03/10/2026) e
+  // Alphaville Indaiatuba (131, tabela set/2026).
 };
 
 // mudanças de preço do mês, conferidas nas tabelas oficiais das construtoras
 const MOVIMENTOS = [
   // outubro/2026
-  { n: 'Itamaracá Residencial', c: 'Zarin', de: 339990, para: 345107, causa: 'o piso da tabela de outubro subiu: Apto Meio de 48,11 m² no térreo da Torre B; 168 das 206 unidades disponíveis', fonte: 'tabela Zarin de outubro/2026 (gerada em 01/10/2026)' },
+  { n: 'Itamaracá Residencial', c: 'Zarin', de: 339990, para: 345107, causa: 'o piso da tabela de outubro subiu: Apto Meio de 48,11 m² no térreo da Torre B; 168 das 206 unidades disponíveis em 01/10/2026', fonte: 'tabela Zarin de outubro/2026 (gerada em 01/10/2026)' },
   { n: 'Spazio Italia',         c: 'Zarin', de: 448820, para: 429961, causa: 'a Torre 4 (Milão) entrou na tabela com 86 unidades e passou a ter o menor preço — 59,5 m², 1 vaga', fonte: 'tabela Zarin de outubro/26 (documento de 01/10/2026)' },
   { n: 'Parque Zarah',          c: 'Zarin', de: 172500, para: 211050, causa: 'os lotes mistos de 150 m² da quadra 14, de R$ 172.500, saíram da tabela de 29/09/2026; o menor agora é misto de 150 m² da fase Pérola, e a tabela de 01/10/2026 reajustou os 662 lotes em 0,5% — residencial a partir de R$ 218.588', fonte: 'tabelas Zarin de 29/09/2026 e 01/10/2026 (3 fases)' },
   { n: 'Reserva Botânica',      c: 'Zarin', de: 532563, para: 642375, causa: 'saiu o lote D-13 (339,92 m²), que era o mais barato; o menor disponível agora é o C-1, de 410,01 m² — restam 2 lotes na tabela de 29/09/2026', fonte: 'tabela Zarin de 29/09/2026' },
+  { n: 'Gran Vic Tangará',      c: 'VIC Engenharia', de: 330000, para: 325000, causa: 'o apto 1001 da Torre 03, que era o mais barato (R$ 330.000), saiu da tabela; o menor preço agora é o do apto 804 da Torre 05 (47,22 m²), preço de uma única unidade — a seguinte custa R$ 333.761; as 74 unidades da tabela são Faixa 3', fonte: 'tabela VIC de 05/10/2026' },
+  { n: 'Gran Vic Colibri',      c: 'VIC Engenharia', de: 334479, para: 336686, causa: 'as duas unidades de menor preço são as mesmas da tabela de setembro (térreo das Torres 01 e 02), com valor reajustado; 81 unidades na tabela', fonte: 'tabela VIC de 05/10/2026' },
+  { n: 'Viva Parque Aura',      c: 'Pinheiro · RDZ · iBen', de: 300854, para: 306650, causa: 'os Apto Meio do 1º andar da Torre 3 não estão na tabela de 01/10/2026; o menor preço passou a ser o Apto Canto de 47,17 m² no 1º andar da Torre 3; a Torre 4 entrou na tabela', fonte: 'tabela Pinheiro de 01/10/2026' },
+  { n: 'Viva Parque Sense',     c: 'Pinheiro · RDZ · iBen', de: 404886, para: 408328, causa: 'a tabela de 03/09/2026 traz o preço de entrada 0,85% acima do da tabela de 01/08/2026; o menor preço continua no 3 dorm c/ suíte de 59,93 m², no 1º andar', fonte: 'tabela Pinheiro de 03/09/2026' },
+  { n: 'Manai Bosque',          c: 'Masotti', de: 505941, para: 520855, causa: 'a tabela de lançamento da Torre 1 de outubro/2026 traz o menor preço em R$ 520.855 (2 dormitórios, 2º andar); em 04/09/2026 a Masotti informava R$ 505.941 — piso e teto 2,9% acima', fonte: 'tabela Masotti de lançamento da Torre 1, de 03/10/2026' },
+  { n: 'Storia Congesa',        c: 'Congesa', de: 981000, para: 921000, causa: 'o único 2 dormitórios da tabela de outubro é o apto 124 (70,05 m²), a R$ 921.000; os 3 suítes de 114,89 m² foram de R$ 1.683.000 para R$ 1.715.000', fonte: 'tabela Congesa de outubro/2026' },
 ];
 // empreendimentos que entraram no site (ou ganharam tabela) nesta edição; ficam
 // fora de MOVIMENTOS porque não há "antes" para calcular variação
@@ -74,12 +81,12 @@ const MOVIMENTOS = [
 const ENTRADAS = [
   { n: 'Residencial Parque das Águas', c: 'GPCI', para: 309120, causa: 'novo no site — 2 dormitórios de 46,13 a 50,60 m² e gardens de até 72,30 m², em 3 torres', fonte: 'tabela GPCI de setembro/2026' },
   { n: 'Izzi Residence',              c: 'GPCI', para: 371862, causa: 'novo no site — plantas de 39,90 a 43,97 m² e gardens de 66,43 e 66,47 m², no Centro', fonte: 'tabela GPCI de setembro/2026' },
-  { n: 'Artemis Residencial',         c: 'GPCI', para: 555171, causa: 'novo no site — 3 dormitórios com suíte, 63,85 e 64,44 m², no Park Meraki', fonte: 'tabela GPCI de setembro/2026' },
+  { n: 'Artemis Residencial',         c: 'GPCI', para: 555171, causa: 'novo no site — 3 dormitórios com suíte, 63,85 e 64,44 m², no Park Meraki', fonte: 'tabela GPCI de outubro/2026' },
   { n: 'Jardim Dona Maria Cândida',   c: 'Asseplan Narezzi', para: 600000, causa: 'novo no site — loteamento fechado com obras concluídas, lotes de 300 a 471,97 m²; 180 disponíveis na lista de 08/09/2026', fonte: 'tabela Asseplan Narezzi válida a partir de 01/07/2025' },
-  { n: 'Ville de Provence',           c: 'Urban Square', para: 637200, causa: 'novo no site — loteamento fechado, 319 lotes de 360 a 616,90 m² a R$ 1.770/m²', fonte: 'tabela Urban Square de setembro/2026' },
+  { n: 'Ville de Provence',           c: 'Urban Square', para: 637200, causa: 'novo no site — loteamento fechado, 307 lotes de 360 a 616,90 m² a R$ 1.770/m²', fonte: 'tabela Urban Square de outubro/2026 (documento de 03/10/2026)' },
   { n: 'Alphaville Indaiatuba',       c: 'Alphaville', para: 888939, causa: 'novo no site — 131 lotes de 511,50 a 1.249,22 m² no Itaici', fonte: 'tabela de vendas Alphaville de setembro/2026' },
-  { n: 'Lagos de Helvetia',           c: 'GPCI', para: 901800, causa: 'novo no site — 44 lotes de 501 a 2.015 m², todos a R$ 1.800/m²', fonte: 'tabela GPCI de 01/07/2026' },
-  { n: 'Espaço Conceição',            c: 'Masotti', para: 1023557, causa: 'novo no site — 3 dormitórios com suíte, de 85 a 108 m², em 2 torres; 47 unidades na tabela de setembro/2026', fonte: 'tabela Masotti de setembro/2026' },
+  { n: 'Lagos de Helvetia',           c: 'GPCI', para: 901800, causa: 'novo no site — 36 lotes de 501 a 2.015 m², todos a R$ 1.800/m²', fonte: 'tabela GPCI de 10/10/2026' },
+  { n: 'Espaço Conceição',            c: 'Masotti', para: 1030310, causa: 'novo no site — 3 dormitórios com suíte, de 85 a 108 m², em 2 torres; 46 unidades disponíveis em 12/10/2026', fonte: 'disponibilidade da Masotti consultada em 12/10/2026' },
   { n: 'Porteira de Ferro',           c: 'GPCI', para: 1300000, causa: 'novo no site — último lote na tabela de 17/09/2026: quadra E, lote 3, 520 m²', fonte: 'tabela GPCI de 17/09/2026' },
 ];
 // entrou no site sem tabela pública (não entra em ENTRADAS: não há preço)
@@ -137,7 +144,7 @@ const mesAbrevDe = iso => MESES[+iso.slice(5, 7) - 1].slice(0, 3) + '/' + iso.sl
 const edLongo = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;      // outubro/2026
 const edAbrev = mesAbrevDe(EDICAO.iso);                           // out/2026
 const edExtenso = EDICAO.mes.toLowerCase() + ' de ' + EDICAO.ano; // outubro de 2026
-const hojeBR = EDICAO.lastmod.split('-').reverse().join('/');     // 10/10/2026
+const hojeBR = EDICAO.lastmod.split('-').reverse().join('/');     // 12/10/2026
 // edições anteriores já no disco (ficam disponíveis para download); a mais recente é "a edição anterior"
 const ANTERIORES = (fs.existsSync(R + 'imprensa-e-dados') ? fs.readdirSync(R + 'imprensa-e-dados') : []).map(f => (f.match(/^dados-lancamentos-indaiatuba-(\d{4}-\d{2})\.csv$/) || [])[1]).filter(m => m && m < EDICAO.iso).sort().reverse();
 const edAnterior = ANTERIORES.length ? 'edição de ' + mesLongoDe(ANTERIORES[0]) : 'edição anterior';   // edição de setembro/2026
@@ -346,7 +353,7 @@ const jsonBread = JSON.stringify({
 });
 
 const TITLE = `Preços de Lançamentos em Indaiatuba — Tabela ${EDICAO.mes}/${EDICAO.ano}`;
-const DESC = `Tabela de ${edLongo}, sem cadastro: os ${total} lançamentos de Indaiatuba, m² de lote de ${brl(m2Min)} a ${brl(m2Max)}, m² de apartamento e quem subiu ou baixou no mês.`;
+const DESC = `Tabela de ${edLongo}, sem cadastro: os ${total} lançamentos de Indaiatuba, m² de lote de ${brl(m2Min)} a ${brl(m2Max)}, m² de apartamento e quem mudou de preço na edição.`;
 function guardaMeta(nome, t, d) {
   if (t.length > 60) throw new Error(nome + ': title com ' + t.length + ' chars (max 60): ' + t);
   if (d.length < 120 || d.length > 155) throw new Error(nome + ': description com ' + d.length + ' chars (120-155): ' + d);
@@ -540,8 +547,8 @@ const HTML = `<!DOCTYPE html>
 
   <h2 id="mudou">Preço de entrada: o que mudou <small>entre a ${edAnterior} e a de ${edLongo}</small></h2>
   <p class="sub">Só entram aqui variações confirmadas entre duas tabelas oficiais <b>do mesmo tipo</b> —
-  o valor acompanhado é o <b>preço de entrada</b> ("a partir de") — ele sobe por reajuste
-  de tabela ou porque as unidades mais baratas foram vendidas, e a causa está dita em cada linha.
+  o valor acompanhado é o <b>preço de entrada</b> ("a partir de") — ele muda por reajuste
+  de tabela ou porque a unidade de menor preço saiu da tabela (ou outra entrou), e a causa está dita em cada linha.
   Nesta edição: ${MOVIMENTOS.length} mudança${MOVIMENTOS.length === 1 ? '' : 's'} de preço (${altas.length} alta${altas.length === 1 ? '' : 's'}, ${quedas.length} queda${quedas.length === 1 ? '' : 's'}), ${ENTRADAS.length} empreendimentos novos com tabela e ${SEM_TABELA.length} sem tabela pública.</p>
   <div class="tabela-wrap">
     <table>
@@ -556,8 +563,9 @@ const HTML = `<!DOCTYPE html>
   <p class="sub">O "antes e depois" de cada empreendimento: quantas unidades havia na medição
   anterior, quantas há agora e quantas saíram da lista. Cada número traz a data do relatório
   ou da tabela, porque o intervalo entre as duas medições não é o mesmo em todos${basesEstoque ? ' (as medições anteriores vão ' + basesEstoque + ')' : ''}.
-  A página conta como vendida a unidade que saiu da lista de disponíveis; quando a incorporadora
-  informa que é reserva, ou quando entram lotes na lista, a linha diz. Onde consta "1ª medição",
+  A coluna "No período" mostra quantas unidades saíram da lista de disponíveis entre as duas
+  medições; sair da lista não é venda confirmada (pode ser reserva). Quando a incorporadora informa
+  o motivo, ou quando entram lotes na lista, a linha diz. Onde consta "1ª medição",
   ainda não há série anterior; onde a fonte não foi remedida no mês, o número repete e a coluna
   fica em "sem remedição".</p>
   <div class="tabela-wrap">
@@ -1068,7 +1076,7 @@ ${G3}
       <div class="tile"><b>${MOVIMENTOS.length} + ${ENTRADAS.length}</b><span>mudaram o preço de entrada + entraram com tabela</span><small>variações de ${pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).para)} a ${pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).para)} · ${edLongo}</small></div>
     </div>
     <p><strong>Contexto.</strong> ${CONTEXTO}</p>${estoqueItens.length ? `
-    <p><strong>Estoque.</strong> Nos ${estoqueItens.length} empreendimentos que já tinham medição de estoque na ${edAnterior}, o número anterior e o atual, cada um com a data do relatório ou da tabela. O intervalo entre as duas medições não é o mesmo em todos${basesEstoque ? ' (as medições anteriores vão ' + basesEstoque + ')' : ''}, por isso as datas vão em cada linha. O Observatório conta como vendida a unidade que saiu da lista de disponíveis; quando a incorporadora informa que é reserva, ou quando entram lotes na lista, a linha diz.</p>
+    <p><strong>Estoque.</strong> Nos ${estoqueItens.length} empreendimentos que já tinham medição de estoque na ${edAnterior}, o número anterior e o atual, cada um com a data do relatório ou da tabela. O intervalo entre as duas medições não é o mesmo em todos${basesEstoque ? ' (as medições anteriores vão ' + basesEstoque + ')' : ''}, por isso as datas vão em cada linha. O Observatório mostra quantas unidades saíram da lista de disponíveis entre as duas medições; sair da lista não é venda confirmada (pode ser reserva). Quando a incorporadora informa o motivo, ou quando entram lotes na lista, a linha diz.</p>
     <ul>
 ${estoqueItens.join('\n')}
     </ul>` : ''}

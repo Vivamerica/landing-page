@@ -2,7 +2,6 @@
   { b:'vistareal', q:'A', l:'4', m2:330.29, tipo:'RESIDENCIAL', pm2:1302, vista:430000.00, prazo:430000.00, entrada:86000.00, parcela:9555.56, nx:36, ep:20, ll:[-23.068853,-47.189795] },
   { b:'vistareal', q:'A', l:'7', m2:408.44, tipo:'RESIDENCIAL', pm2:1300, vista:530972.00, prazo:530972.00, entrada:110000.00, parcela:11693.67, nx:36, ep:21, ll:[-23.069352,-47.189778] },
   { b:'vistareal', q:'A', l:'12', m2:339.05, tipo:'RESIDENCIAL', pm2:1300, vista:440765.00, prazo:440765.00, entrada:90000.00, parcela:9743.47, nx:36, ep:20, ll:[-23.068513,-47.189661] },
-  { b:'vistareal', q:'A', l:'15', m2:301.18, tipo:'RESIDENCIAL', pm2:1300, vista:391534.00, prazo:391534.00, entrada:80000.00, parcela:8653.72, nx:36, ep:20, ll:[-23.068677,-47.189410] },
   { b:'vistareal', q:'A', l:'16', m2:300.00, tipo:'RESIDENCIAL', pm2:1500, vista:450000.00, entrada:null, parcela:null, soVista:true, ll:[-23.068770,-47.189342] },
   { b:'vistareal', q:'A', l:'19', m2:300.00, tipo:'RESIDENCIAL', pm2:1300, vista:390000.00, prazo:390000.00, entrada:80000.00, parcela:8611.11, nx:36, ep:21, ll:[-23.069040,-47.189146] },
   { b:'vistareal', q:'B', l:'1', m2:452.88, tipo:'RESIDENCIAL', pm2:1298, vista:588000.00, prazo:588000.00, entrada:118000.00, parcela:13055.56, nx:36, ep:20, ll:[-23.070464,-47.191396] },
