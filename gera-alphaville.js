@@ -66,7 +66,7 @@ const CONSULTA = '09/10/2026';
 const ALPHAVILLE = [
   { n:'Alphaville Indaiatuba', cidade:'Indaiatuba', uf:'SP', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Lançamento',
     slug:'alphaville-indaiatuba', img:'alphaville-indaiatuba/images/hero.jpg', ilustrativa:true,
-    fonte:true, tabela:'set/2026', nota:'custas de escrituração à parte' },
+    fonte:true, tabela:'out/2026', nota:'custas de escrituração à parte' },
   { n:'Casas Alphaville Dom Pedro 0', cidade:'Campinas', uf:'SP', linha:'Alphaville', tipo:'Casas', fase:'Entregue',
     obs:'5 casas na tabela de vendas de out/2026',
     slug:'casas-alphaville-dom-pedro-0-campinas', img:'casas-alphaville-dom-pedro-0-campinas/images/hero.jpg', ilustrativa:true,

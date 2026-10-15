@@ -437,15 +437,15 @@
     "nome": "Alphaville Indaiatuba",
     "tipo": "lote",
     "incorporadora": "Alphaville",
-    "preco_a_partir_de": 888939,
-    "m2_menor_unidade": 525,
-    "preco_m2": 1693,
-    "mes_tabela": "2026-09",
-    "estoque": 131,
-    "data_estoque": "2026-09",
-    "spec": "Itaici · 131 lotes de 511 a 1.249 m² · clube com piscina de raias",
+    "preco_a_partir_de": 908480,
+    "m2_menor_unidade": 511.5,
+    "preco_m2": 1776,
+    "mes_tabela": "2026-10",
+    "estoque": 126,
+    "data_estoque": "2026-10-07",
+    "spec": "Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias",
     "url": "https://lancamentos.imoveisvivamerica.com.br/alphaville-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, setembro/2026"
+    "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
   {
     "nome": "Lagos de Helvetia",

@@ -58,7 +58,7 @@ const ESTOQUE_ANTERIOR = {
   'itamaraca-indaiatuba':            { n: 206, data: 'jul/2026', fonte: 'tabela Zarin de julho/2026; atual: tabela de outubro/2026 emitida em 11/10/2026 (166 disponíveis)', est: 166, saida: ['a menos na lista', 'a menos na lista'], nota: 'a tabela de julho listava as 206 unidades do projeto como disponíveis; a emitida em 11/10/2026 traz 166 disponíveis, 2 reservadas e 38 vendidas' },
   // 1ª medição em outubro/2026 (sem série anterior): Jardim Dona Maria Cândida (180, lista de
   // 08/09/2026), Ville de Provence (307, tabela de outubro/2026 — documento de 03/10/2026) e
-  // Alphaville Indaiatuba (131, tabela set/2026).
+  // Alphaville Indaiatuba (126 disponíveis no quadro de vendas de 07/10/2026, tabela de outubro com os valores de setembro).
 };
 
 // mudanças de preço do mês, conferidas nas tabelas oficiais das construtoras
@@ -84,7 +84,7 @@ const ENTRADAS = [
   { n: 'Artemis Residencial',         c: 'GPCI', para: 555171, causa: 'novo no site — 3 dormitórios com suíte, 63,85 e 64,44 m², no Park Meraki', fonte: 'tabela GPCI de outubro/2026' },
   { n: 'Jardim Dona Maria Cândida',   c: 'Asseplan Narezzi', para: 600000, causa: 'novo no site — loteamento fechado com obras concluídas, lotes de 300 a 471,97 m²; 180 disponíveis na lista de 08/09/2026', fonte: 'tabela Asseplan Narezzi válida a partir de 01/07/2025' },
   { n: 'Ville de Provence',           c: 'Urban Square', para: 637200, causa: 'novo no site — loteamento fechado, 307 lotes de 360 a 616,90 m² a R$ 1.770/m²', fonte: 'tabela Urban Square de outubro/2026 (documento de 03/10/2026)' },
-  { n: 'Alphaville Indaiatuba',       c: 'Alphaville', para: 888939, causa: 'novo no site — 131 lotes de 511,50 a 1.249,22 m² no Itaici', fonte: 'tabela de vendas Alphaville de setembro/2026' },
+  { n: 'Alphaville Indaiatuba',       c: 'Alphaville', para: 908480, causa: 'novo no site — 126 lotes disponíveis em 07/10/2026, de 511,50 a 1.205,76 m², no Itaici', fonte: 'tabela de vendas Alphaville de outubro/2026 (mesmos valores de setembro) e quadro de vendas de 07/10/2026' },
   { n: 'Lagos de Helvetia',           c: 'GPCI', para: 901800, causa: 'novo no site — 36 lotes de 501 a 2.015 m², todos a R$ 1.800/m²', fonte: 'tabela GPCI de 10/10/2026' },
   { n: 'Espaço Conceição',            c: 'Masotti', para: 1030310, causa: 'novo no site — 3 dormitórios com suíte, de 85 a 108 m², em 2 torres; 46 unidades disponíveis em 12/10/2026', fonte: 'disponibilidade da Masotti consultada em 12/10/2026' },
   { n: 'Porteira de Ferro',           c: 'GPCI', para: 1300000, causa: 'novo no site — último lote na tabela de 17/09/2026: quadra E, lote 3, 520 m²', fonte: 'tabela GPCI de 17/09/2026' },
@@ -215,7 +215,7 @@ const linhaLote = e => `
         <td><a href="/${e.slug}/">${e.n}</a></td>
         <td>${e.c}</td>
         <td>${loteFechado(e) ? (e.t === 'Cond. fechado' && !/^Loteamento fechado/i.test(e.s) ? 'Condomínio fechado' : 'Loteamento fechado') : 'Loteamento aberto'}</td>
-        <td class="num">${e.m2} m²</td>
+        <td class="num">${e.m2.toLocaleString('pt-BR')} m²</td>
         <td class="num"><strong>${brl(e.p)}</strong></td>
         <td class="num">${brl(Math.round(e.p / e.m2))}/m²</td>
         <td class="num">${e.tab ? mesAbrevDe(e.tab) : '<span class="nd">—</span>'}</td>
@@ -710,13 +710,13 @@ const G1 = grafico({
   id: 'grafico-m2-lote',
   titulo: `Preço do m² de lote por loteamento — ${edLongo}`,
   sub: `Preço "a partir de" dividido pela área do lote de menor preço da tabela, em R$/m². Os ${LOTES.length} loteamentos e condomínios fechados do Observatório.`,
-  itens: lotesDesc.map(l => ({ rotulo: l.n, valor: l.pm2, texto: brl(l.pm2) + '/m²', descValor: brl(l.pm2) + '/m²', title: `${l.n} (${l.c}) · lote de ${l.m2} m² · ${brl(l.p)} · ${brl(l.pm2)}/m²` })),
+  itens: lotesDesc.map(l => ({ rotulo: l.n, valor: l.pm2, texto: brl(l.pm2) + '/m²', descValor: brl(l.pm2) + '/m²', title: `${l.n} (${l.c}) · lote de ${l.m2.toLocaleString('pt-BR')} m² · ${brl(l.p)} · ${brl(l.pm2)}/m²` })),
   passo: 500, fmtEixo: v => brl(v),
   leitura: `Em ${edLongo} o m² de lote em Indaiatuba vai de ${brl(m2Min)} (${lotesM2[0].n}) a ${brl(m2Max)} (${lotesM2[lotesM2.length - 1].n}); a média dos ${LOTES.length} loteamentos é ${brl(m2Medio)}/m². ${FAIXAS_LOTE_FRASE}`,
   tabela: `<table>
 <thead><tr><th>Loteamento</th><th>Loteadora</th><th class="num">Lote de menor preço</th><th class="num">A partir de</th><th class="num">R$/m²</th></tr></thead>
 <tbody>
-${lotesDesc.map(l => `<tr><td><a href="/${l.slug}/">${l.n}</a></td><td>${l.c}</td><td class="num">${l.m2} m²</td><td class="num">${brl(l.p)}</td><td class="num">${brl(l.pm2)}</td></tr>`).join('\n')}
+${lotesDesc.map(l => `<tr><td><a href="/${l.slug}/">${l.n}</a></td><td>${l.c}</td><td class="num">${l.m2.toLocaleString('pt-BR')} m²</td><td class="num">${brl(l.p)}</td><td class="num">${brl(l.pm2)}</td></tr>`).join('\n')}
 <tr><td colspan="4"><strong>Média dos ${LOTES.length} loteamentos</strong></td><td class="num"><strong>${brl(m2Medio)}</strong></td></tr>
 </tbody></table>`,
 });

@@ -428,7 +428,7 @@ const cardCondominios = e => `
         <div class="card-body">
           <span class="card-badge">${tipoLote(e)}${seloEst(e)}</span>
           <h3>${esc(e.n)}</h3>
-          <p>${esc(e.c)} · ${esc(e.s)}${areaNoS(e) ? '' : ' · lotes a partir de ' + e.m2 + ' m²'}${tabLote(e)}</p>
+          <p>${esc(e.c)} · ${esc(e.s)}${areaNoS(e) ? '' : ' · lotes a partir de ' + e.m2.toLocaleString('pt-BR') + ' m²'}${tabLote(e)}</p>
           <div class="card-price">A partir de ${brl(e.p)} · ${brl(Math.round(e.p / e.m2))}/m²</div>
           <span class="btn-card">Ver detalhes</span>
         </div>

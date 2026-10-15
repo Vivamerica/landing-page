@@ -131,7 +131,7 @@ const CSS = `
 
 function card(e, isLote) {
   const preco = e.p
-    ? `<div class="preco"><span>a partir de</span><strong>R$ ${brl(e.p)}</strong>${isLote ? `<em>R$ ${brl(Math.round(e.p / e.m2))}/m² · ${e.m2} m²</em>` : ''}</div>`
+    ? `<div class="preco"><span>a partir de</span><strong>R$ ${brl(e.p)}</strong>${isLote ? `<em>R$ ${brl(Math.round(e.p / e.m2))}/m² · ${e.m2.toLocaleString('pt-BR')} m²</em>` : ''}</div>`
     : `<div class="preco preco-consulte"><span>tabela</span><strong>Sob consulta</strong></div>`;
   return `
     <article class="card">

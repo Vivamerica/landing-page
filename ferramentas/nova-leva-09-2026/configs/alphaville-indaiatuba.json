@@ -3,20 +3,20 @@
   "nome": "Alphaville Indaiatuba",
   "categoria": "condominios",
   "data": "2026-09-16",
-  "atualizado": "2026-10-11",
-  "fonte_tabela": "tabela de vendas Alphaville de set/2026",
-  "title": "Alphaville Indaiatuba | lotes de 511 a 1.249 m² · Itaici",
-  "description": "Alphaville Indaiatuba, no Itaici: condomínio fechado com 131 lotes de 511 a 1.249 m² na tabela set/2026, desde R$ 888.939. Ato de 20% e saldo em 60 meses.",
+  "atualizado": "2026-10-15",
+  "fonte_tabela": "tabela de vendas Alphaville de out/2026",
+  "title": "Alphaville Indaiatuba | lotes de 511 a 1.205 m² · Itaici",
+  "description": "Alphaville Indaiatuba, no Itaici: condomínio fechado com 126 lotes à venda de 511 a 1.205 m² em out/2026, desde R$ 908.480. Ato de 20% e saldo em 60 meses.",
   "keywords": "alphaville indaiatuba, lote alphaville indaiatuba, condominio fechado itaici, lote 1000 m2 indaiatuba, terreno alphaville itaici, condominio de lotes indaiatuba, alphaville lancamento 2026",
   "schema_tipo": "RealEstateListing",
-  "schema_desc": "Condomínio fechado de lotes do Grupo Alphaville no bairro do Itaici, em Indaiatuba/SP, com lotes a partir de 510 m² e de 1.000 m², clube com piscina climatizada de raias semiolímpicas, quadras e 245 mil m² de áreas verdes e de lazer. Tabela de vendas de setembro/2026 com 131 lotes, de 511,50 a 1.249,22 m², de R$ 888.939,47 a R$ 1.609.895,78, com ato de 20% e saldo em 60 meses corrigido pelo IPCA.",
+  "schema_desc": "Condomínio fechado de lotes do Grupo Alphaville no bairro do Itaici, em Indaiatuba/SP, com lotes a partir de 510 m² e de 1.000 m², clube com piscina climatizada de raias semiolímpicas, quadras e 245 mil m² de áreas verdes e de lazer. Pela tabela de vendas de outubro/2026, 126 lotes disponíveis em 07/10/2026 no quadro de vendas da Alphaville, de 511,50 a 1.205,76 m², de R$ 908.480,37 a R$ 1.609.895,78, com ato de 20% e saldo em 60 meses corrigido pelo IPCA.",
   "endereco_schema": "Bairro do Itaici",
-  "preco_min": 888939.47,
+  "preco_min": 908480.37,
   "preco_max": 1609895.78,
-  "offer_count": 131,
-  "oferta_desc": "Tabela de vendas Alphaville de setembro/2026 com 131 lotes, de R$ 888.939,47 (lote E-30, 525,04 m²) a R$ 1.609.895,78 (lote M-16, 1.205,76 m²). As custas de escrituração são cobradas à parte. Ato de 20% e saldo de 80% em 60 meses, corrigido pelo IPCA.",
-  "produto_nome": "Alphaville Indaiatuba — lote de 525 m² no Itaici",
-  "produto_desc": "Lotes de 511 a 1.249 m² em condomínio fechado Alphaville no Itaici, Indaiatuba/SP. Tabela de vendas de setembro/2026.",
+  "offer_count": 126,
+  "oferta_desc": "Tabela de vendas Alphaville de outubro/2026, com 126 lotes disponíveis em 07/10/2026 no quadro de vendas da Alphaville, de R$ 908.480,37 (lote C-11, 511,50 m²) a R$ 1.609.895,78 (lote M-16, 1.205,76 m²). As custas de escrituração são cobradas à parte. Ato de 20% e saldo de 80% em 60 meses, corrigido pelo IPCA.",
+  "produto_nome": "Alphaville Indaiatuba — lote de 511 m² no Itaici",
+  "produto_desc": "Lotes de 511 a 1.205 m² em condomínio fechado Alphaville no Itaici, Indaiatuba/SP. Tabela de vendas de outubro/2026.",
   "marca": "Alphaville",
   "lazer": [],
   "marca_topo": [
@@ -28,9 +28,9 @@
   "hero": {
     "eyebrow": "Itaici · Indaiatuba/SP",
     "sub": "Condomínio fechado de lotes · Grupo Alphaville",
-    "lead": "Lotes a partir de 510 m² e de 1.000 m² em um condomínio fechado com clube, piscina climatizada de raias semiolímpicas, quadras e 245 mil m² de áreas verdes e de lazer. Na tabela de setembro/2026 são 131 lotes à venda.",
-    "preco": "A partir de R$ 888.939,47",
-    "preco_nota": "tabela de vendas de setembro/2026 · custas de escrituração à parte",
+    "lead": "Lotes a partir de 510 m² e de 1.000 m² em um condomínio fechado com clube, piscina climatizada de raias semiolímpicas, quadras e 245 mil m² de áreas verdes e de lazer. Em 07/10/2026, pelo quadro de vendas da Alphaville, são 126 lotes disponíveis.",
+    "preco": "A partir de R$ 908.480,37",
+    "preco_nota": "tabela de vendas de outubro/2026 · custas de escrituração à parte",
     "cta_msg": "Olá! Quero a tabela de lotes do Alphaville Indaiatuba com quadra, metragem e valor.",
     "cta_texto": "Ver lotes e valores"
   },
@@ -44,8 +44,8 @@
       ],
       "numeros": [
         {
-          "n": "131",
-          "p": "lotes na tabela de set/2026"
+          "n": "126",
+          "p": "lotes disponíveis em 07/10/2026"
         },
         {
           "n": "245 mil",
@@ -67,10 +67,10 @@
       "classe": "cream",
       "h2": "Duas linhas: lotes de 510 m² e de 1.000 m²",
       "paragrafos": [
-        "O book chama as linhas de lotes de 510 m² e de 1.000 m², mas as metragens da tabela variam lote a lote. Na tabela de setembro/2026, os lotes à venda são estes:"
+        "O book chama as linhas de lotes de 510 m² e de 1.000 m², mas as metragens da tabela variam lote a lote. A Alphaville manteve na tabela de vendas de outubro/2026 os valores de setembro. No quadro de vendas de 07/10/2026, os lotes E-30 e O-05 aparecem como reservados e voltam à lista se a reserva cair; os disponíveis nessa data são estes:"
       ],
       "tabela": {
-        "legenda": "Lotes da tabela de vendas Alphaville de setembro/2026, por linha. Valores sem as custas de escrituração.",
+        "legenda": "Lotes disponíveis no quadro de vendas de 07/10/2026, com os valores da tabela de vendas Alphaville de outubro/2026, por linha. Valores sem as custas de escrituração.",
         "cab": [
           "Linha",
           "Quadras",
@@ -88,16 +88,16 @@
           [
             "Lotes a partir de 510 m²",
             "A a I",
-            "93",
+            "92",
             "511,50 a 863,29 m²",
-            "R$ 888.939,47",
+            "R$ 908.480,37",
             "R$ 1.539.959,93"
           ],
           [
             "Lotes a partir de 1.000 m²",
             "J a Q",
-            "38",
-            "1.001,00 a 1.249,22 m²",
+            "34",
+            "1.001,00 a 1.205,76 m²",
             "R$ 1.153.370,11",
             "R$ 1.609.895,78"
           ]
@@ -106,11 +106,11 @@
       "cards": [
         {
           "t": "Valor por metro quadrado",
-          "p": "Na linha de 510 m² o valor vai de cerca de R$ 1.284 a R$ 1.858 por m²; na de 1.000 m², de R$ 1.136 a R$ 1.335 por m² (cálculo sobre a tabela de setembro/2026)."
+          "p": "Na linha de 510 m² o valor vai de cerca de R$ 1.284 a R$ 1.858 por m²; na de 1.000 m², de R$ 1.136 a R$ 1.335 por m² (cálculo sobre a tabela de outubro/2026)."
         },
         {
           "t": "Custas de escrituração",
-          "p": "Cobradas à parte, em coluna própria da tabela: equivalem a 4,76% do valor em todos os lotes. No lote E-30, por exemplo, são R$ 42.313,52."
+          "p": "Cobradas à parte, em coluna própria da tabela: equivalem a 4,76% do valor em todos os lotes. No lote C-11, por exemplo, são R$ 43.243,67."
         },
         {
           "t": "Infraestrutura",
@@ -143,7 +143,7 @@
       "label": "Preços e condições",
       "h2": "Ato de 20% e saldo em 60 meses",
       "paragrafos": [
-        "A tabela de vendas de setembro/2026 usa a mesma estrutura para os 131 lotes: 20% de ato e os 80% restantes em uma de duas opções. A primeira parcela vence 30 dias depois, e as parcelas são corrigidas pelo IPCA/IBGE."
+        "A tabela de vendas de outubro/2026 usa a mesma estrutura para todos os lotes: 20% de ato e os 80% restantes em uma de duas opções. A primeira parcela vence 30 dias depois, e as parcelas são corrigidas pelo IPCA/IBGE."
       ],
       "tabela2_titulo": "Exemplo com o lote A-03 (539,19 m², R$ 957.618,30)",
       "tabela2_paragrafos": [
@@ -357,12 +357,12 @@
       "Bairro do Itaici, Indaiatuba/SP"
     ],
     [
-      "Lotes na tabela",
-      "131 (93 nas quadras A a I e 38 nas quadras J a Q)"
+      "Lotes disponíveis em 07/10/2026",
+      "126 (92 nas quadras A a I e 34 nas quadras J a Q)"
     ],
     [
       "Metragens",
-      "511,50 a 863,29 m² e 1.001,00 a 1.249,22 m²"
+      "511,50 a 863,29 m² e 1.001,00 a 1.205,76 m²"
     ],
     [
       "Áreas verdes e lazer",
@@ -388,15 +388,15 @@
   "faq": [
     {
       "q": "Quanto custa um lote no Alphaville Indaiatuba?",
-      "a": "A tabela de vendas de setembro/2026 lista 131 lotes, de R$ 888.939,47 a R$ 1.609.895,78. Na linha de lotes a partir de 510 m² os valores vão de R$ 888.939,47 a R$ 1.539.959,93; na de lotes a partir de 1.000 m², de R$ 1.153.370,11 a R$ 1.609.895,78. As custas de escrituração são cobradas à parte e equivalem a 4,76% do valor do lote."
+      "a": "Pela tabela de vendas de outubro/2026, os 126 lotes disponíveis em 07/10/2026 no quadro de vendas da Alphaville vão de R$ 908.480,37 a R$ 1.609.895,78. Na linha de lotes a partir de 510 m² os valores vão de R$ 908.480,37 a R$ 1.539.959,93; na de lotes a partir de 1.000 m², de R$ 1.153.370,11 a R$ 1.609.895,78. As custas de escrituração são cobradas à parte e equivalem a 4,76% do valor do lote."
     },
     {
       "q": "Como é o pagamento dos lotes do Alphaville Indaiatuba?",
-      "a": "O ato é de 20% do valor. Os 80% restantes podem ser pagos em 5 parcelas anuais de 4% mais 60 mensais de 1%, ou em 60 mensais de 1,333%. A primeira parcela vence em 30 dias e as parcelas são corrigidas pelo IPCA/IBGE, conforme a tabela de setembro/2026."
+      "a": "O ato é de 20% do valor. Os 80% restantes podem ser pagos em 5 parcelas anuais de 4% mais 60 mensais de 1%, ou em 60 mensais de 1,333%. A primeira parcela vence em 30 dias e as parcelas são corrigidas pelo IPCA/IBGE, conforme a tabela de outubro/2026."
     },
     {
       "q": "Qual o tamanho dos lotes do Alphaville Indaiatuba?",
-      "a": "São duas linhas. Nas quadras A a I, os lotes da tabela têm de 511,50 a 863,29 m². Nas quadras J a Q, de 1.001,00 a 1.249,22 m²."
+      "a": "São duas linhas. Nas quadras A a I, os lotes disponíveis em 07/10/2026 têm de 511,50 a 863,29 m². Nas quadras J a Q, de 1.001,00 a 1.205,76 m²."
     },
     {
       "q": "Onde fica o Alphaville Indaiatuba?",
@@ -417,14 +417,14 @@
   ],
   "cta": {
     "h2": "Quer ver os lotes do Alphaville Indaiatuba?",
-    "p": "Mandamos a tabela com quadra, metragem, valor e custas de cada um dos 131 lotes, e simulamos as duas opções de pagamento.",
+    "p": "Mandamos a tabela com quadra, metragem, valor e custas de cada um dos 126 lotes disponíveis, e simulamos as duas opções de pagamento.",
     "msg": "Olá! Tenho interesse no Alphaville Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "ALPHAVILLE INDAIATUBA",
-    "linha": "Alphaville Indaiatuba · condomínio fechado de lotes de 511 a 1.249 m² · Bairro do Itaici · Indaiatuba, SP",
+    "linha": "Alphaville Indaiatuba · condomínio fechado de lotes de 511 a 1.205 m² · Bairro do Itaici · Indaiatuba, SP",
     "realizacao": "Realização Grupo Alphaville",
-    "legal": "Perspectivas ilustradas, com a vegetação em fase adulta; o projeto pode sofrer alterações e o adensamento depende das escolhas construtivas de cada adquirente. A loteadora pode expandir o empreendimento em área contígua. Preços e condições conforme a tabela de vendas de setembro/2026, sem as custas de escrituração, com parcelas corrigidas pelo IPCA/IBGE e sujeitos a alteração sem aviso; a disponibilidade dos lotes é confirmada no atendimento. Loteamento aprovado pelo Decreto Municipal nº 15.602, de 11/12/2025, Processo Administrativo nº 19.518/2021; o book de fevereiro de 2026 informava o registro prenotado sob o nº 412388 no Registro de Imóveis de Indaiatuba/SP. Página publicada em set/2026."
+    "legal": "Perspectivas ilustradas, com a vegetação em fase adulta; o projeto pode sofrer alterações e o adensamento depende das escolhas construtivas de cada adquirente. A loteadora pode expandir o empreendimento em área contígua. Preços e condições conforme a tabela de vendas de outubro/2026, sem as custas de escrituração, com parcelas corrigidas pelo IPCA/IBGE e sujeitos a alteração sem aviso; disponibilidade dos lotes de 07/10/2026, pelo quadro de vendas da Alphaville, confirmada no atendimento. Loteamento aprovado pelo Decreto Municipal nº 15.602, de 11/12/2025, Processo Administrativo nº 19.518/2021; o book de fevereiro de 2026 informava o registro prenotado sob o nº 412388 no Registro de Imóveis de Indaiatuba/SP. Página publicada em set/2026."
   },
   "home": {
     "tipo": "lote",
