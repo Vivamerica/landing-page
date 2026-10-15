@@ -68,7 +68,7 @@
     .marca b{color:var(--ouro);font-weight:400}
     header h1{font-family:'Poiret One',cursive;font-weight:400;font-size:1.05rem;letter-spacing:.06em;text-align:center;flex:1}
     header .wa{background:#25D366;color:#fff;text-decoration:none;font-weight:700;font-size:.78rem;padding:.5rem .8rem;border-radius:999px;white-space:nowrap}
-    main{flex:none;height:calc(100vh - 48px - var(--intro,0px));height:calc(100dvh - 48px - var(--intro,0px));min-height:420px;display:grid;grid-template-columns:340px 1fr}
+    main{flex:none;height:calc(100vh - 48px);height:calc(100dvh - 48px);min-height:420px;display:grid;grid-template-columns:340px 1fr}
     aside{border-right:1px solid var(--borda);background:#fff;display:flex;flex-direction:column;min-height:0}
     .filtros{padding:.5rem .8rem;border-bottom:1px solid var(--borda)}
     .filtros p{font-size:.72rem;color:var(--cinza);margin-bottom:.4rem;letter-spacing:.08em;text-transform:uppercase}
@@ -142,7 +142,7 @@
       .float-wpp span{display:none}
       .float-wpp svg{width:26px;height:26px}
       main{display:block;position:relative}
-      #mapa{height:calc(100dvh - 48px - var(--intro,0px));min-height:420px}
+      #mapa{height:calc(100dvh - 48px);min-height:420px}
       aside{position:fixed;top:0;left:0;height:100dvh;width:min(80vw,360px);z-index:1200;border-right:0;
             box-shadow:0 0 30px rgba(0,0,0,.35);transform:translateX(-102%);transition:transform .25s ease}
       aside.aberta{transform:none}
@@ -219,7 +219,13 @@
     }
     @media(prefers-reduced-motion:reduce){.solar{transition:none}.rosa-btn{transition:none}}
     /* ── BLOCO INDEXÁVEL: resumo acima do mapa, lista e FAQ abaixo; barra de contato no celular ── */
-    .intro{background:#fff;border-bottom:1px solid var(--borda);padding:.55rem 1rem;flex:none}
+    .intro{background:#fff;border-top:1px solid var(--borda);padding:1.2rem 1rem 0;flex:none}
+    .aviso-mapa{position:absolute;top:.6rem;left:50%;transform:translateX(-50%);z-index:1000;width:max-content;max-width:min(560px,calc(100% - 8rem));
+                display:flex;align-items:flex-start;gap:.45rem;background:rgba(255,255,255,.96);border:1px solid var(--borda);border-left:3px solid var(--ouro);
+                border-radius:.5rem;padding:.45rem .45rem .45rem .7rem;box-shadow:0 2px 10px rgba(0,0,0,.15);font-size:.74rem;line-height:1.4;color:var(--preto)}
+    .aviso-mapa p{margin:0}
+    .aviso-fechar{flex:none;background:none;border:0;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--cinza);padding:0 .2rem;border-radius:.25rem}
+    .aviso-fechar:hover,.aviso-fechar:focus-visible{color:var(--preto);outline:2px solid var(--ouro);outline-offset:1px}
     .intro-txt{max-width:1160px;margin:0 auto;font-size:.8rem;line-height:1.45;color:var(--preto)}
     .intro-txt a{color:var(--com)}
     .intro-lnk{white-space:nowrap;font-weight:700}
@@ -248,7 +254,8 @@
     .btn-tab{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:700;font-size:.72rem;padding:.35rem .7rem;border-radius:999px;white-space:nowrap}
     .barra-wa{display:none}
     @media(max-width:760px){
-      .intro{padding:.5rem .8rem}
+      .intro{padding:1rem .8rem 0}
+      .aviso-mapa{font-size:.68rem;max-width:calc(100% - 7.8rem)}
       .intro-txt{font-size:.74rem;line-height:1.4}
       .guia{padding:1.4rem .8rem 7.5rem}
       .guia table{min-width:640px}
@@ -349,11 +356,6 @@
   <h1>Mapa de lotes à venda em Indaiatuba</h1>
   <a class="wa" data-origem="topo" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Vi%20o%20mapa%20de%20lotes%20em%20Indaiatuba%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">WhatsApp</a>
 </header>
-<!--GEN:mapa-resumo-->
-<section class="intro" id="intro" aria-label="Resumo do mapa de lotes">
-  <p class="intro-txt"><strong>Resposta direta:</strong> 2.271 lotes à venda com preço à vista em 23 loteamentos e condomínios de Indaiatuba, pelas tabelas das loteadoras (data em cada um). O menor preço por m² no mapa é o do <a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a>, loteamento aberto: R$ 967/m² (lote de 150 m² por R$ 145.000 à vista, tabela de 09/10/2026). <a class="intro-lnk" href="#lista-loteamentos">Lista com o preço de cada loteamento ↓</a></p>
-</section>
-<!--/GEN:mapa-resumo-->
 <main>
   <aside id="painel">
     <div class="gaveta-topo"><b>Bairros e lotes</b><button type="button" id="btnFechar" aria-label="Fechar">×</button></div>
@@ -371,7 +373,12 @@
     <div class="lista" id="lista"></div>
     <div class="rodape">Preços à vista, sujeitos a alteração sem aviso. Para parcelamento, consulte-nos. Pinos em posição aproximada. Imobiliária Viv'América · CRECI 47394-J · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade" style="color:inherit;">Política de Privacidade</a>.</div>
   </aside>
-  <div id="mapa" role="application" aria-label="Mapa com os lotes disponíveis"></div>
+  <div id="mapa" role="application" aria-label="Mapa com os lotes disponíveis">
+    <div class="aviso-mapa" id="avisoMapa" role="note">
+      <p><b>Informativo:</b> preços e disponibilidade seguem as tabelas das loteadoras e podem mudar sem aviso ou conter erros. Pinos em posição aproximada; confirme conosco antes de decidir.</p>
+      <button type="button" class="aviso-fechar" aria-label="Fechar o informativo">×</button>
+    </div>
+  </div>
   <!-- Disposicao solar: aparece enquanto a rosa dos ventos estiver pressionada -->
   <div class="solar" id="solar" aria-hidden="true">
     <div class="solar-metade solar-oeste"></div>
@@ -386,6 +393,11 @@
     <div class="solar-rodape">O norte está sempre para cima neste mapa. O sol <b>nasce à direita</b> da tela, cruza o céu pelo <b>norte</b> e <b>se põe à esquerda</b> — por isso o lado escuro é o poente.</div>
   </div>
 </main>
+<!--GEN:mapa-resumo-->
+<section class="intro" id="intro" aria-label="Resumo do mapa de lotes">
+  <p class="intro-txt"><strong>Resposta direta:</strong> 2.271 lotes à venda com preço à vista em 23 loteamentos e condomínios de Indaiatuba, pelas tabelas das loteadoras (data em cada um). O menor preço por m² no mapa é o do <a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a>, loteamento aberto: R$ 967/m² (lote de 150 m² por R$ 145.000 à vista, tabela de 09/10/2026).</p>
+</section>
+<!--/GEN:mapa-resumo-->
 <!--GEN:mapa-lista-->
 <section class="guia" id="lista-loteamentos" data-gerado="2026-10-15">
   <div class="guia-in">
@@ -2944,11 +2956,22 @@ L.control.scale({ imperial: false }).addTo(mapa);
 const naVistaInicial = x => { const b = bairroDe(x.b); return !(b && (b.oculto || foraDaBase(b))); };
 function enquadrarTudo() { const pts = LOTES.flatMap(x => x.ll && naVistaInicial(x) ? [x.ll] : []); if (pts.length) mapa.fitBounds(L.latLngBounds(pts).pad(0.15), { animate: false }); }
 window.addEventListener('resize', () => mapa.invalidateSize());
-// O resumo acima do mapa tem altura variável; o mapa ocupa o resto da tela.
-const intro = document.getElementById('intro');
-function medirIntro() { document.documentElement.style.setProperty('--intro', (intro ? intro.offsetHeight : 0) + 'px'); mapa.invalidateSize(); }
-medirIntro(); window.addEventListener('resize', medirIntro);
-if (document.fonts && document.fonts.ready) document.fonts.ready.then(medirIntro);
+// O mapa ocupa a tela abaixo do cabeçalho; o resumo e a lista dos loteamentos ficam depois dele.
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => mapa.invalidateSize());
+// Informativo no alto do mapa: o visitante fecha para liberar a tela, e a escolha fica neste navegador por 30 dias.
+(function informativo() {
+  const el = document.getElementById('avisoMapa');
+  if (!el) return;
+  const CHAVE = 'mapa-informativo-fechado';
+  let fechadoEm = 0;
+  try { fechadoEm = +localStorage.getItem(CHAVE) || 0; } catch (e) {}
+  if (fechadoEm && Date.now() - fechadoEm < 30 * 864e5) { el.remove(); return; }
+  L.DomEvent.disableClickPropagation(el); L.DomEvent.disableScrollPropagation(el);
+  el.querySelector('.aviso-fechar').addEventListener('click', () => {
+    el.remove();
+    try { localStorage.setItem(CHAVE, String(Date.now())); } catch (e) {}
+  });
+})();
 window.addEventListener('load', () => mapa.invalidateSize());
 
 const camada = L.layerGroup().addTo(mapa);

@@ -22,7 +22,7 @@ Ordem, por empreendimento (exemplos em dados/):
    dados/zarah-safira-mascara-cfg.json + dados/zarah-safira-cheio-overlay-cfg.json (0,4 m/px, 32 cores, 366 KB).
 8. confere-overlay.py images/<id>.png <id>-bounds.json conf.jpg 17  (planta sobre o satelite Esri, sem precisar do site)
 9. patch-mapa-bairro.py <id> <id>-bairro.txt <id>-lotes.js "comentario"  (idempotente) e node checa-mapa-js.js
-10. gera-lista-indexavel.py (idempotente): reescreve o bloco indexável da página — resumo acima do mapa, tabela dos
+10. gera-lista-indexavel.py (idempotente): reescreve o bloco indexável da página — resumo e tabela dos
     loteamentos por R$/m², FAQ e JSON-LD (WebPage/ItemList/FAQPage) — a partir de BAIRROS/LOTES. Roda depois de QUALQUER
     mudança de dado (passos 9, dominium-atualiza.py, *-atualiza.py); a data "gerada em" só avança quando o conteúdo muda.
     Antes de rodar, quando a tabela ou o relatório de um bairro muda, acertar À MÃO em BAIRROS o `tab` (data da tabela:

@@ -8,7 +8,8 @@
 # número é digitado à mão.
 #
 # Marcadores no HTML (o conteúdo entre eles é reescrito; o resto não se toca):
-#   <!--GEN:mapa-resumo--> ... <!--/GEN:mapa-resumo-->   logo após o <header>
+#   <!--GEN:mapa-resumo--> ... <!--/GEN:mapa-resumo-->   logo após o </main>, antes da lista (desde 15/10/2026;
+#                                                          antes ficava acima do mapa e tomava espaço da tela)
 #   <!--GEN:mapa-lista-->  ... <!--/GEN:mapa-lista-->    logo após o </main>
 #
 # Idempotente. A data "gerada em" (data-gerado, "Lista gerada em", legenda e a
@@ -266,7 +267,7 @@ MARCA_DATABR = '@@DATABR@@'
 # ── bloco 1: resumo acima do mapa ─────────────────────────────────────
 resumo = '''
 <section class="intro" id="intro" aria-label="Resumo do mapa de lotes">
-  <p class="intro-txt"><strong>Resposta direta:</strong> %s lotes à venda com preço à vista em %s loteamentos e condomínios de Indaiatuba, pelas tabelas das loteadoras (data em cada um). O menor preço por m² no mapa é o %s. <a class="intro-lnk" href="#lista-loteamentos">Lista com o preço de cada loteamento ↓</a></p>
+  <p class="intro-txt"><strong>Resposta direta:</strong> %s lotes à venda com preço à vista em %s loteamentos e condomínios de Indaiatuba, pelas tabelas das loteadoras (data em cada um). O menor preço por m² no mapa é o %s.</p>
 </section>
 ''' % (num_pt(n_preco), n_grupos, txt_barato)
 
