@@ -3,18 +3,18 @@
   "nome": "Jardim Dona Maria Cândida",
   "categoria": "loteamentos",
   "data": "2026-10-04",
-  "atualizado": "2026-10-11",
-  "fonte_tabela": "tabela Asseplan Narezzi de 01/07/2025 · lista de lotes de 08/09/2026",
+  "atualizado": "2026-10-16",
+  "fonte_tabela": "tabela de 01/07/2025, confirmada para out/2026 · lista de lotes de 16/10/2026",
   "title": "Jardim Dona Maria Cândida | lotes de 300 m² em Indaiatuba",
-  "description": "Loteamento fechado da Asseplan Narezzi em Indaiatuba, com obras concluídas: 180 lotes de 300 a 472 m², desde R$ 600.000, com 10% de entrada e 60x.",
+  "description": "Loteamento fechado da Asseplan Narezzi em Indaiatuba, com obras concluídas: 166 lotes de 300 a 472 m², desde R$ 600.000, com 10% de entrada e 60x.",
   "keywords": "jardim dona maria candida, maria candida indaiatuba, lote indaiatuba, loteamento fechado indaiatuba, asseplan narezzi, lote pronto para construir indaiatuba",
   "schema_tipo": "RealEstateListing",
   "schema_desc": "Loteamento fechado da Asseplan Narezzi em Indaiatuba, com infraestrutura concluída, portaria com segurança 24 horas, área de lazer de 5.000 m² e lotes a partir de 300 m².",
   "endereco_schema": "Indaiatuba",
   "preco_min": 600000,
   "preco_max": 943940,
-  "offer_count": 180,
-  "oferta_desc": "Lista de disponibilidade de 08/09/2026 com 180 lotes, de R$ 600.000,00 (300 m²) a R$ 943.940,00 (471,97 m²). Valores da tabela Asseplan Narezzi válida a partir de 01/07/2025 — confirme o preço atual no atendimento.",
+  "offer_count": 166,
+  "oferta_desc": "Lista de disponibilidade de 16/10/2026 com 166 lotes, de R$ 600.000,00 (300 m²) a R$ 943.940,00 (471,97 m²). Valores da tabela válida a partir de 01/07/2025, com preços confirmados para out/2026.",
   "produto_nome": "Jardim Dona Maria Cândida — lote de 300 m² em Indaiatuba",
   "produto_desc": "Lotes de 300 a 471,97 m² em loteamento fechado com obras concluídas, portaria com segurança 24 horas e 5.000 m² de área de lazer, em Indaiatuba/SP.",
   "marca": "Asseplan Narezzi",
@@ -36,9 +36,9 @@
   "hero": {
     "eyebrow": "Indaiatuba/SP · Asseplan Narezzi",
     "sub": "Loteamento fechado com obras concluídas em Indaiatuba",
-    "lead": "Lotes de 300 a 472 m² com a infraestrutura pronta: asfalto, calçada, iluminação e rede de água e esgoto já executados. Na lista de 08/09/2026 restam 180 lotes dos 771 do projeto. Entrada de 10% e saldo em até 60 parcelas.",
+    "lead": "Lotes de 300 a 472 m² com a infraestrutura pronta: asfalto, calçada, iluminação e rede de água e esgoto já executados. Na lista de 16/10/2026 restam 166 lotes dos 771 do projeto. Entrada de 10% e saldo em até 60 parcelas.",
     "preco": "A partir de R$ 600.000",
-    "preco_nota": "lote de 300 m² · tabela Asseplan Narezzi válida a partir de 01/07/2025 — confirme o valor atual",
+    "preco_nota": "lote de 300 m² · tabela válida a partir de 01/07/2025, preços confirmados para out/2026",
     "cta_msg": "Olá! Quero a tabela de lotes do Jardim Dona Maria Cândida com quadra, metragem e valor.",
     "cta_texto": "Ver lotes e valores"
   },
@@ -67,7 +67,7 @@
       "h2": "Entrada de 10% e saldo em até 60 vezes",
       "paragrafos": [
         "A condição publicada pela loteadora é de 10% de entrada e o saldo em até 60 parcelas, direto com a Asseplan Narezzi — sem passar por banco.",
-        "No lote de 300 m² a R$ 600.000, a entrada de 10% fica em R$ 60.000. O valor de cada parcela e a correção aplicada constam da tabela vigente; peça a simulação para o lote que interessa."
+        "No lote de 300 m², de R$ 600.000, a entrada de 10% é de R$ 60.000 e o saldo pode ir em 60 parcelas de R$ 12.420 — ou em 12 de R$ 48.600, 24 de R$ 25.920, 30 de R$ 21.600, 36 de R$ 18.360 ou 48 de R$ 14.580. Nos prazos acima de 12 meses, as parcelas têm reajuste anual pelo IPCA, aplicado só quando o índice é positivo. À vista, o valor pode ser pago em até 6 vezes. Lote maior tem valor proporcional à metragem; peça a simulação para o lote que interessa."
       ],
       "depois": "ficha"
     }
@@ -147,7 +147,7 @@
     ],
     [
       "Disponíveis",
-      "180 lotes na lista de 08/09/2026"
+      "166 lotes na lista de 16/10/2026"
     ],
     [
       "Metragens",
@@ -159,11 +159,11 @@
     ],
     [
       "Pagamento",
-      "10% de entrada e saldo em até 60 parcelas, direto com a loteadora"
+      "10% de entrada e saldo em até 60 parcelas, direto com a loteadora (60x de R$ 12.420 no lote de 300 m², com reajuste anual pelo IPCA quando positivo)"
     ],
     [
       "Tabela de referência",
-      "Asseplan Narezzi, válida a partir de 01/07/2025 — peça a atual no atendimento"
+      "tabela de preços válida a partir de 01/07/2025 — preços confirmados para out/2026"
     ],
     [
       "Segurança",
@@ -181,7 +181,7 @@
   "faq": [
     {
       "q": "Onde fica o Jardim Dona Maria Cândida?",
-      "a": "Em Indaiatuba, no interior de São Paulo. O loteamento aparece no nosso mapa de lotes, com os 180 disponíveis posicionados um a um. O plantão de vendas da Asseplan Narezzi fica na Av. Presidente Vargas, 787."
+      "a": "Em Indaiatuba, no interior de São Paulo. O loteamento aparece no nosso mapa de lotes, com os 166 disponíveis posicionados um a um. O plantão de vendas da Asseplan Narezzi fica na Av. Presidente Vargas, 787."
     },
     {
       "q": "Já posso construir?",
@@ -189,15 +189,15 @@
     },
     {
       "q": "Quantos lotes ainda estão disponíveis?",
-      "a": "Na lista de 08/09/2026 constam 180 lotes disponíveis, dos 771 do projeto. Como a disponibilidade muda a cada venda, confirme conosco antes de fechar."
+      "a": "Na lista de 16/10/2026 constam 166 lotes disponíveis, dos 771 do projeto. Como a disponibilidade muda a cada venda, confirme conosco antes de fechar."
     },
     {
       "q": "Qual o preço dos lotes?",
-      "a": "Pela tabela da Asseplan Narezzi válida a partir de 01/07/2025, os lotes vão de R$ 600.000,00 (300 m²) a R$ 943.940,00 (471,97 m²), o equivalente a R$ 2.000 por metro quadrado. Essa tabela tem mais de um ano: peça o valor atual no atendimento antes de decidir."
+      "a": "Pela tabela de preços válida a partir de 01/07/2025, os lotes vão de R$ 600.000,00 (300 m²) a R$ 943.940,00 (471,97 m²), o equivalente a R$ 2.000 por metro quadrado. Os preços dessa tabela estão confirmados para outubro/2026."
     },
     {
       "q": "Como funciona o pagamento?",
-      "a": "A condição publicada é de 10% de entrada e o saldo em até 60 parcelas, direto com a loteadora, sem financiamento bancário. No lote de 300 m², a entrada fica em torno de R$ 60.000. A correção aplicada às parcelas consta da tabela vigente."
+      "a": "A condição da tabela é de 10% de entrada e o saldo em até 60 parcelas, direto com a loteadora, sem financiamento bancário. No lote de 300 m² (R$ 600.000), a entrada é de R$ 60.000 e as 60 parcelas são de R$ 12.420, com reajuste anual pelo IPCA quando o índice é positivo; há também prazos de 12, 24, 30, 36 e 48 meses, e o pagamento à vista pode ser feito em até 6 vezes."
     },
     {
       "q": "O que tem na área de lazer?",
@@ -214,14 +214,14 @@
   ],
   "cta": {
     "h2": "Quer ver os lotes do Jardim Dona Maria Cândida?",
-    "p": "Mandamos a lista com quadra, metragem e valor dos 180 lotes disponíveis, e marcamos a visita ao loteamento.",
+    "p": "Mandamos a lista com quadra, metragem e valor dos 166 lotes disponíveis, e marcamos a visita ao loteamento.",
     "msg": "Olá! Tenho interesse no Jardim Dona Maria Cândida em Indaiatuba. Pode me enviar mais informações?"
   },
   "rodape": {
     "marca": "Asseplan Narezzi",
     "linha": "Jardim Dona Maria Cândida — loteamento fechado em Indaiatuba/SP",
     "realizacao": "Realização Asseplan Narezzi · CRECI J 4447-9",
-    "legal": "Valores e disponibilidade conforme a lista de 08/09/2026 e a tabela Asseplan Narezzi válida a partir de 01/07/2025, sujeitos a alteração sem aviso; a disponibilidade dos lotes é confirmada no atendimento. Imagens do material da loteadora."
+    "legal": "Valores e disponibilidade conforme a lista de 16/10/2026 e a tabela válida a partir de 01/07/2025 (preços confirmados para out/2026), sujeitos a alteração sem aviso; a disponibilidade dos lotes é confirmada no atendimento. Imagens do material da loteadora."
   },
   "home": {
     "tipo": "lote",
@@ -233,12 +233,12 @@
     "badge": "Pronto para construir",
     "badge_estilo": "background:#1F7A3F;color:#fff;",
     "meta": "Lotes de 300 a 472 m² · obras concluídas · 10% + 60x",
-    "desc": "180 lotes disponíveis na lista de 08/09/2026 · obras de infraestrutura concluídas, pronto para construir · 10% de entrada e saldo em até 60x.",
+    "desc": "166 lotes disponíveis na lista de 16/10/2026 · obras de infraestrutura concluídas, pronto para construir · 10% de entrada e saldo em até 60x.",
     "alt": "Portaria do Jardim Dona Maria Cândida em Indaiatuba",
-    "itemlist": "Jardim Dona Maria Cândida — loteamento fechado da Asseplan Narezzi em Indaiatuba, 180 lotes de 300 a 472 m² · a partir de R$ 600.000 (tabela de 01/07/2025)"
+    "itemlist": "Jardim Dona Maria Cândida — loteamento fechado da Asseplan Narezzi em Indaiatuba, 166 lotes de 300 a 472 m² · a partir de R$ 600.000 (tabela de 01/07/2025, confirmada para out/2026)"
   },
   "llms": {
     "secao": "loteamentos",
-    "linha": "Loteamento fechado da Asseplan Narezzi em Indaiatuba, com obras de infraestrutura concluídas, 771 lotes no projeto e 180 disponíveis na lista de 08/09/2026, de 300 a 471,97 m², a partir de R$ 600.000 (tabela válida a partir de 01/07/2025); entrada de 10% e saldo em até 60 parcelas direto com a loteadora; dois acessos com portaria 24 horas e 5.000 m² de área de lazer com 2 piscinas, 2 quadras de tênis, quadra poliesportiva, campo society, salão de festas, playground e quiosque."
+    "linha": "Loteamento fechado da Asseplan Narezzi em Indaiatuba, com obras de infraestrutura concluídas, 771 lotes no projeto e 166 disponíveis na lista de 16/10/2026, de 300 a 471,97 m², a partir de R$ 600.000 (tabela válida a partir de 01/07/2025, preços confirmados para out/2026); entrada de 10% e saldo em até 60 parcelas direto com a loteadora (60x de R$ 12.420 no lote de 300 m², com reajuste anual pelo IPCA quando positivo); dois acessos com portaria 24 horas e 5.000 m² de área de lazer com 2 piscinas, 2 quadras de tênis, quadra poliesportiva, campo society, salão de festas, playground e quiosque."
   }
 }

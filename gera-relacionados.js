@@ -35,7 +35,12 @@ const LOTES = extrair('LOTES');
 // sem preço na página /apartamentos-na-planta-indaiatuba/.
 const EXTRAS_APTOS = [
   // 04/09/2026: Canário (3 unidades) e Andorinha (2) voltaram ao estoque na tabela VIC de 02/09/2026
-  // e estão de novo em APTOS. Quando esgotarem outra vez, voltam para cá com t:'Esgotado'.
+  // e foram de novo para APTOS. Quando esgotarem outra vez, voltam para cá com t:'Esgotado'.
+  // 16/10/2026: o Andorinha voltou para cá — a VIC não mandou tabela em outubro, sem unidades.
+  // estEm = quando a saída foi apurada (o card diz "100% vendido (out/2026)").
+  { n: 'Gran Vic Andorinha', slug: 'gran-vic-andorinha-indaiatuba', c: 'VIC Engenharia',
+    s: '2 dorm c/ suíte · Parque dos Pássaros · alternativas: Tangará, Colibri e Canário', t: 'Esgotado', estEm: 'out/2026',
+    img: 'gran-vic-andorinha-indaiatuba/images/hero.jpg' },
 ];
 
 const aptos = APTOS.map(e => ({ n: e.n, slug: e.slug })).concat(EXTRAS_APTOS)

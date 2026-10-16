@@ -3,16 +3,21 @@
   "nome": "360 Home Office Mall",
   "categoria": "apartamentos",
   "data": "2026-09-16",
-  "atualizado": "2026-10-11",
-  "fonte_tabela": "sem tabela pública em out/2026 · incorporação registrada em 21/08/2026",
-  "title": "360 Home Office Mall Indaiatuba | Park Meraki · HINC",
-  "description": "360 Home Office Mall, Park Meraki: 111 unidades residenciais de 39,73 a 128,36 m², mais office, corporate e mall. Incorporação registrada em ago/2026.",
+  "atualizado": "2026-10-16",
+  "fonte_tabela": "tabela HINC de 15/09/2026, preços confirmados para out/2026",
+  "title": "360 Home Office Mall Indaiatuba | a partir de R$ 546 mil",
+  "description": "360 Home Office Mall, Park Meraki: apartamentos com suíte a partir de R$ 546.274, duplex e salas office. Tabela de 15/09/2026, confirmada para out/2026.",
   "keywords": "360 home office mall indaiatuba, 360 indaiatuba, hinc indaiatuba, studio park meraki, apartamento 1 suite indaiatuba, sala comercial park meraki, laje corporativa indaiatuba, loja park meraki, duplex indaiatuba",
   "schema_tipo": "ApartmentComplex",
   "schema_desc": "Complexo de uso misto na Avenida 9 de Julho, 55, no Park Meraki, em Indaiatuba/SP, com três torres (residencial, office e corporate) sobre um mall de 19 lojas, em terreno de 5.752,43 m². A torre residencial tem 111 unidades: 108 apartamentos tipo de 39,73 a 60,73 m² e 3 duplex de 68,54 a 128,36 m², com suíte. Lazer no alto da torre com piscina, sky garden e sky deck. Incorporação HINC, construção HCON, registrada sob R.04 da matrícula 156.803 em 21/08/2026.",
   "unidades_total": 111,
   "endereco_schema": "Avenida 9 de Julho, 55 — Park Meraki",
-  "preco_min": null,
+  "preco_min": 546274,
+  "preco_max": 1950983.52,
+  "offer_count": 84,
+  "oferta_desc": "Tabela HINC de 15/09/2026, com preços confirmados para out/2026: 84 unidades residenciais com suíte (81 apartamentos tipo de 39,73 a 60,73 m² e 3 duplex de 68,54 a 128,36 m²), de R$ 546.273,99 a R$ 1.950.983,52. Fluxo igual em todas: 6% no ato, 5% em 3 parcelas de sinal, 15% em 40 mensais, 10% em 3 anuais, 4% em parcela única e 60% na parcela final.",
+  "produto_nome": "360 Home Office Mall — apartamento com suíte no Park Meraki, Indaiatuba",
+  "produto_desc": "Apartamento com suíte de 39,73 m² no 12º andar da torre residencial do 360 Home Office Mall, no Park Meraki, em Indaiatuba/SP: o menor preço da tabela HINC de 15/09/2026, confirmada para out/2026.",
   "marca": "HINC",
   "lazer": [
     "Sky garden",
@@ -41,10 +46,10 @@
     "eyebrow": "Avenida 9 de Julho, 55 · Park Meraki",
     "sub": "Residencial, office, corporate e mall no Park Meraki, em Indaiatuba",
     "lead": "Um complexo de uso misto no Park Meraki: uma torre residencial com 111 unidades de 39,73 a 128,36 m², uma torre de salas, uma torre corporativa e um mall de 19 lojas na base. O lazer do residencial fica no alto da torre, com piscina, sky garden e sky deck.",
-    "preco": "Valores sob consulta",
-    "preco_nota": "sem tabela pública em out/2026 · condições no atendimento · incorporação registrada em 21/08/2026",
+    "preco": "A partir de R$ 546.274",
+    "preco_nota": "apartamento de 39,73 m² com suíte, no 12º andar · tabela HINC de 15/09/2026, preços confirmados para out/2026",
     "cta_msg": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
-    "cta_texto": "Pedir valores e unidades",
+    "cta_texto": "Receber a tabela",
     "cta2": {
       "msg": "Olá! Quero agendar uma visita ao 360 Home Office Mall.",
       "texto": "Agendar visita"
@@ -185,9 +190,154 @@
     {
       "id": "precos",
       "label": "Valores",
-      "h2": "Tabela e condições sob consulta",
+      "h2": "Tabela de preços e condições de pagamento",
       "paragrafos": [
-        "O material que recebemos da incorporadora não traz tabela de preços, condições de pagamento nem data de entrega. Por isso não publicamos valores nesta página. Pelo WhatsApp mandamos a tabela em vigor, com a data da versão, para as unidades residenciais, as salas, os conjuntos corporativos e as lojas."
+        "A tabela da HINC gerada em 15/09/2026, com preços confirmados para outubro/2026, traz 84 das 111 unidades residenciais — 81 apartamentos tipo, do 10º ao 18º andar, e os 3 duplex — e 34 salas da torre office. O residencial começa em R$ 546.273,99, no apto R1202 (12º andar, 39,73 m²): é o preço de uma única unidade, e as de 39,75 m² partem de R$ 546.548,99. O apartamento tipo mais caro é o R1811, de 60,73 m², a R$ 923.054,14.",
+        "Os conjuntos da torre corporate e as lojas do mall não estão na tabela: seguem sob consulta."
+      ],
+      "tabela": {
+        "legenda": "Unidades da tabela HINC de 15/09/2026 (preços confirmados para out/2026), por planta. Valores totais em reais.",
+        "cab": [
+          "Unidade",
+          "Área privativa",
+          "Na tabela",
+          "De",
+          "Até"
+        ],
+        "num": [
+          2,
+          3,
+          4
+        ],
+        "linhas": [
+          [
+            "Apartamento tipo",
+            "39,73 m²",
+            "7",
+            "R$ 546.273,99",
+            "R$ 603.868,61"
+          ],
+          [
+            "Apartamento tipo",
+            "39,75 m²",
+            "34",
+            "R$ 546.548,99",
+            "R$ 604.172,60"
+          ],
+          [
+            "Apartamento tipo",
+            "42,53 m²",
+            "7",
+            "R$ 584.773,04",
+            "R$ 646.426,68"
+          ],
+          [
+            "Apartamento tipo",
+            "43,34 m²",
+            "9",
+            "R$ 595.910,26",
+            "R$ 658.738,13"
+          ],
+          [
+            "Apartamento tipo",
+            "49,50 m²",
+            "16",
+            "R$ 680.608,17",
+            "R$ 752.365,88"
+          ],
+          [
+            "Apartamento tipo (dois banheiros)",
+            "60,73 m²",
+            "8",
+            "R$ 835.016,85",
+            "R$ 923.054,14"
+          ],
+          [
+            "Duplex",
+            "68,54 m²",
+            "1",
+            "R$ 1.041.760,76",
+            "—"
+          ],
+          [
+            "Duplex",
+            "103,66 m²",
+            "1",
+            "R$ 1.575.560,55",
+            "—"
+          ],
+          [
+            "Duplex",
+            "128,36 m²",
+            "1",
+            "R$ 1.950.983,52",
+            "—"
+          ],
+          [
+            "Sala office",
+            "47,87 a 332,01 m²",
+            "34",
+            "R$ 728.641,24",
+            "R$ 5.426.451,69"
+          ]
+        ]
+      },
+      "tabela2_titulo": "Fluxo de pagamento",
+      "tabela2_paragrafos": [
+        "O fluxo é o mesmo em todas as unidades da tabela. Na última coluna, os valores do apto R1202, o de menor preço."
+      ],
+      "tabela2": {
+        "legenda": "Fluxo da tabela HINC de 15/09/2026 (preços confirmados para out/2026).",
+        "cab": [
+          "Parcela",
+          "Parte do valor",
+          "Quando",
+          "No apto R1202 (R$ 546.273,99)"
+        ],
+        "num": [
+          3
+        ],
+        "linhas": [
+          [
+            "Ato",
+            "6%",
+            "no ato",
+            "R$ 32.776,34"
+          ],
+          [
+            "Sinal",
+            "5% em 3 parcelas",
+            "a partir de 31/10/2026",
+            "3 × R$ 9.104,57"
+          ],
+          [
+            "Mensais",
+            "15% em 40 parcelas",
+            "a partir de 31/01/2027",
+            "40 × R$ 2.048,53"
+          ],
+          [
+            "Anuais",
+            "10% em 3 parcelas",
+            "a partir de 15/09/2027",
+            "3 × R$ 18.209,13"
+          ],
+          [
+            "Parcela única",
+            "4%",
+            "30/04/2030",
+            "R$ 21.850,96"
+          ],
+          [
+            "Parcela final",
+            "60%",
+            "31/05/2030",
+            "R$ 327.764,39"
+          ]
+        ]
+      },
+      "notas": [
+        "A tabela não traz data de entrega nem diz se a parcela final, de 60%, é paga com financiamento bancário: confirme no atendimento. Valores sujeitos a alteração sem aviso prévio."
       ],
       "cta": {
         "msg": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
@@ -418,14 +568,26 @@
       "R.04 da matrícula nº 156.803 do Oficial de Registro de Imóveis de Indaiatuba/SP, publicado em 21/08/2026"
     ],
     [
+      "Preço a partir de",
+      "R$ 546.274 — apartamento de 39,73 m² com suíte (R1202, 12º andar) · tabela HINC de 15/09/2026, preços confirmados para out/2026"
+    ],
+    [
+      "Na tabela",
+      "84 unidades residenciais (81 tipo e 3 duplex) e 34 salas office; corporate e lojas sob consulta"
+    ],
+    [
       "Entrega",
-      "Não informada no material; confirme no atendimento"
+      "Não informada na tabela nem no material; confirme no atendimento"
     ]
   ],
   "faq": [
     {
       "q": "Quanto custa um apartamento no 360 Home Office Mall?",
-      "a": "O material que recebemos da incorporadora não traz tabela de preços, então não publicamos valores. A tabela em vigor, com a data da versão, é enviada pelo WhatsApp da Viv'América para as unidades residenciais, as salas, os conjuntos e as lojas."
+      "a": "Na tabela da HINC de 15/09/2026, com preços confirmados para outubro/2026, o residencial começa em R$ 546.273,99: o apto R1202, no 12º andar, com 39,73 m² e suíte. É o preço de uma única unidade; as de 39,75 m² partem de R$ 546.548,99. O apartamento tipo mais caro é o R1811, de 60,73 m², a R$ 923.054,14, e os duplex vão de R$ 1.041.760,76 (68,54 m²) a R$ 1.950.983,52 (128,36 m²). As salas da torre office vão de R$ 728.641,24 (47,87 m²) a R$ 5.426.451,69 (332,01 m²); conjuntos corporativos e lojas seguem sob consulta."
+    },
+    {
+      "q": "Como é o pagamento no 360 Home Office Mall?",
+      "a": "O fluxo da tabela é o mesmo em todas as unidades: 6% no ato, 5% em 3 parcelas de sinal a partir de 31/10/2026, 15% em 40 mensais a partir de 31/01/2027, 10% em 3 anuais a partir de 15/09/2027, 4% em parcela única em 30/04/2030 e 60% na parcela final, em 31/05/2030. No apto R1202 (R$ 546.273,99), são R$ 32.776,34 no ato, 3 parcelas de R$ 9.104,57, 40 de R$ 2.048,53, 3 de R$ 18.209,13, R$ 21.850,96 e R$ 327.764,39. A tabela não diz se a parcela final é paga com financiamento bancário."
     },
     {
       "q": "Quais são as plantas do residencial do 360?",
@@ -449,12 +611,12 @@
     },
     {
       "q": "Quando o 360 Home Office Mall será entregue?",
-      "a": "O material recebido não informa a data de entrega. A previsão atualizada é passada no atendimento, junto com a tabela."
+      "a": "A tabela de 15/09/2026 e o material recebido não informam a data de entrega. A previsão atualizada é passada no atendimento, junto com a tabela."
     }
   ],
   "cta": {
-    "h2": "Quer os valores do 360 Home Office Mall?",
-    "p": "Mandamos a tabela em vigor das unidades residenciais, salas, conjuntos e lojas, e as condições de pagamento.",
+    "h2": "Quer a tabela completa do 360 Home Office Mall?",
+    "p": "Mandamos a tabela das unidades residenciais e das salas, com o fluxo de pagamento, e as condições dos conjuntos corporativos e das lojas.",
     "msg": "Olá! Quero a tabela de preços do 360 Home Office Mall com as unidades disponíveis.",
     "texto": "Pedir a tabela",
     "visita": {
@@ -466,11 +628,11 @@
     "marca": "360 HOME · OFFICE · MALL",
     "linha": "360 Home Office Mall · residencial com 111 unidades de 39,73 a 128,36 m², office, corporate e mall · Avenida 9 de Julho, 55 · Park Meraki · Indaiatuba, SP",
     "realizacao": "Incorporação HINC · construção HCON",
-    "legal": "Perspectivas, plantas e layouts de caráter ilustrativo e artístico; móveis, decoração, pisos elevados e forros das salas não compõem o memorial descritivo, e a vegetação é mostrada em porte adulto. O Memorial de Incorporação, o Memorial Descritivo e os contratos prevalecem sobre este material, e a incorporadora pode fazer alterações técnicas e estéticas. Valores, condições e prazo de entrega são informados no atendimento. Incorporação registrada sob R.04 da matrícula nº 156.803 do Oficial de Registro de Imóveis de Indaiatuba/SP, publicado em 21/08/2026. Incorporadora responsável: 360 Home, Office & Mall SPE Ltda., CNPJ 59.465.382/0001-71. Página publicada em set/2026."
+    "legal": "Perspectivas, plantas e layouts de caráter ilustrativo e artístico; móveis, decoração, pisos elevados e forros das salas não compõem o memorial descritivo, e a vegetação é mostrada em porte adulto. O Memorial de Incorporação, o Memorial Descritivo e os contratos prevalecem sobre este material, e a incorporadora pode fazer alterações técnicas e estéticas. Valores e condições conforme a tabela HINC de 15/09/2026, com preços confirmados para out/2026, sujeitos a alteração sem aviso prévio; o prazo de entrega é informado no atendimento. Incorporação registrada sob R.04 da matrícula nº 156.803 do Oficial de Registro de Imóveis de Indaiatuba/SP, publicado em 21/08/2026. Incorporadora responsável: 360 Home, Office & Mall SPE Ltda., CNPJ 59.465.382/0001-71. Página publicada em set/2026."
   },
   "home": {
     "tipo": "apartamento",
-    "preco": null,
+    "preco": 546274,
     "dorms": "1",
     "mcmv": "0",
     "status": "",
@@ -479,11 +641,11 @@
     "meta": "39 a 128 m² · suíte",
     "desc": "Residencial, office, corporate e mall no Park Meraki · 111 unidades com suíte · piscina, sky garden e sky deck no alto da torre.",
     "alt": "Perspectiva ilustrada das torres do 360 Home Office Mall ao pôr do sol",
-    "itemlist": "360 Home Office Mall — uso misto HINC no Park Meraki, torre residencial com 111 unidades de 39,73 a 128,36 m² · valores sob consulta"
+    "itemlist": "360 Home Office Mall — uso misto HINC no Park Meraki, torre residencial com 111 unidades de 39,73 a 128,36 m² · a partir de R$ 546.274 (tabela de 15/09/2026, confirmada para out/2026)"
   },
   "llms": {
     "secao": "apartamentos",
-    "linha": "Complexo de uso misto da HINC (Grupo H2C), construção HCON, na Avenida 9 de Julho, 55, Park Meraki, Indaiatuba (SPE 360 Home, Office & Mall Ltda., CNPJ 59.465.382/0001-71). Terreno de 5.752,43 m², três torres (residencial, office e corporate) sobre um mall de 19 lojas com mezanino (3.135 m²). Residencial com 111 unidades: 108 tipo do 10º ao 18º andar (39,73 a 60,73 m²) e 3 duplex no 8º e 9º (68,54, 103,66 e 128,36 m²), todas com suíte. Office com salas de 45 a 332 m²; corporate com conjuntos de 114 a 225 m² e lajes de 1.133 m². Lazer: piscina no rooftop com prainha, solário, fitness e sauna (19º), sky garden e sky deck (20º e 21º), salão de festas e coworking (8º). 487 vagas para carros em 3 subsolos. Incorporação registrada sob R.04 da matrícula 156.803, publicada em 21/08/2026. O material não traz tabela de preços nem data de entrega: valores sob consulta."
+    "linha": "Complexo de uso misto da HINC (Grupo H2C), construção HCON, na Avenida 9 de Julho, 55, Park Meraki, Indaiatuba (SPE 360 Home, Office & Mall Ltda., CNPJ 59.465.382/0001-71). Terreno de 5.752,43 m², três torres (residencial, office e corporate) sobre um mall de 19 lojas com mezanino (3.135 m²). Residencial com 111 unidades: 108 tipo do 10º ao 18º andar (39,73 a 60,73 m²) e 3 duplex no 8º e 9º (68,54, 103,66 e 128,36 m²), todas com suíte. Office com salas de 45 a 332 m²; corporate com conjuntos de 114 a 225 m² e lajes de 1.133 m². Lazer: piscina no rooftop com prainha, solário, fitness e sauna (19º), sky garden e sky deck (20º e 21º), salão de festas e coworking (8º). 487 vagas para carros em 3 subsolos. Incorporação registrada sob R.04 da matrícula 156.803, publicada em 21/08/2026. Tabela HINC de 15/09/2026, com preços confirmados para out/2026: residencial a partir de R$ 546.273,99 (apto R1202, 12º andar, 39,73 m²; as de 39,75 m² partem de R$ 546.548,99), tipo até R$ 923.054,14 (60,73 m²), duplex de R$ 1.041.760,76 a R$ 1.950.983,52 e 34 salas office de R$ 728.641,24 a R$ 5.426.451,69; 84 das 111 unidades residenciais na tabela. Fluxo: 6% no ato, 5% em 3 parcelas de sinal, 15% em 40 mensais, 10% em 3 anuais, 4% em parcela única e 60% na parcela final (31/05/2030). Corporate e lojas sob consulta; a tabela não traz data de entrega."
   },
   "geo": [
     -23.084297,

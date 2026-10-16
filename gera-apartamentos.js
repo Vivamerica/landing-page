@@ -99,7 +99,8 @@ const mesExtenso = EDICAO.mes.toLowerCase() + ' de ' + EDICAO.ano;      // agost
 // tabela de pré-lançamento. O mês da edição (EDICAO) só dá nome à edição da página:
 // nunca é carimbado como mês da tabela nem do estoque de um produto.
 const mesDe = iso => MES_ABREV[iso.slice(5, 7)] + '/' + iso.slice(0, 4);   // 2026-09 -> set/2026
-const tabDe = e => e.tab ? 'tabela ' + mesDe(e.tab) : 'tabela de pré-lançamento';
+// conf (fonte única): tabela de mês anterior com os mesmos preços confirmados para um mês depois
+const tabDe = e => e.tab ? 'tabela ' + mesDe(e.tab) + (e.conf ? ', preços confirmados para ' + mesDe(e.conf) : '') : 'tabela de pré-lançamento';
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const semTags = s => String(s).replace(/<[^>]+>/g, '');
 
@@ -209,9 +210,16 @@ function card(e) {
       : (e.t === 'Pré-lançamento'
           ? `<p class="preco preco-sc"><span>tabela</span><strong>Pré-lançamento · consulte</strong><em>peça em primeira mão</em></p>`
           : `<p class="preco preco-sc"><span>tabela</span><strong>Sob consulta</strong><em>peça a tabela em vigor</em></p>`);
-  // selo de escassez só com a data da contagem (estEm da fonte única); sem data, sem selo
+  // selo de escassez só com a data da contagem (estEm da fonte única); sem data, sem selo.
+  // No mesmo selo: o % vendido (vend da fonte única, truncado e com a data da lista) e a
+  // tarja comercial (tarja), como na home.
   const temSelo = typeof e.est === 'number' && e.est <= 60 && !!e.estEm;
-  const est = temSelo ? `<span class="est">Últimas ${e.est} unidades (${esc(e.estEm)})</span>` : '';
+  const pv = e.vend && e.vend.tot > 0 ? Math.floor((1 - e.vend.disp / e.vend.tot) * 100) + '% vendido' : '';
+  const partesSelo = [];
+  if (temSelo) partesSelo.push(`Últimas ${e.est} unidades${pv && e.vend.em === e.estEm ? ' · ' + pv : ''} (${e.estEm})`);
+  else if (pv) partesSelo.push(`${pv} (${e.vend.em})`);
+  if (e.tarja) partesSelo.push(e.tarja);
+  const est = partesSelo.length ? `<span class="est">${esc(partesSelo.join(' · '))}</span>` : '';
   const mini = miniatura(e.img);
   return `
       <article class="card" id="c-${e.slug}">
@@ -398,7 +406,7 @@ ${GA4}
     .card-img img{width:100%;height:100%;object-fit:cover;display:block}
     .badge{position:absolute;top:.7rem;left:.7rem;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .6rem;border-radius:4px;background:var(--preto);color:var(--dourado)}
     .b-mcmv{background:#1565C0;color:#fff}.b-pre{background:#a15e2c;color:#fff}.b-esg{background:#C62828;color:#fff}
-    .est{position:absolute;right:.7rem;bottom:.7rem;font-size:.66rem;font-weight:700;background:#C62828;color:#fff;padding:.28rem .55rem;border-radius:4px;letter-spacing:.04em}
+    .est{position:absolute;right:.7rem;bottom:.7rem;max-width:calc(100% - 1.4rem);font-size:.66rem;font-weight:700;background:#C62828;color:#fff;padding:.28rem .55rem;border-radius:4px;letter-spacing:.04em}
     .card-b{padding:1rem 1.1rem 1.1rem;display:flex;flex-direction:column;flex:1}
     .constr{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f7418;margin-bottom:.25rem}
     .card h3{font-size:1.08rem;margin:0 0 .35rem;line-height:1.25}

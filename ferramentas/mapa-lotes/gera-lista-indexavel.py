@@ -1,16 +1,25 @@
 # -*- coding: utf-8 -*-
-# Bloco indexável do mapa de lotes: resumo acima do mapa + lista dos loteamentos,
-# FAQ e JSON-LD abaixo dele, gerados a partir dos próprios BAIRROS/LOTES do arquivo.
+# Bloco indexável do mapa de lotes: resumo + lista dos loteamentos, FAQ e JSON-LD,
+# gerados a partir dos próprios BAIRROS/LOTES do arquivo.
 #
 # O mapa é um app Leaflet: sem este bloco, a página tem menos de 200 palavras
 # visíveis ao rastreador e nenhum link de saída. Tudo aqui sai do dado que já
 # está no HTML (nome, tipo, quadra, metragem, preço, data da tabela) — nenhum
 # número é digitado à mão.
 #
-# Marcadores no HTML (o conteúdo entre eles é reescrito; o resto não se toca):
-#   <!--GEN:mapa-resumo--> ... <!--/GEN:mapa-resumo-->   logo após o </main>, antes da lista (desde 15/10/2026;
-#                                                          antes ficava acima do mapa e tomava espaço da tela)
-#   <!--GEN:mapa-lista-->  ... <!--/GEN:mapa-lista-->    logo após o </main>
+# Marcadores no HTML (o conteúdo entre eles é reescrito; o resto não se toca), um logo após o outro:
+#   <!--GEN:mapa-resumo--> ... <!--/GEN:mapa-resumo-->
+#   <!--GEN:mapa-lista-->  ... <!--/GEN:mapa-lista-->
+#
+# Onde fica (desde 16/10/2026): no fim do painel "Bairros e lotes", dentro de
+#   <aside id="painel"> … <div class="painel-rola"> <div id="lista"> (JS) </div> <div class="painel-guia" id="painelGuia"> AQUI </div>
+# A página é só menu + faixa do título + mapa, na altura da tela, e não rola; o bloco rola junto com a lista de
+# bairros (coluna da esquerda no computador, gaveta no celular). Fica visível para quem rola o painel até o fim:
+# nada de display:none, visibility:hidden ou texto fora da tela. O #lista é reescrito pelo JS a cada filtro, por
+# isso o bloco mora no irmão #painelGuia e nunca dentro do #lista.
+# Antes: acima do mapa (até 15/10/2026, tomava a tela) e depois logo após o </main> (15/10, a página rolava).
+# Se os marcadores aparecerem fora do #painelGuia (arquivo antigo), o script leva o bloco inteiro para lá, com o
+# conteúdo como está, e só então o reescreve; sem o contêiner no painel, ele para sem gravar nada.
 #
 # Idempotente. A data "gerada em" (data-gerado, "Lista gerada em", legenda e a
 # primeira resposta do FAQ) só muda quando o conteúdo da lista muda.
@@ -93,7 +102,9 @@ num = lambda linha, nome: (lambda g: float(g.group(1)) if g else None)(re.search
 lotes = {}
 for m in LINHA.finditer(s):
     b, q, l, resto = m.groups()
-    lotes.setdefault(b, []).append({'q': q, 'l': l, 'vista': num(resto, 'vista'), 'm2': num(resto, 'm2'), 'pm2': num(resto, 'pm2')})
+    # tabela:true = o valor do lote é o VALOR DE TABELA (à vista sai com desconto), como no popup
+    lotes.setdefault(b, []).append({'q': q, 'l': l, 'vista': num(resto, 'vista'), 'm2': num(resto, 'm2'), 'pm2': num(resto, 'pm2'),
+                                    'tabela': bool(re.search(r'\btabela:true', resto))})
 
 
 # data da tabela: campo `tab` do bairro; senão, a primeira data do comentário que abre o bloco de lotes
@@ -248,8 +259,10 @@ def frase_lote(t, com_link):
     r = next(r for r in linhas if b['id'] in r['ids'])
     tipo = tipo_de(b)
     nome = link_nome(r) if com_link else esc(r['nome'])
-    return r, '%s %s, %s: %s/m² (lote de %s por %s à vista, tabela de %s)' % (
-        artigo(r['nome']), nome, tipo, brl0(pm2), m2_txt(x['m2']) if x['m2'] else 'metragem na tabela', brl0(x['vista']), r['data'] or 'data na ficha')
+    valor = ('com valor de tabela de %s' if x.get('tabela') else 'por %s à vista') % brl0(x['vista'])
+    return r, '%s %s, %s: %s/m² (lote de %s %s, tabela de %s)' % (
+        artigo(r['nome']), nome, tipo, brl0(pm2), m2_txt(x['m2']) if x['m2'] else 'metragem na tabela', valor,
+        r['data'] or 'data na ficha')
 
 
 r_barato, txt_barato = frase_lote(mais_barato, True)
@@ -264,15 +277,15 @@ HOJE = datetime.date.today()
 MARCA_DATA = '@@DATA@@'            # ISO; o dd/mm/aaaa sai de @@DATABR@@
 MARCA_DATABR = '@@DATABR@@'
 
-# ── bloco 1: resumo acima do mapa ─────────────────────────────────────
+# ── bloco 1: resumo (abre o bloco no fim do painel) ───────────────────
 resumo = '''
 <section class="intro" id="intro" aria-label="Resumo do mapa de lotes">
-  <p class="intro-txt"><strong>Resposta direta:</strong> %s lotes à venda com preço à vista em %s loteamentos e condomínios de Indaiatuba, pelas tabelas das loteadoras (data em cada um). O menor preço por m² no mapa é o %s.</p>
+  <p class="intro-txt"><strong>Resposta direta:</strong> %s lotes à venda com preço em %s loteamentos e condomínios de Indaiatuba, pelas tabelas das loteadoras (data em cada um). O menor preço por m² no mapa é o %s.</p>
 </section>
 ''' % (num_pt(n_preco), n_grupos, txt_barato)
 
-# ── bloco 2: lista, FAQ e JSON-LD abaixo do mapa ──────────────────────
-th = ['Loteamento', 'Tipo', 'Lotes no mapa', 'R$/m² a partir de', 'Lote a partir de (à vista)', 'Tabela', 'Pedir a tabela']
+# ── bloco 2: lista, FAQ e JSON-LD (logo depois do resumo) ─────────────
+th = ['Loteamento', 'Tipo', 'Lotes no mapa', 'R$/m² a partir de', 'Lote a partir de', 'Tabela', 'Pedir a tabela']
 trs = []
 itens = []
 for k, r in enumerate(linhas, 1):
@@ -289,11 +302,11 @@ for k, r in enumerate(linhas, 1):
 
 faq = [
     ('Quantos lotes e loteamentos estão no mapa de lotes de Indaiatuba?',
-     'Em %s o mapa mostra %s lotes com preço à vista em %s loteamentos e condomínios de Indaiatuba (o Parque Zarah entra com as fases Safira, Rubi e Pérola). Cada lote traz quadra, número, metragem, tipo (residencial, misto, comercial ou gleba) e o preço da tabela da loteadora.' % (MARCA_DATABR, num_pt(n_preco), n_grupos)),
+     'Em %s o mapa mostra %s lotes com preço em %s loteamentos e condomínios de Indaiatuba (o Parque Zarah entra com as fases Safira, Rubi e Pérola). Cada lote traz quadra, número, metragem, tipo (residencial, misto, comercial ou gleba) e o preço da tabela da loteadora.' % (MARCA_DATABR, num_pt(n_preco), n_grupos)),
     ('Qual é o lote mais barato por m² no mapa?',
      'O %s. Na outra ponta está o %s.' % (faq_barato, faq_caro)),
     ('Os preços do mapa são à vista ou a prazo?',
-     'À vista, como estão nas tabelas e relatórios das loteadoras, com a data de cada tabela na lista acima. Quando a tabela informa entrada e número de parcelas, o pino do lote mostra a simulação. Os valores podem mudar sem aviso e o parcelamento é confirmado no atendimento.'),
+     'Depende da tabela de cada loteadora, com a data de cada uma na lista acima: em parte dos loteamentos o valor é à vista; em outros é o valor de tabela, e o pagamento à vista tem desconto. O pino de cada lote diz qual é o caso e, quando a tabela informa entrada e número de parcelas, mostra a simulação. Os valores podem mudar sem aviso e o parcelamento é confirmado no atendimento.'),
     ('O pino mostra a posição exata do lote?',
      'Não: a posição do pino é aproximada. A quadra e o número do lote são os da tabela da loteadora e, na maioria dos loteamentos, a planta sobreposta ao mapa ajuda a localizar. A situação de cada lote é confirmada no atendimento.'),
     ('Como peço a tabela completa de um loteamento?',
@@ -329,7 +342,7 @@ lista = '''
   <div class="guia-in">
     <p class="proc">Lista gerada em %s a partir das tabelas e relatórios das loteadoras (data na coluna Tabela) · Fabio Correia, CRECI 303686-F · Imobiliária Viv'América, CRECI 47394-J</p>
     <h2>Os loteamentos no mapa, do menor ao maior R$/m²</h2>
-    <p>A coluna R$/m² traz o menor preço por m² de cada loteamento; a coluna seguinte, o lote de menor valor. Nem sempre é o mesmo lote. Os preços são à vista, pela tabela indicada em cada linha; o parcelamento aparece no pino de cada lote quando a tabela informa. Clique no nome para abrir a ficha; o botão pede a tabela completa pelo WhatsApp.</p>
+    <p>A coluna R$/m² traz o menor preço por m² de cada loteamento; a coluna seguinte, o lote de menor valor. Nem sempre é o mesmo lote. Os preços são os da tabela indicada em cada linha: à vista ou valor de tabela, conforme a loteadora (o pino de cada lote diz qual); o parcelamento aparece no pino de cada lote quando a tabela informa. Clique no nome para abrir a ficha; o botão pede a tabela completa pelo WhatsApp.</p>
     <div class="tabela-wrap">
       <table>
         <caption>%s loteamentos e condomínios, %s lotes com preço no mapa · tabelas das loteadoras, data por linha · lista gerada em %s</caption>
@@ -342,7 +355,7 @@ lista = '''
     <h2>Perguntas frequentes sobre o mapa de lotes</h2>
 %s
     <p class="links">Veja também: <a href="/loteamentos-em-indaiatuba/">Loteamentos em Indaiatuba, com preços</a> · <a href="/condominios-fechados-indaiatuba/">Condomínios fechados de lotes</a> · <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a> · <a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z dos loteamentos e bairros</a> · <a href="/imprensa-e-dados/">Dados abertos do Observatório (CSV e JSON)</a> · <a href="/">Todos os lançamentos de Indaiatuba</a></p>
-    <p><a class="voltar" href="#mapa">Voltar ao mapa</a></p>
+    <p><a class="voltar" href="#lista">Voltar ao início da lista</a></p>
     <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
   </div>
   <script type="application/ld+json">%s</script>
@@ -376,6 +389,57 @@ def com_marca(bloco):
     return RE_DATEMOD.sub(lambda m: m.group(1) + MARCA_DATA + m.group(2), bloco)
 
 
+# ── lugar do bloco: no fim do painel "Bairros e lotes" (desde 16/10/2026) ──
+# Formato esperado no arquivo:
+#   <aside id="painel"> … <div class="painel-rola" id="painelRola">
+#         <div class="lista" id="lista"></div>
+#         <div class="painel-guia" id="painelGuia">
+#   <!--GEN:mapa-resumo-->…<!--/GEN:mapa-resumo-->
+#   <!--GEN:mapa-lista-->…<!--/GEN:mapa-lista-->
+#         </div>
+#       </div> … </aside>
+A_PAINEL, ROLA, LISTA_JS = '<aside id="painel">', '<div class="painel-rola" id="painelRola">', '<div class="lista" id="lista"></div>'
+CONT, FECHA_CONT = '<div class="painel-guia" id="painelGuia">', '\n      </div>'
+A_RES, F_RES, A_LIS, F_LIS = '<!--GEN:mapa-resumo-->', '<!--/GEN:mapa-resumo-->', '<!--GEN:mapa-lista-->', '<!--/GEN:mapa-lista-->'
+
+
+def bloco_no_painel(t):
+    """True quando os dois blocos GEN estão juntos, sozinhos no #painelGuia, depois do #lista, na .painel-rola do painel."""
+    i0 = t.index(A_RES); i1 = t.index(F_LIS) + len(F_LIS)
+    ip = t.index(A_PAINEL); fp = t.index('</aside>', ip)
+    ir = t.find(ROLA, ip, fp); il_ = t.find(LISTA_JS, ip, fp); ic = t.find(CONT, ip, fp)
+    return (0 <= ir < il_ < ic < i0 < i1 < fp and t[:i0].endswith(CONT + '\n') and t[i1:].startswith(FECHA_CONT)
+            and t[i0:i1].count(A_RES) == 1 and t[i0:i1].count(F_LIS) == 1)
+
+
+def leva_ao_painel(t):
+    """Tira o bloco (com o conteúdo como está) de onde estiver e o põe no #painelGuia vazio."""
+    for marca in (A_RES, F_RES, A_LIS, F_LIS):
+        assert t.count(marca) == 1, 'o marcador %s aparece %d vezes no arquivo' % (marca, t.count(marca))
+    i0 = t.index(A_RES); i1 = t.index(F_LIS) + len(F_LIS)
+    assert t.index(F_RES) < t.index(A_LIS) and not t[t.index(F_RES) + len(F_RES):t.index(A_LIS)].strip(), \
+        'os blocos GEN:mapa-resumo e GEN:mapa-lista não estão um logo após o outro: arrume à mão antes'
+    bloco = t[i0:i1]
+    resto = t[:i0] + t[i1 + (1 if t[i1:i1 + 1] == '\n' else 0):]
+    vazio = list(re.finditer(re.escape(CONT) + r'\s*</div>', resto))
+    if len(vazio) != 1:
+        print('PAROU (nada gravado): o painel não tem o contêiner vazio %s…</div> logo após o %s, dentro da .painel-rola '
+              'do <aside id="painel">. Ele é parte do molde da página (o mapa não rola desde 16/10/2026).' % (CONT, LISTA_JS))
+        sys.exit(1)
+    m = vazio[0]
+    novo_t = resto[:m.start()] + CONT + '\n' + bloco + FECHA_CONT + resto[m.end():]
+    if not bloco_no_painel(novo_t):
+        print('PAROU (nada gravado): o contêiner %s não está depois do #lista, dentro da .painel-rola do painel.' % CONT)
+        sys.exit(1)
+    return novo_t
+
+
+s_arquivo = s
+levado = False
+if not bloco_no_painel(s):
+    s = leva_ao_painel(s)
+    levado = True
+
 ia, ja = entre('<!--GEN:mapa-resumo-->', '<!--/GEN:mapa-resumo-->')
 il, jl = entre('<!--GEN:mapa-lista-->', '<!--/GEN:mapa-lista-->')
 gerado = re.search(r'data-gerado="(\d{4}-\d{2}-\d{2})"', s[il:jl])
@@ -388,12 +452,15 @@ if mudou:
     data_iso = HOJE.isoformat()
     novo = s[:ia] + resumo + s[ja:il] + lista_em(data_iso) + s[jl:]
 else:
-    data_iso = iso_antigo           # nada mudou: o arquivo fica intacto, com o dateModified que está lá
+    data_iso = iso_antigo           # nada mudou: o bloco fica como está, com o dateModified que está lá
     novo = s
-if novo != s:
+assert bloco_no_painel(novo)
+if novo != s_arquivo:
     io.open(P, 'w', encoding='utf-8', newline='').write(novo)
 for aviso in avisos:
     print('AVISO: ' + aviso)
+if levado:
+    print('bloco indexável levado para o fim do painel "Bairros e lotes" (#painelGuia)')
 print('gera-lista-indexavel: %d loteamentos, %d lotes (%d com preço), mais barato %s/m² (%s), mais caro %s/m² (%s) · data %s · %s'
       % (n_grupos, n_lotes, n_preco, brl0(mais_barato[0]), r_barato['nome'], brl0(mais_caro[0]), r_caro['nome'], data_br_de(data_iso),
-         'gravado' if novo != s else 'sem mudança'))
+         'gravado' if novo != s_arquivo else 'sem mudança'))

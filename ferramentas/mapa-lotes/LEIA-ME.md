@@ -36,11 +36,20 @@ Ordem, por empreendimento (exemplos em dados/):
     O og:image (images/og.png, 1200x630) é um print do mapa com faixa de título e a data da lista: refazer com
     gera-og.py quando os números do resumo ou a data "gerada em" mudarem.
     Topo da página (15/10/2026): o menu é o do site inteiro (bloco GEN:menu do gera-menu.js, nunca à mão); o título
-    (<h1>) e o botão de WhatsApp ficam na faixa fina .mapa-titulo logo abaixo dele, na mesma ordem de texto. A altura
-    do mapa é calc(100dvh - var(--menu-h) - var(--mapa-titulo-h)); quem mexer na faixa ajusta --mapa-titulo-h no
-    :root e no @media de 760 px. O gera-menu.js recusa cabeçalho com <h1> dentro: não volte o título para um <header>.
-    O gera-og.py esconde "header" no recorte (pega o menu), mas não a faixa .mapa-titulo: acrescente .mapa-titulo ao
-    seletor antes de refazer o og:image.
+    (<h1>) e o botão de WhatsApp ficam na faixa fina .mapa-titulo logo abaixo dele, na mesma ordem de texto (a altura
+    da faixa é --mapa-titulo-h, no :root e no @media de 760 px). O gera-menu.js recusa cabeçalho com <h1> dentro: não
+    volte o título para um <header>.
+    A página NÃO rola (pedido do Fabio, 16/10/2026): é só menu + faixa do título + mapa, na altura exata da tela
+    (body 100dvh, main flex:1, seja qual for a altura do menu), de 320 a 1920 px. O bloco indexável (GEN:mapa-resumo +
+    GEN:mapa-lista) mora no fim do painel "Bairros e lotes": <aside id="painel"> → .painel-rola (a área que rola) →
+    #lista (montada pelo JS a cada filtro) e, irmão dela, #painelGuia com o bloco. No computador é o fim da coluna da
+    esquerda; no celular, o fim da gaveta do botão "Bairros e lotes". Nada de display:none/visibility:hidden/texto fora
+    da tela para esconder: ele fica visível para quem rola o painel até o fim. Em tela baixa (até 540 px de altura) o
+    painel inteiro rola junto (filtros, lista, bloco, rodapé). O gerador confere esse lugar a cada rodada e, se achar
+    o bloco fora dele (arquivo antigo), leva-o para o #painelGuia; sem o contêiner no painel, para sem gravar.
+    O gera-og.py esconde menu, faixa .mapa-titulo e painel no recorte (o print é só o mapa).
+    Fonte do bloco no painel: nada abaixo de 12 px (.75rem; parágrafos .8rem), senão a página cai no critério de
+    fonte legível do Lighthouse no celular (60% do texto com 12 px ou mais).
 Atualizacao mensal de bairro que JA esta no mapa (tabela ou relatorio novo). Todos rodam primeiro sem --gravar,
 mostram quem sai, quem entra e quem muda, e so entram se a aritmetica da tabela fechar:
     Dominium/Lugano      dominium-atualiza.py <bairro> <relatorio.pdf> [--gravar]

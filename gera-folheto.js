@@ -7,25 +7,38 @@ const OUT = 'C:/Users/Usuario/Desktop/landing-page/folheto-lancamentos.html';
 // só quando a landing informa a data · est unidades disponíveis na data da fonte ·
 // estEm data da contagem de est (dd/mm/aaaa; mmm/aaaa quando a fonte só traz o mês):
 // todo est leva estEm, e selo de "últimas N" só sai com essa data ·
-// prox situação de quem ainda não tem tabela definitiva (com data ou "não divulgada").
+// prox situação de quem ainda não tem tabela definitiva (com data ou "não divulgada") ·
+// conf mês (AAAA-MM) para o qual a incorporadora confirmou os MESMOS preços de uma tabela
+// de mês anterior (regra do Fabio de 16/10/2026); tab continua sendo o mês do documento,
+// porque data de documento não se inventa · vend % vendido com data, para os selos da home
+// e da página de apartamentos: { tot: total de unidades do empreendimento (ficha técnica da
+// incorporadora), disp: unidades na lista de disponíveis, em: data dessa lista }; o % sai
+// truncado, floor((1 − disp/tot) × 100), e "vendido" aqui é o que está fora da lista de
+// disponíveis, sempre com a data; com est, disp/em têm de ser iguais a est/estEm ·
+// tarja aviso comercial com data (ex.: desconto de lançamento), que vai para o selo do card
+// da home e da página de apartamentos; sem " · " dentro (é o separador do selo).
 const APTOS = [
   { n:'Uni Residencial', c:'Masotti', p:279990, img:'uni-residencial-indaiatuba/images/hero.jpg',
     s:'1 dormitório · sacada · vaga para carro', t:'MCMV · FGTS', slug:'uni-residencial-indaiatuba',
     prox:'pré-lançamento com tabela a partir de R$ 279.990 (1 dormitório); valor sujeito a reajuste no lançamento oficial, que a Masotti prevê para 2026 — data não divulgada' },
   { n:'Residencial Parque das Águas', c:'GPCI', p:309120, m2:46.13, tab:'2026-09', img:'parque-das-aguas-indaiatuba/images/hero.jpg', s:'2 dorm · 46 a 72 m² · 3 torres · lago e complexo aquático', t:'Lançamento', slug:'parque-das-aguas-indaiatuba' },
   { n:'Gran Vic Tangará', c:'VIC Engenharia', p:325000, m2:47.22, tab:'2026-10', img:'gran-vic-tangara-indaiatuba/images/hero.jpg',
-    s:'2 dorm · 47,22 m² · 74 unidades (out/2026) · entrega nov/2028', t:'MCMV · FGTS', slug:'gran-vic-tangara-indaiatuba' },
+    s:'2 dorm · 47,22 m² · 74 unidades (05/10/2026) · entrega nov/2028 (Módulo 01)', t:'MCMV · FGTS',
+    vend:{ tot:312, disp:74, em:'05/10/2026' }, slug:'gran-vic-tangara-indaiatuba' },
   { n:'Gran Vic Colibri', c:'VIC Engenharia', p:336686, m2:51.42, tab:'2026-10', img:'gran-vic-colibri-indaiatuba/images/hero.jpg',
-    s:'2 dorm c/ suíte · 51,42 m² · 81 unidades (out/2026) · entrega dez/2028', t:'MCMV · FGTS', slug:'gran-vic-colibri-indaiatuba' },
+    s:'2 dorm c/ suíte · 51,42 m² · 81 unidades (05/10/2026) · entrega dez/2028 (Módulo 01)', t:'MCMV · FGTS',
+    vend:{ tot:256, disp:81, em:'05/10/2026' }, slug:'gran-vic-colibri-indaiatuba' },
   { n:'Itamaracá Residencial', c:'Zarin', p:345107, m2:48.11, tab:'2026-10', img:'itamaraca-indaiatuba/images/hero.jpg',
     s:'48 a 54 m² · 1 vaga · 166 disponíveis (11/10/2026)', t:'MCMV · FGTS', est:166, estEm:'11/10/2026', slug:'itamaraca-indaiatuba' },
-  { n:'Gran Vic Canário', c:'VIC Engenharia', p:352135, m2:47.22, tab:'2026-10', img:'gran-vic-canario-indaiatuba/images/hero.jpg',
-    s:'2 dorm · 47,22 m² · últimas 3 unidades (out/2026) · entrega mai/2028', t:'MCMV · FGTS', est:3, estEm:'05/10/2026', slug:'gran-vic-canario-indaiatuba' },
+  { n:'Gran Vic Canário', c:'VIC Engenharia', p:354459, m2:47.22, tab:'2026-10', img:'gran-vic-canario-indaiatuba/images/hero.jpg',
+    s:'2 dorm · 47,22 m² · últimas 3 unidades (09/10/2026) · entrega mai/2028', t:'MCMV · FGTS', est:3, estEm:'09/10/2026',
+    vend:{ tot:296, disp:3, em:'09/10/2026' }, slug:'gran-vic-canario-indaiatuba' },
   { n:'Vívere Residencial', c:'Masotti', p:352552, m2:50.52, tab:'2026-08', img:'vivere-indaiatuba/images/hero.jpg',
     s:'2 dorm · 48 a 50 m² · pronto para morar · últimas 2 unidades (12/10/2026)', t:'MCMV · Pronto', est:2, estEm:'12/10/2026', slug:'vivere-indaiatuba' },
   { n:'Izzi Residence', c:'GPCI', p:371862, m2:39.9, tab:'2026-09', img:'izzi-residence-indaiatuba/images/hero.jpg', s:'39,90 a 66,47 m² · Centro · mall no térreo · entrega jun/2028', t:'Lançamento', slug:'izzi-residence-indaiatuba' },
-  { n:'Gran Vic Andorinha', c:'VIC Engenharia', p:372119, m2:51.42, tab:'2026-09', img:'gran-vic-andorinha-indaiatuba/images/hero.jpg',
-    s:'2 dorm c/ suíte · 51,42 m² · últimas 2 unidades (set/2026) · entrega fev/2028', t:'MCMV · FGTS', est:2, estEm:'02/09/2026', slug:'gran-vic-andorinha-indaiatuba' },
+  // Gran Vic Andorinha saiu daqui em 16/10/2026: a VIC não mandou tabela em outubro, sem unidades
+  // (regra do Fabio: "se algum não veio tabela é porque não tem mais"). A ficha segue no ar como
+  // esgotado (EXTRAS_APTOS do gera-relacionados.js) e a saída está em SAIDAS do gera-observatorio.js.
   { n:'Spazio Italia', c:'Zarin', p:429961, m2:59.5, tab:'2026-10', img:'spazio-italia-indaiatuba/images/hero.jpg',
     s:'59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer', t:'Lançamento', slug:'spazio-italia-indaiatuba' },
   { n:'Artemis Residencial', c:'GPCI', p:555171, m2:63.85, tab:'2026-10', img:'artemis-residencial-indaiatuba/images/hero.jpg', s:'3 dorm c/ suíte · 63,85 e 64,44 m² · Park Meraki · entrega abr/2028 (Torre 1) e set/2028 (Torre 2)', t:'Lançamento', slug:'artemis-residencial-indaiatuba' },
@@ -45,18 +58,18 @@ const APTOS = [
   { n:'Viva Parque Sense', c:'Pinheiro · RDZ · iBen', p:408328, m2:59.93, tab:'2026-09', img:'viva-parque-sense-indaiatuba/images/hero.jpg',
     s:'3 dorm c/ suíte · 59,93 m² · garden 95,99 m² · 8 torres · tabela set/2026', t:'Lançamento', slug:'viva-parque-sense-indaiatuba' },
   { n:'Manai Bosque', c:'Masotti', p:520855, tab:'2026-10', img:'manai-bosque-indaiatuba/images/vista-aerea-real.jpg',
-    s:'2 dorm c/ suíte e 3 dorm c/ suíte · 65 a 91 m² · Torre I: 46 unidades na tabela de 03/10/2026 · piscina raia 25m · 36 áreas lazer', t:'Lançamento', slug:'manai-bosque-indaiatuba' },
-  { n:'Congesa Seasons', c:'Congesa', p:null, img:'seasons-indaiatuba/images/hero.jpg',
-    s:'3 suítes · Penthouse · Maison c/ jardim', t:'Pré-lançamento', slug:'seasons-indaiatuba',
-    prox:'pré-lançamento sem tabela pública; a Congesa não divulgou a data de lançamento nem a tabela' },
-  { n:'360 Home Office Mall', c:'HINC', p:null, img:'360-home-office-mall-indaiatuba/images/hero.jpg', s:'uso misto · 111 unidades com suíte de 39 a 128 m² · Park Meraki', t:'Lançamento', slug:'360-home-office-mall-indaiatuba',
-    prox:'em lançamento sem tabela pública: o material da HINC não traz preços nem data de entrega' },
+    s:'2 dorm c/ suíte e 3 dorm c/ suíte · 65 a 91 m² · Torre I: 46 unidades (03/10/2026) · 10% de desconto de lançamento (out/2026)', t:'Lançamento',
+    tarja:'10% de desconto — promoção de lançamento (out/2026)', slug:'manai-bosque-indaiatuba' },
+  { n:'Congesa Seasons', c:'Congesa', p:1239000, tab:'2026-10', img:'seasons-indaiatuba/images/hero.jpg',
+    s:'3 dorm c/ suíte ou 3 suítes · Balcony, Maison e Penthouse · 48 unidades (out/2026) · previsão de entrega fev/2029 e jul/2029', t:'Alto padrão', slug:'seasons-indaiatuba' },
+  { n:'360 Home Office Mall', c:'HINC', p:546274, m2:39.73, tab:'2026-09', conf:'2026-10', img:'360-home-office-mall-indaiatuba/images/hero.jpg',
+    s:'uso misto · residencial de 39,73 a 128,36 m² · Park Meraki', t:'Lançamento', slug:'360-home-office-mall-indaiatuba' },
 ];
 
 
 const LOTES = [
-  { n:'Jardim Dona Maria Cândida', c:'Asseplan Narezzi', p:600000, m2:300, tab:'2025-07', img:'maria-candida-indaiatuba/images/portaria.jpg',
-    s:'Loteamento fechado · obras concluídas · 180 lotes disponíveis (08/09/2026)', t:'Loteamento', est:180, estEm:'08/09/2026', slug:'maria-candida-indaiatuba' },
+  { n:'Jardim Dona Maria Cândida', c:'Asseplan Narezzi', p:600000, m2:300, tab:'2025-07', conf:'2026-10', img:'maria-candida-indaiatuba/images/portaria.jpg',
+    s:'Loteamento fechado · obras concluídas · 166 lotes disponíveis (16/10/2026)', t:'Loteamento', est:166, estEm:'16/10/2026', slug:'maria-candida-indaiatuba' },
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, tab:'2026-10', img:'monte-carmelo-indaiatuba/images/hero.jpg',
     s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:579, estEm:'09/10/2026', slug:'monte-carmelo-indaiatuba' },
   { n:'Parque Zarah', c:'Zarin', p:211050, m2:150, tab:'2026-10', img:'parque-zarah-indaiatuba/images/hero.jpg',
@@ -65,11 +78,11 @@ const LOTES = [
     s:'Loteamento aberto · infraestrutura concluída · entrada R$ 44.000 · 60x', t:'Loteamento', est:45, estEm:'09/10/2026', slug:'di-italia-indaiatuba' },
   { n:'Terras de San Marino', c:'Armigh · Best Business', p:247500, m2:150, tab:'2026-10', img:'images/hero.jpg',
     s:'546 lotes · 13 disponíveis (espelho 09/10/2026) · 16.164 m² de lazer resort', t:'Cond. fechado', est:13, estEm:'09/10/2026', slug:'terras-de-san-marino-indaiatuba' },
-  { n:'Residencial Vila Fahl', c:'Vila Fahl · iBen', p:273750, m2:150, tab:'2026-09', img:'vila-fahl-indaiatuba/images/hero.jpg',
+  { n:'Residencial Vila Fahl', c:'Vila Fahl · iBen', p:290000, m2:150, tab:'2026-10', img:'vila-fahl-indaiatuba/images/hero.jpg',
     s:'Residencial e comercial · obra 71,91% (jul/2026) · até 96x · 15 itens de lazer', t:'Loteamento', slug:'vila-fahl-indaiatuba' },
   { n:'Alpnach Residence', c:'Dominium', p:510000, m2:300, tab:'2026-10', img:'alpnach-indaiatuba/images/hero.jpg',
     s:'322 lotes · 19 disponíveis (09/10/2026) · piscina coberta · mini mercado 24h', t:'Cond. fechado', est:19, estEm:'09/10/2026', slug:'alpnach-indaiatuba' },
-  { n:'Reserva Botânica', c:'Zarin', p:642375, m2:410, tab:'2026-09', img:'reserva-botanica-indaiatuba/images/hero.jpg',
+  { n:'Reserva Botânica', c:'Zarin', p:642375, m2:410, tab:'2026-09', conf:'2026-10', img:'reserva-botanica-indaiatuba/images/hero.jpg',
     s:'Loteamento fechado · 2 lotes de 410 a 457 m² · portaria 24h · 3 quadras', t:'Cond. fechado', est:2, estEm:'12/10/2026', slug:'reserva-botanica-indaiatuba' },
   { n:'Residencial Ravello', c:'Dominium', p:714000, m2:420, tab:'2026-10', img:'residencial-ravello-indaiatuba/images/hero.jpg',
     s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:180, estEm:'09/10/2026', slug:'residencial-ravello-indaiatuba' },
@@ -77,7 +90,7 @@ const LOTES = [
     s:'Loteamento fechado · 307 lotes de 360 a 617 m² · sinal de 10% e saldo em até 96x', t:'Cond. fechado', est:307, estEm:'03/10/2026', slug:'ville-de-provence-indaiatuba' },
   { n:'Alphaville Indaiatuba', c:'Alphaville', p:908480, m2:511.5, tab:'2026-10', img:'alphaville-indaiatuba/images/hero.jpg', s:'Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias', t:'Cond. fechado', est:126, estEm:'07/10/2026', slug:'alphaville-indaiatuba' },
   { n:'Lagos de Helvetia', c:'GPCI', p:901800, m2:501, tab:'2026-10', img:'lagos-de-helvetia-indaiatuba/images/hero.jpg', s:'Helvetia · 36 lotes de 501 a 2.015 m² · lago e clube', t:'Cond. fechado', slug:'lagos-de-helvetia-indaiatuba' },
-  { n:'Porteira de Ferro', c:'GPCI', p:1300000, m2:520, tab:'2026-09', img:'porteira-de-ferro-indaiatuba/images/hero.jpg', s:'Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m² · Club House no casarão', t:'Cond. fechado', slug:'porteira-de-ferro-indaiatuba' },
+  { n:'Porteira de Ferro', c:'GPCI', p:1300000, m2:520, tab:'2026-09', conf:'2026-10', img:'porteira-de-ferro-indaiatuba/images/hero.jpg', s:'Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m²', t:'Cond. fechado', slug:'porteira-de-ferro-indaiatuba' },
 ];
 
 

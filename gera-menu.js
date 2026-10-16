@@ -66,7 +66,9 @@ const ITENS = [
   { href: 'https://imoveisvivamerica.com.br/', texto: 'Revenda e Locação <span aria-hidden="true">↗</span>', contorno: true },
 ];
 
-// regras do modo celular, escritas uma vez e aplicadas por @media e pela classe .ms-compacto (rede de segurança do JS)
+// regras do modo celular, escritas uma vez e aplicadas por @media e pela classe .ms-compacto (rede de segurança do JS).
+// .ms-lista em coluna volta a justify-content:flex-start: o flex-end da barra do computador jogava o que não cabe
+// (celular deitado) para cima da tela, sem rolagem, e o 1º item sumia.
 const compacto = P => [
   `${P}{flex-wrap:nowrap;height:var(--menu-h)}`,
   `${P} .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}`,
@@ -74,7 +76,7 @@ const compacto = P => [
   `${P}.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}`,
   `${P}.ms-aberto .ms-abre span:nth-child(2){opacity:0}`,
   `${P}.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}`,
-  `${P} .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}`,
+  `${P} .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;justify-content:flex-start;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}`,
   `${P}.ms-aberto .ms-lista{display:flex}`,
   `${P} .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}`,
   `${P} .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}`,

@@ -37,7 +37,7 @@
     "mes_tabela": "2026-10",
     "estoque": null,
     "data_estoque": null,
-    "spec": "2 dorm · 47,22 m² · 74 unidades (out/2026) · entrega nov/2028",
+    "spec": "2 dorm · 47,22 m² · 74 unidades (05/10/2026) · entrega nov/2028 (Módulo 01)",
     "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-tangara-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
@@ -51,7 +51,7 @@
     "mes_tabela": "2026-10",
     "estoque": null,
     "data_estoque": null,
-    "spec": "2 dorm c/ suíte · 51,42 m² · 81 unidades (out/2026) · entrega dez/2028",
+    "spec": "2 dorm c/ suíte · 51,42 m² · 81 unidades (05/10/2026) · entrega dez/2028 (Módulo 01)",
     "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-colibri-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
@@ -73,13 +73,13 @@
     "nome": "Gran Vic Canário",
     "tipo": "apartamento",
     "incorporadora": "VIC Engenharia",
-    "preco_a_partir_de": 352135,
+    "preco_a_partir_de": 354459,
     "m2_menor_unidade": 47.22,
-    "preco_m2": 7457,
+    "preco_m2": 7507,
     "mes_tabela": "2026-10",
     "estoque": 3,
-    "data_estoque": "2026-10-05",
-    "spec": "2 dorm · 47,22 m² · últimas 3 unidades (out/2026) · entrega mai/2028",
+    "data_estoque": "2026-10-09",
+    "spec": "2 dorm · 47,22 m² · últimas 3 unidades (09/10/2026) · entrega mai/2028",
     "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
@@ -109,20 +109,6 @@
     "data_estoque": null,
     "spec": "39,90 a 66,47 m² · Centro · mall no térreo · entrega jun/2028",
     "url": "https://lancamentos.imoveisvivamerica.com.br/izzi-residence-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, setembro/2026"
-  },
-  {
-    "nome": "Gran Vic Andorinha",
-    "tipo": "apartamento",
-    "incorporadora": "VIC Engenharia",
-    "preco_a_partir_de": 372119,
-    "m2_menor_unidade": 51.42,
-    "preco_m2": 7237,
-    "mes_tabela": "2026-09",
-    "estoque": 2,
-    "data_estoque": "2026-09-02",
-    "spec": "2 dorm c/ suíte · 51,42 m² · últimas 2 unidades (set/2026) · entrega fev/2028",
-    "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-andorinha-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, setembro/2026"
   },
   {
@@ -261,7 +247,7 @@
     "mes_tabela": "2026-10",
     "estoque": null,
     "data_estoque": null,
-    "spec": "2 dorm c/ suíte e 3 dorm c/ suíte · 65 a 91 m² · Torre I: 46 unidades na tabela de 03/10/2026 · piscina raia 25m · 36 áreas lazer",
+    "spec": "2 dorm c/ suíte e 3 dorm c/ suíte · 65 a 91 m² · Torre I: 46 unidades (03/10/2026) · 10% de desconto de lançamento (out/2026)",
     "url": "https://lancamentos.imoveisvivamerica.com.br/manai-bosque-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
@@ -269,29 +255,29 @@
     "nome": "Congesa Seasons",
     "tipo": "apartamento",
     "incorporadora": "Congesa",
-    "preco_a_partir_de": null,
+    "preco_a_partir_de": 1239000,
     "m2_menor_unidade": null,
     "preco_m2": null,
-    "mes_tabela": null,
+    "mes_tabela": "2026-10",
     "estoque": null,
     "data_estoque": null,
-    "spec": "3 suítes · Penthouse · Maison c/ jardim",
+    "spec": "3 dorm c/ suíte ou 3 suítes · Balcony, Maison e Penthouse · 48 unidades (out/2026) · previsão de entrega fev/2029 e jul/2029",
     "url": "https://lancamentos.imoveisvivamerica.com.br/seasons-indaiatuba/",
-    "fonte": "sob consulta — tabela não liberada pela incorporadora"
+    "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
   {
     "nome": "360 Home Office Mall",
     "tipo": "apartamento",
     "incorporadora": "HINC",
-    "preco_a_partir_de": null,
-    "m2_menor_unidade": null,
-    "preco_m2": null,
-    "mes_tabela": null,
+    "preco_a_partir_de": 546274,
+    "m2_menor_unidade": 39.73,
+    "preco_m2": 13750,
+    "mes_tabela": "2026-09",
     "estoque": null,
     "data_estoque": null,
-    "spec": "uso misto · 111 unidades com suíte de 39 a 128 m² · Park Meraki",
+    "spec": "uso misto · residencial de 39,73 a 128,36 m² · Park Meraki",
     "url": "https://lancamentos.imoveisvivamerica.com.br/360-home-office-mall-indaiatuba/",
-    "fonte": "sob consulta — tabela não liberada pela incorporadora"
+    "fonte": "tabela oficial da incorporadora, setembro/2026, com os preços confirmados para outubro/2026"
   },
   {
     "nome": "Jardim Dona Maria Cândida",
@@ -301,11 +287,11 @@
     "m2_menor_unidade": 300,
     "preco_m2": 2000,
     "mes_tabela": "2025-07",
-    "estoque": 180,
-    "data_estoque": "2026-09-08",
-    "spec": "Loteamento fechado · obras concluídas · 180 lotes disponíveis (08/09/2026)",
+    "estoque": 166,
+    "data_estoque": "2026-10-16",
+    "spec": "Loteamento fechado · obras concluídas · 166 lotes disponíveis (16/10/2026)",
     "url": "https://lancamentos.imoveisvivamerica.com.br/maria-candida-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, julho/2025"
+    "fonte": "tabela oficial da incorporadora, julho/2025, com os preços confirmados para outubro/2026"
   },
   {
     "nome": "Residencial Monte Carmelo",
@@ -367,15 +353,15 @@
     "nome": "Residencial Vila Fahl",
     "tipo": "lote",
     "incorporadora": "Vila Fahl · iBen",
-    "preco_a_partir_de": 273750,
+    "preco_a_partir_de": 290000,
     "m2_menor_unidade": 150,
-    "preco_m2": 1825,
-    "mes_tabela": "2026-09",
+    "preco_m2": 1933,
+    "mes_tabela": "2026-10",
     "estoque": null,
     "data_estoque": null,
     "spec": "Residencial e comercial · obra 71,91% (jul/2026) · até 96x · 15 itens de lazer",
     "url": "https://lancamentos.imoveisvivamerica.com.br/vila-fahl-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, setembro/2026"
+    "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
   {
     "nome": "Alpnach Residence",
@@ -403,7 +389,7 @@
     "data_estoque": "2026-10-12",
     "spec": "Loteamento fechado · 2 lotes de 410 a 457 m² · portaria 24h · 3 quadras",
     "url": "https://lancamentos.imoveisvivamerica.com.br/reserva-botanica-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, setembro/2026"
+    "fonte": "tabela oficial da incorporadora, setembro/2026, com os preços confirmados para outubro/2026"
   },
   {
     "nome": "Residencial Ravello",
@@ -471,8 +457,8 @@
     "mes_tabela": "2026-09",
     "estoque": null,
     "data_estoque": null,
-    "spec": "Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m² · Club House no casarão",
+    "spec": "Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m²",
     "url": "https://lancamentos.imoveisvivamerica.com.br/porteira-de-ferro-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, setembro/2026"
+    "fonte": "tabela oficial da incorporadora, setembro/2026, com os preços confirmados para outubro/2026"
   }
 ]

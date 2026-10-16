@@ -43,6 +43,9 @@
    - escassez dos cards: "Últimas N unidades (data)" e "Ver as N unidades"
      saem de est + estEm da fonte única (data da contagem, nunca o mês da
      edição); nos hubs, sem estEm não sai selo
+   - selo dos cards: "N% vendido (data)" sai de vend da fonte única (truncado,
+     com a data da lista) e a tarja comercial (ex.: desconto de lançamento) sai
+     de tarja; card com preço na fonte única e "sob consulta" na home vira aviso
 
    REGIÃO: as linhas do ALPHAVILLE (gera-alphaville.js) com página própria e
    cidade diferente de Indaiatuba viram card na home (seção "Casas em
@@ -141,7 +144,9 @@ const waInteresse = n => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('
 // mês da tabela de CADA empreendimento (campo tab da fonte única). O mês da edição
 // (mesAbrev/mesLongo) dá nome à edição; nunca vira mês da tabela nem do estoque de um produto.
 const mesDe = iso => MES_ABREV[iso.slice(5, 7)] + '/' + iso.slice(0, 4);   // 2026-09 -> set/2026
-const tabDe = e => e.tab ? 'tabela de ' + mesDe(e.tab) : 'tabela de pré-lançamento';
+// tabela de mês anterior com os preços confirmados para um mês depois (campo conf da fonte única)
+const confTxt = e => e.conf ? ', preços confirmados para ' + mesDe(e.conf) : '';
+const tabDe = e => e.tab ? 'tabela de ' + mesDe(e.tab) + confTxt(e) : 'tabela de pré-lançamento';
 
 // ─── região: empreendimentos fora de Indaiatuba com página própria ───
 // Linhas do ALPHAVILLE (gera-alphaville.js) com slug, cidade diferente de Indaiatuba e sem
@@ -380,6 +385,9 @@ naPagina.forEach(e => {
     card = card.replace(/(de%20R%24%20[\d.]+%2C%20)[\d.]+(?:%2C\d+)?(%20m%C2%B2)/g, '$1' + encodeURIComponent(m2txt) + '$2');
   }
 
+  // card que ainda está como "sob consulta" (sem o padrão "A partir de <strong>R$ ...") não
+  // recebe o preço: vira aviso, não silêncio (mover o card para a grade com preço é à mão)
+  if (card.indexOf('A partir de <strong>' + brl(e.p) + '</strong>') < 0) falhas.push('preço no card ' + e.slug + ' (o card ainda não tem "A partir de <strong>R$ ...</strong>")');
   h = h.slice(0, ini) + card + h.slice(fim);
   precosOk++;
 });
@@ -405,6 +413,47 @@ todos.forEach(e => {
   if (novo !== card) { h = h.slice(0, ini) + novo + h.slice(fim); estHome++; }
 });
 feitos.push('estoque em ' + estHome + ' badges da home');
+
+// ─── 4b. selo do card: % vendido (vend) e tarja comercial (tarja) da fonte única ───
+// "76% vendido (05/10/2026)" sai de vend { tot, disp, em }: o % é truncado, nunca arredondado
+// para cima, e sempre leva a data da lista de disponíveis. O selo é lido em partes separadas
+// por " · ": as partes que o gerador escreveu antes ("N% vendido", "N% de desconto") são
+// trocadas, as outras ficam; parte que a tarja já diz ("Lançamento") sai. Com "Últimas N" no
+// selo (est ≤ 60), o % não entra na home: a escassez já está dita, com a data.
+const pctVend = e => Math.floor((1 - e.vend.disp / e.vend.tot) * 100);
+todos.forEach(e => {
+  if (!e.vend) return;
+  const v = e.vend;
+  if (!(v.tot > 0 && v.disp >= 0 && v.disp <= v.tot && /^\d{2}\/\d{2}\/\d{4}$/.test(v.em || '')))
+    throw new Error('GERA-HOME: vend de ' + e.n + ' precisa de tot > 0, 0 ≤ disp ≤ tot e em no formato dd/mm/aaaa');
+  if (typeof e.est === 'number' && (e.est !== v.disp || e.estEm !== v.em))
+    throw new Error('GERA-HOME: ' + e.n + ' tem est ' + e.est + ' (' + e.estEm + ') e vend.disp ' + v.disp + ' (' + v.em + ') — os dois contam a mesma lista; acerte a fonte única');
+});
+todos.forEach(e => {
+  if (e.tarja && / · /.test(e.tarja)) throw new Error('GERA-HOME: a tarja de ' + e.n + ' não pode ter " · " (é o separador do selo)');
+});
+let selosHome = 0;
+todos.forEach(e => {
+  if (!e.slug || (!e.vend && !e.tarja)) return;
+  const i = h.indexOf('href="/' + e.slug + '/" class="card-img-link"');
+  if (i < 0) return;
+  const ini = h.lastIndexOf('<article', i);
+  const fim = h.indexOf('</article>', i);
+  const card = h.slice(ini, fim);
+  const m = /(<span class="card-badge"[^>]*>)([^<]*)(<\/span>)/.exec(card);
+  if (!m) { falhas.push('selo do card ' + e.slug); return; }
+  const gerado = /\b\d+% (?:vendido|de desconto)\b/i;
+  const partes = m[2].split(' · ').map(x => x.trim()).filter(x => x && !gerado.test(x));
+  const temUltimas = partes.some(x => /^Últimas \d+/i.test(x));
+  const novos = [e.tarja || '', e.vend && !temUltimas ? pctVend(e) + '% vendido (' + e.vend.em + ')' : ''].filter(Boolean);
+  const resto = partes.filter(x => !novos.some(n => n.toLowerCase().includes(x.toLowerCase())));
+  const txt = novos.map(esc).concat(resto).join(' · ');
+  if (txt === m[2]) return;
+  const novo = card.slice(0, m.index) + m[1] + txt + m[3] + card.slice(m.index + m[0].length);
+  h = h.slice(0, ini) + novo + h.slice(fim);
+  selosHome++;
+});
+feitos.push('% vendido/tarja em ' + selosHome + ' selos da home');
 
 // ─── 5. estoque nas LANDINGS: padrões seguros, casados por pasta ───
 let estLand = 0;
@@ -487,9 +536,12 @@ const tipoLote = e => /^Loteamento fechado/i.test(e.s) ? 'Loteamento fechado'
 const seloEst = e => (typeof e.est === 'number' && e.est <= 60 && e.estEm)
   ? ' · últimas ' + e.est + ' unidades (' + esc(e.estEm) + ')' : '';
 // mês da tabela de cada lote, impresso no card e ao lado de cada preço citado no texto
-// (no card, só quando as specs ainda não dizem de que tabela é o dado)
-const tabLote = e => (e.tab && !/tabela de /i.test(e.s || '')) ? ' · tabela de ' + mesDe(e.tab) : '';
-const virgTab = e => e.tab ? ', tabela de ' + mesDe(e.tab) : '';
+// (no card, só quando as specs ainda não dizem de que tabela é o dado); a confirmação de preços
+// para um mês depois (conf) entra uma vez só, também quando as specs já trazem a data da tabela
+const tabLote = e => !e.tab ? ''
+  : !/tabela de /i.test(e.s || '') ? ' · tabela de ' + mesDe(e.tab) + confTxt(e)
+  : (e.conf && !/confirmad/i.test(e.s || '') ? ' · preços confirmados para ' + mesDe(e.conf) : '');
+const virgTab = e => e.tab ? ', tabela de ' + mesDe(e.tab) + confTxt(e) : '';
 const comTab = e => esc(e.n) + virgTab(e);
 // as specs já dizem a metragem dos lotes? então o card não repete "lotes a partir de N m²"
 // (N é o lote de menor preço, que pode não ser o menor lote do empreendimento)

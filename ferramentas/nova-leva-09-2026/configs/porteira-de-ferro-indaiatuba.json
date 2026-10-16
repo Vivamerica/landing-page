@@ -3,8 +3,8 @@
   "nome": "Porteira de Ferro",
   "categoria": "condominios",
   "data": "2026-09-17",
-  "atualizado": "2026-10-11",
-  "fonte_tabela": "tabela GPCI de 17/09/2026",
+  "atualizado": "2026-10-16",
+  "fonte_tabela": "tabela GPCI de 17/09/2026, confirmada para out/2026",
   "title": "Porteira de Ferro Indaiatuba | último lote, 520 m² (set/26)",
   "description": "Porteira de Ferro, loteamento fechado da GPCI em Indaiatuba: 103 lotes a partir de 500 m². Resta 1 lote na tabela de 17/09/2026: 520 m² por R$ 1.300.000.",
   "keywords": "porteira de ferro indaiatuba, porteira de ferro residencial, loteamento fechado indaiatuba, lote 500 m2 indaiatuba, gpci indaiatuba, lote alto padrao indaiatuba, condominio fechado indaiatuba",
@@ -30,7 +30,7 @@
     "sub": "Loteamento fechado de lotes a partir de 500 m² em Indaiatuba",
     "lead": "Um loteamento fechado de 103 lotes em volta de um lago de quase 14 mil m², com o casarão existente restaurado para virar a Club House. Na tabela de 17/09/2026 resta um lote à venda: o de 520 m² da quadra E.",
     "preco": "R$ 1.300.000,00",
-    "preco_nota": "lote de 520,00 m² · R$ 2.500/m² · tabela de 17/09/2026",
+    "preco_nota": "lote de 520,00 m² · R$ 2.500/m² · tabela de 17/09/2026, preços confirmados para out/2026",
     "cta_msg": "Olá! Quero as condições do último lote do Porteira de Ferro, o de 520 m².",
     "cta_texto": "Falar sobre este lote"
   },
@@ -163,7 +163,7 @@
     "marca": "PORTEIRA DE FERRO",
     "linha": "Porteira de Ferro · loteamento fechado com 103 lotes a partir de 500 m² · Indaiatuba, SP",
     "realizacao": "Realização GPCI Empreendimentos",
-    "legal": "Imagens meramente ilustrativas, com a vegetação em porte adulto; os projetos da portaria e das áreas de lazer podem sofrer alterações e os ambientes são entregues conforme o memorial descritivo. Preços e condições conforme a tabela de 17/09/2026, sujeitos a alteração sem aviso prévio; nos planos de 24 e 36 meses há juros de 0,80% a.m. pela tabela Price e correção anual pelo IPCA. A disponibilidade do lote é confirmada com a GPCI. Empreendimento de Indaiá Negócios e Participações Ltda. (CNPJ 48.326.567/0001-89); conforme o book, o produto é comercializado somente após o registro do loteamento no cartório de imóveis, nos termos da Lei 6.766/79. Página publicada em set/2026.",
+    "legal": "Imagens meramente ilustrativas, com a vegetação em porte adulto; os projetos da portaria e das áreas de lazer podem sofrer alterações e os ambientes são entregues conforme o memorial descritivo. Preços e condições conforme a tabela de 17/09/2026 (preços confirmados para out/2026), sujeitos a alteração sem aviso prévio; nos planos de 24 e 36 meses há juros de 0,80% a.m. pela tabela Price e correção anual pelo IPCA. A disponibilidade do lote é confirmada com a GPCI. Empreendimento de Indaiá Negócios e Participações Ltda. (CNPJ 48.326.567/0001-89); conforme o book, o produto é comercializado somente após o registro do loteamento no cartório de imóveis, nos termos da Lei 6.766/79. Página publicada em set/2026.",
     "distrato": ""
   },
   "home": {"tipo": "lote", "preco": 1300000, "lote": "fechado", "status": "lancamento", "constr": "GPCI", "pm2": "2500",

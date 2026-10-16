@@ -35,9 +35,10 @@ const R = __dirname + '/';
 // menu do site (fonte única: gera-menu.js); as duas páginas já saem com ele
 const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
-const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-12' };
+const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-16' };
 
-// estoque da EDIÇÃO ANTERIOR (setembro/2026), para o "antes e depois"
+// estoque da MEDIÇÃO ANTERIOR (em geral a da edição de setembro/2026; o Jardim Dona Maria Cândida
+// foi medido em 08/09/2026 e publicado em 12/10/2026), para o "antes e depois"
 // (saída = anterior - atual; o atual e a data dele vêm de est e estEm da fonte única).
 // data  = data do relatório/tabela do número anterior (dd/mm/aaaa ou mmm/aaaa) — sai ao
 //         lado do número na página e no release, porque o intervalo muda de um para outro.
@@ -55,12 +56,15 @@ const ESTOQUE_ANTERIOR = {
   'vivere-indaiatuba':               { n: 5,   data: '04/09/2026', fonte: 'confirmação da Masotti de 04/09/2026; atual: conferência de 12/10/2026 (2 unidades, na Torre 7)', est: 2, saida: ['a menos na lista', 'a menos na lista'], nota: 'entre as que saíram há unidades reservadas — reserva não é venda: a unidade volta à lista de disponíveis se a reserva cair' },
   'reserva-botanica-indaiatuba':     { n: 3,   data: '10/07/2026', fonte: 'tabela Zarin de 10/07/2026; atual: tabela de 29/09/2026, conferida em 12/10/2026', est: 2, saida: ['a menos na tabela', 'a menos na tabela'], nota: 'saiu o lote D-13, de 339,92 m², que era o mais barato' },
   'terras-de-san-marino-indaiatuba': { n: 19,  data: '02/09/2026', fonte: 'espelho de vendas de 02/09/2026; atual: espelho de 09/10/2026', est: 13, saida: ['a menos na lista', 'a menos na lista'], nota: '9 lotes saíram da lista de disponíveis e 3 entraram entre os dois espelhos' },
-  'gran-vic-canario-indaiatuba':     { n: 3,   data: '02/09/2026', fonte: 'tabela VIC de 02/09/2026; atual: tabela de 05/10/2026 (as mesmas 3 unidades da Torre 03)', est: 3 },
-  'gran-vic-andorinha-indaiatuba':   { n: 2,   data: '02/09/2026', fonte: 'tabela VIC de 02/09/2026; sem tabela nova em outubro — o número repete' },
+  'gran-vic-canario-indaiatuba':     { n: 3,   data: '02/09/2026', fonte: 'tabela VIC de 02/09/2026; atual: comunicado da VIC de 09/10/2026 (as mesmas 3 unidades da Torre 03)', est: 3 },
+  // Gran Vic Andorinha (2 unidades em 02/09/2026) saiu da fonte única em 16/10/2026, sem unidades:
+  // a saída está em SAIDAS, abaixo (a linha daqui ficaria órfã e foi removida).
   'itamaraca-indaiatuba':            { n: 206, data: 'jul/2026', fonte: 'tabela Zarin de julho/2026; atual: tabela de outubro/2026 emitida em 11/10/2026 (166 disponíveis)', est: 166, saida: ['a menos na lista', 'a menos na lista'], nota: 'a tabela de julho listava as 206 unidades do projeto como disponíveis; a emitida em 11/10/2026 traz 166 disponíveis, 2 reservadas e 38 vendidas' },
-  // 1ª medição em outubro/2026 (sem série anterior): Jardim Dona Maria Cândida (180, lista de
-  // 08/09/2026), Ville de Provence (307, tabela de outubro/2026 — documento de 03/10/2026) e
-  // Alphaville Indaiatuba (126 disponíveis no quadro de vendas de 07/10/2026, tabela de outubro com os valores de setembro).
+  'maria-candida-indaiatuba':        { n: 180, data: '08/09/2026', fonte: 'lista de disponíveis de 08/09/2026; atual: quadro de disponíveis recebido em 16/10/2026', est: 166, saida: ['a menos na lista', 'a menos na lista'], nota: '12 lotes saíram da lista, 6 estão reservados (voltam se a reserva cair) e 4 voltaram (D-14 a D-17)' },
+  // 1ª medição em outubro/2026 (sem série anterior): Ville de Provence (307, tabela de outubro/2026 —
+  // documento de 03/10/2026) e Alphaville Indaiatuba (126 disponíveis no quadro de vendas de
+  // 07/10/2026, tabela de outubro com os valores de setembro). O Jardim Dona Maria Cândida entrou
+  // como 1ª medição em 12/10/2026 (180, lista de 08/09/2026) e ganhou a 2ª no quadro de 16/10/2026.
 };
 
 // mudanças de preço do mês, conferidas nas tabelas oficiais das construtoras
@@ -76,24 +80,40 @@ const MOVIMENTOS = [
   { n: 'Viva Parque Sense',     c: 'Pinheiro · RDZ · iBen', de: 404886, para: 408328, causa: 'a tabela de 03/09/2026 traz o preço de entrada 0,85% acima do da tabela de 01/08/2026; o menor preço continua no 3 dorm c/ suíte de 59,93 m², no 1º andar', fonte: 'tabela Pinheiro de 03/09/2026' },
   { n: 'Manai Bosque',          c: 'Masotti', de: 505941, para: 520855, causa: 'a tabela de lançamento da Torre 1 de outubro/2026 traz o menor preço em R$ 520.855 (2 dormitórios, 2º andar); em 04/09/2026 a Masotti informava R$ 505.941 — piso e teto 2,9% acima', fonte: 'tabela Masotti de lançamento da Torre 1, de 03/10/2026' },
   { n: 'Storia Congesa',        c: 'Congesa', de: 981000, para: 921000, causa: 'o único 2 dormitórios da tabela de outubro é o apto 124 (70,05 m²), a R$ 921.000; os 3 suítes de 114,89 m² foram de R$ 1.683.000 para R$ 1.715.000', fonte: 'tabela Congesa de outubro/2026' },
+  // 16/10/2026 (2ª parte da leva de outubro)
+  { n: 'Gran Vic Canário',      c: 'VIC Engenharia', de: 352135, para: 354459, causa: 'as mesmas 3 unidades da Torre 03, com valores da VIC de 09/10/2026 (+0,66% sobre a tabela de 05/10/2026)', fonte: 'valores por unidade do comunicado comercial da VIC de 09/10/2026, comparados com a tabela padrão em PDF de 05/10/2026 (documentos de tipos diferentes)' },
+  { n: 'Residencial Vila Fahl', c: 'Vila Fahl · iBen', de: 273750, para: 290000, causa: 'a tabela recebida em 16/10/2026 traz o lote residencial a R$ 1.933,33/m² (a recebida em 17/09/2026 trazia R$ 1.825); comercial mantido em R$ 2.000/m²; 59 lotes na tabela', fonte: 'tabelas Vila Fahl (residencial e comercial, 96x) recebidas em 16/10/2026' },
 ];
 // empreendimentos que entraram no site (ou ganharam tabela) nesta edição; ficam
+// (tabelaNova: true = já estava no site sem preço e ganhou tabela pública agora; o texto
+// não o conta entre os que "entraram no site")
 // fora de MOVIMENTOS porque não há "antes" para calcular variação
 // (o gera-home conta altas em MOVIMENTOS e trataria de:null como alta)
 const ENTRADAS = [
   { n: 'Residencial Parque das Águas', c: 'GPCI', para: 309120, causa: 'novo no site — 2 dormitórios de 46,13 a 50,60 m² e gardens de até 72,30 m², em 3 torres', fonte: 'tabela GPCI de setembro/2026' },
   { n: 'Izzi Residence',              c: 'GPCI', para: 371862, causa: 'novo no site — plantas de 39,90 a 43,97 m² e gardens de 66,43 e 66,47 m², no Centro', fonte: 'tabela GPCI de setembro/2026' },
   { n: 'Artemis Residencial',         c: 'GPCI', para: 555171, causa: 'novo no site — 3 dormitórios com suíte, 63,85 e 64,44 m², no Park Meraki', fonte: 'tabela GPCI de outubro/2026' },
-  { n: 'Jardim Dona Maria Cândida',   c: 'Asseplan Narezzi', para: 600000, causa: 'novo no site — loteamento fechado com obras concluídas, lotes de 300 a 471,97 m²; 180 disponíveis na lista de 08/09/2026', fonte: 'tabela Asseplan Narezzi válida a partir de 01/07/2025' },
+  { n: 'Jardim Dona Maria Cândida',   c: 'Asseplan Narezzi', para: 600000, causa: 'novo no site — loteamento fechado com obras concluídas, lotes de 300 a 471,97 m²; 180 disponíveis na lista de 08/09/2026', fonte: 'tabela válida a partir de 01/07/2025' },
   { n: 'Ville de Provence',           c: 'Urban Square', para: 637200, causa: 'novo no site — loteamento fechado, 307 lotes de 360 a 616,90 m² a R$ 1.770/m²', fonte: 'tabela Urban Square de outubro/2026 (documento de 03/10/2026)' },
   { n: 'Alphaville Indaiatuba',       c: 'Alphaville', para: 908480, causa: 'novo no site — 126 lotes disponíveis em 07/10/2026, de 511,50 a 1.205,76 m², no Itaici', fonte: 'tabela de vendas Alphaville de outubro/2026 (mesmos valores de setembro) e quadro de vendas de 07/10/2026' },
   { n: 'Lagos de Helvetia',           c: 'GPCI', para: 901800, causa: 'novo no site — 36 lotes de 501 a 2.015 m², todos a R$ 1.800/m²', fonte: 'tabela GPCI de 10/10/2026' },
   { n: 'Espaço Conceição',            c: 'Masotti', para: 1030310, causa: 'novo no site — 3 dormitórios com suíte, de 85 a 108 m², em 2 torres; 46 unidades disponíveis em 12/10/2026', fonte: 'disponibilidade da Masotti consultada em 12/10/2026' },
   { n: 'Porteira de Ferro',           c: 'GPCI', para: 1300000, causa: 'novo no site — último lote na tabela de 17/09/2026: quadra E, lote 3, 520 m²', fonte: 'tabela GPCI de 17/09/2026' },
+  // 16/10/2026: ganharam tabela pública (estavam no site sem preço)
+  { n: 'Congesa Seasons',             c: 'Congesa', tabelaNova: true, para: 1239000, causa: 'tabela liberada pela Congesa em out/2026: 48 unidades nas Torres 1 e 3 a 8, de 3 dormitórios com suíte a Penthouse; o menor preço é um Balcony de 3 dormitórios com suíte da Torre 6', fonte: 'tabela Congesa de outubro/2026' },
+  { n: '360 Home Office Mall',        c: 'HINC', para: 546274, causa: 'preço aberto a partir de out/2026 — residencial a partir de 39,73 m², no 12º andar; 84 residenciais e 34 salas office na tabela', fonte: 'tabela HINC de setembro/2026 (gerada em 15/09/2026), com os mesmos valores em outubro/2026' },
 ];
-// entrou no site sem tabela pública (não entra em ENTRADAS: não há preço)
+// entrou no site sem tabela pública (não entra em ENTRADAS: não há preço).
+// 16/10/2026: o 360 Home Office Mall, que estava aqui, ganhou tabela e foi para ENTRADAS.
 const SEM_TABELA = [
-  { n: '360 Home Office Mall', c: 'HINC', causa: 'o material da incorporadora não traz preços nem data de entrega' },
+];
+// saíram da fonte única nesta edição, sem unidades (não entram em MOVIMENTOS: não há "agora").
+// A página do empreendimento segue no ar como esgotado (EXTRAS_APTOS do gera-relacionados.js).
+// antes/data = estoque e data da medição anterior; em = quando a saída foi apurada.
+const SAIDAS = [
+  { n: 'Gran Vic Andorinha', c: 'VIC Engenharia', slug: 'gran-vic-andorinha-indaiatuba', de: 372119, antes: 2, data: '02/09/2026', em: 'out/2026',
+    causa: 'sem unidades em out/2026: as 2 unidades da Torre 01, aptos 1204 e 1304, saíram da lista, e a VIC não enviou tabela do Andorinha em outubro',
+    fonte: 'tabela VIC de 02/09/2026 e informação da Viv\'América de 16/10/2026' },
 ];
 
 // ─── Histórico das edições anteriores (já publicado então; NÃO entra na contagem
@@ -200,6 +220,9 @@ const FAIXAS_LOTE = [
 ].filter(Boolean).join('; ');
 const FAIXAS_LOTE_FRASE = FAIXAS_LOTE.charAt(0).toUpperCase() + FAIXAS_LOTE.slice(1) + '.';
 
+// tabela de mês anterior com os mesmos preços confirmados para um mês depois (campo conf da fonte única):
+// a coluna "Tabela" segue com o mês do documento e ganha a confirmação embaixo
+const confDe = e => e.conf ? '<br><span class="nd" style="font-size:.78em">preços confirmados para ' + mesAbrevDe(e.conf) + '</span>' : '';
 const linhaApto = e => `
       <tr>
         <td><a href="/${e.slug}/">${e.n}</a></td>
@@ -208,7 +231,7 @@ const linhaApto = e => `
         <td class="num">${e.p && e.m2 ? fm2(e.m2) + ' m²' : '<span class="nd">não informada</span>'}</td>
         <td class="num">${e.p ? '<strong>' + brl(e.p) + '</strong>' : '<span class="sc">sob consulta</span>'}</td>
         <td class="num">${e.p && e.m2 ? brl(Math.round(e.p / e.m2)) + '/m²' : '<span class="nd">—</span>'}</td>
-        <td class="num">${e.tab ? mesAbrevDe(e.tab) : (e.p ? '<span class="nd">pré-lançamento</span>' : '<span class="nd">—</span>')}</td>
+        <td class="num">${e.tab ? mesAbrevDe(e.tab) + confDe(e) : (e.p ? '<span class="nd">pré-lançamento</span>' : '<span class="nd">—</span>')}</td>
         <td class="obs">${e.s}</td>
       </tr>`;
 
@@ -220,7 +243,7 @@ const linhaLote = e => `
         <td class="num">${e.m2.toLocaleString('pt-BR')} m²</td>
         <td class="num"><strong>${brl(e.p)}</strong></td>
         <td class="num">${brl(Math.round(e.p / e.m2))}/m²</td>
-        <td class="num">${e.tab ? mesAbrevDe(e.tab) : '<span class="nd">—</span>'}</td>
+        <td class="num">${e.tab ? mesAbrevDe(e.tab) + confDe(e) : '<span class="nd">—</span>'}</td>
       </tr>`;
 
 const comEst = todos.filter(e => typeof e.est === 'number');
@@ -268,6 +291,16 @@ const linhaEst = e => {
       </tr>`;
 };
 
+// quem saiu da fonte única sem unidades (SAIDAS): 0 agora, contra a medição anterior
+const linhaEstSaida = m => `
+      <tr>
+        <td><a href="/${m.slug}/">${m.n}</a><br><small style="color:#8a8272;font-size:.78em">${m.causa}</small></td>
+        <td>${m.c}</td>
+        <td class="num"><strong>0</strong> unidades <small style="color:#8a8272">(${m.em})</small></td>
+        <td class="num">${m.antes} <small style="color:#8a8272">(${m.data})</small></td>
+        <td class="num"><strong class="desce">${m.antes} a menos na lista</strong></td>
+      </tr>`;
+
 const linhaMov = m => {
   const v = (m.para - m.de) / m.de * 100;
   const cls = v > 0 ? 'sobe' : 'desce';
@@ -289,6 +322,15 @@ const linhaEntrada = m => `
         <td class="num"><span class="sc">—</span></td>
         <td class="num"><strong>${brl(m.para)}</strong></td>
         <td class="num" style="color:#8a8272;font-weight:700">novo na tabela</td>
+      </tr>`;
+// saiu da fonte única sem unidades: o "antes" é o último preço publicado; não há "agora"
+const linhaSaida = m => `
+      <tr>
+        <td>${m.n}<br><small style="color:#8a8272;font-size:.78em">${m.causa} — ${m.fonte}</small></td>
+        <td>${m.c}</td>
+        <td class="num">${brl(m.de)}</td>
+        <td class="num"><span class="sc">sem unidades</span></td>
+        <td class="num" style="color:#8a8272;font-weight:700">saiu da lista</td>
       </tr>`;
 const linhaSemTabela = m => `
       <tr>
@@ -320,7 +362,7 @@ const FAQ = [
   { q: 'De onde vêm os preços desta página?',
     a: 'Das tabelas oficiais que as construtoras e loteadoras enviam à Imobiliária Viv\'América, sempre com a data da tabela registrada. O valor exibido é o "a partir de" — o menor preço entre as unidades disponíveis na data da tabela. A página é atualizada mensalmente e os dados saem em CSV e JSON na página Imprensa e dados.' },
   { q: 'Os preços mudam com frequência?',
-    a: 'Sim — e é por isso que esta página existe. Na edição de ' + edLongo + ', ' + MOVIMENTOS.length + ' empreendimentos mudaram de preço de entrada (' + altas.length + ' para cima, ' + quedas.length + ' para baixo, de ' + pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).para) + ' a ' + pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).para) + ') e ' + ENTRADAS.length + ' entraram no site com tabela. Tabela de lançamento tem validade curta e reajuste por INCC (Índice Nacional de Custo da Construção) ou IGP-M.' },
+    a: 'Sim — e é por isso que esta página existe. Na edição de ' + edLongo + ', ' + MOVIMENTOS.length + ' empreendimentos mudaram de preço de entrada (' + altas.length + ' para cima, ' + quedas.length + ' para baixo, de ' + pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).para) + ' a ' + pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).para) + ') e ' + ENTRADAS.length + ' entraram no site ou ganharam tabela' + (SAIDAS.length ? '; ' + SAIDAS.length + (SAIDAS.length === 1 ? ' saiu' : ' saíram') + ' da lista, sem unidades' : '') + '. Tabela de lançamento tem validade curta e reajuste por INCC (Índice Nacional de Custo da Construção) ou IGP-M.' },
 ];
 
 const jsonFaq = JSON.stringify({
@@ -538,15 +580,16 @@ ${MENU_HTML}
   </div>
 
   <h2 id="mudou">Preço de entrada: o que mudou <small>entre a ${edAnterior} e a de ${edLongo}</small></h2>
-  <p class="sub">Só entram aqui variações confirmadas entre duas tabelas oficiais <b>do mesmo tipo</b> —
+  <p class="sub">Só entram aqui variações confirmadas entre duas tabelas oficiais <b>do mesmo tipo</b>
+  (quando a construtora comunica valores novos por unidade fora da tabela padrão, a linha diz) —
   o valor acompanhado é o <b>preço de entrada</b> ("a partir de") — ele muda por reajuste
   de tabela ou porque a unidade de menor preço saiu da tabela (ou outra entrou), e a causa está dita em cada linha.
-  Nesta edição: ${MOVIMENTOS.length} mudança${MOVIMENTOS.length === 1 ? '' : 's'} de preço (${altas.length} alta${altas.length === 1 ? '' : 's'}, ${quedas.length} queda${quedas.length === 1 ? '' : 's'}), ${ENTRADAS.length} empreendimentos novos com tabela e ${SEM_TABELA.length} sem tabela pública.</p>
+  Nesta edição: ${MOVIMENTOS.length} mudança${MOVIMENTOS.length === 1 ? '' : 's'} de preço (${altas.length} alta${altas.length === 1 ? '' : 's'}, ${quedas.length} queda${quedas.length === 1 ? '' : 's'}), ${ENTRADAS.length} empreendimento${ENTRADAS.length === 1 ? '' : 's'} com tabela nova no site${SEM_TABELA.length ? ', ' + SEM_TABELA.length + ' sem tabela pública' : ''}${SAIDAS.length ? ' e ' + SAIDAS.length + (SAIDAS.length === 1 ? ' que saiu' : ' que saíram') + ' da lista, sem unidades' : ''}.</p>
   <div class="tabela-wrap">
     <table>
       <caption>Movimentação do preço de entrada — edição de ${edLongo}, apurada em ${hojeBR}.</caption>
       <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Antes</th><th>Agora</th><th>Variação</th></tr></thead>
-      <tbody>${MOVIMENTOS.map(linhaMov).join('')}${ENTRADAS.map(linhaEntrada).join('')}${SEM_TABELA.map(linhaSemTabela).join('')}
+      <tbody>${MOVIMENTOS.map(linhaMov).join('')}${ENTRADAS.map(linhaEntrada).join('')}${SEM_TABELA.map(linhaSemTabela).join('')}${SAIDAS.map(linhaSaida).join('')}
       </tbody>
     </table>
   </div>
@@ -562,9 +605,9 @@ ${MENU_HTML}
   fica em "sem remedição".</p>
   <div class="tabela-wrap">
     <table>
-      <caption>Estoque por empreendimento — o número da ${edAnterior} e o desta edição (${edLongo}), cada um com a data do relatório ou da tabela de origem.</caption>
+      <caption>Estoque por empreendimento — o número da medição anterior e o desta edição (${edLongo}), cada um com a data do relatório ou da tabela de origem.</caption>
       <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Estoque atual</th><th>Medição anterior</th><th>No período</th></tr></thead>
-      <tbody>${comEst.slice().sort((a, b) => a.est - b.est).map(linhaEst).join('')}
+      <tbody>${SAIDAS.map(linhaEstSaida).join('')}${comEst.slice().sort((a, b) => a.est - b.est).map(linhaEst).join('')}
       </tbody>
     </table>
   </div>
@@ -635,7 +678,7 @@ fs.writeFileSync(R + 'precos-lancamentos-indaiatuba/index.html', HTML, 'utf8');
    DADOS ABERTOS — imprensa-e-dados/ (CSV + JSON + página com gráficos)
    ═══════════════════════════════════════════════════════════════════ */
 const fonteDe = e => e.p
-  ? (e.tab ? 'tabela oficial da incorporadora, ' + mesLongoDe(e.tab) : 'tabela de pré-lançamento da incorporadora')
+  ? (e.tab ? 'tabela oficial da incorporadora, ' + mesLongoDe(e.tab) + (e.conf ? ', com os preços confirmados para ' + mesLongoDe(e.conf) : '') : 'tabela de pré-lançamento da incorporadora')
   : 'sob consulta — tabela não liberada pela incorporadora';
 const registro = (e, tipo) => ({
   nome: e.n, tipo, incorporadora: e.c,
@@ -784,7 +827,9 @@ const estoqueItens = comEstAnterior.map(e => {
     : `${e.est} ${unidadeDe(e, e.est)} (${ant.data}), sem medição nova nesta edição${nota}`;
   return `      <li><strong>${e.n}</strong>: ${txt}.</li>`;
 });
-const CONTEXTO = `Na edição de ${edLongo}, o Observatório acompanha ${total} lançamentos imobiliários em Indaiatuba/SP (${APTOS.length} apartamentos e ${LOTES.length} loteamentos e condomínios de lotes), ${comPrecoTotal} com preço aberto. O menor preço de entrada entre os lotes é o do ${menorLote.n} (${menorLote.c}), ${brl(menorLote.p)} por um lote de ${menorLote.m2} m²; entre os apartamentos, o do ${menorApto.n} (${menorApto.c}), ${brl(menorApto.p)}${mcmvTxt}. Entre os ${aptosComPreco.length} apartamentos com preço, o "a partir de" vai até ${brl(maiorApto.p)} (${maiorApto.n}), com média de ${brl(mediaApto)} e mediana de ${brl(medianaApto)}; pela menor unidade com preço, o m² vai de ${brl(pm2Min.pm2)} (${pm2Min.n}) a ${brl(pm2Max.pm2)} (${pm2Max.n}), média de ${brl(pm2Medio)}, em ${aptosM2.length} empreendimentos. Das ${MOVIMENTOS.length} variações de preço de entrada confirmadas entre duas tabelas oficiais, ${altas.length} ${altas.length === 1 ? 'é alta' : 'são altas'} (${lista(altas.map(m => m.n + ', ' + pct(m.de, m.para)))}) e ${quedas.length} ${quedas.length === 1 ? 'é queda' : 'são quedas'} (${lista(quedas.map(m => m.n + ', ' + pct(m.de, m.para)))}). ${ENTRADAS.length} empreendimentos entraram no site nesta edição com tabela (${lista(ENTRADAS.map(m => m.n))})${SEM_TABELA.length ? ', e ' + lista(SEM_TABELA.map(m => 'o ' + m.n)) + ' entrou sem tabela pública' : ''}.`;
+SAIDAS.forEach(m => estoqueItens.unshift(`      <li><strong>${m.n}</strong>: de ${m.antes} unidades (${m.data}) para 0 (${m.em}) — ${m.antes} a menos na lista (${m.causa}).</li>`));
+const entrouNoSite = ENTRADAS.filter(m => !m.tabelaNova), ganhouTabela = ENTRADAS.filter(m => m.tabelaNova);
+const CONTEXTO = `Na edição de ${edLongo}, o Observatório acompanha ${total} lançamentos imobiliários em Indaiatuba/SP (${APTOS.length} apartamentos e ${LOTES.length} loteamentos e condomínios de lotes), ${comPrecoTotal} com preço aberto. O menor preço de entrada entre os lotes é o do ${menorLote.n} (${menorLote.c}), ${brl(menorLote.p)} por um lote de ${menorLote.m2} m²; entre os apartamentos, o do ${menorApto.n} (${menorApto.c}), ${brl(menorApto.p)}${mcmvTxt}. Entre os ${aptosComPreco.length} apartamentos com preço, o "a partir de" vai até ${brl(maiorApto.p)} (${maiorApto.n}), com média de ${brl(mediaApto)} e mediana de ${brl(medianaApto)}; pela menor unidade com preço, o m² vai de ${brl(pm2Min.pm2)} (${pm2Min.n}) a ${brl(pm2Max.pm2)} (${pm2Max.n}), média de ${brl(pm2Medio)}, em ${aptosM2.length} empreendimentos. Das ${MOVIMENTOS.length} variações de preço de entrada confirmadas em documentos oficiais das construtoras, ${altas.length} ${altas.length === 1 ? 'é alta' : 'são altas'} (${lista(altas.map(m => m.n + ', ' + pct(m.de, m.para)))}) e ${quedas.length} ${quedas.length === 1 ? 'é queda' : 'são quedas'} (${lista(quedas.map(m => m.n + ', ' + pct(m.de, m.para)))}). ${entrouNoSite.length} empreendimentos entraram no site nesta edição com tabela (${lista(entrouNoSite.map(m => m.n))})${ganhouTabela.length ? ', e ' + lista(ganhouTabela.map(m => 'o ' + m.n)) + (ganhouTabela.length === 1 ? ', que já estava no site sem preço, ganhou' : ', que já estavam no site sem preço, ganharam') + ' tabela pública' : ''}${SEM_TABELA.length ? ', e ' + lista(SEM_TABELA.map(m => 'o ' + m.n)) + ' entrou sem tabela pública' : ''}.${SAIDAS.length ? ' ' + lista(SAIDAS.map(m => 'O ' + m.n)) + (SAIDAS.length === 1 ? ' saiu' : ' saíram') + ' da lista de disponíveis (' + lista(SAIDAS.map(m => m.causa)) + ').' : ''}`;
 
 const TITLE_D = 'Imprensa e dados — Observatório de Preços de Indaiatuba';
 const DESC_D = `Dados abertos do Observatório de Preços de Lançamentos em Indaiatuba: CSV, JSON, quatro gráficos e release da edição ${edLongo}, sob licença CC BY 4.0.`;
@@ -1057,10 +1102,10 @@ ${G3}
       <div class="tile"><b>${total}</b><span>lançamentos monitorados</span><small>${APTOS.length} apartamentos e ${LOTES.length} loteamentos · ${comPrecoTotal} com preço · ${edLongo}</small></div>
       <div class="tile"><b>${brl(m2Min)} a ${brl(m2Max)}</b><span>preço do m² de lote</span><small>média de ${brl(m2Medio)}/m² nos ${LOTES.length} loteamentos · ${edLongo}</small></div>
       <div class="tile"><b>${brl(pm2Min.pm2)} a ${brl(pm2Max.pm2)}</b><span>preço do m² de apartamento</span><small>pela menor unidade com preço · média ${brl(pm2Medio)}/m² em ${aptosM2.length} empreendimentos</small></div>
-      <div class="tile"><b>${MOVIMENTOS.length} + ${ENTRADAS.length}</b><span>mudaram o preço de entrada + entraram com tabela</span><small>variações de ${pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).para)} a ${pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).para)} · ${edLongo}</small></div>
+      <div class="tile"><b>${MOVIMENTOS.length} + ${ENTRADAS.length}</b><span>mudaram o preço de entrada + entraram no site ou ganharam tabela</span><small>variações de ${pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de < (a.para - a.de) / a.de ? m : a).para)} a ${pct(MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).de, MOVIMENTOS.reduce((a, m) => (m.para - m.de) / m.de > (a.para - a.de) / a.de ? m : a).para)} · ${edLongo}</small></div>
     </div>
     <p><strong>Contexto.</strong> ${CONTEXTO}</p>${estoqueItens.length ? `
-    <p><strong>Estoque.</strong> Nos ${estoqueItens.length} empreendimentos que já tinham medição de estoque na ${edAnterior}, o número anterior e o atual, cada um com a data do relatório ou da tabela. O intervalo entre as duas medições não é o mesmo em todos${basesEstoque ? ' (as medições anteriores vão ' + basesEstoque + ')' : ''}, por isso as datas vão em cada linha. O Observatório mostra quantas unidades saíram da lista de disponíveis entre as duas medições; sair da lista não é venda confirmada (pode ser reserva). Quando a incorporadora informa o motivo, ou quando entram lotes na lista, a linha diz.</p>
+    <p><strong>Estoque.</strong> Nos ${estoqueItens.length} empreendimentos que já tinham uma medição de estoque anterior, o número anterior e o atual, cada um com a data do relatório ou da tabela. O intervalo entre as duas medições não é o mesmo em todos${basesEstoque ? ' (as medições anteriores vão ' + basesEstoque + ')' : ''}, por isso as datas vão em cada linha. O Observatório mostra quantas unidades saíram da lista de disponíveis entre as duas medições; sair da lista não é venda confirmada (pode ser reserva). Quando a incorporadora informa o motivo, ou quando entram lotes na lista, a linha diz.</p>
     <ul>
 ${estoqueItens.join('\n')}
     </ul>` : ''}
@@ -1137,6 +1182,6 @@ console.log('  m² de lote: min ' + brl(m2Min) + ' · médio ' + brl(m2Medio) + 
 console.log('  apartamentos: ' + aptosComPreco.length + ' com preço · média ' + brl(mediaApto) + ' · mediana ' + brl(medianaApto));
 console.log('  m² de apto (menor unidade): ' + aptosM2.length + ' com área · min ' + brl(pm2Min.pm2) + ' (' + pm2Min.n + ') · médio ' + brl(pm2Medio) + ' · mediana ' + brl(pm2Mediana) + ' · max ' + brl(pm2Max.pm2) + ' (' + pm2Max.n + ')');
 if (aptosSemM2.length) console.log('  sem m2 (área da menor unidade não identificada na landing): ' + aptosSemM2.map(e => e.n).join(', '));
-console.log('  movimentações do mês: ' + MOVIMENTOS.length + ' (' + altas.length + ' altas, ' + quedas.length + ' quedas) · entradas: ' + ENTRADAS.length + ' · sem tabela: ' + SEM_TABELA.length);
+console.log('  movimentações do mês: ' + MOVIMENTOS.length + ' (' + altas.length + ' altas, ' + quedas.length + ' quedas) · entradas: ' + ENTRADAS.length + ' · sem tabela: ' + SEM_TABELA.length + ' · saídas: ' + SAIDAS.length);
 console.log('  dados abertos: imprensa-e-dados/' + ARQ_BASE + '.csv/.json (' + REGISTROS.length + ' registros) · edições anteriores: ' + (ANTERIORES.join(', ') || 'nenhuma'));
 console.log('  bytes: observatório ' + HTML.length + ' · imprensa ' + HTML_D.length);
