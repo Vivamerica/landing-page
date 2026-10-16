@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """Gera uma landing da nova leva a partir de configs/<slug>.json.
 
-Reaproveita do Espaço Conceição (padrão aprovado em 09/09/2026) o bloco de fontes, estilos, camada de marca,
-menu e GA4; o conteúdo vem inteiro do config. Depois de gerar, rodar o ritual (gera-relacionados injeta a
-malha no marcador <!--GEN:malha-->, identidade.js confere a marca).
+Reaproveita do Espaço Conceição (padrão aprovado em 09/09/2026) o bloco de fontes, estilos, camada de marca
+e GA4; o conteúdo vem inteiro do config. Depois de gerar, rodar o ritual (gera-relacionados injeta a
+malha no marcador <!--GEN:malha-->, gera-menu.js preenche o menu do site no <!--GEN:menu-->, identidade.js
+confere a marca e falha enquanto o menu estiver vazio).
 
 Uso (Python do venv, fora do scratchpad):
     python gera_landing.py configs/izzi-residence-indaiatuba.json
@@ -55,6 +56,10 @@ def bloco_modelo():
     # o <style id="landing-extra"> do modelo é só dele: o da ficha é escrito em main(). Copiado,
     # a ficha saía com dois blocos e a regra do menu repetida.
     estilo = re.sub(r'[ \t]*<style id="landing-extra">[\s\S]*?</style>\r?\n', '', estilo)
+    # o menu do site é do gera-menu.js (o ritual põe o <style id="menu-site-css"> e preenche o
+    # GEN:menu; "menu-site" é o nome antigo do mesmo estilo); o <style id="nav-site"> é do cabeçalho
+    # antigo. Nenhum deles vem do modelo.
+    estilo = re.sub(r'[ \t]*<style id="(?:menu-site|menu-site-css|nav-site)">[\s\S]*?</style>\r?\n?', '', estilo)
     # a tag GA4 com guarda de host (<script id="ga4">, fonte única em identidade.js) vem dentro
     # do trecho de estilo do modelo; sem ela a landing nova nasceria sem medição
     assert '<script id="ga4">' in estilo, 'o modelo perdeu a tag GA4 (<script id="ga4">): rode node identidade.js'
@@ -143,11 +148,8 @@ def figuras(grupos):
     return out
 
 
-# estilos próprios do gerador, num <style id="landing-extra"> logo antes do </head>. Três partes:
-#   campos opcionais (breadcrumb, crédito, lista, figuras): só na página que usa algum deles
-#   ESTILO_NAV (o menu some até 1140 px): só na categoria alphaville
-#   ESTILO_NAV_MEDIO (o menu some até 1040 px): nas demais fichas
-#   ESTILO_CAB (marca e botão menores no celular): em TODA página
+# estilos próprios do gerador, num <style id="landing-extra"> logo antes do </head>, só na página que usa
+# algum campo opcional (breadcrumb, crédito, lista, figuras). O cabeçalho é o menu do site (gera-menu.js).
 ESTILO_EXTRA = '''  <style id="landing-extra">
     .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.72);margin:0 0 1rem;}
     .breadcrumb a{color:rgba(255,255,255,.85);text-decoration:none;}
@@ -170,32 +172,13 @@ ESTILO_EXTRA = '''  <style id="landing-extra">
     .figs.faixa img{aspect-ratio:1920/391;object-fit:cover;}
     /* o ".ficha-tecnica div" do bloco herdado também pega o .container e tira a margem lateral no celular */
     .ficha-tecnica .container{padding:0 5%;border-bottom:0;}
-    /* marca comprida + menu + botão só cabem acima de ~1120 px; abaixo disso o menu some (os links estão no rodapé) */
-    @media (max-width:1140px){ .nav-site{display:none;} }
     @media (max-width:680px){
       .figs.plantas,.figs.duo{grid-template-columns:minmax(0,1fr);}
       .figs.faixa img{aspect-ratio:5/2;}
     }
-    @media (max-width:480px){
-      header{gap:.6rem;}
-      header .brand{font-size:1.05rem;letter-spacing:.08em;}
-      header .brand small{letter-spacing:.16em;}
-      .btn-header{padding:.55rem .8rem;font-size:.68rem;letter-spacing:.08em;}
-    }
-    @media (max-width:345px){
-      header .brand{font-size:.92rem;letter-spacing:.05em;}
-      header .brand small{font-size:.54rem;letter-spacing:.08em;}
-      .btn-header{padding:.5rem .6rem;font-size:.62rem;letter-spacing:.04em;}
-    }
   </style>
 '''
-
-
-ESTILO_NAV = '    /* marca comprida + menu + botão só cabem acima de ~1120 px; abaixo disso o menu some (os links estão no rodapé) */\n    @media (max-width:1140px){ .nav-site{display:none;} }\n'
-ESTILO_CAB = '    @media (max-width:480px){\n      header{gap:.6rem;}\n      header .brand{font-size:1.05rem;letter-spacing:.08em;}\n      header .brand small{letter-spacing:.16em;}\n      .btn-header{padding:.55rem .8rem;font-size:.68rem;letter-spacing:.08em;}\n    }\n    @media (max-width:345px){\n      header .brand{font-size:.92rem;letter-spacing:.05em;}\n      header .brand small{font-size:.54rem;letter-spacing:.08em;}\n      .btn-header{padding:.5rem .6rem;font-size:.62rem;letter-spacing:.04em;}\n    }\n'
-# nas demais fichas a marca é mais curta, mas marca + menu + botão ainda não cabem entre 761 e ~1000 px
-ESTILO_NAV_MEDIO = '    /* marca + menu + botão só cabem acima de ~1000 px; abaixo disso o menu some (os links estão no rodapé) */\n    @media (max-width:1040px){ .nav-site{display:none;} }\n'
-assert ESTILO_NAV in ESTILO_EXTRA and ESTILO_CAB in ESTILO_EXTRA
+assert 'nav-site' not in ESTILO_EXTRA and 'header' not in ESTILO_EXTRA
 
 
 def bloco_mapa(m, nome, cidade='Indaiatuba'):
@@ -313,19 +296,13 @@ def main(caminho_cfg):
     out.append(estilo)
     if (alphaville or c['hero'].get('credito')
             or any(sc.get('lista') or sc.get('figuras') for sc in c['secoes'])):
-        # o menu até 1140 px existe por causa da marca comprida das páginas da categoria alphaville
-        out.append(ESTILO_EXTRA if alphaville else ESTILO_EXTRA.replace(ESTILO_NAV, ESTILO_NAV_MEDIO))
-    else:
-        # ESTILO_CAB vai em toda página: com o cabeçalho do modelo, marca de 16 ou 17 letras mais o botão
-        # "Quero a tabela" passam de 375 px e a página rola de lado no celular; não depende da categoria
-        out.append('  <style id="landing-extra">\n' + ESTILO_NAV_MEDIO + ESTILO_CAB + '  </style>\n')
-    out.append('</head>\n<body>\n\n')
+        out.append(ESTILO_EXTRA)
+    out.append('</head>\n<body>\n')
+    # menu do site: marcador vazio, preenchido pelo node gera-menu.js do ritual (que também põe o
+    # <style id="menu-site-css">); a guarda do identidade.js falha enquanto ele estiver vazio.
+    # Os campos marca_topo e wa_topo do config ficaram sem uso (eram do cabeçalho antigo).
+    out.append('<!--GEN:menu--><!--/GEN:menu-->\n\n')
     out.append('<a href="%s"\n   class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">\n  %s\n</a>\n\n' % (wa(c['wa_flutuante']), svg))
-    out.append('<header>\n  <div class="brand">%s<small>%s</small></div>\n' % (e(c['marca_topo'][0]), e(c['marca_topo'][1])))
-    out.append('  <nav class="nav-site">\n    <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>\n'
-               '    <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>\n    <a href="/condominios-fechados-indaiatuba/">Condomínios</a>\n'
-               '    <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>\n    <a href="/blog/">Blog</a>\n  </nav>\n')
-    out.append('  <a href="%s"\n     class="btn-header" target="_blank" rel="noopener">Quero a tabela</a>\n</header>\n\n' % wa(c['wa_topo']))
     h = c['hero']
     out.append('<section class="hero">\n  <div class="container">\n')
     if alphaville:

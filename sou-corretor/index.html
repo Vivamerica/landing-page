@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+<script src="/atrib.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sou Corretor: faça parte do nosso time | Viv'América</title>
+  <meta name="description" content="Corretor de imóveis em Indaiatuba e região: envie seus dados para fazer parte do time da Imobiliária Viv'América. Analisamos e entramos em contato.">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:title" content="Sou Corretor: faça parte do nosso time | Viv'América">
+  <meta property="og:description" content="Corretor de imóveis em Indaiatuba e região: envie seus dados para fazer parte do time da Imobiliária Viv'América. Analisamos e entramos em contato.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg">
+  <meta property="og:url" content="https://lancamentos.imoveisvivamerica.com.br/sou-corretor/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Imobiliária Viv'América">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://lancamentos.imoveisvivamerica.com.br/sou-corretor/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-padding-top: calc(var(--menu-h, 70px) + 24px); scroll-padding-bottom: 120px; }
+    body { font-family: 'Josefin Sans', system-ui, sans-serif; color: #161616; background: #fff; line-height: 1.6; }
+    a { color: #161616; }
+    .fc-abertura { background: #161616; color: #fff; text-align: center; padding: clamp(40px, 7vw, 72px) 16px clamp(52px, 8vw, 80px); }
+    .fc-abertura-in { max-width: 720px; margin: 0 auto; }
+    .fc-migalha { font-size: .85rem; color: rgba(255,255,255,.75); margin-bottom: 1rem; }
+    .fc-migalha a { color: #fff; text-decoration: none; }
+    .fc-migalha a:hover { color: #F7D77E; text-decoration: underline; }
+    .fc-abertura h1 { color: #F7D77E; font-size: clamp(1.7rem, 5vw, 2.6rem); margin-bottom: .8rem; }
+    .fc-intro { font-size: clamp(1rem, 2.4vw, 1.15rem); color: rgba(255,255,255,.9); max-width: 560px; margin: 0 auto; }
+    .fc-corpo { background: rgba(247,215,126,.22); padding: 0 16px 56px; }
+    .fc-cartao { position: relative; max-width: 680px; margin: -32px auto 0; background: #fff; border: 1px solid rgba(22,22,22,.12); border-radius: 8px; box-shadow: 0 12px 32px rgba(22,22,22,.10); padding: 28px clamp(16px, 4vw, 32px) 0; }
+    .fc { font-size: 16px; }
+    .fc [hidden], .fc[hidden] { display: none !important; }
+    .fc-campos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+    .fc-largo { grid-column: 1 / -1; }
+    .fc-campo { min-width: 0; border: 0; }
+    .fc-campo > label, .fc-campo > legend { display: block; font-size: 16px; font-weight: 600; line-height: 1.35; margin-bottom: 6px; padding: 0; }
+    .fc input[type="text"], .fc input[type="email"], .fc input[type="tel"], .fc select {
+      display: block; width: 100%; min-height: 50px; padding: 10px 12px; font: inherit; font-size: 17px; line-height: 1.3;
+      color: #161616; background: #fff; border: 1.5px solid rgba(22,22,22,.6); border-radius: 4px;
+    }
+    .fc input::placeholder { color: rgba(22,22,22,.6); opacity: 1; }
+    .fc input:focus, .fc select:focus { outline: 3px solid #161616; outline-offset: 1px; border-color: #161616; }
+    .fc-seta { position: relative; display: block; }
+    .fc-seta select { -webkit-appearance: none; appearance: none; padding-right: 44px; cursor: pointer; }
+    .fc-seta::after { content: ''; position: absolute; right: 18px; top: 50%; width: 9px; height: 9px; margin-top: -7px; border: solid #161616; border-width: 0 2px 2px 0; transform: rotate(45deg); pointer-events: none; }
+    .fc [aria-invalid="true"]:not([type="radio"]) { border-color: #A61B1B; box-shadow: inset 0 0 0 1px #A61B1B; }
+    .fc-erro { color: #A61B1B; font-size: 16px; font-weight: 600; line-height: 1.4; margin-top: 6px; }
+    .fc-opcoes { display: flex; gap: 10px; }
+    .fc-opcao { flex: 1 1 0; display: flex; align-items: center; gap: 10px; min-height: 50px; padding: 8px 14px; font-size: 17px; background: #fff; border: 1.5px solid rgba(22,22,22,.6); border-radius: 4px; cursor: pointer; }
+    .fc-opcao input { flex: none; width: 22px; height: 22px; margin: 0; accent-color: #161616; cursor: pointer; }
+    .fc-opcao:has(input:checked) { background: #F7D77E; border-color: #161616; }
+    .fc-opcao:has(input[aria-invalid="true"]) { border-color: #A61B1B; }
+    .fc-opcao:focus-within { outline: 3px solid #161616; outline-offset: 1px; }
+    .fc-aceite { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; align-items: start; padding: 14px; background: rgba(247,215,126,.28); border: 1px solid rgba(201,162,39,.7); border-radius: 4px; }
+    .fc-aceite input { width: 24px; height: 24px; margin: 1px 0 0; accent-color: #161616; cursor: pointer; }
+    .fc-aceite input:focus-visible { outline: 3px solid #161616; outline-offset: 2px; }
+    .fc-aceite > label { margin: 0; font-weight: 400; cursor: pointer; }
+    .fc-aceite .fc-erro { grid-column: 1 / -1; margin: 0; }
+    .fc-frase { font-size: 16px; line-height: 1.5; }
+    .fc-rodape { position: sticky; bottom: 0; z-index: 1; background: #fff; margin: 0 calc(-1 * clamp(16px, 4vw, 32px)); padding: 12px clamp(16px, 4vw, 32px) 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid rgba(22,22,22,.12); border-radius: 0 0 8px 8px; }
+    .fc-enviar { display: block; width: 100%; min-height: 54px; padding: 12px 20px; font: inherit; font-size: 17px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #161616; background: #C9A227; border: 0; border-radius: 4px; cursor: pointer; }
+    .fc-enviar:hover { background: #F7D77E; }
+    .fc-enviar[aria-disabled="true"] { opacity: .75; cursor: progress; }
+    .fc-enviar:focus-visible, .fc-btn:focus-visible { outline: 3px solid #161616; outline-offset: 2px; }
+    .fc-falha { margin-bottom: 12px; padding: 14px; background: #fff; border: 1.5px solid #A61B1B; border-radius: 4px; }
+    .fc-falha p { font-size: 16px; line-height: 1.5; margin-bottom: 12px; }
+    .fc-falha-botoes { display: flex; flex-wrap: wrap; gap: 10px; }
+    .fc-btn { display: inline-flex; align-items: center; justify-content: center; flex: 1 1 200px; min-height: 48px; padding: 10px 18px; font: inherit; font-size: 16px; font-weight: 700; line-height: 1.2; text-align: center; text-decoration: none; border: 0; border-radius: 4px; cursor: pointer; }
+    .fc-btn-ouro { color: #161616; background: #C9A227; }
+    .fc-btn-ouro:hover { background: #F7D77E; }
+    .fc-btn-escuro { color: #fff; background: #161616; }
+    .fc-btn-escuro:hover { color: #F7D77E; }
+    .fc-sucesso { text-align: center; padding: 16px 8px 40px; }
+    .fc-sucesso:focus { outline: none; }
+    .fc-sucesso-icone { position: relative; display: block; width: 56px; height: 56px; margin: 0 auto; background: #F7D77E; border: 2px solid #161616; border-radius: 50%; }
+    .fc-sucesso-icone::after { content: ''; position: absolute; left: 18px; top: 9px; width: 12px; height: 24px; border: solid #161616; border-width: 0 4px 4px 0; transform: rotate(45deg); }
+    .fc-sucesso-texto { max-width: 440px; margin: 16px auto 24px; font-size: 20px; font-weight: 600; line-height: 1.4; }
+    .fc-sucesso .fc-btn { flex: none; min-width: 220px; }
+    .fc-sr { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+    .fc-hp { position: absolute !important; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    footer { background: #161616; color: rgba(255,255,255,0.75); text-align: center; padding: 2.5rem 5%; font-size: 0.85rem; }
+    footer a { color: rgba(255,255,255,0.85); text-decoration: none; margin: 0 0.6rem; }
+    footer a:hover { color: #C9A227; }
+    footer p { margin-bottom: .5rem; }
+    .footer-links { margin-bottom: 1rem; }
+    @media (max-width: 600px) {
+      .fc-campos { grid-template-columns: 1fr; }
+      .fc-cartao { margin-top: -24px; border-radius: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+  <style id="marca">
+    /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
+    body, button, input, select, textarea { font-family:'Josefin Sans', system-ui, sans-serif; }
+    .logo-text { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.2em;
+                 text-transform:uppercase; }
+    h1 { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.08em;
+         text-transform:uppercase; line-height:1.25; }
+    h2, h3 { font-weight:600; }
+    /* width/height nas <img> reservam espaço; quando o CSS só fixa a largura, a altura do
+       atributo esticava o logo (Andorinha/Colibri/Tangará, 04/09/2026) */
+    :where(img[width][height]) { height:auto; }   /* :where = especificidade zero: qualquer CSS da página vence (o .logo{height:90px} do Terras perdia) */
+    @media (max-width:760px) { body:has(.wa-float, .float-wpp, .whats-flutuante) footer { padding-bottom: 6.5rem; } }   /* 07/09: o botão flutuante do WhatsApp cobria a linha NAP do rodapé no celular */
+    nav a { letter-spacing:.08em; text-transform:uppercase; font-size:0.78rem; }
+    .tag, .selo-h, .card-badge, .chip, .post-tag, .filtro-label { letter-spacing:.1em; }
+    .btn-wpp, .btn-tipo, .btn-card, .cta a { border-radius:4px; letter-spacing:.05em; }
+    .nav-cta { border:1px solid #C9A227; color:#C9A227 !important; padding:.45rem .9rem; border-radius:4px; }
+    .nav-cta:hover { background:#C9A227; color:#161616 !important; }
+    .cta-topo { display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; justify-content:space-between;
+                background:#161616; padding:1rem 1.2rem; margin:1.4rem 0 1.8rem; border-radius:4px; }
+    .cta-topo p { color:#fff; margin:0; font-weight:300; font-size:.95rem; }
+    .cta-topo a { background:#C9A227; color:#161616; font-weight:600; padding:.7rem 1.3rem; text-decoration:none;
+                  letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; border-radius:4px; white-space:nowrap; }
+    .cta-topo a:hover { background:#E0C05A; }
+    .malha { background:#161616; padding:2.2rem 5%; }
+    .malha-in { max-width:1160px; margin:0 auto; }
+    .malha-titulo { font-family:'Poiret One', cursive; font-weight:400; letter-spacing:.18em;
+                    text-transform:uppercase; color:#C9A227; font-size:.95rem; margin:0 0 1rem; }
+    /* flex-wrap: os links saem do gerador colados (sem espaço entre <a>) e com
+       nowrap; como inline puro viravam UMA linha de 1.700px e o celular
+       encolhia a página inteira (02/09/2026). Cada link é um item flex. */
+    .malha-grupo { display:flex; flex-wrap:wrap; align-items:baseline; gap:.15rem .9rem;
+                   margin:0 0 .7rem; line-height:1.8; max-width:100%; }
+    .malha-rotulo { color:#C9A227; font-size:.68rem; font-weight:600; letter-spacing:.16em;
+                    text-transform:uppercase; }
+    .malha a { color:rgba(255,255,255,.78); text-decoration:none; font-size:.82rem;
+               font-weight:300; white-space:nowrap; }
+    .malha a:hover { color:#C9A227; }
+  </style>
+  <script id="ga4">
+    // GA4 só em produção: localhost, 127.0.0.1 e previews *.netlify.app ficam fora da medição
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      if (/localhost|127\.0\.0\.1|netlify\.app$/.test(location.hostname)) return;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-40C0379NPR';
+      document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', 'G-40C0379NPR');
+    })();
+    // whatsapp_click: rótulo do botão, posição (hero|meio|flutuante|rodape|barra) e página de origem
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('a[href*="wa.me"]');
+      if (!el) return;
+      var pos = el.getAttribute('data-cta') ||
+        ({ topo: 'hero', flutuante: 'flutuante', lote: 'meio', lista: 'rodape' })[el.getAttribute('data-origem')] ||
+        (el.closest('.wa-float, .wa-float-home, .float-wpp, .whats-flutuante') ? 'flutuante' :
+         el.closest('.bo-barra, .barra-wa') ? 'barra' :
+         el.closest('header, .hero, #hero, .topo, .cta-topo, .article-hero') ? 'hero' :
+         el.closest('footer, .cta, .cta-section, .cta-final') ? 'rodape' : 'meio');
+      var p = {
+        event_category: 'conversao',
+        event_label: ((el.textContent || '').replace(/\s+/g, ' ').trim() || el.getAttribute('aria-label') || '').slice(0, 100),
+        cta_pos: pos,
+        origem: location.pathname
+      };
+      if (el.getAttribute('data-lote')) p.lote = el.getAttribute('data-lote');
+      gtag('event', 'whatsapp_click', p);
+    });
+  </script>
+  <!--GEN:entidade-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
+    "name": "Imobiliária Viv'América",
+    "alternateName": [
+      "Viv'América Imóveis",
+      "Imobiliária Viva América"
+    ],
+    "legalName": "Imobiliaria Viva America Ltda - ME",
+    "taxID": "57.213.317/0001-23",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "CRECI",
+      "value": "47394-J"
+    },
+    "description": "Imobiliária de Indaiatuba/SP (CRECI 47394-J) que comercializa lançamentos imobiliários: apartamentos na planta, loteamentos e condomínios fechados, com o preço da tabela oficial e o mês de referência em cada página.",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/",
+    "logo": "https://lancamentos.imoveisvivamerica.com.br/favicon.png",
+    "image": "https://lancamentos.imoveisvivamerica.com.br/images/hero.jpg",
+    "telephone": "+5519989769457",
+    "email": "financeiro@imoveisvivamerica.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Higienópolis, 70 - Jardim União",
+      "addressLocality": "Indaiatuba",
+      "addressRegion": "SP",
+      "postalCode": "13348-671",
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Indaiatuba"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:30",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "knowsAbout": [
+      "Lançamentos imobiliários em Indaiatuba",
+      "Minha Casa Minha Vida",
+      "Financiamento Caixa e uso de FGTS",
+      "Condomínios fechados e loteamentos em Indaiatuba"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/imoveisvivamerica",
+      "https://www.facebook.com/imoveisvivamerica",
+      "https://www.youtube.com/@ImoveisVivAmerica",
+      "https://www.linkedin.com/company/imobiliaria-vivamerica"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5519989769457",
+      "contactType": "sales",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
+  }
+  </script>
+  <!--/GEN:entidade-->
+  <style id="menu-site-css">
+:root{--menu-h:70px}
+@media (max-width:1260px){:root{--menu-h:60px}}
+#menu-site,#menu-site *{all:revert;box-sizing:border-box}
+#menu-site{position:sticky;top:0;z-index:1150;flex:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;min-height:var(--menu-h);margin:0;padding:0 max(16px,2.5vw);background:#161616;color:#fff;font:400 16px/1.2 'Josefin Sans',system-ui,sans-serif;text-align:left}
+#menu-site.ms-aberto{z-index:1160}
+#menu-site .ms-logo{flex:none;padding:8px 0;color:#fff;text-decoration:none;font-family:'Poiret One',cursive;font-size:17px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+#menu-site .ms-abre{display:none}
+#menu-site .ms-lista{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:4px 18px;margin:0;padding:0}
+#menu-site .ms-lista a{color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:10px 0;cursor:pointer}
+#menu-site .ms-lista a:hover,#menu-site .ms-lista a[aria-current]{color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno{padding:9px 13px;border:1px solid #C9A227;border-radius:4px;color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno:hover,#menu-site .ms-lista a.ms-contorno[aria-current]{background:#C9A227;color:#161616}
+#menu-site a:focus-visible,#menu-site button:focus-visible{outline:2px solid #F7D77E;outline-offset:3px}
+@media (min-width:1261px) and (max-width:1519px){#menu-site{gap:0 20px;padding:0 max(16px,2vw)}#menu-site .ms-logo{font-size:15px;letter-spacing:.1em}#menu-site .ms-lista{gap:4px 13px}#menu-site .ms-lista a{font-size:12px;letter-spacing:.035em}#menu-site .ms-lista a.ms-contorno{padding:8px 10px}}
+@media (max-width:1260px){
+#menu-site{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-aberto .ms-lista{display:flex}
+#menu-site .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+}
+#menu-site.ms-compacto{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site.ms-compacto .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site.ms-compacto .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site.ms-compacto .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-compacto.ms-aberto .ms-lista{display:flex}
+#menu-site.ms-compacto .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site.ms-compacto .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+@media (max-width:420px){#menu-site .ms-logo{font-size:15px;letter-spacing:.12em}}
+@media (max-width:360px){#menu-site .ms-logo{font-size:13.5px;letter-spacing:.08em}}
+@media (prefers-reduced-motion:no-preference){#menu-site .ms-lista a,#menu-site .ms-abre span{transition:color .2s,background-color .2s,transform .2s,opacity .2s}}
+@media print{#menu-site{display:none}}
+</style>
+</head>
+<body>
+<!--GEN:menu-->
+<header id="menu-site">
+<a class="ms-logo" href="/">Imobiliária Viv'América</a>
+<button class="ms-abre" type="button" aria-expanded="false" aria-controls="ms-lista" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="ms-lista" class="ms-lista" aria-label="Menu principal">
+<a class="ms-contorno" href="/sou-corretor/" data-sou-corretor>Sou Corretor</a>
+<a href="/#lancamentos" data-filtro-menu="todos">Empreendimentos</a>
+<a href="/#apartamentos" data-filtro-menu="apartamentos">Apartamentos</a>
+<a href="/#loteamentos" data-filtro-menu="loteamentos">Loteamentos</a>
+<a href="/#condominios" data-filtro-menu="condominios">Condomínios</a>
+<a href="/mapa-lotes-indaiatuba/">Veja no Mapa</a>
+<a href="/blog/">Blog</a>
+<a class="ms-contorno" href="https://imoveisvivamerica.com.br/">Revenda e Locação <span aria-hidden="true">↗</span></a>
+</nav>
+</header>
+<script>
+(function () {
+  var h = document.querySelector('header#menu-site');
+  var b = h && h.querySelector('.ms-abre'), l = h && h.querySelector('#ms-lista'), logo = h && h.querySelector('.ms-logo');
+  if (!b || !l || !logo || h.getAttribute('data-ms')) return;
+  h.setAttribute('data-ms', '1');
+  var itens = l.getElementsByTagName('a');
+  var mq = window.matchMedia ? window.matchMedia('(max-width:1260px)') : null;
+  var rotas = [[/^\/sou-corretor\//,0],[/^\/apartamentos-na-planta-indaiatuba\//,2],[/^\/loteamentos-em-indaiatuba\//,3],[/^\/condominios-fechados-indaiatuba\//,4],[/^\/mapa-lotes-indaiatuba\//,5],[/^\/blog\//,6]];
+  for (var i = 0; i < rotas.length; i++) if (rotas[i][0].test(location.pathname)) { itens[rotas[i][1]].setAttribute('aria-current', 'page'); break; }
+  function estreita() { return mq ? mq.matches : window.innerWidth <= 1260; }
+  function aberto() { return h.classList.contains('ms-aberto'); }
+  function abrir() { h.classList.add('ms-aberto'); b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', 'Fechar menu'); }
+  // foco: 0 = fica onde está, 1 = volta ao botão se estava no painel, 2 = volta ao botão
+  function fechar(foco) {
+    if (!aberto()) return;
+    var dentro = l.contains(document.activeElement);
+    h.classList.remove('ms-aberto'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Abrir menu');
+    if (foco === 2 || (foco === 1 && dentro)) b.focus({ preventScroll: true });
+  }
+  b.addEventListener('click', function () { if (aberto()) fechar(0); else abrir(); });
+  document.addEventListener('keydown', function (e) { if ((e.key === 'Escape' || e.key === 'Esc') && aberto()) fechar(2); });
+  document.addEventListener(window.PointerEvent ? 'pointerdown' : 'touchstart', function (e) { if (aberto() && !h.contains(e.target)) fechar(1); }, true);
+  l.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var f = a.getAttribute('data-filtro-menu');
+    if (f && typeof window.vmFiltro === 'function' && !e.defaultPrevented && !e.button && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+      e.preventDefault();
+      window.vmFiltro(f);
+    }
+    fechar(1);
+  });
+  function ajustar() {
+    if (!estreita()) {
+      h.classList.remove('ms-compacto');
+      var p = itens[0], u = itens[itens.length - 1];
+      if (h.scrollWidth > h.clientWidth + 1 || l.offsetTop >= logo.offsetTop + logo.offsetHeight || Math.abs(p.offsetTop - u.offsetTop) > 8) h.classList.add('ms-compacto');
+    }
+    if (!estreita() && !h.classList.contains('ms-compacto')) fechar(0);
+  }
+  var largura = -1;
+  function talvez() { var x = document.documentElement.clientWidth; if (x !== largura) { largura = x; ajustar(); } }
+  talvez();
+  if (window.ResizeObserver) new ResizeObserver(talvez).observe(document.documentElement); else window.addEventListener('resize', talvez);
+  if (mq && mq.addEventListener) mq.addEventListener('change', ajustar);
+  if (document.fonts) { if (document.fonts.ready) document.fonts.ready.then(ajustar); if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', ajustar); }
+  window.addEventListener('load', ajustar);
+})();
+</script>
+<script src="/corretor.js?v=20261015" defer></script>
+<!--/GEN:menu-->
+
+<main class="fc-pagina">
+  <section class="fc-abertura">
+    <div class="fc-abertura-in">
+      <p class="fc-migalha"><a href="/">Início</a> <span aria-hidden="true">›</span> Sou Corretor</p>
+      <h1>Faça parte do nosso time</h1>
+      <p id="fc-intro" class="fc-intro">Procuramos corretores para atender os lançamentos imobiliários de Indaiatuba e região.</p>
+    </div>
+  </section>
+
+  <section class="fc-corpo" aria-label="Formulário de candidatura">
+    <div class="fc-cartao">
+      <form id="form-corretor" class="fc" action="https://imoveisvivamerica.com.br/site/corretor/candidatura" method="post" accept-charset="UTF-8">
+        <div class="fc-campos">
+          <div class="fc-campo fc-largo" data-campo="nome" data-erro="Informe seu nome completo.">
+            <label for="fc-nome">Nome</label>
+            <input id="fc-nome" name="nome" type="text" autocomplete="name" autocapitalize="words" spellcheck="false" maxlength="120" required>
+            <p class="fc-erro" id="fc-erro-nome" hidden></p>
+          </div>
+          <div class="fc-campo fc-largo" data-campo="endereco" data-erro="Informe o bairro e a cidade.">
+            <label for="fc-endereco">Endereço</label>
+            <input id="fc-endereco" name="endereco" type="text" autocomplete="street-address" placeholder="Bairro e cidade" maxlength="200" required>
+            <p class="fc-erro" id="fc-erro-endereco" hidden></p>
+          </div>
+          <div class="fc-campo" data-campo="creci" data-erro="Confira o CRECI (exemplo: 123456-F) ou deixe em branco.">
+            <label for="fc-creci">CRECI (se tiver)</label>
+            <input id="fc-creci" name="creci" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20">
+            <p class="fc-erro" id="fc-erro-creci" hidden></p>
+          </div>
+          <div class="fc-campo" data-campo="idade" data-erro="Escolha sua idade.">
+            <label for="fc-idade">Idade</label>
+            <span class="fc-seta"><select id="fc-idade" name="idade" required>
+              <option value="">Selecione</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+              <option>32</option>
+              <option>33</option>
+              <option>34</option>
+              <option>35</option>
+              <option>36</option>
+              <option>37</option>
+              <option>38</option>
+              <option>39</option>
+              <option>40</option>
+              <option>41</option>
+              <option>42</option>
+              <option>43</option>
+              <option>44</option>
+              <option>45</option>
+              <option>46</option>
+              <option>47</option>
+              <option>48</option>
+              <option>49</option>
+              <option>50</option>
+              <option>51</option>
+              <option>52</option>
+              <option>53</option>
+              <option>54</option>
+              <option>55</option>
+              <option>56</option>
+              <option>57</option>
+              <option>58</option>
+              <option>59</option>
+              <option>60</option>
+              <option>61</option>
+              <option>62</option>
+              <option>63</option>
+              <option>64</option>
+              <option value="65+">65+</option>
+            </select></span>
+            <p class="fc-erro" id="fc-erro-idade" hidden></p>
+          </div>
+          <fieldset class="fc-campo" data-campo="experiencia" data-erro="Responda se já tem experiência.">
+            <legend>Já possui experiência como corretor?</legend>
+            <div class="fc-opcoes">
+              <label class="fc-opcao"><input type="radio" name="experiencia" value="sim" required><span>Sim</span></label>
+              <label class="fc-opcao"><input type="radio" name="experiencia" value="nao" required><span>Não</span></label>
+            </div>
+            <p class="fc-erro" id="fc-erro-experiencia" hidden></p>
+          </fieldset>
+          <fieldset class="fc-campo" data-campo="veiculo" data-erro="Responda se tem veículo próprio.">
+            <legend>Possui veículo próprio?</legend>
+            <div class="fc-opcoes">
+              <label class="fc-opcao"><input type="radio" name="veiculo" value="sim" required><span>Sim</span></label>
+              <label class="fc-opcao"><input type="radio" name="veiculo" value="nao" required><span>Não</span></label>
+            </div>
+            <p class="fc-erro" id="fc-erro-veiculo" hidden></p>
+          </fieldset>
+          <div class="fc-campo" data-campo="email" data-erro="Confira o e-mail: falta o final (.com, .com.br)?" data-erro-vazio="Informe seu e-mail." data-erro-arroba="Confira o e-mail: falta o @.">
+            <label for="fc-email">E-mail</label>
+            <input id="fc-email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254" required>
+            <p class="fc-erro" id="fc-erro-email" hidden></p>
+          </div>
+          <div class="fc-campo" data-campo="telefone" data-erro="Informe o telefone com DDD.">
+            <label for="fc-telefone">Telefone (WhatsApp)</label>
+            <input id="fc-telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(DDD) número" maxlength="25" required>
+            <p class="fc-erro" id="fc-erro-telefone" hidden></p>
+          </div>
+          <div class="fc-campo fc-largo fc-aceite" data-campo="aceite" data-erro="Para enviar, marque a ciência sobre o uso dos dados.">
+            <input id="fc-aceite" name="aceite" type="checkbox" value="sim" required>
+            <label for="fc-aceite">Concordo com o uso destes dados só para avaliar minha candidatura, conforme a <a href="https://imoveisvivamerica.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a>.</label>
+            <p class="fc-erro" id="fc-erro-aceite" hidden></p>
+          </div>
+          <div class="fc-hp" aria-hidden="true">
+            <label for="fc-website">Deixe este campo em branco</label>
+            <input id="fc-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="origem" value="">
+          <input type="hidden" name="pagina" value="/sou-corretor/">
+          <input type="hidden" name="t" value="">
+          <input type="hidden" name="modo" value="">
+          <p class="fc-frase fc-largo">Envie seus dados, iremos analisar e entraremos em contato.</p>
+          <div class="fc-rodape fc-largo">
+            <div class="fc-falha" hidden>
+              <p data-motivo="envio">Não conseguimos enviar agora. Seus dados continuam aqui: tente de novo em instantes ou fale com a gente pelo WhatsApp.</p>
+              <p data-motivo="limite" hidden>Recebemos muitas tentativas agora. Para não perder seu contato, fale com a gente pelo WhatsApp.</p>
+              <p data-motivo="recarga" hidden>Não conseguimos enviar agora. Tente de novo em instantes ou fale com a gente pelo WhatsApp.</p>
+              <div class="fc-falha-botoes">
+                <button type="submit" class="fc-btn fc-btn-ouro" data-fc-repetir>Tentar de novo</button>
+                <a class="fc-btn fc-btn-escuro" href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Sou%20corretor%20e%20quero%20fazer%20parte%20do%20time%20da%20Viv%27Am%C3%A9rica." target="_blank" rel="noopener" data-cta="corretor">Chamar no WhatsApp</a>
+              </div>
+            </div>
+            <button type="submit" class="fc-enviar">Enviar</button>
+          </div>
+        </div>
+        <div class="fc-sucesso" hidden tabindex="-1">
+          <span class="fc-sucesso-icone" aria-hidden="true"></span>
+          <p class="fc-sucesso-texto">Recebemos seus dados! Vamos analisar e entraremos em contato.</p>
+          <button type="button" class="fc-btn fc-btn-ouro" data-fc-fechar data-so-janela hidden>Fechar</button>
+          <a class="fc-btn fc-btn-ouro" href="/" data-so-pagina>Ver os lançamentos</a>
+        </div>
+        <p class="fc-aviso fc-sr" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+  <footer>
+  <div class="footer-links">
+    <a href="/">Início</a>
+    <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a>
+    <a href="/loteamentos-em-indaiatuba/">Loteamentos em Indaiatuba</a>
+    <a href="/condominios-fechados-indaiatuba/">Condomínios Fechados</a>
+    <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <p>© 2026 Imobiliária Viv'América · CRECI 47394-J · Lançamentos imobiliários em Indaiatuba SP</p>
+<p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Sou%20corretor%20e%20quero%20fazer%20parte%20do%20time%20da%20Viv%27Am%C3%A9rica.">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
+</footer>
+
+<script>
+(function () {
+  var f = document.getElementById('form-corretor');
+  if (!f) return;
+  var inicio = Date.now();
+  f.addEventListener('submit', function () {
+    var t = f.querySelector('input[name="t"]');
+    if (t && !t.value) t.value = String(Date.now() - inicio);
+  });
+  var q = String(location.search || '');
+  var aviso = f.querySelector('.fc-aviso');
+  function anuncia(txt) { if (aviso) setTimeout(function () { aviso.textContent = txt; }, 400); }
+  var sucesso = f.querySelector('.fc-sucesso');
+  if (/[?&]enviado=1(?:&|$)/.test(q) && sucesso) {
+    f.querySelector('.fc-campos').hidden = true;
+    sucesso.hidden = false;
+    try { sucesso.focus(); } catch (e) {}
+    anuncia(sucesso.querySelector('.fc-sucesso-texto').textContent);
+    return;
+  }
+  var m = /[?&]erro=([a-z_]{1,30})(?:&|$)/.exec(q);
+  if (!m) return;
+  var caixa = f.querySelector('[data-campo="' + m[1] + '"]');
+  if (caixa) {
+    var p = caixa.querySelector('.fc-erro');
+    var msg = caixa.getAttribute('data-erro') || '';
+    var els = caixa.querySelectorAll('input, select');
+    p.textContent = msg;
+    p.hidden = false;
+    for (var i = 0; i < els.length; i++) {
+      els[i].setAttribute('aria-invalid', 'true');
+      els[i].setAttribute('aria-describedby', p.id);
+    }
+    try { caixa.scrollIntoView({ block: 'center' }); els[0].focus(); } catch (e) {}
+    anuncia(msg);
+    return;
+  }
+  var falha = f.querySelector('.fc-falha');
+  if (!falha) return;
+  var ps = falha.querySelectorAll('[data-motivo]');
+  var motivo = m[1] === 'limite' ? 'limite' : 'recarga';
+  var txt = '';
+  for (var k = 0; k < ps.length; k++) {
+    var este = ps[k].getAttribute('data-motivo') === motivo;
+    ps[k].hidden = !este;
+    if (este) txt = ps[k].textContent;
+  }
+  falha.querySelector('[data-fc-repetir]').hidden = true;
+  falha.hidden = false;
+  anuncia(txt);
+})();
+</script>
+
+</body>
+</html>

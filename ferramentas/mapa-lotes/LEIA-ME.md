@@ -35,6 +35,12 @@ Ordem, por empreendimento (exemplos em dados/):
     entidade única, com os mesmos campos do identidade.js.
     O og:image (images/og.png, 1200x630) é um print do mapa com faixa de título e a data da lista: refazer com
     gera-og.py quando os números do resumo ou a data "gerada em" mudarem.
+    Topo da página (15/10/2026): o menu é o do site inteiro (bloco GEN:menu do gera-menu.js, nunca à mão); o título
+    (<h1>) e o botão de WhatsApp ficam na faixa fina .mapa-titulo logo abaixo dele, na mesma ordem de texto. A altura
+    do mapa é calc(100dvh - var(--menu-h) - var(--mapa-titulo-h)); quem mexer na faixa ajusta --mapa-titulo-h no
+    :root e no @media de 760 px. O gera-menu.js recusa cabeçalho com <h1> dentro: não volte o título para um <header>.
+    O gera-og.py esconde "header" no recorte (pega o menu), mas não a faixa .mapa-titulo: acrescente .mapa-titulo ao
+    seletor antes de refazer o og:image.
 Atualizacao mensal de bairro que JA esta no mapa (tabela ou relatorio novo). Todos rodam primeiro sem --gravar,
 mostram quem sai, quem entra e quem muda, e so entram se a aritmetica da tabela fechar:
     Dominium/Lugano      dominium-atualiza.py <bairro> <relatorio.pdf> [--gravar]
@@ -42,6 +48,16 @@ mostram quem sai, quem entra e quem muda, e so entram se a aritmetica da tabela 
     Terras de San Marino sanmarino-atualiza-2026-10-09.py <espelho.pdf> [--gravar]  (lote novo entra SEM pino)
     Ville de Provence    villeprovence-atualiza-2026-10-03.py <tabela.pdf> [--gravar]  (mes e data do documento nas constantes)
 Lote novo sem posicao segura entra SEM pino (so na lista e na contagem): pino errado e pior que pino nenhum.
+Parcela de relatorio Dominium (o relatorio nao traz a parcela): sai de regras_parcela.py, uma regra por bairro. Monte
+Carmelo = Tabela Price, 1% a.m. no residencial e 1,2% a.m. no misto (planilha de calculo da Dominium; teste com
+`python regras_parcela.py`, que reproduz a calculadora: 160.000 a prazo, entrada 16.000, 96x de 2.340,41). Bairro sem
+regra continua com o saldo dividido direto. Usam a regra: dominium-atualiza.py (que tambem refaz a parcela gravada
+fora da regra), lotes-js.py e confere-coerencia.py; montecarmelo-atualiza.py virou atalho do dominium-atualiza.py.
+Mudou taxa ou preco do m2 a prazo: mude em regras_parcela.py e rode confere-coerencia.py [mapa.html] (falha com os
+lotes fora da regra). O dominium-atualiza.py nao grava lote fora da regra: mais parcelas que o maximo do tipo ou
+entrada abaixo do minimo (a planilha recusa as duas) deixam o lote so a vista; valor a prazo fora de area x m2 faz
+o --gravar parar (exit 1, mapa intocado). Arquivo .py novo nesta pasta so sobe com `git add -f` (o .gitignore barra
+.py); o regras_parcela.py tem excecao nominal no .gitignore.
 Depois de qualquer *-atualiza.py: espelha-insumos-2026-10-12.py <id> [<id> ...] --gravar (iguala dados/<id>-bairro.txt
 e dados/<id>-lotes.js ao mapa; sem isso o passo 9 devolveria lote que ja saiu), acertar `tab`/`sub`/`cond` em BAIRROS
 e rodar o passo 10. O editor de pinos le editor-pinos/dados.json: regerar com editor-pinos/gera-dados.py.

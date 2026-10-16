@@ -98,6 +98,8 @@ const FONTE_UNICA = extrair('gera-folheto.js', 'APTOS').concat(extrair('gera-fol
 
 // entidade única (nó RealEstateAgent com @id) e tag GA4 com guarda: fonte única em identidade.js
 const { blocoEntidade, GA4 } = require('./identidade.js');
+// menu do site: fonte única em gera-menu.js
+const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
 // ─── utilitários ───
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
@@ -445,18 +447,10 @@ ${GA4}
     footer a:hover{color:var(--dourado)}
     footer .nap{margin-top:.6rem}
   </style>
+  ${MENU_CSS}
 </head>
 <body>
-  <header>
-    <a href="/" class="logo-text">Imobiliária Viv'América</a>
-    <nav>
-      <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
-      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
-      <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-  </header>
+${MENU_HTML}
 
   <section class="topo">
     <div class="wrap">

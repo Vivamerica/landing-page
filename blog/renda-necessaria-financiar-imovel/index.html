@@ -56,7 +56,7 @@
       "name": "Imobiliária Viv'América"
     },
     "datePublished": "2026-10-11",
-    "dateModified": "2026-10-12",
+    "dateModified": "2026-10-16",
     "inLanguage": "pt-BR",
     "isAccessibleForFree": true,
     "citation": [
@@ -424,25 +424,123 @@
   }
   </script>
   <!--/GEN:entidade-->
+  <style id="menu-site-css">
+:root{--menu-h:70px}
+@media (max-width:1260px){:root{--menu-h:60px}}
+#menu-site,#menu-site *{all:revert;box-sizing:border-box}
+#menu-site{position:sticky;top:0;z-index:1150;flex:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;min-height:var(--menu-h);margin:0;padding:0 max(16px,2.5vw);background:#161616;color:#fff;font:400 16px/1.2 'Josefin Sans',system-ui,sans-serif;text-align:left}
+#menu-site.ms-aberto{z-index:1160}
+#menu-site .ms-logo{flex:none;padding:8px 0;color:#fff;text-decoration:none;font-family:'Poiret One',cursive;font-size:17px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+#menu-site .ms-abre{display:none}
+#menu-site .ms-lista{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:4px 18px;margin:0;padding:0}
+#menu-site .ms-lista a{color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:10px 0;cursor:pointer}
+#menu-site .ms-lista a:hover,#menu-site .ms-lista a[aria-current]{color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno{padding:9px 13px;border:1px solid #C9A227;border-radius:4px;color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno:hover,#menu-site .ms-lista a.ms-contorno[aria-current]{background:#C9A227;color:#161616}
+#menu-site a:focus-visible,#menu-site button:focus-visible{outline:2px solid #F7D77E;outline-offset:3px}
+@media (min-width:1261px) and (max-width:1519px){#menu-site{gap:0 20px;padding:0 max(16px,2vw)}#menu-site .ms-logo{font-size:15px;letter-spacing:.1em}#menu-site .ms-lista{gap:4px 13px}#menu-site .ms-lista a{font-size:12px;letter-spacing:.035em}#menu-site .ms-lista a.ms-contorno{padding:8px 10px}}
+@media (max-width:1260px){
+#menu-site{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-aberto .ms-lista{display:flex}
+#menu-site .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+}
+#menu-site.ms-compacto{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site.ms-compacto .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site.ms-compacto .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site.ms-compacto .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-compacto.ms-aberto .ms-lista{display:flex}
+#menu-site.ms-compacto .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site.ms-compacto .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+@media (max-width:420px){#menu-site .ms-logo{font-size:15px;letter-spacing:.12em}}
+@media (max-width:360px){#menu-site .ms-logo{font-size:13.5px;letter-spacing:.08em}}
+@media (prefers-reduced-motion:no-preference){#menu-site .ms-lista a,#menu-site .ms-abre span{transition:color .2s,background-color .2s,transform .2s,opacity .2s}}
+@media print{#menu-site{display:none}}
+</style>
 </head>
 <body>
-  <header>
-    <a href="/" class="logo-text">Viv'America · Indaiatuba</a>
-    <nav>
-      <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
-      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
-      <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-      <a class="nav-cta" href="/">Lançamentos de Imóveis</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-  </header>
+<!--GEN:menu-->
+<header id="menu-site">
+<a class="ms-logo" href="/">Imobiliária Viv'América</a>
+<button class="ms-abre" type="button" aria-expanded="false" aria-controls="ms-lista" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="ms-lista" class="ms-lista" aria-label="Menu principal">
+<a class="ms-contorno" href="/sou-corretor/" data-sou-corretor>Sou Corretor</a>
+<a href="/#lancamentos" data-filtro-menu="todos">Empreendimentos</a>
+<a href="/#apartamentos" data-filtro-menu="apartamentos">Apartamentos</a>
+<a href="/#loteamentos" data-filtro-menu="loteamentos">Loteamentos</a>
+<a href="/#condominios" data-filtro-menu="condominios">Condomínios</a>
+<a href="/mapa-lotes-indaiatuba/">Veja no Mapa</a>
+<a href="/blog/">Blog</a>
+<a class="ms-contorno" href="https://imoveisvivamerica.com.br/">Revenda e Locação <span aria-hidden="true">↗</span></a>
+</nav>
+</header>
+<script>
+(function () {
+  var h = document.querySelector('header#menu-site');
+  var b = h && h.querySelector('.ms-abre'), l = h && h.querySelector('#ms-lista'), logo = h && h.querySelector('.ms-logo');
+  if (!b || !l || !logo || h.getAttribute('data-ms')) return;
+  h.setAttribute('data-ms', '1');
+  var itens = l.getElementsByTagName('a');
+  var mq = window.matchMedia ? window.matchMedia('(max-width:1260px)') : null;
+  var rotas = [[/^\/sou-corretor\//,0],[/^\/apartamentos-na-planta-indaiatuba\//,2],[/^\/loteamentos-em-indaiatuba\//,3],[/^\/condominios-fechados-indaiatuba\//,4],[/^\/mapa-lotes-indaiatuba\//,5],[/^\/blog\//,6]];
+  for (var i = 0; i < rotas.length; i++) if (rotas[i][0].test(location.pathname)) { itens[rotas[i][1]].setAttribute('aria-current', 'page'); break; }
+  function estreita() { return mq ? mq.matches : window.innerWidth <= 1260; }
+  function aberto() { return h.classList.contains('ms-aberto'); }
+  function abrir() { h.classList.add('ms-aberto'); b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', 'Fechar menu'); }
+  // foco: 0 = fica onde está, 1 = volta ao botão se estava no painel, 2 = volta ao botão
+  function fechar(foco) {
+    if (!aberto()) return;
+    var dentro = l.contains(document.activeElement);
+    h.classList.remove('ms-aberto'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Abrir menu');
+    if (foco === 2 || (foco === 1 && dentro)) b.focus({ preventScroll: true });
+  }
+  b.addEventListener('click', function () { if (aberto()) fechar(0); else abrir(); });
+  document.addEventListener('keydown', function (e) { if ((e.key === 'Escape' || e.key === 'Esc') && aberto()) fechar(2); });
+  document.addEventListener(window.PointerEvent ? 'pointerdown' : 'touchstart', function (e) { if (aberto() && !h.contains(e.target)) fechar(1); }, true);
+  l.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var f = a.getAttribute('data-filtro-menu');
+    if (f && typeof window.vmFiltro === 'function' && !e.defaultPrevented && !e.button && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+      e.preventDefault();
+      window.vmFiltro(f);
+    }
+    fechar(1);
+  });
+  function ajustar() {
+    if (!estreita()) {
+      h.classList.remove('ms-compacto');
+      var p = itens[0], u = itens[itens.length - 1];
+      if (h.scrollWidth > h.clientWidth + 1 || l.offsetTop >= logo.offsetTop + logo.offsetHeight || Math.abs(p.offsetTop - u.offsetTop) > 8) h.classList.add('ms-compacto');
+    }
+    if (!estreita() && !h.classList.contains('ms-compacto')) fechar(0);
+  }
+  var largura = -1;
+  function talvez() { var x = document.documentElement.clientWidth; if (x !== largura) { largura = x; ajustar(); } }
+  talvez();
+  if (window.ResizeObserver) new ResizeObserver(talvez).observe(document.documentElement); else window.addEventListener('resize', talvez);
+  if (mq && mq.addEventListener) mq.addEventListener('change', ajustar);
+  if (document.fonts) { if (document.fonts.ready) document.fonts.ready.then(ajustar); if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', ajustar); }
+  window.addEventListener('load', ajustar);
+})();
+</script>
+<script src="/corretor.js?v=20261015" defer></script>
+<!--/GEN:menu-->
 
   <section class="article-hero">
     <div class="wrap">
       <span class="tag">Financiamento · Renda</span>
       <h1>Qual renda preciso para financiar um imóvel de R$ 300, 400 ou 600 mil em Indaiatuba?</h1>
-      <p class="meta">Atualizado em 12/10/2026 · fontes: Portaria MCID nº 333, de 30/03/2026 · Resolução CCFGTS nº 1.148, de 24/03/2026 · Resolução CMN nº 4.676/2018 · páginas da CAIXA consultadas em 10/10/2026 · Fabio Correia, CRECI 303686-F</p>
+      <p class="meta">Atualizado em 16/10/2026 · fontes: Portaria MCID nº 333, de 30/03/2026 · Resolução CCFGTS nº 1.148, de 24/03/2026 · Resolução CMN nº 4.676/2018 · páginas da CAIXA consultadas em 10/10/2026 · Fabio Correia, CRECI 303686-F</p>
     </div>
   </section>
 
@@ -592,7 +690,7 @@
     <tr><td data-r="Empreendimento"><a href="/itamaraca-indaiatuba/">Itamaracá Residencial</a> (Zarin) · 48 a 54 m²</td><td data-r="Preço a partir de" class="num">R$ 345.107 <small>tabela Zarin de out/2026</small></td><td data-r="Linha">MCMV Faixa 3</td><td data-r="Entrada 20%" class="num">R$ 69.021,40</td><td data-r="Financiado" class="num">R$ 276.085,60</td><td data-r="1ª parcela SAC → renda" class="num">R$ 2.534,73 → R$ 8.449,10 <small>(cotista: R$ 2.419,69 → R$ 8.065,64)</small></td><td data-r="Parcela Price → renda" class="num">R$ 1.993,09 → R$ 6.643,65 <small>(cotista: R$ 1.893,12 → R$ 6.310,42)</small></td></tr>
     <tr><td data-r="Empreendimento"><a href="/spazio-italia-indaiatuba/">Spazio Italia</a> (Zarin) · 59,5 a 63,58 m², suíte</td><td data-r="Preço a partir de" class="num">R$ 429.961 <small>tabela Zarin de out/2026</small></td><td data-r="Linha">Classe Média (acima de R$ 400 mil) · 10%</td><td data-r="Entrada 20%" class="num">R$ 85.992,20</td><td data-r="Financiado" class="num">R$ 343.968,80</td><td data-r="1ª parcela SAC → renda" class="num">R$ 3.685,38 → R$ 12.284,60</td><td data-r="Parcela Price → renda" class="num">R$ 2.957,00 → R$ 9.856,68</td></tr>
     <tr><td data-r="Empreendimento"><a href="/helade-indaiatuba/">Hélade — Park Meraki</a> (PERPLAN) · 3 suítes, 120,18 m²</td><td data-r="Preço a partir de" class="num">R$ 1.391.504 <small>tabela PERPLAN de set/2026</small></td><td data-r="Linha">SBPE/SFH (até R$ 2,25 mi) · 12%, pior caso legal</td><td data-r="Entrada 20%" class="num">R$ 278.300,80</td><td data-r="Financiado" class="num">R$ 1.113.203,20</td><td data-r="1ª parcela SAC → renda" class="num">R$ 13.782,52 → R$ 45.941,72</td><td data-r="Parcela Price → renda" class="num">R$ 11.305,13 → R$ 37.683,78</td></tr>
-    <tr><td data-r="Empreendimento"><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a> (Dominium) · lote de 150 m²</td><td data-r="Preço a partir de" class="num">R$ 145.000 <small>tabela Dominium de out/2026</small></td><td data-r="Linha">Direto com a loteadora</td><td data-r="Entrada 20%" class="num">R$ 16.000 <small>(entrada da tabela, não 20%)</small></td><td data-r="Financiado" class="num">saldo em 96 parcelas</td><td data-r="1ª parcela SAC → renda">fora da regra bancária</td><td data-r="Parcela Price → renda">fora da regra bancária</td></tr>
+    <tr><td data-r="Empreendimento"><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a> (Dominium) · lote de 150 m²</td><td data-r="Preço a partir de" class="num">R$ 145.000 <small>tabela Dominium de out/2026</small></td><td data-r="Linha">Direto com a loteadora</td><td data-r="Entrada 20%" class="num">R$ 16.000 <small>(entrada da tabela, não 20%)</small></td><td data-r="Financiado" class="num">saldo em 96 parcelas de R$ 2.340,41 <small>(Price, 1% a.m.)</small></td><td data-r="1ª parcela SAC → renda">fora da regra bancária</td><td data-r="Parcela Price → renda">fora da regra bancária</td></tr>
   </tbody>
 </table>
 </div>
@@ -600,7 +698,7 @@
     <p><strong>Uni Residencial.</strong> Fica entre o teto estimado das Faixas 1 e 2 (R$ 225.000, leitura nossa) e os R$ 400.000 da Faixa 3. Família com renda de até R$ 5.000 compra pelo § 5º do art. 20, sem o desconto: com R$ 1.500 de parcela (30% de R$ 5.000), na Price a 8,16% e 420 meses cabem cerca de R$ 207,8 mil financiados — entrada de cerca de R$ 72 mil (26%). Conta nossa; a simulação dá o número final.</p>
     <p><strong>Spazio Italia.</strong> Passa de R$ 400.000: sai da Faixa 3 e entra no Classe Média (renda até R$ 13.000, taxa até 10%); as duas rendas calculadas cabem no programa. Conte com a taxa de acompanhamento de até 1,5% do financiamento, na contratação.</p>
     <p><strong>Na planta.</strong> O contrato pode corrigir pelo INCC as parcelas da obra e também o saldo que vai para o banco na entrega; se corrigir, o valor financiado e a renda pedida ficam maiores que os desta tabela. Veja <a href="/blog/incc-parcela-na-planta/">por que a parcela na planta sobe todo mês</a>.</p>
-    <p><strong>Monte Carmelo.</strong> Lote de 150 m² em loteamento aberto, direto com a Dominium: entrada de R$ 16.000 e saldo em 96 parcelas (tabela de out/2026). Não passa por banco, então a regra dos 30% não se aplica; e o FGTS não entra, porque a lei só libera o saque para moradia própria ou lote urbanizado de interesse social. O custo da obra em cima do lote está em <a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">quanto custa construir em Indaiatuba: o m² da obra em 2026</a>.</p>
+    <p><strong>Monte Carmelo.</strong> Lote de 150 m² em loteamento aberto, direto com a Dominium: entrada de R$ 16.000 e saldo em 96 parcelas de R$ 2.340,41, com juros de 1% ao mês pela Tabela Price (tabela de out/2026; calculadora da Dominium). Não passa por banco, então a regra dos 30% não se aplica; e o FGTS não entra, porque a lei só libera o saque para moradia própria ou lote urbanizado de interesse social. O custo da obra em cima do lote está em <a href="/blog/quanto-custa-construir-em-indaiatuba-cub-2026/">quanto custa construir em Indaiatuba: o m² da obra em 2026</a>.</p>
 
     <figure class="artigo">
       <img src="/gran-vic-tangara-indaiatuba/images/hero.jpg" alt="Portaria e torres do Gran Vic Tangará em Indaiatuba, perspectiva ilustrativa da VIC Engenharia" loading="lazy">
@@ -697,6 +795,9 @@
       <a class="nav-cta" href="/">Lançamentos de Imóveis</a>
       <a href="/blog/minha-casa-minha-vida-indaiatuba/">Minha Casa, Minha Vida</a>
       <a href="/precos-lancamentos-indaiatuba/">Observatório</a>
+      <!--GEN:guias--><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a>
+      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
+      <a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><!--/GEN:guias-->
     </div>
     <p>© 2026 Imobiliária Viv'América · Lançamentos imobiliários em Indaiatuba SP</p>
   <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>

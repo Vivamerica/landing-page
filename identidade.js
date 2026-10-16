@@ -25,7 +25,17 @@
 
    Guarda 5 (10/10/2026): o lastmod do sitemap.xml, o dateModified dos JSON-LD e
    o "Atualizado em" visível de cada página têm de contar a mesma data; quem os
-   alinha é o gera-sitemap.js, que roda logo antes deste. */
+   alinha é o gera-sitemap.js, que roda logo antes deste.
+
+   Guarda 6 (15/10/2026): o menu do site (gera-menu.js) em toda página: um
+   GEN:menu igual ao do gerador logo depois do <body>, um <style id="menu-site-css">
+   no <head>, um único id="menu-site" (o do <header>), nenhum <header> fora do
+   bloco, nenhum nav.nav-site e nenhum GEN:menu vazio (ficha gerada sem o
+   ritual). Impressos nunca têm menu.
+
+   node identidade.js --conferir   não grava nada: diz quantos arquivos as fases
+   1 a 3 mudariam e roda todas as guardas sobre os arquivos como estão (exit 1 se
+   alguma falhar), para conferir uma árvore em que outros geradores ainda mexem. */
 const fs = require('fs');
 const path = require('path');
 const RAIZ = 'C:\\Users\\Usuario\\Desktop\\landing-page';
@@ -375,7 +385,8 @@ function listarPaginas() {
 // Referência: o <lastmod> do sitemap.xml (gera-sitemap.js, lido do git — data do
 // último commit que mudou o texto principal). O dateModified de todo JSON-LD e o
 // "Atualizado em" visível (p.procedencia nas fichas, p.meta no blog, .atualizado
-// no Observatório e em /sobre/, GEN:atualizado nos hubs) têm de bater: dd/mm/aaaa
+// no Observatório, em /sobre/ e na página de apartamentos, GEN:atualizado nos hubs
+// de loteamentos e de condomínios) têm de bater: dd/mm/aaaa
 // exato; "mês/ano" vale pela granularidade do texto. Em 09/10/2026 o commit
 // 038b3c7 carimbou 59 lastmod sem mudar texto enquanto 48 páginas diziam outra
 // data no dateModified — o Google só usa o lastmod "se for consistente".
@@ -401,6 +412,11 @@ function guardaDatas(paginas) {
 }
 
 function main() {
+  const CONFERIR = process.argv.includes('--conferir');
+  let falhou = false;
+  const falha = () => { falhou = true; if (!CONFERIR) process.exit(1); };
+  const grava = (f, s) => { if (!CONFERIR) fs.writeFileSync(f, s, 'utf8'); };
+  if (CONFERIR) console.log('--conferir: nada é gravado; as guardas leem os arquivos como estão');
   // ─── Fase 1: geradores ───
   for (const g of ['gera-observatorio.js', 'gera-home.js']) {
     const f = path.join(RAIZ, g);
@@ -416,8 +432,8 @@ function main() {
       s = s.replace("body{font-family:'Josefin Sans'",
         "h1{font-family:'Poiret One',cursive;font-weight:400;letter-spacing:.08em;text-transform:uppercase;line-height:1.25}\n  body{font-family:'Josefin Sans'");
     }
-    if (s !== antes) fs.writeFileSync(f, s, 'utf8');
-    console.log(g + ': ' + (s !== antes ? 'atualizado' : 'ja estava'));
+    if (s !== antes) grava(f, s);
+    console.log(g + ': ' + (s !== antes ? (CONFERIR ? 'mudaria' : 'atualizado') : 'ja estava'));
   }
 
   // ─── Fase 2: paginas (camada de marca) ───
@@ -435,9 +451,9 @@ function main() {
     const f = path.join(RAIZ, a);
     const antes = fs.readFileSync(f, 'utf8');
     const depois = reskinPagina(antes);
-    if (depois !== antes) { fs.writeFileSync(f, depois, 'utf8'); n++; } else iguais++;
+    if (depois !== antes) { grava(f, depois); n++; if (CONFERIR) console.log('  mudaria (marca): ' + a.split(path.sep).join('/')); } else iguais++;
   }
-  console.log('paginas: ' + n + ' transformadas, ' + iguais + ' ja estavam (' + alvos.length + ' alvos)');
+  console.log('paginas: ' + n + (CONFERIR ? ' mudariam' : ' transformadas') + ', ' + iguais + ' ja estavam (' + alvos.length + ' alvos)');
 
   // ─── Fase 3: tag GA4 com guarda + entidade única, em todas as páginas do site ───
   const paginas = listarPaginas();
@@ -449,9 +465,9 @@ function main() {
     const depois = aplicarEntidade(comGa4, p, p !== MAPA);
     if (comGa4 !== antes) nGa4++;
     if (depois !== comGa4) nEnt++;
-    if (depois !== antes) fs.writeFileSync(f, depois, 'utf8');
+    if (depois !== antes) { grava(f, depois); if (CONFERIR) console.log('  mudaria (GA4/entidade): ' + p); }
   }
-  console.log('ga4: ' + nGa4 + ' paginas tocadas; entidade: ' + nEnt + ' paginas tocadas (' + paginas.length + ' paginas do site)');
+  console.log('ga4: ' + nGa4 + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; entidade: ' + nEnt + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + ' (' + paginas.length + ' paginas do site)');
 
   // GUARDA: acento duplamente codificado ("HÃ©lade", "ImobiliÃ¡ria", "â€”").
   // Em 02/09/2026 havia 453 ocorrencias em 39 paginas, dentro do JSON-LD
@@ -464,7 +480,7 @@ function main() {
   const sujos = alvos.filter(a => MOJIBAKE.test(fs.readFileSync(path.join(RAIZ, a), 'utf8')));
   if (sujos.length) {
     console.error('ACENTO CORROMPIDO em ' + sujos.length + ' pagina(s): ' + sujos.join(', ') + '\n  -> rode o desmojibake (scratchpad) ou corrija a origem; nao publique assim.');
-    process.exit(1);
+    falha();
   }
 
   // GUARDA 2: imagem referenciada tem de existir no disco. Em 02/09/2026 tres
@@ -517,7 +533,7 @@ function main() {
   }
   if (faltantes.length) {
     console.error('IMAGEM INEXISTENTE (' + faltantes.length + '):\n  ' + faltantes.join('\n  ') + '\n  -> corrija o caminho ou coloque o arquivo; nao publique assim.');
-    process.exit(1);
+    falha();
   }
 
   // GUARDA 3: uma tag GA4 por página, sempre com a guarda de host (o par antigo
@@ -559,14 +575,21 @@ function main() {
   }
   if (errosMed.length) {
     console.error('MEDIÇÃO/ENTIDADE (' + errosMed.length + '):\n  ' + errosMed.join('\n  ') + '\n  -> corrija o gerador da página; nao publique assim.');
-    process.exit(1);
+    falha();
   }
   const errosData = guardaDatas(paginas);
   if (errosData.length) {
     console.error('DATAS DIVERGENTES (' + errosData.length + '):\n  ' + errosData.join('\n  ') + '\n  -> rode node gera-sitemap.js (logo antes deste) ou corrija o gerador da página; nao publique assim.');
-    process.exit(1);
+    falha();
   }
-  console.log('guardas: acentos ok, imagens ok, GA4 ok, entidade ok, datas ok (' + alvos.length + ' alvos de marca, ' + paginas.length + ' paginas do site)');
+  // GUARDA 6: o menu do site, igual em toda página (gera-menu.js é a fonte única; ver o cabeçalho)
+  const errosMenu = require('./gera-menu.js').guardaMenu(RAIZ);
+  if (errosMenu.length) {
+    console.error('MENU (' + errosMenu.length + '):\n  ' + errosMenu.join('\n  ') + '\n  -> rode node gera-menu.js (depois do gera-relacionados) ou corrija o gerador da página; nao publique assim.');
+    falha();
+  }
+  if (falhou) process.exit(1);
+  console.log('guardas: acentos ok, imagens ok, GA4 ok, entidade ok, datas ok, menu ok (' + alvos.length + ' alvos de marca, ' + paginas.length + ' paginas do site)');
 }
 
 if (require.main === module) main();

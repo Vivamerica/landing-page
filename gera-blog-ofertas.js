@@ -19,6 +19,10 @@
                          event_label (texto do botão), cta_pos
                          (hero | meio | flutuante | rodape | barra) e origem
                          (slug do artigo)
+   - <!--GEN:guias-->    no .footer-links do rodapé: os três guias
+                         (apartamentos na planta, loteamentos, condomínios
+                         fechados). O menu do site é do gera-menu.js, igual
+                         em toda página, e não aponta para eles.
 
    Os preços saem de APTOS/LOTES de gera-folheto.js — mudou a tabela,
    roda o gerador e todo o blog acompanha. Nunca editar card à mão.
@@ -29,9 +33,6 @@
 
    Mensagens de WhatsApp seguem os moldes da casa (nome oficial da fonte
    única; "Olá! Quero a tabela de preços do X…" / "…tabela de lotes do X…").
-
-   Também normaliza o menu dos artigos (Apartamentos · Loteamentos ·
-   Condomínios · Blog + botão "Lançamentos de Imóveis" → home).
 
    Ritual: node gera-folheto.js && node gera-observatorio.js &&
            node gera-home.js && node gera-blog-ofertas.js
@@ -411,6 +412,28 @@ const GA4 = String.raw`  <script id="ga4">
 const reGA4Velho = /[ \t]*(?:<!-- Google[^\n]*-->\n)?[ \t]*<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-40C0379NPR"><\/script>\n[ \t]*<script>[\s\S]*?<\/script>/;
 const reGA4Novo  = /[ \t]*<script id="ga4">[\s\S]*?<\/script>/;
 
+// ─── rodapé: <!--GEN:guias--> com os três guias (hubs), dentro do .footer-links ───
+// Link de hub escrito à mão no .footer-links (fora do marcador) sai, para não repetir.
+const GUIAS = [
+  ['/apartamentos-na-planta-indaiatuba/', 'Apartamentos na planta'],
+  ['/loteamentos-em-indaiatuba/', 'Loteamentos'],
+  ['/condominios-fechados-indaiatuba/', 'Condomínios fechados'],
+];
+const RE_HUB_A_MAO = /\n?[ \t]*<a href="\/(?:apartamentos-na-planta|loteamentos-em|condominios-fechados)-indaiatuba\/">[^<]*<\/a>/g;
+const semRodape = [];
+function aplicarGuias(h, slug) {
+  const ini = h.indexOf('<div class="footer-links">');
+  if (ini < 0) { semRodape.push(slug); return h; }
+  const fim = h.indexOf('</div>', ini);
+  let bloco = h.slice(ini, fim)
+    .split(/(<!--GEN:guias-->[\s\S]*?<!--\/GEN:guias-->)/)
+    .map(p => p.startsWith('<!--GEN:guias-->') ? p : p.replace(RE_HUB_A_MAO, '')).join('');
+  if (!bloco.includes('<!--GEN:guias-->')) bloco = bloco.replace(/\s*$/, '') + '\n      <!--GEN:guias--><!--/GEN:guias-->\n    ';
+  bloco = bloco.replace(/<!--GEN:guias-->[\s\S]*?<!--\/GEN:guias-->/, () => '<!--GEN:guias-->' +
+    GUIAS.map(([u, n]) => '<a href="' + u + '">' + n + '</a>').join('\n      ') + '<!--/GEN:guias-->');
+  return h.slice(0, ini) + bloco + h.slice(fim);
+}
+
 // ─── aplicação ───
 const arquivos = fs.readdirSync(BLOG)
   .filter(d => fs.existsSync(BLOG + d + '/index.html'))
@@ -421,7 +444,12 @@ let feitos = 0, pulados = [], semGa4 = [];
 arquivos.forEach(({ slug, caminho }) => {
   let h = fs.readFileSync(caminho, 'utf8');
   const { nome, url, chamada, curta, msg, card, botao, itens } = paraTema(slug);
-  if (!itens.length) { pulados.push(slug + ' (sem empreendimento)'); return; }
+  if (!itens.length) {
+    pulados.push(slug + ' (sem empreendimento)');
+    const g = aplicarGuias(h, slug);          // o rodapé com os guias vale para todo artigo
+    if (g !== h) fs.writeFileSync(caminho, g, 'utf8');
+    return;
+  }
 
   // 1. CSS e rastreio — SUBSTITUÍDOS a cada rodada, para que ajuste de
   //    estilo feito aqui chegue aos artigos sem edição manual
@@ -486,19 +514,9 @@ arquivos.forEach(({ slug, caminho }) => {
     h = h.replace('</body>', '  <!--GEN:barra--><!--/GEN:barra-->\n</body>');
   }
 
-  // menu (padrão do site desde 02/09/2026): Apartamentos · Loteamentos ·
-  // Condomínios · Blog, e o botão de destaque "Lançamentos de Imóveis"
-  // aponta para a HOME — ela é a única dona do termo; o hub
-  // /lancamentos-indaiatuba/ virou 301. Idempotente.
-  h = h.replace(/<a href="\/lancamentos-indaiatuba\/">Lançamentos<\/a>/g,
-                '<a class="nav-cta" href="/">Lançamentos de Imóveis</a>');
-  h = h.replace(/<a class="nav-cta" href="\/lancamentos-indaiatuba\/">/g, '<a class="nav-cta" href="/">');
-  h = h.replace(/<nav>([\s\S]*?)<\/nav>/, (bloco, dentro) => {
-    if (dentro.includes('/apartamentos-na-planta-indaiatuba/')) return bloco;
-    const novo = dentro.replace(/(\s*)(<a href="\/loteamentos-em-indaiatuba\/">)/,
-      '$1<a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>$1$2');
-    return '<nav>' + novo + '</nav>';
-  });
+  // 3.8 os três guias (hubs) no rodapé — o menu do site (gera-menu.js) é o mesmo
+  //     em toda página e não aponta para os hubs
+  h = aplicarGuias(h, slug);
 
   // 4. preencher os marcadores (sempre — é daqui que vem o preço atualizado)
   const gen = (marca, conteudo) => {
@@ -543,3 +561,4 @@ arquivos.forEach(({ slug, caminho }) => {
 console.log('gera-blog-ofertas: ' + feitos + '/' + arquivos.length + ' artigos com oferta');
 if (pulados.length) console.log('  pulados: ' + pulados.join(', '));
 if (semGa4.length) console.log('  SEM tag GA4 reconhecida (nem antiga nem nova): ' + semGa4.join(', '));
+if (semRodape.length) console.log('  SEM <div class="footer-links"> (os guias não entraram no rodapé): ' + semRodape.join(', '));

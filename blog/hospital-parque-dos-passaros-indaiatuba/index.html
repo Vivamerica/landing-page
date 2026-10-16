@@ -376,19 +376,117 @@
   }
   </script>
   <!--/GEN:entidade-->
+  <style id="menu-site-css">
+:root{--menu-h:70px}
+@media (max-width:1260px){:root{--menu-h:60px}}
+#menu-site,#menu-site *{all:revert;box-sizing:border-box}
+#menu-site{position:sticky;top:0;z-index:1150;flex:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;min-height:var(--menu-h);margin:0;padding:0 max(16px,2.5vw);background:#161616;color:#fff;font:400 16px/1.2 'Josefin Sans',system-ui,sans-serif;text-align:left}
+#menu-site.ms-aberto{z-index:1160}
+#menu-site .ms-logo{flex:none;padding:8px 0;color:#fff;text-decoration:none;font-family:'Poiret One',cursive;font-size:17px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+#menu-site .ms-abre{display:none}
+#menu-site .ms-lista{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:4px 18px;margin:0;padding:0}
+#menu-site .ms-lista a{color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:10px 0;cursor:pointer}
+#menu-site .ms-lista a:hover,#menu-site .ms-lista a[aria-current]{color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno{padding:9px 13px;border:1px solid #C9A227;border-radius:4px;color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno:hover,#menu-site .ms-lista a.ms-contorno[aria-current]{background:#C9A227;color:#161616}
+#menu-site a:focus-visible,#menu-site button:focus-visible{outline:2px solid #F7D77E;outline-offset:3px}
+@media (min-width:1261px) and (max-width:1519px){#menu-site{gap:0 20px;padding:0 max(16px,2vw)}#menu-site .ms-logo{font-size:15px;letter-spacing:.1em}#menu-site .ms-lista{gap:4px 13px}#menu-site .ms-lista a{font-size:12px;letter-spacing:.035em}#menu-site .ms-lista a.ms-contorno{padding:8px 10px}}
+@media (max-width:1260px){
+#menu-site{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-aberto .ms-lista{display:flex}
+#menu-site .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+}
+#menu-site.ms-compacto{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site.ms-compacto .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site.ms-compacto .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site.ms-compacto .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-compacto.ms-aberto .ms-lista{display:flex}
+#menu-site.ms-compacto .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site.ms-compacto .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+@media (max-width:420px){#menu-site .ms-logo{font-size:15px;letter-spacing:.12em}}
+@media (max-width:360px){#menu-site .ms-logo{font-size:13.5px;letter-spacing:.08em}}
+@media (prefers-reduced-motion:no-preference){#menu-site .ms-lista a,#menu-site .ms-abre span{transition:color .2s,background-color .2s,transform .2s,opacity .2s}}
+@media print{#menu-site{display:none}}
+</style>
 </head>
 <body>
-  <header>
-    <a href="/" class="logo-text">Viv'America · Indaiatuba</a>
-    <nav>
-      <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
-      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
-      <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-      <a class="nav-cta" href="/">Lançamentos de Imóveis</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-  </header>
+<!--GEN:menu-->
+<header id="menu-site">
+<a class="ms-logo" href="/">Imobiliária Viv'América</a>
+<button class="ms-abre" type="button" aria-expanded="false" aria-controls="ms-lista" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="ms-lista" class="ms-lista" aria-label="Menu principal">
+<a class="ms-contorno" href="/sou-corretor/" data-sou-corretor>Sou Corretor</a>
+<a href="/#lancamentos" data-filtro-menu="todos">Empreendimentos</a>
+<a href="/#apartamentos" data-filtro-menu="apartamentos">Apartamentos</a>
+<a href="/#loteamentos" data-filtro-menu="loteamentos">Loteamentos</a>
+<a href="/#condominios" data-filtro-menu="condominios">Condomínios</a>
+<a href="/mapa-lotes-indaiatuba/">Veja no Mapa</a>
+<a href="/blog/">Blog</a>
+<a class="ms-contorno" href="https://imoveisvivamerica.com.br/">Revenda e Locação <span aria-hidden="true">↗</span></a>
+</nav>
+</header>
+<script>
+(function () {
+  var h = document.querySelector('header#menu-site');
+  var b = h && h.querySelector('.ms-abre'), l = h && h.querySelector('#ms-lista'), logo = h && h.querySelector('.ms-logo');
+  if (!b || !l || !logo || h.getAttribute('data-ms')) return;
+  h.setAttribute('data-ms', '1');
+  var itens = l.getElementsByTagName('a');
+  var mq = window.matchMedia ? window.matchMedia('(max-width:1260px)') : null;
+  var rotas = [[/^\/sou-corretor\//,0],[/^\/apartamentos-na-planta-indaiatuba\//,2],[/^\/loteamentos-em-indaiatuba\//,3],[/^\/condominios-fechados-indaiatuba\//,4],[/^\/mapa-lotes-indaiatuba\//,5],[/^\/blog\//,6]];
+  for (var i = 0; i < rotas.length; i++) if (rotas[i][0].test(location.pathname)) { itens[rotas[i][1]].setAttribute('aria-current', 'page'); break; }
+  function estreita() { return mq ? mq.matches : window.innerWidth <= 1260; }
+  function aberto() { return h.classList.contains('ms-aberto'); }
+  function abrir() { h.classList.add('ms-aberto'); b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', 'Fechar menu'); }
+  // foco: 0 = fica onde está, 1 = volta ao botão se estava no painel, 2 = volta ao botão
+  function fechar(foco) {
+    if (!aberto()) return;
+    var dentro = l.contains(document.activeElement);
+    h.classList.remove('ms-aberto'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Abrir menu');
+    if (foco === 2 || (foco === 1 && dentro)) b.focus({ preventScroll: true });
+  }
+  b.addEventListener('click', function () { if (aberto()) fechar(0); else abrir(); });
+  document.addEventListener('keydown', function (e) { if ((e.key === 'Escape' || e.key === 'Esc') && aberto()) fechar(2); });
+  document.addEventListener(window.PointerEvent ? 'pointerdown' : 'touchstart', function (e) { if (aberto() && !h.contains(e.target)) fechar(1); }, true);
+  l.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var f = a.getAttribute('data-filtro-menu');
+    if (f && typeof window.vmFiltro === 'function' && !e.defaultPrevented && !e.button && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+      e.preventDefault();
+      window.vmFiltro(f);
+    }
+    fechar(1);
+  });
+  function ajustar() {
+    if (!estreita()) {
+      h.classList.remove('ms-compacto');
+      var p = itens[0], u = itens[itens.length - 1];
+      if (h.scrollWidth > h.clientWidth + 1 || l.offsetTop >= logo.offsetTop + logo.offsetHeight || Math.abs(p.offsetTop - u.offsetTop) > 8) h.classList.add('ms-compacto');
+    }
+    if (!estreita() && !h.classList.contains('ms-compacto')) fechar(0);
+  }
+  var largura = -1;
+  function talvez() { var x = document.documentElement.clientWidth; if (x !== largura) { largura = x; ajustar(); } }
+  talvez();
+  if (window.ResizeObserver) new ResizeObserver(talvez).observe(document.documentElement); else window.addEventListener('resize', talvez);
+  if (mq && mq.addEventListener) mq.addEventListener('change', ajustar);
+  if (document.fonts) { if (document.fonts.ready) document.fonts.ready.then(ajustar); if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', ajustar); }
+  window.addEventListener('load', ajustar);
+})();
+</script>
+<script src="/corretor.js?v=20261015" defer></script>
+<!--/GEN:menu-->
 
   <section class="article-hero">
     <div class="wrap">
@@ -576,6 +674,9 @@
       <a href="/blog/">Blog</a>
       <a class="nav-cta" href="/">Lançamentos de Imóveis</a>
       <a href="/precos-lancamentos-indaiatuba/">Observatório</a>
+      <!--GEN:guias--><a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a>
+      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
+      <a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a><!--/GEN:guias-->
     </div>
     <p>© 2026 Imobiliária Viv'América · Lançamentos imobiliários em Indaiatuba SP</p>
   <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>

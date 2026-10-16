@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Condomínios Fechados em Indaiatuba SP: Guia Completo 2026",
-    "description": "Tudo o que você precisa saber sobre condomínios fechados em Indaiatuba SP: segurança, infraestrutura, preços e os melhores lançamentos.",
+    "description": "Tudo o que você precisa saber sobre condomínios fechados em Indaiatuba SP: segurança, infraestrutura, preços e os lançamentos com tabela aberta.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/condominios-fechados-indaiatuba/",
     "author": {
       "@type": "RealEstateAgent",
@@ -45,7 +45,8 @@
       "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
       "name": "Imobiliária Viv'América"
     },
-    "dateModified": "2026-10-15"
+    "datePublished": "2026-05-17",
+    "dateModified": "2026-10-16"
   }
   </script>
 
@@ -74,11 +75,13 @@
     .hero {
       background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d4a5e 100%);
       color: #fff; text-align: center;
-      padding: clamp(50px, 8vw, 90px) 5% clamp(40px, 6vw, 70px);
+      padding: clamp(28px, 5vw, 48px) 5%;
     }
     .breadcrumb { font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem; }
     .breadcrumb a { color: #fff; text-decoration: none; }
-    .hero h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; max-width: 750px; margin: 0 auto 1rem; line-height: 1.2; }
+    .hero h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; max-width: 750px; margin: 0 auto .6rem; line-height: 1.2; }
+    .hero .hub-contagem { color: #fff; font-size: clamp(1rem, 2.2vw, 1.2rem); font-weight: 600; max-width: 750px; margin: 0 auto .5rem; line-height: 1.4; }
+    .hero .hub-edicao { color: #C9A227; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; max-width: none; margin: 0; opacity: 1; }
     .hero p { font-size: clamp(0.95rem, 2vw, 1.1rem); max-width: 580px; margin: 0 auto; opacity: 0.9; }
     .container { max-width: 900px; margin: 0 auto; padding: 0 5%; }
     .content-section { padding: clamp(40px, 6vw, 70px) 0; }
@@ -99,10 +102,13 @@
     .stat-card span { font-size: 0.78rem; opacity: 0.85; }
     .vantagem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
     .vantagem-card { background: var(--cinza-bg); border-radius: var(--radius); padding: 1.4rem; }
-    .vantagem-card .icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
-    .vantagem-card h4 { font-size: 1rem; font-weight: 700; color: var(--verde-escuro); margin-bottom: 0.4rem; }
+    .vantagem-card h3 { font-size: 1rem; font-weight: 700; color: var(--verde-escuro); margin: 0 0 0.4rem; }
     .vantagem-card p { font-size: 0.88rem; margin: 0; }
-    .listings-section { background: var(--cinza-bg); padding: clamp(40px, 6vw, 70px) 0; }
+    .listings-section { background: var(--cinza-bg); padding: clamp(24px, 4vw, 40px) 0 clamp(40px, 6vw, 70px); }
+    .listings-section .listings-grid { margin-top: 0; }
+    .grade-nota { font-size: 0.88rem; margin: 1.4rem 0 0; }
+    .grade-nota a { color: var(--texto); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--dourado); }
+    .guia-rotulo { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin: 0 0 0.4rem; }
     .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
     .listing-card {
       background: #fff; border-radius: var(--radius); overflow: hidden;
@@ -280,118 +286,130 @@
   }
   </script>
   <!--/GEN:entidade-->
+  <style id="menu-site-css">
+:root{--menu-h:70px}
+@media (max-width:1260px){:root{--menu-h:60px}}
+#menu-site,#menu-site *{all:revert;box-sizing:border-box}
+#menu-site{position:sticky;top:0;z-index:1150;flex:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;min-height:var(--menu-h);margin:0;padding:0 max(16px,2.5vw);background:#161616;color:#fff;font:400 16px/1.2 'Josefin Sans',system-ui,sans-serif;text-align:left}
+#menu-site.ms-aberto{z-index:1160}
+#menu-site .ms-logo{flex:none;padding:8px 0;color:#fff;text-decoration:none;font-family:'Poiret One',cursive;font-size:17px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+#menu-site .ms-abre{display:none}
+#menu-site .ms-lista{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:4px 18px;margin:0;padding:0}
+#menu-site .ms-lista a{color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:10px 0;cursor:pointer}
+#menu-site .ms-lista a:hover,#menu-site .ms-lista a[aria-current]{color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno{padding:9px 13px;border:1px solid #C9A227;border-radius:4px;color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno:hover,#menu-site .ms-lista a.ms-contorno[aria-current]{background:#C9A227;color:#161616}
+#menu-site a:focus-visible,#menu-site button:focus-visible{outline:2px solid #F7D77E;outline-offset:3px}
+@media (min-width:1261px) and (max-width:1519px){#menu-site{gap:0 20px;padding:0 max(16px,2vw)}#menu-site .ms-logo{font-size:15px;letter-spacing:.1em}#menu-site .ms-lista{gap:4px 13px}#menu-site .ms-lista a{font-size:12px;letter-spacing:.035em}#menu-site .ms-lista a.ms-contorno{padding:8px 10px}}
+@media (max-width:1260px){
+#menu-site{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-aberto .ms-lista{display:flex}
+#menu-site .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+}
+#menu-site.ms-compacto{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site.ms-compacto .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site.ms-compacto .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site.ms-compacto .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-compacto.ms-aberto .ms-lista{display:flex}
+#menu-site.ms-compacto .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site.ms-compacto .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+@media (max-width:420px){#menu-site .ms-logo{font-size:15px;letter-spacing:.12em}}
+@media (max-width:360px){#menu-site .ms-logo{font-size:13.5px;letter-spacing:.08em}}
+@media (prefers-reduced-motion:no-preference){#menu-site .ms-lista a,#menu-site .ms-abre span{transition:color .2s,background-color .2s,transform .2s,opacity .2s}}
+@media print{#menu-site{display:none}}
+</style>
 </head>
 <body>
-
-<header>
-  <a class="logo-text" href="/">Imobiliária Viv'América</a>
-  <nav>
-    <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
-    <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
-    <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-    <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-    <a href="/blog/">Blog</a>
-  </nav>
+<!--GEN:menu-->
+<header id="menu-site">
+<a class="ms-logo" href="/">Imobiliária Viv'América</a>
+<button class="ms-abre" type="button" aria-expanded="false" aria-controls="ms-lista" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="ms-lista" class="ms-lista" aria-label="Menu principal">
+<a class="ms-contorno" href="/sou-corretor/" data-sou-corretor>Sou Corretor</a>
+<a href="/#lancamentos" data-filtro-menu="todos">Empreendimentos</a>
+<a href="/#apartamentos" data-filtro-menu="apartamentos">Apartamentos</a>
+<a href="/#loteamentos" data-filtro-menu="loteamentos">Loteamentos</a>
+<a href="/#condominios" data-filtro-menu="condominios">Condomínios</a>
+<a href="/mapa-lotes-indaiatuba/">Veja no Mapa</a>
+<a href="/blog/">Blog</a>
+<a class="ms-contorno" href="https://imoveisvivamerica.com.br/">Revenda e Locação <span aria-hidden="true">↗</span></a>
+</nav>
 </header>
+<script>
+(function () {
+  var h = document.querySelector('header#menu-site');
+  var b = h && h.querySelector('.ms-abre'), l = h && h.querySelector('#ms-lista'), logo = h && h.querySelector('.ms-logo');
+  if (!b || !l || !logo || h.getAttribute('data-ms')) return;
+  h.setAttribute('data-ms', '1');
+  var itens = l.getElementsByTagName('a');
+  var mq = window.matchMedia ? window.matchMedia('(max-width:1260px)') : null;
+  var rotas = [[/^\/sou-corretor\//,0],[/^\/apartamentos-na-planta-indaiatuba\//,2],[/^\/loteamentos-em-indaiatuba\//,3],[/^\/condominios-fechados-indaiatuba\//,4],[/^\/mapa-lotes-indaiatuba\//,5],[/^\/blog\//,6]];
+  for (var i = 0; i < rotas.length; i++) if (rotas[i][0].test(location.pathname)) { itens[rotas[i][1]].setAttribute('aria-current', 'page'); break; }
+  function estreita() { return mq ? mq.matches : window.innerWidth <= 1260; }
+  function aberto() { return h.classList.contains('ms-aberto'); }
+  function abrir() { h.classList.add('ms-aberto'); b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', 'Fechar menu'); }
+  // foco: 0 = fica onde está, 1 = volta ao botão se estava no painel, 2 = volta ao botão
+  function fechar(foco) {
+    if (!aberto()) return;
+    var dentro = l.contains(document.activeElement);
+    h.classList.remove('ms-aberto'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Abrir menu');
+    if (foco === 2 || (foco === 1 && dentro)) b.focus({ preventScroll: true });
+  }
+  b.addEventListener('click', function () { if (aberto()) fechar(0); else abrir(); });
+  document.addEventListener('keydown', function (e) { if ((e.key === 'Escape' || e.key === 'Esc') && aberto()) fechar(2); });
+  document.addEventListener(window.PointerEvent ? 'pointerdown' : 'touchstart', function (e) { if (aberto() && !h.contains(e.target)) fechar(1); }, true);
+  l.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var f = a.getAttribute('data-filtro-menu');
+    if (f && typeof window.vmFiltro === 'function' && !e.defaultPrevented && !e.button && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+      e.preventDefault();
+      window.vmFiltro(f);
+    }
+    fechar(1);
+  });
+  function ajustar() {
+    if (!estreita()) {
+      h.classList.remove('ms-compacto');
+      var p = itens[0], u = itens[itens.length - 1];
+      if (h.scrollWidth > h.clientWidth + 1 || l.offsetTop >= logo.offsetTop + logo.offsetHeight || Math.abs(p.offsetTop - u.offsetTop) > 8) h.classList.add('ms-compacto');
+    }
+    if (!estreita() && !h.classList.contains('ms-compacto')) fechar(0);
+  }
+  var largura = -1;
+  function talvez() { var x = document.documentElement.clientWidth; if (x !== largura) { largura = x; ajustar(); } }
+  talvez();
+  if (window.ResizeObserver) new ResizeObserver(talvez).observe(document.documentElement); else window.addEventListener('resize', talvez);
+  if (mq && mq.addEventListener) mq.addEventListener('change', ajustar);
+  if (document.fonts) { if (document.fonts.ready) document.fonts.ready.then(ajustar); if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', ajustar); }
+  window.addEventListener('load', ajustar);
+})();
+</script>
+<script src="/corretor.js?v=20261015" defer></script>
+<!--/GEN:menu-->
+
 
 <section class="hero">
   <div class="breadcrumb">
-    <a href="/">Início</a> › <a href="/loteamentos-em-indaiatuba/">Loteamentos em Indaiatuba</a> › Condomínios Fechados
+    <a href="/">Início</a> › Condomínios fechados
   </div>
-  <h1><!--GEN:h1-->Condomínios e loteamentos fechados em Indaiatuba: 10 com preço aberto<!--/GEN:h1--></h1>
-<p style="margin:.8rem 0 0"><span style="color:#C9A227;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem"><!--GEN:atualizado-->Atualizado em outubro/2026<!--/GEN:atualizado--></span> · <a href="/precos-lancamentos-indaiatuba/" style="color:#C9A227;font-weight:700">Tabela de preços completa, com o m², sem cadastro →</a></p>
-  <p>Portaria 24h, acesso controlado e lazer interno, com o preço de cada lote aberto. Compare os condomínios fechados de Indaiatuba pelo preço por m² e escolha o ideal para sua família.</p>
+  <h1><!--GEN:h1-->Condomínios em Indaiatuba<!--/GEN:h1--></h1>
+  <h2 class="hub-contagem" id="hub-contagem"><!--GEN:contagem-->10 condomínios e loteamentos fechados, todos com preço aberto<!--/GEN:contagem--></h2>
+  <p class="hub-edicao"><!--GEN:atualizado-->Atualizado em outubro/2026<!--/GEN:atualizado--></p>
 </section>
 
-<div class="container">
-  <div class="content-section">
-
-    <h2>O que é um condomínio fechado?</h2>
-    <p>No dia a dia, <strong>condomínio fechado</strong> é o empreendimento de lotes com portaria, perímetro fechado e lazer interno. No papel há dois regimes. No <strong>condomínio de lotes</strong>, ruas e áreas de lazer são propriedade comum dos donos dos lotes. No <strong>loteamento fechado</strong> ou de acesso controlado, ruas e praças continuam públicas; em Indaiatuba, o fechamento é uma concessão de uso dessas áreas a uma associação de moradores (Lei municipal 3.525/1998, arts. 63 e 64). Os decretos de aprovação dos 10 empreendimentos desta página aprovam loteamento, não condomínio de lotes; o regime de cada um se confirma na matrícula. A fonte de cada um está no guia <a href="/blog/condominios-em-indaiatuba-por-bairro/">condomínios fechados de Indaiatuba, bairro a bairro</a>, e a diferença entre os dois regimes, em <a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">condomínio de lotes ou loteamento fechado</a>.</p>
-    <p>Em Indaiatuba SP, os condomínios fechados horizontais têm crescido significativamente nos últimos anos, impulsionados pela qualidade de vida da cidade, pela proximidade com Campinas e pela oferta de novos lançamentos com portaria e lazer interno.</p>
-
-    <div class="highlight-box">
-      <p><strong>Indaiatuba tem IDHM de 0,788 em 2010 (IBGE Cidades/PNUD), 40º entre os municípios paulistas e 8º da Região Metropolitana de Campinas no Atlas Brasil 2013</strong> — um dos fatores que atraem famílias de toda a região metropolitana de Campinas para os condomínios fechados.</p>
-    </div>
-
-    <div class="stats-grid">
-      <div class="stat-card"><strong>Preço aberto</strong><span>Tabela de cada condomínio, atualizada mensalmente</span></div>
-      <div class="stat-card"><strong>24h</strong><span>Portaria com segurança monumental</span></div>
-      <div class="stat-card"><strong>150m²+</strong><span>Lotes a partir de</span></div>
-      <div class="stat-card"><strong><!--GEN:destaque-->R$ 211.050<!--/GEN:destaque--></strong><span>Menor preço de tabela entre os 10</span></div>
-    </div>
-
-    <h2>Vantagens de morar em condomínio fechado em Indaiatuba</h2>
-
-    <div class="vantagem-grid">
-      <div class="vantagem-card">
-        <span class="icon">🔐</span>
-        <h4>Segurança total</h4>
-        <p>Portaria monumental 24h, câmeras de monitoramento e controle de acesso por biometria ou reconhecimento facial.</p>
-      </div>
-      <div class="vantagem-card">
-        <span class="icon">🏊</span>
-        <h4>Lazer resort completo</h4>
-        <p>Piscina, academia, quadras esportivas, salão de festas, playground e muito mais — tudo dentro do condomínio.</p>
-      </div>
-      <div class="vantagem-card">
-        <span class="icon"></span>
-        <h4>Preço na tela</h4>
-        <p>O preço de cada lote está aberto na tabela do Observatório de Preços, atualizada mensalmente — sem promessa de valorização.</p>
-      </div>
-      <div class="vantagem-card">
-        <span class="icon"></span>
-        <h4>Qualidade de vida</h4>
-        <p>Ruas arborizadas, áreas verdes preservadas e baixa densidade criam um ambiente tranquilo e saudável para toda a família.</p>
-      </div>
-      <div class="vantagem-card">
-        <span class="icon"></span>
-        <h4>Infraestrutura completa</h4>
-        <p>Asfalto, iluminação LED, rede de água, esgoto, drenagem e gás encanado inclusos no preço do lote.</p>
-      </div>
-      <div class="vantagem-card">
-        <span class="icon">👨‍👩‍👧</span>
-        <h4>Comunidade selecionada</h4>
-        <p>Regras de convivência e espaços compartilhados promovem um ambiente familiar, agradável e seguro para crianças.</p>
-      </div>
-    </div>
-
-    <h2>Condomínio fechado ou loteamento aberto: qual escolher?</h2>
-    <p>A principal diferença está na <strong>segurança e na manutenção</strong>. Em um loteamento aberto, as ruas são públicas e a prefeitura é responsável pela conservação. Já em um condomínio fechado, toda a infraestrutura interna é gerida pelos moradores — o que garante padrões mais altos de qualidade e exclusividade.</p>
-
-    <h3>Condomínio fechado é certo para você se:</h3>
-    <ul>
-      <li>Valoriza segurança e privacidade acima de tudo</li>
-      <li>Quer lazer completo sem precisar sair de casa</li>
-      <li>Quer comparar o preço por m² entre condomínios com tabela aberta</li>
-      <li>Tem família com crianças e quer liberdade dentro do condomínio</li>
-      <li>Prefere pagar taxa de condomínio em troca de manutenção garantida</li>
-    </ul>
-
-    <h3>Loteamento aberto pode ser melhor se:</h3>
-    <ul>
-      <li>O custo de condomínio mensal é um impeditivo no orçamento</li>
-      <li>Prefere liberdade total para construir sem regras do condomínio</li>
-      <li>Busca o menor preço por m² disponível na cidade</li>
-    </ul>
-
-    <h2>Como funciona a compra de um lote em condomínio fechado?</h2>
-    <p>A compra de um lote em Indaiatuba pode ser feita diretamente com a incorporadora, geralmente em três etapas:</p>
-    <ol>
-      <li><strong>Reserva do lote:</strong> escolha o lote no mapa do empreendimento e faça a reserva com o corretor</li>
-      <li><strong>Contrato e entrada:</strong> assine o compromisso de compra e venda e pague a entrada (geralmente 20% a 30%)</li>
-      <li><strong>Parcelamento:</strong> saldo financiado diretamente com a incorporadora em até 60 meses, sem precisar de banco</li>
-    </ol>
-    <p>Após a entrega das obras, é possível também financiar o saldo restante por bancos como Caixa Econômica Federal e Banco do Brasil, usando o lote como garantia.</p>
-
-  </div>
-</div>
-
-<section class="listings-section">
+<section class="listings-section" aria-labelledby="hub-contagem">
   <div class="container">
-    <h2>Condomínios e loteamentos fechados em Indaiatuba: lançamentos disponíveis</h2>
-    <p style="color:var(--texto-claro); margin-bottom: 0;">Todos os condomínios e loteamentos fechados que a Viv'América representa em Indaiatuba, em ordem crescente de preço por m². O rótulo de cada card é o que a própria loteadora usa (condomínio fechado ou loteamento fechado), e o mês da tabela de cada um está no card.</p>
-
     <div class="listings-grid"><!--GEN:hubgrid-->
       <a href="/parque-zarah-indaiatuba/" class="listing-card">
         <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Parque Zarah — condomínio fechado em Indaiatuba">
@@ -495,7 +513,90 @@
       </a>
     <!--/GEN:hubgrid-->
     </div>
+    <p class="grade-nota">Todos os condomínios e loteamentos fechados que a Viv'América representa em Indaiatuba, do menor ao maior R$/m² · o rótulo de cada card é o que a própria loteadora usa (condomínio fechado ou loteamento fechado) · o mês da tabela de cada um está no card · <a href="/precos-lancamentos-indaiatuba/">Tabela de preços completa, com o m², sem cadastro →</a></p>
   </div>
+</section>
+
+<section class="guia" id="guia" aria-label="Guia dos condomínios fechados em Indaiatuba">
+<div class="container">
+  <div class="content-section">
+    <p class="guia-rotulo">Guia</p>
+    <p>Portaria 24h, acesso controlado e lazer interno, com o preço de cada lote aberto. Compare os condomínios fechados de Indaiatuba pelo preço por m² e escolha o ideal para sua família.</p>
+
+    <h2>O que é um condomínio fechado?</h2>
+    <p>No dia a dia, <strong>condomínio fechado</strong> é o empreendimento de lotes com portaria, perímetro fechado e lazer interno. No papel há dois regimes. No <strong>condomínio de lotes</strong>, ruas e áreas de lazer são propriedade comum dos donos dos lotes. No <strong>loteamento fechado</strong> ou de acesso controlado, ruas e praças continuam públicas; em Indaiatuba, o fechamento é uma concessão de uso dessas áreas a uma associação de moradores (Lei municipal 3.525/1998, arts. 63 e 64). Os decretos de aprovação dos 10 empreendimentos desta página aprovam loteamento, não condomínio de lotes; o regime de cada um se confirma na matrícula. A fonte de cada um está no guia <a href="/blog/condominios-em-indaiatuba-por-bairro/">condomínios fechados de Indaiatuba, bairro a bairro</a>, e a diferença entre os dois regimes, em <a href="/blog/condominio-de-lotes-ou-loteamento-fechado/">condomínio de lotes ou loteamento fechado</a>.</p>
+    <p>Em Indaiatuba SP, os condomínios fechados horizontais têm crescido significativamente nos últimos anos, impulsionados pela qualidade de vida da cidade, pela proximidade com Campinas e pela oferta de novos lançamentos com portaria e lazer interno.</p>
+
+    <div class="highlight-box">
+      <p><strong>Indaiatuba tem IDHM de 0,788 em 2010 (IBGE Cidades/PNUD), 40º entre os municípios paulistas e 8º da Região Metropolitana de Campinas no Atlas Brasil 2013</strong> — um dos fatores que atraem famílias de toda a região metropolitana de Campinas para os condomínios fechados.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card"><strong>Preço aberto</strong><span>Tabela de cada condomínio, atualizada mensalmente</span></div>
+      <div class="stat-card"><strong>24h</strong><span>Portaria com segurança monumental</span></div>
+      <div class="stat-card"><strong>150m²+</strong><span>Lotes a partir de</span></div>
+      <div class="stat-card"><strong><!--GEN:destaque-->R$ 211.050<!--/GEN:destaque--></strong><span>Menor preço de tabela entre os 10</span></div>
+    </div>
+
+    <h2>Vantagens de morar em condomínio fechado em Indaiatuba</h2>
+
+    <div class="vantagem-grid">
+      <div class="vantagem-card">
+        <h3>Segurança total</h3>
+        <p>Portaria 24h e acesso controlado; o sistema de cada um está na página do empreendimento.</p>
+      </div>
+      <div class="vantagem-card">
+        <h3>Lazer resort completo</h3>
+        <p>Piscina, academia, quadras esportivas, salão de festas, playground e muito mais — tudo dentro do condomínio.</p>
+      </div>
+      <div class="vantagem-card">
+        <h3>Preço na tela</h3>
+        <p>O preço de cada lote está aberto na tabela do Observatório de Preços, atualizada mensalmente — sem promessa de valorização.</p>
+      </div>
+      <div class="vantagem-card">
+        <h3>Qualidade de vida</h3>
+        <p>Ruas arborizadas, áreas verdes preservadas e baixa densidade criam um ambiente tranquilo e saudável para toda a família.</p>
+      </div>
+      <div class="vantagem-card">
+        <h3>Infraestrutura completa</h3>
+        <p>Asfalto, iluminação LED, rede de água, esgoto e drenagem inclusos no preço do lote; o que cada um entrega está no memorial descritivo, na página do empreendimento.</p>
+      </div>
+      <div class="vantagem-card">
+        <h3>Comunidade selecionada</h3>
+        <p>Regras de convivência e espaços compartilhados promovem um ambiente familiar, agradável e seguro para crianças.</p>
+      </div>
+    </div>
+
+    <h2>Condomínio fechado ou loteamento aberto: qual escolher?</h2>
+    <p>A principal diferença está na <strong>segurança e na manutenção</strong>. Em um loteamento aberto, as ruas são públicas e a prefeitura é responsável pela conservação. Já em um condomínio fechado, toda a infraestrutura interna é gerida pelos moradores — o que garante padrões mais altos de qualidade e exclusividade.</p>
+
+    <h3>Condomínio fechado é certo para você se:</h3>
+    <ul>
+      <li>Valoriza segurança e privacidade acima de tudo</li>
+      <li>Quer lazer completo sem precisar sair de casa</li>
+      <li>Quer comparar o preço por m² entre condomínios com tabela aberta</li>
+      <li>Tem família com crianças e quer liberdade dentro do condomínio</li>
+      <li>Prefere pagar taxa de condomínio em troca de manutenção garantida</li>
+    </ul>
+
+    <h3>Loteamento aberto pode ser melhor se:</h3>
+    <ul>
+      <li>O custo de condomínio mensal é um impeditivo no orçamento</li>
+      <li>Prefere liberdade total para construir sem regras do condomínio</li>
+      <li>Busca o menor preço por m² disponível na cidade</li>
+    </ul>
+
+    <h2>Como funciona a compra de um lote em condomínio fechado?</h2>
+    <p>A compra de um lote em Indaiatuba pode ser feita diretamente com a incorporadora, geralmente em três etapas:</p>
+    <ol>
+      <li><strong>Reserva do lote:</strong> escolha o lote no mapa do empreendimento e faça a reserva com o corretor</li>
+      <li><strong>Contrato e entrada:</strong> assine o compromisso de compra e venda e pague a entrada (o sinal de cada um está na tabela da página dele)</li>
+      <li><strong>Parcelamento:</strong> saldo parcelado diretamente com a loteadora, sem precisar de banco (o prazo de cada um está na tabela da página dele)</li>
+    </ol>
+    <p>Após a entrega das obras, é possível também financiar o saldo restante por bancos como Caixa Econômica Federal e Banco do Brasil, usando o lote como garantia.</p>
+
+  </div>
+</div>
 </section>
 
 <div class="faq-section">

@@ -7,21 +7,23 @@
    2. Para cada página, acha a data do último commit que mudou o TEXTO
       PRINCIPAL: compara a "impressão digital" do conteúdo entre versões
       consecutivas e ignora o que não é texto — camada de marca (<style>),
-      tag GA4, bloco da entidade, malha de rodapé, menu, rodapé, botões de
-      WhatsApp (molde e rótulo), cards/CTA/aside gerados no blog e os próprios
-      campos de data. Um commit que só trocou isso não conta. Página alterada
+      tag GA4, bloco da entidade, malha de rodapé, menu (GEN:menu e o
+      cabeçalho antigo, menos o <h1>), rodapé, botões de WhatsApp (molde e
+      rótulo), cards/CTA/aside gerados no blog e os próprios campos de data.
+      Um commit que só trocou isso não conta. Página alterada
       na árvore de trabalho com mudança de texto recebe a data de hoje.
    3. Escreve sitemap.xml (BOM + LF, formato de sempre; changefreq/priority da
       TABELA abaixo, com padrão por tipo para página nova).
    4. Alinha nas páginas o dateModified dos JSON-LD e o "Atualizado em
       dd/mm/aaaa" visível (p.procedencia nas fichas, p.meta no blog,
-      .atualizado no Observatório e em /sobre/) com o lastmod. O
+      .atualizado no Observatório, em /sobre/ e na página de apartamentos,
+      onde o gera-apartamentos.js escreve o mês da edição) com o lastmod. O
       "Atualizado em mês/ano" dos hubs de lote é do gera-home.js e fica
       como está; a guarda do identidade.js aceita a granularidade de mês.
 
    Ritual (ordem): hero-leve.py → gera-folheto → gera-observatorio → gera-home →
    gera-apartamentos → gera-alphaville → gera-blog-ofertas → gera-blog-indice →
-   gera-relacionados → hero-leve.py --aplicar → gera-faq → mapa-lotes/gera-lista-indexavel.py →
+   gera-relacionados → gera-menu → hero-leve.py --aplicar → gera-faq → mapa-lotes/gera-lista-indexavel.py →
    node gera-sitemap.js → node identidade.js (último; a
    guarda 5 dele falha quando lastmod, dateModified e "Atualizado em" divergem).
    Idempotente: rodado duas vezes, a segunda não muda nada. Nunca edite o
@@ -175,7 +177,7 @@ function lerBlobs(specs) {
 // ─── impressão digital do texto principal ───
 const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 const RE_DATA_VISIVEL = /(atualizad[oa] em )(\d{2}\/\d{2}\/\d{4}|(?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)(?: de |\/)\d{4})/i;
-const GEN_CHROME = /<!--GEN:(malha|entidade|barra|aside|oferta|cta-topo|atualizado)-->[\s\S]*?<!--\/GEN:\1-->/g;
+const GEN_CHROME = /<!--GEN:(malha|entidade|barra|aside|oferta|cta-topo|atualizado|menu|guias)-->[\s\S]*?<!--\/GEN:\1-->/g;
 
 const ehObj = v => !!v && typeof v === 'object' && !Array.isArray(v);
 const tipos = v => String((v && v['@type']) || '');
@@ -213,13 +215,20 @@ function fingerprint(html) {
   h = h.replace(/<(p|span|div)\b[^>]*class="(?:[^"]*\s)?(?:procedencia|meta|atualizado)(?:\s[^"]*)?"[^>]*>[\s\S]*?<\/\1>/gi, ' ');
   h = h.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ');
   h = h.replace(/<link\b[^>]*>/gi, m => /rel="canonical"/.test(m) ? m : ' ');
+  // cabeçalho de página (logo, nome do produto, botão do topo): é moldura, não texto; o menu único
+  // (GEN:menu, gera-menu.js) já saiu acima. O <h1> que estiver dentro dele continua contando.
+  h = h.replace(/<header\b[^>]*>[\s\S]*?<\/header>/gi, m => ' ' + (m.match(/<h1\b[\s\S]*?<\/h1>/gi) || []).join(' ') + ' ');
   h = h.replace(/<nav\b[\s\S]*?<\/nav>/gi, ' ');
   h = h.replace(/<footer\b[\s\S]*?<\/footer>/gi, ' ');
   h = h.replace(/<a\b[^>]*wa\.me[^>]*>[\s\S]*?<\/a>/gi, ' ');
   const ld = [];
   h = h.replace(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi, (m, attrs, corpo) => {
     if (/application\/ld\+json/.test(attrs)) { ld.push(normalizarLd(corpo)); return ' '; }
-    if (/gtag\(|dataLayer|googletagmanager/.test(corpo + attrs)) return ' ';   // tag GA4, formato antigo ou novo
+    // tag GA4: o <script id="ga4"> (formato novo, que também mede o whatsapp_click), o carregador do
+    // googletagmanager e o bloco antigo com gtag('js'/'config'). Script que só CHAMA gtag('event', …)
+    // continua contando: o do mapa de lotes traz os dados (LOTES/BAIRROS), e preço ou parcela nova
+    // tem de mexer na data da página.
+    if (/\bid=["']ga4["']|googletagmanager/.test(attrs) || /gtag\(\s*['"](?:config|js)['"]|googletagmanager/.test(corpo)) return ' ';
     return ' ' + corpo.replace(/\s+/g, ' ') + ' ';
   });
   h = h.replace(/(atualizad[oa] em )(\d{2}\/\d{2}\/\d{4}|[a-zç]+ de \d{4}|[a-zç]+\/\d{4})/gi, '$1DATA');

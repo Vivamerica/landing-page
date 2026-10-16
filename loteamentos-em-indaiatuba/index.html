@@ -35,7 +35,8 @@
     "headline": "Loteamentos em Indaiatuba SP — Guia Completo 2026",
     "description": "Guia sobre loteamentos e terrenos em Indaiatuba SP: preço por m² de cada lançamento, loteamento aberto x condomínio fechado e como comprar um lote com segurança.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/loteamentos-em-indaiatuba/",
-    "dateModified": "2026-10-15",
+    "datePublished": "2026-05-17",
+    "dateModified": "2026-10-16",
     "publisher": {
       "@type": "RealEstateAgent",
       "@id": "https://imoveisvivamerica.com.br/#imobiliaria",
@@ -107,7 +108,7 @@
     /* HERO */
     .hero {
       background: var(--navy-dark);
-      padding: 140px 24px 80px;
+      padding: 80px 24px 56px;
       text-align: center;
     }
     .badge {
@@ -148,6 +149,11 @@
     .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
     section { padding: 72px 24px; }
+    .grade-topo { padding-top: 40px; }
+    .grade-topo .listings-grid { margin-top: 24px; }
+    .grade-nota { font-size: .9rem; margin: 32px 0 0; }
+    .grade-nota a { color: var(--navy); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--gold); }
+    .guia-rotulo { font-size: .72rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--navy); text-align: center; margin: 0 0 12px; }
 
     .sec-label {
       font-size: .72rem; font-weight: 800;
@@ -474,8 +480,117 @@
   }
   </script>
   <!--/GEN:entidade-->
+  <style id="menu-site-css">
+:root{--menu-h:70px}
+@media (max-width:1260px){:root{--menu-h:60px}}
+#menu-site,#menu-site *{all:revert;box-sizing:border-box}
+#menu-site{position:sticky;top:0;z-index:1150;flex:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;min-height:var(--menu-h);margin:0;padding:0 max(16px,2.5vw);background:#161616;color:#fff;font:400 16px/1.2 'Josefin Sans',system-ui,sans-serif;text-align:left}
+#menu-site.ms-aberto{z-index:1160}
+#menu-site .ms-logo{flex:none;padding:8px 0;color:#fff;text-decoration:none;font-family:'Poiret One',cursive;font-size:17px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+#menu-site .ms-abre{display:none}
+#menu-site .ms-lista{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:4px 18px;margin:0;padding:0}
+#menu-site .ms-lista a{color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:10px 0;cursor:pointer}
+#menu-site .ms-lista a:hover,#menu-site .ms-lista a[aria-current]{color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno{padding:9px 13px;border:1px solid #C9A227;border-radius:4px;color:#F7D77E}
+#menu-site .ms-lista a.ms-contorno:hover,#menu-site .ms-lista a.ms-contorno[aria-current]{background:#C9A227;color:#161616}
+#menu-site a:focus-visible,#menu-site button:focus-visible{outline:2px solid #F7D77E;outline-offset:3px}
+@media (min-width:1261px) and (max-width:1519px){#menu-site{gap:0 20px;padding:0 max(16px,2vw)}#menu-site .ms-logo{font-size:15px;letter-spacing:.1em}#menu-site .ms-lista{gap:4px 13px}#menu-site .ms-lista a{font-size:12px;letter-spacing:.035em}#menu-site .ms-lista a.ms-contorno{padding:8px 10px}}
+@media (max-width:1260px){
+#menu-site{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-aberto .ms-lista{display:flex}
+#menu-site .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+}
+#menu-site.ms-compacto{flex-wrap:nowrap;height:var(--menu-h)}
+#menu-site.ms-compacto .ms-abre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;margin:0 -10px 0 0;padding:0;border:0;border-radius:4px;background:none;color:#fff;cursor:pointer}
+#menu-site.ms-compacto .ms-abre span{display:block;width:24px;height:2px;margin:0;padding:0;background:#fff;border-radius:1px}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(2){opacity:0}
+#menu-site.ms-compacto.ms-aberto .ms-abre span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#menu-site.ms-compacto .ms-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:8px max(16px,2.5vw) 16px;background:#161616;border-top:1px solid #C9A227;max-height:calc(100vh - var(--menu-h));max-height:calc(100dvh - var(--menu-h));overflow-y:auto}
+#menu-site.ms-compacto.ms-aberto .ms-lista{display:flex}
+#menu-site.ms-compacto .ms-lista a{display:flex;align-items:center;min-height:48px;padding:0 4px;font-size:15px}
+#menu-site.ms-compacto .ms-lista a.ms-contorno{justify-content:center;margin:8px 0 0;padding:0 14px}
+@media (max-width:420px){#menu-site .ms-logo{font-size:15px;letter-spacing:.12em}}
+@media (max-width:360px){#menu-site .ms-logo{font-size:13.5px;letter-spacing:.08em}}
+@media (prefers-reduced-motion:no-preference){#menu-site .ms-lista a,#menu-site .ms-abre span{transition:color .2s,background-color .2s,transform .2s,opacity .2s}}
+@media print{#menu-site{display:none}}
+</style>
 </head>
 <body>
+<!--GEN:menu-->
+<header id="menu-site">
+<a class="ms-logo" href="/">Imobiliária Viv'América</a>
+<button class="ms-abre" type="button" aria-expanded="false" aria-controls="ms-lista" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="ms-lista" class="ms-lista" aria-label="Menu principal">
+<a class="ms-contorno" href="/sou-corretor/" data-sou-corretor>Sou Corretor</a>
+<a href="/#lancamentos" data-filtro-menu="todos">Empreendimentos</a>
+<a href="/#apartamentos" data-filtro-menu="apartamentos">Apartamentos</a>
+<a href="/#loteamentos" data-filtro-menu="loteamentos">Loteamentos</a>
+<a href="/#condominios" data-filtro-menu="condominios">Condomínios</a>
+<a href="/mapa-lotes-indaiatuba/">Veja no Mapa</a>
+<a href="/blog/">Blog</a>
+<a class="ms-contorno" href="https://imoveisvivamerica.com.br/">Revenda e Locação <span aria-hidden="true">↗</span></a>
+</nav>
+</header>
+<script>
+(function () {
+  var h = document.querySelector('header#menu-site');
+  var b = h && h.querySelector('.ms-abre'), l = h && h.querySelector('#ms-lista'), logo = h && h.querySelector('.ms-logo');
+  if (!b || !l || !logo || h.getAttribute('data-ms')) return;
+  h.setAttribute('data-ms', '1');
+  var itens = l.getElementsByTagName('a');
+  var mq = window.matchMedia ? window.matchMedia('(max-width:1260px)') : null;
+  var rotas = [[/^\/sou-corretor\//,0],[/^\/apartamentos-na-planta-indaiatuba\//,2],[/^\/loteamentos-em-indaiatuba\//,3],[/^\/condominios-fechados-indaiatuba\//,4],[/^\/mapa-lotes-indaiatuba\//,5],[/^\/blog\//,6]];
+  for (var i = 0; i < rotas.length; i++) if (rotas[i][0].test(location.pathname)) { itens[rotas[i][1]].setAttribute('aria-current', 'page'); break; }
+  function estreita() { return mq ? mq.matches : window.innerWidth <= 1260; }
+  function aberto() { return h.classList.contains('ms-aberto'); }
+  function abrir() { h.classList.add('ms-aberto'); b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', 'Fechar menu'); }
+  // foco: 0 = fica onde está, 1 = volta ao botão se estava no painel, 2 = volta ao botão
+  function fechar(foco) {
+    if (!aberto()) return;
+    var dentro = l.contains(document.activeElement);
+    h.classList.remove('ms-aberto'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Abrir menu');
+    if (foco === 2 || (foco === 1 && dentro)) b.focus({ preventScroll: true });
+  }
+  b.addEventListener('click', function () { if (aberto()) fechar(0); else abrir(); });
+  document.addEventListener('keydown', function (e) { if ((e.key === 'Escape' || e.key === 'Esc') && aberto()) fechar(2); });
+  document.addEventListener(window.PointerEvent ? 'pointerdown' : 'touchstart', function (e) { if (aberto() && !h.contains(e.target)) fechar(1); }, true);
+  l.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var f = a.getAttribute('data-filtro-menu');
+    if (f && typeof window.vmFiltro === 'function' && !e.defaultPrevented && !e.button && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+      e.preventDefault();
+      window.vmFiltro(f);
+    }
+    fechar(1);
+  });
+  function ajustar() {
+    if (!estreita()) {
+      h.classList.remove('ms-compacto');
+      var p = itens[0], u = itens[itens.length - 1];
+      if (h.scrollWidth > h.clientWidth + 1 || l.offsetTop >= logo.offsetTop + logo.offsetHeight || Math.abs(p.offsetTop - u.offsetTop) > 8) h.classList.add('ms-compacto');
+    }
+    if (!estreita() && !h.classList.contains('ms-compacto')) fechar(0);
+  }
+  var largura = -1;
+  function talvez() { var x = document.documentElement.clientWidth; if (x !== largura) { largura = x; ajustar(); } }
+  talvez();
+  if (window.ResizeObserver) new ResizeObserver(talvez).observe(document.documentElement); else window.addEventListener('resize', talvez);
+  if (mq && mq.addEventListener) mq.addEventListener('change', ajustar);
+  if (document.fonts) { if (document.fonts.ready) document.fonts.ready.then(ajustar); if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', ajustar); }
+  window.addEventListener('load', ajustar);
+})();
+</script>
+<script src="/corretor.js?v=20261015" defer></script>
+<!--/GEN:menu-->
 
 <!-- WA FLOAT -->
 <a href="https://wa.me/5519989769457?text=Olá!%20Tenho%20interesse%20em%20loteamentos%20em%20Indaiatuba.%20Pode%20me%20ajudar?"
@@ -483,18 +598,6 @@
   <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- HEADER -->
-<header>
-  <a href="/" class="logo-text">Imobiliária Viv'América</a>
-  <nav class="nav-site">
-    <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
-    <a href="/loteamentos-em-indaiatuba/" class="on">Loteamentos</a>
-    <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-    <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-    <a href="/blog/">Blog</a>
-  </nav>
-  <a href="https://wa.me/5519989769457?text=Ol%C3%A1!%20Quero%20saber%20sobre%20loteamentos%20em%20Indaiatuba.%20Pode%20me%20ajudar%3F" class="btn-header" target="_blank" rel="noopener">Falar com Especialista</a>
-</header>
 
 <!-- HERO -->
 <section class="hero">
@@ -502,118 +605,12 @@
     <p class="breadcrumb"><a href="https://lancamentos.imoveisvivamerica.com.br/">Início</a> › Loteamentos em Indaiatuba</p>
     <span class="badge"><!--GEN:atualizado-->Atualizado em outubro/2026<!--/GEN:atualizado--></span>
     <h1><!--GEN:h1-->Loteamentos em Indaiatuba: 13 com lote a partir de R$ 145 mil (out/2026)<!--/GEN:h1--></h1>
-    <p class="hero-desc">Tudo o que você precisa saber antes de comprar um lote em Indaiatuba: o preço por m² de cada lançamento, a diferença entre loteamento aberto e condomínio fechado e o passo a passo para comprar com segurança.</p>
-<p style="margin:.8rem 0 0"><a href="/precos-lancamentos-indaiatuba/" style="color:#C9A227;font-weight:700">Tabela de preços completa — todos os valores e o m², sem cadastro →</a></p>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stats-grid">
-    <div class="stat"><strong>+255 mil</strong><span>Habitantes</span></div>
-    <div class="stat"><strong>0,788</strong><span>IDHM 2010 (IBGE/PNUD)</span></div>
-    <div class="stat"><strong>30 min</strong><span>de Campinas</span></div>
-    <div class="stat"><strong>Tabela</strong><span>Preços abertos, mês a mês</span></div>
-  </div>
-</div>
-
-<!-- POR QUE INDAIATUBA -->
-<section style="background: var(--white);">
-  <div class="container">
-    <p class="sec-label">Por que Indaiatuba</p>
-    <h2>Por que investir em lotes em Indaiatuba SP?</h2>
-    <p>Indaiatuba é uma das cidades com maior crescimento imobiliário do interior de São Paulo. Localizada a apenas 30 minutos de Campinas e 90 km de São Paulo, a cidade combina qualidade de vida, infraestrutura completa e um mercado de loteamentos ativo, com tabela aberta.</p>
-    <p>Nos últimos anos, a cidade tem atraído novos moradores que buscam fugir dos centros urbanos sem abrir mão de serviços, segurança e comodidade. Isso impulsiona a demanda por loteamentos fechados e condomínios residenciais de alto padrão.</p>
-
-    <div class="highlight">
-      <p>Os preços de cada loteamento estão abertos na tabela do Observatório de Preços, atualizada mensalmente — compare o R$/m² antes de decidir.</p>
-    </div>
-
-    <h3>Vantagens de morar em Indaiatuba</h3>
-    <ul>
-      <li><strong>Localização estratégica:</strong> acesso às rodovias Anhanguera, Bandeirantes e Santos Dumont</li>
-      <li><strong>Qualidade de vida:</strong> IDHM de 0,788 em 2010 (IBGE Cidades/PNUD), 40º entre os municípios paulistas no Atlas Brasil 2013</li>
-      <li><strong>Segurança:</strong> 5,6 homicídios por 100 mil habitantes, contra 14 em Campinas (Atlas da Violência 2026, ano-base 2024)</li>
-      <li><strong>Infraestrutura:</strong> shoppings, hospitais, universidades e parques</li>
-      <li><strong>Natureza:</strong> 90,6% dos domicílios ficam em vias arborizadas, 4ª cidade mais arborizada da região de Campinas (IBGE, Censo 2022)</li>
-    </ul>
-  </div>
-</section>
-
-<!-- TIPOS DE LOTEAMENTO -->
-<section style="background: var(--light);">
-  <div class="container">
-    <p class="sec-label">Tipos de Loteamento</p>
-    <h2>Loteamento aberto ou condomínio fechado?</h2>
-    <p>Antes de comprar um lote em Indaiatuba, é importante entender a diferença entre os tipos de empreendimentos disponíveis no mercado.</p>
-
-    <div class="card-grid">
-      <a href="https://lancamentos.imoveisvivamerica.com.br/monte-carmelo-indaiatuba/" class="card">
-        <div class="card-icon">🏘️</div>
-        <h3>Loteamento Aberto</h3>
-        <p>Ruas públicas, sem controle de acesso. Geralmente com preço menor, mas sem portaria e área de lazer compartilhada. Ideal para quem busca custo mais baixo.</p>
-      </a>
-      <a href="https://lancamentos.imoveisvivamerica.com.br/condominios-fechados-indaiatuba/" class="card">
-        <div class="card-icon">🏰</div>
-        <h3>Condomínio Fechado</h3>
-        <p>Portaria 24h, ruas privativas e infraestrutura de lazer completa. Maior segurança e lazer interno. Tendência dominante nos novos lançamentos em Indaiatuba.</p>
-      </a>
-      <a href="/apartamentos-na-planta-indaiatuba/" class="card">
-        <div class="card-icon"></div>
-        <h3>Apartamentos na planta</h3>
-        <p>Prefere apartamento? Os lançamentos de apartamentos da cidade, do Minha Casa Minha Vida (MCMV) ao alto padrão, com preço aberto e ordem por faixa de valor.</p>
-      </a>
-    </div>
-
-    <div class="highlight">
-      <p><strong>Dica:</strong> compare o preço por m² — no Observatório de Preços cada lote aparece com R$/m², e no condomínio fechado esse valor já inclui portaria e lazer interno.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ONDE FICA CADA UM -->
-<section style="background: var(--white);">
-  <div class="container">
-    <p class="sec-label">Localização</p>
-    <h2>Onde fica cada loteamento</h2>
-    <p>A localização de cada empreendimento — endereço, acessos e o que há por perto — está descrita na página dele, com mapa. Para um panorama dos bairros da cidade, leia o <a href="/blog/melhores-bairros-para-morar-indaiatuba/">guia de bairros de Indaiatuba</a> no blog. Não classificamos "regiões valorizadas": o que publicamos é o preço de tabela de cada lote, com o mês de referência.</p>
-  </div>
-</section>
-
-<!-- COMO COMPRAR -->
-<section style="background: var(--light);">
-  <div class="container">
-    <p class="sec-label">Passo a Passo</p>
-    <h2>Como comprar um lote em Indaiatuba com segurança</h2>
-    <p>Comprar um lote é uma decisão importante. Siga este guia para evitar erros comuns e reduzir riscos na compra:</p>
-
-    <h3>1. Verifique a documentação do loteamento</h3>
-    <p>Exija a matrícula do imóvel, o memorial descritivo aprovado pela prefeitura e o registro no Cartório de Registro de Imóveis. Loteamentos sem registro podem ter problemas futuros.</p>
-
-    <h3>2. Confira a infraestrutura incluída</h3>
-    <p>Saiba exatamente o que está incluso: pavimentação, rede elétrica, água, esgoto, iluminação pública e paisagismo. Loteamentos com infraestrutura completa entregue são mais seguros.</p>
-
-    <h3>3. Avalie a construtora e incorporadora</h3>
-    <p>Pesquise o histórico da empresa, empreendimentos anteriores entregues e reputação no mercado local. Priorize construtoras com projetos já aprovados e em andamento.</p>
-
-    <h3>4. Analise as condições de pagamento</h3>
-    <p>Compare o valor à vista (com desconto) e as condições de parcelamento. Loteamentos de lançamento costumam oferecer as melhores condições, com entrada facilitada e parcelas longas.</p>
-
-    <h3>5. Visite o local e a maquete</h3>
-    <p>Antes de assinar qualquer contrato, visite o terreno, veja a topografia, verifique o acesso e conheça a vizinhança. Renders e maquetes ajudam a visualizar o produto final.</p>
-
-    <div class="highlight">
-      <p>Nunca assine um contrato sem antes verificar o registro do loteamento no Cartório de Registro de Imóveis da comarca de Indaiatuba.</p>
-    </div>
   </div>
 </section>
 
 <!-- TODOS OS LANÇAMENTOS -->
-<section style="background: var(--white);">
+<section class="grade-topo" id="todos-os-loteamentos" style="background: var(--white);">
   <div class="container-wide">
-    <p class="sec-label">Lançamentos Disponíveis</p>
-    <h2>Todos os loteamentos em Indaiatuba</h2>
-    <p style="color:var(--gray);line-height:1.8;">Todos os loteamentos e condomínios de lotes que a Viv'América representa em Indaiatuba SP, separados em loteamento aberto e loteamento fechado ou condomínio de lotes, em ordem crescente de preço por m²; o mês da tabela de cada um está no card. A fase de obra de cada um está na página dele. Clique em cada um para ver detalhes, preços e condições de pagamento.</p>
     <!--GEN:hubgrid-->
     <h2 id="loteamentos-abertos">Loteamentos abertos em Indaiatuba: 3 com preço aberto</h2>
     <p style="color:var(--gray);line-height:1.8;">Entre os lançamentos que representamos, o m² dos loteamentos abertos vai de R$ 967 (Residencial Monte Carmelo, tabela de out/2026) a R$ 1.825 (Residencial Vila Fahl, tabela de set/2026).</p>
@@ -780,6 +777,116 @@
       </a>
     </div>
     <!--/GEN:hubgrid-->
+    <p class="grade-nota">Todos os loteamentos e condomínios de lotes que a Viv'América representa em Indaiatuba, separados em loteamento aberto e loteamento fechado ou condomínio de lotes, do menor ao maior preço por m² · o mês da tabela de cada um está no card e a fase de obra, na página dele · <a href="/precos-lancamentos-indaiatuba/">Tabela de preços completa, com o m², sem cadastro →</a></p>
+  </div>
+</section>
+
+<!-- GUIA -->
+<section id="guia" style="background: var(--white); padding-bottom: 8px;">
+  <div class="container">
+    <p class="guia-rotulo">Guia</p>
+    <p style="text-align:center;">Tudo o que você precisa saber antes de comprar um lote em Indaiatuba: o preço por m² de cada lançamento, a diferença entre loteamento aberto e condomínio fechado e o passo a passo para comprar com segurança.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat"><strong>+255 mil</strong><span>Habitantes</span></div>
+    <div class="stat"><strong>0,788</strong><span>IDHM 2010 (IBGE/PNUD)</span></div>
+    <div class="stat"><strong>30 min</strong><span>de Campinas</span></div>
+    <div class="stat"><strong>Tabela</strong><span>Preços abertos, mês a mês</span></div>
+  </div>
+</div>
+
+<!-- POR QUE INDAIATUBA -->
+<section style="background: var(--white);">
+  <div class="container">
+    <p class="sec-label">Por que Indaiatuba</p>
+    <h2>Por que investir em lotes em Indaiatuba SP?</h2>
+    <p>Indaiatuba é uma das cidades com maior crescimento imobiliário do interior de São Paulo. Localizada a apenas 30 minutos de Campinas e 90 km de São Paulo, a cidade combina qualidade de vida, infraestrutura completa e um mercado de loteamentos ativo, com tabela aberta.</p>
+    <p>Nos últimos anos, a cidade tem atraído novos moradores que buscam fugir dos centros urbanos sem abrir mão de serviços, segurança e comodidade. Isso impulsiona a demanda por loteamentos fechados e condomínios residenciais de alto padrão.</p>
+
+    <div class="highlight">
+      <p>Os preços de cada loteamento estão abertos na tabela do Observatório de Preços, atualizada mensalmente — compare o R$/m² antes de decidir.</p>
+    </div>
+
+    <h3>Vantagens de morar em Indaiatuba</h3>
+    <ul>
+      <li><strong>Localização estratégica:</strong> acesso às rodovias Anhanguera, Bandeirantes e Santos Dumont</li>
+      <li><strong>Qualidade de vida:</strong> IDHM de 0,788 em 2010 (IBGE Cidades/PNUD), 40º entre os municípios paulistas no Atlas Brasil 2013</li>
+      <li><strong>Segurança:</strong> 5,6 homicídios por 100 mil habitantes, contra 14 em Campinas (Atlas da Violência 2026, ano-base 2024)</li>
+      <li><strong>Infraestrutura:</strong> shoppings, hospitais, universidades e parques</li>
+      <li><strong>Natureza:</strong> 90,6% dos domicílios ficam em vias arborizadas, 4ª cidade mais arborizada da região de Campinas (IBGE, Censo 2022)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TIPOS DE LOTEAMENTO -->
+<section style="background: var(--light);">
+  <div class="container">
+    <p class="sec-label">Tipos de Loteamento</p>
+    <h2>Loteamento aberto ou condomínio fechado?</h2>
+    <p>Antes de comprar um lote em Indaiatuba, é importante entender a diferença entre os tipos de empreendimentos disponíveis no mercado.</p>
+
+    <div class="card-grid">
+      <a href="https://lancamentos.imoveisvivamerica.com.br/monte-carmelo-indaiatuba/" class="card">
+        <div class="card-icon">🏘️</div>
+        <h3>Loteamento Aberto</h3>
+        <p>Ruas públicas, sem controle de acesso. Geralmente com preço menor, mas sem portaria e área de lazer compartilhada. Ideal para quem busca custo mais baixo.</p>
+      </a>
+      <a href="https://lancamentos.imoveisvivamerica.com.br/condominios-fechados-indaiatuba/" class="card">
+        <div class="card-icon">🏰</div>
+        <h3>Condomínio Fechado</h3>
+        <p>Portaria 24h, ruas privativas e infraestrutura de lazer completa. Maior segurança e lazer interno. Tendência dominante nos novos lançamentos em Indaiatuba.</p>
+      </a>
+      <a href="/apartamentos-na-planta-indaiatuba/" class="card">
+        <div class="card-icon"></div>
+        <h3>Apartamentos na planta</h3>
+        <p>Prefere apartamento? Os lançamentos de apartamentos da cidade, do Minha Casa Minha Vida (MCMV) ao alto padrão, com preço aberto e ordem por faixa de valor.</p>
+      </a>
+    </div>
+
+    <div class="highlight">
+      <p><strong>Dica:</strong> compare o preço por m² — no Observatório de Preços cada lote aparece com R$/m², e no condomínio fechado esse valor já inclui portaria e lazer interno.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ONDE FICA CADA UM -->
+<section style="background: var(--white);">
+  <div class="container">
+    <p class="sec-label">Localização</p>
+    <h2>Onde fica cada loteamento</h2>
+    <p>A localização de cada empreendimento — endereço, acessos e o que há por perto — está descrita na página dele, com mapa. Para um panorama dos bairros da cidade, leia o <a href="/blog/melhores-bairros-para-morar-indaiatuba/">guia de bairros de Indaiatuba</a> no blog. Não classificamos "regiões valorizadas": o que publicamos é o preço de tabela de cada lote, com o mês de referência.</p>
+  </div>
+</section>
+
+<!-- COMO COMPRAR -->
+<section style="background: var(--light);">
+  <div class="container">
+    <p class="sec-label">Passo a Passo</p>
+    <h2>Como comprar um lote em Indaiatuba com segurança</h2>
+    <p>Comprar um lote é uma decisão importante. Siga este guia para evitar erros comuns e reduzir riscos na compra:</p>
+
+    <h3>1. Verifique a documentação do loteamento</h3>
+    <p>Exija a matrícula do imóvel, o memorial descritivo aprovado pela prefeitura e o registro no Cartório de Registro de Imóveis. Loteamentos sem registro podem ter problemas futuros.</p>
+
+    <h3>2. Confira a infraestrutura incluída</h3>
+    <p>Saiba exatamente o que está incluso: pavimentação, rede elétrica, água, esgoto, iluminação pública e paisagismo. Loteamentos com infraestrutura completa entregue são mais seguros.</p>
+
+    <h3>3. Avalie a construtora e incorporadora</h3>
+    <p>Pesquise o histórico da empresa, empreendimentos anteriores entregues e reputação no mercado local. Priorize construtoras com projetos já aprovados e em andamento.</p>
+
+    <h3>4. Analise as condições de pagamento</h3>
+    <p>Compare o valor à vista (com desconto) e as condições de parcelamento. Loteamentos de lançamento costumam oferecer as melhores condições, com entrada facilitada e parcelas longas.</p>
+
+    <h3>5. Visite o local e a maquete</h3>
+    <p>Antes de assinar qualquer contrato, visite o terreno, veja a topografia, verifique o acesso e conheça a vizinhança. Renders e maquetes ajudam a visualizar o produto final.</p>
+
+    <div class="highlight">
+      <p>Nunca assine um contrato sem antes verificar o registro do loteamento no Cartório de Registro de Imóveis da comarca de Indaiatuba.</p>
+    </div>
   </div>
 </section>
 

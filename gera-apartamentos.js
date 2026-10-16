@@ -40,6 +40,15 @@
 
    Ordem: cards por preço crescente; sem preço no fim; esgotados por último.
 
+   Topo (como a home e os outros dois hubs: os cards primeiro, o texto
+   embaixo): H1 fixo "Apartamentos na planta em Indaiatuba"; logo abaixo,
+   a linha "N lançamentos, M com preço aberto" e "Atualizado em mês/ano"
+   (mês da edição). Essa linha da data tem a classe atualizado: o
+   gera-sitemap.js a lê como a data visível da página e, se o lastmod cair
+   em outro mês, troca o texto por dd/mm/aaaa (a guarda 5 do identidade.js
+   confere). Os atalhos seguem logo depois do topo; o parágrafo de abertura
+   fica embaixo da grade de cards.
+
    O bloco <!--GEN:malha--> é preenchido pelo gera-relacionados.js (que
    roda DEPOIS deste); ao regerar, o conteúdo anterior da malha é
    preservado para a página não ficar sem malha entre um passo e outro.
@@ -74,6 +83,8 @@ const EDICAO = extrair('gera-observatorio.js', 'EDICAO');
 
 // entidade única (nó RealEstateAgent com @id) e tag GA4 com guarda: fonte única em identidade.js
 const { blocoEntidade, GA4 } = require('./identidade.js');
+// menu do site: fonte única em gera-menu.js
+const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
 // ─── utilitários ───
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
@@ -179,7 +190,9 @@ const semDataEst = ativos.filter(e => typeof e.est === 'number' && !e.estEm);
 const TITLE = `Apartamentos na Planta em Indaiatuba ${EDICAO.ano} | ${N} Lançamentos`;
 // o preço citado leva o mês da tabela DELE (ou "pré-lançamento"), não o mês da edição
 const DESC = `${N} apartamentos em lançamento em Indaiatuba SP, ${NP} com preço na tela, sem cadastro: a partir de ${mil(menor.p)} (${menor.tab ? 'tabela ' + mesDe(menor.tab) : 'pré-lançamento'}), do popular ao alto padrão.`;
-const H1 = `Apartamentos na planta em Indaiatuba: ${N} lançamentos, ${NP} com preço aberto`;
+// H1 fixo; os números vão na linha logo abaixo (como na home)
+const H1 = 'Apartamentos na planta em Indaiatuba';
+const NUMEROS = `<b>${N}</b> ${N === 1 ? 'lançamento' : 'lançamentos'}, <b>${NP}</b> com preço aberto`;
 if (TITLE.length > 60) throw new Error('title com ' + TITLE.length + ' caracteres (max 60): ' + TITLE);
 if (DESC.length < 120 || DESC.length > 155) throw new Error('description com ' + DESC.length + ' caracteres (120-155): ' + DESC);
 
@@ -362,11 +375,15 @@ ${GA4}
     .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.65);margin-bottom:.9rem}
     .breadcrumb a{color:rgba(255,255,255,.75);text-decoration:none}
     .breadcrumb a:hover{color:var(--dourado)}
-    h1{font-size:clamp(1.35rem,3.4vw,2.1rem);margin:0 0 .8rem;max-width:26ch}
+    h1{font-size:clamp(1.35rem,3.4vw,2.1rem);margin:0 0 .45rem;max-width:26ch}
     h1 em{font-style:normal;color:var(--dourado)}
-    .lede{max-width:70ch;opacity:.92;font-weight:300;font-size:1.02rem}
-    .lede a{color:var(--dourado)}
-    .pill{display:inline-block;margin-top:1rem;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(201,162,39,.16);border:1px solid rgba(201,162,39,.45);color:var(--dourado);border-radius:99px;padding:.35rem 1rem;font-weight:600}
+    .hub-numeros{font-size:clamp(1.05rem,2.3vw,1.25rem);font-weight:600;line-height:1.4}
+    .hub-numeros b{color:#F7D77E;font-weight:700}
+    .hub-edicao{font-size:.85rem;opacity:.75;margin-top:.2rem}
+    .lede{max-width:75ch;margin:2.2rem 0 0;padding-top:.9rem;border-top:3px solid var(--preto);color:#5a5346;font-size:1rem;line-height:1.7}
+    .lede strong{color:var(--preto)}
+    .lede a{color:var(--preto);font-weight:700;text-decoration:none;border-bottom:1px solid var(--dourado)}
+    .lede a:hover{border-bottom-width:2px}
     .atalhos{display:flex;flex-wrap:wrap;gap:.45rem;max-width:1160px;margin:1.2rem auto 0;padding:0 5%}
     .atalhos a{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.5rem .9rem;border:1px solid var(--linha);background:#fff;color:var(--muted);text-decoration:none;border-radius:4px}
     .atalhos a:hover{border-color:var(--dourado);color:var(--preto)}
@@ -430,25 +447,17 @@ ${GA4}
     footer a{color:rgba(255,255,255,.75);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;font-size:.74rem}
     footer a:hover{color:var(--dourado)}
   </style>
+  ${MENU_CSS}
 </head>
 <body>
-  <header>
-    <a href="/" class="logo-text">Imobiliária Viv'América</a>
-    <nav>
-      <a href="/${SLUG}/" class="on">Apartamentos</a>
-      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
-      <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-  </header>
+${MENU_HTML}
 
   <section class="topo">
     <div class="wrap">
       <p class="breadcrumb"><a href="/">Início</a> › Apartamentos na planta</p>
       <h1>${esc(H1)}</h1>
-      <p class="lede">Aqui estão os apartamentos <strong>na planta, em obras ou recém-entregues</strong> que a Viv'América representa em Indaiatuba — do Minha Casa Minha Vida (MCMV), com uso do Fundo de Garantia do Tempo de Serviço (FGTS), ao alto padrão — com o preço "a partir de" aberto, sem cadastro, e link para a página completa de cada um. Procura apartamento pronto de revenda? Está no site principal: <a href="${SITE_PRONTOS}">apartamentos à venda em Indaiatuba</a>.</p>
-      <span class="pill">Edição de ${mesLongo} · ${N} lançamentos · ${NP} com preço</span>
+      <p class="hub-numeros">${NUMEROS}</p>
+      <p class="hub-edicao atualizado">Atualizado em ${mesLongo}</p>
     </div>
   </section>
 
@@ -470,6 +479,8 @@ ${GA4}
     <p class="sub">Ordem por preço "a partir de", cada um com o mês da tabela da construtora; sem tabela pública ao final${esgotados.length ? '; os esgotados ficam por último, com a página no ar para quem procura o nome' : ''}.</p>
     <div class="grid">${todos.map(card).join('')}
     </div>
+
+    <p class="lede">Nesta página estão os apartamentos <strong>na planta, em obras ou recém-entregues</strong> que a Viv'América representa em Indaiatuba — do Minha Casa Minha Vida (MCMV), com uso do Fundo de Garantia do Tempo de Serviço (FGTS), ao alto padrão — com o preço "a partir de" aberto, sem cadastro, e link para a página completa de cada um. Procura apartamento pronto de revenda? Está no site principal: <a href="${SITE_PRONTOS}">apartamentos à venda em Indaiatuba</a>.</p>
 
 ${SECOES.map(secao).join('\n')}
 

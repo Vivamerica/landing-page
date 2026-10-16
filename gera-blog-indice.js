@@ -8,11 +8,16 @@
    - selo de data pequeno em cada card
    - filtros por tema no topo (mapa TEMA_POR_SLUG abaixo)
    - guias-pilares em largura total (conjunto DESTAQUES)
+   - guias que moram fora de /blog/ (GUIAS_FORA_DO_BLOG): card fixo no
+     topo, em largura total, com o link para a página deles; título e
+     resumo lidos da própria página (headline do Article e meta
+     description) e o selo com a edição do "Atualizado em" dela. Ficam
+     fora do Blog.blogPost (não são BlogPosting). Página que faltar vira
+     aviso e o índice sai sem o card.
 
    Ritual: publicou artigo novo → registrar o slug em TEMA_POR_SLUG
    → node gera-blog-indice.js. Nunca editar blog/index.html à mão.
-   Menu padrão do site (02/09/2026): Apartamentos · Loteamentos ·
-   Condomínios · Blog; "Lançamentos de Imóveis" → home.
+   Menu do site: vem do gera-menu.js (fonte única).
    Ordem completa: gera-folheto → gera-observatorio → gera-home →
    gera-apartamentos → gera-alphaville → gera-blog-ofertas →
    gera-blog-indice → gera-relacionados → identidade.js (último).
@@ -21,6 +26,8 @@
 const fs = require('fs');
 const path = require('path');
 const R = __dirname + '/';
+// menu do site: fonte única em gera-menu.js
+const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 const ABS = 'https://lancamentos.imoveisvivamerica.com.br';
 
 // tema/categoria por slug — artigo novo entra aqui
@@ -63,6 +70,10 @@ const TEMA_POR_SLUG = {
 const DESTAQUES = new Set([
   'morar-em-indaiatuba', 'minha-casa-minha-vida-indaiatuba', 'como-usar-fgts-comprar-imovel-indaiatuba',
 ]);
+// guias fora de /blog/ (slug = pasta na raiz do site): card fixo no topo, antes dos artigos
+const GUIAS_FORA_DO_BLOG = {
+  'condominios-fechados-indaiatuba': { tag: 'Guia · Condomínios fechados', cat: 'bairros', link: 'Ver os condomínios →' },
+};
 const CATEGORIAS = [
   ['', 'Todos'], ['mcmv', 'Minha Casa Minha Vida'], ['fgts', 'FGTS'],
   ['morar', 'Morar em Indaiatuba'], ['bairros', 'Bairros'], ['seguranca', 'Segurança'],
@@ -93,16 +104,42 @@ for (const d of fs.readdirSync(R + 'blog', { withFileTypes: true })) {
 }
 artigos.sort((a, b) => b.pub.localeCompare(a.pub) || a.headline.localeCompare(b.headline, 'pt-BR'));
 
+// guias fora do blog: mesmos regex dos artigos (headline e description); a edição sai do
+// "Atualizado em mês/ano" da página. Sem a página ou sem esses dados, aviso e sem card.
+const MESES_LONGOS = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const fixos = [];
+for (const [slug, g] of Object.entries(GUIAS_FORA_DO_BLOG)) {
+  const f = path.join(R, slug, 'index.html');
+  if (!fs.existsSync(f)) { avisos.push(slug + ': página não encontrada, o índice sai sem o card fixo'); continue; }
+  const h = fs.readFileSync(f, 'utf8');
+  const headline = (h.match(/"headline":\s*"([^"]+)"/) || [])[1];
+  const desc = (h.match(/<meta name="description" content="([^"]+)"/) || [])[1];
+  if (!headline || !desc) { avisos.push(slug + ': faltando headline/description, o índice sai sem o card fixo'); continue; }
+  const m = h.match(/<!--GEN:atualizado-->\s*Atualizado em ([a-zç]+)(?:\/| de )(\d{4})/i) || h.match(/Atualizado em ([a-zç]+)(?:\/| de )(\d{4})/i);
+  const mes = m ? MESES_LONGOS.indexOf(m[1].toLowerCase()) + 1 : 0;
+  if (!mes) avisos.push(slug + ': sem "Atualizado em mês/ano", o card fixo sai sem o selo da edição');
+  fixos.push({
+    slug, href: '/' + slug + '/', headline, desc, tag: g.tag, cat: g.cat, link: g.link,
+    destaque: true, fixo: true,
+    edicao: mes ? { iso: m[2] + '-' + String(mes).padStart(2, '0'), txt: 'Edição ' + MESES[mes - 1] + ' ' + m[2] } : null,
+  });
+}
+// no índice: os fixos primeiro, depois os artigos por data
+const cards = fixos.concat(artigos);
+
 const dataBonita = iso => {
   const [a, m, dia] = iso.split('-');
   return dia + ' ' + MESES[+m - 1] + ' ' + a;
 };
 
-const cardHtml = c => `    <a class="post-card${c.destaque ? ' destaque' : ''}" href="/blog/${c.slug}/" data-cat="${c.cat}">
-      <span class="post-topo"><span class="post-tag">${c.tag}</span><time class="post-data" datetime="${c.pub}">${dataBonita(c.pub)}</time></span>
+const selo = c => c.fixo
+  ? (c.edicao ? `<time class="post-data" datetime="${c.edicao.iso}">${c.edicao.txt}</time>` : '')
+  : `<time class="post-data" datetime="${c.pub}">${dataBonita(c.pub)}</time>`;
+const cardHtml = c => `    <a class="post-card${c.destaque ? ' destaque' : ''}" href="${c.href || '/blog/' + c.slug + '/'}" data-cat="${c.cat}">
+      <span class="post-topo"><span class="post-tag">${c.tag}</span>${selo(c)}</span>
       <h2>${c.headline}</h2>
       <p>${c.desc}</p>
-      <span class="post-link">Ler guia →</span>
+      <span class="post-link">${c.link || 'Ler guia →'}</span>
     </a>`;
 
 const schemaBlog = {
@@ -234,19 +271,10 @@ const html = `<!DOCTYPE html>
       });
     });
   </script>
+  ${MENU_CSS}
 </head>
 <body>
-  <header>
-    <a href="/" class="logo-text">Viv'America · Indaiatuba</a>
-    <nav>
-      <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
-      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
-      <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-      <a href="/blog/" class="on">Blog</a>
-      <a href="/" class="nav-cta">Lançamentos de Imóveis</a>
-    </nav>
-  </header>
+${MENU_HTML}
 
   <section class="hero-blog">
     <p class="label">Blog da Viv'América · Indaiatuba/SP</p>
@@ -265,7 +293,7 @@ ${CATEGORIAS.map(([v, r], i) => '    <button class="tema-chip' + (i === 0 ? ' is
   </div>
 
   <section class="posts" id="posts">
-${artigos.map(cardHtml).join('\n')}
+${cards.map(cardHtml).join('\n')}
   </section>
   <p class="vazio" id="vazio">Nenhum artigo neste tema ainda — em breve.</p>
 
@@ -311,5 +339,6 @@ ${artigos.map(cardHtml).join('\n')}
 </html>
 `;
 fs.writeFileSync(R + 'blog/index.html', html, 'utf8');
-console.log('gera-blog-indice: ' + artigos.length + ' artigos, mais novo: ' + artigos[0].pub + ' (' + artigos[0].slug + ')');
+console.log('gera-blog-indice: ' + artigos.length + ' artigos, mais novo: ' + artigos[0].pub + ' (' + artigos[0].slug + ')' +
+  (fixos.length ? ' · fixo(s) no topo: ' + fixos.map(c => c.href + (c.edicao ? ' (' + c.edicao.txt + ')' : '')).join(', ') : ''));
 if (avisos.length) console.log('AVISOS:\n  ' + avisos.join('\n  '));

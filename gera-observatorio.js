@@ -32,6 +32,8 @@
 
 const fs = require('fs');
 const R = __dirname + '/';
+// menu do site (fonte única: gera-menu.js); as duas páginas já saem com ele
+const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
 const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-12' };
 
@@ -412,10 +414,6 @@ const HTML = `<!DOCTYPE html>
   .topo .wrap{padding:0}
   .marca{font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:#C9A227;font-weight:700}
   .marca a{color:#fff;text-decoration:none}
-  .nav-site{display:flex;flex-wrap:wrap;gap:1.2rem;margin:0 0 1.2rem}
-  .nav-site a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
-  .nav-site a:hover{color:#C9A227}
-  @media(max-width:680px){.nav-site{display:none}}
   h1{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:800;line-height:1.15;margin:.6rem 0 .5rem;letter-spacing:-.02em}
   h1 em{font-style:normal;color:#C9A227}
   .lede{max-width:70ch;opacity:.92;font-size:1.02rem}
@@ -475,20 +473,14 @@ const HTML = `<!DOCTYPE html>
   footer{text-align:center;color:#8a8272;font-size:.8rem;padding:2rem 1rem 3rem}
   footer a{color:#8a8272}
 </style>
+  ${MENU_CSS}
 </head>
 <body>
+${MENU_HTML}
 
 <div class="topo">
   <div class="wrap">
     <p class="marca"><a href="/">Imobiliária Viv'América</a> · Observatório de Lançamentos</p>
-    <nav class="nav-site" aria-label="Seções do site">
-      <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
-      <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
-      <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-      <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-      <a href="/imprensa-e-dados/">Dados abertos</a>
-      <a href="/blog/">Blog</a>
-    </nav>
     <h1>Preços de lançamentos em Indaiatuba<br><em>${EDICAO.mes} de ${EDICAO.ano}</em></h1>
     <p class="lede">${RESPOSTA}</p>
     <p class="procedencia">Preço "a partir de" aberto, sem cadastro e sem formulário. Dados das tabelas oficiais das construtoras, atualizados todo mês, com a variação de quem subiu e de quem baixou. Os dados desta edição estão disponíveis em <a href="/imprensa-e-dados/">CSV e JSON, com o release</a>. Responsável: Fabio Correia, CRECI 303686-F.</p>
@@ -754,9 +746,9 @@ const G3 = grafico({
   sub: `O menor preço "a partir de" entre todos os empreendimentos de cada incorporadora ou loteadora, apartamentos e lotes juntos. A etiqueta ao lado do valor diz se é lote ou apartamento.`,
   itens: INCS.map(e => ({ rotulo: e.c, valor: e.p, texto: brl(e.p) + '<tspan font-weight="400" fill="#6b6559"> · ' + (tipoDe(e) === 'lote' ? 'lote' : 'apto') + '</tspan>', descValor: brl(e.p) + ' (' + e.n + ')', title: `${e.c}: ${brl(e.p)} — ${e.n} (${tipoDe(e)})` })),
   passo: 500000, fmtEixo: fmtMil,
-  leitura: `Entre as ${INCS.length} incorporadoras e loteadoras com tabela publicada em ${edLongo}, a menor entrada é a da ${INCS[0].c} (${brl(INCS[0].p)}, ${tipoDe(INCS[0])} no ${INCS[0].n}); em apartamentos, a ${incMenorApto.c} tem o menor preço de entrada (${brl(incMenorApto.p)}, ${incMenorApto.n}), enquanto ${INCS[INCS.length - 2].c} e ${INCS[INCS.length - 1].c} começam em ${brl(INCS[INCS.length - 2].p)} e ${brl(INCS[INCS.length - 1].p)}.`,
+  leitura: `Entre as ${INCS.length} incorporadoras e loteadoras com tabela publicada em ${edLongo}, o menor preço de entrada é o da ${INCS[0].c} (${brl(INCS[0].p)}, ${tipoDe(INCS[0])} no ${INCS[0].n}); em apartamentos, a ${incMenorApto.c} tem o menor preço de entrada (${brl(incMenorApto.p)}, ${incMenorApto.n}), enquanto ${INCS[INCS.length - 2].c} e ${INCS[INCS.length - 1].c} começam em ${brl(INCS[INCS.length - 2].p)} e ${brl(INCS[INCS.length - 1].p)}.`,
   tabela: `<table>
-<thead><tr><th>Incorporadora</th><th class="num">Menor entrada</th><th>Empreendimento</th><th>Tipo</th></tr></thead>
+<thead><tr><th>Incorporadora</th><th class="num">Menor preço de entrada</th><th>Empreendimento</th><th>Tipo</th></tr></thead>
 <tbody>
 ${INCS.map(e => `<tr><td>${e.c}</td><td class="num">${brl(e.p)}</td><td><a href="/${e.slug}/">${e.n}</a></td><td>${tipoDe(e)}</td></tr>`).join('\n')}
 </tbody></table>`,
@@ -985,19 +977,11 @@ const HTML_D = `<!DOCTYPE html>
       if (el) { gtag('event', 'whatsapp_click', { event_category: 'conversao', event_label: document.title }); }
     });
   </script>
+  ${MENU_CSS}
 </head>
 <body>
+${MENU_HTML}
 
-<header>
-  <a class="logo-text" href="/">Imobiliária Viv'América</a>
-  <nav>
-    <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos</a>
-    <a href="/loteamentos-em-indaiatuba/">Loteamentos</a>
-    <a href="/condominios-fechados-indaiatuba/">Condomínios</a>
-    <a href="/mapa-lotes-indaiatuba/">Veja no mapa</a>
-    <a href="/blog/">Blog</a>
-  </nav>
-</header>
 
 <section class="hero">
   <div class="breadcrumb">

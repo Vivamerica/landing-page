@@ -5,20 +5,38 @@
    do folheto/observatório (APTOS/LOTES de gera-folheto.js + MOVIMENTOS
    e EDICAO de gera-observatorio.js):
 
-   - <title>, description, og/twitter e <!--GEN:h1--> da home: a home é a
-     única dona do termo "lançamentos imobiliários indaiatuba" (decisão
-     de 02/09/2026, opção B); o número no título/H1 nunca envelhece à mão
-   - <!--GEN:lede-->     1º parágrafo do hero como resposta direta (N com
-                         preço, apartamento e lote mais baratos, próximos)
+   - <title>, description, og/twitter da home: a home é a única dona do
+     termo "lançamentos imobiliários indaiatuba" (decisão de 02/09/2026,
+     opção B); o número do title nunca envelhece à mão. Title, description
+     e FAQ contam só Indaiatuba (APTOS + LOTES)
+   - <!--GEN:h1-->       H1 fixo: "Lançamentos imobiliários em Indaiatuba e região"
+   - <!--GEN:numeros-->  logo abaixo do H1: "N empreendimentos, M com preço
+                         aberto" e "(atualização mês/ano)"; conta a página
+                         inteira (naPagina = Indaiatuba + região). Classes
+                         hero-numeros/hero-edicao, nunca meta/atualizado/
+                         procedencia (essas o gera-sitemap lê como data)
+   - <!--GEN:lede-->     a resposta direta (N com preço, apartamento e lote
+                         mais baratos, a região, próximos), na seção #resumo,
+                         logo depois da lista de cards
    - <!--GEN:selos-->    selos do hero (avaliações, contagens, menores preços)
+   - <!--GEN:cidades-->  caixas do filtro de cidade (uma por cidade com card na
+                         página, mais cards primeiro, todas marcadas, com a
+                         contagem); o filtro some da tela com uma cidade só
    - <!--GEN:obscard-->  card do Observatório (m² médio + altas do mês)
    - <!--GEN:proximos--> seção "Próximos lançamentos" (APTOS com campo prox:
                          situação informada pela incorporadora, com data ou
                          "não divulgada" — nunca "em breve" sem fonte)
    - <!--GEN:faq-barato--> e <!--GEN:faq-proximos--> respostas do FAQ;
      o FAQPage JSON-LD da home é regerado dos <details> visíveis
-   - contadores dos cabeçalhos de seção (N empreendimentos em #apartamentos
-     e em #lotes; padrão que não casar vira aviso, não silêncio)
+   - contadores dos cabeçalhos de seção (N empreendimentos em #apartamentos,
+     #loteamentos e #casas; padrão que não casar vira aviso, não silêncio)
+   - atributos de cada card, casados pelo slug: data-tipo (apartamento,
+     lote, casa), data-cidade, data-cond (1 = loteamento fechado, condomínio
+     de lotes ou casa em condomínio) e data-lote (aberto/fechado, nos lotes);
+     é o que o filtro da home usa
+   - ItemList JSON-LD com todos os cards, na ordem em que aparecem
+   - GUARDA: o número de cards da home tem de ser igual ao de empreendimentos
+     da página (naPagina); card faltando ou sobrando para o gerador
    - preço dentro de cada card, casado pelo slug: data-preco, o
      "A partir de R$", o R$/m² e o preço no texto do botão de WhatsApp;
      nos lotes, também a metragem ("A partir de N m²" e o m² da mensagem)
@@ -26,9 +44,21 @@
      saem de est + estEm da fonte única (data da contagem, nunca o mês da
      edição); nos hubs, sem estEm não sai selo
 
+   REGIÃO: as linhas do ALPHAVILLE (gera-alphaville.js) com página própria e
+   cidade diferente de Indaiatuba viram card na home (seção "Casas em
+   condomínio") e entram na linha do hero, nos selos, no ItemList e no filtro
+   de cidade. NUNCA entram em APTOS/LOTES, que alimentam folheto,
+   Observatório, hubs e a página de apartamentos. Linha com preço e sem o mês
+   da tabela para o gerador.
+
    E nos DOIS HUBS DE LOTE (loteamentos-em-indaiatuba/ e
-   condominios-fechados-indaiatuba/), a partir de LOTES + EDICAO:
-   - <title>, description, og/twitter, <!--GEN:h1--> com contagem viva
+   condominios-fechados-indaiatuba/), a partir de LOTES + EDICAO
+   (nos dois, a grade vem logo depois do topo e o texto vira guia embaixo):
+   - <title>, description, og/twitter, <!--GEN:h1--> (loteamentos: com
+     contagem viva; condomínios: fixo "Condomínios em Indaiatuba")
+   - <!--GEN:contagem-->  só no de condomínios: H2 logo abaixo do H1 com a
+                          contagem viva ("N condomínios e loteamentos fechados,
+                          todos com preço aberto")
    - <!--GEN:hubgrid-->   grade de cards ordenada por R$/m² (loteamentos =
                           dois grupos com H2 — abertos / fechados e
                           condomínios de lotes —, cada um com sua grade;
@@ -65,13 +95,14 @@ const AVAL = { nota: '5,0', n: 9 };   // Google Business — atualizar à mão
 // ─── fontes ───
 function extrairDe(arquivo, nome) {
   const src = fs.readFileSync(R + arquivo, 'utf8');
-  const ini = src.indexOf('const ' + nome + ' = ');
+  const achado = new RegExp('const ' + nome + '\\s*=\\s*').exec(src);   // tolera "NOME =" com ou sem espaço
+  if (!achado) throw new Error(nome + ' nao achado em ' + arquivo);
+  const ini = achado.index + achado[0].length;
   const fim = src.indexOf('\n];', ini) + 2;
   const fimObj = src.indexOf('};', ini) + 1;
-  if (ini < 0) throw new Error(nome + ' nao achado em ' + arquivo);
   const corpo = (nome === 'EDICAO' || nome === 'ESTOQUE_ANTERIOR')
-    ? src.slice(ini + ('const ' + nome + ' = ').length, fimObj + 1)
-    : src.slice(ini + ('const ' + nome + ' = ').length, fim);
+    ? src.slice(ini, fimObj + 1)
+    : src.slice(ini, fim);
   return eval('(' + corpo.replace(/;\s*$/, '') + ')');
 }
 const APTOS = extrairDe('gera-folheto.js', 'APTOS');
@@ -93,7 +124,6 @@ const hojeBR = EDICAO.lastmod.split('-').reverse().join('/');           // 10/10
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const todos = APTOS.concat(LOTES);
 const total = todos.length;
-const construtoras = new Set(todos.map(e => e.c.split(' · ')[0].trim())).size;
 const comPreco = todos.filter(e => e.p);
 const menor = Math.min(...comPreco.map(e => e.p));
 const aptoMin = APTOS.filter(e => e.p).reduce((a, b) => a.p < b.p ? a : b);
@@ -108,6 +138,43 @@ const proximos = APTOS.filter(e => e.prox);
 const lista = arr => arr.length <= 1 ? arr.join('') : arr.slice(0, -1).join(', ') + ' e ' + arr[arr.length - 1];
 const WA = '5519989769457';
 const waInteresse = n => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Olá! Tenho interesse no ' + n + ' em Indaiatuba. Pode me enviar mais informações?');
+// mês da tabela de CADA empreendimento (campo tab da fonte única). O mês da edição
+// (mesAbrev/mesLongo) dá nome à edição; nunca vira mês da tabela nem do estoque de um produto.
+const mesDe = iso => MES_ABREV[iso.slice(5, 7)] + '/' + iso.slice(0, 4);   // 2026-09 -> set/2026
+const tabDe = e => e.tab ? 'tabela de ' + mesDe(e.tab) : 'tabela de pré-lançamento';
+
+// ─── região: empreendimentos fora de Indaiatuba com página própria ───
+// Linhas do ALPHAVILLE (gera-alphaville.js) com slug, cidade diferente de Indaiatuba e sem
+// fonte:true (essas já estão em APTOS/LOTES). Ficam só na home: card, linha do hero, selos,
+// ItemList e filtro de cidade. Title, description, FAQ, folheto, Observatório e hubs seguem
+// só de Indaiatuba.
+const MES_NUM = {};
+Object.keys(MES_ABREV).forEach(n => { MES_NUM[MES_ABREV[n]] = n; });
+const ALPHAVILLE = fs.existsSync(R + 'gera-alphaville.js') ? extrairDe('gera-alphaville.js', 'ALPHAVILLE') : [];
+const REGIAO = ALPHAVILLE
+  .filter(e => e.slug && e.cidade && e.cidade !== 'Indaiatuba' && !e.fonte && fs.existsSync(R + e.slug + '/index.html'))
+  .map(e => {
+    const m = /^([a-z]{3})\/(\d{4})$/.exec(e.tabela || '');
+    if (e.p && !(m && MES_NUM[m[1]])) throw new Error('GERA-HOME: ' + e.n + ' tem preço sem o mês da tabela (campo tabela, formato "out/2026", no gera-alphaville.js)');
+    const tipoCard = /^casas?\b/i.test(e.tipo || '') ? 'casa' : /^lotes?\b/i.test(e.tipo || '') ? 'lote' : 'apartamento';
+    return {
+      n: e.n, c: 'Alphaville', p: e.p || null, s: e.s || e.tipo || '', slug: e.slug,
+      cidade: e.cidade, tab: m ? m[2] + '-' + MES_NUM[m[1]] : null, tipoCard,
+      cond: tipoCard === 'apartamento' ? 0 : 1,   // casas e lotes Alphaville ficam em residencial fechado
+    };
+  });
+// todos os cards da home, na ordem em que aparecem: apartamentos (com preço, do menor ao
+// maior; depois os sem tabela), lotes (do menor ao maior) e os da região
+const porPreco = arr => arr.filter(e => e.p).sort((a, b) => a.p - b.p).concat(arr.filter(e => !e.p));
+const naPagina = porPreco(APTOS).concat(porPreco(LOTES), porPreco(REGIAO));
+const comPrecoPag = naPagina.filter(e => e.p);
+const construtorasPag = new Set(naPagina.map(e => e.c.split(' · ')[0].trim())).size;
+const tipoCardDe = e => e.tipoCard || (LOTES.includes(e) ? 'lote' : 'apartamento');
+const cidadeDe = e => e.cidade || 'Indaiatuba';
+const slugCidade = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+// condomínio = loteamento fechado ou condomínio de lotes (mesma regra dos hubs) ou casa em condomínio
+const condDe = e => LOTES.includes(e) ? (tipoLoteSchema(e) === 'loteamento aberto' ? 0 : 1) : (e.cond || 0);
+const empreendimentos = n => n === 1 ? 'empreendimento' : 'empreendimentos';
 
 let h = fs.readFileSync(R + 'index.html', 'utf8');
 let feitos = [], falhas = [];
@@ -115,7 +182,7 @@ let feitos = [], falhas = [];
 // FAQ do m², seção de regiões). O dateModified do Article usa a maior entre
 // esta data e EDICAO.lastmod — nunca a data do build, para não "atualizar"
 // sem mudar nada. Mudou o hub de verdade? Troque aqui e no sitemap.
-const HUBS_ALTERADOS_EM = '2026-10-11';   // 11/10: o hub de condomínios passa a listar também os loteamentos fechados; mês da tabela em cada card; H1 novos
+const HUBS_ALTERADOS_EM = '2026-10-15';   // 15/10: nos dois hubs a grade de cards vem logo depois do topo e o texto vira guia embaixo; o de condomínios ganha H1 "Condomínios em Indaiatuba" e o H2 com a contagem
 
 // ─── 0. metadados vivos: title/description/og/twitter/H1 ───
 // Funções compartilhadas com os hubs de lote (abaixo). O title tem teto de
@@ -153,16 +220,33 @@ function gen(marca, conteudo) {
   feitos.push(marca);
 }
 
-gen('h1', `Lançamentos imobiliários em Indaiatuba: ${total} empreendimentos, ${comPreco.length} com preço aberto (edição de ${mesAbrev})`);
+// H1 fixo; os números ficam na linha logo abaixo (GEN:numeros), contando a página inteira
+gen('h1', 'Lançamentos imobiliários em Indaiatuba e região');
+gen('numeros', `
+        <p class="hero-numeros"><b>${naPagina.length}</b> ${empreendimentos(naPagina.length)}, <b>${comPrecoPag.length}</b> com preço aberto</p>
+        <p class="hero-edicao">(atualização ${mesAbrev})</p>
+        `);
 
 const mcmvApto = /MCMV/.test(aptoMin.t) ? ' — Minha Casa Minha Vida (MCMV)' + (/FGTS/.test(aptoMin.t) ? ', com uso do Fundo de Garantia do Tempo de Serviço (FGTS)' : '') : '';
-gen('lede', `<strong>Resposta direta:</strong> em ${mesExtenso}, a Imobiliária Viv'América representa ${total} lançamentos em Indaiatuba, ${comPreco.length} com preço aberto na tabela. O apartamento mais barato é o ${esc(aptoMin.n)} (${esc(aptoMin.c)}), a partir de ${brl(aptoMin.p)}${mcmvApto}; o lote mais barato é o do ${esc(loteMin.n)} (${esc(loteMin.c)}), a partir de ${brl(loteMin.p)} por ${loteMin.m2} m². Os ${proximos.length} <a href="#proximos-lancamentos" style="color:#C9A227">próximos lançamentos</a>, ainda sem tabela definitiva, estão listados abaixo. Apartamentos prontos de revenda ficam no <a href="https://imoveisvivamerica.com.br/site/venda/indaiatuba/apartamentos" style="color:#C9A227">site principal</a>.`);
+// a região numa frase: "Na região, representa também o X, em Cidade, a partir de R$ N (tabela de mês/ano)."
+const regiaoFrase = REGIAO.length
+  ? ' Na região, representa também ' + lista(REGIAO.map(e => `o <a href="/${e.slug}/">${esc(e.n)}</a>, em ${esc(e.cidade)}, ${e.p ? 'a partir de ' + brl(e.p) + ' (' + tabDe(e) + ')' : 'com tabela sob consulta'}`)) + '.'
+  : '';
+gen('lede', `<strong>Resposta direta:</strong> em ${mesExtenso}, a Imobiliária Viv'América representa ${total} lançamentos em Indaiatuba, ${comPreco.length} com preço aberto na tabela. O apartamento mais barato é o ${esc(aptoMin.n)} (${esc(aptoMin.c)}), a partir de ${brl(aptoMin.p)}${mcmvApto}; o lote mais barato é o do ${esc(loteMin.n)} (${esc(loteMin.c)}), a partir de ${brl(loteMin.p)} por ${loteMin.m2} m².${regiaoFrase} Os ${proximos.length} <a href="#proximos-lancamentos">próximos lançamentos</a>, ainda sem tabela definitiva, estão listados abaixo. Apartamentos prontos de revenda ficam no <a href="https://imoveisvivamerica.com.br/site/venda/indaiatuba/apartamentos">site principal</a>.`);
 
 gen('selos', `
           <span class="selo-h"><b>★ ${AVAL.nota}</b> no Google · ${AVAL.n} avaliações</span>
-          <span class="selo-h"><b>${total}</b> lançamentos · <b>${construtoras}</b> construtoras</span>
+          <span class="selo-h"><b>${naPagina.length}</b> lançamentos · <b>${construtorasPag}</b> construtoras</span>
           <span class="selo-h">apartamentos a partir de <b>${mil(menorApto)}</b> · lotes a partir de <b>${mil(menorLote)}</b></span>
         `);
+
+// caixas do filtro de cidade: uma por cidade com card na página, mais cards primeiro
+const porCidade = new Map();
+naPagina.forEach(e => porCidade.set(cidadeDe(e), (porCidade.get(cidadeDe(e)) || 0) + 1));
+const cidades = [...porCidade].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'pt-BR'));
+gen('cidades', cidades.map(([c, n]) => `
+            <label><input type="checkbox" name="cidade" value="${slugCidade(c)}" checked> <span>${esc(c)}</span> <small>${n}</small></label>`).join('') + `
+          `);
 
 gen('obscard', `
         <p class="oc-t">Observatório · ${mesLongo}</p>
@@ -196,21 +280,21 @@ gen('proximos', `
 gen('faq-barato', `Entre os lançamentos representados pela Imobiliária Viv'América em ${mesExtenso}, o lote mais barato é o do ${esc(loteMin.n)} (${esc(loteMin.c)}), a partir de ${brl(loteMin.p)} por ${loteMin.m2} m², e o apartamento mais barato é o ${esc(aptoMin.n)} (${esc(aptoMin.c)}), a partir de ${brl(aptoMin.p)}${/MCMV/.test(aptoMin.t) ? ', enquadrado no Minha Casa Minha Vida' : ''}, em Indaiatuba/SP. Os ${comPreco.length} preços estão abertos na tabela de ${mesLongo} do Observatório de Preços.`);
 gen('faq-proximos', `Em ${mesExtenso}, os próximos lançamentos representados pela Viv'América em Indaiatuba são: ${proximos.map(e => esc(e.n) + ' (' + esc(e.c) + ') — ' + esc(e.prox)).join('; ')}. A data de lançamento, quando a incorporadora informa, está indicada em cada um; a tabela entra nesta página assim que for liberada.`);
 const mcmv = APTOS.filter(e => e.p && /MCMV/.test(e.t)).sort((a, b) => a.p - b.p);
-// mês da tabela de CADA empreendimento (campo tab da fonte única). O mês da edição
-// (mesAbrev/mesLongo) dá nome à edição; nunca vira mês da tabela nem do estoque de um produto.
-const mesDe = iso => MES_ABREV[iso.slice(5, 7)] + '/' + iso.slice(0, 4);   // 2026-09 -> set/2026
-const tabDe = e => e.tab ? 'tabela de ' + mesDe(e.tab) : 'tabela de pré-lançamento';
 gen('faq-mcmv', `Sim. Em ${mesExtenso} há ${mcmv.length} apartamentos enquadrados no MCMV (Minha Casa Minha Vida) com preço aberto em Indaiatuba: ${lista(mcmv.map(e => esc(e.n) + ' (' + esc(e.c) + ' — ' + esc(e.s) + ' — a partir de ' + brl(e.p) + ', ' + tabDe(e) + ')'))}. Todos permitem financiamento pela Caixa e uso do FGTS (Fundo de Garantia do Tempo de Serviço) como entrada ou abatimento, conforme as regras do Fundo, a renda familiar e a análise de crédito do banco. Preço e estoque são os da tabela de cada construtora, na data indicada em cada um.`);
 
-// ─── 1d. ItemList JSON-LD da home gerado da fonte única (nome, tipo, construtora, preço e mês da tabela) ───
+// ─── 1d. ItemList JSON-LD da home: todos os cards (Indaiatuba e região), na ordem da página ───
+// É estático: o filtro só esconde cards no navegador; o HTML e o ItemList trazem todos.
+const tipoItem = e => LOTES.includes(e) ? tipoLoteSchema(e)
+  : e.tipoCard === 'casa' ? 'casas em condomínio' : e.tipoCard === 'lote' ? 'lotes em condomínio' : 'apartamento';
+const temCasa = REGIAO.some(e => e.tipoCard === 'casa');
 const itemList = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'ItemList',
-  name: 'Lançamentos imobiliários em Indaiatuba SP',
-  description: `Empreendimentos representados pela Imobiliária Viv'América em Indaiatuba: apartamentos MCMV, alto padrão, condomínios fechados e loteamentos. Edição de ${mesLongo} do Observatório de Preços.`,
-  numberOfItems: total,
-  itemListElement: APTOS.filter(e => e.p).sort((a, b) => a.p - b.p).concat(APTOS.filter(e => !e.p), LOTES.slice().sort((a, b) => a.p - b.p)).map((e, i) => ({
+  name: 'Lançamentos imobiliários em Indaiatuba e região',
+  description: `Empreendimentos representados pela Imobiliária Viv'América em Indaiatuba e região: ${lista(['apartamentos MCMV e de alto padrão', 'condomínios fechados', 'loteamentos'].concat(temCasa ? ['casas em condomínio'] : []))}. Edição de ${mesLongo}, com o mês da tabela de cada um.`,
+  numberOfItems: naPagina.length,
+  itemListElement: naPagina.map((e, i) => ({
     '@type': 'ListItem', position: i + 1,
-    name: `${e.n} — ${LOTES.includes(e) ? tipoLoteSchema(e) : 'apartamento'} ${e.c} em Indaiatuba · ${e.s}${e.p ? ' · a partir de ' + brl(e.p) + ' (' + tabDe(e) + ')' : ' · tabela sob consulta'}`,
+    name: `${e.n} — ${tipoItem(e)} ${e.c} em ${cidadeDe(e)} · ${e.s}${e.p ? ' · a partir de ' + brl(e.p) + ' (' + tabDe(e) + ')' : ' · tabela sob consulta'}`,
     url: 'https://lancamentos.imoveisvivamerica.com.br/' + e.slug + '/',
   })),
 });
@@ -222,23 +306,55 @@ h = h.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (blo
   itemListOk = true;
   return '<script type="application/ld+json">\n  ' + itemList + '\n  </script>';
 });
-if (itemListOk) feitos.push('ItemList (' + total + ' itens)'); else falhas.push('ItemList');
+if (itemListOk) feitos.push('ItemList (' + naPagina.length + ' itens)'); else falhas.push('ItemList');
 
 // ─── 2. contadores das seções ───
 // Cada contador é casado pelo id do cabeçalho da sua seção, aceite o texto
-// "empreendimentos" ou "loteamentos"; padrão que não casa entra em "nao achei".
+// "empreendimento(s)" ou "loteamento(s)"; padrão que não casa entra em "nao achei".
 const contador = (id, n) => {
-  const re = new RegExp('(<div class="cat-header" id="' + id + '">[\\s\\S]{0,300}?<span class="cat-count">)\\d+( (?:empreendimentos|loteamentos?) · )');
+  const re = new RegExp('(<div class="cat-header" id="' + id + '">[\\s\\S]{0,300}?<span class="cat-count">)\\d+ (?:empreendimentos?|loteamentos?) · ');
   if (!re.test(h)) { falhas.push('contador #' + id); return; }
-  h = h.replace(re, (m0, antes, depois) => antes + n + ' empreendimentos · ');
+  h = h.replace(re, (m0, antes) => antes + n + ' ' + empreendimentos(n) + ' · ');
 };
-contador('apartamentos', APTOS.length);
-contador('lotes', LOTES.length);
+const nTipo = t => naPagina.filter(e => tipoCardDe(e) === t).length;
+contador('apartamentos', nTipo('apartamento'));
+contador('loteamentos', nTipo('lote'));
+if (nTipo('casa')) contador('casas', nTipo('casa'));
 feitos.push('contadores');
+
+// ─── 2b. GUARDA: um card para cada empreendimento da página, e nada além ───
+// Card faltando ou sobrando para o gerador (antes virava só "nao achei").
+const nCards = (h.match(/<article class="listing-card"/g) || []).length;
+const semCard = naPagina.filter(e => !e.slug || h.indexOf('href="/' + e.slug + '/" class="card-img-link"') < 0);
+if (semCard.length || nCards !== naPagina.length) {
+  throw new Error('GERA-HOME: a home tem ' + nCards + ' cards e deveria ter ' + naPagina.length
+    + (semCard.length ? ' (sem card: ' + semCard.map(e => e.slug || e.n).join(', ') + ')' : '')
+    + '. Crie ou apague o card em index.html; nada foi gravado.');
+}
+
+// ─── 2c. atributos de cada card, casados pelo slug: tipo, cidade, condomínio e lote ───
+// O filtro da home lê só estes atributos (Apartamentos = data-tipo apartamento;
+// Loteamentos = data-tipo lote; Condomínios = data-cond 1; cidade = data-cidade).
+const comAtributo = (tag, nome, valor) => {
+  const re = new RegExp('\\s' + nome + '="[^"]*"');
+  return re.test(tag) ? tag.replace(re, ' ' + nome + '="' + valor + '"') : tag.replace(/\s*>$/, ' ' + nome + '="' + valor + '">');
+};
+naPagina.forEach(e => {
+  const i = h.indexOf('href="/' + e.slug + '/" class="card-img-link"');
+  const ini = h.lastIndexOf('<article', i);
+  const fimTag = h.indexOf('>', ini) + 1;
+  let tag = h.slice(ini, fimTag);
+  tag = comAtributo(tag, 'data-tipo', tipoCardDe(e));
+  tag = comAtributo(tag, 'data-cidade', slugCidade(cidadeDe(e)));
+  tag = comAtributo(tag, 'data-cond', String(condDe(e)));
+  if (LOTES.includes(e)) tag = comAtributo(tag, 'data-lote', condDe(e) ? 'fechado' : 'aberto');
+  h = h.slice(0, ini) + tag + h.slice(fimTag);
+});
+feitos.push('atributos em ' + naPagina.length + ' cards');
 
 // ─── 3. preço dentro de cada card, casado pelo slug ───
 let precosOk = 0;
-todos.forEach(e => {
+naPagina.forEach(e => {
   if (!e.p || !e.slug) return;
   const i = h.indexOf('href="/' + e.slug + '/" class="card-img-link"');
   if (i < 0) { falhas.push('card ' + e.slug); return; }
@@ -473,7 +589,11 @@ const HUBS = [
     arq: 'condominios-fechados-indaiatuba/index.html',
     title: `Condomínios Fechados em Indaiatuba ${EDICAO.ano}: lotes com preço`,
     desc: `Os ${conds.length} condomínios e loteamentos fechados de Indaiatuba SP com preço aberto: terrenos a partir de ${mil(Math.min(...conds.map(e => e.p)))}, m² de ${m2De(sC.min)} a ${m2De(sC.max)} (edição ${mesAbrev}).`,
-    h1: `Condomínios e loteamentos fechados em Indaiatuba: ${conds.length} com preço aberto`,
+    h1: 'Condomínios em Indaiatuba',
+    // H2 logo abaixo do H1: a contagem viva, com "fechados" (o H1 ficou curto)
+    contagem: conds.length === 1
+      ? `1 condomínio ou loteamento fechado${conds[0].p ? ', com preço aberto' : ''}`
+      : `${conds.length} condomínios e loteamentos fechados, ${conds.every(e => e.p) ? 'todos' : conds.filter(e => e.p).length} com preço aberto`,
     grid: porM2(conds).map(cardCondominios).join('') + '\n    ',
     faqM2: `Nos ${conds.length} condomínios e loteamentos fechados em lançamento monitorados no Observatório de Preços (edição de ${mesLongo}), o m² de lote vai de ${m2De(sC.min)} (${comTab(sC.min)}) a ${m2De(sC.max)} (${comTab(sC.max)}), com média de ${brl(sC.medio)}/m², já com portaria e lazer interno no preço. O preço é o "a partir de" da menor unidade na data da tabela de cada um.`,
     faqMudou,
@@ -489,6 +609,7 @@ for (const hub of HUBS) {
   const partes = [];
   const g = (marca, conteudo, opcional) => { const r = genEm(s, marca, conteudo); if (r === null) { if (!opcional) falhas.push(hub.arq + ' ' + marca); } else { s = r; partes.push(marca); } };
   g('h1', esc(hub.h1));
+  if (hub.contagem) g('contagem', esc(hub.contagem));
   g('hubgrid', hub.grid);
   g('faq-m2', hub.faqM2);
   g('faq-mudou', hub.faqMudou, true);   // só o hub de loteamentos tem o marcador
@@ -508,4 +629,4 @@ if (fs.existsSync(R + 'lancamentos-indaiatuba')) {
 }
 console.log('gera-home: ' + feitos.join(' · '));
 if (falhas.length) console.log('ATENCAO, nao achei: ' + falhas.join(', '));
-console.log('selos: ' + total + ' lanc / ' + construtoras + ' construtoras / menor ' + brl(menor) + ' / m2 medio ' + brl(m2Medio) + ' / ' + altas + ' altas / proximos: ' + proximos.map(e => e.n).join(', '));
+console.log('selos: ' + total + ' lanc em Indaiatuba + ' + REGIAO.length + ' na regiao = ' + naPagina.length + ' cards (' + comPrecoPag.length + ' com preco) / ' + construtorasPag + ' construtoras / menor ' + brl(menor) + ' / m2 medio ' + brl(m2Medio) + ' / ' + altas + ' altas / cidades: ' + cidades.map(c => c[0] + ' ' + c[1]).join(', ') + ' / proximos: ' + proximos.map(e => e.n).join(', '));
