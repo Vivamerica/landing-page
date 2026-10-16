@@ -48,17 +48,34 @@ mostram quem sai, quem entra e quem muda, e so entram se a aritmetica da tabela 
     Terras de San Marino sanmarino-atualiza-2026-10-09.py <espelho.pdf> [--gravar]  (lote novo entra SEM pino)
     Ville de Provence    villeprovence-atualiza-2026-10-03.py <tabela.pdf> [--gravar]  (mes e data do documento nas constantes)
 Lote novo sem posicao segura entra SEM pino (so na lista e na contagem): pino errado e pior que pino nenhum.
-Parcela de relatorio Dominium (o relatorio nao traz a parcela): sai de regras_parcela.py, uma regra por bairro. Monte
-Carmelo = Tabela Price, 1% a.m. no residencial e 1,2% a.m. no misto (planilha de calculo da Dominium; teste com
-`python regras_parcela.py`, que reproduz a calculadora: 160.000 a prazo, entrada 16.000, 96x de 2.340,41). Bairro sem
-regra continua com o saldo dividido direto. Usam a regra: dominium-atualiza.py (que tambem refaz a parcela gravada
-fora da regra), lotes-js.py e confere-coerencia.py; montecarmelo-atualiza.py virou atalho do dominium-atualiza.py.
-Mudou taxa ou preco do m2 a prazo: mude em regras_parcela.py e rode confere-coerencia.py [mapa.html] (falha com os
-lotes fora da regra). O dominium-atualiza.py nao grava lote fora da regra: mais parcelas que o maximo do tipo ou
-entrada abaixo do minimo (a planilha recusa as duas) deixam o lote so a vista; valor a prazo fora de area x m2 faz
-o --gravar parar (exit 1, mapa intocado). Arquivo .py novo nesta pasta so sobe com `git add -f` (o .gitignore barra
-.py); o regras_parcela.py tem excecao nominal no .gitignore.
-Depois de qualquer *-atualiza.py: espelha-insumos-2026-10-12.py <id> [<id> ...] --gravar (iguala dados/<id>-bairro.txt
+Parcela de relatorio Dominium (o relatorio nao traz a parcela): sai de regras_parcela.py, uma regra por bairro,
+tirada da planilha de calculo de cada um (Tabela Price, parcela no fim do mes, arredondada a centavos):
+    Monte Carmelo   residencial 1% a.m. ate 96x (area x 1.066,67), misto 1,2% a.m. ate 48x (area x 1.300), entrada min. 10%
+    Alpnach         1% a.m. ate 48x, area x 1.800, entrada min. 20%
+    Di Italia       1% a.m. ate 60x, area x 1.466,67 (220.000 no lote de 150 m2), entrada min. 20%
+    Ravello         ate 12x: area x 1.750 e SEM juros; de 13 a 48x: area x 1.800 a 1% a.m.; entrada min. 20%
+    Park Vista Real 1% a.m. ate 36x, entrada min. 20%, valor lote a lote (sem conta por m2)
+    Park Gran Reserve 1,2% a.m. ate 36x, entrada min. 20%, valor lote a lote (sem conta por m2)
+Teste: `python regras_parcela.py` (reproduz o exemplo de cada planilha, as 12 parcelas da tabela de precos do Monte
+Carmelo: 160.000 a prazo, entrada 16.000, 12x 12.794,23 ... 96x 2.340,41, e os casos da normalizacao). Bairro sem
+regra continua com o saldo dividido direto. Usam a regra: dominium-atualiza.py, lotes-js.py, refaz-parcelas.py e
+confere-coerencia.py; montecarmelo-atualiza.py virou atalho do dominium-atualiza.py.
+Normalizacao mensal dos Dominium (desde 16/10/2026): o mapa grava a condicao da planilha de calculo, que e a regra,
+e nao a do relatorio de disponibilidade, que e a lista de lotes: valor a prazo = area x m2 da faixa (Monte Carmelo, Alpnach, Di Italia,
+Ravello; Vista Real e Gran Reserve tem valor lote a lote), entrada = exatamente a % minima (10% no Monte Carmelo, 20%
+nos outros; no Gran Reserve, por ora, o minimo e so piso: `entrada_exata` em regras_parcela.py) e parcela pela Price.
+O lote continua parcelado, e o dominium-atualiza.py lista em DIVERGENCIAS DO RELATORIO cada lote em que o relatorio
+divergia (antes -> depois), para conferir com a loteadora. So vai para so a vista o lote com mais parcelas que o
+maximo do tipo. Muitos lotes fora da planilha ao mesmo tempo (valor a prazo fora da conta em mais de 2 lotes do tipo,
+ou a maioria com a mesma entrada fora do minimo) tem cara de tabela nova: o --gravar para (exit 1, mapa intocado)
+ate a regra mudar em regras_parcela.py.
+Mudou taxa, faixa, preco do m2 ou entrada minima: mude em regras_parcela.py, rode refaz-parcelas.py [bairro ...]
+(ensaio mostra antes/depois; --gravar normaliza prazo, entrada, parcela e ep sem mexer no resto da linha e para com
+cara de tabela nova; idempotente; lote que esta so a vista so volta ao parcelado pelo dominium-atualiza.py, que tem o
+numero de parcelas do relatorio) e confere-coerencia.py [mapa.html] (falha com parcela ou condicao diferente da
+normalizada; nao ha tolerancia de arredondamento na entrada). O .gitignore e lista de permissao: arquivo .py novo
+nesta pasta (como o regras_parcela.py e o refaz-parcelas.py, que ficam so nesta maquina) so sobe com `git add -f`.
+Depois de qualquer *-atualiza.py (e do refaz-parcelas.py): espelha-insumos-2026-10-12.py <id> [<id> ...] --gravar (iguala dados/<id>-bairro.txt
 e dados/<id>-lotes.js ao mapa; sem isso o passo 9 devolveria lote que ja saiu), acertar `tab`/`sub`/`cond` em BAIRROS
 e rodar o passo 10. O editor de pinos le editor-pinos/dados.json: regerar com editor-pinos/gera-dados.py.
 Regras: nunca citar a fonte "Vista Verde"; precos a vista do relatorio; lotes sem "nx" recebem soVista:true.
