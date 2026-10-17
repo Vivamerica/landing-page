@@ -303,7 +303,8 @@ const itemList = JSON.stringify({
     url: 'https://lancamentos.imoveisvivamerica.com.br/' + e.slug + '/',
   })),
 });
-function tipoLoteSchema(e) { return /^Loteamento fechado/i.test(e.s) ? 'loteamento fechado' : e.t === 'Cond. fechado' ? 'condomínio fechado de lotes' : /fechado/i.test(e.s) ? 'loteamento fechado' : 'loteamento aberto'; }
+// "Condomínio fechado ·" no início do s = rótulo da comercialização, sem regime lido (não afirma o "de lotes")
+function tipoLoteSchema(e) { return /^Loteamento fechado/i.test(e.s) ? 'loteamento fechado' : /^Condomínio fechado/i.test(e.s) ? 'condomínio fechado' : e.t === 'Cond. fechado' ? 'condomínio fechado de lotes' : /fechado/i.test(e.s) ? 'loteamento fechado' : 'loteamento aberto'; }
 let itemListOk = false;
 h = h.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (bloco, corpo) => {
   let o; try { o = JSON.parse(corpo); } catch (e) { return bloco; }
@@ -629,7 +630,7 @@ const HUBS = [
     <div class="listings-grid">${porM2(abertos).map(cardLoteamentos).join('')}
     </div>
     <h2 id="loteamentos-fechados">Loteamentos fechados e condomínios de lotes em Indaiatuba: ${fechados.length} com preço aberto</h2>
-    <p style="color:var(--gray);line-height:1.8;">Portaria, ruas de uso restrito e lazer interno já no preço: o m² vai de ${m2De(sF.min)} (${comTab(sF.min)}) a ${m2De(sF.max)} (${comTab(sF.max)}). O rótulo de cada card é o que a própria loteadora usa (loteamento fechado ou condomínio de lotes).</p>
+    <p style="color:var(--gray);line-height:1.8;">Portaria, ruas de uso restrito e lazer interno já no preço: o m² vai de ${m2De(sF.min)} (${comTab(sF.min)}) a ${m2De(sF.max)} (${comTab(sF.max)}). O rótulo de cada card é o da comercialização (loteamento fechado ou condomínio fechado).</p>
     <div class="listings-grid">${porM2(fechados).map(cardLoteamentos).join('')}
     </div>
     `,

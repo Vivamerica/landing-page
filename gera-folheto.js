@@ -68,9 +68,14 @@ const APTOS = [
 ];
 
 
+// t dos lotes: 'Loteamento' = loteamento aberto; 'Cond. fechado' = condomínio fechado ou loteamento
+// fechado (o rótulo fino vem do início do s: "Loteamento fechado ·" vence; "Condomínio fechado ·" faz o
+// ItemList da home dizer só "condomínio fechado", sem o "de lotes" do CC art. 1.358-A). Jardim Dona Maria
+// Cândida e Residencial Vila Fahl passaram a 'Cond. fechado' em 17/10/2026, por confirmação do Fabio, com
+// "Condomínio fechado ·" no s: o rótulo é da comercialização; o regime não foi lido em decreto nem matrícula.
 const LOTES = [
   { n:'Jardim Dona Maria Cândida', c:'Asseplan Narezzi', p:600000, m2:300, tab:'2025-07', conf:'2026-10', img:'maria-candida-indaiatuba/images/portaria.jpg',
-    s:'Loteamento fechado · obras concluídas · 166 lotes disponíveis (16/10/2026)', t:'Loteamento', est:166, estEm:'16/10/2026', slug:'maria-candida-indaiatuba' },
+    s:'Condomínio fechado · obras concluídas · 166 lotes disponíveis (16/10/2026)', t:'Cond. fechado', est:166, estEm:'16/10/2026', slug:'maria-candida-indaiatuba' },
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, tab:'2026-10', img:'monte-carmelo-indaiatuba/images/hero.jpg',
     s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:579, estEm:'09/10/2026', slug:'monte-carmelo-indaiatuba' },
   { n:'Parque Zarah', c:'Zarin', p:211050, m2:150, tab:'2026-10', img:'parque-zarah-indaiatuba/images/hero.jpg',
@@ -80,7 +85,7 @@ const LOTES = [
   { n:'Terras de San Marino', c:'Armigh · Best Business', p:247500, m2:150, tab:'2026-10', img:'images/hero.jpg',
     s:'546 lotes · 13 disponíveis (espelho 09/10/2026) · 16.164 m² de lazer resort', t:'Cond. fechado', est:13, estEm:'09/10/2026', slug:'terras-de-san-marino-indaiatuba' },
   { n:'Residencial Vila Fahl', c:'Vila Fahl · iBen', p:290000, m2:150, tab:'2026-10', img:'vila-fahl-indaiatuba/images/hero.jpg',
-    s:'Residencial e comercial · obra 71,91% (jul/2026) · até 96x · 15 itens de lazer', t:'Loteamento', slug:'vila-fahl-indaiatuba' },
+    s:'Condomínio fechado · residencial e comercial · obra 71,91% (jul/2026) · até 96x · 15 itens de lazer', t:'Cond. fechado', slug:'vila-fahl-indaiatuba' },
   { n:'Alpnach Residence', c:'Dominium', p:510000, m2:300, tab:'2026-10', img:'alpnach-indaiatuba/images/hero.jpg',
     s:'322 lotes · 19 disponíveis (09/10/2026) · piscina coberta · mini mercado 24h', t:'Cond. fechado', est:19, estEm:'09/10/2026', slug:'alpnach-indaiatuba' },
   { n:'Reserva Botânica', c:'Zarin', p:642375, m2:410, tab:'2026-09', conf:'2026-10', img:'reserva-botanica-indaiatuba/images/hero.jpg',
@@ -159,8 +164,8 @@ const mil = n => n >= 1e6 ? (n / 1e6).toFixed(1).replace('.', ',') + ' mi' : Mat
 const DEST = `<div class="dest">
       <h4>Por que comprar <span>no lançamento?</span></h4>
       <p>Quem entra no lançamento escolhe entre mais unidades — andar, posição solar,
-         vista — e costuma encontrar prazos de pagamento mais longos. O preço muda a cada
-         tabela, para cima ou para baixo: confira o mês de cada uma.</p>
+         vista — e costuma encontrar prazos de pagamento mais longos. A tabela da construtora
+         é reajustada a cada nova edição: confira o mês de cada uma.</p>
       <ul>
         <li>Mais unidades para escolher</li>
         <li>Escolha de andar e posição</li>

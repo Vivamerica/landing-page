@@ -11,18 +11,26 @@
      FRENTE = página 4 (contracapa) | página 1 (capa)
      VERSO  = página 2 (apartamentos) | página 3 (lotes e condomínios)
 
-   Desenho: o miolo é uma TABELA DE PREÇOS, sem foto por item. Fichas de
-   3 linhas em 2 colunas por painel: nome, construtora e detalhe à
-   esquerda; "a partir de", preço e mês da tabela à direita.
+   Desenho (desde 17/10/2026, pedido do Fabio): o miolo é de CARDS COM
+   MINIATURA, 2 colunas por painel. Cada card: foto recortada à esquerda
+   (cobre a caixa, sem transparência) e, ao lado, nome, construtora · m²
+   e, embaixo, "a partir de" + mês da tabela à esquerda e o preço em
+   destaque à direita. Sem selo MCMV e sem quadro do MCMV.
+   A miniatura é a foto da fonte única (campo img), em JPEG — o PDF leva
+   o JPEG como está; WebP e PNG viram imagem sem compressão (o verso
+   passava de 17 MB). Exceções (outra foto, enquadramento ou recorte de
+   um trecho) em MINI_FOTO. O gerador confere que ela
+   existe, é JPEG (sem canal alfa) e dá 250 dpi ou mais.
    Selos, com a mesma regra do site e sempre com data: escassez ("últimas
-   N unidades", "últimos N lotes") só quando a fonte única traz est até 60
-   E estEm (data da contagem); tarja comercial (ex.: desconto de
-   lançamento, que já está no preço da tabela) só com o mês ou o dia.
-   O selo ocupa a linha do detalhe quando ela está vazia; senão, ganha
-   uma linha própria embaixo da ficha.
-   Apartamentos por faixa de preço; lotes por tipo (o corte do menu do
-   site). Dentro do grupo, do menor para o maior preço, lido coluna a
-   coluna. Só Indaiatuba, como o folheto A4.
+   N unidades", "últimos N lotes") só quando a fonte única traz est até
+   ESC_MAX E estEm (data da contagem); tarja comercial (ex.: desconto de
+   lançamento, que já está no preço da tabela) só com o mês ou o dia. O
+   selo ganha uma linha própria no card, embaixo da construtora.
+   Apartamentos do menor para o maior preço, sem faixas (com miniatura,
+   as 3 faixas não cabem sem apertar); lotes por tipo — loteamentos
+   abertos e condomínios fechados, o corte do menu do site —, do menor
+   para o maior preço dentro do tipo. Lido coluna a coluna. Só
+   Indaiatuba, como o folheto A4.
 
    Dados: APTOS/LOTES e o parágrafo "Por que comprar no lançamento?" do
    gera-folheto.js (fonte única); EDICAO do gera-observatorio.js. No
@@ -42,10 +50,13 @@
      · corpo abaixo de 6 pt no miolo; abaixo de 7 pt ou mais fino que
        semibold sobre o fundo escuro;
      · preço faltando ou diferente da fonte única; fonte trocada; foto da
-       capa sem carregar ou abaixo de 250 dpi; QR com módulo abaixo de
-       0,5 mm ou sem zona de silêncio;
+       capa ou miniatura sem carregar, sem cobrir a caixa ou abaixo de
+       250 dpi; texto do card em cima da miniatura; "a partir de"
+       encostando no preço; QR com módulo abaixo de 0,5 mm ou sem zona de
+       silêncio;
      · transparência de qualquer tipo (opacidade, cor com alfa, degradê,
-       sombra, filtro): visualizador e RIP podem descartar ou achatar mal.
+       sombra, filtro, imagem com canal alfa): visualizador e RIP podem
+       descartar ou achatar mal.
    Os dois QR saem do qrcode/qrgen.js e são relidos pelo qrcode/qrdecode.js
    a cada rodada; os dois levam utm_source=folder.
 
@@ -108,7 +119,8 @@ const porPreco = (a, b) => (a.p || Infinity) - (b.p || Infinity);
 [...APTOS, ...LOTES].forEach((e, k) => { e._k = k; });                   // chave da ficha, para a medição
 
 // ─── ajustes do desenho (em mm e pt) ───
-const CORPO_ROTULO = 6;       // "a partir de" e "tabela mmm/aaaa"; era 6,5 até 17/10/2026, quando a 21ª ficha de apartamento (Pertenze) tirou a folga da coluna 1 — 6 é o piso do miolo; no mesmo dia o respiro da ficha (.it) caiu de .6/.65 para .45/.5 mm
+const CORPO_ROTULO = 6;       // "a partir de" e "tabela mmm/aaaa" (6 pt é o piso do miolo)
+const MINI_L = 11.2;          // mm de largura da miniatura; a altura é a do card (≈ 4:3)
 const QR_SITE_MODULO = 0.6;   // mm por módulo do QR do site (a caixa branca inclui a zona de silêncio de 4 módulos)
 const QR_MAPA_LADO = 24;      // mm do QR do mapa (a zona de silêncio é o branco da caixa em volta)
 const URL_SITE = 'https://lancamentos.imoveisvivamerica.com.br/?utm_source=folder';
@@ -142,71 +154,114 @@ function selos(e, lote) {
   return out;
 }
 
-// ─── ficha (linha da tabela) ───
-// esquerda (.nm): nome · construtora · detalhe (selo MCMV, m² da unidade do preço, "pronto")
-// direita  (.vl): "a partir de" · preço · mês da tabela (ou "pré-lançamento*"; † preços confirmados)
-// selo (.sel): na linha do detalhe quando ela está vazia; senão, numa linha própria embaixo da ficha
-function detalhe(e, lote) {
-  const det = [];
-  if (!lote && /MCMV/.test(e.t || '')) det.push('<span class="tag">MCMV</span>');
-  if (e.m2) det.push((lote ? 'lote de ' : '') + m2(e.m2));
-  if (/Pronto/i.test(e.t || '')) det.push('pronto');
-  return det;
+// ─── miniaturas ───
+// A foto da fonte única (campo img), em JPEG. Por que JPEG: o PDF do navegador leva o JPEG como está (DCT),
+// enquanto WebP e PNG viram imagem sem compressão com perdas (Flate) — com as -640.webp, o verso passava de
+// 17 MB; com os JPEG, fica em 8,4 MB. E JPEG não tem canal alfa (o PDF de gráfica não leva transparência).
+// O gerador confere o cabeçalho do arquivo, não a extensão, e para se não for JPEG.
+// MINI_FOTO: exceções, quando a foto do site não funciona num quadro de 11 mm; pos = enquadramento (object-position);
+// recorte = [cima, direita, baixo, esquerda] em % da foto (object-view-box: inset), para usar só um trecho dela sem
+// gravar arquivo novo — o PDF leva o JPEG inteiro e mostra o trecho; o dpi conferido é o do trecho.
+const MINI_FOTO = {
+  'reserva-botanica-indaiatuba': { arq: 'reserva-botanica-indaiatuba/images/portaria-24h.jpg', pos: '50% 53%' }, // no site, a arte escura do logotipo
+  'monte-carmelo-indaiatuba': { arq: 'monte-carmelo-indaiatuba/images/hero2.jpg' },  // no site, um anúncio cheio de texto
+  'di-italia-indaiatuba': { arq: 'di-italia-indaiatuba/images/mapa.jpg' },           // no site, foto de banco de imagens (pessoa), sem o loteamento
+  // no site, a arte com a família em primeiro plano (no quadro, só as pessoas): o topo da torre da direita, acima delas
+  'itamaraca-indaiatuba': { arq: 'itamaraca-indaiatuba/images/hero.jpg', recorte: [0, 0, 71, 70] },
+  // no site, a vista aérea com o slogan no canto de baixo (no quadro, microtexto ilegível): as 3 torres, sem o slogan
+  'manai-bosque-indaiatuba': { arq: 'manai-bosque-indaiatuba/images/vista-aerea-real.jpg', recorte: [0, 26.4, 20.9, 23.75] },
+  // no site, a fachada com o logotipo "STORIA" e o slogan (no quadro, o logotipo cortado): a mesma fachada, sem texto
+  'storia-congesa-indaiatuba': { arq: 'storia-congesa-indaiatuba/images/fachada.jpg' },
+};
+const ehJpeg = arq => { const b = fs.readFileSync(R + arq); return b.length > 3 && b[0] === 0xFF && b[1] === 0xD8 && b[2] === 0xFF; };
+const MINI = new Map(), avisosMini = [];
+Object.keys(MINI_FOTO).forEach(s => {
+  if (![...APTOS, ...LOTES].some(e => e.slug === s)) avisosMini.push('MINI_FOTO tem ' + s + ', que não está mais na fonte única — pode tirar');
+});
+[...APTOS, ...LOTES].forEach(e => {
+  const x = MINI_FOTO[e.slug] || { arq: e.img };
+  if (!x.arq) throw new Error('GERA-FOLDER: ' + e.n + ' está sem foto (campo img) na fonte única');
+  if (!fs.existsSync(R + x.arq)) throw new Error('GERA-FOLDER: a foto da miniatura de ' + e.n + ' não existe: ' + x.arq);
+  if (!ehJpeg(x.arq)) throw new Error('GERA-FOLDER: a miniatura de ' + e.n + ' não é JPEG (' + x.arq + '): WebP e PNG pesam no PDF, e PNG pode ter transparência — use a versão .jpg');
+  if (x.recorte && (x.recorte.length !== 4 || x.recorte.some(v => typeof v !== 'number' || v < 0) || x.recorte[0] + x.recorte[2] >= 90 || x.recorte[1] + x.recorte[3] >= 90))
+    throw new Error('GERA-FOLDER: recorte da miniatura de ' + e.n + ' inválido (4 números em %, cima direita baixo esquerda, sobrando ao menos 10% da foto): ' + JSON.stringify(x.recorte));
+  const estilo = [x.pos ? 'object-position:' + x.pos : '', x.recorte ? 'object-view-box:inset(' + x.recorte.map(v => v + '%').join(' ') + ')' : ''].filter(Boolean).join(';');
+  MINI.set(e, { arq: x.arq, estilo, kb: fs.statSync(R + x.arq).size / 1024 });
+});
+
+// ─── card ───
+// esquerda (.mini): a miniatura, na altura do card. Direita (.tx): nome (quebra em 2 linhas se precisar);
+// construtora · m² da unidade do preço (nos lotes, "lote de"; sem quebra no meio) · "pronto"; o selo (.sel),
+// numa linha própria; embaixo (.pz), "a partir de" e o mês da tabela (ou "pré-lançamento*"; † preços
+// confirmados) à esquerda e o preço em destaque à direita, na mesma linha de base do mês.
+function linhaCons(e, lote) {
+  const out = [esc(e.c)];
+  if (e.m2) out.push((lote ? 'lote&nbsp;de&nbsp;' : '') + m2(e.m2).replace(' ', '&nbsp;'));
+  if (/Pronto/i.test(e.t || '')) out.push('pronto');
+  return out.join(' · ');
 }
-const linhaSel = e => { const lote = LOTES.includes(e); return detalhe(e, lote).length > 0 && selos(e, lote).length > 0; };
 function ficha(e, lote) {
-  const det = detalhe(e, lote);
   const sel = selos(e, lote).map(esc).join(' · ');
   const tab = e.tab ? 'tabela ' + mesDe(e.tab) + (e.conf ? '<sup>†</sup>' : '')
             : e.prox ? 'pré-lançamento<sup>*</sup>' : '';
-  const vl = e.p
-    ? `<p class="ap">a partir de</p><p class="pr">${brl(e.p)}</p><p class="tb">${tab}</p>`
-    : `<p class="ap">tabela</p><p class="pr pr-c">sob consulta</p><p class="tb"></p>`;
-  const linhaDet = det.length ? `<p class="det">${det.join(' · ').replace('</span> · ', '</span> ')}</p>`
-                 : sel ? `<p class="det sel">${sel}</p>` : '<p class="det"></p>';
+  const pz = e.p
+    ? `<p class="rot"><span>a partir de</span><span>${tab}</span></p><p class="pr">${brl(e.p)}</p>`
+    : `<p class="rot"><span>tabela</span></p><p class="pr pr-c">sob consulta</p>`;
   return `
         <div class="it" data-k="${e._k}">
-          <div class="nm"><p class="nome">${esc(e.n)}</p><p class="cons">${esc(e.c)}</p>${linhaDet}</div>
-          <div class="vl">${vl}</div>${det.length && sel ? `
-          <p class="sel">${sel}</p>` : ''}
+          <div class="mini"><img src="${MINI.get(e).arq}" alt=""${MINI.get(e).estilo ? ` style="${MINI.get(e).estilo}"` : ''}></div>
+          <div class="tx"><p class="nome">${esc(e.n)}</p><p class="cons">${linhaCons(e, lote)}</p>${sel ? `<p class="sel"><span>${sel}</span></p>` : ''}<div class="pz">${pz}</div></div>
         </div>`;
 }
 
 // ─── grupos ───
+// Com miniatura, as 3 faixas de preço dos apartamentos não cabem sem apertar (21 cards: cada faixa custa uma
+// linha de título, e a coluna 2 levaria duas); os lotes cabem com os 2 tipos. Para ligar ou desligar: GRUPOS.
+const GRUPOS = { aptos: false, lotes: true };
 const FAIXAS = [
   { ate: 400000, titulo: 'Até R$ 400 mil' },
   { ate: 800000, titulo: 'De R$ 400 mil a R$ 800 mil' },
   { ate: Infinity, titulo: 'Acima de R$ 800 mil' },
 ];
-const gruposApto = FAIXAS.map((f, i) => ({
+const emOrdem = lista => [...lista.filter(e => e.p).sort(porPreco), ...lista.filter(e => !e.p)];
+const gruposApto = GRUPOS.aptos ? FAIXAS.map((f, i) => ({
   titulo: f.titulo,
   itens: APTOS.filter(e => e.p && e.p <= f.ate && (i === 0 || e.p > FAIXAS[i - 1].ate)).sort(porPreco),
-})).filter(g => g.itens.length);
+})).filter(g => g.itens.length) : [{ titulo: '', itens: emOrdem(APTOS) }];
 const semPrecoApto = APTOS.filter(e => !e.p);
-if (semPrecoApto.length) gruposApto.push({ titulo: 'Tabela sob consulta', itens: semPrecoApto });
+if (GRUPOS.aptos && semPrecoApto.length) gruposApto.push({ titulo: 'Tabela sob consulta', itens: semPrecoApto });
 
-const TIPO_LOTE = { 'Loteamento': 'Loteamentos', 'Cond. fechado': 'Condomínios fechados' };
-LOTES.forEach(e => { if (!TIPO_LOTE[e.t]) throw new Error('GERA-FOLDER: tipo de lote sem grupo no folder: ' + e.t + ' (' + e.n + ')'); });
-const gruposLote = Object.keys(TIPO_LOTE).map(t => ({ titulo: TIPO_LOTE[t], itens: LOTES.filter(e => e.t === t).sort(porPreco) }))
-  .filter(g => g.itens.length);
+// tipo de lote: o campo t da fonte única manda no grupo; a descrição (s) não pode dizer o contrário
+const TIPO_LOTE = { 'Loteamento': 'Loteamentos abertos', 'Cond. fechado': 'Condomínios fechados' };
+LOTES.forEach(e => {
+  if (!TIPO_LOTE[e.t]) throw new Error('GERA-FOLDER: tipo de lote sem grupo no folder: ' + e.t + ' (' + e.n + ')');
+  if (e.t === 'Loteamento' && /fechad|condom[ií]nio/i.test(e.s || ''))
+    throw new Error('GERA-FOLDER: ' + e.n + ' está como Loteamento (aberto) na fonte única, mas a descrição diz "' + e.s + '" — acerte o tipo (t)');
+  if (e.t === 'Cond. fechado' && /\baberto\b/i.test(e.s || ''))
+    throw new Error('GERA-FOLDER: ' + e.n + ' está como Cond. fechado na fonte única, mas a descrição diz "' + e.s + '" — acerte o tipo (t)');
+});
+const gruposLote = GRUPOS.lotes
+  ? Object.keys(TIPO_LOTE).map(t => ({ titulo: TIPO_LOTE[t], itens: emOrdem(LOTES.filter(e => e.t === t)) })).filter(g => g.itens.length)
+  : [{ titulo: '', itens: emOrdem(LOTES) }];
 
 if (gruposApto.reduce((t, g) => t + g.itens.length, 0) !== APTOS.length) throw new Error('GERA-FOLDER: apartamento fora de faixa');
 if (gruposLote.reduce((t, g) => t + g.itens.length, 0) !== LOTES.length) throw new Error('GERA-FOLDER: lote fora de grupo');
 
 // ─── divisão em 2 colunas ───
-// Altura equilibrada, sem deixar 1 item sozinho de um grupo em uma coluna. As alturas começam
-// estimadas; depois da 1ª medição no navegador, a divisão é refeita com as alturas medidas.
-const EST = { it: e => (e.n.length > 22 ? 12.2 : 9.6) + (linhaSel(e) ? 2.5 : 0), faixa: 5.4, aside: 17, corte: 2 };
-function dividir(grupos, H, extraCol1) {
+// Altura equilibrada (no empate, a coluna 1 fica com o card a mais), sem deixar 1 item sozinho de um grupo com
+// título em uma coluna. As alturas começam estimadas; depois da 1ª medição no navegador, a divisão é refeita com
+// as alturas medidas. Grupo sem título (apartamentos sem faixas) não tem linha de título nem "(cont.)".
+const EST = { it: e => 10.5 + (e.n.length > 24 ? 2.6 : 0) + (selos(e, LOTES.includes(e)).length ? 2.6 : 0), faixa: 5.4, corte: 2 };
+function dividir(grupos, H) {
   const seq = [];
   grupos.forEach((g, gi) => g.itens.forEach(it => seq.push({ gi, it })));
-  const alt = (s, extra) => s.reduce((t, x) => t + H.it(x.it), 0) + new Set(s.map(x => x.gi)).size * H.faixa + extra;
+  const alt = s => s.reduce((t, x) => t + H.it(x.it), 0) + [...new Set(s.map(x => x.gi))].reduce((t, gi) => t + (grupos[gi].titulo ? H.faixa : 0), 0);
   let melhor = null;
   for (let k = 1; k < seq.length; k++) {
     const a = seq.slice(0, k), b = seq.slice(k);
-    const dentro = a[a.length - 1].gi === b[0].gi;
-    if (dentro && (a.filter(x => x.gi === b[0].gi).length < 2 || b.filter(x => x.gi === b[0].gi).length < 2)) continue;
-    const nota = Math.max(alt(a, extraCol1), alt(b, 0)) + (dentro ? H.corte : 0);
+    const corte = a[a.length - 1].gi === b[0].gi && !!grupos[b[0].gi].titulo;
+    if (corte && (a.filter(x => x.gi === b[0].gi).length < 2 || b.filter(x => x.gi === b[0].gi).length < 2)) continue;
+    const nota = Math.max(alt(a), alt(b)) + (corte ? H.corte : 0) + (alt(a) < alt(b) ? 1e-3 : 0);
     if (!melhor || nota < melhor.nota - 1e-6) melhor = { nota, k };
   }
   const col = s => {
@@ -219,12 +274,13 @@ function dividir(grupos, H, extraCol1) {
     return out;
   };
   const c1 = col(seq.slice(0, melhor.k)), c2 = col(seq.slice(melhor.k));
-  if (c2.length && c1.length && c2[0].gi === c1[c1.length - 1].gi) c2[0].cont = true;
+  if (c2.length && c1.length && c2[0].gi === c1[c1.length - 1].gi && c2[0].titulo) c2[0].cont = true;
   return [c1, c2];
 }
-const colunas = (grupos, lote, H, aside) => dividir(grupos, H, aside ? H.aside : 0).map((c, ci) => `
-      <div class="col">${c.map(g => `
-        <div class="gr"><span>${esc(g.titulo)}${g.cont ? ' <i>(cont.)</i>' : ''}</span><span class="gr-n">${g.cont ? '' : g.total}</span></div>${g.itens.map(e => ficha(e, lote)).join('')}`).join('')}${aside && ci === 0 ? aside : ''}
+const colunas = (grupos, lote, H) => dividir(grupos, H).map(c => `
+      <div class="col">${c.map(g => (g.titulo ? `
+        <div class="gr"><span>${esc(g.titulo)}${g.cont ? ' <i>(cont.)</i>' : ''}</span><span class="gr-n">${g.cont ? '' : g.total}</span></div>` : '')
+        + g.itens.map(e => ficha(e, lote)).join('')).join('')}
       </div>`).join('');
 
 // ─── notas de rodapé (só as que o painel usa) ───
@@ -320,41 +376,42 @@ const css = (Q) => `
   .cc-legal p{font-size:7pt;font-weight:600;line-height:1.45}
   .cc-legal p.leg{margin-top:1mm}
 
-  /* ── MIOLO: tabela de preços ── */
-  .tit{flex-shrink:0;display:flex;justify-content:space-between;align-items:flex-end;padding-top:1.2mm;padding-bottom:1.6mm;border-bottom:1pt solid var(--tinta)}
+  /* ── MIOLO: cards com miniatura ── */
+  .tit{flex-shrink:0;display:flex;justify-content:space-between;align-items:flex-end;padding-top:1.1mm;padding-bottom:1.6mm;border-bottom:1pt solid var(--tinta)}
   .tit h2{font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-size:16pt;line-height:1;letter-spacing:-.1pt;display:flex;align-items:center;gap:2mm}
   .tit h2 i{display:block;width:1.3mm;height:5.2mm;background:var(--ouro)}
   .tit .ed{text-align:right;line-height:1.25}
   .tit .ed b{display:block;font-size:6.3pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
   .tit .ed span{display:block;font-size:6.5pt;font-weight:600}
-  .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:3.4mm;margin-top:2mm;align-items:start}
+  .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:2.6mm;margin-top:1.4mm;align-items:start}
   .gr{display:flex;justify-content:space-between;align-items:baseline;gap:1mm;background:var(--ouro-claro);
       padding:.75mm 1.3mm .6mm;margin-top:1.9mm;font-size:6.4pt;font-weight:700;letter-spacing:.07em;text-transform:uppercase;line-height:1.15}
   .col>.gr:first-child{margin-top:0}
   .gr i{font-style:normal;font-weight:600;letter-spacing:0;text-transform:none}
   .gr-n{letter-spacing:0}
-  .it{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:1.3mm;padding:.45mm 0 .5mm;border-bottom:.45pt solid var(--fio)}
-  .nome{font-size:7.2pt;font-weight:700;line-height:1.08}
-  .cons,.det{font-size:6.3pt;line-height:1.1}
-  .det{min-height:1.1em}
-  .tag{display:inline-block;font-size:6pt;font-weight:700;letter-spacing:.04em;line-height:.8;padding:0 .5mm .3mm;border:.4pt solid var(--tinta);border-radius:.5mm;vertical-align:.1mm;margin-top:.4mm}
-  .vl{text-align:right;white-space:nowrap}
-  .ap,.tb{font-size:var(--corpo-rotulo);line-height:1.1}
-  .pr{font-size:8.6pt;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.05pt}
+  .it{display:grid;grid-template-columns:${MINI_L}mm minmax(0,1fr);column-gap:1.4mm;padding:.36mm 0 .26mm;border-bottom:.45pt solid var(--fio)}
+  .mini{position:relative;min-height:8mm}
+  .mini img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
+  .tx{display:flex;flex-direction:column;min-width:0}
+  .nome{font-size:6.9pt;font-weight:700;line-height:1.05}
+  .cons{font-size:6.2pt;line-height:1.06;margin-top:.05mm}
+  .sel{font-size:6.2pt;line-height:1.1;margin-top:.25mm}
+  .sel span{background:var(--ouro-claro);font-weight:700;padding:0 .7mm}
+  .pz{display:flex;justify-content:space-between;align-items:last baseline;gap:1mm;margin-top:auto;padding-top:.2mm}
+  .rot{font-size:var(--corpo-rotulo);line-height:1.05;white-space:nowrap}
+  .rot span{display:block}
+  .pr{font-size:8.2pt;font-weight:700;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:-.05pt}
   .pr-c{font-size:7.2pt}
-  .sel{font-weight:600}
-  .it>.sel{grid-column:1/-1;font-size:6.3pt;line-height:1.1;margin-top:.1mm}
-  .aside{margin-top:2mm;padding:1.6mm 1.8mm;border:.6pt solid var(--ouro);font-size:6.3pt;line-height:1.35}
   .mapa{display:flex;gap:3.4mm;align-items:center;margin-top:auto;padding:2.6mm;border:.8pt solid var(--ouro);flex-shrink:0}
   .mapa-qr{width:${Q.mapa}mm;height:${Q.mapa}mm;flex-shrink:0}
   .mapa-qr svg{display:block;width:100%;height:100%}
   .mapa b{display:block;font-size:6.6pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
   .mapa p{font-size:6.8pt;line-height:1.35;margin-top:1mm}
   .mapa p.url{font-size:6.3pt;font-weight:600;margin-top:1.2mm}
-  .pe{margin-top:auto;padding-top:1.6mm;flex-shrink:0;border-top:.45pt solid var(--tinta)}
+  .pe{margin-top:auto;padding-top:1.4mm;flex-shrink:0;border-top:.45pt solid var(--tinta)}
   .mapa+.pe{margin-top:2.6mm}
-  .pe p{font-size:6.3pt;line-height:1.3}
-  .pe p+p{margin-top:.35mm}
+  .pe p{font-size:6.2pt;line-height:1.25}
+  .pe p+p{margin-top:.25mm}
   .folio{display:flex;justify-content:space-between;font-weight:700;padding-top:1.2mm;margin-top:1.2mm !important;border-top:.45pt solid var(--fio)}
 `;
 
@@ -408,15 +465,14 @@ const p1 = `
 </div>`;
 
 const LEGENDA = '<b>A partir de</b>: menor preço da tabela, no mês indicado. <b>m²</b>: área da unidade desse preço.';
-const ASIDE_MCMV = APTOS.some(e => /MCMV/.test(e.t)) ? `
-        <p class="aside"><span class="tag">MCMV</span> enquadrado no Minha Casa Minha Vida. FGTS e financiamento pela Caixa conforme as regras do programa, a renda e a análise de crédito.</p>` : '';
+const ordemDe = g => g ? 'por ' + g : 'do menor ao maior preço';
 
 // p2 — apartamentos (esquerda do verso)
 const p2 = H => `
 <div class="painel p-esq" data-nome="apartamentos">
   <div class="seg">
-    <header class="tit"><h2><i></i>Apartamentos</h2><p class="ed"><b>Edição ${edicao}</b><span>${APTOS.length} empreendimentos · por faixa de preço</span></p></header>
-    <div class="cols">${colunas(gruposApto, false, H, ASIDE_MCMV)}
+    <header class="tit"><h2><i></i>Apartamentos</h2><p class="ed"><b>Edição ${edicao}</b><span>${APTOS.length} empreendimentos · ${ordemDe(GRUPOS.aptos && 'faixa de preço')}</span></p></header>
+    <div class="cols">${colunas(gruposApto, false, H)}
     </div>
     <footer class="pe">
       <p>${LEGENDA}</p>
@@ -429,8 +485,8 @@ const p2 = H => `
 const p3 = (H, QM) => `
 <div class="painel p-dir" data-nome="lotes">
   <div class="seg">
-    <header class="tit"><h2><i></i>Lotes e condomínios</h2><p class="ed"><b>Edição ${edicao}</b><span>${LOTES.length} empreendimentos · por tipo</span></p></header>
-    <div class="cols">${colunas(gruposLote, true, H, '')}
+    <header class="tit"><h2><i></i>Lotes e condomínios</h2><p class="ed"><b>Edição ${edicao}</b><span>${LOTES.length} empreendimentos · ${ordemDe(GRUPOS.lotes && 'tipo')}</span></p></header>
+    <div class="cols">${colunas(gruposLote, true, H)}
     </div>
     <div class="mapa">
       <div class="mapa-qr" data-qr="mapa">${QM.svg}</div>
@@ -449,7 +505,7 @@ const p3 = (H, QM) => `
 async function medir(C) {
   const MM = 96 / 25.4, PT = 96 / 72, TOL = C.tol * MM;
   const mm = v => +(v / MM).toFixed(2);
-  const P = [], M = { folgas: {}, menorPt: {}, alturas: {}, faixa: 0, aside: 0, qr: {}, fotos: [], itens: 0 };
+  const P = [], M = { folgas: {}, menorPt: {}, alturas: {}, faixa: 0, qr: {}, fotos: [], minis: [], itens: 0 };
   await document.fonts.ready;
   const folha = document.querySelector('.folha').getBoundingClientRect();
   if (Math.abs(mm(folha.width) - 214) > 0.1 || Math.abs(mm(folha.height) - 152) > 0.1)
@@ -469,6 +525,29 @@ async function medir(C) {
     M.fotos.push({ arquivo: url.split('/').slice(-3).join('/'), dpi, px: nat.join('x') });
   }
 
+  // miniaturas dos cards: carregaram, cobrem a caixa (object-fit cover) e têm resolução para a gráfica
+  for (const im of document.querySelectorAll('.mini img')) {
+    try { await im.decode(); } catch (e) { /* conferido abaixo */ }
+    const arq = decodeURIComponent(im.getAttribute('src')), box = im.getBoundingClientRect(), cx = im.parentElement.getBoundingClientRect();
+    if (!im.naturalWidth) { P.push('miniatura não carregou: ' + arq); continue; }
+    if (getComputedStyle(im).objectFit !== 'cover') P.push('miniatura sem object-fit cover: ' + arq);
+    if (Math.abs(box.width - cx.width) > 0.5 || Math.abs(box.height - cx.height) > 0.5 || box.height < 1) P.push('miniatura não cobre a caixa: ' + arq);
+    // recorte (object-view-box: inset em %): a resolução que conta é a do trecho usado, não a da foto inteira
+    const ovb = getComputedStyle(im).objectViewBox || 'none';
+    let fw = 1, fh = 1;
+    if (ovb !== 'none') {
+      const v = ((/^inset\(([^)]*)\)$/.exec(ovb) || [])[1] || '').trim().split(/\s+/);
+      const [st, sr, sb, sl] = v.length === 1 ? [v[0], v[0], v[0], v[0]] : v.length === 2 ? [v[0], v[1], v[0], v[1]] : v.length === 3 ? [v[0], v[1], v[2], v[1]] : v;
+      const fr = (s, nat) => /%$/.test(s || '') ? parseFloat(s) / 100 : /px$/.test(s || '') ? parseFloat(s) / nat : s === '0' ? 0 : NaN;
+      const [t, r, b, l] = [fr(st, im.naturalHeight), fr(sr, im.naturalWidth), fr(sb, im.naturalHeight), fr(sl, im.naturalWidth)];
+      if ([t, r, b, l].some(x => !(x >= 0))) P.push('recorte da miniatura não lido (' + ovb + '): ' + arq);
+      else { fw = 1 - l - r; fh = 1 - t - b; }
+    }
+    const dpi = Math.round(96 * Math.min(im.naturalWidth * fw / box.width, im.naturalHeight * fh / box.height));
+    if (dpi < C.dpiMin) P.push('miniatura com ' + dpi + ' dpi (mínimo ' + C.dpiMin + '): ' + arq);
+    M.minis.push({ arquivo: arq, dpi, px: im.naturalWidth + 'x' + im.naturalHeight, w: mm(box.width), h: mm(box.height) });
+  }
+
   // transparência (opacidade, cor com alfa, degradê, sombra, filtro, mistura): o PDF de gráfica não leva
   const alfa = c => { const m = /^rgba\([^,]+,[^,]+,[^,]+,\s*([\d.]+)\)$/.exec(c) || /\/\s*([\d.]+)\)$/.exec(c); return m ? +m[1] : 1; };
   for (const el of document.querySelectorAll('.folha, .folha *')) {
@@ -484,7 +563,7 @@ async function medir(C) {
     }
   }
 
-  const CAIXAS = '.it,.gr,.tit,.pe,.aside,.mapa,.cc-legal,.nums';
+  const CAIXAS = '.it,.gr,.tit,.pe,.mapa,.cc-legal,.nums';
   for (const painel of document.querySelectorAll('.painel')) {
     const nome = painel.dataset.nome, escuro = painel.classList.contains('escuro');
     const S = painel.querySelector('.seg').getBoundingClientRect();
@@ -521,17 +600,22 @@ async function medir(C) {
         if (rg.getBoundingClientRect().width > el.getBoundingClientRect().width + 0.5) P.push(`${nome}: texto sem quebra mais largo que a linha: "${t}"`);
       }
     }
-    // fichas: nome encostando no preço; altura de cada uma (para refazer a divisão das colunas)
+    // cards: texto encostando na miniatura; "a partir de"/mês encostando no preço; miniatura fora do card;
+    // altura de cada card (para refazer a divisão das colunas)
+    const direita = el => { let d = 0; const rg = document.createRange(); rg.selectNodeContents(el); for (const r of rg.getClientRects()) if (r.width > 0.5) d = Math.max(d, r.right); return d; };
+    const esquerda = el => { let e = Infinity; const rg = document.createRange(); rg.selectNodeContents(el); for (const r of rg.getClientRects()) if (r.width > 0.5) e = Math.min(e, r.left); return e; };
     for (const it of painel.querySelectorAll('.it')) {
-      const vl = it.querySelector('.vl').getBoundingClientRect();
-      let dir = 0;
-      for (const p of it.querySelectorAll('.nm > *')) { const rg = document.createRange(); rg.selectNodeContents(p); for (const r of rg.getClientRects()) dir = Math.max(dir, r.right); }
-      if (vl.left - dir < 0.8 * MM) P.push(`${nome}: "${it.querySelector('.nome').textContent}" encosta no preço (${mm(vl.left - dir)} mm)`);
-      M.alturas[it.dataset.k] = mm(it.getBoundingClientRect().height);
+      const tit = it.querySelector('.nome').textContent, B = it.getBoundingClientRect();
+      const mi = it.querySelector('.mini').getBoundingClientRect();
+      const esq = Math.min(...[...it.querySelectorAll('.tx > *')].map(esquerda));
+      if (esq - mi.right < 0.8 * MM) P.push(`${nome}: "${tit}": texto a ${mm(esq - mi.right)} mm da miniatura (mínimo 0,8)`);
+      if (mi.left < B.left - TOL || mi.right > B.right + TOL || mi.top < B.top - TOL || mi.bottom > B.bottom + TOL) P.push(`${nome}: "${tit}": miniatura fora do card`);
+      const pr = it.querySelector('.pr'), gap = esquerda(pr) - direita(it.querySelector('.rot'));
+      if (gap < 0.8 * MM) P.push(`${nome}: "${tit}": "a partir de" encosta no preço (${mm(gap)} mm)`);
+      M.alturas[it.dataset.k] = mm(B.height);
       M.itens++;
     }
     for (const g of painel.querySelectorAll('.gr')) M.faixa = Math.max(M.faixa, mm(g.getBoundingClientRect().height + parseFloat(getComputedStyle(g).marginTop) || 0));
-    for (const a of painel.querySelectorAll('.aside')) M.aside = mm(a.getBoundingClientRect().height + parseFloat(getComputedStyle(a).marginTop));
     // folga: de cada coluna até o bloco de baixo; nos painéis escuros, a soma dos espaços elásticos
     for (const cols of painel.querySelectorAll('.cols')) {
       const prox = cols.nextElementSibling, topo = prox.getBoundingClientRect().top;
@@ -683,22 +767,27 @@ process.on('SIGINT', () => { limpa(); process.exit(130); });
     const rF = await mede('folder-frente', frente(base), { ...CFG, qr: cfgQr }, ['.logo-n', 'h1', '.cc-pq p', '.cc-legal p']);
     // verso: 1ª medida com as alturas estimadas; a divisão das colunas é refeita com as alturas medidas
     const cfgV = { ...CFG, qr: cfgQr, precos, itens: APTOS.length + LOTES.length };
-    let H = EST, rV = await mede('folder-verso', verso(H, base), cfgV, ['.nome', '.pr', '.ap', '.tit h2', '.pe p']);
-    const medido = { it: e => rV.M.alturas[e._k] || EST.it(e), faixa: rV.M.faixa || EST.faixa, aside: rV.M.aside || EST.aside, corte: EST.corte };
-    if (verso(medido, base) !== verso(H, base)) { H = medido; rV = await mede('folder-verso', verso(H, base), cfgV, ['.nome', '.pr', '.ap', '.tit h2', '.pe p']); }
+    let H = EST, rV = await mede('folder-verso', verso(H, base), cfgV, ['.nome', '.pr', '.rot span', '.tit h2', '.pe p']);
+    const medido = { it: e => rV.M.alturas[e._k] || EST.it(e), faixa: rV.M.faixa || EST.faixa, corte: EST.corte };
+    if (verso(medido, base) !== verso(H, base)) { H = medido; rV = await mede('folder-verso', verso(H, base), cfgV, ['.nome', '.pr', '.rot span', '.tit h2', '.pe p']); }
 
     const problemas = [...rF.P, ...rV.P];
-    const M = { folgas: { ...rF.M.folgas, ...rV.M.folgas }, menorPt: { ...rF.M.menorPt, ...rV.M.menorPt }, qr: { ...rF.M.qr, ...rV.M.qr }, fotos: [...rF.M.fotos, ...rV.M.fotos] };
+    const M = { folgas: { ...rF.M.folgas, ...rV.M.folgas }, menorPt: { ...rF.M.menorPt, ...rV.M.menorPt }, qr: { ...rF.M.qr, ...rV.M.qr }, fotos: [...rF.M.fotos, ...rV.M.fotos], minis: rV.M.minis };
     const v = n => String(n).replace('.', ',');
     console.log('Folder — 214 × 152 mm (210 × 148 aberto + 2 mm de sangria), 1 dobra, fechado 105 × 148');
     console.log('  frente = p4 contracapa | p1 capa · verso = p2 ' + APTOS.length + ' apartamentos | p3 ' + LOTES.length + ' lotes e condomínios');
     console.log('  capa: ' + total + ' empreendimentos · ' + construtoras + ' construtoras · a partir de ' + mil(menorDatado.p) + ' (' + menorDatado.n + ', tabela ' + mesDe(menorDatado.tab) + ') · edição ' + edicao);
-    console.log('  apartamentos: ' + gruposApto.map(g => g.titulo + ' ' + g.itens.length).join(' | '));
-    console.log('  lotes: ' + gruposLote.map(g => g.titulo + ' ' + g.itens.length).join(' | '));
+    console.log('  apartamentos: ' + gruposApto.map(g => (g.titulo || 'sem faixas, do menor ao maior preço') + ' ' + g.itens.length).join(' | '));
+    console.log('  lotes: ' + gruposLote.map(g => (g.titulo || 'sem tipos, do menor ao maior preço') + ' ' + g.itens.length).join(' | '));
     console.log('  folga (mm): ' + Object.entries(M.folgas).map(([k, f]) => k + ' ' + f.map(v).join(' e ')).join(' · '));
     console.log('  menor corpo (pt): ' + Object.entries(M.menorPt).map(([k, p]) => k + ' ' + v(p)).join(' · ') + ' — sobre o escuro: mínimo 7 pt semibold');
     for (const [k, q] of Object.entries(M.qr)) console.log(`  QR ${k}: versão ${q.versao}-${q.nivel}, ${v(q.lado)} mm, módulo ${v(q.modulo)} mm, zona de silêncio ${v(q.zona)} módulos`);
     for (const f of M.fotos) console.log(`  foto da capa: ${f.arquivo} (${f.px}) a ${f.dpi} dpi`);
+    if (M.minis.length) {
+      const dpis = M.minis.map(f => f.dpi), kb = [...MINI.values()].reduce((t, f) => t + f.kb, 0);
+      console.log(`  miniaturas: ${M.minis.length} JPEG (${Object.keys(MINI_FOTO).length} exceções em MINI_FOTO; ${(kb / 1024).toFixed(1).replace('.', ',')} MB no total), quadro de ${v(Math.min(...M.minis.map(f => f.w)))} mm × ${v(Math.min(...M.minis.map(f => f.h)))} a ${v(Math.max(...M.minis.map(f => f.h)))} mm, de ${Math.min(...dpis)} a ${Math.max(...dpis)} dpi`);
+    }
+    avisosMini.forEach(a => console.log('  aviso: ' + a));
     if (problemas.length) {
       console.log('\nCHECAGEM REPROVOU — nada foi gravado (' + problemas.length + ' problema(s)):');
       [...new Set(problemas)].forEach(p => console.log('  · ' + p));
