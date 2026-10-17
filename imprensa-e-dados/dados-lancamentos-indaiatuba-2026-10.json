@@ -28,6 +28,20 @@
     "fonte": "tabela oficial da incorporadora, setembro/2026"
   },
   {
+    "nome": "Pertenze Residencial",
+    "tipo": "apartamento",
+    "incorporadora": "Mingardi & Elias",
+    "preco_a_partir_de": 312046,
+    "m2_menor_unidade": 48.59,
+    "preco_m2": 6422,
+    "mes_tabela": "2026-10",
+    "estoque": null,
+    "data_estoque": null,
+    "spec": "2 dorm · 48,59 a 54,39 m² · 3 torres · Jardim das Andorinhas",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/pertenze-residencial-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, outubro/2026"
+  },
+  {
     "nome": "Gran Vic Tangará",
     "tipo": "apartamento",
     "incorporadora": "VIC Engenharia",

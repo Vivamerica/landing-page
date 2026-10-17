@@ -22,6 +22,7 @@ const APTOS = [
     s:'1 dormitório · sacada · vaga para carro', t:'MCMV · FGTS', slug:'uni-residencial-indaiatuba',
     prox:'pré-lançamento com tabela a partir de R$ 279.990 (1 dormitório); valor sujeito a reajuste no lançamento oficial, que a Masotti prevê para 2026 — data não divulgada' },
   { n:'Residencial Parque das Águas', c:'GPCI', p:309120, m2:46.13, tab:'2026-09', img:'parque-das-aguas-indaiatuba/images/hero.jpg', s:'2 dorm · 46 a 72 m² · 3 torres · lago e complexo aquático', t:'Lançamento', slug:'parque-das-aguas-indaiatuba' },
+  { n:'Pertenze Residencial', c:'Mingardi & Elias', p:312046, m2:48.59, tab:'2026-10', img:'pertenze-residencial-indaiatuba/images/hero.jpg', s:'2 dorm · 48,59 a 54,39 m² · 3 torres · Jardim das Andorinhas', t:'Lançamento', slug:'pertenze-residencial-indaiatuba' },
   { n:'Gran Vic Tangará', c:'VIC Engenharia', p:325000, m2:47.22, tab:'2026-10', img:'gran-vic-tangara-indaiatuba/images/hero.jpg',
     s:'2 dorm · 47,22 m² · 74 unidades (05/10/2026) · entrega nov/2028 (Módulo 01)', t:'MCMV · FGTS',
     vend:{ tot:312, disp:74, em:'05/10/2026' }, slug:'gran-vic-tangara-indaiatuba' },

@@ -35,7 +35,7 @@ const R = __dirname + '/';
 // menu do site (fonte única: gera-menu.js); as duas páginas já saem com ele
 const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
-const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-16' };
+const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-17' };
 
 // estoque da MEDIÇÃO ANTERIOR (em geral a da edição de setembro/2026; o Jardim Dona Maria Cândida
 // foi medido em 08/09/2026 e publicado em 12/10/2026), para o "antes e depois"
@@ -102,6 +102,8 @@ const ENTRADAS = [
   // 16/10/2026: ganharam tabela pública (estavam no site sem preço)
   { n: 'Congesa Seasons',             c: 'Congesa', tabelaNova: true, para: 1239000, causa: 'tabela liberada pela Congesa em out/2026: 48 unidades nas Torres 1 e 3 a 8, de 3 dormitórios com suíte a Penthouse; o menor preço é um Balcony de 3 dormitórios com suíte da Torre 6', fonte: 'tabela Congesa de outubro/2026' },
   { n: '360 Home Office Mall',        c: 'HINC', para: 546274, causa: 'preço aberto a partir de out/2026 — residencial a partir de 39,73 m², no 12º andar; 84 residenciais e 34 salas office na tabela', fonte: 'tabela HINC de setembro/2026 (gerada em 15/09/2026), com os mesmos valores em outubro/2026' },
+  // 17/10/2026: novo no site
+  { n: 'Pertenze Residencial',        c: 'Mingardi & Elias', para: 312046, causa: 'novo no site — 2 dormitórios de 48,59 a 54,39 m², em 3 torres no Jardim das Andorinhas; 61 unidades da Torre C na tabela', fonte: 'tabela Mingardi & Elias com vigência a partir de 01/10/2026' },
 ];
 // entrou no site sem tabela pública (não entra em ENTRADAS: não há preço).
 // 16/10/2026: o 360 Home Office Mall, que estava aqui, ganhou tabela e foi para ENTRADAS.

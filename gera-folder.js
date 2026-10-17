@@ -5,209 +5,718 @@
      aberto  210 × 148 mm (A5 deitado)
      sangria 2 mm por lado  →  arquivo final 214 × 152 mm
      dobrado 105 × 148 mm (A6)
+     área de segurança: 6 mm da borda do arquivo (2 de sangria + 4) e
+     5 mm do vinco → 96 × 140 mm úteis por painel
    Imposição:
      FRENTE = página 4 (contracapa) | página 1 (capa)
-     VERSO  = página 2 (apartamentos) | página 3 (lotes)
+     VERSO  = página 2 (apartamentos) | página 3 (lotes e condomínios)
 
-   Mantém o MESMO desenho de card do folheto A4 aprovado — foto no topo,
-   selo de tipo, construtora, nome, specs e preço — apenas reduzido para
-   o painel A6. Dados e estilos vêm do gera-folheto.js: fonte única.
+   Desenho: o miolo é uma TABELA DE PREÇOS, sem foto por item. Fichas de
+   3 linhas em 2 colunas por painel: nome, construtora e detalhe à
+   esquerda; "a partir de", preço e mês da tabela à direita.
+   Selos, com a mesma regra do site e sempre com data: escassez ("últimas
+   N unidades", "últimos N lotes") só quando a fonte única traz est até 60
+   E estEm (data da contagem); tarja comercial (ex.: desconto de
+   lançamento, que já está no preço da tabela) só com o mês ou o dia.
+   O selo ocupa a linha do detalhe quando ela está vazia; senão, ganha
+   uma linha própria embaixo da ficha.
+   Apartamentos por faixa de preço; lotes por tipo (o corte do menu do
+   site). Dentro do grupo, do menor para o maior preço, lido coluna a
+   coluna. Só Indaiatuba, como o folheto A4.
+
+   Dados: APTOS/LOTES e o parágrafo "Por que comprar no lançamento?" do
+   gera-folheto.js (fonte única); EDICAO do gera-observatorio.js. No
+   ritual, roda logo depois do gera-folheto.js. Cores e fontes ficam em
+   variáveis no :root (--fundo, --ouro, --fonte-titulo...).
+
+   Checagem — o gerador PARA (exit 1) e não grava nada quando falha.
+   Monta as duas faces numa pasta temporária, abre no Edge sem interface
+   (convidado, sem sincronização e sem login, perfil próprio apagado no
+   fim, árvore de processos encerrada) e mede:
+     · letra (de ascendente a descendente) fora da área de segurança ou
+       fora da própria caixa (ficha, faixa, cabeçalho, notas, quadros);
+     · caixa que corta o conteúdo; texto sem quebra mais largo que a linha;
+       nome encostando no preço;
+     · folga abaixo de 2 mm em qualquer coluna do miolo e nos espaços
+       elásticos da capa e da contracapa;
+     · corpo abaixo de 6 pt no miolo; abaixo de 7 pt ou mais fino que
+       semibold sobre o fundo escuro;
+     · preço faltando ou diferente da fonte única; fonte trocada; foto da
+       capa sem carregar ou abaixo de 250 dpi; QR com módulo abaixo de
+       0,5 mm ou sem zona de silêncio;
+     · transparência de qualquer tipo (opacidade, cor com alfa, degradê,
+       sombra, filtro): visualizador e RIP podem descartar ou achatar mal.
+   Os dois QR saem do qrcode/qrgen.js e são relidos pelo qrcode/qrdecode.js
+   a cada rodada; os dois levam utm_source=folder.
+
+   Pedido à gráfica (o PDF do navegador sai em RGB):
+     · texto e fios do miolo só no preto (100% K): no arquivo são #000;
+     · fundo da capa e da contracapa em preto calçado (ex.: C40 K100),
+       nunca nas 4 cores carregadas;
+     · texto vazado sobre o preto com 7 pt ou mais, semibold (a checagem
+       garante).
    ═══════════════════════════════════════════════════════════════════ */
 
 const fs = require('fs');
-const R = __dirname + '/';
+const os = require('os');
+const path = require('path');
+const cp = require('child_process');
+const { pathToFileURL } = require('url');
 
-const fonte = fs.readFileSync(R + 'gera-folheto.js', 'utf8');
+const R = __dirname.replace(/\\/g, '/') + '/';   // raiz do site: de onde se lê
+const SAIDA = R;                                  // onde se gravam folder-frente.html e folder-verso.html
+
+// ─── fonte única ───
+const folheto = fs.readFileSync(R + 'gera-folheto.js', 'utf8');
 function extrair(nome) {
-  const ini = fonte.indexOf('const ' + nome + ' = [');
-  const fim = fonte.indexOf('\n];', ini);
+  const ini = folheto.indexOf('const ' + nome + ' = [');
+  const fim = folheto.indexOf('\n];', ini);
   if (ini < 0 || fim < 0) throw new Error('nao achei ' + nome + ' em gera-folheto.js');
-  return eval(fonte.slice(ini + ('const ' + nome + ' = ').length, fim + 2));
+  return eval(folheto.slice(ini + ('const ' + nome + ' = ').length, fim + 2));
 }
 const APTOS = extrair('APTOS');
 const LOTES = extrair('LOTES');
-// mesma ordem do folheto A4: preço crescente; sem preço no fim
-const porPreco = (a, b) => a.p - b.p;
-const emOrdem = lista => [...lista.filter(e => e.p).sort(porPreco), ...lista.filter(e => !e.p)];
-const APTOS_ORD = emOrdem(APTOS);
-const LOTES_ORD = emOrdem(LOTES);
-// mesma conta do gera-folheto.js e do gera-home.js: o nome antes do " · " identifica a construtora
-const construtoras = new Set([...APTOS, ...LOTES].map(e => e.c.split(' · ')[0].trim())).size;
+// "Por que comprar no lançamento?": só o parágrafo do folheto A4 (a lista de vantagens fica de fora,
+// porque a correção pelo INCC não vale para lote)
+const PQ = (() => {
+  const ini = folheto.indexOf('const DEST = `');
+  const m = ini < 0 ? null : /<p>([\s\S]*?)<\/p>/.exec(folheto.slice(ini, folheto.indexOf('`;', ini)));
+  if (!m) throw new Error('nao achei o paragrafo "Por que comprar" (const DEST) em gera-folheto.js');
+  return m[1].replace(/\s+/g, ' ').trim();
+})();
+const EDICAO = (() => {
+  const src = fs.readFileSync(R + 'gera-observatorio.js', 'utf8');
+  const ini = src.indexOf('const EDICAO = ');
+  const fim = src.indexOf('};', ini) + 1;
+  if (ini < 0 || fim < 1) throw new Error('nao achei EDICAO em gera-observatorio.js');
+  return eval('(' + src.slice(ini + 'const EDICAO = '.length, fim) + ')');
+})();
+const edicao = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;            // outubro/2026
 
-const brl = n => n.toLocaleString('pt-BR');
-const qr = fs.readFileSync(R + 'qrcode/qr-vivamerica-branco.svg', 'utf8')
-  .replace(/width="\d+" height="\d+"/, 'width="100%" height="100%"');
-const HERO = 'aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg';
+const MES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+const mesDe = iso => MES[+iso.slice(5, 7) - 1] + '/' + iso.slice(0, 4);  // 2026-10 → out/2026
+const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
+const mil = n => n % 1000 === 0 ? 'R$ ' + (n / 1000).toLocaleString('pt-BR') + ' mil' : brl(n);  // nunca arredonda preço
+const m2 = n => n.toLocaleString('pt-BR') + ' m²';
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const porPreco = (a, b) => (a.p || Infinity) - (b.p || Infinity);
 
-// mesma regra de cor de selo do folheto A4
-const tipoClasse = t =>
-  /MCMV/i.test(t)          ? 'b-mcmv' :
-  /Alto Padrão/i.test(t)   ? 'b-alto' :
-  /Pré|Breve/i.test(t)     ? 'b-pre'  :
-  /Cond/i.test(t)          ? 'b-cond' : 'b-lote';
+// preço "a partir de" só sai com o mês da tabela (ou como pré-lançamento)
+[...APTOS, ...LOTES].forEach(e => {
+  if (e.p && !e.tab && !e.prox) throw new Error('GERA-FOLDER: ' + e.n + ' tem preço sem o mês da tabela (campo tab) nem pré-lançamento (prox)');
+});
+[...APTOS, ...LOTES].forEach((e, k) => { e._k = k; });                   // chave da ficha, para a medição
 
-const CSS = `
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  @page{size:214mm 152mm;margin:0}
-  html,body{width:214mm;height:152mm}
-  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;
-    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+// ─── ajustes do desenho (em mm e pt) ───
+const CORPO_ROTULO = 6;       // "a partir de" e "tabela mmm/aaaa"; era 6,5 até 17/10/2026, quando a 21ª ficha de apartamento (Pertenze) tirou a folga da coluna 1 — 6 é o piso do miolo; no mesmo dia o respiro da ficha (.it) caiu de .6/.65 para .45/.5 mm
+const QR_SITE_MODULO = 0.6;   // mm por módulo do QR do site (a caixa branca inclui a zona de silêncio de 4 módulos)
+const QR_MAPA_LADO = 24;      // mm do QR do mapa (a zona de silêncio é o branco da caixa em volta)
+const URL_SITE = 'https://lancamentos.imoveisvivamerica.com.br/?utm_source=folder';
+const URL_MAPA = 'https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/?utm_source=folder';
+// foto da capa: faixa de borda reta, sem degradê nem transparência (o PDF de gráfica não leva), alinhada ao texto
+// à esquerda e sangrando na borda direita. Com a foto a 126,5 mm de largura, o quadro de 102 mm vai da borda esquerda
+// até antes da TV (x ≈ 1290 de 1600 px), de y = 31 mm (≈ 390 px, abaixo do pendente) para baixo.
+const CAPA = { slug: 'aurora-indaiatuba', arquivo: 'aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg', largura: 126.5, y: 31, altura: 54 };
+const capaDe = APTOS.find(e => e.slug === CAPA.slug) || LOTES.find(e => e.slug === CAPA.slug);
+if (!capaDe) throw new Error('GERA-FOLDER: a foto da capa é de ' + CAPA.slug + ', que não está mais na fonte única — troque a foto (CAPA)');
+if (!fs.existsSync(R + CAPA.arquivo)) throw new Error('GERA-FOLDER: foto da capa não existe: ' + CAPA.arquivo);
 
-  .folha{width:214mm;height:152mm;display:flex;position:relative;overflow:hidden}
-  .painel{width:107mm;height:152mm;position:relative;overflow:hidden}
-  /* 2mm de sangria + 5mm de respiro = 7mm da borda física */
-  .seg{position:absolute;top:7mm;bottom:7mm;left:7mm;right:7mm;display:flex;flex-direction:column}
-  .painel.esq .seg{right:6mm}
-  .painel.dir .seg{left:6mm}
-  .navy{background:#0f1c29;color:#fff}
-  .creme{background:#fbfaf6}
-
-  /* ── capa (p1) ── */
-  .capa-hero{position:absolute;inset:0;background:url('${HERO}') center/cover}
-  .capa-hero::after{content:'';position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(15,28,41,.62) 0%,rgba(15,28,41,.28) 38%,rgba(15,28,41,.94) 78%,#0f1c29 100%)}
-  .capa-cont{z-index:2;display:flex;flex-direction:column}
-  .marca{font-size:6.4pt;letter-spacing:.4em;text-transform:uppercase;color:#c9a84c;font-weight:700}
-  .marca b{display:block;font-size:12.5pt;letter-spacing:1.2pt;color:#fff;font-weight:800;margin-top:1.2mm}
-  .capa-tit{margin-top:auto}
-  .capa-tit h1{font-size:26pt;line-height:.97;font-weight:800;letter-spacing:-.6pt}
-  .capa-tit h1 em{font-style:normal;color:#c9a84c;display:block}
-  .capa-sub{font-size:7.6pt;line-height:1.55;opacity:.9;margin-top:3.4mm}
-  .capa-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm;
-    border-top:.7pt solid rgba(201,168,76,.35);margin-top:5mm;padding-top:3.6mm}
-  .capa-nums strong{display:block;font-size:13pt;color:#c9a84c;font-weight:800;line-height:1}
-  .capa-nums span{display:block;font-size:5.2pt;letter-spacing:.09em;text-transform:uppercase;opacity:.7;margin-top:1mm}
-
-  /* ── contracapa (p4) ── */
-  .cc{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center}
-  .cc-marca{font-size:6.2pt;letter-spacing:.4em;text-transform:uppercase;color:#c9a84c;font-weight:700}
-  .cc-marca b{display:block;font-size:15pt;letter-spacing:1.4pt;color:#fff;font-weight:800;margin-top:1.4mm}
-  .cc-fio{width:14mm;height:.7pt;background:rgba(201,168,76,.5);margin:4.5mm 0}
-  .cc-cham{font-size:9.2pt;line-height:1.5;font-weight:600;max-width:78mm}
-  .cc-cham em{font-style:normal;color:#c9a84c}
-  .cc-qr{width:33mm;height:33mm;background:#fff;padding:2mm;border-radius:2mm;margin:5mm 0 2.6mm}
-  .cc-qr svg{display:block;width:100%;height:100%}
-  .cc-qrleg{font-size:5.4pt;letter-spacing:.16em;text-transform:uppercase;color:#c9a84c;font-weight:700}
-  .cc-site{font-size:7.2pt;opacity:.82;margin-top:1.6mm;word-break:break-all}
-  .cc-pe{margin-top:auto;width:100%;border-top:.7pt solid rgba(255,255,255,.14);padding-top:4mm}
-  .cc-tel{font-size:14pt;font-weight:800;color:#c9a84c;letter-spacing:-.3pt}
-  .cc-end{font-size:6.6pt;line-height:1.65;opacity:.72;margin-top:1.6mm}
-
-  /* ── miolo: MESMO card do A4, reduzido ── */
-  .hd{display:flex;justify-content:space-between;align-items:baseline;
-      border-bottom:1.1pt solid #0f1c29;padding-bottom:1.8mm;margin-bottom:2.6mm}
-  .hd h2{font-size:11pt;font-weight:800;letter-spacing:-.3pt;line-height:1}
-  .hd h2 span{color:#c9a84c}
-  .hd .cnt{font-size:5.2pt;color:#7a7365;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
-
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.9mm;flex:1;min-height:0}
-  .card{border:.6pt solid #e3ddcd;border-radius:1.7mm;overflow:hidden;
-        display:flex;flex-direction:column;background:#fff}
-  .card-img{background-size:cover;background-position:center;background-color:#e8e4d8;
-            position:relative;flex-shrink:0}
-  .badge{position:absolute;top:.8mm;left:.8mm;font-size:3.2pt;font-weight:800;letter-spacing:.06em;
-         text-transform:uppercase;padding:.6mm 1.2mm;border-radius:4mm;color:#fff;line-height:1.15}
-  .b-mcmv{background:#1565c0}.b-alto{background:#0c0c0c;color:#c8a44a}.b-pre{background:#a15e2c}
-  .b-lote{background:#d4520a}.b-cond{background:#1a6b4a}
-
-  .card-b{padding:1.1mm 1.5mm 1.2mm;display:flex;flex-direction:column;flex:1}
-  .constr{font-size:3.5pt;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#a8935c}
-  .card-b h3{font-size:5.9pt;font-weight:800;line-height:1.08;margin-top:.35mm;letter-spacing:-.1pt}
-  .specs{font-size:4pt;color:#6b6559;line-height:1.25;margin-top:.5mm;flex:1;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-  .preco{border-top:.6pt dashed #e3ddcd;padding-top:.7mm;margin-top:auto}
-  .preco span{display:block;font-size:3.4pt;color:#8a8272;text-transform:uppercase;letter-spacing:.08em}
-  .preco strong{display:block;font-size:7.4pt;font-weight:800;color:#1a2b3c;line-height:1.05;margin-top:.2mm}
-  .preco em{display:block;font-style:normal;font-size:3.6pt;color:#8a8272;margin-top:.3mm}
-  .preco-consulte strong{color:#a15e2c;font-size:6.4pt}
-
-  /* as duas grades acompanham a contagem: 2 colunas, linhas = metade arredondada para cima; com mais cards, foto mais baixa */
-  .g-aptos{grid-template-rows:repeat(${Math.ceil(APTOS.length/2)},1fr)} .g-aptos .card-img{height:${APTOS.length>12?5:6}mm}
-  .g-lotes{grid-template-rows:repeat(${Math.ceil(LOTES.length/2)},1fr)} .g-lotes .card-img{height:${LOTES.length>8?5:11}mm}
-
-  .pe{margin-top:2.4mm;border-top:.6pt solid #e3ddcd;padding-top:1.8mm;
-      font-size:4.4pt;color:#8d8676;line-height:1.45}
-  .pe b{color:#0f1c29}
-`;
-
-function card(e, isLote) {
-  const preco = e.p
-    ? `<div class="preco"><span>a partir de</span><strong>R$ ${brl(e.p)}</strong>${isLote ? `<em>R$ ${brl(Math.round(e.p / e.m2))}/m² · ${e.m2.toLocaleString('pt-BR')} m²</em>` : ''}</div>`
-    : `<div class="preco preco-consulte"><span>tabela</span><strong>Sob consulta</strong></div>`;
-  return `
-    <article class="card">
-      <div class="card-img" style="background-image:url('${e.img}')">
-        <span class="badge ${tipoClasse(e.t)}">${e.t}</span>
-      </div>
-      <div class="card-b">
-        <p class="constr">${e.c}</p>
-        <h3>${e.n}</h3>
-        ${isLote ? `<p class="specs">${e.s}</p>` : ''}
-        ${preco}
-      </div>
-    </article>`;
+// ─── selos (com data; a mesma regra do site) ───
+// escassez: desligada no impresso (ESC_MAX = 0): o folder circula por meses e a contagem envelhece;
+// no site ela continua (est até 60 com estEm).
+// tarja: o aviso comercial da fonte única, encurtado para caber na ficha ("10% de desconto — promoção
+// de lançamento (out/2026)" → "10% de desconto (out/2026)"); sem mês ou dia, o gerador para.
+const ESC_MAX = 0;
+const DATA = /\b\d{2}\/\d{4}\b|\b(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)\/\d{4}\b/i;
+function selos(e, lote) {
+  const out = [];
+  if (e.est === 0) throw new Error('GERA-FOLDER: ' + e.n + ' está com est 0 na fonte única (esgotado) — sai do folder pela fonte única');
+  if (typeof e.est === 'number' && e.est <= ESC_MAX && e.estEm)
+    out.push(lote ? (e.est === 1 ? 'último lote' : 'últimos ' + e.est + ' lotes') + ' (' + e.estEm + ')'
+                  : (e.est === 1 ? 'última unidade' : 'últimas ' + e.est + ' unidades') + ' (' + e.estEm + ')');
+  if (e.tarja) {
+    if (!DATA.test(e.tarja)) throw new Error('GERA-FOLDER: a tarja de ' + e.n + ' não tem mês nem dia: ' + e.tarja);
+    const m = /^(.*?)\s+—\s+.*?\s*(\([^()]*\))\s*$/.exec(e.tarja);
+    out.push(m && DATA.test(m[2]) ? m[1] + ' ' + m[2] : e.tarja);
+  }
+  return out;
 }
 
+// ─── ficha (linha da tabela) ───
+// esquerda (.nm): nome · construtora · detalhe (selo MCMV, m² da unidade do preço, "pronto")
+// direita  (.vl): "a partir de" · preço · mês da tabela (ou "pré-lançamento*"; † preços confirmados)
+// selo (.sel): na linha do detalhe quando ela está vazia; senão, numa linha própria embaixo da ficha
+function detalhe(e, lote) {
+  const det = [];
+  if (!lote && /MCMV/.test(e.t || '')) det.push('<span class="tag">MCMV</span>');
+  if (e.m2) det.push((lote ? 'lote de ' : '') + m2(e.m2));
+  if (/Pronto/i.test(e.t || '')) det.push('pronto');
+  return det;
+}
+const linhaSel = e => { const lote = LOTES.includes(e); return detalhe(e, lote).length > 0 && selos(e, lote).length > 0; };
+function ficha(e, lote) {
+  const det = detalhe(e, lote);
+  const sel = selos(e, lote).map(esc).join(' · ');
+  const tab = e.tab ? 'tabela ' + mesDe(e.tab) + (e.conf ? '<sup>†</sup>' : '')
+            : e.prox ? 'pré-lançamento<sup>*</sup>' : '';
+  const vl = e.p
+    ? `<p class="ap">a partir de</p><p class="pr">${brl(e.p)}</p><p class="tb">${tab}</p>`
+    : `<p class="ap">tabela</p><p class="pr pr-c">sob consulta</p><p class="tb"></p>`;
+  const linhaDet = det.length ? `<p class="det">${det.join(' · ').replace('</span> · ', '</span> ')}</p>`
+                 : sel ? `<p class="det sel">${sel}</p>` : '<p class="det"></p>';
+  return `
+        <div class="it" data-k="${e._k}">
+          <div class="nm"><p class="nome">${esc(e.n)}</p><p class="cons">${esc(e.c)}</p>${linhaDet}</div>
+          <div class="vl">${vl}</div>${det.length && sel ? `
+          <p class="sel">${sel}</p>` : ''}
+        </div>`;
+}
+
+// ─── grupos ───
+const FAIXAS = [
+  { ate: 400000, titulo: 'Até R$ 400 mil' },
+  { ate: 800000, titulo: 'De R$ 400 mil a R$ 800 mil' },
+  { ate: Infinity, titulo: 'Acima de R$ 800 mil' },
+];
+const gruposApto = FAIXAS.map((f, i) => ({
+  titulo: f.titulo,
+  itens: APTOS.filter(e => e.p && e.p <= f.ate && (i === 0 || e.p > FAIXAS[i - 1].ate)).sort(porPreco),
+})).filter(g => g.itens.length);
+const semPrecoApto = APTOS.filter(e => !e.p);
+if (semPrecoApto.length) gruposApto.push({ titulo: 'Tabela sob consulta', itens: semPrecoApto });
+
+const TIPO_LOTE = { 'Loteamento': 'Loteamentos', 'Cond. fechado': 'Condomínios fechados' };
+LOTES.forEach(e => { if (!TIPO_LOTE[e.t]) throw new Error('GERA-FOLDER: tipo de lote sem grupo no folder: ' + e.t + ' (' + e.n + ')'); });
+const gruposLote = Object.keys(TIPO_LOTE).map(t => ({ titulo: TIPO_LOTE[t], itens: LOTES.filter(e => e.t === t).sort(porPreco) }))
+  .filter(g => g.itens.length);
+
+if (gruposApto.reduce((t, g) => t + g.itens.length, 0) !== APTOS.length) throw new Error('GERA-FOLDER: apartamento fora de faixa');
+if (gruposLote.reduce((t, g) => t + g.itens.length, 0) !== LOTES.length) throw new Error('GERA-FOLDER: lote fora de grupo');
+
+// ─── divisão em 2 colunas ───
+// Altura equilibrada, sem deixar 1 item sozinho de um grupo em uma coluna. As alturas começam
+// estimadas; depois da 1ª medição no navegador, a divisão é refeita com as alturas medidas.
+const EST = { it: e => (e.n.length > 22 ? 12.2 : 9.6) + (linhaSel(e) ? 2.5 : 0), faixa: 5.4, aside: 17, corte: 2 };
+function dividir(grupos, H, extraCol1) {
+  const seq = [];
+  grupos.forEach((g, gi) => g.itens.forEach(it => seq.push({ gi, it })));
+  const alt = (s, extra) => s.reduce((t, x) => t + H.it(x.it), 0) + new Set(s.map(x => x.gi)).size * H.faixa + extra;
+  let melhor = null;
+  for (let k = 1; k < seq.length; k++) {
+    const a = seq.slice(0, k), b = seq.slice(k);
+    const dentro = a[a.length - 1].gi === b[0].gi;
+    if (dentro && (a.filter(x => x.gi === b[0].gi).length < 2 || b.filter(x => x.gi === b[0].gi).length < 2)) continue;
+    const nota = Math.max(alt(a, extraCol1), alt(b, 0)) + (dentro ? H.corte : 0);
+    if (!melhor || nota < melhor.nota - 1e-6) melhor = { nota, k };
+  }
+  const col = s => {
+    const out = [];
+    s.forEach(x => {
+      const ult = out[out.length - 1];
+      if (ult && ult.gi === x.gi) ult.itens.push(x.it);
+      else out.push({ gi: x.gi, titulo: grupos[x.gi].titulo, total: grupos[x.gi].itens.length, itens: [x.it] });
+    });
+    return out;
+  };
+  const c1 = col(seq.slice(0, melhor.k)), c2 = col(seq.slice(melhor.k));
+  if (c2.length && c1.length && c2[0].gi === c1[c1.length - 1].gi) c2[0].cont = true;
+  return [c1, c2];
+}
+const colunas = (grupos, lote, H, aside) => dividir(grupos, H, aside ? H.aside : 0).map((c, ci) => `
+      <div class="col">${c.map(g => `
+        <div class="gr"><span>${esc(g.titulo)}${g.cont ? ' <i>(cont.)</i>' : ''}</span><span class="gr-n">${g.cont ? '' : g.total}</span></div>${g.itens.map(e => ficha(e, lote)).join('')}`).join('')}${aside && ci === 0 ? aside : ''}
+      </div>`).join('');
+
+// ─── notas de rodapé (só as que o painel usa) ───
+function notas(lista) {
+  const out = [];
+  if (lista.some(e => e.p && !e.tab && e.prox)) out.push('<sup>*</sup> Pré-lançamento: valor sujeito a reajuste no lançamento oficial (sem data divulgada).');
+  const conf = lista.filter(e => e.conf);
+  if (conf.length) out.push(`<sup>†</sup> Preços da tabela indicada, confirmados pela construtora para ${[...new Set(conf.map(e => mesDe(e.conf)))].join(' e ')}.`);
+  return out.map(t => `<p>${t}</p>`).join('');
+}
+
+// ─── números da capa (calculados; nada fixo) ───
+const total = APTOS.length + LOTES.length;
+const construtoras = new Set([...APTOS, ...LOTES].map(e => e.c.split(' · ')[0].trim())).size;   // mesma conta do gera-folheto.js
+const menorDatado = [...APTOS, ...LOTES].filter(e => e.p && e.tab).sort(porPreco)[0];
+const menorGeral = [...APTOS, ...LOTES].filter(e => e.p).sort(porPreco)[0];
+if (menorGeral.p < menorDatado.p) throw new Error('GERA-FOLDER: o menor preço (' + menorGeral.n + ') é de pré-lançamento, sem mês de tabela — revise os números da capa');
+
+// ─── QR (qrgen.js da casa; conferido pelo qrdecode.js) ───
+let TMP = null, nQr = 0;
+function gerarQr(texto, nivel, zona) {
+  const base = path.join(TMP, 'qr-' + (++nQr));
+  const g = cp.spawnSync(process.execPath, [R + 'qrcode/qrgen.js', texto, base, nivel, String(zona)], { encoding: 'utf8' });
+  if (g.status !== 0) throw new Error('qrgen.js falhou: ' + (g.stderr || g.stdout).trim());
+  const d = cp.spawnSync(process.execPath, [R + 'qrcode/qrdecode.js', base + '.matrix.txt'], { encoding: 'utf8' });
+  const lida = (/Mensagem: "([^"]*)"/.exec(d.stdout) || [])[1];
+  const nivelLido = (/nivel ECC lido da matriz: ([LMQH])/.exec(d.stdout) || [])[1];
+  if (d.status !== 0 || !/QR VALIDO/.test(d.stdout) || lida !== texto || nivelLido !== nivel)
+    throw new Error('QR não confere no qrdecode.js: esperado ' + texto + ' (' + nivel + '), lido ' + lida + ' (' + nivelLido + ')');
+  const tam = +fs.readFileSync(base + '.matrix.txt', 'utf8').split('\n')[0].split(' ')[0];
+  const svg = fs.readFileSync(base + '-branco.svg', 'utf8').replace(/width="\d+" height="\d+"/, 'width="100%" height="100%"');
+  return { svg, tam, versao: (tam - 17) / 4, nivel, zona, total: tam + 2 * zona };
+}
+
+// ─── estilo ───
+const css = (Q) => `
+  :root{
+    --fundo:#161616;          /* capa e contracapa (gráfica: preto calçado) */
+    --ouro:#C9A227; --ouro-claro:#F7D77E; --branco:#fff;
+    --tinta:#000;             /* texto e fios do miolo: preto puro, para sair só no K */
+    --fio:#D8CDA8;
+    --fonte-titulo:'Segoe UI',Arial,sans-serif; --peso-titulo:600;
+    --fonte-texto:'Segoe UI',Arial,sans-serif;
+    --corpo-rotulo:${CORPO_ROTULO}pt;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  @page{size:214mm 152mm;margin:0}
+  html,body{width:214mm;height:152mm;background:#fff}
+  body{font-family:var(--fonte-texto);color:var(--tinta);-webkit-print-color-adjust:exact;print-color-adjust:exact;font-kerning:normal}
+  .folha{width:214mm;height:152mm;display:flex;position:relative;overflow:hidden}
+  .painel{width:107mm;height:152mm;position:relative;overflow:hidden;background:#fff}
+  /* segurança: 2 mm de sangria + 4 mm = 6 mm da borda do arquivo; 5 mm do vinco */
+  .seg{position:absolute;top:6mm;bottom:6mm;display:flex;flex-direction:column}
+  .p-esq .seg{left:6mm;right:5mm}
+  .p-dir .seg{left:5mm;right:6mm}
+  sup{font-size:6pt;line-height:0;vertical-align:.3em;margin-left:.1mm}
+  .escuro{background:var(--fundo);color:var(--branco)}
+
+  /* ── marca ── */
+  .logo{line-height:1;padding-top:.6mm}
+  .logo-n{display:block;font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-size:13pt;line-height:1.2;letter-spacing:.24em}
+  .logo-s{display:block;font-size:7pt;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--ouro);margin-top:.8mm}
+
+  /* ── CAPA ── */
+  .capa-foto{flex-shrink:0;height:${CAPA.altura}mm;margin:4.6mm -6mm 0 0;background:url('${CAPA.arquivo}') 0 -${CAPA.y}mm/${CAPA.largura}mm auto no-repeat}
+  .ilustr{font-size:7pt;font-weight:600;text-align:right;margin-top:1.4mm}
+  .capa-baixo{margin-top:auto}
+  .kick-c{font-size:7pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro-claro)}
+  .capa h1{font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-size:30pt;line-height:1.02;letter-spacing:-.3pt;margin-top:2.4mm}
+  .capa h1 em{display:block;font-style:normal;color:var(--ouro)}
+  .capa-sub{font-size:7.6pt;font-weight:600;line-height:1.45;margin-top:3.6mm}
+  .nums{display:grid;grid-template-columns:auto auto 1fr;column-gap:6mm;margin-top:4.4mm;padding-top:3.4mm;border-top:.8pt solid var(--ouro)}
+  .nums strong{display:block;font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-size:14pt;line-height:1.1;color:var(--ouro-claro);white-space:nowrap}
+  .nums span{display:block;font-size:7pt;font-weight:600;line-height:1.3;margin-top:1mm}
+
+  /* ── CONTRACAPA ── */
+  .cc{align-items:center;text-align:center}
+  .fio{width:16mm;height:.8pt;background:var(--ouro);margin:4.2mm auto 0;flex-shrink:0}
+  .cc-meio{margin:auto 0;display:flex;flex-direction:column;align-items:center}
+  .cc-pq h2{font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-size:11pt;line-height:1.2}
+  .cc-pq h2 em{font-style:normal;color:var(--ouro-claro)}
+  .cc-pq p{font-size:7.5pt;font-weight:600;line-height:1.45;max-width:86mm;margin-top:1.6mm}
+  .cc-cham{font-size:8.2pt;font-weight:600;line-height:1.42;max-width:84mm;margin-top:4.2mm}
+  .cc-cham em{font-style:normal;color:var(--ouro-claro)}
+  .cc-qr{width:${Q.site}mm;height:${Q.site}mm;margin-top:4.2mm;border-radius:.8mm;overflow:hidden;background:#fff;flex-shrink:0}
+  .cc-qr svg{display:block;width:100%;height:100%}
+  .cc-qrleg{font-size:7pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro-claro);margin-top:2.2mm}
+  .cc-site{font-size:7.4pt;font-weight:600;margin-top:.9mm}
+  .cc-wa{margin-top:4.6mm}
+  .cc-wa span{display:block;font-size:7pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  .cc-wa strong{display:block;font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-size:18pt;line-height:1.15;color:var(--ouro);margin-top:.6mm}
+  .cc-legal{width:100%;border-top:.8pt solid var(--ouro);padding-top:2.6mm}
+  .cc-legal p{font-size:7pt;font-weight:600;line-height:1.45}
+  .cc-legal p.leg{margin-top:1mm}
+
+  /* ── MIOLO: tabela de preços ── */
+  .tit{flex-shrink:0;display:flex;justify-content:space-between;align-items:flex-end;padding-top:1.2mm;padding-bottom:1.6mm;border-bottom:1pt solid var(--tinta)}
+  .tit h2{font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-size:16pt;line-height:1;letter-spacing:-.1pt;display:flex;align-items:center;gap:2mm}
+  .tit h2 i{display:block;width:1.3mm;height:5.2mm;background:var(--ouro)}
+  .tit .ed{text-align:right;line-height:1.25}
+  .tit .ed b{display:block;font-size:6.3pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  .tit .ed span{display:block;font-size:6.5pt;font-weight:600}
+  .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:3.4mm;margin-top:2mm;align-items:start}
+  .gr{display:flex;justify-content:space-between;align-items:baseline;gap:1mm;background:var(--ouro-claro);
+      padding:.75mm 1.3mm .6mm;margin-top:1.9mm;font-size:6.4pt;font-weight:700;letter-spacing:.07em;text-transform:uppercase;line-height:1.15}
+  .col>.gr:first-child{margin-top:0}
+  .gr i{font-style:normal;font-weight:600;letter-spacing:0;text-transform:none}
+  .gr-n{letter-spacing:0}
+  .it{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:1.3mm;padding:.45mm 0 .5mm;border-bottom:.45pt solid var(--fio)}
+  .nome{font-size:7.2pt;font-weight:700;line-height:1.08}
+  .cons,.det{font-size:6.3pt;line-height:1.1}
+  .det{min-height:1.1em}
+  .tag{display:inline-block;font-size:6pt;font-weight:700;letter-spacing:.04em;line-height:.8;padding:0 .5mm .3mm;border:.4pt solid var(--tinta);border-radius:.5mm;vertical-align:.1mm;margin-top:.4mm}
+  .vl{text-align:right;white-space:nowrap}
+  .ap,.tb{font-size:var(--corpo-rotulo);line-height:1.1}
+  .pr{font-size:8.6pt;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.05pt}
+  .pr-c{font-size:7.2pt}
+  .sel{font-weight:600}
+  .it>.sel{grid-column:1/-1;font-size:6.3pt;line-height:1.1;margin-top:.1mm}
+  .aside{margin-top:2mm;padding:1.6mm 1.8mm;border:.6pt solid var(--ouro);font-size:6.3pt;line-height:1.35}
+  .mapa{display:flex;gap:3.4mm;align-items:center;margin-top:auto;padding:2.6mm;border:.8pt solid var(--ouro);flex-shrink:0}
+  .mapa-qr{width:${Q.mapa}mm;height:${Q.mapa}mm;flex-shrink:0}
+  .mapa-qr svg{display:block;width:100%;height:100%}
+  .mapa b{display:block;font-size:6.6pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  .mapa p{font-size:6.8pt;line-height:1.35;margin-top:1mm}
+  .mapa p.url{font-size:6.3pt;font-weight:600;margin-top:1.2mm}
+  .pe{margin-top:auto;padding-top:1.6mm;flex-shrink:0;border-top:.45pt solid var(--tinta)}
+  .mapa+.pe{margin-top:2.6mm}
+  .pe p{font-size:6.3pt;line-height:1.3}
+  .pe p+p{margin-top:.35mm}
+  .folio{display:flex;justify-content:space-between;font-weight:700;padding-top:1.2mm;margin-top:1.2mm !important;border-top:.45pt solid var(--fio)}
+`;
+
+const logo = `<div class="logo"><span class="logo-n">VIV'AMÉRICA</span><span class="logo-s">Imobiliária</span></div>`;
+const pagina = (titulo, Q, a, b, base) => `<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="robots" content="noindex">${base ? `<base href="${base}">` : ''}<title>${titulo}</title><style>${css(Q)}</style></head>
+<body><div class="folha">${a}${b}</div></body></html>
+`;
+
+// p4 — contracapa (esquerda da frente)
+const p4 = (QS) => `
+<div class="painel p-esq escuro" data-nome="contracapa">
+  <div class="seg cc">
+    ${logo}
+    <div class="fio"></div>
+    <div class="cc-meio" data-elastico="ambos">
+      <div class="cc-pq"><h2>Por que comprar <em>no lançamento?</em></h2><p>${PQ}</p></div>
+      <p class="cc-cham">No site estão a <em>ficha de cada empreendimento</em>, os <em>filtros</em> por tipo e cidade e o <em>mapa dos lotes</em>.</p>
+      <div class="cc-qr" data-qr="site">${QS.svg}</div>
+      <p class="cc-qrleg">Aponte a câmera</p>
+      <p class="cc-site">lancamentos.imoveisvivamerica.com.br</p>
+      <div class="cc-wa"><span>WhatsApp e telefone</span><strong>(19) 98976-9457</strong></div>
+    </div>
+    <div class="cc-legal">
+      <p>Imobiliária Viv'América · CRECI 47394-J</p>
+      <p>Responsável: Fabio Correia · CRECI 303686-F</p>
+      <p>Av. Higienópolis, 70 – Jardim União · Indaiatuba/SP</p>
+      <p class="leg">Edição ${edicao} · Imagens ilustrativas.<br>Preços e condições sujeitos a alteração sem aviso prévio.</p>
+    </div>
+  </div>
+</div>`;
+
+// p1 — capa (direita da frente)
 const p1 = `
-<div class="painel dir navy">
-  <div class="capa-hero"></div>
-  <div class="capa-cont seg">
-    <div class="marca">Imobiliária<b>VIV'AMÉRICA</b></div>
-    <div class="capa-tit">
+<div class="painel p-dir escuro capa" data-nome="capa">
+  <div class="seg">
+    ${logo}
+    <div class="capa-foto"></div>
+    <p class="ilustr">Imagem ilustrativa: ${esc(capaDe.n)}</p>
+    <div class="capa-baixo" data-elastico="antes">
+      <p class="kick-c">Edição ${edicao}</p>
       <h1>Lançamentos<em>Indaiatuba</em></h1>
-      <p class="capa-sub">Os ${APTOS.length + LOTES.length} empreendimentos que estão saindo do papel na cidade — apartamentos, loteamentos e condomínios fechados, reunidos em um só lugar.</p>
-      <div class="capa-nums">
-        <div><strong>${APTOS.length + LOTES.length}</strong><span>Empreendimentos</span></div>
-        <div><strong>${construtoras}</strong><span>Construtoras</span></div>
-        <div><strong>145<small style="font-size:.62em"> mil</small></strong><span>A partir de R$</span></div>
+      <p class="capa-sub">Do Minha Casa Minha Vida ao alto padrão: apartamentos, loteamentos e condomínios fechados, cada um com o preço inicial e o mês da tabela da construtora.</p>
+      <div class="nums">
+        <div><strong>${total}</strong><span>empreendimentos</span></div>
+        <div><strong>${construtoras}</strong><span>construtoras</span></div>
+        <div><strong>${mil(menorDatado.p)}</strong><span>${LOTES.includes(menorDatado) ? 'lotes a partir de' : 'a partir de'}<br>tabela ${mesDe(menorDatado.tab)}</span></div>
       </div>
     </div>
   </div>
 </div>`;
 
-const p4 = `
-<div class="painel esq navy">
+const LEGENDA = '<b>A partir de</b>: menor preço da tabela, no mês indicado. <b>m²</b>: área da unidade desse preço.';
+const ASIDE_MCMV = APTOS.some(e => /MCMV/.test(e.t)) ? `
+        <p class="aside"><span class="tag">MCMV</span> enquadrado no Minha Casa Minha Vida. FGTS e financiamento pela Caixa conforme as regras do programa, a renda e a análise de crédito.</p>` : '';
+
+// p2 — apartamentos (esquerda do verso)
+const p2 = H => `
+<div class="painel p-esq" data-nome="apartamentos">
   <div class="seg">
-    <div class="cc">
-      <div class="cc-marca">Imobiliária<b>VIV'AMÉRICA</b></div>
-      <div class="cc-fio"></div>
-      <p class="cc-cham">Escolha pelo <em>bairro</em>, pela <em>planta</em> ou pelo <em>valor da parcela</em> — e fale com quem conhece Indaiatuba.</p>
-      <div class="cc-qr">${qr}</div>
-      <div class="cc-qrleg">Aponte a câmera</div>
-      <div class="cc-site">lancamentos.imoveisvivamerica.com.br</div>
-      <div class="cc-pe">
-        <div class="cc-tel">(19) 98976-9457</div>
-        <div class="cc-end">Atendimento também por WhatsApp<br>Indaiatuba · São Paulo</div>
-      </div>
+    <header class="tit"><h2><i></i>Apartamentos</h2><p class="ed"><b>Edição ${edicao}</b><span>${APTOS.length} empreendimentos · por faixa de preço</span></p></header>
+    <div class="cols">${colunas(gruposApto, false, H, ASIDE_MCMV)}
     </div>
+    <footer class="pe">
+      <p>${LEGENDA}</p>
+      ${notas(APTOS)}
+    </footer>
   </div>
 </div>`;
 
-const p2 = `
-<div class="painel esq creme">
+// p3 — lotes e condomínios (direita do verso)
+const p3 = (H, QM) => `
+<div class="painel p-dir" data-nome="lotes">
   <div class="seg">
-    <div class="hd"><h2>🏢 <span>Apartamentos</span></h2><span class="cnt">${APTOS.length} · menor ao maior</span></div>
-    <div class="grid g-aptos">${APTOS_ORD.map(e => card(e, false)).join('')}</div>
-    <div class="pe"><b>MCMV Faixa 3:</b> parte dos empreendimentos se enquadra no programa e aceita FGTS como entrada; a Faixa 3 não tem subsídio.</div>
+    <header class="tit"><h2><i></i>Lotes e condomínios</h2><p class="ed"><b>Edição ${edicao}</b><span>${LOTES.length} empreendimentos · por tipo</span></p></header>
+    <div class="cols">${colunas(gruposLote, true, H, '')}
+    </div>
+    <div class="mapa">
+      <div class="mapa-qr" data-qr="mapa">${QM.svg}</div>
+      <div><b>Mapa dos lotes</b><p>Os loteamentos de Indaiatuba no mapa, quadra a quadra, com a metragem e o preço de cada terreno.</p><p class="url">lancamentos.imoveisvivamerica.com.br/<br>mapa-lotes-indaiatuba</p></div>
+    </div>
+    <footer class="pe">
+      <p>${LEGENDA.replace('área da unidade desse preço', 'área do lote desse preço')}</p>
+      ${notas(LOTES)}
+      <p>Preços e condições sujeitos a alteração sem aviso prévio.</p>
+      <p class="folio"><span>Imobiliária Viv'América · CRECI 47394-J</span><span>WhatsApp (19) 98976-9457</span></p>
+    </footer>
   </div>
 </div>`;
 
-const p3 = `
-<div class="painel dir creme">
-  <div class="seg">
-    <div class="hd"><h2>🏞️ <span>Lotes e Condomínios</span></h2><span class="cnt">${LOTES.length} · menor ao maior</span></div>
-    <div class="grid g-lotes">${LOTES_ORD.map(e => card(e, true)).join('')}</div>
-    <div class="pe">Imagens ilustrativas. Preços e disponibilidade sujeitos a alteração sem aviso prévio. <b>Edição outubro/2026.</b></div>
-  </div>
-</div>`;
+// ─── medição (roda DENTRO do navegador; recebe a configuração da face) ───
+async function medir(C) {
+  const MM = 96 / 25.4, PT = 96 / 72, TOL = C.tol * MM;
+  const mm = v => +(v / MM).toFixed(2);
+  const P = [], M = { folgas: {}, menorPt: {}, alturas: {}, faixa: 0, aside: 0, qr: {}, fotos: [], itens: 0 };
+  await document.fonts.ready;
+  const folha = document.querySelector('.folha').getBoundingClientRect();
+  if (Math.abs(mm(folha.width) - 214) > 0.1 || Math.abs(mm(folha.height) - 152) > 0.1)
+    P.push('folha com ' + mm(folha.width) + ' x ' + mm(folha.height) + ' mm (gabarito: 214 x 152)');
 
-const pagina = (a, b) => `<!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><style>${CSS}</style></head>
-<body><div class="folha">${a}${b}</div></body></html>`;
+  // foto da capa: carregou, cobre a caixa e tem resolução para a gráfica
+  for (const el of document.querySelectorAll('.capa-foto')) {
+    const cs = getComputedStyle(el), box = el.getBoundingClientRect();
+    const url = (cs.backgroundImage.match(/url\("?(.*?)"?\)/) || [])[1];
+    const nat = await new Promise(r => { const i = new Image(); i.onload = () => r([i.naturalWidth, i.naturalHeight]); i.onerror = () => r([0, 0]); i.src = url; });
+    if (!nat[0]) { P.push('foto da capa não carregou: ' + url); continue; }
+    const bw = parseFloat(cs.backgroundSize), bh = bw * nat[1] / nat[0];
+    const bx = parseFloat(cs.backgroundPositionX) || 0, by = parseFloat(cs.backgroundPositionY) || 0;
+    const dpi = Math.round(nat[0] / (bw / 96));
+    if (bx > 0.5 || by > 0.5 || bw + bx < box.width - 0.5 || bh + by < box.height - 0.5) P.push('a foto da capa não cobre a caixa');
+    if (dpi < C.dpiMin) P.push('foto da capa com ' + dpi + ' dpi (mínimo ' + C.dpiMin + ')');
+    M.fotos.push({ arquivo: url.split('/').slice(-3).join('/'), dpi, px: nat.join('x') });
+  }
 
-fs.writeFileSync(R + 'folder-frente.html', pagina(p4, p1), 'utf8');
-fs.writeFileSync(R + 'folder-verso.html', pagina(p2, p3), 'utf8');
+  // transparência (opacidade, cor com alfa, degradê, sombra, filtro, mistura): o PDF de gráfica não leva
+  const alfa = c => { const m = /^rgba\([^,]+,[^,]+,[^,]+,\s*([\d.]+)\)$/.exec(c) || /\/\s*([\d.]+)\)$/.exec(c); return m ? +m[1] : 1; };
+  for (const el of document.querySelectorAll('.folha, .folha *')) {
+    if (el.closest('svg')) continue;
+    for (const ps of [null, '::before', '::after']) {
+      const cs = getComputedStyle(el, ps);
+      if (ps && (cs.content === 'none' || cs.content === 'normal')) continue;
+      const cores = [cs.color, cs.backgroundColor, ...['Top', 'Right', 'Bottom', 'Left'].filter(l => parseFloat(cs['border' + l + 'Width']) > 0).map(l => cs['border' + l + 'Color'])];
+      const motivo = +cs.opacity < 1 ? 'opacidade' : cores.some(c => alfa(c) > 0 && alfa(c) < 1) ? 'cor com transparência'
+        : /gradient/.test(cs.backgroundImage) ? 'degradê' : cs.boxShadow !== 'none' || cs.textShadow !== 'none' ? 'sombra'
+        : cs.filter !== 'none' ? 'filtro' : cs.mixBlendMode !== 'normal' ? 'mistura de cores' : '';
+      if (motivo) P.push(`transparência (${motivo}) em ${typeof el.className === 'string' && el.className ? '.' + el.className.split(' ')[0] : el.tagName}${ps || ''}: o PDF de gráfica não leva`);
+    }
+  }
 
-console.log('Folder gerado — 214 × 152 mm (210 × 148 aberto + 2 mm de sangria)');
-console.log('  frente = p4 contracapa | p1 capa');
-console.log('  verso  = p2 ' + APTOS.length + ' apartamentos | p3 ' + LOTES.length + ' lotes');
-console.log('  cards de 44 mm em grade 2 colunas, mesmo desenho do folheto A4');
+  const CAIXAS = '.it,.gr,.tit,.pe,.aside,.mapa,.cc-legal,.nums';
+  for (const painel of document.querySelectorAll('.painel')) {
+    const nome = painel.dataset.nome, escuro = painel.classList.contains('escuro');
+    const S = painel.querySelector('.seg').getBoundingClientRect();
+    let menor = 99;
+    // texto: corpo, peso, área de segurança e caixa de cada letra
+    const tw = document.createTreeWalker(painel, NodeFilter.SHOW_TEXT);
+    for (let n; (n = tw.nextNode());) {
+      const t = n.textContent.replace(/\s+/g, ' ').trim();
+      if (!t) continue;
+      const el = n.parentElement, cs = getComputedStyle(el);
+      const pt = +(parseFloat(cs.fontSize) / PT).toFixed(2), peso = parseInt(cs.fontWeight, 10);
+      menor = Math.min(menor, pt);
+      if (escuro && (pt < C.minEscuro - 0.005 || peso < C.pesoEscuro))
+        P.push(`${nome}: "${t.slice(0, 40)}" com ${pt} pt/${peso} sobre o fundo escuro (mínimo ${C.minEscuro} pt semibold)`);
+      if (!escuro && pt < C.minMiolo - 0.005) P.push(`${nome}: "${t.slice(0, 40)}" com ${pt} pt (mínimo ${C.minMiolo} pt)`);
+      const rg = document.createRange(); rg.selectNodeContents(n);
+      const cx = el.closest(CAIXAS), B = cx && cx.getBoundingClientRect();
+      for (const r of rg.getClientRects()) {
+        if (r.width < 0.5) continue;
+        if (r.left < S.left - TOL || r.right > S.right + TOL || r.top < S.top - TOL || r.bottom > S.bottom + TOL)
+          P.push(`${nome}: texto fora da área de segurança: "${t.slice(0, 40)}" (esq ${mm(S.left - r.left)} · dir ${mm(r.right - S.right)} · cima ${mm(S.top - r.top)} · baixo ${mm(r.bottom - S.bottom)} mm)`);
+        if (B && (r.left < B.left - TOL || r.right > B.right + TOL || r.top < B.top - TOL || r.bottom > B.bottom + TOL))
+          P.push(`${nome}: letra fora da caixa .${cx.className.split(' ')[0]}: "${t.slice(0, 40)}"`);
+      }
+    }
+    M.menorPt[nome] = menor;
+    // caixa que corta o conteúdo; texto sem quebra mais largo que a linha
+    for (const el of painel.querySelectorAll('.seg *')) {
+      const cs = getComputedStyle(el), t = (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40);
+      if ((cs.overflowX !== 'visible' || cs.overflowY !== 'visible') && (el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1))
+        P.push(`${nome}: caixa .${el.className || el.tagName} corta o conteúdo: "${t}"`);
+      if (cs.whiteSpace === 'nowrap' && t) {
+        const rg = document.createRange(); rg.selectNodeContents(el);
+        if (rg.getBoundingClientRect().width > el.getBoundingClientRect().width + 0.5) P.push(`${nome}: texto sem quebra mais largo que a linha: "${t}"`);
+      }
+    }
+    // fichas: nome encostando no preço; altura de cada uma (para refazer a divisão das colunas)
+    for (const it of painel.querySelectorAll('.it')) {
+      const vl = it.querySelector('.vl').getBoundingClientRect();
+      let dir = 0;
+      for (const p of it.querySelectorAll('.nm > *')) { const rg = document.createRange(); rg.selectNodeContents(p); for (const r of rg.getClientRects()) dir = Math.max(dir, r.right); }
+      if (vl.left - dir < 0.8 * MM) P.push(`${nome}: "${it.querySelector('.nome').textContent}" encosta no preço (${mm(vl.left - dir)} mm)`);
+      M.alturas[it.dataset.k] = mm(it.getBoundingClientRect().height);
+      M.itens++;
+    }
+    for (const g of painel.querySelectorAll('.gr')) M.faixa = Math.max(M.faixa, mm(g.getBoundingClientRect().height + parseFloat(getComputedStyle(g).marginTop) || 0));
+    for (const a of painel.querySelectorAll('.aside')) M.aside = mm(a.getBoundingClientRect().height + parseFloat(getComputedStyle(a).marginTop));
+    // folga: de cada coluna até o bloco de baixo; nos painéis escuros, a soma dos espaços elásticos
+    for (const cols of painel.querySelectorAll('.cols')) {
+      const prox = cols.nextElementSibling, topo = prox.getBoundingClientRect().top;
+      [...cols.children].forEach((col, i) => {
+        const f = mm(topo - col.getBoundingClientRect().bottom);
+        (M.folgas[nome] = M.folgas[nome] || []).push(f);
+        if (f < C.folgaMin) P.push(`${nome}: coluna ${i + 1} com ${f} mm de folga até .${prox.className} (mínimo ${C.folgaMin} mm)`);
+      });
+    }
+    const elas = painel.querySelectorAll('[data-elastico]');
+    if (elas.length) {
+      let f = 0;
+      for (const el of elas) {
+        const r = el.getBoundingClientRect(), ant = el.previousElementSibling, prox = el.nextElementSibling;
+        if (ant) f += r.top - ant.getBoundingClientRect().bottom;
+        if (el.dataset.elastico === 'ambos' && prox) f += prox.getBoundingClientRect().top - r.bottom;
+      }
+      M.folgas[nome] = [mm(f)];
+      if (mm(f) < C.folgaMin) P.push(`${nome}: ${mm(f)} mm de folga (mínimo ${C.folgaMin} mm)`);
+    }
+  }
+
+  // preços: os mesmos da fonte única, todos com área visível
+  if (C.precos) {
+    const vistos = [...document.querySelectorAll('.pr')].map(p => p.textContent.trim());
+    const falta = C.precos.filter(p => !vistos.includes(p)), sobra = vistos.filter(p => !C.precos.includes(p));
+    if (falta.length || sobra.length || vistos.length !== C.precos.length)
+      P.push('preços na página ≠ fonte única' + (falta.length ? ' · faltam ' + falta.join(', ') : '') + (sobra.length ? ' · sobram ' + sobra.join(', ') : ''));
+    for (const p of document.querySelectorAll('.pr')) { const r = p.getBoundingClientRect(); if (r.width < 1 || r.height < 1) P.push('preço sem área visível: ' + p.textContent); }
+    if (M.itens !== C.itens) P.push(M.itens + ' fichas na página; a fonte única tem ' + C.itens);
+  }
+
+  // QR: módulo mínimo e zona de silêncio
+  for (const q of document.querySelectorAll('[data-qr]')) {
+    const k = q.dataset.qr, cfg = C.qr[k], r = q.getBoundingClientRect();
+    const mod = r.width / cfg.total;
+    M.qr[k] = { lado: mm(r.width), modulo: +(mod / MM).toFixed(3), versao: cfg.versao, nivel: cfg.nivel };
+    if (Math.abs(r.width - r.height) > 0.5) P.push('QR ' + k + ' não é quadrado');
+    if (mod / MM < C.moduloMin) P.push(`QR ${k}: módulo de ${(mod / MM).toFixed(3)} mm (mínimo ${C.moduloMin} mm)`);
+    if (cfg.zona === 0) {   // zona de silêncio = o branco em volta, até a borda interna da caixa e até o texto
+      const box = q.closest('.mapa'), b = box.getBoundingClientRect(), bw = parseFloat(getComputedStyle(box).borderLeftWidth);
+      const viz = q.nextElementSibling.getBoundingClientRect();
+      const min = Math.min(r.left - (b.left + bw), r.top - (b.top + bw), (b.bottom - bw) - r.bottom, viz.left - r.right);
+      M.qr[k].zona = +(min / mod).toFixed(1);
+      if (min < 4 * mod - 0.5) P.push(`QR ${k}: zona de silêncio de ${(min / mod).toFixed(1)} módulos (mínimo 4)`);
+    } else M.qr[k].zona = cfg.zona;
+  }
+  return JSON.stringify({ P, M });
+}
+const CFG = { tol: 0.2, minMiolo: 6, minEscuro: 7, pesoEscuro: 600, folgaMin: 2, dpiMin: 250, moduloMin: 0.5 };
+
+// ─── navegador: Edge sem interface, convidado, sem sincronização, perfil próprio ───
+const dorme = ms => new Promise(r => setTimeout(r, ms));
+let edge = null;
+async function abreEdge() {
+  const exe = [process.env['ProgramFiles(x86)'], process.env.ProgramFiles].filter(Boolean)
+    .map(p => path.join(p, 'Microsoft', 'Edge', 'Application', 'msedge.exe')).find(f => fs.existsSync(f));
+  if (!exe) throw new Error('Edge não encontrado: sem ele a checagem não roda e o folder não é gravado');
+  const perfil = path.join(TMP, 'perfil');
+  fs.mkdirSync(perfil);
+  const proc = cp.spawn(exe, ['--headless=new', '--guest', '--allow-browser-signin=false', '--disable-sync', '--no-first-run',
+    '--disable-extensions', '--mute-audio', '--hide-scrollbars', '--remote-debugging-port=0', '--user-data-dir=' + perfil, 'about:blank'],
+    { stdio: 'ignore' });
+  edge = { proc };
+  let porta = null;
+  for (let i = 0; i < 200 && !porta; i++) {
+    const f = path.join(perfil, 'DevToolsActivePort');
+    if (fs.existsSync(f)) porta = +fs.readFileSync(f, 'utf8').split('\n')[0] || null;
+    if (!porta) await dorme(100);
+  }
+  if (!porta) throw new Error('o Edge não abriu a porta de depuração');
+  const lista = await (await fetch(`http://127.0.0.1:${porta}/json/list`)).json();
+  const ws = new WebSocket(lista.find(t => t.type === 'page').webSocketDebuggerUrl);
+  await new Promise((ok, ko) => { ws.addEventListener('open', ok); ws.addEventListener('error', () => ko(new Error('sem conexão com o Edge'))); });
+  let id = 0;
+  const pend = new Map(), ouvintes = new Set();
+  ws.addEventListener('message', ev => {
+    const m = JSON.parse(ev.data);
+    if (m.id && pend.has(m.id)) { const p = pend.get(m.id); pend.delete(m.id); m.error ? p.ko(new Error(m.error.message)) : p.ok(m.result); }
+    else if (m.method) ouvintes.forEach(f => f(m));
+  });
+  const call = (method, params = {}) => new Promise((ok, ko) => { const i = ++id; pend.set(i, { ok, ko }); ws.send(JSON.stringify({ id: i, method, params })); });
+  const evento = (metodo, ms) => new Promise((ok, ko) => {
+    const f = m => { if (m.method === metodo) { clearTimeout(t); ouvintes.delete(f); ok(m); } };
+    const t = setTimeout(() => { ouvintes.delete(f); ko(new Error('tempo esgotado esperando ' + metodo)); }, ms);
+    ouvintes.add(f);
+  });
+  Object.assign(edge, { ws, call, evento });
+  await call('Page.enable'); await call('Runtime.enable'); await call('DOM.enable'); await call('CSS.enable');
+  await call('Emulation.setDeviceMetricsOverride', { width: 809, height: 575, deviceScaleFactor: 1, mobile: false });
+  return edge;
+}
+async function mede(nome, html, cfg, fontesEm) {
+  const f = path.join(TMP, nome + '.html');
+  fs.writeFileSync(f, html, 'utf8');
+  const carregou = edge.evento('Page.loadEventFired', 30000);
+  await edge.call('Page.navigate', { url: pathToFileURL(f).href });
+  await carregou;
+  const r = await edge.call('Runtime.evaluate', { expression: `(${medir.toString()})(${JSON.stringify(cfg)})`, awaitPromise: true, returnByValue: true });
+  if (r.exceptionDetails) throw new Error('medição falhou em ' + nome + ': ' + (r.exceptionDetails.exception || {}).description);
+  const out = JSON.parse(r.result.value);
+  // fonte de verdade: a fonte que o navegador USOU em cada trecho (não a pedida no CSS)
+  const doc = await edge.call('DOM.getDocument', { depth: 0 });
+  for (const sel of fontesEm) {
+    const q = await edge.call('DOM.querySelector', { nodeId: doc.root.nodeId, selector: sel });
+    const usadas = q.nodeId ? (await edge.call('CSS.getPlatformFontsForNode', { nodeId: q.nodeId })).fonts.map(x => x.familyName) : [];
+    if (!usadas.length || usadas.some(n => !/^Segoe UI/.test(n))) out.P.push(`${nome}: "${sel}" saiu em ${usadas.join(', ') || 'nenhuma fonte'} (esperado Segoe UI)`);
+  }
+  return out;
+}
+function fechaEdge() {
+  if (!edge) return;
+  try { edge.ws && edge.ws.close(); } catch (e) { /* já fechado */ }
+  cp.spawnSync('taskkill', ['/PID', String(edge.proc.pid), '/T', '/F'], { stdio: 'ignore' });
+  edge = null;
+}
+function limpa() {
+  fechaEdge();
+  if (!TMP) return;
+  // filhos que sobreviveram ao taskkill: encerra pelo nome da pasta do perfil na linha de comando
+  const marca = path.basename(TMP);
+  const ps = c => cp.spawnSync('powershell', ['-NoProfile', '-NonInteractive', '-Command',
+    `$p = Get-CimInstance Win32_Process -Filter "Name='msedge.exe'" | Where-Object { $_.CommandLine -like '*${marca}*' }; ${c}`], { encoding: 'utf8' });
+  ps('$p | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }');
+  for (let i = 0; i < 30 && fs.existsSync(TMP); i++) {
+    try { fs.rmSync(TMP, { recursive: true, force: true }); } catch (e) { /* arquivo ainda preso */ }
+    if (fs.existsSync(TMP)) Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 300);
+  }
+  const restam = +(ps('@($p).Count').stdout || '0').trim() || 0;
+  console.log(`  Edge encerrado (${restam} processo(s) restante(s)) · pasta temporária apagada: ${fs.existsSync(TMP) ? 'NÃO — ' + TMP : 'sim'}`);
+  TMP = null;
+}
+process.on('SIGINT', () => { limpa(); process.exit(130); });
+
+// ─── execução ───
+(async () => {
+  let codigo = 0;
+  try {
+    TMP = fs.mkdtempSync(path.join(os.tmpdir(), 'gera-folder-'));
+    const QS = gerarQr(URL_SITE, 'H', 4), QM = gerarQr(URL_MAPA, 'M', 0);
+    const Q = { site: +(QS.total * QR_SITE_MODULO).toFixed(2), mapa: QR_MAPA_LADO };
+    const base = pathToFileURL(R).href.replace(/\/?$/, '/');
+    const frente = b => pagina("Folder Viv'América · frente", Q, p4(QS), p1, b);
+    const verso = (H, b) => pagina("Folder Viv'América · verso", Q, p2(H), p3(H, QM), b);
+    const cfgQr = { site: QS, mapa: QM };
+    const precos = [...APTOS, ...LOTES].map(e => e.p ? brl(e.p) : 'sob consulta');
+
+    await abreEdge();
+    const rF = await mede('folder-frente', frente(base), { ...CFG, qr: cfgQr }, ['.logo-n', 'h1', '.cc-pq p', '.cc-legal p']);
+    // verso: 1ª medida com as alturas estimadas; a divisão das colunas é refeita com as alturas medidas
+    const cfgV = { ...CFG, qr: cfgQr, precos, itens: APTOS.length + LOTES.length };
+    let H = EST, rV = await mede('folder-verso', verso(H, base), cfgV, ['.nome', '.pr', '.ap', '.tit h2', '.pe p']);
+    const medido = { it: e => rV.M.alturas[e._k] || EST.it(e), faixa: rV.M.faixa || EST.faixa, aside: rV.M.aside || EST.aside, corte: EST.corte };
+    if (verso(medido, base) !== verso(H, base)) { H = medido; rV = await mede('folder-verso', verso(H, base), cfgV, ['.nome', '.pr', '.ap', '.tit h2', '.pe p']); }
+
+    const problemas = [...rF.P, ...rV.P];
+    const M = { folgas: { ...rF.M.folgas, ...rV.M.folgas }, menorPt: { ...rF.M.menorPt, ...rV.M.menorPt }, qr: { ...rF.M.qr, ...rV.M.qr }, fotos: [...rF.M.fotos, ...rV.M.fotos] };
+    const v = n => String(n).replace('.', ',');
+    console.log('Folder — 214 × 152 mm (210 × 148 aberto + 2 mm de sangria), 1 dobra, fechado 105 × 148');
+    console.log('  frente = p4 contracapa | p1 capa · verso = p2 ' + APTOS.length + ' apartamentos | p3 ' + LOTES.length + ' lotes e condomínios');
+    console.log('  capa: ' + total + ' empreendimentos · ' + construtoras + ' construtoras · a partir de ' + mil(menorDatado.p) + ' (' + menorDatado.n + ', tabela ' + mesDe(menorDatado.tab) + ') · edição ' + edicao);
+    console.log('  apartamentos: ' + gruposApto.map(g => g.titulo + ' ' + g.itens.length).join(' | '));
+    console.log('  lotes: ' + gruposLote.map(g => g.titulo + ' ' + g.itens.length).join(' | '));
+    console.log('  folga (mm): ' + Object.entries(M.folgas).map(([k, f]) => k + ' ' + f.map(v).join(' e ')).join(' · '));
+    console.log('  menor corpo (pt): ' + Object.entries(M.menorPt).map(([k, p]) => k + ' ' + v(p)).join(' · ') + ' — sobre o escuro: mínimo 7 pt semibold');
+    for (const [k, q] of Object.entries(M.qr)) console.log(`  QR ${k}: versão ${q.versao}-${q.nivel}, ${v(q.lado)} mm, módulo ${v(q.modulo)} mm, zona de silêncio ${v(q.zona)} módulos`);
+    for (const f of M.fotos) console.log(`  foto da capa: ${f.arquivo} (${f.px}) a ${f.dpi} dpi`);
+    if (problemas.length) {
+      console.log('\nCHECAGEM REPROVOU — nada foi gravado (' + problemas.length + ' problema(s)):');
+      [...new Set(problemas)].forEach(p => console.log('  · ' + p));
+      codigo = 1;
+    } else {
+      console.log('  checagem no Edge: 0 problema');
+      for (const [arq, html] of [['folder-frente.html', frente('')], ['folder-verso.html', verso(H, '')]]) {
+        const f = SAIDA + arq;
+        const igual = fs.existsSync(f) && fs.readFileSync(f, 'utf8') === html;
+        if (!igual) fs.writeFileSync(f, html, 'utf8');
+        console.log('  ' + arq + ': ' + (igual ? 'sem mudança' : 'gravado'));
+      }
+    }
+  } catch (e) {
+    console.log('ERRO: ' + e.message + ' — nada foi gravado');
+    codigo = 1;
+  } finally {
+    limpa();
+  }
+  process.exitCode = codigo;
+})();

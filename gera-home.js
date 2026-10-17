@@ -228,7 +228,7 @@ function gen(marca, conteudo) {
 // H1 fixo; os números ficam na linha logo abaixo (GEN:numeros), contando a página inteira
 gen('h1', 'Lançamentos imobiliários em Indaiatuba e região');
 gen('numeros', `
-        <p class="hero-numeros"><b>${naPagina.length}</b> ${empreendimentos(naPagina.length)}, <b>${comPrecoPag.length}</b> com preço aberto</p>
+        <p class="hero-numeros"><b>${naPagina.length}</b> ${empreendimentos(naPagina.length)}, ${comPrecoPag.length === naPagina.length ? 'todos' : '<b>' + comPrecoPag.length + '</b>'} com preço aberto</p>
         <p class="hero-edicao">(atualização ${mesAbrev})</p>
         `);
 
