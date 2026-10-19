@@ -187,7 +187,7 @@ let feitos = [], falhas = [];
 // FAQ do m², seção de regiões). O dateModified do Article usa a maior entre
 // esta data e EDICAO.lastmod — nunca a data do build, para não "atualizar"
 // sem mudar nada. Mudou o hub de verdade? Troque aqui e no sitemap.
-const HUBS_ALTERADOS_EM = '2026-10-15';   // 15/10: nos dois hubs a grade de cards vem logo depois do topo e o texto vira guia embaixo; o de condomínios ganha H1 "Condomínios em Indaiatuba" e o H2 com a contagem
+const HUBS_ALTERADOS_EM = '2026-10-19';   // 19/10: na grade, as fotos novas dos cards (Monte Carmelo, Di Italia, Reserva Botânica, Alphaville e Maria Cândida); 15/10: a grade vem logo depois do topo e o texto vira guia embaixo; o de condomínios ganha H1 "Condomínios em Indaiatuba" e o H2 com a contagem
 
 // ─── 0. metadados vivos: title/description/og/twitter/H1 ───
 // Funções compartilhadas com os hubs de lote (abaixo). O title tem teto de

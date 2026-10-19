@@ -163,15 +163,28 @@ function selos(e, lote) {
 // recorte = [cima, direita, baixo, esquerda] em % da foto (object-view-box: inset), para usar só um trecho dela sem
 // gravar arquivo novo — o PDF leva o JPEG inteiro e mostra o trecho; o dpi conferido é o do trecho.
 const MINI_FOTO = {
-  'reserva-botanica-indaiatuba': { arq: 'reserva-botanica-indaiatuba/images/portaria-24h.jpg', pos: '50% 53%' }, // no site, a arte escura do logotipo
-  'monte-carmelo-indaiatuba': { arq: 'monte-carmelo-indaiatuba/images/hero2.jpg' },  // no site, um anúncio cheio de texto
-  'di-italia-indaiatuba': { arq: 'di-italia-indaiatuba/images/mapa.jpg' },           // no site, foto de banco de imagens (pessoa), sem o loteamento
-  // no site, a arte com a família em primeiro plano (no quadro, só as pessoas): o topo da torre da direita, acima delas
-  'itamaraca-indaiatuba': { arq: 'itamaraca-indaiatuba/images/hero.jpg', recorte: [0, 0, 71, 70] },
-  // no site, a vista aérea com o slogan no canto de baixo (no quadro, microtexto ilegível): as 3 torres, sem o slogan
-  'manai-bosque-indaiatuba': { arq: 'manai-bosque-indaiatuba/images/vista-aerea-real.jpg', recorte: [0, 26.4, 20.9, 23.75] },
-  // no site, a fachada com o logotipo "STORIA" e o slogan (no quadro, o logotipo cortado): a mesma fachada, sem texto
+  // no site, a portaria com as torres ao fundo (no quadro, a portaria miúda e as torres cortadas): as 2 torres
+  // inteiras, da perspectiva da fachada da Zarin
+  'itamaraca-indaiatuba': { arq: 'itamaraca-indaiatuba/images/fachada.jpg', recorte: [12.32, 0, 10.27, 15.04] },
+  // no site, as 2 torres numa faixa deitada (no quadro, um pedaço de cada): a torre inteira, com o coroamento
+  'izzi-residence-indaiatuba': { arq: 'izzi-residence-indaiatuba/images/fachada.jpg', recorte: [7.4, 0, 26.5, 0] },
+  // no site, a vista aérea (no quadro, as torres miúdas no meio da cidade): as 2 torres inteiras, ao entardecer
+  'artemis-residencial-indaiatuba': { arq: 'artemis-residencial-indaiatuba/images/fachada.jpg', recorte: [12.2, 0, 9.4, 0] },
+  // no site, a fotomontagem inteira (no quadro, as torres miúdas na paisagem): o mesmo arquivo, fechado nas 4 torres
+  'aurora-indaiatuba': { arq: 'aurora-indaiatuba/images/fotomontagem-card.jpg', recorte: [15.26, 24.55, 7.63, 24.55] },
+  // no site, a fachada recortada numa faixa deitada (fachada-card.jpg): aqui, a fachada inteira, com a altura das torres
   'storia-congesa-indaiatuba': { arq: 'storia-congesa-indaiatuba/images/fachada.jpg' },
+  // no site, a faixa deitada das torres sobre a galeria (no quadro, só o meio das torres): a mesma perspectiva
+  // inteira, do topo das torres até a galeria
+  'espaco-conceicao-indaiatuba': { arq: 'espaco-conceicao-indaiatuba/images/fachada.jpg', recorte: [17.13, 0, 10.19, 0] },
+  // no site, a vista aérea recortada sem o slogan (vista-aerea-card.jpg): aqui, o trecho das 3 torres da frente
+  'manai-bosque-indaiatuba': { arq: 'manai-bosque-indaiatuba/images/vista-aerea-real.jpg', recorte: [0, 26.4, 20.9, 23.75] },
+  // no site, a aérea inteira (no quadro, o campo de terra do topo): o mesmo arquivo, fechado nas quadras
+  'di-italia-indaiatuba': { arq: 'di-italia-indaiatuba/images/mapa.jpg', recorte: [17, 5, 12, 5] },
+  // no site, a portaria inteira (no quadro, o letreiro miúdo): o letreiro, as palmeiras e o início da marquise
+  'reserva-botanica-indaiatuba': { arq: 'reserva-botanica-indaiatuba/images/portaria-card.jpg', recorte: [0, 34, 0, 0] },
+  // no site, a fotomontagem aérea inteira (no quadro, o loteamento miúdo): as quadras e as casas, perto
+  'alphaville-indaiatuba': { arq: 'alphaville-indaiatuba/images/terreno.jpg', recorte: [30, 35, 5, 10] },
 };
 const ehJpeg = arq => { const b = fs.readFileSync(R + arq); return b.length > 3 && b[0] === 0xFF && b[1] === 0xD8 && b[2] === 0xFF; };
 const MINI = new Map(), avisosMini = [];
