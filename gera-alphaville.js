@@ -290,7 +290,7 @@ const HTML = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${esc(TITLE)}</title>
   <meta name="description" content="${esc(DESC)}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta property="og:title" content="${esc(TITLE)}">
   <meta property="og:description" content="${esc(DESC)}">
   <meta property="og:type" content="website">

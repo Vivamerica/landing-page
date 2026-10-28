@@ -293,6 +293,15 @@ function aplicarGA4(h, pagina) {
 }
 
 // ─── ENTIDADE: um só RealEstateAgent por página; os demais nós referenciam o @id ───
+// Página indexável autoriza miniatura grande no resultado do Google (celular e Discover)
+// e trecho sem corte. Sem max-image-preview:large o Google pode limitar a miniatura.
+// Só a forma exata "index, follow": página com noindex não é tocada.
+const ROBOTS_INDEX = '<meta name="robots" content="index, follow">';
+const ROBOTS_GRANDE = '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">';
+function aplicarRobots(h) {
+  return h.split(ROBOTS_INDEX).join(ROBOTS_GRANDE);
+}
+
 const RE_LD = /([ \t]*)<script type="application\/ld\+json">([\s\S]*?)<\/script>([ \t]*\n?)/g;
 const A_ENT = '<!--GEN:entidade-->', B_ENT = '<!--/GEN:entidade-->', MARCA_ENT = '\u0000ENTIDADE\u0000';
 const RE_NOME_IMOB = /viv.?am[eé]rica|viva am[eé]rica/i;
@@ -457,17 +466,19 @@ function main() {
 
   // ─── Fase 3: tag GA4 com guarda + entidade única, em todas as páginas do site ───
   const paginas = listarPaginas();
-  let nGa4 = 0, nEnt = 0;
+  let nGa4 = 0, nEnt = 0, nRob = 0;
   for (const p of paginas) {
     const f = path.join(RAIZ, p);
     const antes = fs.readFileSync(f, 'utf8');
     const comGa4 = aplicarGA4(antes, p);
-    const depois = aplicarEntidade(comGa4, p, p !== MAPA);
+    const comEnt = aplicarEntidade(comGa4, p, p !== MAPA);
+    const depois = aplicarRobots(comEnt);
     if (comGa4 !== antes) nGa4++;
-    if (depois !== comGa4) nEnt++;
-    if (depois !== antes) { grava(f, depois); if (CONFERIR) console.log('  mudaria (GA4/entidade): ' + p); }
+    if (comEnt !== comGa4) nEnt++;
+    if (depois !== comEnt) nRob++;
+    if (depois !== antes) { grava(f, depois); if (CONFERIR) console.log('  mudaria (GA4/entidade/robots): ' + p); }
   }
-  console.log('ga4: ' + nGa4 + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; entidade: ' + nEnt + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + ' (' + paginas.length + ' paginas do site)');
+  console.log('ga4: ' + nGa4 + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; entidade: ' + nEnt + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; robots: ' + nRob + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + ' (' + paginas.length + ' paginas do site)');
 
   // GUARDA: acento duplamente codificado ("HÃ©lade", "ImobiliÃ¡ria", "â€”").
   // Em 02/09/2026 havia 453 ocorrencias em 39 paginas, dentro do JSON-LD

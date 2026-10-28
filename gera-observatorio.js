@@ -891,7 +891,7 @@ const HTML_D = `<!DOCTYPE html>
   <title>${esc(TITLE_D)}</title>
   <meta name="description" content="${esc(DESC_D)}">
   <meta name="keywords" content="observatório de preços indaiatuba, dados abertos lançamentos indaiatuba, preço do m² de lote indaiatuba, preço do m² de apartamento indaiatuba, imprensa imobiliária indaiatuba, cc by 4.0, imobiliária viv'américa">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta property="og:title" content="${esc(TITLE_D)}">
   <meta property="og:description" content="${esc(DESC_D)}">
   <meta property="og:type" content="website">
