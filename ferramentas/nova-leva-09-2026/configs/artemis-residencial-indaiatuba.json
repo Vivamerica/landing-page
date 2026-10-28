@@ -5,7 +5,7 @@
   "data": "2026-09-16",
   "atualizado": "2026-10-12",
   "fonte_tabela": "tabela GPCI de out/2026",
-  "title": "Artemis Residencial Indaiatuba | 3 dorm · Park Meraki",
+  "title": "Artemis Residencial Indaiatuba | 3 dorm desde R$ 555 mil",
   "description": "Artemis Residencial, Park Meraki: 2 torres, 320 apartamentos de 3 dorm com suíte e 2 vagas, de 63,85 e 64,44 m². Desde R$ 555.171 (tabela out/2026).",
   "keywords": "artemis residencial indaiatuba, artemis gpci, apartamento park meraki, apartamento 3 dormitorios indaiatuba, apartamento 2 vagas indaiatuba, lancamento park meraki, apartamento com garden indaiatuba, gpci indaiatuba",
   "schema_tipo": "ApartmentComplex",
@@ -86,7 +86,7 @@
     {
       "label": "Plantas",
       "classe": "cream",
-      "h2": "Três dormitórios com suíte em 63,85 e 64,44 m²",
+      "h2": "Plantas e finais das unidades do Artemis: três dormitórios com suíte em 63,85 e 64,44 m²",
       "paragrafos": [
         "As plantas tipo têm três dormitórios, sendo uma suíte, e duas vagas de garagem. O material da incorporadora apresenta também a possibilidade de dois dormitórios com sala estendida, sem informar se há custo. No térreo ficam os apartamentos Giardino, com garden. Na tabela de outubro/2026, as unidades são estas:"
       ],

@@ -5,7 +5,7 @@
   "data": "2026-09-16",
   "atualizado": "2026-10-15",
   "fonte_tabela": "tabela de vendas Alphaville de out/2026",
-  "title": "Alphaville Indaiatuba | lotes de 511 a 1.205 m² · Itaici",
+  "title": "Alphaville Indaiatuba | lotes desde R$ 908 mil · Itaici",
   "description": "Alphaville Indaiatuba, no Itaici: condomínio fechado com 126 lotes à venda de 511 a 1.205 m² em out/2026, desde R$ 908.480. Ato de 20% e saldo em 60 meses.",
   "keywords": "alphaville indaiatuba, lote alphaville indaiatuba, condominio fechado itaici, lote 1000 m2 indaiatuba, terreno alphaville itaici, condominio de lotes indaiatuba, alphaville lancamento 2026",
   "schema_tipo": "RealEstateListing",
@@ -141,8 +141,9 @@
     {
       "id": "precos",
       "label": "Preços e condições",
-      "h2": "Ato de 20% e saldo em 60 meses",
+      "h2": "Preço dos lotes do Alphaville Indaiatuba: ato de 20% e saldo em 60 meses",
       "paragrafos": [
+        "Entre os 126 lotes disponíveis em 07/10/2026, o menor preço da tabela de vendas de outubro/2026 é R$ 908.480,37, do lote C-11; as custas de escrituração são cobradas à parte.",
         "A tabela de vendas de outubro/2026 usa a mesma estrutura para todos os lotes: 20% de ato e os 80% restantes em uma de duas opções. A primeira parcela vence 30 dias depois, e as parcelas são corrigidas pelo IPCA/IBGE."
       ],
       "tabela2_titulo": "Exemplo com o lote A-03 (539,19 m², R$ 957.618,30)",

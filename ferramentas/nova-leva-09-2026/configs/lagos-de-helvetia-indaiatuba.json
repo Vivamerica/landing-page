@@ -5,7 +5,7 @@
   "data": "2026-09-16",
   "atualizado": "2026-10-12",
   "fonte_tabela": "tabela GPCI de 10/10/2026",
-  "title": "Lagos de Helvetia | lotes de 501 a 2.015 m² · Indaiatuba",
+  "title": "Lagos de Helvetia Indaiatuba | lotes a partir de R$ 901 mil",
   "description": "Lagos de Helvetia, em Indaiatuba: condomínio de lotes da GPCI com lago e clube. Tabela de 10/10/2026 com 36 lotes de 501 a 2.015 m², a R$ 1.800 o m².",
   "keywords": "lagos de helvetia, lagos de helvetia indaiatuba, lote helvetia indaiatuba, condominio fechado helvetia, gpci indaiatuba, terreno condominio indaiatuba, lote 500 m2 indaiatuba",
   "schema_tipo": "RealEstateListing",
@@ -145,8 +145,9 @@
     {
       "id": "precos",
       "label": "Preços e condições",
-      "h2": "Do pagamento em 12 vezes ao saldo em 96 meses",
+      "h2": "Preço dos lotes do Lagos de Helvetia: do pagamento em 12 vezes ao saldo em 96 meses",
       "paragrafos": [
+        "O menor preço da tabela de 10/10/2026 é R$ 901.800,00, de um lote de 501,00 m²; os 36 lotes à venda custam R$ 1.800 o metro quadrado.",
         "A tabela de 10/10/2026 traz três formas de pagamento, calculadas sobre o valor do lote: ato de 10% e 12 mensais sem juros e sem correção; ato de 20% e 24 mensais sem juros, com correção anual pelo IPCA; ou ato de 10% e 36, 48, 60 ou 96 mensais pela tabela Price, com juros de 0,80% ao mês mais IPCA (anual em 36 meses, mensal nos prazos maiores)."
       ],
       "tabela2_titulo": "Exemplo com um lote de 501,00 m² (R$ 901.800,00)",
