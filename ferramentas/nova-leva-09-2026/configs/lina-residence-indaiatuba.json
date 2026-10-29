@@ -1,0 +1,741 @@
+{
+  "slug": "lina-residence-indaiatuba",
+  "nome": "Lina Residence",
+  "categoria": "apartamentos",
+  "data": "2026-10-29",
+  "atualizado": "2026-10-29",
+  "fonte_tabela": "tabela Lofts de out/2026",
+  "title": "Lina Residence Indaiatuba | Lofts · R$ 924 mil · out/2026",
+  "description": "Lina Residence, Cidade Nova I: 2 torres da Lofts com apartamentos de 2 suítes ou 3 dorm, de 85,28 a 101,15 m². Tabela out/2026 a partir de R$ 924.108.",
+  "keywords": "lina residence indaiatuba, lina residence lofts, lofts incorporadora indaiatuba, apartamento cidade nova indaiatuba, apartamento 3 dormitorios indaiatuba, apartamento 2 suites indaiatuba, lancamento rua oswaldo cruz indaiatuba",
+  "schema_tipo": "ApartmentComplex",
+  "schema_desc": "Duas torres na Rua Doutor Oswaldo Cruz, 1438, Cidade Nova I, em Indaiatuba/SP, em terreno de 4.845,60 m²: cada uma com 22 andares tipo de 4 apartamentos e um 23º andar com 2 apartamentos terraço, 90 unidades por torre segundo a incorporadora. Apartamentos tipo de 85,28 a 101,15 m², com 2 suítes ou 3 dormitórios e 2 vagas cobertas; apartamentos terraço de 176,05 a 199,08 m², com 3 suítes e 4 vagas. Lazer no térreo, no mezanino e no rooftop, com piscina com raia de 25 m, quadra poliesportiva, sport bar, coworking, academia e skylounge. Incorporação Lofts.",
+  "unidades_total": 180,
+  "endereco_schema": "Rua Doutor Oswaldo Cruz, 1438 — Cidade Nova I",
+  "preco_min": 924108.0,
+  "preco_max": 1298202.67,
+  "offer_count": 106,
+  "oferta_desc": "Tabelas de lançamento da Lofts com validade em out/2026: 106 apartamentos (36 da Torre 1 e 70 da Torre 2), de 85,28 a 101,15 m², todos com 2 vagas, de R$ 924.108,00 a R$ 1.298.202,67. Condição de todas as unidades: 10% de entrada, 15% em 36 mensais, 9% em 6 semestrais, 4% na entrega e 62% de saldo a financiar, com correção pelo INCC até o habite-se. Entrega programada para 36 meses após o lançamento oficial, data a confirmar com a incorporadora.",
+  "produto_nome": "Lina Residence Indaiatuba — apartamento de 2 suítes com 85,76 m²",
+  "produto_desc": "Apartamentos de 2 suítes ou 3 dormitórios, de 85,28 a 101,15 m², com 2 vagas, na Cidade Nova I, em Indaiatuba/SP. Incorporação Lofts. Tabelas de lançamento com validade em out/2026.",
+  "marca": "Lofts",
+  "lazer": [
+    "Piscina com raia de 25 m, prainha e deck molhado",
+    "Quadra de beach sports",
+    "Futmesa",
+    "Mini quadra de grama natural",
+    "Quadra poliesportiva",
+    "Sport bar",
+    "Área gourmet com churrasqueira e forno de pizza",
+    "Salão de festas",
+    "SPA",
+    "Sauna úmida",
+    "Sala de massagem",
+    "Playground",
+    "Brinquedoteca",
+    "Sala gamer e jogos kids",
+    "Sala de jogos adultos",
+    "Pet place",
+    "Pergolado e praça de convivência",
+    "Coworking",
+    "Lavanderia pay-per-use",
+    "Mercadinho pay-per-use",
+    "Espaço delivery",
+    "Academia no rooftop",
+    "Skylounge com churrasqueira",
+    "Fireplaces com churrasqueira no rooftop",
+    "Vagas para visitantes"
+  ],
+  "marca_topo": [
+    "LINA",
+    "Residence"
+  ],
+  "wa_flutuante": "Olá! Tenho interesse no Lina Residence em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de preços do Lina Residence com as unidades disponíveis.",
+  "hero": {
+    "eyebrow": "Cidade Nova I · Indaiatuba/SP",
+    "sub": "Apartamentos de 2 suítes ou 3 dormitórios na Cidade Nova I, em Indaiatuba",
+    "lead": "Duas torres da Lofts na Rua Doutor Oswaldo Cruz, 1438, na Cidade Nova I, com apartamentos tipo de 2 suítes ou de 3 dormitórios, de 85,28 a 101,15 m², todos com 2 vagas. Nas tabelas de lançamento da Lofts com validade em out/2026 constam 106 unidades, a partir de R$ 924.108,00. Segundo as tabelas, a entrega está programada para 36 meses após o lançamento oficial, cuja data não consta no material: a previsão se confirma com a Lofts.",
+    "preco": "A partir de R$ 924.108,00",
+    "preco_nota": "Torre 2, final 4, 85,76 m² e 2 vagas · 10% de entrada · tabela Lofts de out/2026 · entrega a confirmar com a Lofts",
+    "cta_msg": "Olá! Quero a tabela de preços do Lina Residence com as unidades disponíveis.",
+    "cta_texto": "Receber a tabela",
+    "cta2": {
+      "msg": "Olá! Quero agendar uma visita ao Lina Residence.",
+      "texto": "Agendar visita"
+    },
+    "credito": "Imagem ilustrativa: perspectiva aérea das duas torres no book da incorporadora"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Duas torres de 90 apartamentos na Cidade Nova I",
+      "paragrafos": [
+        "O Lina Residence é o projeto da Lofts Planejamento e Incorporação na Rua Doutor Oswaldo Cruz, 1438, na Cidade Nova I, em Indaiatuba. Em um terreno de 4.845,60 m² sobem duas torres, cada uma com 22 andares tipo de quatro apartamentos e um 23º andar com dois apartamentos terraço: 90 unidades por torre, segundo a incorporadora. A empresa responsável é a Lina Residence Empreendimentos Imobiliários SPE Ltda., uma SPE (Sociedade de Propósito Específico, a empresa criada só para o empreendimento). O nome, conta a Lofts, homenageia Lina, avó materna de Rodrigo Tomaselli.",
+        "A garagem ocupa três pavimentos (o térreo e dois sobressolos), segundo o memorial, e a maior parte do lazer fica no mezanino; no térreo há ainda quadras ao ar livre e o espaço delivery. O rooftop fica a 83,10 m de altura, segundo o book, com academia na Torre 1 e skylounge e fireplaces na Torre 2. O memorial descritivo prevê cinco elevadores: um social e um de serviço em cada torre e mais um na Torre 1 que, segundo o book, atende o lazer do mezanino.",
+        "Os apartamentos tipo têm de 85,28 a 101,15 m², com 2 suítes ou com 3 dormitórios (1 suíte, com opção de planta de 2 suítes), sempre com 2 vagas cobertas e um hobby box, o depósito da unidade. Os quatro apartamentos terraço do 23º andar, de 176,05 a 199,08 m², com 3 suítes e 4 vagas, não aparecem nas tabelas de out/2026."
+      ],
+      "numeros": [
+        {
+          "n": "2",
+          "p": "torres, cada uma com 22 andares tipo e 1 andar de terraços"
+        },
+        {
+          "n": "90",
+          "p": "apartamentos por torre, segundo a incorporadora"
+        },
+        {
+          "n": "25 m",
+          "p": "de raia na piscina do mezanino"
+        },
+        {
+          "n": "106",
+          "p": "unidades nas tabelas de out/2026"
+        }
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "itens": [
+            {
+              "arq": "implantacao.jpg",
+              "alt": "Perspectiva ilustrada vista do alto do mezanino do Lina Residence, com a quadra poliesportiva e a piscina à esquerda, o playground entre as duas torres e o pet place à direita",
+              "w": 1360,
+              "h": 831,
+              "leg": "O mezanino visto de cima (perspectiva ilustrada)"
+            },
+            {
+              "arq": "implantacao-lazer.jpg",
+              "alt": "Planta ilustrada da implantação do lazer do Lina Residence, com quadra de areia, mini quadra de grama, piscina, quadra poliesportiva, playground e salões",
+              "w": 713,
+              "h": 661,
+              "leg": "Implantação do lazer no térreo e no mezanino (planta ilustrada do book)"
+            }
+          ]
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "label": "Plantas",
+      "classe": "cream",
+      "h2": "Plantas do Lina Residence: 2 suítes ou 3 dormitórios, de 85,28 a 101,15 m²",
+      "paragrafos": [
+        "Cada torre tem quatro apartamentos por andar, e a planta muda conforme o final. Os de 2 suítes (Torre 1, finais 1 e 2; Torre 2, finais 3 e 4) têm sala de estar e jantar, cozinha, área de serviço, lavabo e varanda com espaço gourmet. Os de 3 dormitórios (Torre 1, finais 3 e 4; Torre 2, finais 1 e 2) têm uma suíte e dois quartos, com a opção de planta de 2 suítes, segundo o book.",
+        "Na Torre 1, os finais 3 e 4 não têm varanda: a planta técnica deixa no living a infraestrutura para uma área gourmet (hidráulica, esgoto, elétrica e gás). A varanda e o brise móvel ficam nos finais 1 e 2 da Torre 1 e em todos os finais da Torre 2.",
+        "No 23º andar, cada torre tem dois apartamentos terraço com 3 suítes, terraço gourmet com ponto de gás e um SPA para até 4 pessoas, segundo o memorial, além de 4 vagas: 176,05 e 189,72 m² na Torre 1, 199,08 e 176,08 m² na Torre 2. Eles não estão nas tabelas de out/2026; preço e disponibilidade, sob consulta."
+      ],
+      "tabela": {
+        "legenda": "Áreas e dormitórios conforme o book e as plantas da Lofts; vagas conforme o book e o memorial descritivo",
+        "cab": [
+          "Torre e final",
+          "Área",
+          "Dormitórios",
+          "Varanda",
+          "Vagas"
+        ],
+        "num": [
+          1,
+          4
+        ],
+        "linhas": [
+          [
+            "Torre 1 · final 1",
+            "85,28 m²",
+            "2 suítes",
+            "Sim, com brise móvel",
+            "2"
+          ],
+          [
+            "Torre 1 · final 2",
+            "88,33 m²",
+            "2 suítes",
+            "Sim, com brise móvel",
+            "2"
+          ],
+          [
+            "Torre 1 · final 3",
+            "92,48 m²",
+            "3 dorm (1 suíte) ou 2 suítes",
+            "Não; infraestrutura para área gourmet no living",
+            "2"
+          ],
+          [
+            "Torre 1 · final 4",
+            "92,82 m²",
+            "3 dorm (1 suíte) ou 2 suítes",
+            "Não; infraestrutura para área gourmet no living",
+            "2"
+          ],
+          [
+            "Torre 2 · final 1",
+            "95,85 m²",
+            "3 dorm (1 suíte) ou 2 suítes",
+            "Sim, com brise móvel",
+            "2"
+          ],
+          [
+            "Torre 2 · final 2",
+            "101,15 m²",
+            "3 dorm (1 suíte) ou 2 suítes",
+            "Sim, com brise móvel",
+            "2"
+          ],
+          [
+            "Torre 2 · final 3",
+            "87,95 m²",
+            "2 suítes",
+            "Sim, com brise móvel",
+            "2"
+          ],
+          [
+            "Torre 2 · final 4",
+            "85,76 m²",
+            "2 suítes",
+            "Sim, com brise móvel",
+            "2"
+          ],
+          [
+            "Terraço · Torre 1 (23º andar)",
+            "176,05 e 189,72 m²",
+            "3 suítes",
+            "Terraço gourmet com SPA",
+            "4"
+          ],
+          [
+            "Terraço · Torre 2 (23º andar)",
+            "199,08 e 176,08 m²",
+            "3 suítes",
+            "Terraço gourmet com SPA",
+            "4"
+          ]
+        ]
+      },
+      "cards": [
+        {
+          "t": "Em todos os apartamentos tipo",
+          "p": "Persiana integrada automatizada nas janelas das suítes, ponto de água para a geladeira e tubulação seca para telefonia, dados e TV, segundo o memorial descritivo. As plantas mostram lavabo em todos os finais."
+        },
+        {
+          "t": "Varanda gourmet",
+          "p": "Nos finais com varanda, o memorial prevê bancada de granito, cuba inox e ponto de gás sob a bancada; a churrasqueira não é fornecida. O brise móvel é informado pelo book."
+        },
+        {
+          "t": "Pé-direito",
+          "p": "2,70 m na sala, nas suítes, nos dormitórios e na varanda; 2,50 m na cozinha, nos banheiros, na área de serviço, na circulação e no hall. Dado da prancha da Torre 1; para a Torre 2, confirme no atendimento."
+        },
+        {
+          "t": "Acabamento",
+          "p": "Porcelanato na varanda, no lavabo, na cozinha, na área de serviço e nos banheiros; bancadas de mármore no lavabo e nos banheiros e de granito na cozinha. Sala, suítes, dormitórios e circulação são entregues em contrapiso, preparado para piso cerâmico ou de madeira, que fica por conta do comprador, segundo o memorial e a prancha da Torre 1."
+        },
+        {
+          "t": "Ar-condicionado",
+          "p": "Infraestrutura com tubulação de cobre, ponto elétrico e dreno nos dormitórios e em 1 ponto da sala (2 pontos nos apartamentos terraço). As condensadoras ficam na laje técnica, acessada pela janela da área de serviço nos apartamentos tipo e pelo terraço descoberto nos apartamentos terraço."
+        },
+        {
+          "t": "Água quente",
+          "p": "Infraestrutura para aquecedor de passagem a gás, que não é fornecido, e ponto para chuveiro elétrico de 220 V em um banheiro de suíte. Duchas e chuveiros não estão inclusos."
+        },
+        {
+          "t": "Vagas e depósito",
+          "p": "2 vagas cobertas por apartamento tipo e 4 por apartamento terraço, em garagem de três pavimentos, e 1 hobby box por unidade. As tabelas trazem a área do apartamento somada à do depósito."
+        }
+      ],
+      "figuras": [
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "planta-torre-1-finais-1-2.jpg",
+              "alt": "Planta ilustrada dos finais 1 e 2 da Torre 1 do Lina Residence, com duas suítes, sala de estar e jantar, cozinha, área de serviço, lavabo e varanda com espaço gourmet",
+              "w": 709,
+              "h": 582,
+              "leg": "Torre 1, finais 1 e 2: 85,28 e 88,33 m², 2 suítes, com varanda"
+            },
+            {
+              "arq": "planta-torre-1-finais-3-4.jpg",
+              "alt": "Planta ilustrada dos finais 3 e 4 da Torre 1 do Lina Residence, com suíte, dois quartos, dois banheiros, lavabo, sala, jantar, cozinha e área de serviço, sem varanda",
+              "w": 635,
+              "h": 579,
+              "leg": "Torre 1, finais 3 e 4: 92,48 e 92,82 m², desenhada na versão de 3 dormitórios (1 suíte; há opção de 2 suítes), sem varanda"
+            },
+            {
+              "arq": "planta-torre-2-final-1.jpg",
+              "alt": "Planta ilustrada do final 1 da Torre 2 do Lina Residence, com suíte, dois quartos, lavabo, sala, jantar, cozinha e varanda com espaço gourmet",
+              "w": 686,
+              "h": 592,
+              "leg": "Torre 2, final 1: 95,85 m², desenhada na versão de 3 dormitórios (1 suíte)"
+            },
+            {
+              "arq": "planta-torre-2-final-2.jpg",
+              "alt": "Planta ilustrada do final 2 da Torre 2 do Lina Residence na versão de duas suítes, com lavabo, sala, jantar, cozinha e varanda com espaço gourmet",
+              "w": 666,
+              "h": 576,
+              "leg": "Torre 2, final 2: 101,15 m², desenhada na versão de 2 suítes"
+            },
+            {
+              "arq": "planta-torre-2-finais-3-4.jpg",
+              "alt": "Planta ilustrada dos finais 3 e 4 da Torre 2 do Lina Residence, com duas suítes, sala de estar e jantar, cozinha, área de serviço, lavabo e varanda com espaço gourmet",
+              "w": 708,
+              "h": 581,
+              "leg": "Torre 2, finais 3 e 4: 87,95 e 85,76 m², 2 suítes, com varanda"
+            }
+          ]
+        },
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "planta-terraco-torre-1.jpg",
+              "alt": "Planta ilustrada do apartamento terraço da Torre 1 do Lina Residence, com suíte master, duas suítes, sala, jantar, cozinha, SPA e terraço",
+              "w": 857,
+              "h": 352,
+              "leg": "Terraço da Torre 1 (23º andar): 176,05 e 189,72 m², 3 suítes, sob consulta. A churrasqueira desenhada não é entregue: o memorial prevê o ponto para churrasqueira a gás"
+            },
+            {
+              "arq": "planta-terraco-torre-2.jpg",
+              "alt": "Planta ilustrada do apartamento terraço da Torre 2 do Lina Residence, com suíte master, duas suítes, sala, jantar, cozinha, SPA e terraço",
+              "w": 918,
+              "h": 401,
+              "leg": "Terraço da Torre 2 (23º andar): 199,08 e 176,08 m², 3 suítes, sob consulta. A churrasqueira desenhada não é entregue: o memorial prevê o ponto para churrasqueira a gás"
+            }
+          ]
+        },
+        {
+          "classe": "duo",
+          "itens": [
+            {
+              "arq": "varanda.jpg",
+              "alt": "Perspectiva ilustrada da varanda com bancada gourmet, mesa redonda, cadeiras, brise de lâminas pretas e vista da cidade",
+              "w": 1002,
+              "h": 830,
+              "leg": "Varanda com brise móvel, nos finais que têm varanda (perspectiva ilustrada). A churrasqueira da imagem não é entregue: o memorial prevê o ponto de gás"
+            },
+            {
+              "arq": "suite.jpg",
+              "alt": "Perspectiva ilustrada de uma suíte com cama de casal, bancada de estudo, televisão e janela com persiana",
+              "w": 1157,
+              "h": 831,
+              "leg": "Suíte com persiana integrada automatizada (perspectiva ilustrada)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "skip": true,
+      "depois": "lazer"
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
+    {
+      "id": "precos",
+      "label": "Preços",
+      "h2": "106 unidades nas tabelas de outubro/2026",
+      "paragrafos": [
+        "As tabelas de lançamento da Lofts com validade em out/2026 listam 36 apartamentos da Torre 1 e 70 da Torre 2, todos com 2 vagas. Os valores vão de R$ 924.108,00, no apartamento 14 da Torre 2 (final 4, 85,76 m², 2 suítes), a R$ 1.298.202,67, no 212 da Torre 2 (final 2, 101,15 m²). Na Torre 1, o menor é R$ 936.144,00, no apartamento 11 (final 1, 85,28 m²).",
+        "Todas as linhas seguem a mesma condição: 10% de entrada, 15% em 36 parcelas mensais, 9% em 6 parcelas semestrais, 4% na entrega e 62% de saldo a financiar. No apartamento 14 da Torre 2, isso dá R$ 92.410,80 de entrada, 36 parcelas de R$ 3.850,45, 6 semestrais de R$ 13.861,62, R$ 36.964,32 na entrega e R$ 572.946,96 a financiar.",
+        "As parcelas são corrigidas pelo INCC (Índice Nacional de Custo da Construção, da FGV) até o habite-se. Segundo a tabela da Torre 1, depois do habite-se a correção passa a ser pelo IGP-M (Índice Geral de Preços do Mercado) + 1%, e as 6 semestrais podem virar 3 anuais no dobro do valor; a tabela da Torre 2 não traz essas duas observações, que se confirmam no atendimento."
+      ],
+      "tabela": {
+        "legenda": "Tabelas Lofts com validade em out/2026 · por torre e final · todas as unidades com 2 vagas",
+        "cab": [
+          "Torre e final",
+          "Área",
+          "Dormitórios",
+          "Unidades na tabela",
+          "De",
+          "Até"
+        ],
+        "num": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "linhas": [
+          [
+            "Torre 1 · final 1",
+            "85,28 m²",
+            "2 suítes",
+            "7",
+            "R$ 936.144,00",
+            "R$ 1.090.802,40"
+          ],
+          [
+            "Torre 1 · final 2",
+            "88,33 m²",
+            "2 suítes",
+            "7",
+            "R$ 969.192,00",
+            "R$ 1.124.523,08"
+          ],
+          [
+            "Torre 1 · final 3",
+            "92,48 m²",
+            "3 dorm ou 2 suítes",
+            "16",
+            "R$ 995.022,00",
+            "R$ 1.154.188,62"
+          ],
+          [
+            "Torre 1 · final 4",
+            "92,82 m²",
+            "3 dorm ou 2 suítes",
+            "6",
+            "R$ 1.003.139,20",
+            "R$ 1.135.121,32"
+          ],
+          [
+            "Torre 2 · final 1",
+            "95,85 m²",
+            "3 dorm ou 2 suítes",
+            "17",
+            "R$ 1.050.516,00",
+            "R$ 1.230.151,11"
+          ],
+          [
+            "Torre 2 · final 2",
+            "101,15 m²",
+            "3 dorm ou 2 suítes",
+            "16",
+            "R$ 1.108.296,00",
+            "R$ 1.298.202,67"
+          ],
+          [
+            "Torre 2 · final 3",
+            "87,95 m²",
+            "2 suítes",
+            "18",
+            "R$ 947.322,00",
+            "R$ 1.111.026,44"
+          ],
+          [
+            "Torre 2 · final 4",
+            "85,76 m²",
+            "2 suítes",
+            "19",
+            "R$ 924.108,00",
+            "R$ 1.097.654,32"
+          ],
+          [
+            "Total · 2 torres",
+            "85,28 a 101,15 m²",
+            "2 suítes ou 3 dorm",
+            "106",
+            "R$ 924.108,00",
+            "R$ 1.298.202,67"
+          ]
+        ]
+      },
+      "notas": [
+        "Área de cada final conforme a tabela. A tabela também traz a área do apartamento somada à do depósito, que muda de unidade para unidade: no apartamento 14 da Torre 2, por exemplo, são 87,18 m².",
+        "Valores das tabelas de lançamento da Lofts com validade em out/2026, que podem mudar sem aviso prévio; a disponibilidade de cada apartamento se confirma no atendimento, e a venda depende de aprovação de cadastro, segundo a tabela. Os apartamentos terraço do 23º andar não constam nas tabelas.",
+        "As tabelas dizem que a entrega está programada para 36 meses após o lançamento oficial, e a data desse lançamento não consta no material. A previsão de entrega se confirma com a Lofts, e o prazo que vale é o do contrato."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de preços do Lina Residence com as unidades disponíveis.",
+        "texto": "Pedir a tabela completa"
+      }
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Na Rua Doutor Oswaldo Cruz, na Cidade Nova I",
+      "paragrafos": [
+        "O endereço do Lina Residence, segundo o book da Lofts, é Rua Doutor Oswaldo Cruz, 1438, Cidade Nova I, Indaiatuba/SP, CEP 13334-010. A planta de situação mostra o terreno entre a Rua Doutor Oswaldo Cruz e a Rua Tuiuti.",
+        "Segundo a incorporadora, o terreno fica a 1,5 km do Parque Ecológico e da região central de Indaiatuba, perto do Centro Esportivo, e os supermercados Carrefour, Pão de Açúcar, Sumerbol, Cato, Oba Hortifruti e Pague Menos estão num raio de 1,5 km. O mapa do book também marca, sem informar distância, a Praça Roque Torce Filho (Bosque das Cerejeiras), a Praça dos Maçons, o Parque Ecológico Prefeito Dr. Clain Ferrari e o Hospital Santa Ignes."
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "itens": [
+            {
+              "arq": "hero.jpg",
+              "alt": "Perspectiva ilustrada aérea das duas torres do Lina Residence entre as casas da Cidade Nova, em Indaiatuba",
+              "w": 1173,
+              "h": 830,
+              "leg": "As duas torres no bairro (perspectiva ilustrada)"
+            },
+            {
+              "arq": "portaria.jpg",
+              "alt": "Perspectiva ilustrada da portaria do Lina Residence à noite, com letreiro iluminado, jardim vertical e acesso de pedestres envidraçado",
+              "w": 1173,
+              "h": 830,
+              "leg": "Portaria e acesso de pedestres (perspectiva ilustrada)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Perspectivas",
+    "h2": "Áreas comuns nas perspectivas da Lofts",
+    "aviso": "Perspectivas ilustradas do book da Lofts, sem caráter contratual. Móveis, objetos e decoração são sugestão, e a decoração e o paisagismo podem ser atualizados pela incorporadora; os itens entregues são os do memorial descritivo.",
+    "itens": [
+      {
+        "arq": "fachada.jpg",
+        "alt": "Perspectiva ilustrada das duas torres do Lina Residence de dia, com a piscina do mezanino em primeiro plano",
+        "w": 838,
+        "h": 830,
+        "leg": "As duas torres e a piscina do mezanino"
+      },
+      {
+        "arq": "lobby.jpg",
+        "alt": "Perspectiva ilustrada do lobby com sofá, poltronas de corda azul e parede de pedra com prateleiras e plantas",
+        "w": 1171,
+        "h": 830,
+        "leg": "Lobby, entregue mobiliado e decorado"
+      },
+      {
+        "arq": "piscina.jpg",
+        "alt": "Perspectiva ilustrada da piscina com espreguiçadeiras na prainha, pergolado e as torres ao fundo",
+        "w": 1315,
+        "h": 830,
+        "leg": "Piscina com prainha e deck molhado"
+      },
+      {
+        "arq": "piscina-raia.jpg",
+        "alt": "Perspectiva ilustrada da raia da piscina com guarda-corpo de vidro e vista para os prédios da cidade",
+        "w": 889,
+        "h": 682,
+        "leg": "Raia de 25 m"
+      },
+      {
+        "arq": "gourmet.jpg",
+        "alt": "Perspectiva ilustrada da área gourmet com mesas, sofá azul, poltrona e bancada com coifa",
+        "w": 1600,
+        "h": 687,
+        "leg": "Área gourmet (Torre 1)"
+      },
+      {
+        "arq": "salao-de-festas.jpg",
+        "alt": "Perspectiva ilustrada do salão de festas com mesa comprida, cadeiras azuis, adega e luminárias circulares",
+        "w": 1315,
+        "h": 831,
+        "leg": "Salão de festas (Torre 1)"
+      },
+      {
+        "arq": "sport-bar.jpg",
+        "alt": "Perspectiva ilustrada do sport bar com balcão, banquetas, mesas e telão na parede de concreto",
+        "w": 1171,
+        "h": 831,
+        "leg": "Sport bar"
+      },
+      {
+        "arq": "academia.jpg",
+        "alt": "Perspectiva ilustrada da academia com bicicletas ergométricas junto às janelas e aparelhos de musculação ao fundo",
+        "w": 1173,
+        "h": 831,
+        "leg": "Academia de 148 m² no rooftop da Torre 1"
+      },
+      {
+        "arq": "fireplace.jpg",
+        "alt": "Perspectiva ilustrada do fireplace no rooftop ao entardecer, com banco estofado, poltronas e plantas",
+        "w": 1394,
+        "h": 830,
+        "leg": "Fireplace no rooftop da Torre 2"
+      },
+      {
+        "arq": "skylounge.jpg",
+        "alt": "Perspectiva ilustrada do skylounge com mesas de jantar, bancada com banquetas e janelas para a cidade",
+        "w": 1600,
+        "h": 419,
+        "leg": "Skylounge no rooftop da Torre 2"
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Lazer no térreo, no mezanino e no rooftop",
+    "intro": "A lista segue a implantação do book e o memorial descritivo da Lofts. Segundo a incorporadora, as áreas comuns são entregues decoradas, mobiliadas e equipadas, conforme a lista do memorial; a lavanderia e o mercadinho são a exceção (veja a nota).",
+    "itens": [
+      "Térreo: quadra de beach sports com piso de areia",
+      "Térreo: futmesa e mini quadra de grama natural",
+      "Térreo: espaço delivery para encomendas",
+      "Mezanino: piscina com raia de 25 m, prainha e deck molhado",
+      "Mezanino: quadra poliesportiva com alambrado",
+      "Mezanino: sport bar",
+      "Mezanino: área gourmet com churrasqueira, forno de pizza e copa (Torre 1)",
+      "Mezanino: salão de festas com copa (Torre 1)",
+      "Mezanino: SPA, sauna úmida e sala de massagem (Torre 1)",
+      "Mezanino: playground, brinquedoteca e sala gamer e jogos kids",
+      "Mezanino: sala de jogos adultos (Torre 2)",
+      "Mezanino: pet place",
+      "Mezanino: pergolado e praça de convivência",
+      "Mezanino: coworking (Torre 2)",
+      "Mezanino: lavanderia (Torre 1) e mercadinho (Torre 2)",
+      "Rooftop da Torre 1: academia de 148 m²",
+      "Rooftop da Torre 2: skylounge com churrasqueira e fireplaces com churrasqueira",
+      "Lobby e halls de entrada mobiliados e decorados",
+      "15 vagas para visitantes, uma para pessoa com deficiência e uma para idosos"
+    ],
+    "nota": "Lavanderia e mercadinho têm gestão terceirizada, por concessão do condomínio, e cobrança por uso (pay-per-use); o memorial prevê para eles só a infraestrutura, sem máquinas nem equipamentos. A piscina é entregue com climatização da água, não com aquecimento, segundo o memorial."
+  },
+  "ficha": [
+    [
+      "Incorporação",
+      "Lofts Planejamento e Incorporação"
+    ],
+    [
+      "Empresa responsável",
+      "Lina Residence Empreendimentos Imobiliários SPE Ltda.; CNPJ não informado no material"
+    ],
+    [
+      "Endereço",
+      "Rua Doutor Oswaldo Cruz, 1438 — Cidade Nova I, Indaiatuba/SP — CEP 13334-010"
+    ],
+    [
+      "Fase",
+      "Lançamento (tabelas de lançamento de out/2026); andamento da obra não informado"
+    ],
+    [
+      "Terreno",
+      "4.845,60 m²"
+    ],
+    [
+      "Torres",
+      "2, cada uma com 22 andares tipo de 4 apartamentos e um 23º andar com 2 apartamentos terraço"
+    ],
+    [
+      "Unidades",
+      "90 por torre (88 tipo e 2 terraço), segundo a incorporadora"
+    ],
+    [
+      "Apartamentos tipo",
+      "85,28 a 101,15 m², com 2 suítes ou 3 dormitórios (1 suíte, com opção de 2 suítes)"
+    ],
+    [
+      "Apartamentos terraço",
+      "176,05 a 199,08 m², 3 suítes e 4 vagas; fora das tabelas de out/2026"
+    ],
+    [
+      "Vagas",
+      "2 cobertas por apartamento tipo e 4 por apartamento terraço; garagem no térreo e em 2 sobressolos"
+    ],
+    [
+      "Depósito",
+      "1 hobby box por unidade"
+    ],
+    [
+      "Vagas de visitantes",
+      "15 (5 cobertas e 10 descobertas), uma para pessoa com deficiência e uma para idosos"
+    ],
+    [
+      "Elevadores",
+      "5: social e de serviço em cada torre e mais 1 na Torre 1, de uso comum, ligado ao lazer do mezanino segundo o book"
+    ],
+    [
+      "Pé-direito",
+      "2,70 m na sala, nas suítes, nos dormitórios e na varanda; 2,50 m nas demais áreas (prancha da Torre 1)"
+    ],
+    [
+      "Rooftop",
+      "83,10 m de altura, segundo o book"
+    ],
+    [
+      "Piscina",
+      "Raia de 25 m, prainha e deck molhado, com climatização da água"
+    ],
+    [
+      "Preço a partir de",
+      "R$ 924.108,00 · Torre 2, apartamento 14, 85,76 m² · tabela Lofts de out/2026"
+    ],
+    [
+      "Na tabela",
+      "106 unidades: 36 da Torre 1 e 70 da Torre 2"
+    ],
+    [
+      "Condição",
+      "10% de entrada + 15% em 36 mensais + 9% em 6 semestrais + 4% na entrega + 62% a financiar"
+    ],
+    [
+      "Correção",
+      "INCC (Índice Nacional de Custo da Construção, da FGV) até o habite-se; IGP-M (Índice Geral de Preços do Mercado) + 1% depois, segundo a tabela da Torre 1"
+    ],
+    [
+      "Registro de incorporação",
+      "A tabela da Torre 1 informa a incorporação R.3 da matrícula 153.511"
+    ],
+    [
+      "Entrega",
+      "Programada para 36 meses após o lançamento oficial, segundo a tabela; data a confirmar com a Lofts"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um apartamento no Lina Residence?",
+      "a": "Nas tabelas da Lofts com validade em out/2026, os 106 apartamentos listados vão de R$ 924.108,00 a R$ 1.298.202,67. Na Torre 1: final 1 (85,28 m²) de R$ 936.144,00 a R$ 1.090.802,40; final 2 (88,33 m²) de R$ 969.192,00 a R$ 1.124.523,08; final 3 (92,48 m²) de R$ 995.022,00 a R$ 1.154.188,62; final 4 (92,82 m²) de R$ 1.003.139,20 a R$ 1.135.121,32. Na Torre 2: final 1 (95,85 m²) de R$ 1.050.516,00 a R$ 1.230.151,11; final 2 (101,15 m²) de R$ 1.108.296,00 a R$ 1.298.202,67; final 3 (87,95 m²) de R$ 947.322,00 a R$ 1.111.026,44; final 4 (85,76 m²) de R$ 924.108,00 a R$ 1.097.654,32. Os apartamentos terraço não estão nas tabelas, e a disponibilidade de cada unidade se confirma no atendimento."
+    },
+    {
+      "q": "Quais são as plantas do Lina Residence?",
+      "a": "São quatro finais por torre. Com 2 suítes: Torre 1, finais 1 (85,28 m²) e 2 (88,33 m²); Torre 2, finais 3 (87,95 m²) e 4 (85,76 m²). Com 3 dormitórios, sendo 1 suíte, ou 2 suítes: Torre 1, finais 3 (92,48 m²) e 4 (92,82 m²); Torre 2, finais 1 (95,85 m²) e 2 (101,15 m²). Todos têm 2 vagas cobertas e hobby box. No 23º andar há dois apartamentos terraço por torre, de 176,05 a 199,08 m², com 3 suítes e 4 vagas."
+    },
+    {
+      "q": "Todos os apartamentos do Lina Residence têm varanda?",
+      "a": "Não. Têm varanda com espaço gourmet e brise móvel os finais 1 e 2 da Torre 1 e todos os finais da Torre 2. Os finais 3 e 4 da Torre 1 não têm varanda: a planta prevê no living a infraestrutura para uma área gourmet (hidráulica, esgoto, elétrica e gás). Na varanda, o memorial prevê bancada de granito, cuba inox e ponto de gás; a churrasqueira não é fornecida."
+    },
+    {
+      "q": "Quando o Lina Residence será entregue?",
+      "a": "As tabelas de out/2026 dizem que a entrega está programada para 36 meses após o lançamento oficial, mas a data desse lançamento não consta no material recebido. Por isso não publicamos mês nem ano: a previsão se confirma com a Lofts, e o prazo que vale é o do contrato de compra."
+    },
+    {
+      "q": "Como é o pagamento no Lina Residence?",
+      "a": "Todas as unidades das tabelas de out/2026 seguem a mesma condição: 10% de entrada, 15% em 36 parcelas mensais, 9% em 6 parcelas semestrais, 4% na entrega e 62% de saldo a financiar. As parcelas são corrigidas pelo INCC (Índice Nacional de Custo da Construção, da FGV) até o habite-se. A tabela da Torre 1 acrescenta que, depois do habite-se, a correção é pelo IGP-M (Índice Geral de Preços do Mercado) + 1% e que as 6 semestrais podem virar 3 anuais no dobro do valor; para a Torre 2, isso se confirma no atendimento. A venda depende de aprovação de cadastro."
+    },
+    {
+      "q": "Onde fica o Lina Residence?",
+      "a": "Na Rua Doutor Oswaldo Cruz, 1438, na Cidade Nova I, em Indaiatuba/SP, CEP 13334-010, segundo o book da Lofts. Segundo a incorporadora, o terreno fica a 1,5 km do Parque Ecológico e da região central, com supermercados como Carrefour, Pão de Açúcar e Pague Menos num raio de 1,5 km."
+    },
+    {
+      "q": "Quem é a incorporadora do Lina Residence?",
+      "a": "A Lofts Planejamento e Incorporação. A empresa responsável pelo empreendimento é a Lina Residence Empreendimentos Imobiliários SPE Ltda., uma SPE (Sociedade de Propósito Específico, a empresa criada só para o empreendimento); o CNPJ não consta no material recebido."
+    },
+    {
+      "q": "O Lina Residence tem registro de incorporação?",
+      "a": "A tabela da Torre 1 de out/2026 informa a incorporação R.3 da matrícula 153.511. Antes de assinar qualquer proposta, peça a certidão atualizada da matrícula no atendimento."
+    }
+  ],
+  "cta": {
+    "h2": "Quer ver as unidades do Lina Residence?",
+    "p": "Mandamos as tabelas de out/2026 das duas torres, com final, área e valor de cada apartamento listado, e tiramos as dúvidas sobre pagamento e entrega.",
+    "msg": "Olá! Quero a tabela de preços do Lina Residence com as unidades disponíveis.",
+    "texto": "Pedir a tabela",
+    "visita": {
+      "msg": "Olá! Quero agendar uma visita ao Lina Residence.",
+      "texto": "Agendar visita"
+    }
+  },
+  "rodape": {
+    "marca": "LINA RESIDENCE",
+    "linha": "Lina Residence · 2 torres, apartamentos de 85,28 a 101,15 m² com 2 suítes ou 3 dormitórios · Rua Doutor Oswaldo Cruz, 1438 · Cidade Nova I · Indaiatuba, SP",
+    "realizacao": "Incorporação Lofts",
+    "legal": "Perspectivas e plantas ilustrativas, sem caráter contratual; móveis, objetos e decoração são sugestão, e a decoração e o paisagismo das áreas comuns podem ser atualizados pela incorporadora. Acabamentos, medidas e especificações podem variar, e prevalece o memorial descritivo, que permite trocar itens por outros de qualidade equivalente. Valores conforme as tabelas de lançamento da Lofts com validade em out/2026 (Torres 1 e 2), sujeitos a alteração sem aviso prévio; a disponibilidade das unidades é informada no atendimento e a venda depende de aprovação de cadastro. Entrega programada pela incorporadora para 36 meses após o lançamento oficial, com data a confirmar. A tabela da Torre 1 informa a incorporação R.3 da matrícula 153.511. Empresa responsável: Lina Residence Empreendimentos Imobiliários SPE Ltda. Página publicada em out/2026."
+  },
+  "home": {
+    "tipo": "apartamento",
+    "preco": 924108,
+    "dorms": "3",
+    "mcmv": "0",
+    "status": "lancamento",
+    "constr": "Lofts",
+    "badge": "Lançamento · Cidade Nova",
+    "meta": "85,28 a 101,15 m² · 2 suítes ou 3 dorm",
+    "desc": "Duas torres na Rua Dr. Oswaldo Cruz · 2 suítes ou 3 dormitórios com 2 vagas · piscina com raia de 25 m e lazer no rooftop · entrega a confirmar.",
+    "alt": "Perspectiva ilustrada aérea das duas torres do Lina Residence na Cidade Nova",
+    "itemlist": "Lina Residence — 2 torres Lofts na Cidade Nova I, apartamentos de 2 suítes ou 3 dorm de 85,28 a 101,15 m² · a partir de R$ 924.108 (tabela out/2026)"
+  },
+  "llms": {
+    "secao": "apartamentos",
+    "linha": "Incorporação Lofts (Lofts Planejamento e Incorporação; empresa responsável Lina Residence Empreendimentos Imobiliários SPE Ltda., CNPJ não informado no material) na Rua Doutor Oswaldo Cruz, 1438, Cidade Nova I, Indaiatuba, CEP 13334-010. Terreno de 4.845,60 m² com duas torres, cada uma com 22 andares tipo de 4 apartamentos e um 23º andar com 2 apartamentos terraço (90 unidades por torre, segundo a incorporadora); garagem no térreo e em 2 sobressolos, 5 elevadores e rooftop a 83,10 m de altura. Apartamentos tipo com 2 vagas cobertas e hobby box: 2 suítes na Torre 1, finais 1 (85,28 m²) e 2 (88,33 m²), e na Torre 2, finais 3 (87,95 m²) e 4 (85,76 m²); 3 dormitórios com 1 suíte ou 2 suítes na Torre 1, finais 3 (92,48 m²) e 4 (92,82 m²), ambos sem varanda, e na Torre 2, finais 1 (95,85 m²) e 2 (101,15 m²). Apartamentos terraço de 176,05 a 199,08 m², com 3 suítes e 4 vagas, fora das tabelas. Lazer no térreo (beach sports, futmesa, mini quadra), no mezanino (piscina com raia de 25 m, quadra poliesportiva, sport bar, área gourmet, salão de festas, SPA e sauna, coworking, lavanderia e mercadinho pay-per-use) e no rooftop (academia de 148 m², skylounge, fireplaces). Tabelas Lofts com validade em out/2026: 106 unidades (36 na Torre 1, 70 na Torre 2), de R$ 924.108,00 a R$ 1.298.202,67; 10% de entrada + 15% em 36 mensais + 9% em 6 semestrais + 4% na entrega + 62% a financiar, com INCC até o habite-se. Entrega programada para 36 meses após o lançamento oficial, data não informada no material. A tabela da Torre 1 informa a incorporação R.3 da matrícula 153.511."
+  },
+  "mapa": {
+    "rota": "Rua Doutor Oswaldo Cruz, 1438, Cidade Nova I, Indaiatuba - SP",
+    "embed": "https://maps.google.com/maps?q=Rua%20Doutor%20Oswaldo%20Cruz%2C%201438%2C%20Cidade%20Nova%20I%2C%20Indaiatuba%20-%20SP&z=16&hl=pt-BR&output=embed"
+  }
+}

@@ -126,6 +126,20 @@
     "fonte": "tabela oficial da incorporadora, setembro/2026"
   },
   {
+    "nome": "Vila Plaza Residence",
+    "tipo": "apartamento",
+    "incorporadora": "Lógica Empreendimentos",
+    "preco_a_partir_de": 403846,
+    "m2_menor_unidade": 38.89,
+    "preco_m2": 10384,
+    "mes_tabela": "2026-10",
+    "estoque": null,
+    "data_estoque": null,
+    "spec": "studio, studio duplex e 2 suítes · 38,89 a 76,53 m² · Jd. São Conrado",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/vila-plaza-residence-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, outubro/2026"
+  },
+  {
     "nome": "Spazio Italia",
     "tipo": "apartamento",
     "incorporadora": "Zarin",
@@ -137,6 +151,20 @@
     "data_estoque": null,
     "spec": "59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer",
     "url": "https://lancamentos.imoveisvivamerica.com.br/spazio-italia-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, outubro/2026"
+  },
+  {
+    "nome": "Lumina Residencial",
+    "tipo": "apartamento",
+    "incorporadora": "Emmar",
+    "preco_a_partir_de": 519900,
+    "m2_menor_unidade": 39.44,
+    "preco_m2": 13182,
+    "mes_tabela": "2026-10",
+    "estoque": 6,
+    "data_estoque": "2026-10-28",
+    "spec": "1 a 3 suítes · 39,44 a 111,65 m² · Centro · últimas 6 unidades (28/10/2026)",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/lumina-residencial-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
   {
@@ -179,6 +207,20 @@
     "data_estoque": null,
     "spec": "70 a 151 m² · 2-3 vagas + hobby box · previsão de entrega dez/2026",
     "url": "https://lancamentos.imoveisvivamerica.com.br/storia-congesa-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, outubro/2026"
+  },
+  {
+    "nome": "Lina Residence",
+    "tipo": "apartamento",
+    "incorporadora": "Lofts",
+    "preco_a_partir_de": 924108,
+    "m2_menor_unidade": 85.76,
+    "preco_m2": 10776,
+    "mes_tabela": "2026-10",
+    "estoque": null,
+    "data_estoque": null,
+    "spec": "2 suítes ou 3 dorm · 85,28 a 101,15 m² · 2 torres · Cidade Nova I",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/lina-residence-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
   {
@@ -292,6 +334,20 @@
     "spec": "uso misto · residencial de 39,73 a 128,36 m² · Park Meraki",
     "url": "https://lancamentos.imoveisvivamerica.com.br/360-home-office-mall-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, setembro/2026, com os preços confirmados para outubro/2026"
+  },
+  {
+    "nome": "Reserva Luiza Tomaselli",
+    "tipo": "apartamento",
+    "incorporadora": "Lofts",
+    "preco_a_partir_de": 1809776,
+    "m2_menor_unidade": 154.99,
+    "preco_m2": 11677,
+    "mes_tabela": "2026-10",
+    "estoque": null,
+    "data_estoque": null,
+    "spec": "3 suítes · 154,99 m² com depósito · pronto para morar · Vila Castelo Branco",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/reserva-luiza-tomaselli-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
   {
     "nome": "Jardim Dona Maria Cândida",

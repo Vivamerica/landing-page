@@ -1,0 +1,662 @@
+{
+  "slug": "vila-plaza-residence-indaiatuba",
+  "nome": "Vila Plaza Residence",
+  "categoria": "apartamentos",
+  "data": "2026-10-29",
+  "atualizado": "2026-10-29",
+  "fonte_tabela": "tabela Lógica atualizada em 01/10/2026",
+  "title": "Vila Plaza Residence Indaiatuba | R$ 404 mil · out/2026",
+  "description": "Vila Plaza Residence, Jardim São Conrado: studios, duplex e 2 suítes de 38,89 a 76,53 m². Tabela out/2026 a partir de R$ 403.846; 118 livres em 28/10/2026.",
+  "keywords": "vila plaza residence indaiatuba, vila plaza logica empreendimentos, studio indaiatuba, studio duplex indaiatuba, apartamento 2 suites indaiatuba, apartamento jardim sao conrado indaiatuba, apartamento na planta jardim sao conrado, logica empreendimentos indaiatuba",
+  "schema_tipo": "ApartmentComplex",
+  "schema_desc": "Uma torre de 14 andares na Rua Soldado João Carlos de Oliveira Júnior, 2152, Jardim São Conrado, em Indaiatuba/SP, com térreo, rooftop, 4 pavimentos de garagem e 3 elevadores, em terreno de 3.274,96 m² e com 21.677,88 m² de área construída. 224 unidades: studios de 38,89 a 39,26 m², studios duplex de 47,62 e 48,22 m² e apartamentos de 2 dormitórios com 2 suítes de 73,6 a 76,53 m². Lazer no térreo (academia, salão de festas, brinquedoteca, playground, coworking, lavanderia, minimercado e área pet) e no rooftop, com duas áreas gourmet com hidromassagem. Incorporação, realização e construção Lógica Empreendimentos; projeto Sergio Borsari Arquitetura.",
+  "unidades_total": 224,
+  "endereco_schema": "Rua Soldado João Carlos de Oliveira Júnior, 2152 — Jardim São Conrado",
+  "preco_min": 403846.33,
+  "preco_max": 831891.78,
+  "offer_count": 118,
+  "oferta_desc": "118 unidades livres no espelho de vendas recebido em 28/10/2026 (52 studios, 25 studios duplex e 41 apartamentos de 2 dormitórios com 2 suítes), com valores da tabela Lógica atualizada em 01/10/2026 de R$ 403.846,33 a R$ 831.891,78. Condições da tabela: à vista com 10% de desconto, ou ato de 6%, 30% em 12 parcelas e 64% a financiar, com correção anual pelo INCC-M durante as obras. Entrega a confirmar com a incorporadora.",
+  "produto_nome": "Vila Plaza Residence Indaiatuba — studio de 38,89 m² no Jardim São Conrado",
+  "produto_desc": "Studios de 38,89 a 39,22 m², studios duplex de 47,62 e 48,22 m² e apartamentos de 2 dormitórios com 2 suítes de 73,6 a 76,53 m² no Jardim São Conrado, em Indaiatuba/SP. Incorporação e construção Lógica Empreendimentos. Tabela atualizada em 01/10/2026.",
+  "marca": "Lógica Empreendimentos",
+  "lazer": [
+    "Praça externa",
+    "Área pet",
+    "Lobby",
+    "Academia",
+    "Salão de festas master com copa",
+    "Brinquedoteca",
+    "Playground",
+    "Coworking",
+    "Lavanderia",
+    "Minimercado",
+    "Área gourmet 1 com hidromassagem no rooftop",
+    "Área gourmet 2 com hidromassagem no rooftop",
+    "Praça no rooftop",
+    "Vagas para visitantes"
+  ],
+  "marca_topo": [
+    "VILA PLAZA",
+    "Residence"
+  ],
+  "wa_flutuante": "Olá! Tenho interesse no Vila Plaza Residence em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de preços do Vila Plaza Residence com as unidades disponíveis.",
+  "hero": {
+    "eyebrow": "Jardim São Conrado · Indaiatuba/SP",
+    "sub": "Studios, duplex e apartamentos de 2 suítes no Jardim São Conrado, em Indaiatuba",
+    "lead": "Uma torre de 14 andares da Lógica Empreendimentos na Rua Soldado João Carlos de Oliveira Júnior, 2152, no Jardim São Conrado, com studios de 38,89 a 39,26 m², studios duplex de 47,62 e 48,22 m² e apartamentos de 2 dormitórios com 2 suítes de 73,6 a 76,53 m². Entre as 118 unidades livres no espelho de vendas recebido em 28/10/2026, os valores da tabela da Lógica atualizada em 01/10/2026 partem de R$ 403.846,33 (studio de 38,89 m²). O material não traz data de entrega: a previsão se confirma com a Lógica.",
+    "preco": "A partir de R$ 403.846,33",
+    "preco_nota": "studio de 38,89 m² no 2º andar, menor valor entre as unidades livres em 28/10/2026 · tabela Lógica atualizada em 01/10/2026 · entrega a confirmar com a Lógica",
+    "cta_msg": "Olá! Quero a tabela de preços do Vila Plaza Residence com as unidades disponíveis.",
+    "cta_texto": "Receber a tabela",
+    "cta2": {
+      "msg": "Olá! Quero agendar uma visita ao Vila Plaza Residence.",
+      "texto": "Agendar visita"
+    },
+    "credito": "Imagem ilustrativa: perspectiva da fachada no material da Lógica Empreendimentos"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Uma torre de 14 andares com studios, duplex e apartamentos de 2 suítes",
+      "paragrafos": [
+        "O Vila Plaza Residence é o projeto da Lógica Empreendimentos, que assina a incorporação, a realização e a construção, na Rua Soldado João Carlos de Oliveira Júnior, 2152, no Jardim São Conrado, em Indaiatuba. A arquitetura é do escritório Sergio Borsari Arquitetura. É uma torre em terreno de 3.274,96 m², com 21.677,88 m² de área construída: térreo, 14 andares de apartamentos, um pavimento de rooftop e 4 de garagem, com 3 elevadores.",
+        "Cada andar tem 13 apartamentos: studios nos finais 01 a 03, 12 a 14 e 17 a 19, e apartamentos de 2 suítes nos finais 04, 05, 15 e 16. Os 42 studios duplex, finais 06 a 11, têm dois níveis e são numerados nos andares ímpares. No espelho de vendas recebido em 28/10/2026 são 224 unidades: 118 livres, 105 vendidas e 1 em reserva.",
+        "Segundo a ficha técnica da incorporadora, os apartamentos têm pé-direito de 2,80 m, saem com revestimento nas áreas molhadas e com infraestrutura completa de ar-condicionado (os aparelhos não são citados), e a mobília das áreas comuns é entregue pela construtora. Há 19 vagas para visitantes. A data de entrega não consta no material recebido e se confirma com a Lógica."
+      ],
+      "numeros": [
+        {
+          "n": "1",
+          "p": "torre de 14 andares, com 3 elevadores"
+        },
+        {
+          "n": "224",
+          "p": "unidades no espelho de vendas"
+        },
+        {
+          "n": "3",
+          "p": "tipologias: studio, studio duplex e 2 suítes"
+        },
+        {
+          "n": "118",
+          "p": "unidades livres no espelho recebido em 28/10/2026"
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "label": "Plantas",
+      "classe": "cream",
+      "h2": "Plantas do Vila Plaza: studio, studio duplex e 2 dormitórios com 2 suítes, de 38,89 a 76,53 m²",
+      "paragrafos": [
+        "O studio junta cozinha linear, mesa, sala e área de dormir num só ambiente, com banheiro à parte. O studio duplex tem dois níveis ligados por escada: embaixo, cozinha, sala de estar e jantar e lavabo; em cima, o quarto com bancada de estudo e o banheiro. O apartamento de 2 dormitórios tem as duas como suítes, além de sala de estar e jantar, cozinha, lavabo e varanda, segundo a planta ilustrada.",
+        "Na tabela de out/2026 só aparecem studios dos finais 01, 02, 03, 17, 18 e 19, de 38,89 a 39,22 m²; os finais 12, 13 e 14 estão vendidos em todos os andares, segundo o espelho. Onde a apresentação e a tabela divergem na área, como nos finais 02 e 03 (39,22 m² na apresentação, 38,89 m² na tabela), esta página usa a tabela."
+      ],
+      "tabela": {
+        "legenda": "Tipologias e finais conforme a tabela de out/2026 e a relação de vagas; vagas pela ficha técnica da apresentação",
+        "cab": [
+          "Tipologia",
+          "Área",
+          "Finais",
+          "Vagas",
+          "No prédio"
+        ],
+        "num": [
+          1,
+          3,
+          4
+        ],
+        "linhas": [
+          [
+            "Studio",
+            "38,89 a 39,26 m²",
+            "01 a 03, 12 a 14 e 17 a 19",
+            "1",
+            "126"
+          ],
+          [
+            "Studio duplex (2 níveis)",
+            "47,62 m² (finais 07 a 11) e 48,22 m² (final 06)",
+            "06 a 11, numerados nos andares ímpares",
+            "2",
+            "42"
+          ],
+          [
+            "2 dormitórios com 2 suítes",
+            "73,6 m² (04 e 16), 73,96 m² (05) e 76,53 m² (15)",
+            "04, 05, 15 e 16",
+            "2",
+            "56"
+          ]
+        ]
+      },
+      "cards": [
+        {
+          "t": "Em todos os apartamentos",
+          "p": "Pé-direito de 2,80 m, revestimento nas áreas molhadas e infraestrutura completa de ar-condicionado, segundo a ficha técnica da incorporadora. Os aparelhos não são citados."
+        },
+        {
+          "t": "Vaga de garagem",
+          "p": "Pela ficha técnica, 1 vaga por studio e 2 por duplex e por apartamento de 2 suítes. Na relação de vagas recebida, alguns studios dos primeiros andares aparecem com vaga descoberta e alguns com 2 vagas: a vaga de cada unidade se confirma no atendimento."
+        },
+        {
+          "t": "Varanda do 2 suítes",
+          "p": "A planta ilustrada desenha uma varanda com bancada e mesa ao lado da sala. O que vem instalado nela segue o memorial descritivo, disponível para consulta com a incorporadora."
+        },
+        {
+          "t": "Face do sol",
+          "p": "A planta do pavimento, na apresentação da incorporadora, marca o pôr do sol junto ao final 05 e o nascer do sol junto ao final 16."
+        }
+      ],
+      "figuras": [
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "planta-studio.jpg",
+              "alt": "Planta ilustrada do studio do Vila Plaza Residence, com cozinha linear, mesa de jantar, sofá, área de dormir com cama de casal e banheiro",
+              "w": 1600,
+              "h": 1543,
+              "leg": "Studio, 38,89 a 39,26 m² conforme o final (planta ilustrada)"
+            },
+            {
+              "arq": "planta-2-suites.jpg",
+              "alt": "Planta ilustrada do apartamento de 2 dormitórios com 2 suítes do Vila Plaza Residence, com varanda, sala de estar e jantar, cozinha, lavabo e duas suítes com banheiro",
+              "w": 1600,
+              "h": 1431,
+              "leg": "2 dormitórios com 2 suítes, 73,6 a 76,53 m² conforme o final (planta ilustrada)"
+            },
+            {
+              "arq": "planta-studio-duplex-1.jpg",
+              "alt": "Planta ilustrada do nível inferior do studio duplex do Vila Plaza Residence, com cozinha, sala de estar e jantar, lavabo e escada",
+              "w": 1600,
+              "h": 1187,
+              "leg": "Studio duplex, nível inferior: cozinha, sala e lavabo"
+            },
+            {
+              "arq": "planta-studio-duplex-2.jpg",
+              "alt": "Planta ilustrada do nível superior do studio duplex, com quarto, bancada de estudo, banheiro com chuveiro e escada",
+              "w": 1600,
+              "h": 1190,
+              "leg": "Studio duplex, nível superior: quarto e banheiro"
+            }
+          ]
+        },
+        {
+          "classe": "galeria",
+          "itens": [
+            {
+              "arq": "studio-sala.jpg",
+              "alt": "Perspectiva ilustrada do studio decorado, com mesa redonda de jantar, cozinha linear com geladeira e sofá junto à janela",
+              "w": 1600,
+              "h": 1000,
+              "leg": "Studio: cozinha, jantar e sala"
+            },
+            {
+              "arq": "studio-quarto.jpg",
+              "alt": "Perspectiva ilustrada da área de dormir do studio, com cama de casal, estante vazada e bancada de trabalho ao lado do sofá",
+              "w": 1600,
+              "h": 1000,
+              "leg": "Studio: área de dormir"
+            },
+            {
+              "arq": "studio-duplex-sala.jpg",
+              "alt": "Perspectiva ilustrada do nível inferior do studio duplex, com cozinha com balcão, mesa de jantar oval e sofá",
+              "w": 1600,
+              "h": 1000,
+              "leg": "Studio duplex: cozinha e sala"
+            },
+            {
+              "arq": "studio-duplex-quarto.jpg",
+              "alt": "Perspectiva ilustrada do quarto do studio duplex, com cama de casal, bancada de estudo junto à janela e divisória de ripas de madeira",
+              "w": 1600,
+              "h": 1000,
+              "leg": "Studio duplex: quarto no nível superior"
+            },
+            {
+              "arq": "apto-2-suites-sala.jpg",
+              "alt": "Perspectiva ilustrada da sala de estar e jantar do apartamento de 2 suítes, com sofá, mesa redonda e aparador",
+              "w": 1600,
+              "h": 1000,
+              "leg": "2 suítes: sala de estar e jantar"
+            },
+            {
+              "arq": "apto-2-suites-cozinha.jpg",
+              "alt": "Perspectiva ilustrada da varanda decorada do apartamento de 2 suítes, com bancada com pia e grelha, adega, balcão com banquetas, mesa de jantar e vista da cidade",
+              "w": 1600,
+              "h": 1000,
+              "leg": "2 suítes: varanda decorada (o que é entregue segue o memorial)"
+            },
+            {
+              "arq": "apto-2-suites-suite.jpg",
+              "alt": "Perspectiva ilustrada de uma suíte do apartamento de 2 suítes, com cama de casal, bancada com televisão e armário",
+              "w": 1600,
+              "h": 1000,
+              "leg": "2 suítes: suíte"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "skip": true,
+      "depois": "lazer"
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
+    {
+      "id": "precos",
+      "label": "Preços",
+      "h2": "118 unidades livres em 28/10/2026, de R$ 403.846,33 a R$ 831.891,78",
+      "paragrafos": [
+        "A tabela da Lógica atualizada em 01/10/2026 (versão 10.2026) lista 119 unidades. No espelho de vendas recebido em 28/10/2026, 118 delas estão livres e uma, a 118, está em reserva. Entre as livres, os valores vão de R$ 403.846,33, nos studios 202, 203 e 217 (38,89 m², 2º andar), a R$ 831.891,78, no apartamento 1115 (2 suítes, 76,53 m², 11º andar). Em cada final, o preço sobe com o andar.",
+        "A disponibilidade de cada unidade e a vaga de garagem que vai com ela se confirmam no atendimento, junto com a tabela atualizada."
+      ],
+      "tabela": {
+        "legenda": "Unidades livres no espelho de vendas recebido em 28/10/2026 · valores da tabela Lógica atualizada em 01/10/2026 · por tipologia e final",
+        "cab": [
+          "Tipologia",
+          "Área",
+          "Finais",
+          "Livres",
+          "De",
+          "Até"
+        ],
+        "num": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "linhas": [
+          [
+            "Studio",
+            "38,89 m²",
+            "02, 03, 17 e 18",
+            "34",
+            "R$ 403.846,33",
+            "R$ 443.994,80"
+          ],
+          [
+            "Studio",
+            "38,95 m²",
+            "19",
+            "9",
+            "R$ 404.469,39",
+            "R$ 444.679,80"
+          ],
+          [
+            "Studio",
+            "39,22 m²",
+            "01",
+            "9",
+            "R$ 404.891,44",
+            "R$ 447.762,30"
+          ],
+          [
+            "Studio duplex",
+            "47,62 m²",
+            "07 a 11",
+            "24",
+            "R$ 520.527,87",
+            "R$ 552.337,90"
+          ],
+          [
+            "Studio duplex",
+            "48,22 m²",
+            "06 (só a 106)",
+            "1",
+            "R$ 527.086,39",
+            "R$ 527.086,39"
+          ],
+          [
+            "2 dormitórios com 2 suítes",
+            "73,6 m²",
+            "04 e 16",
+            "23",
+            "R$ 746.408,15",
+            "R$ 822.389,82"
+          ],
+          [
+            "2 dormitórios com 2 suítes",
+            "73,96 m²",
+            "05",
+            "14",
+            "R$ 750.059,06",
+            "R$ 826.412,38"
+          ],
+          [
+            "2 dormitórios com 2 suítes",
+            "76,53 m²",
+            "15",
+            "4",
+            "R$ 794.712,26",
+            "R$ 831.891,78"
+          ]
+        ]
+      },
+      "tabela2_titulo": "Duas formas de pagar",
+      "tabela2_paragrafos": [
+        "A tabela traz duas condições, iguais para todas as unidades. Durante as obras, as parcelas e o saldo são corrigidos uma vez por ano pelo INCC-M, uma versão do INCC (Índice Nacional de Custo da Construção, da FGV, que mede a variação do custo de construir). O exemplo usa o studio 202, de R$ 403.846,33."
+      ],
+      "tabela2": {
+        "cab": [
+          "Forma",
+          "Condição da tabela",
+          "No studio 202"
+        ],
+        "linhas": [
+          [
+            "À vista",
+            "10% de desconto sobre o valor da tabela",
+            "R$ 363.461,70"
+          ],
+          [
+            "Parcelado",
+            "Ato de 6% + 30% em 12 parcelas + 64% a financiar, com correção anual pelo INCC-M",
+            "Ato de R$ 24.230,78 + 12 parcelas de R$ 10.096,16 + R$ 258.461,65 a financiar"
+          ]
+        ]
+      },
+      "notas": [
+        "A tabela não informa se as 12 parcelas são mensais, quando vence a primeira, nem quando e como os 64% são financiados; o índice de correção depois da obra também não consta. Essas condições se confirmam com a Lógica no atendimento, e o financiamento dos 64% depende de análise de crédito.",
+        "Valores da tabela Lógica atualizada em 01/10/2026, sujeitos a alteração sem aviso. Contagem de unidades livres conforme o espelho de vendas recebido em 28/10/2026."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de preços do Vila Plaza Residence com as unidades disponíveis.",
+        "texto": "Pedir a tabela completa"
+      }
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Na Rua Soldado João Carlos de Oliveira Júnior, no Jardim São Conrado",
+      "paragrafos": [
+        "O endereço do Vila Plaza Residence, segundo a apresentação da Lógica, é Rua Soldado João Carlos de Oliveira Júnior, 2152, no Jardim São Conrado, em Indaiatuba; a planta do pavimento marca a entrada por essa rua. O CEP não consta no material.",
+        "No mapa ilustrado da apresentação, a incorporadora indica estes tempos até o entorno, sem dizer se são de carro: Parque Ecológico, Burger King e Mercado Dia a 1 minuto; Assaí Atacadista a 3; Parque Temático a 5; Parque Mall a 6; SESI (Serviço Social da Indústria) a 8; Hospital Augusto de Oliveira Camargo (HAOC), Polo Shopping e Rodovia SP-75 a 10; e Faculdade Unimax a 12. A planta do pavimento desenha o Parque Ecológico do lado dos duplex e dos finais 12 a 14, o Parque Temático do lado dos finais 15 e 16 e o Mercado Dia do lado dos finais 01 a 03."
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "itens": [
+            {
+              "arq": "fachada-lateral.jpg",
+              "alt": "Perspectiva ilustrada da torre do Vila Plaza Residence vista de outro ângulo, com a fachada branca e as varandas em azul-marinho",
+              "w": 1600,
+              "h": 1067,
+              "leg": "A torre vista de outro ângulo (perspectiva ilustrada)"
+            },
+            {
+              "arq": "fachada.jpg",
+              "alt": "Perspectiva ilustrada da torre do Vila Plaza Residence vista da rua, com muro verde, árvores e a placa do empreendimento na entrada",
+              "w": 1178,
+              "h": 1360,
+              "leg": "Vista da rua, com a entrada (perspectiva ilustrada)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Perspectivas",
+    "h2": "Como o projeto foi desenhado",
+    "aviso": "Perspectivas ilustradas do material da Lógica Empreendimentos, sem caráter contratual. Móveis e utensílios das ilustrações não fazem parte do contrato de compra e venda nem do memorial descritivo; segundo a incorporadora, as áreas comuns são entregues equipadas conforme o memorial, disponível para consulta com ela.",
+    "itens": [
+      {
+        "arq": "hero.jpg",
+        "alt": "Perspectiva ilustrada da torre do Vila Plaza Residence, com fachada branca e azul-marinho, vista de baixo contra o céu",
+        "w": 1600,
+        "h": 1067,
+        "leg": "A torre de 14 andares"
+      },
+      {
+        "arq": "hall.jpg",
+        "alt": "Perspectiva ilustrada do lobby com sofá, poltronas e mesa central, e porta de vidro para o salão de festas",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Lobby"
+      },
+      {
+        "arq": "salao-de-festas.jpg",
+        "alt": "Perspectiva ilustrada do salão de festas com mesas redondas postas, balcão com banquetas e porta de vidro para o jardim",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Salão de festas"
+      },
+      {
+        "arq": "academia.jpg",
+        "alt": "Perspectiva ilustrada da academia com esteiras, bicicleta, estação de cabos, halteres e bolas de pilates",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Academia"
+      },
+      {
+        "arq": "coworking.jpg",
+        "alt": "Perspectiva ilustrada da sala de reunião do coworking, com mesa, cadeiras e televisão na parede de ripas de madeira",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Coworking: sala de reunião"
+      },
+      {
+        "arq": "coworking-cabines.jpg",
+        "alt": "Perspectiva ilustrada das cabines do coworking, com bancos estofados e mesas de trabalho",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Coworking: cabines"
+      },
+      {
+        "arq": "brinquedoteca.jpg",
+        "alt": "Perspectiva ilustrada da brinquedoteca, com pufes coloridos, mesas infantis, nichos com brinquedos e televisão",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Brinquedoteca"
+      },
+      {
+        "arq": "playground.jpg",
+        "alt": "Perspectiva ilustrada do playground com casinha de madeira, escorregador, balanços e jardim",
+        "w": 1360,
+        "h": 850,
+        "leg": "Playground"
+      },
+      {
+        "arq": "minimercado.jpg",
+        "alt": "Perspectiva ilustrada do minimercado, com geladeira de bebidas, prateleiras de produtos e dois caixas de autoatendimento",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Minimercado"
+      },
+      {
+        "arq": "rooftop-gourmet.jpg",
+        "alt": "Perspectiva ilustrada de uma área gourmet do rooftop, com pergolado, jardim vertical, mesas redondas, bancada com pia e hidromassagem ao fundo",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Rooftop: área gourmet com mesas e hidromassagem"
+      },
+      {
+        "arq": "rooftop-churrasqueira.jpg",
+        "alt": "Perspectiva ilustrada de uma área gourmet do rooftop, com bancada com pia, mesa com banco e hidromassagem em deck de madeira",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Rooftop: área gourmet com bancada e hidromassagem"
+      },
+      {
+        "arq": "rooftop-hidromassagem.jpg",
+        "alt": "Perspectiva ilustrada da hidromassagem do rooftop em deck de madeira, com guarda-corpo de vidro, plantas e a cidade ao fundo",
+        "w": 1600,
+        "h": 1000,
+        "leg": "Rooftop: hidromassagem"
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Lazer no térreo e no rooftop, com duas áreas gourmet com hidromassagem",
+    "intro": "A lista segue a implantação do térreo e do rooftop na apresentação da Lógica. Segundo o material, as áreas comuns são entregues equipadas conforme o memorial descritivo, e a mobília delas vem da construtora.",
+    "itens": [
+      "Praça externa",
+      "Área pet",
+      "Lobby",
+      "Academia",
+      "Salão de festas master com copa",
+      "Brinquedoteca",
+      "Playground",
+      "Coworking",
+      "Lavanderia",
+      "Minimercado",
+      "Área gourmet 1 com hidromassagem, no rooftop",
+      "Área gourmet 2 com hidromassagem, no rooftop",
+      "Praça no rooftop",
+      "19 vagas para visitantes"
+    ],
+    "nota": "No rooftop ficam as duas áreas gourmet com hidromassagem e a praça; os demais espaços ficam no térreo. O memorial descritivo, que define o que é entregue, está disponível para consulta com a incorporadora."
+  },
+  "ficha": [
+    [
+      "Incorporação e construção",
+      "Lógica Empreendimentos (incorporação, realização e construção)"
+    ],
+    [
+      "Arquitetura",
+      "Sergio Borsari Arquitetura"
+    ],
+    [
+      "Endereço",
+      "Rua Soldado João Carlos de Oliveira Júnior, 2152 — Jardim São Conrado, Indaiatuba/SP; CEP não informado no material"
+    ],
+    [
+      "Terreno",
+      "3.274,96 m²"
+    ],
+    [
+      "Área construída",
+      "21.677,88 m²"
+    ],
+    [
+      "Torre",
+      "1, com 14 andares de apartamentos"
+    ],
+    [
+      "Pavimentos",
+      "Térreo, 14 de apartamentos, 1 de rooftop e 4 de garagem"
+    ],
+    [
+      "Elevadores",
+      "3"
+    ],
+    [
+      "Unidades",
+      "224 no espelho de vendas: 126 studios, 42 studios duplex e 56 apartamentos de 2 dormitórios com 2 suítes"
+    ],
+    [
+      "Plantas",
+      "Studio de 38,89 a 39,26 m² (na tabela, 38,89 a 39,22 m²); studio duplex de 47,62 e 48,22 m²; 2 suítes de 73,6, 73,96 e 76,53 m²"
+    ],
+    [
+      "Pé-direito",
+      "2,80 m nos apartamentos, segundo a incorporadora"
+    ],
+    [
+      "Vagas",
+      "1 por studio, 2 por duplex e 2 por apartamento de 2 suítes, pela ficha técnica; 19 para visitantes. A de cada unidade se confirma no atendimento"
+    ],
+    [
+      "Entregue com",
+      "Revestimento nas áreas molhadas, infraestrutura de ar-condicionado nos apartamentos e mobília das áreas comuns, segundo a incorporadora"
+    ],
+    [
+      "Preço a partir de",
+      "R$ 403.846,33 · tabela Lógica atualizada em 01/10/2026"
+    ],
+    [
+      "Unidades livres",
+      "118 no espelho de vendas recebido em 28/10/2026 (105 vendidas e 1 em reserva)"
+    ],
+    [
+      "Aprovação",
+      "Alvará de Aprovação nº 1009/2024 da Prefeitura de Indaiatuba"
+    ],
+    [
+      "Registro de incorporação",
+      "Protocolo nº 388525 no Cartório de Registro de Imóveis; o número do registro não consta no material"
+    ],
+    [
+      "Entrega",
+      "A confirmar com a Lógica; o material não traz data nem prazo"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um apartamento no Vila Plaza Residence?",
+      "a": "No espelho de vendas recebido em 28/10/2026 há 118 unidades livres, com valores da tabela da Lógica atualizada em 01/10/2026: studios de 38,89 a 39,22 m², de R$ 403.846,33 a R$ 447.762,30; studios duplex de 47,62 e 48,22 m², de R$ 520.527,87 a R$ 552.337,90; e apartamentos de 2 dormitórios com 2 suítes, de 73,6 a 76,53 m², de R$ 746.408,15 a R$ 831.891,78. Em cada final o preço sobe com o andar, e a disponibilidade de cada unidade se confirma no atendimento."
+    },
+    {
+      "q": "Quais são as plantas do Vila Plaza Residence?",
+      "a": "São três tipologias: studio de 38,89 a 39,26 m², conforme o final, com 1 vaga; studio duplex em dois níveis, de 47,62 m² (finais 07 a 11) ou 48,22 m² (final 06), com 2 vagas; e apartamento de 2 dormitórios com 2 suítes, de 73,6 m² (finais 04 e 16), 73,96 m² (final 05) ou 76,53 m² (final 15), com 2 vagas. As vagas são as da ficha técnica da incorporadora; a de cada unidade se confirma no atendimento."
+    },
+    {
+      "q": "Como é o pagamento no Vila Plaza Residence?",
+      "a": "A tabela atualizada em 01/10/2026 traz duas condições: à vista, com 10% de desconto; ou ato de 6%, 30% em 12 parcelas e 64% a financiar. Durante as obras, parcelas e saldo são corrigidos uma vez por ano pelo INCC-M, uma versão do INCC (Índice Nacional de Custo da Construção, da FGV). No studio 202, de R$ 403.846,33, isso dá R$ 363.461,70 à vista, ou ato de R$ 24.230,78, 12 parcelas de R$ 10.096,16 e R$ 258.461,65 a financiar. A periodicidade das parcelas e o momento e a forma do financiamento dos 64% se confirmam com a Lógica; o financiamento depende de análise de crédito."
+    },
+    {
+      "q": "Quando o Vila Plaza Residence será entregue?",
+      "a": "O material recebido da Lógica, com a tabela de out/2026, não traz data nem prazo de entrega. A previsão se confirma com a incorporadora no atendimento, e o prazo que vale é o do contrato de compra."
+    },
+    {
+      "q": "Onde fica o Vila Plaza Residence?",
+      "a": "Na Rua Soldado João Carlos de Oliveira Júnior, 2152, no Jardim São Conrado, em Indaiatuba/SP. Segundo a incorporadora, o Parque Ecológico, o Burger King e o Mercado Dia ficam a 1 minuto, o Parque Mall a 6 e o Polo Shopping a 10; o material não diz se os tempos são de carro."
+    },
+    {
+      "q": "Quem incorpora e constrói o Vila Plaza Residence?",
+      "a": "A Lógica Empreendimentos, que assina a incorporação, a realização e a construção. O projeto de arquitetura é do escritório Sergio Borsari Arquitetura. Na linha do tempo da apresentação, a Lógica lista empreendimentos de 2008 (Residencial Vando) a 2025 (Residencial Vila Bela), em Indaiatuba, Amparo e Cedral."
+    },
+    {
+      "q": "O Vila Plaza Residence tem registro de incorporação?",
+      "a": "O material informa o Alvará de Aprovação nº 1009/2024 da Prefeitura de Indaiatuba e o protocolo nº 388525 no Cartório de Registro de Imóveis. Protocolo não é registro: o número do registro de incorporação não consta no material. Antes de qualquer proposta, pedimos à Lógica o número do registro e a matrícula."
+    },
+    {
+      "q": "Quantas vagas de garagem tem cada apartamento do Vila Plaza?",
+      "a": "Pela ficha técnica da incorporadora, 1 vaga por studio e 2 por studio duplex e por apartamento de 2 suítes, além de 19 vagas para visitantes. Na relação de vagas recebida, alguns studios dos primeiros andares aparecem com vaga descoberta e alguns com 2 vagas; por isso, a vaga de cada unidade se confirma no atendimento."
+    }
+  ],
+  "cta": {
+    "h2": "Quer ver as unidades livres do Vila Plaza Residence?",
+    "p": "Pelo WhatsApp, enviamos a lista das unidades livres com andar, final, área e valor da tabela de 01/10/2026, fazemos a conta à vista e a parcelada da unidade que você escolher e checamos com a Lógica a vaga de garagem que vai com ela.",
+    "msg": "Olá! Quero a tabela de preços do Vila Plaza Residence com as unidades disponíveis.",
+    "texto": "Pedir a tabela",
+    "visita": {
+      "msg": "Olá! Quero agendar uma visita ao Vila Plaza Residence.",
+      "texto": "Agendar visita"
+    }
+  },
+  "rodape": {
+    "marca": "VILA PLAZA RESIDENCE",
+    "linha": "Vila Plaza Residence · 1 torre de 14 andares, 224 unidades entre studios, studios duplex e apartamentos de 2 dormitórios com 2 suítes, de 38,89 a 76,53 m² · Rua Soldado João Carlos de Oliveira Júnior, 2152 · Jardim São Conrado · Indaiatuba, SP",
+    "realizacao": "Incorporação, realização e construção Lógica Empreendimentos",
+    "legal": "Perspectivas e plantas ilustrativas, sem caráter contratual; móveis e utensílios das ilustrações não compõem o contrato de compra e venda nem o memorial descritivo. As unidades e as áreas comuns são entregues conforme o memorial descritivo, disponível para consulta com a incorporadora. Valores conforme a tabela Lógica versão 10.2026, atualizada em 01/10/2026, com parcelas e saldo corrigidos anualmente pelo INCC-M durante as obras, sujeitos a alteração sem aviso; unidades livres conforme o espelho de vendas recebido em 28/10/2026, com disponibilidade confirmada no atendimento. Empreendimento aprovado pela Prefeitura de Indaiatuba/SP pelo Alvará de Aprovação nº 1009/2024 e protocolado no Cartório de Registro de Imóveis sob o nº 388525; o número do registro de incorporação não consta no material. Entrega a confirmar com a incorporadora. Página publicada em out/2026."
+  },
+  "home": {
+    "tipo": "apartamento",
+    "preco": 403846,
+    "dorms": "1",
+    "mcmv": "0",
+    "status": "lancamento",
+    "constr": "Lógica Empreendimentos",
+    "badge": "Na planta · Jd. São Conrado",
+    "meta": "38,89 a 76,53 m² · studio, duplex e 2 suítes",
+    "desc": "Uma torre de 14 andares no Jd. São Conrado · studios, studios duplex e 2 dorm com 2 suítes · rooftop com duas áreas gourmet com hidromassagem · entrega a confirmar.",
+    "alt": "Perspectiva ilustrada da torre do Vila Plaza Residence",
+    "itemlist": "Vila Plaza Residence — torre da Lógica Empreendimentos no Jardim São Conrado, 224 unidades de 38,89 a 76,53 m² (studio, studio duplex e 2 suítes) · a partir de R$ 403.846 (tabela out/2026)"
+  },
+  "llms": {
+    "secao": "apartamentos",
+    "linha": "Incorporação, realização e construção Lógica Empreendimentos (projeto Sergio Borsari Arquitetura) na Rua Soldado João Carlos de Oliveira Júnior, 2152, Jardim São Conrado, Indaiatuba. Uma torre de 14 andares de apartamentos, com térreo, rooftop e 4 pavimentos de garagem, 3 elevadores, terreno de 3.274,96 m² e 21.677,88 m² construídos; 224 unidades: 126 studios (38,89 a 39,26 m², 1 vaga), 42 studios duplex em dois níveis (47,62 e 48,22 m², 2 vagas) e 56 apartamentos de 2 dormitórios com 2 suítes (73,6 a 76,53 m², 2 vagas); pé-direito de 2,80 m e infraestrutura de ar-condicionado, segundo a incorporadora. Lazer no térreo (academia, salão de festas, brinquedoteca, playground, coworking, lavanderia, minimercado, área pet) e no rooftop (duas áreas gourmet com hidromassagem). Espelho de vendas recebido em 28/10/2026: 118 unidades livres, 105 vendidas e 1 em reserva. Tabela Lógica atualizada em 01/10/2026, entre as livres: studios de R$ 403.846,33 a R$ 447.762,30, duplex de R$ 520.527,87 a R$ 552.337,90 e 2 suítes de R$ 746.408,15 a R$ 831.891,78. Pagamento: à vista com 10% de desconto, ou ato de 6% + 30% em 12 parcelas + 64% a financiar, com correção anual pelo INCC-M durante as obras. Alvará de Aprovação nº 1009/2024 e protocolo nº 388525 no Cartório de Registro de Imóveis; o material não informa o registro de incorporação nem a data de entrega (a confirmar com a Lógica)."
+  },
+  "mapa": {
+    "rota": "Rua Soldado João Carlos de Oliveira Júnior, 2152, Jardim São Conrado, Indaiatuba - SP",
+    "embed": "https://maps.google.com/maps?q=Rua%20Soldado%20Jo%C3%A3o%20Carlos%20de%20Oliveira%20J%C3%BAnior%2C%202152%2C%20Jardim%20S%C3%A3o%20Conrado%2C%20Indaiatuba%20-%20SP&z=16&hl=pt-BR&output=embed"
+  }
+}

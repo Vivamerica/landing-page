@@ -35,7 +35,7 @@ const R = __dirname + '/';
 // menu do site (fonte única: gera-menu.js); as duas páginas já saem com ele
 const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
-const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-17' };
+const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-29' };
 
 // estoque da MEDIÇÃO ANTERIOR (em geral a da edição de setembro/2026; o Jardim Dona Maria Cândida
 // foi medido em 08/09/2026 e publicado em 12/10/2026), para o "antes e depois"
@@ -104,6 +104,11 @@ const ENTRADAS = [
   { n: '360 Home Office Mall',        c: 'HINC', para: 546274, causa: 'preço aberto a partir de out/2026 — residencial a partir de 39,73 m², no 12º andar; 84 residenciais e 34 salas office na tabela', fonte: 'tabela HINC de setembro/2026 (gerada em 15/09/2026), com os mesmos valores em outubro/2026' },
   // 17/10/2026: novo no site
   { n: 'Pertenze Residencial',        c: 'Mingardi & Elias', para: 312046, causa: 'novo no site — 2 dormitórios de 48,59 a 54,39 m², em 3 torres no Jardim das Andorinhas; 61 unidades da Torre C na tabela', fonte: 'tabela Mingardi & Elias com vigência a partir de 01/10/2026' },
+  // 28/10/2026: novos no site
+  { n: 'Vila Plaza Residence',        c: 'Lógica Empreendimentos', para: 403846, causa: 'novo no site — studios de 38,89 a 39,26 m², studios duplex de 47,62 e 48,22 m² e 2 dormitórios com 2 suítes de 73,6 a 76,53 m², numa torre no Jardim São Conrado; 118 unidades livres no espelho de vendas recebido em 28/10/2026', fonte: 'tabela Lógica atualizada em 01/10/2026' },
+  { n: 'Lumina Residencial',          c: 'Emmar', para: 519900, causa: 'novo no site — últimas 6 unidades (28/10/2026), de 1 suíte com 39,44 m² a 3 suítes com 111,65 m², num prédio de 19 andares no Centro', fonte: 'tabela fluxo Emmar de outubro/2026' },
+  { n: 'Lina Residence',              c: 'Lofts', para: 924108, causa: 'novo no site — 2 suítes ou 3 dormitórios de 85,28 a 101,15 m², em 2 torres na Cidade Nova I; 106 unidades nas tabelas das duas torres', fonte: 'tabela Lofts de outubro/2026' },
+  { n: 'Reserva Luiza Tomaselli',     c: 'Lofts', para: 1809776, causa: 'novo no site — prédio pronto (habite-se em agosto/2024) na Vila Castelo Branco; 2 apartamentos de 3 suítes com 154,99 m² com depósito na tabela', fonte: 'tabela Lofts de outubro/2026' },
 ];
 // entrou no site sem tabela pública (não entra em ENTRADAS: não há preço).
 // 16/10/2026: o 360 Home Office Mall, que estava aqui, ganhou tabela e foi para ENTRADAS.

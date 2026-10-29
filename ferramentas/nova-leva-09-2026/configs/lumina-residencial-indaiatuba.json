@@ -1,0 +1,694 @@
+{
+  "slug": "lumina-residencial-indaiatuba",
+  "nome": "Lumina Residencial",
+  "categoria": "apartamentos",
+  "data": "2026-10-29",
+  "atualizado": "2026-10-29",
+  "fonte_tabela": "tabela fluxo Emmar de out/2026",
+  "title": "Lumina Residencial Indaiatuba | R$ 520 mil · out/2026",
+  "description": "Lumina Residencial, Centro de Indaiatuba: 1 a 3 suítes, de 39,44 a 111,65 m², a partir de R$ 519.900 na tabela out/2026. Últimas 6 unidades (28/10/2026).",
+  "keywords": "lumina residencial indaiatuba, lumina emmar incorporadora, emmar incorporadora indaiatuba, apartamento centro indaiatuba, apartamento 3 suites indaiatuba, apartamento 1 suite indaiatuba, apartamento rua 11 de junho indaiatuba, apartamento com rooftop indaiatuba",
+  "schema_tipo": "ApartmentComplex",
+  "schema_desc": "Prédio de 19 andares sobre 3 pisos de garagem (subsolo, térreo e sobressolo), com 2 elevadores, na Rua 11 de Junho, 475, esquina com a Rua Voluntário João dos Santos, no Centro de Indaiatuba/SP. 94 apartamentos do 1º ao 17º andar, todos com lavabo, nos tipos de 1 suíte (39,44 e 39,83 m², 1 vaga), 2 suítes (71,82 m², 2 vagas) e 3 suítes (107,02 e 111,65 m², 2 vagas), além de um apartamento de 2 suítes no 17º andar sem metragem no catálogo. Lazer no 18º andar e no rooftop do 19º, com piscina ao ar livre, Cine Sky, Gourmet 360, quadra multiuso, Festa Gourmet, Petit Gourmet, Virtual Home Office, espaço infantil, fitness e Play Lounge. Incorporação Emmar Incorporadora; aprovado na Prefeitura de Indaiatuba (processo nº 31807/2022) com Alvará de Licença nº 1885/2025, de 07/11/2025.",
+  "unidades_total": 94,
+  "endereco_schema": "Rua 11 de Junho, 475 — Centro",
+  "preco_min": 519900.0,
+  "preco_max": 1457900.0,
+  "offer_count": 6,
+  "oferta_desc": "Tabela fluxo da Emmar Incorporadora de out/2026 com as últimas 6 unidades (28/10/2026): 1 apartamento de 1 suíte com 39,44 m² e 1 vaga, por R$ 519.900,00, e 5 de 3 suítes com 107,02 ou 111,65 m² e 2 vagas, de R$ 1.319.900,00 a R$ 1.457.900,00. Pagamento em sinal, 24 mensais a partir de 10/11/2026, 4 intermediárias e parcela das chaves em 31/03/2029, com correção mensal pelo INCC-DI, uma versão do Índice Nacional de Custo da Construção (INCC) da Fundação Getulio Vargas (FGV). Previsão de entrega a confirmar com a incorporadora.",
+  "produto_nome": "Lumina Residencial Indaiatuba — apartamento de 1 suíte com 39,44 m²",
+  "produto_desc": "Apartamentos de 1, 2 ou 3 suítes com lavabo, de 39,44 a 111,65 m², na Rua 11 de Junho, no Centro de Indaiatuba/SP. Incorporação Emmar Incorporadora. Tabela fluxo de out/2026 com as últimas 6 unidades (28/10/2026).",
+  "marca": "Emmar Incorporadora",
+  "lazer": [
+    "Piscina ao ar livre",
+    "Cine Sky",
+    "Gourmet 360",
+    "Quadra multiuso",
+    "Festa Gourmet",
+    "Petit Gourmet",
+    "Virtual Home Office",
+    "Espaço infantil",
+    "Fitness",
+    "Play Lounge",
+    "Vagas para visitantes"
+  ],
+  "marca_topo": [
+    "LUMINA",
+    "Residencial"
+  ],
+  "wa_flutuante": "Olá! Tenho interesse no Lumina Residencial em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de preços do Lumina Residencial com as unidades disponíveis.",
+  "hero": {
+    "eyebrow": "Centro · Indaiatuba/SP",
+    "sub": "Apartamentos de 1 a 3 suítes no Centro, em Indaiatuba",
+    "lead": "O Lumina Residencial é um prédio de 19 andares da Emmar Incorporadora na Rua 11 de Junho, 475, no Centro, com 94 apartamentos de 1, 2 ou 3 suítes, plantas de 39,44 a 111,65 m² no catálogo e lazer no 18º andar e no rooftop. A tabela fluxo da Emmar de out/2026 traz as últimas 6 unidades (28/10/2026), a partir de R$ 519.900,00 pelo apartamento de 1 suíte com 39,44 m². O material não informa a previsão de entrega: a parcela das chaves vence em 31/03/2029, segundo a tabela, e a data de entrega se confirma com a Emmar.",
+    "preco": "A partir de R$ 519.900,00",
+    "preco_nota": "unidade 84, 1 suíte com 39,44 m² e 1 vaga · sinal, 24 mensais, 4 intermediárias e chaves · tabela fluxo Emmar de out/2026 · entrega a confirmar",
+    "cta_msg": "Olá! Quero a tabela de preços do Lumina Residencial com as unidades disponíveis.",
+    "cta_texto": "Receber a tabela",
+    "cta2": {
+      "msg": "Olá! Quero agendar uma visita ao Lumina Residencial.",
+      "texto": "Agendar visita"
+    },
+    "credito": "Imagem ilustrativa: perspectiva do rooftop no catálogo da incorporadora"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Um prédio de 19 andares na Rua 11 de Junho, no Centro",
+      "paragrafos": [
+        "O Lumina Residencial fica na Rua 11 de Junho, 475, no Centro de Indaiatuba, na esquina com a Rua Voluntário João dos Santos. É um prédio de 19 andares sobre 3 pisos de garagem (subsolo, térreo e sobressolo), 22 pavimentos ao todo, com 2 elevadores. Os apartamentos vão do 1º ao 17º andar, 94 unidades; o 18º e o 19º são de lazer.",
+        "Pelos esquemas de andar do catálogo, são 6 apartamentos por andar do 1º ao 10º, 5 do 11º ao 16º e 4 no 17º. As plantas têm 1, 2 ou 3 suítes, todas com lavabo, de 39,44 a 111,65 m² de área privativa. A fachada combina molduras, revestimentos e texturas, segundo a incorporadora.",
+        "A incorporação é da Emmar Incorporadora, fundada por Anderson e Debora Beraldo; segundo o catálogo, o Lumina é o primeiro empreendimento da marca. A construtora da obra não é nomeada no material. O projeto foi aprovado na Prefeitura de Indaiatuba (processo nº 31807/2022) e tem Alvará de Licença nº 1885/2025, de 07/11/2025; o número do registro de incorporação não consta no material recebido."
+      ],
+      "numeros": [
+        {
+          "n": "19",
+          "p": "andares, sobre 3 pisos de garagem"
+        },
+        {
+          "n": "94",
+          "p": "apartamentos, do 1º ao 17º andar"
+        },
+        {
+          "n": "4",
+          "p": "tipos de planta, de 39,44 a 111,65 m²"
+        },
+        {
+          "n": "6",
+          "p": "últimas unidades na tabela de out/2026 (28/10/2026)"
+        }
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "itens": [
+            {
+              "arq": "fachada-cidade.jpg",
+              "alt": "Perspectiva ilustrada do Lumina Residencial de dia, visto do alto, com a fachada em bege e uma faixa de revestimento cor de tijolo, a garagem no térreo e as casas do Centro ao redor",
+              "w": 716,
+              "h": 795,
+              "leg": "O prédio no Centro, de dia (perspectiva ilustrada)"
+            },
+            {
+              "arq": "fachada-noite.jpg",
+              "alt": "Perspectiva ilustrada da fachada do Lumina Residencial à noite, com as janelas acesas e o letreiro LUMINA no muro do térreo",
+              "w": 559,
+              "h": 794,
+              "leg": "Fachada à noite (perspectiva ilustrada)"
+            }
+          ]
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "label": "Plantas",
+      "classe": "cream",
+      "h2": "Plantas do Lumina: 1, 2 ou 3 suítes com lavabo, de 39,44 a 111,65 m²",
+      "paragrafos": [
+        "O catálogo divide o Lumina em quatro tipos de planta, chamados pela metragem sem os decimais: tipo 39, 71, 107 e 111 m². Todas têm hall de entrada, living, sala de jantar integrada ao living, cozinha, varanda, lavabo e área técnica para o ar-condicionado. O tipo 39 m² tem duas medidas: 39,44 m² nos finais 4 e 5 e 39,83 m² no final 1.",
+        "Nas legendas das plantas, a área de serviço com tanque aparece no tipo 71 m² e a lavanderia no tipo 111 m²; nas dos tipos 39 m² e 107 m² ela não aparece, e esse detalhe se confirma no memorial descritivo, que fica no stand de vendas. No esquema do 17º andar, o final 4 aparece como 2 suítes + lavabo, sem metragem no catálogo."
+      ],
+      "tabela": {
+        "legenda": "Tipos, áreas e finais conforme o catálogo da Emmar Incorporadora",
+        "cab": [
+          "Tipo",
+          "Área privativa",
+          "Suítes",
+          "Vagas",
+          "Andares e finais"
+        ],
+        "num": [
+          1,
+          3
+        ],
+        "linhas": [
+          [
+            "Tipo 39 m²",
+            "39,44 m² (finais 4 e 5) e 39,83 m² (final 1)",
+            "1 suíte + lavabo",
+            "1",
+            "Finais 1, 4 e 5 do 1º ao 10º andar; finais 4 e 5 do 11º ao 16º"
+          ],
+          [
+            "Tipo 71 m²",
+            "71,82 m²",
+            "2 suítes + lavabo",
+            "2",
+            "Finais 2 e 3 do 1º ao 10º andar; final 3 do 11º ao 17º"
+          ],
+          [
+            "Tipo 107 m²",
+            "107,02 m²",
+            "3 suítes + lavabo",
+            "2",
+            "Final 6 do 1º ao 17º andar"
+          ],
+          [
+            "Tipo 111 m²",
+            "111,65 m²",
+            "3 suítes + lavabo",
+            "2",
+            "Final 2 do 11º ao 17º andar"
+          ]
+        ]
+      },
+      "cards": [
+        {
+          "t": "Pisos",
+          "p": "Porcelanato retificado no hall de entrada, no living, na sala de jantar, na cozinha e no lavabo; laminado nos dormitórios e porcelanato nos banheiros das suítes, segundo as legendas das plantas."
+        },
+        {
+          "t": "Cozinha e varanda",
+          "p": "Cozinha com bancada de granito e cuba de inox. Varanda com bancada de granito, cuba de inox e ponto de gás para churrasqueira."
+        },
+        {
+          "t": "Banheiros e lavabo",
+          "p": "Ralo linear no box, porcelanato retificado nas áreas molhadas, louças e metais. Lavabo com bancada de granito e cuba de louça."
+        },
+        {
+          "t": "Ar-condicionado",
+          "p": "Área técnica com piso de porcelanato e previsão (dreno) para instalar o ar-condicionado. Os aparelhos não constam do material."
+        },
+        {
+          "t": "Vagas",
+          "p": "1 vaga no tipo 39 m² e 2 vagas nos tipos 71, 107 e 111 m², com vagas demarcadas, segundo o catálogo. Na tabela de out/2026, cada unidade de 3 suítes tem duas vagas de mesmo número, A e B."
+        },
+        {
+          "t": "Memorial descritivo",
+          "p": "As especificações completas estão no memorial descritivo, disponível no stand de vendas, segundo o catálogo. Móveis e decoração das perspectivas dos apartamentos não são entregues."
+        }
+      ],
+      "figuras": [
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "planta-p19.jpg",
+              "alt": "Planta ilustrada do tipo 39 m² do Lumina Residencial, com suíte e banheiro, lavabo, living, cozinha em linha, varanda e área técnica",
+              "w": 1001,
+              "h": 678,
+              "leg": "Tipo 39 m²: 1 suíte + lavabo (39,44 e 39,83 m²)"
+            },
+            {
+              "arq": "planta-p23.jpg",
+              "alt": "Planta ilustrada do tipo 71 m² do Lumina Residencial, com 2 suítes, lavabo, living, mesa de jantar, cozinha com área de serviço e varanda com mesa",
+              "w": 768,
+              "h": 694,
+              "leg": "Tipo 71 m²: 2 suítes + lavabo (71,82 m²)"
+            },
+            {
+              "arq": "planta-p27.jpg",
+              "alt": "Planta ilustrada do tipo 107 m² do Lumina Residencial, com 3 suítes, lavabo, living, mesa de jantar, cozinha em linha e varanda",
+              "w": 533,
+              "h": 766,
+              "leg": "Tipo 107 m²: 3 suítes + lavabo (107,02 m², final 6)"
+            },
+            {
+              "arq": "planta-p31.jpg",
+              "alt": "Planta ilustrada do tipo 111 m² do Lumina Residencial, com 3 suítes, lavabo, living, sala de jantar, cozinha e varanda",
+              "w": 1600,
+              "h": 788,
+              "leg": "Tipo 111 m²: 3 suítes + lavabo (111,65 m², final 2 do 11º ao 17º andar)"
+            }
+          ]
+        },
+        {
+          "classe": "galeria",
+          "itens": [
+            {
+              "arq": "decorado-p21.jpg",
+              "alt": "Perspectiva ilustrada do living do tipo 39 m², com sofá, mesa de jantar de vidro, cozinha com armários e porta de vidro para a varanda",
+              "w": 1122,
+              "h": 795,
+              "leg": "Living do tipo 39 m² (perspectiva ilustrada)"
+            },
+            {
+              "arq": "decorado-p25.jpg",
+              "alt": "Perspectiva ilustrada do living e da cozinha do tipo 71 m², com sofá de couro, mesa de jantar e cozinha em linha com bancada escura",
+              "w": 1123,
+              "h": 794,
+              "leg": "Living e cozinha do tipo 71 m² (perspectiva ilustrada)"
+            },
+            {
+              "arq": "decorado-p29.jpg",
+              "alt": "Perspectiva ilustrada do living integrado à cozinha no apartamento tipo 107 m² do Lumina Residencial",
+              "w": 1123,
+              "h": 795,
+              "leg": "Living e cozinha do tipo 107 m² (perspectiva ilustrada)"
+            },
+            {
+              "arq": "decorado-p33.jpg",
+              "alt": "Perspectiva ilustrada do living do tipo 111 m², com sofá claro, parede de ripas de madeira e mesa de jantar ao fundo",
+              "w": 1122,
+              "h": 794,
+              "leg": "Living do tipo 111 m² (perspectiva ilustrada)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Áreas comuns",
+      "h2": "Lazer em dois andares: o 18º e o rooftop do 19º",
+      "paragrafos": [
+        "O lazer do Lumina fica no alto do prédio. No 18º andar, a planta do catálogo reúne seis espaços: Festa Gourmet, Petit Gourmet, Virtual Home Office, Toy's, Fitness e Play Lounge. O Festa Gourmet e o Petit Gourmet podem ser integrados em um ambiente maior.",
+        "O 19º andar é o rooftop. A perspectiva dele mostra a piscina com deck de madeira, a quadra e mesas ao ar livre no topo do prédio; o catálogo descreve ainda o Cine Sky, com painel de LED e lareira ecológica, e o Gourmet 360, um espaço gourmet ao ar livre. Segundo a incorporadora, as áreas comuns são entregues mobiliadas, equipadas e climatizadas, conforme o memorial descritivo."
+      ],
+      "figuras": [
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "hero.jpg",
+              "alt": "Perspectiva ilustrada do alto do Lumina Residencial à noite, com piscina iluminada, deck de madeira, quadra e mesas no rooftop",
+              "w": 1123,
+              "h": 606,
+              "leg": "Rooftop do 19º andar visto do alto, à noite (perspectiva ilustrada)"
+            },
+            {
+              "arq": "implantacao-lazer.jpg",
+              "alt": "Planta ilustrada do 18º andar do Lumina Residencial com Festa Gourmet, Petit Gourmet, Virtual Home Office, Toy's, Fitness e Play Lounge",
+              "w": 1600,
+              "h": 712,
+              "leg": "Planta do 18º andar: 01 Festa Gourmet, 02 Petit Gourmet, 03 Virtual Home Office, 04 Toy's, 05 Fitness e 06 Play Lounge (perspectiva ilustrada)"
+            }
+          ]
+        }
+      ],
+      "depois": "lazer"
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
+    {
+      "id": "precos",
+      "label": "Preços",
+      "h2": "Últimas 6 unidades (28/10/2026), de R$ 519.900,00 a R$ 1.457.900,00",
+      "paragrafos": [
+        "A tabela fluxo da Emmar de out/2026 traz as últimas 6 unidades do Lumina (28/10/2026): um apartamento de 1 suíte com 39,44 m² no 8º andar e cinco de 3 suítes, três com 107,02 m² e dois com 111,65 m², do 9º ao 16º andar. Os valores vão de R$ 519.900,00 a R$ 1.457.900,00.",
+        "A tabela não tem unidade de 2 suítes. A disponibilidade de cada apartamento se confirma no atendimento, junto com a tabela atualizada."
+      ],
+      "tabela": {
+        "legenda": "Tabela fluxo Emmar de out/2026 · últimas 6 unidades (28/10/2026) · valores nominais",
+        "cab": [
+          "Unidade",
+          "Andar",
+          "Área privativa",
+          "Suítes",
+          "Vagas",
+          "Chaves (31/03/2029)",
+          "Valor total"
+        ],
+        "num": [
+          2,
+          4,
+          5,
+          6
+        ],
+        "linhas": [
+          [
+            "84",
+            "8º",
+            "39,44 m²",
+            "1 suíte",
+            "1",
+            "R$ 332.900,00",
+            "R$ 519.900,00"
+          ],
+          [
+            "96",
+            "9º",
+            "107,02 m²",
+            "3 suítes",
+            "2",
+            "R$ 912.900,00",
+            "R$ 1.319.900,00"
+          ],
+          [
+            "126",
+            "12º",
+            "107,02 m²",
+            "3 suítes",
+            "2",
+            "R$ 937.900,00",
+            "R$ 1.344.900,00"
+          ],
+          [
+            "146",
+            "14º",
+            "107,02 m²",
+            "3 suítes",
+            "2",
+            "R$ 966.900,00",
+            "R$ 1.373.900,00"
+          ],
+          [
+            "142",
+            "14º",
+            "111,65 m²",
+            "3 suítes",
+            "2",
+            "R$ 1.022.900,00",
+            "R$ 1.429.900,00"
+          ],
+          [
+            "162",
+            "16º",
+            "111,65 m²",
+            "3 suítes",
+            "2",
+            "R$ 1.050.900,00",
+            "R$ 1.457.900,00"
+          ]
+        ]
+      },
+      "tabela2_titulo": "Como o valor é pago",
+      "tabela2_paragrafos": [
+        "A forma de pagamento é a mesma nas 6 unidades: sinal, 24 parcelas mensais, 4 intermediárias e a parcela das chaves. Entre as unidades de 3 suítes, só a parcela das chaves muda."
+      ],
+      "tabela2": {
+        "cab": [
+          "Parcela",
+          "Unidade 84 (1 suíte)",
+          "Unidades de 3 suítes"
+        ],
+        "num": [
+          1,
+          2
+        ],
+        "linhas": [
+          [
+            "Sinal",
+            "R$ 68.500,00",
+            "R$ 152.500,00"
+          ],
+          [
+            "24 mensais, a partir de 10/11/2026",
+            "R$ 3.500,00 cada",
+            "R$ 7.500,00 cada"
+          ],
+          [
+            "4 intermediárias: 10/02/2027, 10/08/2027, 10/02/2028 e 10/08/2028",
+            "R$ 8.625,00 cada",
+            "R$ 18.625,00 cada"
+          ],
+          [
+            "Chaves, em 31/03/2029",
+            "R$ 332.900,00",
+            "De R$ 912.900,00 a R$ 1.050.900,00, conforme a unidade"
+          ],
+          [
+            "Total",
+            "R$ 519.900,00",
+            "De R$ 1.319.900,00 a R$ 1.457.900,00"
+          ]
+        ]
+      },
+      "notas": [
+        "Valores nominais da tabela fluxo da Emmar de out/2026. As parcelas são corrigidas todo mês pela variação do INCC-DI, uma versão do Índice Nacional de Custo da Construção (INCC) da FGV. Nos meses de intermediária e de chaves não há parcela mensal.",
+        "A parcela das chaves pode ser paga com recursos próprios ou com financiamento bancário, conforme o contrato, segundo a tabela. O financiamento depende da análise de crédito do banco; o índice e os juros depois das chaves não constam da tabela.",
+        "A tabela pode ser alterada sem aviso, e a própria Emmar pede que a disponibilidade da unidade seja confirmada antes do fechamento. A data de 31/03/2029 é o vencimento da parcela das chaves, não uma previsão de entrega."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de preços do Lumina Residencial com as unidades disponíveis.",
+        "texto": "Pedir a tabela atualizada"
+      }
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Na esquina das ruas 11 de Junho e Voluntário João dos Santos, no Centro",
+      "paragrafos": [
+        "O endereço do Lumina é Rua 11 de Junho, 475, no Centro de Indaiatuba, na esquina com a Rua Voluntário João dos Santos. A tabela da Emmar indica o stand de vendas no mesmo endereço.",
+        "Segundo a incorporadora, o Parque Ecológico fica a poucos metros do prédio; o material não informa a distância. O mapa aéreo do catálogo marca no entorno os supermercados Covabra e Pistoni, o Shopping Jaraguá, os Correios, as praças Rui Barbosa, Dom Pedro II e Prudente de Moraes, agências do Itaú e do Santander, a Farmácia Drogal, o Magazine Luiza, uma escola municipal, a Academia Fitwork e a escola Alfabeto Educação Infantil, sem informar distâncias."
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "itens": [
+            {
+              "arq": "aerea-indaiatuba.jpg",
+              "alt": "Foto aérea do Centro de Indaiatuba, com casas de telhado cerâmico, prédios e a área verde e o lago do Parque Ecológico à direita",
+              "w": 1123,
+              "h": 501,
+              "leg": "O Centro visto do alto (foto real do catálogo da incorporadora, sem as marcações do mapa)"
+            },
+            {
+              "arq": "fachada.jpg",
+              "alt": "Perspectiva ilustrada da fachada do Lumina Residencial de dia, com o térreo, palmeiras, carros estacionados e a faixa de pedestres na rua",
+              "w": 733,
+              "h": 816,
+              "leg": "Fachada e térreo (perspectiva ilustrada)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Perspectivas",
+    "h2": "A entrada e o lazer do Lumina",
+    "aviso": "Perspectivas ilustradas do catálogo da incorporadora, sem caráter contratual. Nos apartamentos, móveis, objetos e decoração são sugestão e não são entregues; as áreas comuns são entregues decoradas e equipadas conforme o memorial descritivo, que prevalece sobre as imagens.",
+    "itens": [
+      {
+        "arq": "portaria.jpg",
+        "alt": "Perspectiva ilustrada do térreo do Lumina Residencial visto da rua, com a entrada de pedestres, a garagem em tijolo aparente e o letreiro LUMINA",
+        "w": 1123,
+        "h": 590,
+        "leg": "Entrada pela rua"
+      },
+      {
+        "arq": "piscina.jpg",
+        "alt": "Perspectiva ilustrada da piscina no alto do prédio, com deck de madeira, poltronas, guarda-sóis e a cidade ao fundo",
+        "w": 1123,
+        "h": 795,
+        "leg": "Piscina ao ar livre"
+      },
+      {
+        "arq": "gourmet-360.jpg",
+        "alt": "Perspectiva ilustrada do Gourmet 360 ao anoitecer, com mesas de madeira, banco estofado curvo e bancada de cozinha ao fundo",
+        "w": 1123,
+        "h": 795,
+        "leg": "Gourmet 360"
+      },
+      {
+        "arq": "quadra.jpg",
+        "alt": "Perspectiva ilustrada da Quadra Multi Sports, com piso vermelho e cinza, tabelas de basquete e traves de futebol, cercada por tela",
+        "w": 1123,
+        "h": 640,
+        "leg": "Quadra Multi Sports"
+      },
+      {
+        "arq": "festa-gourmet.jpg",
+        "alt": "Perspectiva ilustrada do Festa Gourmet, salão com bancada de cozinha em mármore, mesa comprida e várias mesas de madeira",
+        "w": 1123,
+        "h": 393,
+        "leg": "Festa Gourmet (18º andar)"
+      },
+      {
+        "arq": "bar.jpg",
+        "alt": "Perspectiva ilustrada do Petit Gourmet, com balcão de bar, banquetas, prateleiras de garrafas na parede de tijolos e mesas",
+        "w": 1123,
+        "h": 794,
+        "leg": "Petit Gourmet (18º andar)"
+      },
+      {
+        "arq": "salao-de-jogos.jpg",
+        "alt": "Perspectiva ilustrada do Play Lounge, com sofás, poltronas, mesa de sinuca, mesa de jogos e balcão de bar",
+        "w": 1123,
+        "h": 615,
+        "leg": "Play Lounge (18º andar)"
+      },
+      {
+        "arq": "brinquedoteca.jpg",
+        "alt": "Perspectiva ilustrada do Toy's, espaço infantil com rampa de madeira com nichos, piscina de bolinhas e mesinha com cadeiras pequenas",
+        "w": 1123,
+        "h": 610,
+        "leg": "Toy's, espaço infantil (18º andar)"
+      },
+      {
+        "arq": "coworking.jpg",
+        "alt": "Perspectiva ilustrada do Virtual Home Office, com bancadas de trabalho, estúdio com fundo verde e salas envidraçadas",
+        "w": 1123,
+        "h": 642,
+        "leg": "Virtual Home Office (18º andar)"
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "10 itens de lazer nomeados no catálogo",
+    "intro": "O catálogo fala em mais de 10 itens de lazer e nomeia estes dez, com os nomes dados pela incorporadora. Seis ficam no 18º andar; os demais são apresentados com o rooftop do 19º.",
+    "itens": [
+      "Piscina ao ar livre",
+      "Cine Sky, com painel de LED e lareira ecológica",
+      "Gourmet 360, espaço gourmet ao ar livre",
+      "Quadra Multi Sports (quadra multiuso)",
+      "Festa Gourmet (18º andar)",
+      "Petit Gourmet (18º andar), integrável ao Festa Gourmet",
+      "Virtual Home Office (18º andar): salas individuais, sala de reunião e estúdio com fundo infinito",
+      "Toy's, espaço infantil (18º andar)",
+      "Fitness (18º andar)",
+      "Play Lounge (18º andar): jogos de cartas, jogos de tabuleiro e sinuca"
+    ],
+    "nota": "Áreas comuns entregues mobiliadas, equipadas e climatizadas, segundo a incorporadora; o que vai em cada espaço consta do memorial descritivo."
+  },
+  "ficha": [
+    [
+      "Incorporação",
+      "Emmar Incorporadora (primeiro empreendimento da marca, segundo o catálogo)"
+    ],
+    [
+      "Construtora",
+      "Não nomeada no material"
+    ],
+    [
+      "Empresa responsável",
+      "Razão social e CNPJ não informados no material; consulte"
+    ],
+    [
+      "Endereço",
+      "Rua 11 de Junho, 475 — Centro, Indaiatuba/SP, esquina com a Rua Voluntário João dos Santos"
+    ],
+    [
+      "Prédio",
+      "19 andares sobre 3 pisos de garagem (subsolo, térreo e sobressolo), 22 pavimentos ao todo"
+    ],
+    [
+      "Elevadores",
+      "2"
+    ],
+    [
+      "Apartamentos",
+      "94, do 1º ao 17º andar: 6 por andar do 1º ao 10º, 5 do 11º ao 16º e 4 no 17º"
+    ],
+    [
+      "Plantas",
+      "1 suíte + lavabo com 39,44 e 39,83 m²; 2 suítes + lavabo com 71,82 m²; 3 suítes + lavabo com 107,02 e 111,65 m²; no 17º andar, final 4, 2 suítes + lavabo sem metragem no catálogo"
+    ],
+    [
+      "Vagas",
+      "1 no tipo 39 m² e 2 nos tipos 71, 107 e 111 m² (vagas do 17º andar, final 4, não informadas); vagas demarcadas"
+    ],
+    [
+      "Vagas de visitantes",
+      "13 vagas de visitantes e PNE (pessoas com necessidades especiais), segundo o catálogo"
+    ],
+    [
+      "Fachada",
+      "Molduras, revestimentos e texturas, segundo a incorporadora"
+    ],
+    [
+      "Lazer",
+      "18º andar e rooftop do 19º; 10 itens nomeados no catálogo"
+    ],
+    [
+      "Terreno e área construída",
+      "Não informados no material"
+    ],
+    [
+      "Aprovação",
+      "Prefeitura de Indaiatuba, processo nº 31807/2022; Alvará de Licença nº 1885/2025, de 07/11/2025"
+    ],
+    [
+      "Registro de incorporação",
+      "Número não informado no material; consulte"
+    ],
+    [
+      "Preço a partir de",
+      "R$ 519.900,00 · unidade 84, tabela fluxo Emmar de out/2026"
+    ],
+    [
+      "Na tabela",
+      "Últimas 6 unidades (28/10/2026): 84, 96, 126, 142, 146 e 162"
+    ],
+    [
+      "Correção das parcelas",
+      "Mensal, pelo INCC-DI, uma versão do Índice Nacional de Custo da Construção (INCC) da Fundação Getulio Vargas (FGV)"
+    ],
+    [
+      "Entrega",
+      "A confirmar com a Emmar; a parcela das chaves vence em 31/03/2029, segundo a tabela"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um apartamento no Lumina Residencial?",
+      "a": "Na tabela fluxo da Emmar de out/2026, as últimas 6 unidades (28/10/2026) vão de R$ 519.900,00 a R$ 1.457.900,00, em valores nominais: as parcelas são corrigidas todo mês pelo INCC-DI, uma versão do Índice Nacional de Custo da Construção (INCC) da FGV. O apartamento de 1 suíte com 39,44 m² (unidade 84, 8º andar) está na tabela por R$ 519.900,00. Os de 3 suítes com 107,02 m² vão de R$ 1.319.900,00 a R$ 1.373.900,00, e os de 111,65 m², de R$ 1.429.900,00 a R$ 1.457.900,00. A disponibilidade de cada unidade se confirma com a Emmar antes do fechamento."
+    },
+    {
+      "q": "Quais são as plantas do Lumina?",
+      "a": "São quatro tipos, todos com lavabo: 1 suíte com 39,44 ou 39,83 m² e 1 vaga; 2 suítes com 71,82 m² e 2 vagas; e 3 suítes com 107,02 ou 111,65 m² e 2 vagas. Na tabela de out/2026 só há unidades de 1 suíte (39,44 m²) e de 3 suítes."
+    },
+    {
+      "q": "Quando o Lumina Residencial será entregue?",
+      "a": "O material da Emmar não traz previsão de entrega. A tabela de out/2026 marca o vencimento da parcela das chaves para 31/03/2029, mas essa é uma data de pagamento, não um prazo de obra. A previsão de entrega se confirma com a Emmar, e o prazo que vale é o do contrato."
+    },
+    {
+      "q": "Como é o pagamento do Lumina?",
+      "a": "Pela tabela fluxo de out/2026: sinal, 24 parcelas mensais a partir de 10/11/2026, 4 intermediárias (10/02/2027, 10/08/2027, 10/02/2028 e 10/08/2028) e a parcela das chaves em 31/03/2029, que pode ser paga com recursos próprios ou financiamento bancário. Na unidade 84 são R$ 68.500,00 de sinal, 24 × R$ 3.500,00, 4 × R$ 8.625,00 e R$ 332.900,00 nas chaves. As parcelas são corrigidas todo mês pelo INCC-DI, uma versão do Índice Nacional de Custo da Construção (INCC) da FGV. O financiamento depende da análise de crédito do banco."
+    },
+    {
+      "q": "Onde fica o Lumina Residencial?",
+      "a": "Na Rua 11 de Junho, 475, no Centro de Indaiatuba/SP, na esquina com a Rua Voluntário João dos Santos. O stand de vendas tem o mesmo endereço, segundo a tabela da Emmar. A incorporadora diz que o Parque Ecológico fica a poucos metros, sem informar a distância."
+    },
+    {
+      "q": "Quem é a incorporadora do Lumina?",
+      "a": "A Emmar Incorporadora, de Indaiatuba, fundada por Anderson e Debora Beraldo. Segundo o catálogo, o Lumina é o primeiro empreendimento da marca. A construtora da obra não é nomeada no material."
+    },
+    {
+      "q": "O Lumina Residencial tem registro de incorporação?",
+      "a": "Não consta no material recebido: nem o catálogo nem a tabela trazem o número do registro de incorporação (o R. na matrícula do imóvel, no cartório). O catálogo informa a aprovação na Prefeitura de Indaiatuba (processo nº 31807/2022) e o Alvará de Licença nº 1885/2025, de 07/11/2025, que não são registro de incorporação. Peça o número antes de assinar qualquer proposta."
+    },
+    {
+      "q": "Qual é o lazer do Lumina?",
+      "a": "O lazer fica no 18º andar e no rooftop do 19º. O catálogo nomeia 10 itens: piscina ao ar livre, Cine Sky, Gourmet 360, Quadra Multi Sports, Festa Gourmet, Petit Gourmet, Virtual Home Office, Toy's (espaço infantil), Fitness e Play Lounge. Segundo a incorporadora, as áreas comuns são entregues mobiliadas, equipadas e climatizadas."
+    }
+  ],
+  "cta": {
+    "h2": "Quer a tabela do Lumina Residencial?",
+    "p": "Mandamos a tabela fluxo de out/2026 com andar, área, vagas e cada parcela das 6 unidades, e tiramos as dúvidas sobre pagamento, correção e entrega.",
+    "msg": "Olá! Quero a tabela de preços do Lumina Residencial com as unidades disponíveis.",
+    "texto": "Pedir a tabela",
+    "visita": {
+      "msg": "Olá! Quero agendar uma visita ao Lumina Residencial.",
+      "texto": "Agendar visita"
+    }
+  },
+  "rodape": {
+    "marca": "LUMINA RESIDENCIAL",
+    "linha": "Lumina Residencial · 94 apartamentos de 1 a 3 suítes · plantas de 39,44 a 111,65 m² · Rua 11 de Junho, 475 · Centro · Indaiatuba, SP",
+    "realizacao": "Incorporação Emmar Incorporadora",
+    "legal": "Perspectivas e plantas ilustrativas, sem caráter contratual; nos apartamentos, móveis e decoração são sugestão e não são entregues. Acabamentos, medidas e especificações podem variar, e prevalece o memorial descritivo do empreendimento. Valores conforme a tabela fluxo da Emmar Incorporadora de out/2026, corrigidos mensalmente pelo INCC-DI e sujeitos a alteração sem aviso; a disponibilidade de cada unidade se confirma com a incorporadora antes do fechamento. Empreendimento aprovado na Prefeitura de Indaiatuba (processo nº 31807/2022; Alvará de Licença nº 1885/2025, de 07/11/2025); o número do registro de incorporação não consta no material. Previsão de entrega a confirmar com a incorporadora. Página publicada em out/2026."
+  },
+  "home": {
+    "tipo": "apartamento",
+    "preco": 519900,
+    "dorms": "1",
+    "mcmv": "0",
+    "status": "lancamento",
+    "constr": "Emmar",
+    "badge": "Lançamento · Centro",
+    "meta": "39,44 a 111,65 m² · 1 a 3 suítes",
+    "desc": "Prédio de 19 andares na Rua 11 de Junho · 1, 2 ou 3 suítes com lavabo · lazer no 18º andar e no rooftop · últimas 6 unidades (28/10/2026).",
+    "alt": "Perspectiva ilustrada do rooftop do Lumina Residencial à noite, com piscina e quadra no alto do prédio",
+    "itemlist": "Lumina Residencial — prédio de 19 andares da Emmar Incorporadora no Centro, 94 apartamentos de 1 a 3 suítes, plantas de 39,44 a 111,65 m² · últimas 6 unidades (28/10/2026) · a partir de R$ 519.900 (tabela out/2026)"
+  },
+  "llms": {
+    "secao": "apartamentos",
+    "linha": "Incorporação Emmar Incorporadora (primeiro empreendimento da marca, segundo o catálogo; construtora não nomeada) na Rua 11 de Junho, 475, Centro de Indaiatuba, esquina com a Rua Voluntário João dos Santos. Prédio de 19 andares sobre 3 pisos de garagem (subsolo, térreo e sobressolo), 2 elevadores, 94 apartamentos do 1º ao 17º andar; lazer no 18º andar e no rooftop do 19º. Plantas com lavabo: 1 suíte com 39,44 e 39,83 m² (1 vaga), 2 suítes com 71,82 m² (2 vagas), 3 suítes com 107,02 e 111,65 m² (2 vagas); no 17º andar, final 4, um apartamento de 2 suítes sem metragem nem vagas no catálogo. Lazer com 10 itens nomeados: piscina ao ar livre, Cine Sky, Gourmet 360, Quadra Multi Sports, Festa Gourmet, Petit Gourmet, Virtual Home Office, Toy's, Fitness e Play Lounge; áreas comuns entregues mobiliadas, equipadas e climatizadas, segundo a incorporadora. Tabela fluxo Emmar de out/2026 com as últimas 6 unidades (28/10/2026): 84 (8º andar, 39,44 m², 1 suíte) R$ 519.900,00; 96, 126 e 146 (107,02 m², 3 suítes) R$ 1.319.900,00, R$ 1.344.900,00 e R$ 1.373.900,00; 142 e 162 (111,65 m², 3 suítes) R$ 1.429.900,00 e R$ 1.457.900,00. Pagamento: sinal, 24 mensais a partir de 10/11/2026, 4 intermediárias (10/02/2027, 10/08/2027, 10/02/2028 e 10/08/2028) e parcela das chaves em 31/03/2029 (recursos próprios ou financiamento), com correção mensal pelo INCC-DI (FGV). Previsão de entrega não informada no material. Aprovado na Prefeitura (processo nº 31807/2022) com Alvará de Licença nº 1885/2025, de 07/11/2025; número do registro de incorporação não informado."
+  },
+  "mapa": {
+    "rota": "Residencial Lumina Indaiatuba",
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d523.8244635734313!2d-47.218358835744034!3d-23.084398675812544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b30064d7a63d%3A0xed205d82d8dce8af!2sResidencial%20Lumina%20Indaiatuba!5e1!3m2!1spt-BR!2sbr!4v1793214463086!5m2!1spt-BR!2sbr"
+  },
+  "geo": [
+    -23.084399,
+    -47.218359
+  ]
+}

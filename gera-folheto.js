@@ -40,14 +40,17 @@ const APTOS = [
   // Gran Vic Andorinha saiu daqui em 16/10/2026: a VIC não mandou tabela em outubro, sem unidades
   // (regra do Fabio: "se algum não veio tabela é porque não tem mais"). A ficha segue no ar como
   // esgotado (EXTRAS_APTOS do gera-relacionados.js) e a saída está em SAIDAS do gera-observatorio.js.
+  { n:'Vila Plaza Residence', c:'Lógica Empreendimentos', p:403846, m2:38.89, tab:'2026-10', img:'vila-plaza-residence-indaiatuba/images/hero.jpg', s:'studio, studio duplex e 2 suítes · 38,89 a 76,53 m² · Jd. São Conrado', t:'Lançamento', slug:'vila-plaza-residence-indaiatuba' },
   { n:'Spazio Italia', c:'Zarin', p:429961, m2:59.5, tab:'2026-10', img:'spazio-italia-indaiatuba/images/hero.jpg',
     s:'59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer', t:'Lançamento', slug:'spazio-italia-indaiatuba' },
+  { n:'Lumina Residencial', c:'Emmar', p:519900, m2:39.44, tab:'2026-10', img:'lumina-residencial-indaiatuba/images/hero.jpg', s:'1 a 3 suítes · 39,44 a 111,65 m² · Centro · últimas 6 unidades (28/10/2026)', t:'Lançamento', est:6, estEm:'28/10/2026', slug:'lumina-residencial-indaiatuba' },
   { n:'Artemis Residencial', c:'GPCI', p:555171, m2:63.85, tab:'2026-10', img:'artemis-residencial-indaiatuba/images/hero.jpg', s:'3 dorm c/ suíte · 63,85 e 64,44 m² · Park Meraki · entrega abr/2028 (Torre 1) e set/2028 (Torre 2)', t:'Lançamento', slug:'artemis-residencial-indaiatuba' },
   { n:'Aurora — Park Meraki', c:'Masotti', p:758850, m2:101, img:'aurora-indaiatuba/images/fotomontagem-card.jpg',
     s:'101 a 152 m² · 4 torres · 32 áreas de lazer', t:'Alto padrão', slug:'aurora-indaiatuba',
     prox:'breve lançamento com tabela de pré-lançamento a partir de R$ 758.850 (Kit padrão de 101 m²), sujeita a reajuste no lançamento oficial — data não divulgada pela Masotti' },
   { n:'Storia Congesa', c:'Congesa', p:921000, m2:70.05, tab:'2026-10', img:'storia-congesa-indaiatuba/images/fachada-card.jpg',
     s:'70 a 151 m² · 2-3 vagas + hobby box · previsão de entrega dez/2026', t:'Alto padrão', slug:'storia-congesa-indaiatuba' },
+  { n:'Lina Residence', c:'Lofts', p:924108, m2:85.76, tab:'2026-10', img:'lina-residence-indaiatuba/images/hero.jpg', s:'2 suítes ou 3 dorm · 85,28 a 101,15 m² · 2 torres · Cidade Nova I', t:'Alto padrão', slug:'lina-residence-indaiatuba' },
   { n:'Areté Home', c:'PERPLAN', p:991005, m2:93.39, tab:'2026-08', img:'arete-home-indaiatuba/images/hero.jpg',
     s:'93 a 117 m² · 2 e 3 suítes · torre única · 19 andares', t:'Lançamento', slug:'arete-home-indaiatuba' },
   { n:'Espaço Conceição', c:'Masotti', p:1030310, m2:85.13, tab:'2026-10', img:'espaco-conceicao-indaiatuba/images/fachada-card.jpg',
@@ -65,6 +68,7 @@ const APTOS = [
     s:'3 dorm c/ suíte ou 3 suítes · Balcony, Maison e Penthouse · 48 unidades (out/2026) · previsão de entrega fev/2029 e jul/2029', t:'Alto padrão', slug:'seasons-indaiatuba' },
   { n:'360 Home Office Mall', c:'HINC', p:546274, m2:39.73, tab:'2026-09', conf:'2026-10', img:'360-home-office-mall-indaiatuba/images/hero.jpg',
     s:'uso misto · residencial de 39,73 a 128,36 m² · Park Meraki', t:'Lançamento', slug:'360-home-office-mall-indaiatuba' },
+  { n:'Reserva Luiza Tomaselli', c:'Lofts', p:1809776, m2:154.99, tab:'2026-10', img:'reserva-luiza-tomaselli-indaiatuba/images/hero.jpg', s:'3 suítes · 154,99 m² com depósito · pronto para morar · Vila Castelo Branco', t:'Pronto', slug:'reserva-luiza-tomaselli-indaiatuba' },
 ];
 
 
