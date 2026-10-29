@@ -68,7 +68,7 @@ const APTOS = [
     s:'3 dorm c/ suíte ou 3 suítes · Balcony, Maison e Penthouse · 48 unidades (out/2026) · previsão de entrega fev/2029 e jul/2029', t:'Alto padrão', slug:'seasons-indaiatuba' },
   { n:'360 Home Office Mall', c:'HINC', p:546274, m2:39.73, tab:'2026-09', conf:'2026-10', img:'360-home-office-mall-indaiatuba/images/hero.jpg',
     s:'uso misto · residencial de 39,73 a 128,36 m² · Park Meraki', t:'Lançamento', slug:'360-home-office-mall-indaiatuba' },
-  { n:'Reserva Luiza Tomaselli', c:'Lofts', p:1809776, m2:154.99, tab:'2026-10', img:'reserva-luiza-tomaselli-indaiatuba/images/hero.jpg', s:'3 suítes · 154,99 m² com depósito · pronto para morar · Vila Castelo Branco', t:'Pronto', slug:'reserva-luiza-tomaselli-indaiatuba' },
+  { n:'Reserva Luiza Tomaselli', c:'Lofts', p:1809776, m2:154.99, tab:'2026-10', img:'reserva-luiza-tomaselli-indaiatuba/images/fachada-card.jpg', s:'3 suítes · 154,99 m² com depósito · pronto para morar · Vila Castelo Branco', t:'Pronto', slug:'reserva-luiza-tomaselli-indaiatuba' },
 ];
 
 

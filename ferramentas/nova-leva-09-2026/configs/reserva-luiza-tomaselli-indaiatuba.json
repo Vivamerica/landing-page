@@ -67,7 +67,21 @@
           "p": "apartamentos na tabela de out/2026"
         }
       ],
-      "depois": "galeria"
+      "depois": "galeria",
+      "figuras": [
+        {
+          "classe": "plantas",
+          "itens": [
+            {
+              "arq": "fachada.jpg",
+              "alt": "Foto real da fachada do Reserva Luiza Tomaselli, torre de vidro e revestimento cinza com faixa acobreada, na Avenida dos Trabalhadores, em Indaiatuba",
+              "w": 382,
+              "h": 510,
+              "leg": "Fachada na Avenida dos Trabalhadores (foto real)"
+            }
+          ]
+        }
+      ]
     },
     {
       "label": "Plantas",
@@ -493,7 +507,7 @@
     "badge": "Pronto para morar · Vila Castelo Branco",
     "meta": "154,99 m² com depósito · 3 suítes · 2 vagas",
     "desc": "Uma torre na Av. dos Trabalhadores · habite-se ago/2024 · aptos 33 e 44 com 3 suítes, piso em todos os ambientes e armários planejados · tabela out/2026.",
-    "alt": "Foto real do living com espaço gourmet do apartamento 44 do Reserva Luiza Tomaselli",
+    "alt": "Foto real da fachada do Reserva Luiza Tomaselli na Avenida dos Trabalhadores",
     "itemlist": "Reserva Luiza Tomaselli — torre da Lofts na Vila Castelo Branco, pronta (habite-se ago/2024), apartamentos de 3 suítes com 154,99 m² com depósito · a partir de R$ 1.809.776 (tabela out/2026)"
   },
   "llms": {
