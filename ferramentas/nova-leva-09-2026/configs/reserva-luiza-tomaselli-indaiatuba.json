@@ -209,6 +209,21 @@
           "t": "Vagas e depósito",
           "p": "A tabela de out/2026 informa 2 vagas para o apartamento 33 e 2 para o 44. A posição das vagas e do depósito de cada um se confirma no atendimento."
         }
+      ],
+      "figuras": [
+        {
+          "classe": "unica",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "planta-tipo.jpg",
+              "w": 1600,
+              "h": 840,
+              "alt": "Planta do apartamento tipo do Reserva Luiza Tomaselli, finais 1 a 4: suíte master com closet, suíte com closet, suíte, lavabo, living/gourmet de 56,13 m², cozinha, área de serviço e laje técnica",
+              "leg": "Planta do apartamento tipo, finais 1, 2, 3 e 4 (projeto simplificado da Lofts, sem escala)"
+            }
+          ]
+        }
       ]
     },
     {
