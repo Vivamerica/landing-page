@@ -102,6 +102,9 @@ num = lambda linha, nome: (lambda g: float(g.group(1)) if g else None)(re.search
 lotes = {}
 for m in LINHA.finditer(s):
     b, q, l, resto = m.groups()
+    # revenda:'dd/mm/aaaa' = lote de revenda: fica no mapa, mas não é da tabela da loteadora (fora da lista e das contagens)
+    if re.search(r'\brevenda:', resto):
+        continue
     # tabela:true = o valor do lote é o VALOR DE TABELA (à vista sai com desconto), como no popup
     lotes.setdefault(b, []).append({'q': q, 'l': l, 'vista': num(resto, 'vista'), 'm2': num(resto, 'm2'), 'pm2': num(resto, 'pm2'),
                                     'tabela': bool(re.search(r'\btabela:true', resto))})

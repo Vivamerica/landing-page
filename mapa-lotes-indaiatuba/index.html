@@ -657,6 +657,8 @@ const LOTES = [
   // de baixo, então falta ponto de controle para georreferenciar o desenho.
   { b:'reserva-botanica', q:'C', l:'1', m2:410.01, tipo:'RESIDENCIAL', pm2:1567, vista:642374.83, entrada:73230.73, parcela:8165.56, nx:120, ep:11, ll:[-23.051740,-47.227001], tabela:true, obs:'Valor de tabela Zarin de 29/09/2026: entrada de cerca de 11,4% e saldo em 36x, 60x ou 120x pela Tabela Price, com juros de 1% a.m.; a parcela abaixo e a de 120x. Liberacao para construcao prevista para novembro de 2026' },
   { b:'reserva-botanica', q:'B', l:'13', m2:456.70, tipo:'RESIDENCIAL', pm2:1567, vista:715525.59, entrada:81569.92, parcela:9095.42, nx:120, ep:11, ll:[-23.052700,-47.227065], tabela:true, obs:'Valor de tabela Zarin de 29/09/2026: entrada de cerca de 11,4% e saldo em 36x, 60x ou 120x pela Tabela Price, com juros de 1% a.m.; a parcela abaixo e a de 120x. Liberacao para construcao prevista para novembro de 2026' },
+  // Lote de revenda, fora da tabela Zarin: área e posição pela planta do empreendimento; valor informado pelo proprietário.
+  { b:'reserva-botanica', q:'D', l:'31', m2:200.14, tipo:'RESIDENCIAL', pm2:1693.81, vista:339000.00, ll:[-23.053299,-47.226142], soVista:true, revenda:'04/11/2026' },
   { b:'alphaville', q:'A', l:'3', m2:539.19, tipo:'RESIDENCIAL', pm2:1776, vista:957618.30, entrada:191523.66, parcela:12768.24, nx:60, ep:20, ll:[-23.130990,-47.199922], tabela:true, obs:'Valor de tabela Alphaville de out/2026: ato de 20% (parcelável em até 3x) e saldo em 60 mensais, sem juros, corrigido pelo IPCA. Há ainda a opção com 5 parcelas anuais e mensal menor. Custas de escrituração de 4,76% à parte. Desconto por prazo: 15% à vista, 9% em 12x, 6% em 24x, 4% em 36x' },
   { b:'alphaville', q:'A', l:'5', m2:539.19, tipo:'RESIDENCIAL', pm2:1776, vista:957618.30, entrada:191523.66, parcela:12768.24, nx:60, ep:20, ll:[-23.131264,-47.200019], tabela:true, obs:'Valor de tabela Alphaville de out/2026: ato de 20% (parcelável em até 3x) e saldo em 60 mensais, sem juros, corrigido pelo IPCA. Há ainda a opção com 5 parcelas anuais e mensal menor. Custas de escrituração de 4,76% à parte. Desconto por prazo: 15% à vista, 9% em 12x, 6% em 24x, 4% em 36x' },
   { b:'alphaville', q:'A', l:'6', m2:627.70, tipo:'RESIDENCIAL', pm2:1776, vista:1114859.68, entrada:222971.94, parcela:14864.80, nx:60, ep:20, ll:[-23.131391,-47.200091], tabela:true, obs:'Valor de tabela Alphaville de out/2026: ato de 20% (parcelável em até 3x) e saldo em 60 mensais, sem juros, corrigido pelo IPCA. Há ainda a opção com 5 parcelas anuais e mensal menor. Custas de escrituração de 4,76% à parte. Desconto por prazo: 15% à vista, 9% em 12x, 6% em 24x, 4% em 36x' },
@@ -2940,8 +2942,14 @@ const rotuloTxt = (x, sep) => ehCasa(x) ? `${casaTxt(x)} · ${x.q}${x.l}` : `Q${
 const areaCurtaTxt = x => ehCasa(x) && x.casa != null ? num(x.casa) + ' m² de casa' : m2Txt(x);
 const areaTxt = x => ehCasa(x) && x.casa != null && x.m2 != null ? `${num(x.casa)} m² de casa em terreno de ${num(x.m2)} m²` : areaCurtaTxt(x);
 const foraDaBase = b => !!(b && b.cidade && b.cidade !== 'Indaiatuba');   // o mapa e' de Indaiatuba; bairro de outra cidade traz `cidade`
-const desdeTxt = ls => { const v = ls.filter(temPreco).map(x => x.vista); return v.length ? 'desde ' + brl0(Math.min(...v)) : 'preços sob consulta'; };
-const minTxt = ls => { const v = ls.filter(temPreco).map(x => x.vista); return v.length ? brl0(Math.min(...v)) + '+' : 'consulte'; };
+// Lote de revenda (`revenda:'dd/mm/aaaa'`, data em que o proprietário informou o valor) não é da tabela da loteadora: aparece no mapa e na
+// lista com o rótulo, mas fica fora da contagem e do "desde" do empreendimento, que seguem a tabela.
+const ROT_REVENDA = '(lote de revenda)';
+const daTabela = ls => ls.filter(x => !x.revenda);
+const qtdTxt = (b, ls) => { const n = daTabela(ls).length; return n || !ls.length ? `${n} ${unidTxt(b, n)}` : `${ls.length} de revenda`; };
+const maisRevendaTxt = ls => { const n = daTabela(ls).length, r = ls.length - n; return r && n ? ` · + ${r} de revenda` : ''; };
+const desdeTxt = ls => { const v = daTabela(ls).filter(temPreco).map(x => x.vista); if (v.length) return 'desde ' + brl0(Math.min(...v)); const r = ls.filter(temPreco).map(x => x.vista); return r.length ? brl0(Math.min(...r)) + ' ' + ROT_REVENDA : 'preços sob consulta'; };
+const minTxt = ls => { const t = daTabela(ls).filter(temPreco).map(x => x.vista), v = t.length ? t : ls.filter(temPreco).map(x => x.vista); return v.length ? brl0(Math.min(...v)) + '+' : 'consulte'; };
 // Pedido de tabela no molde do funil: "tabela de lotes" para loteamento, "tabela de preços" para bairro de casas.
 const nomeCurto = b => b.nome.split(' — ')[0];
 const artigoDe = b => (nomeCurto(b) === 'Reserva Botânica' ? 'da' : 'do');
@@ -2963,7 +2971,7 @@ function passa(x) {
   if (!ativos.has(x.tipo)) return false;
   if (!ativosLot.has(especieDe(b))) return false;
   if (!termo) return true;
-  const extra = (b && b.cidade ? ' ' + b.cidade : '') + (b && b.casas ? ` ${casaTxt(x)} ${x.q}${x.l} ${areaTxt(x)}` : '');   // busca por cidade, por "casa" e pelo nome do modelo
+  const extra = (b && b.cidade ? ' ' + b.cidade : '') + (b && b.casas ? ` ${casaTxt(x)} ${x.q}${x.l} ${areaTxt(x)}` : '') + (x.revenda ? ' revenda' : '');   // busca por cidade, por "casa" e pelo nome do modelo
   const alvo = semAcento(`${b ? b.nome : ''} ${b && b.sub ? b.sub : ''} quadra ${x.q} q${x.q} lote ${x.l} l${x.l} ${TIPOS[x.tipo][0]} ${m2Txt(x)}${extra}`);
   return termo.split(/\s+/).every(t => alvo.includes(t));
 }
@@ -3089,20 +3097,20 @@ function popupHtml(x) {
   const b = bairroDe(x.b); const t = TIPOS[x.tipo]; const casa = ehCasa(x);
   const msg = casa
     ? `Olá! Vi no mapa a ${casaTxt(x)} (quadra ${x.q}, lote ${x.l}) do ${b.nome}${b.cidade ? ', em ' + b.cidade : ''}. Pode me enviar mais informações?`
-    : `Olá! Vi no mapa o lote Quadra ${x.q}, Lote ${x.l} no ${b.nome} (${m2Txt(x)}${temPreco(x) ? ', ' + brl(x.vista) + ' à vista' : ''}) e quero mais informações.`;
+    : `Olá! Vi no mapa o lote${x.revenda ? ' de revenda' : ''} Quadra ${x.q}, Lote ${x.l} no ${b.nome} (${m2Txt(x)}${temPreco(x) ? ', ' + brl(x.vista) + ' à vista' : ''}) e quero mais informações.`;
   const wa = 'https://wa.me/5519989769457?text=' + encodeURIComponent(msg);
   // Casa: a tabela nao traz percentual de entrada, prazo nem taxa, entao o popup nao simula nada (os padroes
   // `x.ep || 15` e `x.nx || 96` sao de lote). Linha com preco e sem entrada ou parcela cai na mesma frase.
   const semSimulacao = casa || (temPreco(x) && !x.soVista && (x.entrada == null || x.parcela == null));
   const condicao = semSimulacao ? '<dt>Condição</dt><dd>Condições de pagamento no atendimento</dd>'
     : !temPreco(x) ? '<dt>Condição</dt><dd>tabela a pedir à loteadora</dd>' : x.soVista ? '<dt>Condição</dt><dd>somente à vista</dd>' : `<dt>Entrada ${x.ep || 15}%</dt><dd>${brl(x.entrada)}</dd><dt>Parcelas</dt><dd>${x.nx || 96}x de ${brl(x.parcela)} <small>(${x.cond || b.cond || '1% a.m. incluído · correção mensal pelo IPCA'})</small></dd>`;
-  return `<div class="pp"><h3>${tituloTxt(x)}</h3><div class="sub">${b.nome}${b.sub ? ' · ' + b.sub : ''}</div>
-    <div class="preco">${temPreco(x) ? brl(x.vista) + (x.tabela ? ' <small>valor de tabela</small>' : ' <small>à vista</small>') : 'Preço sob consulta'}</div>
+  return `<div class="pp"><h3>${tituloTxt(x)}</h3><div class="sub">${b.nome}${x.revenda ? ' · lote de revenda' : b.sub ? ' · ' + b.sub : ''}</div>
+    <div class="preco">${temPreco(x) ? brl(x.vista) + (x.revenda ? ' <small>à vista ' + ROT_REVENDA + '</small>' : x.tabela ? ' <small>valor de tabela</small>' : ' <small>à vista</small>') : 'Preço sob consulta'}</div>
     <dl><dt>Metragem</dt><dd>${areaTxt(x)}</dd>${x.pm2 != null && !casa ? `<dt>Valor do m²</dt><dd>${brl(x.pm2)}</dd>` : ''}<dt>Tipo</dt><dd>${t[0]}</dd>
     ${x.prazo && !casa ? `<dt>A prazo</dt><dd>${brl(x.prazo)}${b.notaPrazo ? ' <small>(' + b.notaPrazo + ')</small>' : ''}</dd>` : ''}${condicao}</dl>${b.landing ? `<a class="lnk" href="${b.landing}">Página do empreendimento →</a>` : ''}
     ${x.obs ? '<div class="obs">' + x.obs + '</div>' : ''}
     <a class="wa" data-origem="lote" data-lote="${x.id}" href="${wa}" target="_blank" rel="noopener">Falar sobre ${casa ? 'esta casa' : 'este lote'}</a>
-    <div class="fonte">${temPreco(x) ? (x.tabela ? 'Valor de tabela de ' : 'Preço à vista de ') + (b.tab || 'set/2026') + (b.notaTab ? ' (' + b.notaTab + ')' : '') + ', sujeito a alteração sem aviso. ' : ''}Posição do pino aproximada.</div></div>`;
+    <div class="fonte">${temPreco(x) ? (x.revenda ? 'Preço à vista informado pelo proprietário em ' + x.revenda : (x.tabela ? 'Valor de tabela de ' : 'Preço à vista de ') + (b.tab || 'set/2026') + (b.notaTab ? ' (' + b.notaTab + ')' : '')) + ', sujeito a alteração sem aviso. ' : ''}Posição do pino aproximada.</div></div>`;
 }
 function desenhar() {
   camada.clearLayers();
@@ -3117,7 +3125,7 @@ function desenhar() {
     if (x.ll) {
       const mk = L.circleMarker(x.ll, { radius: 9, color: '#fff', weight: 2, fillColor: cor, fillOpacity: .95 }).addTo(camada);
       mk.bindPopup(popupHtml(x), { maxWidth: 320 });
-      mk.bindTooltip(`${rotuloTxt(x, ' ')} · ${precoTxt(x)}`, { permanent: false, direction: 'top', offset: [0, -8], className: 'rotulo' });
+      mk.bindTooltip(`${rotuloTxt(x, ' ')} · ${precoTxt(x)}${x.revenda ? ' ' + ROT_REVENDA : ''}`, { permanent: false, direction: 'top', offset: [0, -8], className: 'rotulo' });
       if (!x.poly) marcadores[x.id] = mk;
     }
   });
@@ -3130,7 +3138,7 @@ mapa.createPane('plantas'); mapa.getPane('plantas').style.zIndex = 350;   // aba
 const camadaBairros = L.layerGroup();
 const plantas = {};
 const pinosBairro = {};
-const htmlBairro = (b, ls) => `<div><b>${b.nome}</b><span>${ls.length} ${unidTxt(b, ls.length)} · ${desdeTxt(ls)}</span></div>`;
+const htmlBairro = (b, ls) => `<div><b>${b.nome}</b><span>${qtdTxt(b, ls)} · ${desdeTxt(ls)}${maisRevendaTxt(ls)}</span></div>`;
 const iconeBairro = (b, ls, baixo) => L.divIcon({ className: 'pino-bairro' + (baixo ? ' baixo' : ''), html: htmlBairro(b, ls), iconSize: null, iconAnchor: [0, 0] });
 const iconeMini = (b, ls) => L.divIcon({ className: 'pino-bairro-mini', html: `<div>${ls.length}</div>`, iconSize: null, iconAnchor: [0, 0] });
 BAIRROS.forEach(b => {
@@ -3321,15 +3329,15 @@ function montarLista() {
     if (!ls.length) return;
     const pinados = ls.filter(x => x.ll || x.poly).length;
     const div = document.createElement('div'); div.className = 'bairro' + (bairroAtivo === b.id ? ' ativo' : ''); div.dataset.id = b.id;
-    div.innerHTML = `<button type="button"><span><b>${b.nome}</b><small>${ls.length} ${unidTxt(b, ls.length)}${pinados < ls.length ? ' · ' + pinados + ' no mapa' : ''}${foraDaBase(b) ? ' · ' + b.cidade : ''}${b.landing && !b.casas ? ' · lançamento' : ''}</small></span><span class="n">${minTxt(ls)}</span></button><div class="lotes"></div>`;
+    div.innerHTML = `<button type="button"><span><b>${b.nome}</b><small>${qtdTxt(b, ls)}${maisRevendaTxt(ls)}${pinados < ls.length ? ' · ' + pinados + ' no mapa' : ''}${foraDaBase(b) ? ' · ' + b.cidade : ''}${b.landing && !b.casas ? ' · lançamento' : ''}</small></span><span class="n">${minTxt(ls)}</span></button><div class="lotes"></div>`;
     const cont = div.querySelector('.lotes');
     // menor preço do filtro atual e o pedido da tabela completa, por loteamento; onde as linhas
     // têm tabela:true o número é VALOR DE TABELA (à vista sai com desconto), como no popup
-    const soTabela = ls.filter(temPreco).every(x => x.tabela);
-    cont.insertAdjacentHTML('beforeend', `<div class="tab-cta"><span>${ls.some(temPreco) ? desdeTxt(ls) + (soTabela ? ' · valor de tabela de ' : ' à vista · tabela de ') + (b.tab || 'set/2026') : 'preços sob consulta'}</span><a class="btn-tab" data-origem="gaveta" href="${waTabela(b)}" target="_blank" rel="noopener">Quero a tabela ${artigoDe(b)} ${nomeCurto(b)}</a></div>`);
+    const soTabela = daTabela(ls).filter(temPreco).every(x => x.tabela);
+    cont.insertAdjacentHTML('beforeend', `<div class="tab-cta"><span>${ls.some(temPreco) ? desdeTxt(ls) + (daTabela(ls).some(temPreco) ? (soTabela ? ' · valor de tabela de ' : ' à vista · tabela de ') + (b.tab || 'set/2026') : '') : 'preços sob consulta'}</span><a class="btn-tab" data-origem="gaveta" href="${waTabela(b)}" target="_blank" rel="noopener">Quero a tabela ${artigoDe(b)} ${nomeCurto(b)}</a></div>`);
     ls.sort(cmp).forEach(x => {
       const el = document.createElement('div'); el.className = 'lote' + (x.ll || x.poly ? '' : ' sempino'); el.dataset.id = x.id;
-      el.innerHTML = `<i style="background:${TIPOS[x.tipo][2]}"></i><span><span class="q">${rotuloTxt(x, '·')}</span> ${areaCurtaTxt(x)}${x.ll || x.poly ? '' : ' · <em>sem pino</em>'}</span><span class="v">${precoTxt(x)}</span>`;
+      el.innerHTML = `<i style="background:${TIPOS[x.tipo][2]}"></i><span><span class="q">${rotuloTxt(x, '·')}</span> ${areaCurtaTxt(x)}${x.revenda ? ' <small>' + ROT_REVENDA + '</small>' : ''}${x.ll || x.poly ? '' : ' · <em>sem pino</em>'}</span><span class="v">${precoTxt(x)}</span>`;
       el.onclick = ev => { ev.stopPropagation(); irParaLote(x); };
       cont.appendChild(el);
     });
