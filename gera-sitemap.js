@@ -9,7 +9,8 @@
       consecutivas e ignora o que não é texto — camada de marca (<style>),
       tag GA4, bloco da entidade, malha de rodapé, menu (GEN:menu e o
       cabeçalho antigo, menos o <h1>), rodapé, botões de WhatsApp (molde e
-      rótulo), cards/CTA/aside gerados no blog e os próprios campos de data.
+      rótulo), cards/CTA/aside gerados no blog, o formato do telefone
+      98976-9457 (com ou sem +55) e os próprios campos de data.
       Um commit que só trocou isso não conta. Página alterada
       na árvore de trabalho com mudança de texto recebe a data de hoje.
    3. Escreve sitemap.xml (BOM + LF, formato de sempre; changefreq/priority da
@@ -35,7 +36,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync, spawnSync } = require('child_process');
 
-const RAIZ = 'C:\\Users\\Usuario\\Desktop\\landing-page';
+const RAIZ = __dirname;   // raiz = pasta deste arquivo (vale em qualquer cópia do site)
 const DOMINIO = 'https://lancamentos.imoveisvivamerica.com.br/';
 const SITEMAP = path.join(RAIZ, 'sitemap.xml');
 const FORA = /^(ferramentas|qrcode|quermesse|seo|node_modules|\.git|\.claude|folder|treinamento)(\/|$)/;
@@ -208,6 +209,9 @@ function normalizarLd(corpo) {
 function fingerprint(html) {
   let h = html.replace(/\r\n?/g, '\n')
     .replace(/[\u2018\u2019\u00B4`]/g, "'").replace(/[\u201C\u201D]/g, '"');
+  // o formato do telefone escrito na página ((19) 98976-9457 até 11/2026, +55 19 98976-9457 depois)
+  // é contato, não texto: trocar o formato não muda a data da página (vale também dentro do JSON-LD)
+  h = h.replace(/(?:\+55 ?)?\(?19\)? ?98976-9457/g, 'TELEFONE');
   h = h.replace(GEN_CHROME, ' ');
   h = h.replace(/<!--[\s\S]*?-->/g, ' ');
   // linha de procedência (fichas), linha de data/autor (blog) e selos "atualizado em": são a data da página, não o texto

@@ -368,13 +368,13 @@ def main(caminho_cfg):
     r = c['rodape']
     out.append('<footer>\n  <p class="brand-f">%s</p>\n  <p>\n    %s<br>\n' % (e(r['marca']), e(r['linha'])))
     out.append('    %s · Comercialização: <a href="https://imoveisvivamerica.com.br" target="_blank" rel="noopener">Imobiliária Viv\'América</a> ·\n'
-               '    <a href="https://wa.me/5519989769457" target="_blank" rel="noopener">(19) 98976-9457</a><br>\n' % e(r['realizacao']))
+               '    <a href="https://wa.me/5519989769457" target="_blank" rel="noopener">+55 19 98976-9457</a><br>\n' % e(r['realizacao']))
     out.append('    <a href="%s">Início</a> ·\n    <a href="/apartamentos-na-planta-indaiatuba/">Apartamentos na planta</a> ·\n'
                '    <a href="/loteamentos-em-indaiatuba/">Loteamentos</a> ·\n    <a href="/condominios-fechados-indaiatuba/">Condomínios fechados</a> ·\n'
                '    <a href="/mapa-lotes-indaiatuba/">Mapa de lotes</a> ·\n    <a href="/blog/">Blog</a>\n  </p>\n' % BASE)
     out.append('  <p style="margin-top:12px;">\n    %s\n  </p>\n' % e(r['legal']))
     out.append('<p class="nap">Imobiliária Viv\'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · '
-               '<a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a>%s</p>\n</footer>\n\n'
+               '<a href="https://wa.me/5519989769457">+55 19 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a>%s</p>\n</footer>\n\n'
                % (' · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a>' if c.get('nap_privacidade', True) else ''))
     if c.get('mapa') and js_mapa:
         js = js_mapa.replace("f.title = 'Mapa do Espaço Conceição, Rua Três Marias, 254, Indaiatuba';",

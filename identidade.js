@@ -38,7 +38,7 @@
    alguma falhar), para conferir uma árvore em que outros geradores ainda mexem. */
 const fs = require('fs');
 const path = require('path');
-const RAIZ = 'C:\\Users\\Usuario\\Desktop\\landing-page';
+const RAIZ = __dirname;   // raiz = pasta deste arquivo (vale em qualquer cópia do site)
 const DOMINIO = 'https://lancamentos.imoveisvivamerica.com.br/';
 
 const CORES = [
@@ -142,6 +142,7 @@ const ENTIDADE = {
     'Minha Casa Minha Vida',
     'Financiamento Caixa e uso de FGTS',
     'Condomínios fechados e loteamentos em Indaiatuba',
+    'Compra de imóvel na planta em Indaiatuba por brasileiros que moram fora do Brasil',
   ],
   sameAs: [
     'https://www.instagram.com/imoveisvivamerica',
@@ -149,7 +150,9 @@ const ENTIDADE = {
     'https://www.youtube.com/@ImoveisVivAmerica',
     'https://www.linkedin.com/company/imobiliaria-vivamerica',
   ],
-  contactPoint: { '@type': 'ContactPoint', telephone: '+5519989769457', contactType: 'sales', areaServed: 'BR', availableLanguage: 'Portuguese' },
+  // contactPoint sem areaServed: o atendimento vale para quem mora fora do Brasil (pelo WhatsApp,
+  // em português); declarar 'BR' dizia aos buscadores e às IAs que só vendemos para o Brasil.
+  contactPoint: { '@type': 'ContactPoint', telephone: '+5519989769457', contactType: 'sales', availableLanguage: 'Portuguese' },
 };
 // Autor dos artigos do blog: definido por inteiro em /sobre/#fabio-correia e
 // repetido (com o mesmo @id) no author de cada BlogPosting.

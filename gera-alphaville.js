@@ -553,7 +553,7 @@ ${FAQ.map(f => `      <details><summary>${esc(f.q)}</summary><p>${f.a}</p></deta
       <a href="/blog/">Blog</a>
     </div>
     <p>© ${ANO} Imobiliária Viv'América · Empreendimentos Alphaville · CRECI 47394-J</p>
-  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
+  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">+55 19 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
   </footer>
 </body>
 </html>

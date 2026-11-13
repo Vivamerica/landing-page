@@ -45,7 +45,8 @@ import urllib.parse
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-R = 'C:/Users/Usuario/Desktop/landing-page/'
+import os
+R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')).replace(os.sep, '/') + '/'   # raiz = duas pastas acima (vale em qualquer cópia do site)
 P = R + 'mapa-lotes-indaiatuba/index.html'
 URL = 'https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/'
 OG = 'https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaiatuba/images/og.png'
@@ -313,7 +314,7 @@ faq = [
     ('O pino mostra a posição exata do lote?',
      'Não: a posição do pino é aproximada. A quadra e o número do lote são os da tabela da loteadora e, na maioria dos loteamentos, a planta sobreposta ao mapa ajuda a localizar. A situação de cada lote é confirmada no atendimento.'),
     ('Como peço a tabela completa de um loteamento?',
-     'Pelo WhatsApp (19) 98976-9457. O botão de cada loteamento na lista acima já envia o pedido com o nome do empreendimento, e a tabela chega com quadra, metragem e valor.'),
+     'Pelo WhatsApp +55 19 98976-9457. O botão de cada loteamento na lista acima já envia o pedido com o nome do empreendimento, e a tabela chega com quadra, metragem e valor.'),
 ]
 faq_html = '\n'.join('    <div class="faq-item"><h3>%s</h3><p>%s</p></div>' % (esc(q), esc(a)) for q, a in faq)
 
@@ -359,7 +360,7 @@ lista = '''
 %s
     <p class="links">Veja também: <a href="/loteamentos-em-indaiatuba/">Loteamentos em Indaiatuba, com preços</a> · <a href="/condominios-fechados-indaiatuba/">Condomínios fechados de lotes</a> · <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a> · <a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z dos loteamentos e bairros</a> · <a href="/imprensa-e-dados/">Dados abertos do Observatório (CSV e JSON)</a> · <a href="/">Todos os lançamentos de Indaiatuba</a></p>
     <p><a class="voltar" href="#lista">Voltar ao início da lista</a></p>
-    <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
+    <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">+55 19 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
   </div>
   <script type="application/ld+json">%s</script>
   <script type="application/ld+json">%s</script>

@@ -66,6 +66,7 @@ const TEMA_POR_SLUG = {
   'condominio-de-lotes-ou-loteamento-fechado':       { tag: 'Lotes e condomínios',    cat: 'dinheiro' },
   'condominios-em-indaiatuba-por-bairro':            { tag: 'Condomínios por bairro', cat: 'bairros' },
   'comprar-na-planta-ou-pronto-para-morar':          { tag: 'Planta ou pronto',       cat: 'dinheiro' },
+  'comprar-imovel-na-planta-indaiatuba-morando-fora': { tag: 'Morando fora do Brasil', cat: 'dinheiro' },
 };
 const DESTAQUES = new Set([
   'morar-em-indaiatuba', 'minha-casa-minha-vida-indaiatuba', 'como-usar-fgts-comprar-imovel-indaiatuba',
@@ -307,7 +308,7 @@ ${cards.map(cardHtml).join('\n')}
       <a href="/blog/">Blog</a>
     </div>
     <p>© 2026 Imobiliária Viv'América · Lançamentos imobiliários em Indaiatuba SP</p>
-  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">(19) 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
+  <p class="nap">Imobiliária Viv'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · <a href="https://wa.me/5519989769457">+55 19 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a> · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a></p>
   </footer>
 
   <script>

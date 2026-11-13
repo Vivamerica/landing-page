@@ -146,6 +146,19 @@ for (const f of lista) {
     const twt = meta(h, 'name', 'twitter:title'), twd = meta(h, 'name', 'twitter:description');
     if (twt !== null && twt !== title) E.push('twitter:title != title');
     if (twd !== null && twd !== desc) E.push('twitter:description != description');
+    // ausência também conta: a prévia do link no WhatsApp e nas redes sai do og:title/og:description
+    // (presença conferida em qualquer ordem de atributos e com aspas simples ou duplas)
+    const tem = (attr, nome) => new RegExp('<meta\\b[^>]*\\b' + attr + '=["\']' + nome + '["\']', 'i').test(cabeca);
+    if (!tem('property', 'og:title')) E.push('sem og:title');
+    if (!tem('property', 'og:description')) E.push('sem og:description');
+    if (!tem('name', 'twitter:title')) A.push('sem twitter:title');
+    if (!tem('name', 'twitter:description')) A.push('sem twitter:description');
+    // <meta> com atributo que não é name/property/content/charset/http-equiv/itemprop (ex.: sobra de regex como \1)
+    // cada atributo é lido com o valor inteiro (entre aspas ou não), para o "initial-scale=" de dentro
+    // do content do viewport não passar por atributo
+    for (const tag of cabeca.matchAll(/<meta\b((?:\s+[^\s=>]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s"'>]+))?)*)\s*\/?>/gi))
+      for (const at of tag[1].matchAll(/\s+([^\s=>]+)(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s"'>]+))?/g))
+        if (!['name', 'property', 'content', 'charset', 'http-equiv', 'itemprop'].includes(at[1].toLowerCase())) E.push('<meta> com atributo "' + at[1] + '"');
     const can = (h.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
     const esperado = BASE + f.replace(/index\.html$/, '');
     if (!can) E.push('sem canonical');

@@ -96,6 +96,10 @@ const MSG = {
   faixa:      'Olá! Quero conhecer os lançamentos de Indaiatuba por faixa de preço.',
   dinheiro:   'Olá! Quero simular a compra de um apartamento em Indaiatuba com preço e condições.',
   alphaville: 'Olá! Tenho interesse no Alphaville Indaiatuba. Pode me enviar mais informações?',
+  // "simular a compra" marca a origem como Blog no funil, e o texto começa como os
+  // outros do site ("Olá! Quero…"): a conversa recebe as perguntas rápidas, e a 2ª
+  // oferece "Moro fora do Brasil"
+  exterior:   'Olá! Quero simular a compra de um imóvel na planta em Indaiatuba morando fora do Brasil.',
 };
 
 // tetos de valor do imóvel usados para escolher a oferta do artigo do Classe Média:
@@ -108,6 +112,17 @@ const TETO_FAIXA_3 = 400000, TETO_CLASSE_MEDIA = 600000;
 // recebe a tabela por faixa de preço e os 4 vão para a lateral.
 // A ORDEM importa: o 1º regex que casar com o slug vence.
 const TEMAS = [
+  // Quem mora fora do Brasil: a tabela por faixa de preço e a lateral sem o
+  // Minha Casa Minha Vida (não é a oferta para quem mora fora) e sem os
+  // pré-lançamentos Uni e Aurora (só aparecem com a ressalva da ficha, que o card
+  // não tem). `exclui` vale para o card do texto e para a coluna lateral, e a
+  // `legenda` da tabela diz o que ficou de fora.
+  { re: /morando-fora/, nome: 'exterior', card: 'faixa', msg: MSG.exterior, msgFaixa: MSG.exterior, botaoFaixa: 'Falar no WhatsApp',
+    exclui: e => ['uni-residencial-indaiatuba', 'aurora-indaiatuba'].includes(e.slug) || /MCMV/i.test(e.t || ''),
+    legenda: 'Menor preço "a partir de" em cada faixa, entre os lançamentos que representamos, fora os do Minha Casa Minha Vida e os de pré-lançamento',
+    url: '/precos-lancamentos-indaiatuba/', chamada: 'Lançamentos de Indaiatuba com preço aberto, para escolher de onde você estiver',
+    curta: 'Lançamentos com preço aberto', botao: 'Ver a tabela de preços',
+    pega: () => [comPreco(APTOS)[0], lotes()[0], altoP()[0], fechados().slice(-1)[0]] },
   // Artigo de marca de alto padrão: sem ele, o artigo do Alphaville caía no
   // tema genérico e abria com o apartamento MCMV mais barato da base.
   { re: /alphaville/, nome: 'Alphaville', card: 'emp', msg: MSG.alphaville,
@@ -172,10 +187,24 @@ const TEMAS = [
 // tema novo no começo da lista para o artigo do hospital trocar de oferta sozinho.
 const paraTema = slug => {
   const t = TEMAS.find(t => t.re.test(slug)) || TEMAS.find(t => t.nome === 'faixa');
+  const exclui = t.exclui || null;
   return { nome: t.nome, url: t.url, chamada: t.chamada, curta: t.curta, msg: t.msg, card: t.card,
-           botao: t.botao || 'Ver imóveis disponíveis',
-           itens: t.pega().filter(Boolean) };
+           botao: t.botao || 'Ver imóveis disponíveis', exclui, msgFaixa: t.msgFaixa || null, legenda: t.legenda || null,
+           botaoFaixa: t.botaoFaixa || null,
+           // com `exclui`, o `pega` do tema escolhe numa base já sem os excluídos (e sem repetir)
+           itens: exclui ? semRepetir(comFora(exclui, t.pega)) : t.pega().filter(Boolean) };
 };
+
+// roda o `pega` de um tema com APTOS/LOTES sem o que `exclui` recusa (mcmv(), altoP(),
+// lotes() e fechados() leem as duas listas) e devolve as listas como estavam
+function comFora(exclui, pega) {
+  const salvo = { APTOS: APTOS.slice(), LOTES: LOTES.slice() };
+  const tira = arr => { for (let i = arr.length - 1; i >= 0; i--) if (exclui(arr[i])) arr.splice(i, 1); };
+  tira(APTOS); tira(LOTES);
+  try { return pega().filter(Boolean); }
+  finally { APTOS.splice(0, APTOS.length, ...salvo.APTOS); LOTES.splice(0, LOTES.length, ...salvo.LOTES); }
+}
+const semRepetir = lista => lista.filter((e, i) => lista.findIndex(x => x.slug === e.slug) === i);
 
 // ─── miniatura leve dos cards ───
 // O card usa <nome>-640.webp (gravado por ferramentas/hero-leve.py ao lado do original) quando o
@@ -250,8 +279,9 @@ function cardTexto(e) {
 
 // tabela por faixa de preço: menor "a partir de" de apartamento e de lote em
 // cada faixa, direto da fonte única
-function cardFaixa() {
-  const ap = comPreco(APTOS), lo = comPreco(LOTES);
+function cardFaixa(exclui, msg, legenda, rotulo) {
+  const ok = e => !(exclui && exclui(e));
+  const ap = comPreco(APTOS).filter(ok), lo = comPreco(LOTES).filter(ok);
   const FAIXAS = [
     ['Até R$ 300 mil',          0,       300000],
     ['R$ 300 mil a R$ 500 mil', 300000,  500000],
@@ -271,7 +301,7 @@ function cardFaixa() {
       <div class="bo-faixa">
         <span class="bo-eyebrow">Lançamentos em Indaiatuba por faixa de preço</span>
         <div class="tab-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%"><table class="bo-tab">
-          <caption>Menor preço "a partir de" em cada faixa, entre os lançamentos que representamos · tabelas das incorporadoras reunidas no Observatório de Preços, edição de ${edicao}</caption>
+          <caption>${legenda || 'Menor preço "a partir de" em cada faixa, entre os lançamentos que representamos'} · tabelas das incorporadoras reunidas no Observatório de Preços, edição de ${edicao}</caption>
           <thead><tr><th>Faixa</th><th>Apartamento</th><th>Lote</th></tr></thead>
           <tbody>
 ${linhas}
@@ -279,7 +309,7 @@ ${linhas}
         </table></div>
         <div class="bo-acoes">
           <a class="bo-btn-primario" href="/precos-lancamentos-indaiatuba/" data-emp="observatorio-faixa">Ver a tabela completa</a>
-          <a class="bo-btn-wpp" href="${waUrl(MSG.faixa)}" data-cta="meio" target="_blank" rel="noopener">Pedir por faixa no WhatsApp</a>
+          <a class="bo-btn-wpp" href="${waUrl(msg || MSG.faixa)}" data-cta="meio" target="_blank" rel="noopener">${rotulo || 'Pedir por faixa no WhatsApp'}</a>
         </div>
       </div>`;
 }
@@ -443,7 +473,7 @@ let feitos = 0, pulados = [], semGa4 = [];
 
 arquivos.forEach(({ slug, caminho }) => {
   let h = fs.readFileSync(caminho, 'utf8');
-  const { nome, url, chamada, curta, msg, card, botao, itens } = paraTema(slug);
+  const { nome, url, chamada, curta, msg, card, botao, exclui, msgFaixa, legenda, botaoFaixa, itens } = paraTema(slug);
   if (!itens.length) {
     pulados.push(slug + ' (sem empreendimento)');
     const g = aplicarGuias(h, slug);          // o rodapé com os guias vale para todo artigo
@@ -537,7 +567,7 @@ arquivos.forEach(({ slug, caminho }) => {
     '\n          <p class="bo-spec">Todos os lançamentos com preço aberto, sem cadastro.</p>' +
     '\n          <span class="bo-btn">Ver a tabela →</span></div></a>\n      ');
 
-  gen('oferta', (card === 'faixa' ? cardFaixa() : cardTexto(itens[0])) + '\n    ');
+  gen('oferta', (card === 'faixa' ? cardFaixa(exclui, msgFaixa, legenda, botaoFaixa) : cardTexto(itens[0])) + '\n    ');
 
   gen('cta-topo',
     '\n      <div class="cta-topo">' +

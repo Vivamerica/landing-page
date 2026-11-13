@@ -37,7 +37,7 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 - [ ] FAQ visível = `FAQPage` 1:1 (o validador acusa erro quando diferem; `node gera-faq.js` corrige copiando o visível); `RealEstateListing` e `Product` com a mesma disponibilidade e o mesmo preço
 - [ ] **Nunca** prometer valorização, aprovação de crédito ou prazo; todo número com fonte e data-base (fatos de preço só os registrados no `gera-observatorio.js`)
 - [ ] Toda escassez (`últimas N unidades`, `X% vendido`, `N lotes disponíveis`) carrega mês/ano: `últimas 5 unidades (set/2026)`; o N vem da fonte única (`est` em `gera-folheto.js`) e a data da contagem vai em `estEm` no mesmo item (dd/mm/aaaa, ou mmm/aaaa quando a fonte só traz o mês); sem `estEm` os geradores não imprimem o selo
-- [ ] `lastmod` (sitemap), `dateModified` (JSON-LD) e o "Atualizado em" visível só mudam quando o texto principal muda — não em ajuste de rodapé/card/malha/botão de WhatsApp. Quem decide é o `gera-sitemap.js`, lendo do `git` o último commit que mudou o texto (página alterada na árvore de trabalho = hoje) e alinhando os três campos; a guarda 5 do `identidade.js` falha (exit 1) quando divergem. Nunca escreva essas datas à mão nem edite o `sitemap.xml`. O menu (`GEN:menu` e o cabeçalho antigo, menos o `<h1>`) e o `GEN:guias` do blog ficam fora da impressão digital: trocar o menu não mexe em `lastmod`, `dateModified` nem "Atualizado em"
+- [ ] `lastmod` (sitemap), `dateModified` (JSON-LD) e o "Atualizado em" visível só mudam quando o texto principal muda — não em ajuste de rodapé/card/malha/botão de WhatsApp. Quem decide é o `gera-sitemap.js`, lendo do `git` o último commit que mudou o texto (página alterada na árvore de trabalho = hoje) e alinhando os três campos; a guarda 5 do `identidade.js` falha (exit 1) quando divergem. Nunca escreva essas datas à mão nem edite o `sitemap.xml`. O menu (`GEN:menu` e o cabeçalho antigo, menos o `<h1>`), o `GEN:guias` do blog e o formato do telefone 98976-9457 (com ou sem +55) ficam fora da impressão digital: trocar o menu não mexe em `lastmod`, `dateModified` nem "Atualizado em"
 - [ ] `brand` do `Product` no JSON-LD é `{"@type":"Brand","name":"…"}` (Organization dá tipo inválido no Search Console)
 - [ ] Toda imagem referenciada (`<img src>`, `og:image`, `url()` de CSS, `image` do JSON-LD) existe no disco — a guarda do `node identidade.js` falha com exit 1 se faltar
 - [ ] Todo bloco `<script type="application/ld+json">` passa em `JSON.parse`
@@ -141,6 +141,7 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 |------|-------|
 | GA4 Measurement ID | `G-40C0379NPR` |
 | WhatsApp | `5519989769457` |
+| Telefone escrito na página | `+55 19 98976-9457` (formato internacional, para quem mora fora; desde 12/11/2026). Só os impressos para Indaiatuba (folheto e folder) ficam com `(19) 98976-9457` |
 | Domínio | `lancamentos.imoveisvivamerica.com.br` |
 | Sitemap | `/sitemap.xml` |
 | Repositório | `github.com/Vivamerica/landing-page` |

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const OUT = 'C:/Users/Usuario/Desktop/landing-page/folheto-lancamentos.html';
+const OUT = require('path').join(__dirname, 'folheto-lancamentos.html');   // raiz = pasta deste arquivo (vale em qualquer cópia do site)
 
 // Campos: n nome · c construtora · p preço "a partir de" (null = sob consulta) ·
 // m2 área em m² da MENOR unidade com preço (nos lotes, o menor lote) — só quando a

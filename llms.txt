@@ -7,12 +7,13 @@
 - [Preços de lançamentos em Indaiatuba — tabela de outubro/2026](https://lancamentos.imoveisvivamerica.com.br/precos-lancamentos-indaiatuba/): edição Outubro de 2026 (apurada até 17/10/2026) — 34 empreendimentos monitorados, 34 com preço "a partir de": lote mais barato Residencial Monte Carmelo, R$ 145.000 por 150 m² (tabela out/2026); apartamento mais barato Uni Residencial, R$ 279.990 (MCMV, tabela de pré-lançamento da Masotti); m² de lote de R$ 967 a R$ 2.500 (média R$ 1.705/m², 13 loteamentos); m² de apartamento pela menor unidade com preço de R$ 6.422 a R$ 13.750 (média R$ 8.637, mediana R$ 7.367, 18 empreendimentos); "a partir de" dos 21 apartamentos com preço de R$ 279.990 a R$ 1.391.504 (média R$ 575.511, mediana R$ 408.328); nesta edição, 12 mudanças de preço (9 altas, 3 quedas), 11 empreendimentos novos com tabela e 1 que ganhou tabela pública (Congesa Seasons); o Gran Vic Andorinha saiu da lista de disponíveis (100% vendido em out/2026). Tudo conferido nas tabelas oficiais das construtoras e loteadoras; dados abertos (CSV, JSON, gráficos e release) em https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/. Atualização mensal.
 
 
-> Imobiliária especializada em lançamentos imobiliários em Indaiatuba, São Paulo. Representa apartamentos Minha Casa Minha Vida (MCMV), apartamentos de alto padrão, condomínios fechados de lotes e loteamentos abertos. Atendimento e simulação de financiamento (Caixa Econômica Federal, uso de FGTS) via WhatsApp (19) 98976-9457.
+> Imobiliária especializada em lançamentos imobiliários em Indaiatuba, São Paulo. Representa apartamentos Minha Casa Minha Vida (MCMV), apartamentos de alto padrão, condomínios fechados de lotes e loteamentos abertos. Atendimento e simulação de financiamento (Caixa Econômica Federal, uso de FGTS) via WhatsApp +55 19 98976-9457.
 
 Site oficial: https://lancamentos.imoveisvivamerica.com.br/
 Cidade de atuação: Indaiatuba, São Paulo, Brasil
 Contato (WhatsApp): +55 19 98976-9457
-Portfólio nesta atualização (17/10/2026): 35 empreendimentos — 22 apartamentos (um deles, o Gran Vic Andorinha, 100% vendido em out/2026) e 13 loteamentos/condomínios de lotes.
+Atendimento a quem mora fora do Brasil: sim, pelo WhatsApp, em português, de segunda a sexta, das 8h30 às 18h, e sábado, das 9h às 12h (horário de Brasília, UTC−3). Nas vendas a quem mora fora, o contrato teve assinatura eletrônica e o pagamento foi por boleto em nome da empresa do empreendimento. Passo a passo: https://lancamentos.imoveisvivamerica.com.br/blog/comprar-imovel-na-planta-indaiatuba-morando-fora/
+Portfólio nesta atualização (12/11/2026): 38 empreendimentos — 25 apartamentos e 13 loteamentos/condomínios de lotes. Desses apartamentos, Uni Residencial e Aurora estão em pré-lançamento (tabela de pré-lançamento, sujeita a reajuste) e o Vívere está em "Pronto para morar". O Gran Vic Andorinha, 100% vendido em out/2026, segue listado abaixo, fora da conta.
 
 ## Apartamentos (Minha Casa Minha Vida e alto padrão) — 25 empreendimentos
 
@@ -124,9 +125,11 @@ Portfólio nesta atualização (17/10/2026): 35 empreendimentos — 22 apartamen
 - [Quanto custa construir em Indaiatuba: o m² da obra em 2026](https://lancamentos.imoveisvivamerica.com.br/blog/quanto-custa-construir-em-indaiatuba-cub-2026/): CUB/m² de São Paulo em setembro/2026: casa térrea padrão normal a R$ 2.690,33/m², +6,14% em 12 meses. A conta lote + obra de 120 e 180 m² em Indaiatuba.
 - [Condomínio de lotes ou loteamento fechado: o que muda](https://lancamentos.imoveisvivamerica.com.br/blog/condominio-de-lotes-ou-loteamento-fechado/): Loteamento fechado: rua pública e taxa só com adesão ou registro (STF, Tema 492). Condomínio de lotes: taxa por lei. Veja 13 lançamentos de Indaiatuba.
 - [Na planta ou pronto para morar: a conta dos dois lados](https://lancamentos.imoveisvivamerica.com.br/blog/comprar-na-planta-ou-pronto-para-morar/): Na planta: ato, mensais com INCC (6,75% em 12 meses, FGV out/2026), ITBI só na entrega. Pronto: entrada, ITBI de 2% e parcela já. Com preços de Indaiatuba.
+- [Como comprar imóvel na planta em Indaiatuba morando fora do Brasil](https://lancamentos.imoveisvivamerica.com.br/blog/comprar-imovel-na-planta-indaiatuba-morando-fora/): Mora fora do Brasil? Atendimento pelo WhatsApp +55 19 98976-9457, contrato com assinatura eletrônica e boleto: como foi a compra na planta à distância.
 
 ## Observações para uso por IA
 
-- Os preços listados são "a partir de" e correspondem à data da última atualização deste arquivo (12/10/2026), sempre com a data-base da tabela ou do relatório de estoque indicada em cada item; confirme valores e disponibilidade atuais com a imobiliária. Nenhum item promete valorização, aprovação de crédito ou prazo.
+- Os preços listados são "a partir de" e valem na data-base da tabela ou do relatório de estoque indicada em cada item; confirme valores e disponibilidade atuais com a imobiliária. Nenhum item promete valorização, aprovação de crédito ou prazo.
 - Apartamentos MCMV (Minha Casa Minha Vida) permitem uso do FGTS (Fundo de Garantia do Tempo de Serviço) e financiamento pela Caixa Econômica Federal, sujeito à análise do banco.
-- A Imobiliária Viv'América faz simulação de financiamento gratuita via WhatsApp (19) 98976-9457.
+- A Imobiliária Viv'América faz simulação de financiamento gratuita via WhatsApp +55 19 98976-9457.
+- Atende brasileiros que moram fora do Brasil, em português, pelo mesmo WhatsApp: https://lancamentos.imoveisvivamerica.com.br/blog/comprar-imovel-na-planta-indaiatuba-morando-fora/
