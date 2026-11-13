@@ -304,9 +304,19 @@ for k, r in enumerate(linhas, 1):
     itens.append({'@type': 'ListItem', 'position': k, 'name': r['nome'],
                   'url': ('https://lancamentos.imoveisvivamerica.com.br' + r['landing']) if r['landing'] else (URL + '#' + r['ids'][0])})
 
+# loteamento com mais de uma fase visível no mapa (hoje, o Parque Zarah): o parêntese sai das fases que
+# estão no mapa, e some quando só uma fase fica visível (bairro oculto, ex.: pela lista "sem disponibilidade")
+def lista_pt(xs):
+    return xs[0] if len(xs) == 1 else ', '.join(xs[:-1]) + ' e ' + xs[-1]
+
+
+com_fases = [r for r in linhas if len(r['fases']) > 1]
+fases_txt = ''.join(' (%s %s entra com as fases %s)' % ('a' if r['nome'] in FEMININO else 'o', r['nome'],
+                                                        lista_pt([re.sub(r'\s*\(fase \d+\)$', '', f) for f in r['fases']]))
+                    for r in com_fases)
 faq = [
     ('Quantos lotes e loteamentos estão no mapa de lotes de Indaiatuba?',
-     'Em %s o mapa mostra %s lotes com preço em %s loteamentos e condomínios de Indaiatuba (o Parque Zarah entra com as fases Safira, Rubi e Pérola). Cada lote traz quadra, número, metragem, tipo (residencial, misto, comercial ou gleba) e o preço da tabela da loteadora.' % (MARCA_DATABR, num_pt(n_preco), n_grupos)),
+     'Em %s o mapa mostra %s lotes com preço em %s loteamentos e condomínios de Indaiatuba%s. Cada lote traz quadra, número, metragem, tipo (residencial, misto, comercial ou gleba) e o preço da tabela da loteadora.' % (MARCA_DATABR, num_pt(n_preco), n_grupos, fases_txt)),
     ('Qual é o lote mais barato por m² no mapa?',
      'O %s. Na outra ponta está o %s.' % (faq_barato, faq_caro)),
     ('Os preços do mapa são à vista ou a prazo?',
@@ -318,6 +328,19 @@ faq = [
 ]
 faq_html = '\n'.join('    <div class="faq-item"><h3>%s</h3><p>%s</p></div>' % (esc(q), esc(a)) for q, a in faq)
 
+# description, og:description e twitter:description: o "de N m² e desde R$ X" sai dos lotes que estão no
+# mapa (menor metragem e menor valor, só lotes da tabela, sem revenda) — sem isto, tirar um loteamento do
+# mapa deixava o snippet anunciando o lote de quem saiu
+s_lido = s
+vis_lotes = [x for r in linhas for bid in r['ids'] for x in lotes.get(bid, [])]
+min_m2 = min((x['m2'] for x in vis_lotes if x['m2']), default=None)
+min_vista = min((x['vista'] for x in vis_lotes if x['vista'] is not None), default=None)
+if min_m2 and min_vista:
+    trecho = 'de %s e desde %s' % (m2_txt(min_m2), brl0(min_vista))
+    for tag in (r'(<meta name="description" content="[^"]*?)de [\d.,]+ m² e desde R\$ [\d.]+',
+                r'(<meta property="og:description" content="[^"]*?)de [\d.,]+ m² e desde R\$ [\d.]+',
+                r'(<meta name="twitter:description" content="[^"]*?)de [\d.,]+ m² e desde R\$ [\d.]+'):
+        s = re.sub(tag, lambda m: m.group(1) + trecho, s, count=1)
 titulo = re.search(r'<title>([^<]*)</title>', s).group(1)
 descr = re.search(r'<meta name="description" content="([^"]*)"', s).group(1)
 des = lambda t: t.replace('&#x27;', "'").replace('&#39;', "'").replace('&quot;', '"').replace('&amp;', '&')
@@ -438,7 +461,7 @@ def leva_ao_painel(t):
     return novo_t
 
 
-s_arquivo = s
+s_arquivo = s_lido               # o arquivo como foi lido (antes da description)
 levado = False
 if not bloco_no_painel(s):
     s = leva_ao_painel(s)
@@ -452,8 +475,30 @@ iso_antigo = gerado.group(1) if gerado else None
 # a data por marcador dentro do bloco antigo trocaria junto uma data de tabela igual
 # à data de geração (tabela carregada e publicada no mesmo dia), e a lista pareceria mudada.
 mudou = (not iso_antigo) or (com_marca(s[il:jl]) != com_marca(lista_em(iso_antigo))) or (s[ia:ja] != resumo)
+def iso_do_publicado():
+    """Data da lista na versão do último commit (HEAD), se a lista de agora for igual à de lá.
+    Uma lista que mudou e voltou ao que estava publicado (ex.: bairro oculto pela lista "sem
+    disponibilidade" da Central e desmarcado antes de publicar) volta com a data de lá, não a de hoje."""
+    import subprocess
+    try:
+        h = subprocess.run(['git', '-C', R, 'show', 'HEAD:mapa-lotes-indaiatuba/index.html'], capture_output=True, timeout=60).stdout.decode('utf-8')
+    except Exception:
+        return None
+    try:
+        hil = h.index('<!--GEN:mapa-lista-->') + len('<!--GEN:mapa-lista-->'); hjl = h.index('<!--/GEN:mapa-lista-->', hil)
+        hia = h.index('<!--GEN:mapa-resumo-->') + len('<!--GEN:mapa-resumo-->'); hja = h.index('<!--/GEN:mapa-resumo-->', hia)
+    except ValueError:
+        return None
+    g = re.search(r'data-gerado="(\d{4}-\d{2}-\d{2})"', h[hil:hjl])
+    if g and com_marca(h[hil:hjl]) == com_marca(lista_em(g.group(1))) and h[hia:hja] == resumo:
+        return g.group(1)
+    return None
+
+iso_pub = iso_do_publicado()
+if iso_pub and iso_pub != iso_antigo:
+    mudou = True                    # a lista é a publicada: volta a data de lá (o dateModified o gera-sitemap realinha)
 if mudou:
-    data_iso = HOJE.isoformat()
+    data_iso = iso_pub or HOJE.isoformat()
     novo = s[:ia] + resumo + s[ja:il] + lista_em(data_iso) + s[jl:]
 else:
     data_iso = iso_antigo           # nada mudou: o bloco fica como está, com o dateModified que está lá

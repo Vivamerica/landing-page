@@ -9,7 +9,7 @@
 //          JSON-LD inválido · FAQPage diferente do FAQ visível (texto inteiro, pergunta a pergunta, pelo mesmo
 //          critério do gera-faq.js) · price/lowPrice do JSON-LD ≠ preço da fonte única (tolerância de R$ 1) ·
 //          imagem que não existe · link interno que não leva a arquivo · marcador "[… confirmar …]" no texto ·
-//          texto proibido
+//          texto proibido · página "100% vendido" (bloco GEN:sem-disponibilidade) com offerCount/inventoryLevel > 0
 //   aviso  canonical fora do esperado · title > 60 ou < 30 · description fora de 120–155 · FAQPage sem FAQ
 //          visível reconhecido · offerCount/inventoryLevel ≠ estoque da fonte única · escassez ("últimas N
 //          unidades", "último lote", "restam N") sem data por perto · link interno que cai em redirecionamento ·
@@ -168,6 +168,8 @@ for (const f of lista) {
   }
   const h1 = (h.match(/<h1[\s>]/g) || []).length;
   if (h1 !== 1) E.push('h1: ' + h1);
+  // página marcada "100% vendido" pelo passo 00 (sem-disponibilidade): JSON-LD sem estoque, sem FAQPage
+  const marcada = h.indexOf('<!--GEN:sem-disponibilidade-->') >= 0;
   const blocos = [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => m[1]);
   const corpo = texto(h);
   const ofertas = { precos: [], estoques: [], ruins: [] };
@@ -192,7 +194,7 @@ for (const f of lista) {
     else if (ld.blocos.length) {
       const difs = FAQ.diferencasFaq(vis.pares, ld.blocos[0].perguntas);
       if (difs.length) { faqDiferente++; E.push(...difs); }
-    } else if (vis.pares.length > 1) A.push('FAQ visível (' + vis.pares.length + ' perguntas) sem FAQPage');
+    } else if (vis.pares.length > 1 && !marcada) A.push('FAQ visível (' + vis.pares.length + ' perguntas) sem FAQPage');   // marcada: o FAQPage sai de propósito
     for (const a of vis.avisos) A.push('FAQ: ' + a);
   }
   // preço e estoque do JSON-LD contra a fonte única (só nas fichas de empreendimento)
@@ -203,7 +205,8 @@ for (const f of lista) {
       else if (Math.abs(p.n - emp.p) > 1) E.push('JSON-LD ' + p.k + ' ' + p.n + ' ≠ preço da fonte única ' + emp.p);
     }
     for (const r of ofertas.ruins) A.push('JSON-LD com preço fora do formato numérico: ' + r);
-    if (emp.est != null) for (const s of ofertas.estoques) {
+    if (marcada) { for (const s of ofertas.estoques) if (s.n > 0) E.push('página 100% vendida (sem-disponibilidade) com ' + s.k + ' ' + s.n + ' no JSON-LD'); }
+    else if (emp.est != null) for (const s of ofertas.estoques) {
       if (s.n !== emp.est) A.push('JSON-LD ' + s.k + ' ' + s.n + ' ≠ estoque da fonte única ' + emp.est + (emp.estEm ? ' (' + emp.estEm + ')' : ''));
     }
   }

@@ -61,3 +61,8 @@ ferramentas/nova-leva-09-2026/imagens-extraidas/
 # .csv ou .json passa por aqui.
 !imprensa-e-dados/dados-lancamentos-indaiatuba-*.csv
 !imprensa-e-dados/dados-lancamentos-indaiatuba-*.json
+
+# Lista "sem disponibilidade" da Central (09/11/2026): excecao nominal, so' dado publico
+# (ficha, nome do empreendimento, pagina, situacao e data), gravada por ferramentas/sem-disponibilidade.js
+# e lida pelos geradores (sem-disponibilidade-regras.js). Nenhum outro .json passa por aqui.
+!/sem-disponibilidade.json

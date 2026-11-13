@@ -114,6 +114,12 @@ const EDICAO = (() => {
 })();
 const edicao = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;   // setembro/2026
 
+// Sem disponibilidade (sem-disponibilidade.json, regra no sem-disponibilidade-regras.js): o folheto é
+// material de venda e não oferece o que acabou — quem está marcado (tarja ou ocultar) fica fora.
+// APTOS/LOTES acima continuam como estão (a fonte única não muda com a marcação).
+const SD = require('./sem-disponibilidade-regras.js').carregar();
+const APTOS_V = SD.aVenda(APTOS), LOTES_V = SD.aVenda(LOTES);
+
 const brl = n => n.toLocaleString('pt-BR');
 const tipoClasse = t => t.startsWith('MCMV') ? 'b-mcmv' : t === 'Alto padrão' ? 'b-alto'
                     : t === 'Pré-lançamento' ? 'b-pre' : t === 'Lançamento' ? 'b-lanc'
@@ -148,8 +154,8 @@ const cardContato = `
     </article>`;
 
 const porPreco = (a, b) => a.p - b.p;
-const comPreco = APTOS.filter(e => e.p).sort(porPreco);
-const semPreco = APTOS.filter(e => !e.p);
+const comPreco = APTOS_V.filter(e => e.p).sort(porPreco);
+const semPreco = APTOS_V.filter(e => !e.p);
 const ordenados = [...comPreco, ...semPreco];   // preço crescente; sem preço no fim
 const POR_PAG = 8;                               // 2 colunas x 4 linhas de 59mm
 const DEST_SLOTS = 2;                            // o bloco "Por que comprar" ocupa 2 vagas
@@ -157,11 +163,11 @@ const paginasApto = [];
 for (let i = 0; i < ordenados.length; i += POR_PAG) paginasApto.push(ordenados.slice(i, i + POR_PAG));
 // Lotes também de 8 em 8: a página A4 tem overflow:hidden, e um 9º card some
 // sem aviso (com 13 lotes, sumiam 5 e o rodapé com o aviso legal).
-const lotesOrd = [...LOTES.filter(e => e.p).sort(porPreco), ...LOTES.filter(e => !e.p)];
+const lotesOrd = [...LOTES_V.filter(e => e.p).sort(porPreco), ...LOTES_V.filter(e => !e.p)];
 const paginasLote = [];
 for (let i = 0; i < lotesOrd.length; i += POR_PAG) paginasLote.push(lotesOrd.slice(i, i + POR_PAG));
-const construtoras = new Set([...APTOS, ...LOTES].map(e => e.c.split(' · ')[0].trim())).size;
-const menorGeral = Math.min(...[...APTOS, ...LOTES].filter(e => e.p).map(e => e.p));
+const construtoras = new Set([...APTOS_V, ...LOTES_V].map(e => e.c.split(' · ')[0].trim())).size;
+const menorGeral = Math.min(...[...APTOS_V, ...LOTES_V].filter(e => e.p).map(e => e.p));
 const maiorApto = Math.max(...comPreco.map(e => e.p));
 const mil = n => n >= 1e6 ? (n / 1e6).toFixed(1).replace('.', ',') + ' mi' : Math.round(n / 1000) + ' mil';
 
@@ -278,7 +284,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     <p class="capa-sub">Todo o portfólio de apartamentos e lotes em condomínio da cidade,
        do Minha Casa Minha Vida ao alto padrão — com as condições de quem compra no lançamento.</p>
     <div class="capa-nums">
-      <div><strong>${APTOS.length + LOTES.length}</strong><span>Empreendimentos</span></div>
+      <div><strong>${APTOS_V.length + LOTES_V.length}</strong><span>Empreendimentos</span></div>
       <div><strong>${construtoras}</strong><span>Construtoras</span></div>
       <div><strong>${mil(menorGeral)}</strong><span>Menor investimento</span></div>
       <div><strong>${mil(maiorApto)}</strong><span>Alto padrão</span></div>
@@ -328,4 +334,4 @@ console.log('Folheto gerado.');
 console.log(`  Pagina 1: capa`);
 paginasApto.forEach((pg, i) => console.log(`  Pagina ${i + 2}: ${pg.length} apartamentos${i === paginasApto.length - 1 ? ' (+ contato/destaque se couber)' : ''}`));
 paginasLote.forEach((pg, i) => console.log(`  Pagina ${paginasApto.length + 2 + i}: ${pg.length} lotes${i === paginasLote.length - 1 && pg.length < POR_PAG ? ' + contato' : ''}`));
-console.log(`  Total de empreendimentos: ${APTOS.length + LOTES.length}`);
+console.log(`  Total de empreendimentos: ${APTOS_V.length + LOTES_V.length}`);

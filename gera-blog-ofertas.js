@@ -53,8 +53,11 @@ function extrair(arquivo, nome) {
   const fim = src.indexOf('\n];', ini) + 2;
   return eval('(' + src.slice(ini + ('const ' + nome + ' = ').length, fim) + ')');
 }
-const APTOS = extrair('gera-folheto.js', 'APTOS');
-const LOTES = extrair('gera-folheto.js', 'LOTES');
+// Sem disponibilidade (sem-disponibilidade.json; regra no sem-disponibilidade-regras.js): card de blog é
+// oferta — quem está marcado (tarja ou ocultar) não entra em card, lateral, faixa nem CTA.
+const SD = require('./sem-disponibilidade-regras.js').carregar();
+const APTOS = SD.aVenda(extrair('gera-folheto.js', 'APTOS'));
+const LOTES = SD.aVenda(extrair('gera-folheto.js', 'LOTES'));
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
 
 // mês da edição do Observatório: gera-observatorio.js é o dono de EDICAO
