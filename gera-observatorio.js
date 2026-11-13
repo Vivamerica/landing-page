@@ -160,8 +160,31 @@ function extrair(nome) {
   if (ini < 0 || fim < 0) throw new Error('nao achei ' + nome);
   return eval(fonte.slice(ini + ('const ' + nome + ' = ').length, fim + 2));
 }
-const APTOS = extrair('APTOS');
-const LOTES = extrair('LOTES');
+// Sem disponibilidade (sem-disponibilidade.json; regra no sem-disponibilidade-regras.js). A edição é o
+// retrato das tabelas do mês e não é reescrita pela marcação:
+//  · mês-base = o mais tardio entre o "desde" e o dia em que a marcação chegou ao site (chegou_em):
+//    marcação retroativa não reescreve a edição que já saiu com o empreendimento dentro;
+//  · na edição do mês-base (e nas anteriores) o empreendimento segue na tabela e nas contas, com a
+//    nota "100% vendido desde dd/mm/aaaa" na linha da página; o CSV e o JSON da edição não mudam;
+//  · da edição do mês seguinte em diante ele sai das contas, da tabela e do CSV/JSON; só na PRIMEIRA
+//    dessas edições entra nas saídas do mês ("sem unidades"), com o último preço publicado — o mesmo
+//    tratamento das SAIDAS escritas à mão.
+// Os arquivos de edições passadas nunca são regravados (este gerador só escreve os da EDICAO).
+const SD = require('./sem-disponibilidade-regras.js').carregar();
+const saiuDaEdicao = e => SD.foraDaEdicao(e.slug, EDICAO.iso);
+const APTOS_F = extrair('APTOS'), LOTES_F = extrair('LOTES');
+const APTOS = APTOS_F.filter(e => !saiuDaEdicao(e));
+const LOTES = LOTES_F.filter(e => !saiuDaEdicao(e));
+// só na PRIMEIRA edição fora (a edição publicada antes desta ainda o trazia): nas seguintes ele só fica
+// fora das contas, sem repetir "saiu da lista" (SAIDAS = o que saiu da fonte nesta edição)
+APTOS_F.concat(LOTES_F).filter(e => SD.saiNaEdicao(e.slug, EDICAO.iso)).forEach(e => {
+  const lote = LOTES_F.includes(e);
+  SAIDAS.push({ n: e.n, c: e.c, slug: e.slug, de: e.p || null, antes: typeof e.est === 'number' ? e.est : null, data: e.estEm || '', em: SD.desdeBR(e.slug),
+    causa: (lote ? 'sem lotes à venda desde ' : 'sem unidades à venda desde ') + SD.desdeBR(e.slug) + (lote ? ': todos os lotes vendidos, conforme informou a loteadora' : ': todas as unidades vendidas, conforme informou a construtora'),
+    fonte: `informação da Viv'América de ${SD.desdeBR(e.slug)}` + (e.tab ? '; último preço: tabela de ' + ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'][+e.tab.slice(5, 7) - 1] + '/' + e.tab.slice(0, 4) : '') });
+});
+// nota da linha na edição em que a marcação ainda não tira o empreendimento das contas
+const notaVendido = e => SD.vendido(e.slug) ? '<br><span class="nd" style="font-size:.78em">100% vendido desde ' + SD.desdeBR(e.slug) + '; a linha registra a tabela desta edição</span>' : '';
 
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
 const fm2 = n => n.toLocaleString('pt-BR', { maximumFractionDigits: 2 });
@@ -232,7 +255,7 @@ const FAIXAS_LOTE_FRASE = FAIXAS_LOTE.charAt(0).toUpperCase() + FAIXAS_LOTE.slic
 const confDe = e => e.conf ? '<br><span class="nd" style="font-size:.78em">preços confirmados para ' + mesAbrevDe(e.conf) + '</span>' : '';
 const linhaApto = e => `
       <tr>
-        <td><a href="/${e.slug}/">${e.n}</a></td>
+        <td><a href="/${e.slug}/">${e.n}</a>${notaVendido(e)}</td>
         <td>${e.c}</td>
         <td>${e.t}</td>
         <td class="num">${e.p && e.m2 ? fm2(e.m2) + ' m²' : '<span class="nd">não informada</span>'}</td>
@@ -244,7 +267,7 @@ const linhaApto = e => `
 
 const linhaLote = e => `
       <tr>
-        <td><a href="/${e.slug}/">${e.n}</a></td>
+        <td><a href="/${e.slug}/">${e.n}</a>${notaVendido(e)}</td>
         <td>${e.c}</td>
         <td>${loteFechado(e) ? (e.t === 'Cond. fechado' && !/^Loteamento fechado/i.test(e.s) ? 'Condomínio fechado' : 'Loteamento fechado') : 'Loteamento aberto'}</td>
         <td class="num">${e.m2.toLocaleString('pt-BR')} m²</td>
@@ -335,7 +358,7 @@ const linhaSaida = m => `
       <tr>
         <td>${m.n}<br><small style="color:#8a8272;font-size:.78em">${m.causa} — ${m.fonte}</small></td>
         <td>${m.c}</td>
-        <td class="num">${brl(m.de)}</td>
+        <td class="num">${m.de ? brl(m.de) : '<span class="sc">sob consulta</span>'}</td>
         <td class="num"><span class="sc">sem unidades</span></td>
         <td class="num" style="color:#8a8272;font-weight:700">saiu da lista</td>
       </tr>`;
@@ -614,7 +637,7 @@ ${MENU_HTML}
     <table>
       <caption>Estoque por empreendimento — o número da medição anterior e o desta edição (${edLongo}), cada um com a data do relatório ou da tabela de origem.</caption>
       <thead><tr><th>Empreendimento</th><th>Construtora</th><th>Estoque atual</th><th>Medição anterior</th><th>No período</th></tr></thead>
-      <tbody>${SAIDAS.map(linhaEstSaida).join('')}${comEst.slice().sort((a, b) => a.est - b.est).map(linhaEst).join('')}
+      <tbody>${SAIDAS.filter(m => m.antes != null).map(linhaEstSaida).join('')}${comEst.slice().sort((a, b) => a.est - b.est).map(linhaEst).join('')}
       </tbody>
     </table>
   </div>
@@ -834,7 +857,7 @@ const estoqueItens = comEstAnterior.map(e => {
     : `${e.est} ${unidadeDe(e, e.est)} (${ant.data}), sem medição nova nesta edição${nota}`;
   return `      <li><strong>${e.n}</strong>: ${txt}.</li>`;
 });
-SAIDAS.forEach(m => estoqueItens.unshift(`      <li><strong>${m.n}</strong>: de ${m.antes} unidades (${m.data}) para 0 (${m.em}) — ${m.antes} a menos na lista (${m.causa}).</li>`));
+SAIDAS.filter(m => m.antes != null).forEach(m => estoqueItens.unshift(`      <li><strong>${m.n}</strong>: de ${m.antes} unidades (${m.data}) para 0 (${m.em}) — ${m.antes} a menos na lista (${m.causa}).</li>`));
 const entrouNoSite = ENTRADAS.filter(m => !m.tabelaNova), ganhouTabela = ENTRADAS.filter(m => m.tabelaNova);
 const CONTEXTO = `Na edição de ${edLongo}, o Observatório acompanha ${total} lançamentos imobiliários em Indaiatuba/SP (${APTOS.length} apartamentos e ${LOTES.length} loteamentos e condomínios de lotes), ${comPrecoTotal} com preço aberto. O menor preço de entrada entre os lotes é o do ${menorLote.n} (${menorLote.c}), ${brl(menorLote.p)} por um lote de ${menorLote.m2} m²; entre os apartamentos, o do ${menorApto.n} (${menorApto.c}), ${brl(menorApto.p)}${mcmvTxt}. Entre os ${aptosComPreco.length} apartamentos com preço, o "a partir de" vai até ${brl(maiorApto.p)} (${maiorApto.n}), com média de ${brl(mediaApto)} e mediana de ${brl(medianaApto)}; pela menor unidade com preço, o m² vai de ${brl(pm2Min.pm2)} (${pm2Min.n}) a ${brl(pm2Max.pm2)} (${pm2Max.n}), média de ${brl(pm2Medio)}, em ${aptosM2.length} empreendimentos. Das ${MOVIMENTOS.length} variações de preço de entrada confirmadas em documentos oficiais das construtoras, ${altas.length} ${altas.length === 1 ? 'é alta' : 'são altas'} (${lista(altas.map(m => m.n + ', ' + pct(m.de, m.para)))}) e ${quedas.length} ${quedas.length === 1 ? 'é queda' : 'são quedas'} (${lista(quedas.map(m => m.n + ', ' + pct(m.de, m.para)))}). ${entrouNoSite.length} empreendimentos entraram no site nesta edição com tabela (${lista(entrouNoSite.map(m => m.n))})${ganhouTabela.length ? ', e ' + lista(ganhouTabela.map(m => 'o ' + m.n)) + (ganhouTabela.length === 1 ? ', que já estava no site sem preço, ganhou' : ', que já estavam no site sem preço, ganharam') + ' tabela pública' : ''}${SEM_TABELA.length ? ', e ' + lista(SEM_TABELA.map(m => 'o ' + m.n)) + ' entrou sem tabela pública' : ''}.${SAIDAS.length ? ' ' + lista(SAIDAS.map(m => 'O ' + m.n)) + (SAIDAS.length === 1 ? ' saiu' : ' saíram') + ' da lista de disponíveis (' + lista(SAIDAS.map(m => m.causa)) + ').' : ''}`;
 

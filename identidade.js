@@ -38,7 +38,7 @@
    alguma falhar), para conferir uma árvore em que outros geradores ainda mexem. */
 const fs = require('fs');
 const path = require('path');
-const RAIZ = 'C:\\Users\\Usuario\\Desktop\\landing-page';
+const RAIZ = __dirname;   // raiz = pasta deste arquivo (vale em qualquer cópia do site)
 const DOMINIO = 'https://lancamentos.imoveisvivamerica.com.br/';
 
 const CORES = [

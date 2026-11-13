@@ -76,9 +76,16 @@ function extrair(arquivo, nome) {
   const fim = eArr ? src.indexOf('\n];', ini) + 2 : src.indexOf('};', ini) + 1;
   return eval('(' + src.slice(ini + ('const ' + nome + ' = ').length, fim) + ')');
 }
-const APTOS = extrair('gera-folheto.js', 'APTOS');
+// Sem disponibilidade (sem-disponibilidade.json; regra no sem-disponibilidade-regras.js): "ocultar" sai da
+// página; "tarja" vira card de esgotado ("100% vendido (desde dd/mm/aaaa)", sem preço), no fim da grade, e
+// sai das contas, das seções, da tabela-resumo e do FAQ. APTOS daqui para baixo = só os à venda.
+const SD = require('./sem-disponibilidade-regras.js').carregar();
+const APTOS_F = extrair('gera-folheto.js', 'APTOS');
+const APTOS = SD.aVenda(APTOS_F);
+const VENDIDOS = APTOS_F.filter(e => SD.comTarja(e.slug)).map(e => Object.assign({}, e,
+  { sd: true, est: undefined, estEm: 'desde ' + SD.desdeBR(e.slug), vend: undefined, tarja: undefined, s: SD.semEstoque(e.s) }));   // sem o estoque da última tabela (regra no módulo)
 const EXTRAS = extrair('gera-relacionados.js', 'EXTRAS_APTOS')
-  .filter(e => fs.existsSync(R + e.slug + '/index.html'));
+  .filter(e => fs.existsSync(R + e.slug + '/index.html') && !SD.oculto(e.slug));
 const EDICAO = extrair('gera-observatorio.js', 'EDICAO');
 
 // entidade única (nó RealEstateAgent com @id) e tag GA4 com guarda: fonte única em identidade.js
@@ -173,7 +180,7 @@ function m2Texto(e) {
 
 // ─── ordenação: preço crescente, sem preço no fim, esgotados por último ───
 const ativos = APTOS.slice().sort((a, b) => (a.p || 9e12) - (b.p || 9e12));
-const esgotados = EXTRAS.map(e => Object.assign({ esgotado: true }, e));
+const esgotados = VENDIDOS.concat(EXTRAS).map(e => Object.assign({ esgotado: true }, e));
 const todos = ativos.concat(esgotados);
 
 const comPreco = ativos.filter(e => e.p);
@@ -204,7 +211,7 @@ const badgeTxt = e => e.esgotado ? e.t : e.t;
 
 function card(e) {
   const preco = e.esgotado
-    ? `<p class="preco preco-sc"><span>estoque</span><strong>100% vendido${e.estEm ? ' (' + esc(e.estEm) + ')' : ''}</strong><em>veja as alternativas no mesmo complexo</em></p>`
+    ? `<p class="preco preco-sc"><span>estoque</span><strong>100% vendido${e.estEm ? ' (' + esc(e.estEm) + ')' : ''}</strong><em>${e.sd ? 'todas as unidades foram vendidas, conforme informou a construtora' : 'veja as alternativas no mesmo complexo'}</em></p>`
     : e.p
       ? `<p class="preco"><span>a partir de</span><strong>${brl(e.p)}</strong><em>${tabDe(e)}</em></p>`
       : (e.t === 'Pré-lançamento'
@@ -285,6 +292,14 @@ emObras.sort((a, b) => (+a.m[2] * 100 + ordemMes[a.m[1].toLowerCase()]) - (+b.m[
 // no FAQ, duas datas saem como "Torre 1: abr/2028 e Torre 2: set/2028" (sem parênteses dentro de parênteses)
 const entregaNoFaq = x => (datasEntrega(x.e) || x.m[1].toLowerCase() + '/' + x.m[2]).replace(/(\S+\/\d{4})\s*\(([^)]*)\)/g, '$2: $1');
 
+// exemplos de entrada escritos a partir das páginas: só entram os empreendimentos à venda (sem-disponibilidade)
+const EXEMPLOS_ENTRADA = [
+  { slug: 'vivere-indaiatuba', txt: 'no Vívere Residencial, sinal de R$ 5.000 mais 36 parcelas de R$ 876,59 direto com a Masotti' },
+  { slug: 'storia-congesa-indaiatuba', txt: 'no Storia Congesa, entrada de 35% em três parcelas (12% no ato, 11,5% em 30 dias e 11,5% em 60 dias) e 65% a financiar, pela tabela Congesa de outubro/2026' },
+].filter(x => ativos.some(e => e.slug === x.slug));
+const exemplosEntrada = EXEMPLOS_ENTRADA.length
+  ? (EXEMPLOS_ENTRADA.length === 1 ? 'Exemplo publicado na página do empreendimento: ' : 'Exemplos publicados nas páginas dos empreendimentos: ') + EXEMPLOS_ENTRADA.map(x => x.txt).join('; ') + '. '
+  : '';
 const FAQ = [
   { q: 'Quanto custa um apartamento na planta em Indaiatuba?',
     a: `Em ${mesExtenso}, os ${NP} apartamentos em lançamento com preço publicado vão de ${brl(menor.p)} (${menor.n}, ${menor.c}, ${tabDe(menor)}) a ${brl(maior.p)} (${maior.n}, ${maior.c}, ${tabDe(maior)}). É o preço "a partir de" — a menor unidade disponível na data de cada tabela; outros ${N - NP} ainda não têm tabela publicada pela construtora.` },
@@ -297,7 +312,7 @@ const FAQ = [
        (emObras.length ? `Entre os que informam a previsão de entrega na tabela da construtora: ${emObras.map(x => x.e.n + ' (' + entregaNoFaq(x) + ')').join(', ')}. ` : '') +
        `Os demais não trazem previsão de entrega na tabela — confirme na página de cada um ou no WhatsApp.` },
   { q: 'Como funciona a entrada parcelada na compra na planta?',
-    a: `A entrada é dividida com a própria construtora enquanto a obra anda, e o saldo é financiado na entrega. Exemplos publicados nas páginas dos empreendimentos: no Vívere Residencial, sinal de R$ 5.000 mais 36 parcelas de R$ 876,59 direto com a Masotti; no Storia Congesa, entrada de 35% em três parcelas (12% no ato, 11,5% em 30 dias e 11,5% em 60 dias) e 65% a financiar, pela tabela Congesa de outubro/2026. Cada construtora tem a sua tabela — peça a simulação com o valor da sua unidade.` },
+    a: `A entrada é dividida com a própria construtora enquanto a obra anda, e o saldo é financiado na entrega. ${exemplosEntrada}Cada construtora tem a sua tabela — peça a simulação com o valor da sua unidade.` },
 ];
 
 // ─── schemas ───

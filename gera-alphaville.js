@@ -140,6 +140,14 @@ const EMP = ALPHAVILLE.map(bruto => {
 });
 
 const comPagina = EMP.filter(e => e.slug);
+// Sem disponibilidade (sem-disponibilidade.json; regra no sem-disponibilidade-regras.js): marcado (tarja ou
+// ocultar), o empreendimento deixa de ter preço nesta página — card, description, abertura e FAQ dizem
+// "100% vendido desde dd/mm/aaaa"; em "ocultar" ele sai também dos cards, do ItemList e dos links (o nome
+// fica no catálogo e no FAQ, sem link). Nada para o ritual: a página é regerada com a lista da rodada.
+const SD = require('./sem-disponibilidade-regras.js').carregar();
+const vend = e => !!e.slug && SD.vendido(e.slug);
+const ocu = e => !!e.slug && SD.oculto(e.slug);
+const desdeDe = e => SD.desdeBR(e.slug);
 const emPreparo = EMP.filter(e => e.preparo && !e.slug);
 const N = EMP.length;
 // A abertura e o FAQ foram escritos para DUAS páginas completas ("Dois têm página completa… São o A e o B").
@@ -148,6 +156,9 @@ if (comPagina.length !== 2) throw new Error('gera-alphaville: ' + comPagina.leng
 const porSlug = s => { const e = comPagina.find(x => x.slug === s); if (!e) throw new Error('linha sem pagina: ' + s); return e; };
 const IND = porSlug('alphaville-indaiatuba');
 const DP0 = porSlug('casas-alphaville-dom-pedro-0-campinas');
+const noSite = comPagina.filter(e => !ocu(e));          // cards, ItemList e abertura
+const algumVendido = comPagina.some(vend);
+const linkOu = (e, txt) => ocu(e) ? esc(txt) : `<a href="/${e.slug}/">${esc(txt)}</a>`;
 
 // mensagens de WhatsApp: a cidade só entra quando o nome ainda não a traz
 const msgInteresse = e => 'Olá! Tenho interesse no ' + e.n + (e.n.includes(e.cidade) ? '' : ' em ' + e.cidade) + '. Pode me enviar mais informações?';
@@ -156,7 +167,13 @@ const MSG_HUB = 'Olá! Vi a página dos empreendimentos Alphaville e quero saber
 // ─── textos de SEO (com guarda de tamanho) ───
 const TITLE = "Todos os Empreendimentos Alphaville à Venda | Viv'América";
 const H1 = 'Empreendimentos Alphaville';
-const DESC = `Alphaville à venda com a Viv'América: lotes em Indaiatuba a partir de ${brl(IND.p)} (${IND.tabela}) e casas em Campinas a partir de ${brl(DP0.p)} (${DP0.tabela}).`;
+const DESC = !vend(IND) && !vend(DP0)
+  ? `Alphaville à venda com a Viv'América: lotes em Indaiatuba a partir de ${brl(IND.p)} (${IND.tabela}) e casas em Campinas a partir de ${brl(DP0.p)} (${DP0.tabela}).`
+  : vend(IND) && vend(DP0)
+    ? `Empreendimentos Alphaville com a Viv'América: o Alphaville Indaiatuba e as casas do Dom Pedro 0, em Campinas, estão 100% vendidos. Veja o catálogo da marca.`
+    : vend(IND)
+      ? `Alphaville com a Viv'América: casas em Campinas a partir de ${brl(DP0.p)} (${DP0.tabela}); o Alphaville Indaiatuba está 100% vendido desde ${desdeDe(IND)}.`
+      : `Alphaville com a Viv'América: lotes em Indaiatuba a partir de ${brl(IND.p)} (${IND.tabela}); as casas do Dom Pedro 0 estão 100% vendidas desde ${desdeDe(DP0)}.`;
 if (TITLE.length > 60) throw new Error('title com ' + TITLE.length + ' caracteres (max 60): ' + TITLE);
 if (DESC.length < 120 || DESC.length > 155) throw new Error('description com ' + DESC.length + ' caracteres (120-155): ' + DESC);
 const IMG_OG = comPagina[0].img;
@@ -183,7 +200,9 @@ function miniatura(img) {
 
 // ─── bloco 1: cards com página completa ───
 function card(e) {
-  const preco = e.p
+  const preco = vend(e)
+    ? `<p class="preco preco-sc"><span>estoque</span><strong>100% vendido</strong><em>desde ${esc(desdeDe(e))}, conforme informou a incorporadora</em></p>`
+    : e.p
     ? `<p class="preco"><span>a partir de</span><strong>${brl(e.p)}</strong><em>tabela de ${e.tabela}${e.nota ? ' · ' + esc(e.nota) : ''}</em></p>`
     : `<p class="preco preco-sc"><span>tabela</span><strong>Sob consulta</strong><em>peça no atendimento</em></p>`;
   const mini = miniatura(e.img);
@@ -196,8 +215,8 @@ function card(e) {
             <p class="specs">${esc(e.s || e.tipo)}</p>
             ${preco}
             <div class="acoes">
-              <a class="btn-card" href="/${e.slug}/">Ver página completa</a>
-              <a class="btn-wa" href="${wa(msgInteresse(e))}" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn-card" href="/${e.slug}/">Ver página completa</a>${vend(e) ? '' : `
+              <a class="btn-wa" href="${wa(msgInteresse(e))}" target="_blank" rel="noopener">WhatsApp</a>`}
             </div>
           </div>
         </article>`;
@@ -222,11 +241,11 @@ function cardPreparo(e) {
 // ─── bloco 3: tabela do catálogo ───
 const linhaTabela = e => `
             <tr>
-              <td>${e.slug ? `<a href="/${e.slug}/">${esc(e.n)}</a>` : `<b>${esc(e.n)}</b>`}${e.preparo && !e.slug ? '<span class="t-prep">página em preparo</span>' : ''}</td>
+              <td>${e.slug && !ocu(e) ? `<a href="/${e.slug}/">${esc(e.n)}</a>` : `<b>${esc(e.n)}</b>`}${e.preparo && !e.slug ? '<span class="t-prep">página em preparo</span>' : ''}</td>
               <td>${esc(e.praca)}</td>
               <td>${esc(e.linha)}</td>
               <td>${esc(e.tipo)}</td>
-              <td>${esc(e.fase)}${e.obs ? `<span class="obs">${esc(e.obs)}</span>` : ''}</td>
+              <td>${esc(e.fase)}${e.obs ? `<span class="obs">${esc(e.obs)}</span>` : ''}${vend(e) ? `<span class="obs">100% vendido desde ${esc(desdeDe(e))}</span>` : ''}</td>
             </tr>`;
 
 // ─── FAQ (o mesmo array vira o HTML e o FAQPage) ───
@@ -235,7 +254,7 @@ const regiaoSemPagina = EMP.filter(e => !e.slug && REGIAO.includes(e.cidade));
 const terrasExemplo = EMP.find(e => e.linha === 'Terras Alpha');
 const FAQ = [
   { q: 'Quais Alphaville estão à venda na região de Campinas e Indaiatuba?',
-    a: `Dois têm página completa na Imobiliária Viv'América, com preço e tabela de vendas. São o <a href="/${IND.slug}/">${IND.n}</a>, com lotes a partir de ${brl(IND.p)} na tabela de ${IND.tabela}, e o <a href="/${DP0.slug}/">${DP0.n}</a>, em ${DP0.cidade}, com casas a partir de ${brl(DP0.p)} na tabela de ${DP0.tabela}.` +
+    a: `Dois têm página completa na Imobiliária Viv'América${algumVendido ? '' : ', com preço e tabela de vendas'}. São o ${linkOu(IND, IND.n)}, ${vend(IND) ? `100% vendido desde ${desdeDe(IND)} (todos os lotes foram vendidos, conforme informou a loteadora)` : `com lotes a partir de ${brl(IND.p)} na tabela de ${IND.tabela}`}, e o ${linkOu(DP0, DP0.n)}, em ${DP0.cidade}, ${vend(DP0) ? `100% vendido desde ${desdeDe(DP0)} (todas as casas foram vendidas, conforme informou a incorporadora)` : `com casas a partir de ${brl(DP0.p)} na tabela de ${DP0.tabela}`}.` +
        (regiaoSemPagina.length ? ` O catálogo oficial da Alphaville, consultado em ${CONSULTA}, mostra ainda ${regiaoSemPagina.map(e => 'o ' + e.n + ', em ' + e.cidade + ' (' + minusc(e.tipo) + ', ' + minusc(e.fase) + ')').join(' e ')}.` : '') },
   { q: 'Qual a diferença entre Alphaville e Terras Alpha?',
     a: `São duas linhas da mesma companhia. Segundo o Formulário de Referência 2026 da Alphaville, a linha Alphaville reúne empreendimentos com lotes de no mínimo 360 m², e a linha Terras Alpha, empreendimentos com lotes de tamanho médio de 200 a 360 m². Na tabela desta página, a coluna Linha mostra a qual delas cada empreendimento pertence: o ${IND.n} é da linha Alphaville` +
@@ -243,9 +262,11 @@ const FAQ = [
   { q: "A Viv'América é a Alphaville?",
     a: `Não. A Imobiliária Viv'América (CRECI 47394-J) é uma imobiliária independente, com sede em Indaiatuba, que intermedeia a venda. Alphaville é marca da Alphaville S.A., e esta página não é o site oficial da incorporadora.` },
   { q: 'Tem Alphaville em Indaiatuba?',
-    a: `Sim. O ${IND.n} é um condomínio fechado de lotes no bairro do Itaici. Na tabela de vendas de ${IND.tabela}, os lotes partem de ${brl(IND.p)}, com as custas de escrituração cobradas à parte. A <a href="/${IND.slug}/">página do ${IND.n}</a> traz a tabela, as condições de pagamento e o mapa.` },
+    a: vend(IND)
+      ? `Sim. O ${IND.n} é um condomínio fechado de lotes no bairro do Itaici. Todos os lotes foram vendidos, conforme informou a loteadora: está sem lotes à venda desde ${desdeDe(IND)}.${ocu(IND) ? '' : ` A <a href="/${IND.slug}/">página do ${IND.n}</a> fica como registro do empreendimento.`}`
+      : `Sim. O ${IND.n} é um condomínio fechado de lotes no bairro do Itaici. Na tabela de vendas de ${IND.tabela}, os lotes partem de ${brl(IND.p)}, com as custas de escrituração cobradas à parte. A <a href="/${IND.slug}/">página do ${IND.n}</a> traz a tabela, as condições de pagamento e o mapa.` },
   { q: `As ${DP0.n} são prontas?`,
-    a: `O residencial Alphaville Dom Pedro 0, onde as casas ficam, foi entregue em outubro de 2025, e o conjunto das casas em dezembro de 2025, segundo a divulgação de resultados da Alphaville do 4º trimestre de 2025; no catálogo da companhia, o Casas Alphaville Dom Pedro 0 aparece como entregue. A situação de cada casa, incluindo o habite-se (a autorização da prefeitura para ocupar o imóvel), não consta da tabela de vendas e é confirmada no atendimento. A <a href="/${DP0.slug}/">página das ${DP0.n}</a> traz as casas da tabela de ${DP0.tabela}.` },
+    a: `O residencial Alphaville Dom Pedro 0, onde as casas ficam, foi entregue em outubro de 2025, e o conjunto das casas em dezembro de 2025, segundo a divulgação de resultados da Alphaville do 4º trimestre de 2025; no catálogo da companhia, o Casas Alphaville Dom Pedro 0 aparece como entregue. A situação de cada casa, incluindo o habite-se (a autorização da prefeitura para ocupar o imóvel), não consta da tabela de vendas e é confirmada no atendimento.${vend(DP0) ? ` Todas as casas foram vendidas, conforme informou a incorporadora: sem unidades à venda desde ${desdeDe(DP0)}.${ocu(DP0) ? '' : ` A <a href="/${DP0.slug}/">página das ${DP0.n}</a> fica como registro do empreendimento.`}` : ` A <a href="/${DP0.slug}/">página das ${DP0.n}</a> traz as casas da tabela de ${DP0.tabela}.`}` },
 ];
 
 // ─── schemas ───
@@ -253,8 +274,8 @@ const jsonItemList = {
   '@context': 'https://schema.org', '@type': 'ItemList',
   name: "Empreendimentos Alphaville com página na Imobiliária Viv'América",
   description: `Empreendimentos da marca Alphaville com página completa no site de lançamentos da Imobiliária Viv'América. Catálogo oficial da Alphaville consultado em ${CONSULTA}.`,
-  numberOfItems: comPagina.length,
-  itemListElement: comPagina.map((e, i) => ({ '@type': 'ListItem', position: i + 1, name: e.n, url: ABS + '/' + e.slug + '/' })),
+  numberOfItems: noSite.length,
+  itemListElement: noSite.map((e, i) => ({ '@type': 'ListItem', position: i + 1, name: e.n, url: ABS + '/' + e.slug + '/' })),
 };
 const jsonBread = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -279,7 +300,8 @@ if (fs.existsSync(ARQ)) {
   marcaAnterior = (old.match(/\n?\s*<style id="marca">[\s\S]*?<\/style>/) || [''])[0];
 }
 
-const listaPaginas = comPagina.map(e => `o <a href="/${e.slug}/">${esc(e.n)}</a> (${esc(minusc(e.tipo))} em ${esc(e.praca)})`).join(' e ');
+const listaPaginas = noSite.map(e => `o <a href="/${e.slug}/">${esc(e.n)}</a> (${esc(minusc(e.tipo))} em ${esc(e.praca)}${vend(e) ? '; 100% vendido desde ' + esc(desdeDe(e)) : ''})`).join(' e ');
+const quantosTem = n => n === 1 ? 'um tem' : n === 2 ? 'dois têm' : n + ' têm';
 const plural = (n, um, varios) => n + ' ' + (n === 1 ? um : varios);
 
 const HTML = `<!DOCTYPE html>
@@ -456,8 +478,8 @@ ${MENU_HTML}
     <div class="wrap">
       <p class="breadcrumb"><a href="/">Início</a> › Empreendimentos Alphaville</p>
       <h1>${esc(H1)}</h1>
-      <p class="lede">Os empreendimentos da marca Alphaville com venda em andamento, com a cidade e a fase de cada um, conforme o catálogo oficial da companhia, consultado em ${CONSULTA}. Neste site, que é da Imobiliária Viv'América, ${comPagina.length === 2 ? 'dois' : comPagina.length} têm <strong>página completa</strong>, com preço e tabela: ${listaPaginas}.</p>
-      <span class="pill">Catálogo de ${CONSULTA} · ${plural(N, 'empreendimento', 'empreendimentos')} · ${comPagina.length} com página completa</span>
+      <p class="lede">Os empreendimentos da marca Alphaville com venda em andamento, com a cidade e a fase de cada um, conforme o catálogo oficial da companhia, consultado em ${CONSULTA}. Neste site, que é da Imobiliária Viv'América, ${noSite.length ? `${quantosTem(noSite.length)} <strong>página completa</strong>, ${noSite.some(vend) ? 'com tabela ou com o registro da venda' : 'com preço e tabela'}: ${listaPaginas}.` : 'nenhum tem página completa com unidades à venda no momento.'}</p>
+      <span class="pill">Catálogo de ${CONSULTA} · ${plural(N, 'empreendimento', 'empreendimentos')} · ${noSite.length} com página completa</span>
     </div>
   </section>
 
@@ -473,9 +495,9 @@ ${MENU_HTML}
 
   <div class="section"><div class="wrap">
     <section class="sec" id="com-pagina">
-      <h2>Com página completa <small>${plural(comPagina.length, 'empreendimento', 'empreendimentos')}</small></h2>
+      <h2>Com página completa <small>${plural(noSite.length, 'empreendimento', 'empreendimentos')}</small></h2>
       <p class="sub">O preço "a partir de" é o da tabela de vendas indicada em cada card. A página de cada um traz a tabela, as condições de pagamento e o mapa.</p>
-      <div class="grid">${comPagina.map(card).join('')}
+      <div class="grid">${noSite.map(card).join('')}
       </div>
     </section>
 

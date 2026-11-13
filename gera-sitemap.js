@@ -35,7 +35,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync, spawnSync } = require('child_process');
 
-const RAIZ = 'C:\\Users\\Usuario\\Desktop\\landing-page';
+const RAIZ = __dirname;   // raiz = pasta deste arquivo (vale em qualquer cópia do site)
 const DOMINIO = 'https://lancamentos.imoveisvivamerica.com.br/';
 const SITEMAP = path.join(RAIZ, 'sitemap.xml');
 const FORA = /^(ferramentas|qrcode|quermesse|seo|node_modules|\.git|\.claude|folder|treinamento)(\/|$)/;

@@ -43,19 +43,25 @@ const EXTRAS_APTOS = [
     img: 'gran-vic-andorinha-indaiatuba/images/hero.jpg' },
 ];
 
-const aptos = APTOS.map(e => ({ n: e.n, slug: e.slug })).concat(EXTRAS_APTOS)
+// Sem disponibilidade (sem-disponibilidade.json; regra no sem-disponibilidade-regras.js): quem está em
+// "ocultar" sai dos links da malha, mas a página dele continua recebendo a malha (abre pelo link).
+const SD = require('./sem-disponibilidade-regras.js').carregar();
+const aptosTodos = APTOS.map(e => ({ n: e.n, slug: e.slug })).concat(EXTRAS_APTOS)
   .filter(e => fs.existsSync(R + e.slug + '/index.html'));
-const lotes = LOTES.map(e => ({ n: e.n, slug: e.slug }))
+const lotesTodos = LOTES.map(e => ({ n: e.n, slug: e.slug }))
   .filter(e => fs.existsSync(R + e.slug + '/index.html'));
+const aptos = SD.visiveis(aptosTodos);
+const lotes = SD.visiveis(lotesTodos);
 
 // Empreendimentos Alphaville (gera-alphaville.js): a página principal /alphaville/
 // e as landings de outras cidades. Elas não estão na fonte única (que é só
 // Indaiatuba) e, sem isto, ficariam sem malha e sem página nenhuma apontando
 // para elas.
 const ALPHA = fs.existsSync(R + 'gera-alphaville.js') ? extrair('ALPHAVILLE', 'gera-alphaville.js') : [];
-const alphaFora = ALPHA
+const alphaForaTodos = ALPHA
   .filter(e => e.slug && e.cidade !== 'Indaiatuba' && fs.existsSync(R + e.slug + '/index.html'))
   .map(e => ({ n: e.n + ' (' + e.cidade + ')', slug: e.slug }));
+const alphaFora = SD.visiveis(alphaForaTodos);
 const alpha = (fs.existsSync(R + 'alphaville/index.html')
   ? [{ n: 'Empreendimentos Alphaville', slug: 'alphaville' }] : []).concat(alphaFora);
 
@@ -123,7 +129,7 @@ function malhaPara(slugAtual) {
 const CATEGORIAS = ['apartamentos-na-planta-indaiatuba', 'loteamentos-em-indaiatuba', 'condominios-fechados-indaiatuba', 'alphaville']
   .filter(s => fs.existsSync(R + s + '/index.html'));
 
-const alvos = aptos.concat(lotes).concat(alphaFora).map(e => e.slug).concat(CATEGORIAS);
+const alvos = aptosTodos.concat(lotesTodos).concat(alphaForaTodos).map(e => e.slug).concat(CATEGORIAS);
 let feitos = 0, criados = 0;
 for (const slug of alvos) {
   const f = R + slug + '/index.html';

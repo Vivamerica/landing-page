@@ -151,8 +151,12 @@ function extrair(nome) {
   if (ini < 0 || fim < 0) throw new Error('nao achei ' + nome + ' em gera-folheto.js');
   return eval(folheto.slice(ini + ('const ' + nome + ' = ').length, fim + 2));
 }
-const APTOS = extrair('APTOS');
-const LOTES = extrair('LOTES');
+// sem disponibilidade (sem-disponibilidade.json; regra no sem-disponibilidade-regras.js): o folder é
+// material de venda e não oferece o que acabou — quem está marcado (tarja ou ocultar) fica fora, e a
+// conferência de preços abaixo compara com a mesma lista já filtrada
+const SD = require('./sem-disponibilidade-regras.js').carregar();
+const APTOS = SD.aVenda(extrair('APTOS'));
+const LOTES = SD.aVenda(extrair('LOTES'));
 const PQ = (() => {
   const ini = folheto.indexOf('const DEST = `');
   const m = ini < 0 ? null : /<p>([\s\S]*?)<\/p>/.exec(folheto.slice(ini, folheto.indexOf('`;', ini)));
@@ -241,7 +245,7 @@ const URL_MAPA = 'https://lancamentos.imoveisvivamerica.com.br/mapa-lotes-indaia
 // 1600 px), com a cozinha, a porta e a planta — e de y = 26,6 mm (≈ 380 px, abaixo do pendente) para baixo.
 const CAPA = { slug: 'aurora-indaiatuba', arquivo: 'aurora-indaiatuba/images/hero-casa-de-campo-piscina.jpg', largura: 112, x: 8, y: 26.6, altura: 48 };
 const capaDe = APTOS.find(e => e.slug === CAPA.slug) || LOTES.find(e => e.slug === CAPA.slug);
-if (!capaDe) throw new Error('GERA-FOLDER-2DOBRAS: a foto da capa é de ' + CAPA.slug + ', que não está mais na fonte única — troque a foto (CAPA)');
+if (!capaDe) throw new Error('GERA-FOLDER-2DOBRAS: a foto da capa é de ' + CAPA.slug + ', que não está mais na fonte única ou está marcado sem disponibilidade — troque a foto (CAPA)');
 if (!fs.existsSync(R + CAPA.arquivo)) throw new Error('GERA-FOLDER-2DOBRAS: foto da capa não existe: ' + CAPA.arquivo);
 
 // ─── selos (com data; a mesma regra do site e do gera-folder.js) ───
@@ -279,7 +283,8 @@ const MINI_FOTO = {
 const ehJpeg = arq => { const b = fs.readFileSync(R + arq); return b.length > 3 && b[0] === 0xFF && b[1] === 0xD8 && b[2] === 0xFF; };
 const MINI = new Map(), avisosMini = [];
 Object.keys(MINI_FOTO).forEach(s => {
-  if (![...APTOS, ...LOTES].some(e => e.slug === s)) avisosMini.push('MINI_FOTO tem ' + s + ', que não está mais na fonte única — pode tirar');
+  // marcado "sem disponibilidade" fica fora do folder, mas segue na fonte única: a foto volta com ele
+  if (![...APTOS, ...LOTES].some(e => e.slug === s) && !SD.vendido(s)) avisosMini.push('MINI_FOTO tem ' + s + ', que não está mais na fonte única — pode tirar');
 });
 [...APTOS, ...LOTES].forEach(e => {
   const x = MINI_FOTO[e.slug] || { arq: e.img };
