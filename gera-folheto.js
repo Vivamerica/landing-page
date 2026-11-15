@@ -82,32 +82,39 @@ const APTOS = [
 // Os 4 da Kaaba (13/11/2026) levam "Condomínio fechado ·" no s pelo mesmo motivo: nenhum documento recebido
 // diz "condomínio de lotes" e o decreto não veio, então o ItemList não pode dizer "de lotes". Estão sem est/estEm: o pool da
 // Kaaba lista só parte dos lotes e não explica a marca "venda à vista", então não há total para o selo.
+// prev = previsão de entrega (quando o comprador pode começar a construir), na etiqueta do canto da
+// foto dos cards (previsao.js). Datas da lista do Fabio de 15/11/2026; a fonte de cada uma está na página
+// do empreendimento: 'entregue', 'AAAA-MM' ou, com duas fases, prev e prev2. Sem prev = a loteadora ainda não
+// informou (Kaaba, GPCI e Urban Square, perguntados em 15/11/2026). Parque Zarah: Rubi e Pérola em
+// maio/2028, como a Zarin informou por mensagem em 18/09/2026; a tabela de out/2026 (emitida em 11/10/2026) traz dez/2028. Por isso o s do Zarah
+// não leva data, e a data fica na etiqueta. sDados = o spec dos dados abertos da edição de out/2026, que citam
+// a tabela oficial como fonte (e ela traz dez/2028); sai na edição de novembro.
 const LOTES = [
-  { n:'Jardim Siena', c:'Kaaba', p:300000, m2:250, tab:'2026-11', tabRec:true, img:'jardim-siena-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Itaici · 77 lotes de 250 a 607,94 m² · R$ 1.200/m²', t:'Cond. fechado', slug:'jardim-siena-indaiatuba' },
+  { n:'Jardim Siena', c:'Kaaba', p:300000, m2:250, tab:'2026-11', tabRec:true, img:'jardim-siena-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Itaici · 77 lotes de 250 a 607,94 m² · R$ 1.200/m²', t:'Cond. fechado', prev:'entregue', slug:'jardim-siena-indaiatuba' },
   { n:'Jardim Residencial Belle Vista', c:'Kaaba', p:360000, m2:300, tab:'2026-11', tabRec:true, img:'jardim-belle-vista-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Mato Dentro · 18 lotes disponíveis no pool da Kaaba (27/10/2026) · até 36x', t:'Cond. fechado', slug:'jardim-belle-vista-indaiatuba' },
   { n:'Reserva da Colina', c:'Kaaba', p:400500, m2:300, tab:'2026-11', tabRec:true, img:'reserva-da-colina-indaiatuba/images/hero.jpg', s:'Condomínio fechado · 123 lotes a partir de 300 m² · portaria e muro · 33 disponíveis no pool da Kaaba (26/10/2026)', t:'Cond. fechado', slug:'reserva-da-colina-indaiatuba' },
   { n:'Terras de Obwalden', c:'Kaaba', p:435000, m2:300, tab:'2026-11', tabRec:true, img:'terras-de-obwalden-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Bela Vista · 239 lotes de 300 a 479 m² · portaria · 54 disponíveis (pool Kaaba, 26/10/2026)', t:'Cond. fechado', slug:'terras-de-obwalden-indaiatuba' },
   { n:'Jardim Dona Maria Cândida', c:'Asseplan Narezzi', p:600000, m2:300, tab:'2025-07', conf:'2026-10', img:'maria-candida-indaiatuba/images/portaria-card.jpg',
-    s:'Condomínio fechado · obras concluídas · 166 lotes disponíveis (16/10/2026)', t:'Cond. fechado', est:166, estEm:'16/10/2026', slug:'maria-candida-indaiatuba' },
+    s:'Condomínio fechado · obras concluídas · 166 lotes disponíveis (16/10/2026)', t:'Cond. fechado', est:166, estEm:'16/10/2026', prev:'entregue', slug:'maria-candida-indaiatuba' },
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, tab:'2026-10', img:'monte-carmelo-indaiatuba/images/hero2.jpg',
-    s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:579, estEm:'09/10/2026', slug:'monte-carmelo-indaiatuba' },
+    s:'Loteamento aberto · entrada de R$ 16.000 · 96x', t:'Loteamento', est:579, estEm:'09/10/2026', prev:'2028-08', slug:'monte-carmelo-indaiatuba' },
   { n:'Parque Zarah', c:'Zarin', p:211050, m2:150, tab:'2026-10', img:'parque-zarah-indaiatuba/images/hero.jpg',
-    s:'3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028', t:'Cond. fechado', slug:'parque-zarah-indaiatuba' },
+    s:'3 fases: Safira, Rubi e Pérola · residencial a partir de R$ 218.588', sDados:'3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028', t:'Cond. fechado', prev:'2026-12', prev2:'2028-05', slug:'parque-zarah-indaiatuba' },
   { n:'Jardim Di Italia', c:'Dominium', p:210000, m2:150, tab:'2026-10', img:'di-italia-indaiatuba/images/mapa.jpg',
-    s:'Loteamento aberto · infraestrutura concluída · entrada R$ 44.000 · 60x', t:'Loteamento', est:45, estEm:'09/10/2026', slug:'di-italia-indaiatuba' },
+    s:'Loteamento aberto · infraestrutura concluída · entrada R$ 44.000 · 60x', t:'Loteamento', est:45, estEm:'09/10/2026', prev:'2026-10', slug:'di-italia-indaiatuba' },
   { n:'Terras de San Marino', c:'Armigh · Best Business', p:247500, m2:150, tab:'2026-10', img:'images/hero.jpg',
-    s:'546 lotes · 13 disponíveis (espelho 09/10/2026) · 16.164 m² de lazer resort', t:'Cond. fechado', est:13, estEm:'09/10/2026', slug:'terras-de-san-marino-indaiatuba' },
+    s:'546 lotes · 13 disponíveis (espelho 09/10/2026) · 16.164 m² de lazer resort', t:'Cond. fechado', est:13, estEm:'09/10/2026', prev:'2028-01', slug:'terras-de-san-marino-indaiatuba' },
   { n:'Residencial Vila Fahl', c:'Vila Fahl · iBen', p:290000, m2:150, tab:'2026-10', img:'vila-fahl-indaiatuba/images/hero.jpg',
-    s:'Condomínio fechado · residencial e comercial · obra 71,91% (jul/2026) · até 96x · 15 itens de lazer', t:'Cond. fechado', slug:'vila-fahl-indaiatuba' },
+    s:'Condomínio fechado · residencial e comercial · obra 71,91% (jul/2026) · até 96x · 15 itens de lazer', t:'Cond. fechado', prev:'2027-12', slug:'vila-fahl-indaiatuba' },
   { n:'Alpnach Residence', c:'Dominium', p:510000, m2:300, tab:'2026-10', img:'alpnach-indaiatuba/images/hero.jpg',
-    s:'322 lotes · 19 disponíveis (09/10/2026) · piscina coberta · mini mercado 24h', t:'Cond. fechado', est:19, estEm:'09/10/2026', slug:'alpnach-indaiatuba' },
+    s:'322 lotes · 19 disponíveis (09/10/2026) · piscina coberta · mini mercado 24h', t:'Cond. fechado', est:19, estEm:'09/10/2026', prev:'2027-07', slug:'alpnach-indaiatuba' },
   { n:'Reserva Botânica', c:'Zarin', p:642375, m2:410, tab:'2026-09', conf:'2026-10', img:'reserva-botanica-indaiatuba/images/portaria-card.jpg',
-    s:'Loteamento fechado · 2 lotes de 410 a 457 m² · portaria 24h · 3 quadras', t:'Cond. fechado', est:2, estEm:'12/10/2026', slug:'reserva-botanica-indaiatuba' },
+    s:'Loteamento fechado · 2 lotes de 410 a 457 m² · portaria 24h · 3 quadras', t:'Cond. fechado', est:2, estEm:'12/10/2026', prev:'2026-11', slug:'reserva-botanica-indaiatuba' },
   { n:'Residencial Ravello', c:'Dominium', p:714000, m2:420, tab:'2026-10', img:'residencial-ravello-indaiatuba/images/hero.jpg',
-    s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:180, estEm:'09/10/2026', slug:'residencial-ravello-indaiatuba' },
+    s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:180, estEm:'09/10/2026', prev:'2027-07', slug:'residencial-ravello-indaiatuba' },
   { n:'Ville de Provence', c:'Urban Square', p:637200, m2:360, tab:'2026-10', img:'ville-de-provence-indaiatuba/images/hero.jpg',
     s:'Loteamento fechado · 307 lotes de 360 a 617 m² · sinal de 10% e saldo em até 96x', t:'Cond. fechado', est:307, estEm:'03/10/2026', slug:'ville-de-provence-indaiatuba' },
-  { n:'Alphaville Indaiatuba', c:'Alphaville', p:908480, m2:511.5, tab:'2026-10', conf:'2026-11', img:'alphaville-indaiatuba/images/terreno.jpg', s:'Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias', t:'Cond. fechado', est:126, estEm:'07/10/2026', slug:'alphaville-indaiatuba' },
+  { n:'Alphaville Indaiatuba', c:'Alphaville', p:908480, m2:511.5, tab:'2026-10', conf:'2026-11', img:'alphaville-indaiatuba/images/terreno.jpg', s:'Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias', t:'Cond. fechado', est:126, estEm:'07/10/2026', prev:'2029-07', slug:'alphaville-indaiatuba' },
   { n:'Lagos de Helvetia', c:'GPCI', p:901800, m2:501, tab:'2026-10', img:'lagos-de-helvetia-indaiatuba/images/hero.jpg', s:'Helvetia · 36 lotes de 501 a 2.015 m² · lago e clube', t:'Cond. fechado', slug:'lagos-de-helvetia-indaiatuba' },
   { n:'Porteira de Ferro', c:'GPCI', p:1300000, m2:520, tab:'2026-09', conf:'2026-10', img:'porteira-de-ferro-indaiatuba/images/hero.jpg', s:'Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m²', t:'Cond. fechado', slug:'porteira-de-ferro-indaiatuba' },
 ];
@@ -127,6 +134,7 @@ const edicao = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;   // setembro/2026
 // material de venda e não oferece o que acabou — quem está marcado (tarja ou ocultar) fica fora.
 // APTOS/LOTES acima continuam como estão (a fonte única não muda com a marcação).
 const SD = require('./sem-disponibilidade-regras.js').carregar();
+const PREV = require('./previsao.js');   // etiqueta "Previsão: MM/AAAA" no canto da foto (campo prev)
 const APTOS_V = SD.aVenda(APTOS), LOTES_V = SD.aVenda(LOTES);
 
 const brl = n => n.toLocaleString('pt-BR');
@@ -141,7 +149,7 @@ function card(e, isLote) {
   return `
     <article class="card">
       <div class="card-img" style="background-image:url('${e.img}')">
-        <span class="badge ${tipoClasse(e.t)}">${e.t}</span>
+        <span class="badge ${tipoClasse(e.t)}">${e.t}</span>${isLote ? PREV.chip(e) : ''}
       </div>
       <div class="card-b">
         <p class="constr">${e.c}</p>
@@ -244,6 +252,8 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
 
 .card{border:.7pt solid #e3ddcd;border-radius:2.6mm;overflow:hidden;display:flex;flex-direction:column;background:#fff}
 .card-img{height:26mm;background-size:cover;background-position:center;background-color:#e8e4d8;position:relative;flex-shrink:0}
+.card-prev{position:absolute;left:2mm;bottom:2mm;font-size:5.6pt;font-weight:700;letter-spacing:.02em;line-height:1.3;
+  background:rgba(22,22,22,.84);color:#fff;padding:.5mm 1.6mm;border-radius:.8mm;border-left:.8mm solid #C9A227}
 .badge{position:absolute;top:2mm;left:2mm;font-size:5.9pt;font-weight:800;letter-spacing:.07em;
        text-transform:uppercase;padding:1.1mm 2.2mm;border-radius:6mm;color:#fff}
 .b-mcmv{background:#1565c0}.b-alto{background:#0c0c0c;color:#c8a44a}.b-pre{background:#a15e2c}

@@ -47,6 +47,8 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
 
 .card{border:.7pt solid #e3ddcd;border-radius:2.6mm;overflow:hidden;display:flex;flex-direction:column;background:#fff}
 .card-img{height:26mm;background-size:cover;background-position:center;background-color:#e8e4d8;position:relative;flex-shrink:0}
+.card-prev{position:absolute;left:2mm;bottom:2mm;font-size:5.6pt;font-weight:700;letter-spacing:.02em;line-height:1.3;
+  background:rgba(22,22,22,.84);color:#fff;padding:.5mm 1.6mm;border-radius:.8mm;border-left:.8mm solid #C9A227}
 .badge{position:absolute;top:2mm;left:2mm;font-size:5.9pt;font-weight:800;letter-spacing:.07em;
        text-transform:uppercase;padding:1.1mm 2.2mm;border-radius:6mm;color:#fff}
 .b-mcmv{background:#1565c0}.b-alto{background:#0c0c0c;color:#c8a44a}.b-pre{background:#a15e2c}
@@ -442,7 +444,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
   <div class="grid">
     <article class="card">
       <div class="card-img" style="background-image:url('monte-carmelo-indaiatuba/images/hero2.jpg')">
-        <span class="badge b-lote">Loteamento</span>
+        <span class="badge b-lote">Loteamento</span><span class="card-prev">Previsão: 08/2028</span>
       </div>
       <div class="card-b">
         <p class="constr">Dominium</p>
@@ -453,7 +455,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('di-italia-indaiatuba/images/mapa.jpg')">
-        <span class="badge b-lote">Loteamento</span>
+        <span class="badge b-lote">Loteamento</span><span class="card-prev">Previsão: 10/2026</span>
       </div>
       <div class="card-b">
         <p class="constr">Dominium</p>
@@ -464,18 +466,18 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('parque-zarah-indaiatuba/images/hero.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Previsão: 12/2026 e 05/2028</span>
       </div>
       <div class="card-b">
         <p class="constr">Zarin</p>
         <h3>Parque Zarah</h3>
-        <p class="specs">3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028</p>
+        <p class="specs">3 fases: Safira, Rubi e Pérola · residencial a partir de R$ 218.588</p>
         <div class="preco"><span>a partir de</span><strong>R$ 211.050</strong><em>R$ 1.407/m² · 150 m²</em></div>
       </div>
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('images/hero.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Previsão: 01/2028</span>
       </div>
       <div class="card-b">
         <p class="constr">Armigh · Best Business</p>
@@ -486,7 +488,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('vila-fahl-indaiatuba/images/hero.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Previsão: 12/2027</span>
       </div>
       <div class="card-b">
         <p class="constr">Vila Fahl · iBen</p>
@@ -497,7 +499,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('jardim-siena-indaiatuba/images/hero.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Entregue</span>
       </div>
       <div class="card-b">
         <p class="constr">Kaaba</p>
@@ -551,7 +553,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('alpnach-indaiatuba/images/hero.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Previsão: 07/2027</span>
       </div>
       <div class="card-b">
         <p class="constr">Dominium</p>
@@ -562,7 +564,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('maria-candida-indaiatuba/images/portaria-card.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Entregue</span>
       </div>
       <div class="card-b">
         <p class="constr">Asseplan Narezzi</p>
@@ -584,7 +586,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('reserva-botanica-indaiatuba/images/portaria-card.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Previsão: 11/2026</span>
       </div>
       <div class="card-b">
         <p class="constr">Zarin</p>
@@ -595,7 +597,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('residencial-ravello-indaiatuba/images/hero.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Previsão: 07/2027</span>
       </div>
       <div class="card-b">
         <p class="constr">Dominium</p>
@@ -617,7 +619,7 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a2b3c;-webkit-pri
     </article>
     <article class="card">
       <div class="card-img" style="background-image:url('alphaville-indaiatuba/images/terreno.jpg')">
-        <span class="badge b-cond">Cond. fechado</span>
+        <span class="badge b-cond">Cond. fechado</span><span class="card-prev">Previsão: 07/2029</span>
       </div>
       <div class="card-b">
         <p class="constr">Alphaville</p>

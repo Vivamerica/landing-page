@@ -248,6 +248,11 @@
       background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
     .bo-card:hover{border-color:#C9A227;box-shadow:0 6px 18px rgba(0,0,0,.08);}
     .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
+    .bo-img{position:relative;display:block;}
+    .bo-img img{display:block;}
+    .bo-img-inline{flex-shrink:0;}
+    .bo-img-inline .card-prev{font-size:.56rem;left:.35rem;bottom:.35rem;max-width:calc(100% - .7rem);padding:.15rem .4rem;text-wrap:balance;}
+    .card-prev{position:absolute;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);font-size:.62rem;font-weight:700;line-height:1.3;letter-spacing:.02em;background:rgba(22,22,22,.82);color:#fff;padding:.22rem .55rem;border-radius:3px;border-left:3px solid #C9A227;pointer-events:none}
     .bo-corpo{padding:.8rem .9rem 1rem;}
     .bo-selo{display:inline-block;background:#161616;color:#C9A227;font-size:.66rem;font-weight:800;
       text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:4px;}
@@ -308,6 +313,8 @@
     @media(max-width:560px){
       .bo-inline{flex-direction:column;align-items:flex-start;}
       .bo-inline img{width:100%;height:150px;}
+      .bo-img-inline{align-self:stretch;width:100%;}
+      .bo-img-inline .card-prev{font-size:.62rem;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);padding:.22rem .55rem;}
     }
   </style>
   <!--GEN:entidade-->
@@ -760,7 +767,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/uni-residencial-indaiatuba/" data-emp="uni-residencial-indaiatuba">
-          <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360"></span>
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Uni Residencial</h4>
@@ -770,7 +777,7 @@
           </div>
         </a>
         <a class="bo-card" href="/monte-carmelo-indaiatuba/" data-emp="monte-carmelo-indaiatuba">
-          <img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero2-640.webp" alt="Residencial Monte Carmelo — Indaiatuba" width="640" height="256">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/monte-carmelo-indaiatuba/images/hero2-640.webp" alt="Residencial Monte Carmelo — Indaiatuba" width="640" height="256"><span class="card-prev">Previsão: 08/2028</span></span>
           <div class="bo-corpo">
             <span class="bo-selo">Loteamento</span>
             <h4>Residencial Monte Carmelo</h4>
@@ -780,7 +787,7 @@
           </div>
         </a>
         <a class="bo-card" href="/aurora-indaiatuba/" data-emp="aurora-indaiatuba">
-          <img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/fotomontagem-card-640.webp" alt="Aurora — Park Meraki — Indaiatuba" width="640" height="366">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/aurora-indaiatuba/images/fotomontagem-card-640.webp" alt="Aurora — Park Meraki — Indaiatuba" width="640" height="366"></span>
           <div class="bo-corpo">
             <span class="bo-selo">Alto padrão</span>
             <h4>Aurora — Park Meraki</h4>
@@ -790,11 +797,11 @@
           </div>
         </a>
         <a class="bo-card" href="/parque-zarah-indaiatuba/" data-emp="parque-zarah-indaiatuba">
-          <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360"><span class="card-prev">Previsão: 12/2026 e 05/2028</span></span>
           <div class="bo-corpo">
             <span class="bo-selo">Cond. fechado</span>
             <h4>Parque Zarah</h4>
-            <p class="bo-spec">3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028</p>
+            <p class="bo-spec">3 fases: Safira, Rubi e Pérola · residencial a partir de R$ 218.588</p>
             <p class="bo-preco">A partir de <b>R$ 211.050</b></p>
             <span class="bo-btn">Ver detalhes →</span>
           </div>

@@ -69,13 +69,13 @@ const ALPHAVILLE = [
     fonte:true, tabela:'out/2026', nota:'custas de escrituração à parte' },
   { n:'Casas Alphaville Dom Pedro 0', cidade:'Campinas', uf:'SP', linha:'Alphaville', tipo:'Casas', fase:'Entregue',
     obs:'5 casas na tabela de vendas de out/2026',
-    slug:'casas-alphaville-dom-pedro-0-campinas', img:'casas-alphaville-dom-pedro-0-campinas/images/hero.jpg', ilustrativa:true,
+    prev:'entregue', slug:'casas-alphaville-dom-pedro-0-campinas', img:'casas-alphaville-dom-pedro-0-campinas/images/hero.jpg', ilustrativa:true,
     p:3306135, tabela:'out/2026', nota:'intermediação imobiliária incluída',
     s:'Casas de 288 a 362 m² em área reservada do residencial Alphaville Dom Pedro 0 · 5 casas na tabela de out/2026 · realização Alphaville e Incorpi' },
   { n:'Parque Alphaville Campinas', cidade:'Campinas', uf:'SP', linha:'Alphaville', tipo:'Lotes comerciais', fase:'Em construção', preparo:true },
   { n:'Parque Alphaville Alvorada', cidade:'Votorantim', uf:'SP', linha:'Terras Alpha', tipo:'Lotes residenciais e comerciais', fase:'Breve lançamento',
     obs:'lotes residenciais ainda não liberados',
-    slug:'parque-alphaville-alvorada-votorantim', img:'parque-alphaville-alvorada-votorantim/images/hero.jpg', ilustrativa:true,
+    prev:'2029-09', slug:'parque-alphaville-alvorada-votorantim', img:'parque-alphaville-alvorada-votorantim/images/hero.jpg', ilustrativa:true,
     s:'Lotes residenciais a partir de 253 m² no Terras Alpha Alvorada 1 e 2 · 630 lotes no loteamento · registrado em 09/06/2026' },
   { n:'Terras Alpha Ribeirão Preto', cidade:'Ribeirão Preto', uf:'SP', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção' },
   { n:'Alphaville Guarajuba 4', cidade:'Camaçari', uf:'BA', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção', preparo:true },
@@ -129,6 +129,7 @@ const EMP = ALPHAVILLE.map(bruto => {
     if (e.p) throw new Error(e.n + ': linha com fonte:true nao leva p — o preco vem do gera-folheto.js');
     e.p = f.p || null;
     e.s = e.s || f.s;
+    if (e.prev == null && f.prev != null) { e.prev = f.prev; e.prev2 = f.prev2; }   // previsão também vem da fonte única
   }
   if (e.p) {
     const m = /^([a-z]{3})\/(\d{4})$/.exec(e.tabela || '');
@@ -147,6 +148,7 @@ const comPagina = EMP.filter(e => e.slug);
 // "100% vendido desde dd/mm/aaaa"; em "ocultar" ele sai também dos cards, do ItemList e dos links (o nome
 // fica no catálogo e no FAQ, sem link). Nada para o ritual: a página é regerada com a lista da rodada.
 const SD = require('./sem-disponibilidade-regras.js').carregar();
+const PREV = require('./previsao.js');   // etiqueta "Previsão: MM/AAAA" no canto da foto (campo prev)
 const vend = e => !!e.slug && SD.vendido(e.slug);
 const ocu = e => !!e.slug && SD.oculto(e.slug);
 const desdeDe = e => SD.desdeBR(e.slug);
@@ -214,7 +216,7 @@ function card(e) {
   const mini = miniatura(e.img);
   return `
         <article class="card" id="c-${e.slug}">
-          <a href="/${e.slug}/" class="card-img"><img loading="lazy" decoding="async" src="/${mini ? mini.src : e.img}" alt="${esc(e.n)}, em ${esc(e.praca)}${e.ilustrativa ? ' (imagem ilustrativa)' : ''}" width="${mini ? mini.w : 640}" height="${mini ? mini.h : 360}"><span class="badge">${esc(e.fase)}</span>${e.ilustrativa ? '<span class="ilustr">Imagem ilustrativa</span>' : ''}</a>
+          <a href="/${e.slug}/" class="card-img"><img loading="lazy" decoding="async" src="/${mini ? mini.src : e.img}" alt="${esc(e.n)}, em ${esc(e.praca)}${e.ilustrativa ? ' (imagem ilustrativa)' : ''}" width="${mini ? mini.w : 640}" height="${mini ? mini.h : 360}"><span class="badge">${esc(e.fase)}</span>${vend(e) || PREV.rotulo(e) === e.fase ? '' : PREV.chip(e)}${e.ilustrativa ? '<span class="ilustr">Imagem ilustrativa</span>' : ''}</a>
           <div class="card-b">
             <p class="constr">${esc(e.praca)} · linha ${esc(e.linha)}</p>
             <h3><a href="/${e.slug}/">${esc(e.n)}</a></h3>
@@ -402,6 +404,7 @@ ${GA4}
     .card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
     .badge{position:absolute;top:.8rem;left:.8rem;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.32rem .65rem;border-radius:4px;background:var(--preto);color:var(--dourado)}
     .ilustr{position:absolute;right:.6rem;bottom:.6rem;font-size:.64rem;letter-spacing:.04em;background:rgba(22,22,22,.72);color:#fff;padding:.2rem .5rem;border-radius:3px}
+    ${PREV.CSS}
     .card-b{padding:1.1rem 1.3rem 1.3rem;display:flex;flex-direction:column;flex:1}
     .constr{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f7418;margin-bottom:.3rem}
     .card h3{font-size:1.3rem;margin:0 0 .4rem;line-height:1.25}

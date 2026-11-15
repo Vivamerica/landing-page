@@ -361,6 +361,11 @@
       background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
     .bo-card:hover{border-color:#C9A227;box-shadow:0 6px 18px rgba(0,0,0,.08);}
     .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
+    .bo-img{position:relative;display:block;}
+    .bo-img img{display:block;}
+    .bo-img-inline{flex-shrink:0;}
+    .bo-img-inline .card-prev{font-size:.56rem;left:.35rem;bottom:.35rem;max-width:calc(100% - .7rem);padding:.15rem .4rem;text-wrap:balance;}
+    .card-prev{position:absolute;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);font-size:.62rem;font-weight:700;line-height:1.3;letter-spacing:.02em;background:rgba(22,22,22,.82);color:#fff;padding:.22rem .55rem;border-radius:3px;border-left:3px solid #C9A227;pointer-events:none}
     .bo-corpo{padding:.8rem .9rem 1rem;}
     .bo-selo{display:inline-block;background:#161616;color:#C9A227;font-size:.66rem;font-weight:800;
       text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:4px;}
@@ -421,6 +426,8 @@
     @media(max-width:560px){
       .bo-inline{flex-direction:column;align-items:flex-start;}
       .bo-inline img{width:100%;height:150px;}
+      .bo-img-inline{align-self:stretch;width:100%;}
+      .bo-img-inline .card-prev{font-size:.62rem;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);padding:.22rem .55rem;}
     }
   </style>
   <!--GEN:entidade-->
@@ -661,11 +668,11 @@
 
     <!--GEN:oferta-->
       <div class="bo-inline">
-        <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360">
+        <span class="bo-img bo-img-inline"><img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" alt="Parque Zarah — Indaiatuba" width="640" height="360"><span class="card-prev">Previsão: 12/2026 e 05/2028</span></span>
         <div class="bo-inline-txt">
           <span class="bo-eyebrow">Disponível agora em Indaiatuba</span>
           <h4>Parque Zarah</h4>
-          <p class="bo-spec">3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028 · Zarin</p>
+          <p class="bo-spec">3 fases: Safira, Rubi e Pérola · residencial a partir de R$ 218.588 · Zarin</p>
           <p class="bo-preco">A partir de <b>R$ 211.050</b></p>
           <div class="bo-acoes">
             <a class="bo-btn-primario" href="/parque-zarah-indaiatuba/" data-emp="parque-zarah-indaiatuba">Ver o empreendimento</a>
@@ -1037,7 +1044,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/terras-de-san-marino-indaiatuba/" data-emp="terras-de-san-marino-indaiatuba">
-          <img loading="lazy" decoding="async" src="/images/hero-640.webp" alt="Terras de San Marino — Indaiatuba" width="640" height="357">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/images/hero-640.webp" alt="Terras de San Marino — Indaiatuba" width="640" height="357"><span class="card-prev">Previsão: 01/2028</span></span>
           <div class="bo-corpo">
             <span class="bo-selo bo-urg">Últimas 13 (09/10/2026)</span>
             <h4>Terras de San Marino</h4>
@@ -1047,7 +1054,7 @@
           </div>
         </a>
         <a class="bo-card" href="/vila-fahl-indaiatuba/" data-emp="vila-fahl-indaiatuba">
-          <img loading="lazy" decoding="async" src="/vila-fahl-indaiatuba/images/hero-640.webp" alt="Residencial Vila Fahl — Indaiatuba" width="640" height="464">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/vila-fahl-indaiatuba/images/hero-640.webp" alt="Residencial Vila Fahl — Indaiatuba" width="640" height="464"><span class="card-prev">Previsão: 12/2027</span></span>
           <div class="bo-corpo">
             <span class="bo-selo">Cond. fechado</span>
             <h4>Residencial Vila Fahl</h4>
@@ -1057,7 +1064,7 @@
           </div>
         </a>
         <a class="bo-card" href="/jardim-siena-indaiatuba/" data-emp="jardim-siena-indaiatuba">
-          <img loading="lazy" decoding="async" src="/jardim-siena-indaiatuba/images/hero-640.webp" alt="Jardim Siena — Indaiatuba" width="640" height="283">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/jardim-siena-indaiatuba/images/hero-640.webp" alt="Jardim Siena — Indaiatuba" width="640" height="283"><span class="card-prev">Entregue</span></span>
           <div class="bo-corpo">
             <span class="bo-selo">Cond. fechado</span>
             <h4>Jardim Siena</h4>

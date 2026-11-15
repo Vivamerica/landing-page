@@ -235,6 +235,7 @@ function imgCard(e) {
 }
 
 // ─── HTML dos cards ───
+const PREV = require('./previsao.js');   // etiqueta "Previsão: MM/AAAA" no canto da foto dos cards de lote (campo prev)
 function cardLateral(e) {
   const preco = e.p ? 'A partir de <b>' + brl(e.p) + '</b>' : 'Tabela sob consulta';
   // selo de escassez só com a data da contagem (estEm da fonte única); sem data, selo de tipo
@@ -243,7 +244,7 @@ function cardLateral(e) {
     : '<span class="bo-selo">' + e.t + '</span>';
   return `
         <a class="bo-card" href="/${e.slug}/" data-emp="${e.slug}">
-          ${imgCard(e)}
+          <span class="bo-img">${imgCard(e)}${PREV.chip(e)}</span>
           <div class="bo-corpo">
             ${selo}
             <h4>${e.n}</h4>
@@ -265,7 +266,7 @@ function cardTexto(e) {
     : e.t === 'Lançamento' ? 'Em lançamento em Indaiatuba' : 'Disponível agora em Indaiatuba';
   return `
       <div class="bo-inline">
-        ${imgCard(e)}
+        <span class="bo-img bo-img-inline">${imgCard(e)}${PREV.chip(e)}</span>
         <div class="bo-inline-txt">
           <span class="bo-eyebrow">${rotulo}</span>
           <h4>${e.n}</h4>
@@ -334,6 +335,11 @@ const CSS = `
       background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
     .bo-card:hover{border-color:#C9A227;box-shadow:0 6px 18px rgba(0,0,0,.08);}
     .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
+    .bo-img{position:relative;display:block;}
+    .bo-img img{display:block;}
+    .bo-img-inline{flex-shrink:0;}
+    .bo-img-inline .card-prev{font-size:.56rem;left:.35rem;bottom:.35rem;max-width:calc(100% - .7rem);padding:.15rem .4rem;text-wrap:balance;}
+    ${PREV.CSS.replace('font-size:.7rem', 'font-size:.62rem')}
     .bo-corpo{padding:.8rem .9rem 1rem;}
     .bo-selo{display:inline-block;background:#161616;color:#C9A227;font-size:.66rem;font-weight:800;
       text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:4px;}
@@ -394,6 +400,8 @@ const CSS = `
     @media(max-width:560px){
       .bo-inline{flex-direction:column;align-items:flex-start;}
       .bo-inline img{width:100%;height:150px;}
+      .bo-img-inline{align-self:stretch;width:100%;}
+      .bo-img-inline .card-prev{font-size:.62rem;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);padding:.22rem .55rem;}
     }
   </style>`;
 

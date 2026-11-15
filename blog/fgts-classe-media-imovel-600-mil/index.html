@@ -266,6 +266,11 @@
       background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
     .bo-card:hover{border-color:#C9A227;box-shadow:0 6px 18px rgba(0,0,0,.08);}
     .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
+    .bo-img{position:relative;display:block;}
+    .bo-img img{display:block;}
+    .bo-img-inline{flex-shrink:0;}
+    .bo-img-inline .card-prev{font-size:.56rem;left:.35rem;bottom:.35rem;max-width:calc(100% - .7rem);padding:.15rem .4rem;text-wrap:balance;}
+    .card-prev{position:absolute;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);font-size:.62rem;font-weight:700;line-height:1.3;letter-spacing:.02em;background:rgba(22,22,22,.82);color:#fff;padding:.22rem .55rem;border-radius:3px;border-left:3px solid #C9A227;pointer-events:none}
     .bo-corpo{padding:.8rem .9rem 1rem;}
     .bo-selo{display:inline-block;background:#161616;color:#C9A227;font-size:.66rem;font-weight:800;
       text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:4px;}
@@ -326,6 +331,8 @@
     @media(max-width:560px){
       .bo-inline{flex-direction:column;align-items:flex-start;}
       .bo-inline img{width:100%;height:150px;}
+      .bo-img-inline{align-self:stretch;width:100%;}
+      .bo-img-inline .card-prev{font-size:.62rem;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);padding:.22rem .55rem;}
     }
   </style>
   <!--GEN:entidade-->
@@ -566,7 +573,7 @@
 
     <!--GEN:oferta-->
       <div class="bo-inline">
-        <img loading="lazy" decoding="async" src="/vila-plaza-residence-indaiatuba/images/hero-640.webp" alt="Vila Plaza Residence — Indaiatuba" width="640" height="427">
+        <span class="bo-img bo-img-inline"><img loading="lazy" decoding="async" src="/vila-plaza-residence-indaiatuba/images/hero-640.webp" alt="Vila Plaza Residence — Indaiatuba" width="640" height="427"></span>
         <div class="bo-inline-txt">
           <span class="bo-eyebrow">Em lançamento em Indaiatuba</span>
           <h4>Vila Plaza Residence</h4>
@@ -726,7 +733,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/viva-parque-sense-indaiatuba/" data-emp="viva-parque-sense-indaiatuba">
-          <img loading="lazy" decoding="async" src="/viva-parque-sense-indaiatuba/images/hero-640.webp" alt="Viva Parque Sense — Indaiatuba" width="640" height="712">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/viva-parque-sense-indaiatuba/images/hero-640.webp" alt="Viva Parque Sense — Indaiatuba" width="640" height="712"></span>
           <div class="bo-corpo">
             <span class="bo-selo">Lançamento</span>
             <h4>Viva Parque Sense</h4>
@@ -736,7 +743,7 @@
           </div>
         </a>
         <a class="bo-card" href="/spazio-italia-indaiatuba/" data-emp="spazio-italia-indaiatuba">
-          <img loading="lazy" decoding="async" src="/spazio-italia-indaiatuba/images/hero-640.webp" alt="Spazio Italia — Indaiatuba" width="640" height="360">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/spazio-italia-indaiatuba/images/hero-640.webp" alt="Spazio Italia — Indaiatuba" width="640" height="360"></span>
           <div class="bo-corpo">
             <span class="bo-selo">Lançamento</span>
             <h4>Spazio Italia</h4>
@@ -746,7 +753,7 @@
           </div>
         </a>
         <a class="bo-card" href="/lumina-residencial-indaiatuba/" data-emp="lumina-residencial-indaiatuba">
-          <img loading="lazy" decoding="async" src="/lumina-residencial-indaiatuba/images/hero-640.webp" alt="Lumina Residencial — Indaiatuba" width="640" height="345">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/lumina-residencial-indaiatuba/images/hero-640.webp" alt="Lumina Residencial — Indaiatuba" width="640" height="345"></span>
           <div class="bo-corpo">
             <span class="bo-selo bo-urg">Últimas 6 (28/10/2026)</span>
             <h4>Lumina Residencial</h4>

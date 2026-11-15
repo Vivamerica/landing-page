@@ -732,7 +732,7 @@ const registro = (e, tipo) => ({
   mes_tabela: e.tab || null,
   estoque: typeof e.est === 'number' ? e.est : null,
   data_estoque: typeof e.est === 'number' ? (dataIsoDe(estEmDe(e)) || estEmDe(e) || null) : null,
-  spec: e.s,
+  spec: e.sDados || e.s,   // sDados: spec congelado da edição (ver o Parque Zarah no gera-folheto.js)
   url: 'https://lancamentos.imoveisvivamerica.com.br/' + e.slug + '/',
   fonte: fonteDe(e),
 });

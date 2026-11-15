@@ -267,6 +267,11 @@
       background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
     .bo-card:hover{border-color:#C9A227;box-shadow:0 6px 18px rgba(0,0,0,.08);}
     .bo-card img{width:100%;height:130px;object-fit:cover;display:block;}
+    .bo-img{position:relative;display:block;}
+    .bo-img img{display:block;}
+    .bo-img-inline{flex-shrink:0;}
+    .bo-img-inline .card-prev{font-size:.56rem;left:.35rem;bottom:.35rem;max-width:calc(100% - .7rem);padding:.15rem .4rem;text-wrap:balance;}
+    .card-prev{position:absolute;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);font-size:.62rem;font-weight:700;line-height:1.3;letter-spacing:.02em;background:rgba(22,22,22,.82);color:#fff;padding:.22rem .55rem;border-radius:3px;border-left:3px solid #C9A227;pointer-events:none}
     .bo-corpo{padding:.8rem .9rem 1rem;}
     .bo-selo{display:inline-block;background:#161616;color:#C9A227;font-size:.66rem;font-weight:800;
       text-transform:uppercase;letter-spacing:.5px;padding:.2rem .55rem;border-radius:4px;}
@@ -327,6 +332,8 @@
     @media(max-width:560px){
       .bo-inline{flex-direction:column;align-items:flex-start;}
       .bo-inline img{width:100%;height:150px;}
+      .bo-img-inline{align-self:stretch;width:100%;}
+      .bo-img-inline .card-prev{font-size:.62rem;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);padding:.22rem .55rem;}
     }
   </style>
   <!--GEN:entidade-->
@@ -577,7 +584,7 @@
 
     <!--GEN:oferta-->
       <div class="bo-inline">
-        <img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360">
+        <span class="bo-img bo-img-inline"><img loading="lazy" decoding="async" src="/uni-residencial-indaiatuba/images/hero-640.webp" alt="Uni Residencial — Indaiatuba" width="640" height="360"></span>
         <div class="bo-inline-txt">
           <span class="bo-eyebrow">Pré-lançamento em Indaiatuba</span>
           <h4>Uni Residencial</h4>
@@ -831,7 +838,7 @@
 <!--GEN:aside-->
         <p class="bo-aside-titulo">Lançamentos em Indaiatuba</p>
         <a class="bo-card" href="/gran-vic-tangara-indaiatuba/" data-emp="gran-vic-tangara-indaiatuba">
-          <img loading="lazy" decoding="async" src="/gran-vic-tangara-indaiatuba/images/hero-640.webp" alt="Gran Vic Tangará — Indaiatuba" width="640" height="426">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/gran-vic-tangara-indaiatuba/images/hero-640.webp" alt="Gran Vic Tangará — Indaiatuba" width="640" height="426"></span>
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Gran Vic Tangará</h4>
@@ -841,7 +848,7 @@
           </div>
         </a>
         <a class="bo-card" href="/gran-vic-colibri-indaiatuba/" data-emp="gran-vic-colibri-indaiatuba">
-          <img loading="lazy" decoding="async" src="/gran-vic-colibri-indaiatuba/images/hero-640.webp" alt="Gran Vic Colibri — Indaiatuba" width="640" height="376">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/gran-vic-colibri-indaiatuba/images/hero-640.webp" alt="Gran Vic Colibri — Indaiatuba" width="640" height="376"></span>
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Gran Vic Colibri</h4>
@@ -851,7 +858,7 @@
           </div>
         </a>
         <a class="bo-card" href="/itamaraca-indaiatuba/" data-emp="itamaraca-indaiatuba">
-          <img loading="lazy" decoding="async" src="/itamaraca-indaiatuba/images/portaria-640.webp" alt="Itamaracá Residencial — Indaiatuba" width="640" height="360">
+          <span class="bo-img"><img loading="lazy" decoding="async" src="/itamaraca-indaiatuba/images/portaria-640.webp" alt="Itamaracá Residencial — Indaiatuba" width="640" height="360"></span>
           <div class="bo-corpo">
             <span class="bo-selo">MCMV · FGTS</span>
             <h4>Itamaracá Residencial</h4>

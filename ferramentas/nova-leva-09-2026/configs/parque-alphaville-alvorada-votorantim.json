@@ -35,7 +35,7 @@
   "hero": {
     "eyebrow": "Votorantim/SP · realização Alphaville",
     "sub": "Lotes do Terras Alpha Alvorada 1 e 2 em Votorantim",
-    "lead": "O Parque Alphaville Alvorada é um loteamento residencial e comercial da Alphaville em Votorantim, com 630 lotes, registrado em 09/06/2026. Os lotes residenciais ficam em dois residenciais com clube e portaria: o Terras Alpha Alvorada 1, com 322 lotes a partir de 253 m², e o Terras Alpha Alvorada 2, com 196 lotes de 253 a 725 m², segundo a Alphaville. O material que recebemos não traz tabela vigente nem o prazo de entrega dos lotes residenciais: os dois são confirmados no atendimento.",
+    "lead": "O Parque Alphaville Alvorada é um loteamento residencial e comercial da Alphaville em Votorantim, com 630 lotes, registrado em 09/06/2026. Os lotes residenciais ficam em dois residenciais com clube e portaria: o Terras Alpha Alvorada 1, com 322 lotes a partir de 253 m², e o Terras Alpha Alvorada 2, com 196 lotes de 253 a 725 m², segundo a Alphaville. O material que recebemos não traz tabela vigente nem o contrato dos lotes residenciais; pela regra das minutas dos lotes comerciais do mesmo loteamento (39 meses do lançamento de jun/2026), a entrega iria a set/2029, ou até mar/2030 com a carência de 180 dias. Os dois se confirmam no atendimento.",
     "preco": "Tabela vigente no atendimento",
     "preco_nota": "o material recebido em nov/2026 só traz condições de pré-lançamento (jul/2026) · custas cartorárias e corretagem à parte",
     "cta_msg": "Olá! Quero a tabela de lotes do Parque Alphaville Alvorada com quadra, metragem e valor.",
@@ -411,7 +411,7 @@
     ],
     [
       "Entrega dos lotes residenciais",
-      "Não informada no material; confirme no atendimento"
+      "Previsão de set/2029: 39 meses do lançamento de jun/2026, pela regra das minutas dos lotes comerciais; com a carência de 180 dias, até mar/2030. O contrato residencial não veio no material: confirme no atendimento"
     ]
   ],
   "faq": [
@@ -480,7 +480,7 @@
   },
   "llms": {
     "secao": "alphaville",
-    "linha": "loteamento residencial e comercial da Alphaville em Votorantim/SP (não é Indaiatuba), registrado como Loteamento Residencial e Comercial Gleba A27 sob o R.05 da matrícula 32.744 do Registro de Imóveis de Votorantim em 09/06/2026, com 630 lotes em 662.885,76 m². Lotes residenciais no Terras Alpha Alvorada 1 (322 lotes, a partir de 253 m²) e no Terras Alpha Alvorada 2 (196 lotes, de 253 a 725 m²), cada um com clube previsto (piscina adulta e infantil, salão de festas, academia, churrasqueira, playground e horta; quadra de areia no Alvorada 1) e portaria 24h, cujos projetos (clube, apoio e portaria) estão em aprovação e podem mudar sem aviso prévio, segundo a Alphaville; o projeto urbanístico lista também 54 lotes comerciais, 35 de uso misto, 19 multifamiliares e 4 da área do clube e apoio. Lançamento dos residenciais anunciado para 08/08/2026 no material de divulgação de jul/2026 (as minutas dos lotes comerciais citam junho/2026); a liberação dos lotes residenciais é confirmada no atendimento. Acesso pela Rodovia SP-79, acesso 103; stand na Av. Rogério Cassola, 581. O material recebido em nov/2026 não traz tabela vigente: preço, disponibilidade e prazo de entrega no atendimento; custas cartorárias (ITBI 2%, lavratura da escritura 1,4%, registro 1,2%, margem e operacional documental 0,5%, mais itens de alienação quando houver) e comissão de corretagem fora do preço."
+    "linha": "loteamento residencial e comercial da Alphaville em Votorantim/SP (não é Indaiatuba), registrado como Loteamento Residencial e Comercial Gleba A27 sob o R.05 da matrícula 32.744 do Registro de Imóveis de Votorantim em 09/06/2026, com 630 lotes em 662.885,76 m². Lotes residenciais no Terras Alpha Alvorada 1 (322 lotes, a partir de 253 m²) e no Terras Alpha Alvorada 2 (196 lotes, de 253 a 725 m²), cada um com clube previsto (piscina adulta e infantil, salão de festas, academia, churrasqueira, playground e horta; quadra de areia no Alvorada 1) e portaria 24h, cujos projetos (clube, apoio e portaria) estão em aprovação e podem mudar sem aviso prévio, segundo a Alphaville; o projeto urbanístico lista também 54 lotes comerciais, 35 de uso misto, 19 multifamiliares e 4 da área do clube e apoio. Lançamento dos residenciais anunciado para 08/08/2026 no material de divulgação de jul/2026 (as minutas dos lotes comerciais citam junho/2026); a liberação dos lotes residenciais é confirmada no atendimento. Acesso pela Rodovia SP-79, acesso 103; stand na Av. Rogério Cassola, 581. O material recebido em nov/2026 não traz tabela vigente nem o contrato dos lotes residenciais: preço e disponibilidade no atendimento; pela regra das minutas dos lotes comerciais, a entrega do lote iria a set/2029 (39 meses do lançamento de jun/2026), ou até mar/2030 com a carência de 180 dias; custas cartorárias (ITBI 2%, lavratura da escritura 1,4%, registro 1,2%, margem e operacional documental 0,5%, mais itens de alienação quando houver) e comissão de corretagem fora do preço."
   },
   "geo": [
     -23.5861,

@@ -46,7 +46,7 @@
       "name": "Imobiliária Viv'América"
     },
     "datePublished": "2026-05-17",
-    "dateModified": "2026-11-13"
+    "dateModified": "2026-11-15"
   }
   </script>
 
@@ -138,6 +138,10 @@
     footer a:hover { color: var(--dourado); }
     .footer-links { margin-bottom: 1rem; }
     @media (max-width: 600px) { nav { display: none; } }
+      /* previsão de entrega no card */
+    .card-prev{position:absolute;left:.6rem;bottom:.6rem;max-width:calc(100% - 1.2rem);font-size:.7rem;font-weight:700;line-height:1.3;letter-spacing:.02em;background:rgba(22,22,22,.82);color:#fff;padding:.22rem .55rem;border-radius:3px;border-left:3px solid #C9A227;pointer-events:none}
+    .lc-img{position:relative;display:block}.lc-img img{display:block}
+    /* fim previsão */
   </style>
   <style id="marca">
     /* Identidade Viv'América — Poiret One + Josefin Sans, preto e dourado */
@@ -412,7 +416,7 @@
   <div class="container">
     <div class="listings-grid"><!--GEN:hubgrid-->
       <a href="/jardim-siena-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/jardim-siena-indaiatuba/images/hero-640.webp" width="640" height="283" alt="Jardim Siena — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/jardim-siena-indaiatuba/images/hero-640.webp" width="640" height="283" alt="Jardim Siena — condomínio fechado em Indaiatuba"><span class="card-prev">Entregue</span></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Jardim Siena</h3>
@@ -422,7 +426,7 @@
         </div>
       </a>
       <a href="/jardim-belle-vista-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/jardim-belle-vista-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Jardim Residencial Belle Vista — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/jardim-belle-vista-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Jardim Residencial Belle Vista — condomínio fechado em Indaiatuba"></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Jardim Residencial Belle Vista</h3>
@@ -432,7 +436,7 @@
         </div>
       </a>
       <a href="/reserva-da-colina-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/reserva-da-colina-indaiatuba/images/hero-640.webp" width="640" height="461" alt="Reserva da Colina — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/reserva-da-colina-indaiatuba/images/hero-640.webp" width="640" height="461" alt="Reserva da Colina — condomínio fechado em Indaiatuba"></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Reserva da Colina</h3>
@@ -442,17 +446,17 @@
         </div>
       </a>
       <a href="/parque-zarah-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Parque Zarah — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/parque-zarah-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Parque Zarah — condomínio fechado em Indaiatuba"><span class="card-prev">Previsão: 12/2026 e 05/2028</span></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Parque Zarah</h3>
-          <p>Zarin · 3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028 · lotes a partir de 150 m² · tabela de out/2026</p>
+          <p>Zarin · 3 fases: Safira, Rubi e Pérola · residencial a partir de R$ 218.588 · lotes a partir de 150 m² · tabela de out/2026</p>
           <div class="card-price">A partir de R$ 211.050 · R$ 1.407/m²</div>
           <span class="btn-card">Ver detalhes</span>
         </div>
       </a>
       <a href="/terras-de-obwalden-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/terras-de-obwalden-indaiatuba/images/hero-640.webp" width="640" height="420" alt="Terras de Obwalden — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/terras-de-obwalden-indaiatuba/images/hero-640.webp" width="640" height="420" alt="Terras de Obwalden — condomínio fechado em Indaiatuba"></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Terras de Obwalden</h3>
@@ -462,7 +466,7 @@
         </div>
       </a>
       <a href="/reserva-botanica-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/reserva-botanica-indaiatuba/images/portaria-card-640.webp" width="640" height="366" alt="Reserva Botânica — loteamento fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/reserva-botanica-indaiatuba/images/portaria-card-640.webp" width="640" height="366" alt="Reserva Botânica — loteamento fechado em Indaiatuba"><span class="card-prev">Previsão: 11/2026</span></span>
         <div class="card-body">
           <span class="card-badge">Loteamento fechado · últimas 2 unidades (12/10/2026)</span>
           <h3>Reserva Botânica</h3>
@@ -472,7 +476,7 @@
         </div>
       </a>
       <a href="/terras-de-san-marino-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/images/hero-640.webp" width="640" height="357" alt="Terras de San Marino — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/images/hero-640.webp" width="640" height="357" alt="Terras de San Marino — condomínio fechado em Indaiatuba"><span class="card-prev">Previsão: 01/2028</span></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado · últimas 13 unidades (09/10/2026)</span>
           <h3>Terras de San Marino</h3>
@@ -482,7 +486,7 @@
         </div>
       </a>
       <a href="/alpnach-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/alpnach-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Alpnach Residence — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/alpnach-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Alpnach Residence — condomínio fechado em Indaiatuba"><span class="card-prev">Previsão: 07/2027</span></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado · últimas 19 unidades (09/10/2026)</span>
           <h3>Alpnach Residence</h3>
@@ -492,7 +496,7 @@
         </div>
       </a>
       <a href="/residencial-ravello-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/residencial-ravello-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Residencial Ravello — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/residencial-ravello-indaiatuba/images/hero-640.webp" width="640" height="360" alt="Residencial Ravello — condomínio fechado em Indaiatuba"><span class="card-prev">Previsão: 07/2027</span></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Residencial Ravello</h3>
@@ -502,7 +506,7 @@
         </div>
       </a>
       <a href="/ville-de-provence-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/ville-de-provence-indaiatuba/images/hero-640.webp" width="640" height="256" alt="Ville de Provence — loteamento fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/ville-de-provence-indaiatuba/images/hero-640.webp" width="640" height="256" alt="Ville de Provence — loteamento fechado em Indaiatuba"></span>
         <div class="card-body">
           <span class="card-badge">Loteamento fechado</span>
           <h3>Ville de Provence</h3>
@@ -512,7 +516,7 @@
         </div>
       </a>
       <a href="/alphaville-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/alphaville-indaiatuba/images/terreno-640.webp" width="640" height="302" alt="Alphaville Indaiatuba — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/alphaville-indaiatuba/images/terreno-640.webp" width="640" height="302" alt="Alphaville Indaiatuba — condomínio fechado em Indaiatuba"><span class="card-prev">Previsão: 07/2029</span></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Alphaville Indaiatuba</h3>
@@ -522,7 +526,7 @@
         </div>
       </a>
       <a href="/lagos-de-helvetia-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/lagos-de-helvetia-indaiatuba/images/hero-640.webp" width="640" height="354" alt="Lagos de Helvetia — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/lagos-de-helvetia-indaiatuba/images/hero-640.webp" width="640" height="354" alt="Lagos de Helvetia — condomínio fechado em Indaiatuba"></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Lagos de Helvetia</h3>
@@ -532,7 +536,7 @@
         </div>
       </a>
       <a href="/vila-fahl-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/vila-fahl-indaiatuba/images/hero-640.webp" width="640" height="464" alt="Residencial Vila Fahl — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/vila-fahl-indaiatuba/images/hero-640.webp" width="640" height="464" alt="Residencial Vila Fahl — condomínio fechado em Indaiatuba"><span class="card-prev">Previsão: 12/2027</span></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Residencial Vila Fahl</h3>
@@ -542,7 +546,7 @@
         </div>
       </a>
       <a href="/maria-candida-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/maria-candida-indaiatuba/images/portaria-card-640.webp" width="640" height="377" alt="Jardim Dona Maria Cândida — condomínio fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/maria-candida-indaiatuba/images/portaria-card-640.webp" width="640" height="377" alt="Jardim Dona Maria Cândida — condomínio fechado em Indaiatuba"><span class="card-prev">Entregue</span></span>
         <div class="card-body">
           <span class="card-badge">Condomínio fechado</span>
           <h3>Jardim Dona Maria Cândida</h3>
@@ -552,7 +556,7 @@
         </div>
       </a>
       <a href="/porteira-de-ferro-indaiatuba/" class="listing-card">
-        <img loading="lazy" decoding="async" src="/porteira-de-ferro-indaiatuba/images/hero-640.webp" width="640" height="430" alt="Porteira de Ferro — loteamento fechado em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" src="/porteira-de-ferro-indaiatuba/images/hero-640.webp" width="640" height="430" alt="Porteira de Ferro — loteamento fechado em Indaiatuba"></span>
         <div class="card-body">
           <span class="card-badge">Loteamento fechado</span>
           <h3>Porteira de Ferro</h3>

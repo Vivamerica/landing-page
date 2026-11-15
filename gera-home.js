@@ -114,6 +114,7 @@ function extrairDe(arquivo, nome) {
 // e sem preço); "ocultar" sai da home e dos hubs. APTOS_F/LOTES_F são a fonte única inteira.
 const SDM = require('./sem-disponibilidade-regras.js');
 const SD = SDM.carregar();
+const PREV = require('./previsao.js');   // etiqueta "Previsão: MM/AAAA" no canto da foto dos cards de lote (campo prev)
 const APTOS_F = extrairDe('gera-folheto.js', 'APTOS');
 const LOTES_F = extrairDe('gera-folheto.js', 'LOTES');
 const APTOS = SD.aVenda(APTOS_F);
@@ -181,7 +182,7 @@ const REGIAO_F = ALPHAVILLE
     const tipoCard = /^casas?\b/i.test(e.tipo || '') ? 'casa' : /^lotes?\b/i.test(e.tipo || '') ? 'lote' : 'apartamento';
     return {
       n: e.n, c: 'Alphaville', p: e.p || null, s: e.s || e.tipo || '', slug: e.slug,
-      cidade: e.cidade, tab: m ? m[2] + '-' + MES_NUM[m[1]] : null, tipoCard,
+      cidade: e.cidade, tab: m ? m[2] + '-' + MES_NUM[m[1]] : null, tipoCard, prev: e.prev, prev2: e.prev2,
       cond: tipoCard === 'apartamento' ? 0 : 1,   // casas e lotes Alphaville ficam em residencial fechado
     };
   });
@@ -213,7 +214,7 @@ let feitos = [], falhas = [];
 // FAQ do m², seção de regiões). O dateModified do Article usa a maior entre
 // esta data e EDICAO.lastmod — nunca a data do build, para não "atualizar"
 // sem mudar nada. Mudou o hub de verdade? Troque aqui e no sitemap.
-const HUBS_ALTERADOS_EM = '2026-10-19';   // 19/10: na grade, as fotos novas dos cards (Monte Carmelo, Di Italia, Reserva Botânica, Alphaville e Maria Cândida); 15/10: a grade vem logo depois do topo e o texto vira guia embaixo; o de condomínios ganha H1 "Condomínios em Indaiatuba" e o H2 com a contagem
+const HUBS_ALTERADOS_EM = '2026-11-15';   // 15/11: etiqueta de previsão de entrega no canto da foto dos cards; 19/10: na grade, as fotos novas dos cards (Monte Carmelo, Di Italia, Reserva Botânica, Alphaville e Maria Cândida); 15/10: a grade vem logo depois do topo e o texto vira guia embaixo; o de condomínios ganha H1 "Condomínios em Indaiatuba" e o H2 com a contagem
 
 // ─── 0. metadados vivos: title/description/og/twitter/H1 ───
 // Funções compartilhadas com os hubs de lote (abaixo). O title tem teto de
@@ -550,6 +551,26 @@ const faqDeVisivel = html => {
 h = faqDeVisivel(h);
 feitos.push('FAQPage da home regerado dos <details>');
 
+// ─── 5b. previsão de entrega no canto da foto dos cards de lote (previsao.js; Fabio, 15/11/2026) ───
+// Sai e volta a cada rodada: a etiqueta de quem perdeu o prev some, a de quem mudou troca.
+// Card "100% vendido" não leva etiqueta (não há o que entregar a quem compra).
+h = h.replace(/<span class="card-prev">[^<]*<\/span>/g, '');
+let prevHome = 0;
+naPagina.forEach(e => {
+  if (!LOTES_F.includes(e) && !REGIAO_F.includes(e)) return;
+  const c = SD.vendido(e.slug) ? '' : PREV.chip(e);
+  if (!c) return;
+  const i = h.indexOf('href="/' + e.slug + '/" class="card-img-link"');
+  const fimA = i < 0 ? -1 : h.indexOf('</a>', i);
+  const ini = i < 0 ? -1 : h.indexOf('<img', i);
+  if (i < 0 || ini < 0 || ini > fimA) { falhas.push('etiqueta de previsão no card ' + e.slug); return; }
+  const fimImg = h.indexOf('>', ini) + 1;
+  h = h.slice(0, fimImg) + c + h.slice(fimImg);
+  prevHome++;
+});
+h = PREV.garanteCss(h);
+feitos.push('previsão em ' + prevHome + ' cards');
+
 fs.writeFileSync(R + 'index.html', h, 'utf8');
 
 // ─── 6. hubs de lote gerados da fonte única ───
@@ -609,7 +630,7 @@ const imgCard = e => { const m = miniatura(e.img); return m ? `src="/${m.src}" w
 // card no estilo de cada hub (classes CSS já existentes em cada página)
 const cardLoteamentos = e => `
       <a href="/${e.slug}/" class="listing-card">
-        <img loading="lazy" decoding="async" ${imgCard(e)} alt="${esc(e.n)} — ${tipoLote(e)} em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" ${imgCard(e)} alt="${esc(e.n)} — ${tipoLote(e)} em Indaiatuba">${PREV.chip(e)}</span>
         <div class="listing-card-body">
           <p class="listing-card-badge">${tipoLote(e)}${seloEst(e)}</p>
           <h3>${esc(e.n)}</h3>
@@ -647,7 +668,7 @@ const cardCondominiosV = e => `
       </a>`;
 const cardCondominios = e => `
       <a href="/${e.slug}/" class="listing-card">
-        <img loading="lazy" decoding="async" ${imgCard(e)} alt="${esc(e.n)} — ${tipoLote(e).toLowerCase()} em Indaiatuba">
+        <span class="lc-img"><img loading="lazy" decoding="async" ${imgCard(e)} alt="${esc(e.n)} — ${tipoLote(e).toLowerCase()} em Indaiatuba">${PREV.chip(e)}</span>
         <div class="card-body">
           <span class="card-badge">${tipoLote(e)}${seloEst(e)}</span>
           <h3>${esc(e.n)}</h3>
@@ -733,6 +754,7 @@ for (const hub of HUBS) {
   let s = fs.readFileSync(arq, 'utf8');
   const antes = s;
   s = metaVivo(s, hub.arq, hub.title, hub.desc);
+  s = PREV.garanteCss(s, '.lc-img{position:relative;display:block}.lc-img img{display:block}');   // a etiqueta de previsão dos cards da grade
   const partes = [];
   // seção escrita à mão que destaca um empreendimento marcado (sem-disponibilidade): volta tudo e marca de novo
   s = SDM.Regras.secaoRestaurar(s);
