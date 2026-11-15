@@ -733,3 +733,17 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);
   else iniciar();
 })();
+
+// Alpha Week Alphaville (15 a 30/11/2026), gancho de 13/11/2026: carrega /faixa.js, que decide sozinho em quais
+// paginas mostra a faixa da campanha e some depois de 30/11/2026 23:59 (Brasilia). Fica fora do bloco acima de
+// proposito: nao depende dele nem mexe nele. Para desligar, apague estas linhas.
+(function () {
+  try {
+    if (window.__vmFaixaGancho) return;
+    window.__vmFaixaGancho = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = '/faixa.js?v=20261113';
+    (document.head || document.documentElement).appendChild(s);
+  } catch (e) {}
+})();
