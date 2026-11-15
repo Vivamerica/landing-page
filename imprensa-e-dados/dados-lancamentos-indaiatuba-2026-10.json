@@ -437,15 +437,15 @@
     "nome": "Parque Zarah",
     "tipo": "lote",
     "incorporadora": "Zarin",
-    "preco_a_partir_de": 211050,
+    "preco_a_partir_de": 173363,
     "m2_menor_unidade": 150,
-    "preco_m2": 1407,
-    "mes_tabela": "2026-10",
+    "preco_m2": 1156,
+    "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
-    "spec": "3 fases · residencial a partir de R$ 218.588 · Safira dez/2026 · Rubi e Pérola dez/2028",
+    "spec": "3 fases: Safira, Rubi e Pérola · residencial a partir de R$ 218.588",
     "url": "https://lancamentos.imoveisvivamerica.com.br/parque-zarah-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Jardim Di Italia",

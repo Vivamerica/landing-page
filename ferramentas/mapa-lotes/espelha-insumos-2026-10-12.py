@@ -22,7 +22,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 DADOS = os.path.join(AQUI, 'dados')
-P = 'C:/Users/Usuario/Desktop/landing-page/mapa-lotes-indaiatuba/index.html'
+P = os.path.join(os.path.dirname(os.path.dirname(AQUI)), 'mapa-lotes-indaiatuba', 'index.html')   # esta copia do site
 ids = [a for a in sys.argv[1:] if not a.startswith('--')]
 gravar = '--gravar' in sys.argv
 assert ids, 'informe ao menos um id de bairro'

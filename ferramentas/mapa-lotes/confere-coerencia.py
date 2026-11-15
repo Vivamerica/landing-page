@@ -10,7 +10,8 @@
 import io, re, sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-P = 'C:/Users/Usuario/Desktop/landing-page/mapa-lotes-indaiatuba/index.html'
+import os
+P = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'mapa-lotes-indaiatuba', 'index.html')   # esta copia do site
 s = io.open(P, encoding='utf-8', newline='').read()
 
 LINHA = re.compile(r"^ *\{ b:'([^']+)',\s+q:'([^']+)',\s*l:'([^']+)'([^\n]*)\n", re.M)

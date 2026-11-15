@@ -72,7 +72,7 @@ const MOVIMENTOS = [
   // outubro/2026
   { n: 'Itamaracá Residencial', c: 'Zarin', de: 339990, para: 345107, causa: 'o piso da tabela de outubro subiu: Apto Meio de 48,11 m² no térreo da Torre B; 168 das 206 unidades disponíveis em 01/10/2026', fonte: 'tabela Zarin de outubro/2026 (gerada em 01/10/2026)' },
   { n: 'Spazio Italia',         c: 'Zarin', de: 448820, para: 429961, causa: 'a Torre 4 (Milão) entrou na tabela com 86 unidades e passou a ter o menor preço — 59,5 m², 1 vaga', fonte: 'tabela Zarin de outubro/26 (documento de 01/10/2026)' },
-  { n: 'Parque Zarah',          c: 'Zarin', de: 172500, para: 211050, causa: 'os lotes mistos de 150 m² da quadra 14, de R$ 172.500, saíram da tabela de 29/09/2026; o menor agora é misto de 150 m² da fase Pérola, e a tabela de 01/10/2026 reajustou os 662 lotes em 0,5% — residencial a partir de R$ 218.588', fonte: 'tabelas Zarin de 29/09/2026 e 01/10/2026 (3 fases)' },
+  { n: 'Parque Zarah',          c: 'Zarin', de: 172500, para: 173363, causa: 'os lotes mistos de 150 m² da quadra 14, de R$ 172.500, saíram da tabela de 29/09/2026 (em outubro o menor foi R$ 211.050, misto da quadra 27) e um deles voltou na tabela de 12/11/2026 por R$ 173.362,50, com o reajuste de 0,5% — residencial a partir de R$ 218.588', fonte: 'tabelas Zarin de 29/09/2026, 01/10/2026 e 12/11/2026 (3 fases)' },
   { n: 'Reserva Botânica',      c: 'Zarin', de: 532563, para: 642375, causa: 'saiu o lote D-13 (339,92 m²), que era o mais barato; o menor disponível agora é o C-1, de 410,01 m² — restam 2 lotes na tabela de 29/09/2026', fonte: 'tabela Zarin de 29/09/2026' },
   { n: 'Gran Vic Tangará',      c: 'VIC Engenharia', de: 330000, para: 325000, causa: 'o apto 1001 da Torre 03, que era o mais barato (R$ 330.000), saiu da tabela; o menor preço agora é o do apto 804 da Torre 05 (47,22 m²), preço de uma única unidade — a seguinte custa R$ 333.761; as 74 unidades da tabela são Faixa 3', fonte: 'tabela VIC de 05/10/2026' },
   { n: 'Gran Vic Colibri',      c: 'VIC Engenharia', de: 334479, para: 336686, causa: 'as duas unidades de menor preço são as mesmas da tabela de setembro (térreo das Torres 01 e 02), com valor reajustado; 81 unidades na tabela', fonte: 'tabela VIC de 05/10/2026' },
@@ -732,7 +732,7 @@ const registro = (e, tipo) => ({
   mes_tabela: e.tab || null,
   estoque: typeof e.est === 'number' ? e.est : null,
   data_estoque: typeof e.est === 'number' ? (dataIsoDe(estEmDe(e)) || estEmDe(e) || null) : null,
-  spec: e.sDados || e.s,   // sDados: spec congelado da edição (ver o Parque Zarah no gera-folheto.js)
+  spec: e.s,
   url: 'https://lancamentos.imoveisvivamerica.com.br/' + e.slug + '/',
   fonte: fonteDe(e),
 });

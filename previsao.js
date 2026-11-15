@@ -10,7 +10,9 @@
      prev:'2027-07'      →  Previsão: 07/2027
      prev:'2026-12', prev2:'2028-05'  →  Previsão: 12/2026 e 05/2028 (duas fases)
      prev:'entregue'     →  Entregue
-     sem prev            →  sem etiqueta (a loteadora ainda não informou)
+     prev:'consulte'     →  Previsão: consulte (a loteadora ainda não informou)
+
+   Todo loteamento de LOTES precisa de prev: o gera-folheto.js para sem ele (validarLotes).
 
    Todo gerador que monta card de loteamento lê daqui:
      const PREV = require('./previsao.js');
@@ -24,8 +26,8 @@ function validar(e) {
     if (e && e.prev2 != null) throw new Error('PREVISAO: ' + e.n + ' tem prev2 sem prev');
     return;
   }
-  if (e.prev !== 'entregue' && !RE_MES.test(e.prev)) throw new Error('PREVISAO: ' + e.n + ' tem prev "' + e.prev + '" (use AAAA-MM ou "entregue")');
-  if (e.prev2 != null && (e.prev === 'entregue' || !RE_MES.test(e.prev2))) throw new Error('PREVISAO: ' + e.n + ' tem prev2 "' + e.prev2 + '" (AAAA-MM, só junto de um prev com mês)');
+  if (e.prev !== 'entregue' && e.prev !== 'consulte' && !RE_MES.test(e.prev)) throw new Error('PREVISAO: ' + e.n + ' tem prev "' + e.prev + '" (use AAAA-MM, "entregue" ou "consulte")');
+  if (e.prev2 != null && (!RE_MES.test(e.prev) || !RE_MES.test(e.prev2))) throw new Error('PREVISAO: ' + e.n + ' tem prev2 "' + e.prev2 + '" (AAAA-MM, só junto de um prev com mês)');
 }
 
 const mmaaaa = s => s.slice(5, 7) + '/' + s.slice(0, 4);
@@ -34,6 +36,7 @@ function rotulo(e) {
   validar(e);
   if (!e || !e.prev) return '';
   if (e.prev === 'entregue') return 'Entregue';
+  if (e.prev === 'consulte') return 'Previsão: consulte';
   return 'Previsão: ' + [e.prev].concat(e.prev2 ? [e.prev2] : []).map(mmaaaa).join(' e ');
 }
 
@@ -68,4 +71,11 @@ function garanteCss(html, extra) {
   return html.slice(0, i) + '    ' + bloco + '\n  ' + html.slice(i);
 }
 
-module.exports = { validar, rotulo, chip, CSS, garanteCss };
+// todo loteamento tem etiqueta: sem prev, o gerador para (Fabio, 15/11/2026: o que falta apurar mostra "Previsão: consulte")
+function validarLotes(lista) {
+  const sem = lista.filter(e => e.prev == null).map(e => e.n);
+  if (sem.length) throw new Error('PREVISAO: loteamento sem prev na fonte única (use AAAA-MM, "entregue" ou "consulte"): ' + sem.join(', '));
+  lista.forEach(validar);
+}
+
+module.exports = { validar, validarLotes, rotulo, chip, CSS, garanteCss };
