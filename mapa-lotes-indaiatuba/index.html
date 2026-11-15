@@ -613,9 +613,9 @@ const BAIRROS = [
   { id:'ravello', prev:'2027-07', fechado:true, tab:'05/11/2026', nome:'Residencial Ravello', sub:'condomínio fechado · 710 lotes · a prazo em 48x', landing:'/residencial-ravello-indaiatuba/', cond:'entrada de 20% e saldo em 48x, conforme relatório Dominium de 05/11/2026; Tabela Price com juros de 1% a.m., planilha de cálculo da Dominium vigente desde 30/01/2025', notaPrazo:'base do parcelamento; com os juros do saldo, entrada + parcelas somam mais', overlay:{ url:'images/ravello.png', bounds:[[-23.084077694,-47.249446812],[-23.073393991,-47.234171390]] } },
   { id:'diitalia', prev:'2026-10', tab:'09/10/2026', nome:'Jardim Di Italia', sub:'loteamento · 404 lotes · a prazo em 60x', landing:'/di-italia-indaiatuba/', cond:'entrada de 20% e saldo em 60x, conforme relatório Dominium de 09/10/2026; Tabela Price com juros de 1% a.m., planilha de cálculo da Dominium vigente desde 02/09/2026', notaPrazo:'base do parcelamento; com os juros do saldo, entrada + parcelas somam mais', overlay:{ url:'images/diitalia.png', bounds:[[-23.103579757,-47.263075029],[-23.099470643,-47.259032939]] } },
   { id:'canarios', prev:'consulte', tab:'out/2026',   nome:'Vila dos Canários', overlay:{ url:'images/canarios.png', bounds:[[-23.108921899,-47.268419712],[-23.107101849,-47.266723574]] } },
-  { id:'zarah-safira', prev:'2026-12', fechado:true, tab:'nov/2026', nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de nov/2026, gerada em 12/11/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.104061777,-47.269326681],[-23.097995146,-47.262840271]] } },
-  { id:'zarah-rubi', prev:'2028-05', fechado:true, tab:'nov/2026', nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de nov/2026, gerada em 12/11/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098524045,-47.265731433],[-23.093995123,-47.261693425]] } },
-  { id:'zarah-perola', prev:'2028-05', fechado:true, tab:'nov/2026', nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de nov/2026, gerada em 12/11/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099411964,-47.270175998],[-23.094030998,-47.265280434]] } },
+  { id:'zarah-safira', pinosEmRevisao:true, prev:'2026-12', fechado:true, tab:'nov/2026', nome:'Parque Zarah — Safira (fase 1)', sub:'condomínio fechado Zarin · 420 lotes', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de nov/2026, gerada em 12/11/2026', overlay:{ url:'images/zarah-safira.png', bounds:[[-23.104061777,-47.269326681],[-23.097995146,-47.262840271]] } },
+  { id:'zarah-rubi', pinosEmRevisao:true, prev:'2028-05', fechado:true, tab:'nov/2026', nome:'Parque Zarah — Rubi (fase 2)', sub:'condomínio fechado Zarin · 493 lotes', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de nov/2026, gerada em 12/11/2026', overlay:{ url:'images/zarah-rubi.png', bounds:[[-23.098524045,-47.265731433],[-23.093995123,-47.261693425]] } },
+  { id:'zarah-perola', pinosEmRevisao:true, prev:'2028-05', fechado:true, tab:'nov/2026', nome:'Parque Zarah — Pérola (fase 3)', sub:'condomínio fechado Zarin · 657 lotes', landing:'/parque-zarah-indaiatuba/', cond:'ato de 12% e saldo em 180 parcelas com juros de 1% a.m. (Price) e IPCA mensal, tabela Zarin de nov/2026, gerada em 12/11/2026', overlay:{ url:'images/zarah-perola.png', bounds:[[-23.099411964,-47.270175998],[-23.094030998,-47.265280434]] } },
   { id:'bemtevi', oculto:true /* fora da tabela de out/2026; dado mantido */, prev:'consulte',    nome:'Jardim Bem-Te-Vi', overlay:{ url:'images/bemtevi.png', bounds:[[-23.104009900,-47.269992856],[-23.100875636,-47.266748130]] } },
   { id:'andorinhas', prev:'consulte', tab:'out/2026', nome:'Jardim das Andorinhas', overlay:{ url:'images/andorinhas.png', bounds:[[-23.108521524,-47.272461516],[-23.104284716,-47.269854118]] } },
   { id:'araras', prev:'consulte', tab:'out/2026',     nome:'Jardim das Araras', overlay:{ url:'images/araras.png', bounds:[[-23.096617254,-47.289265394],[-23.087239678,-47.276216447]] } },
@@ -3087,10 +3087,15 @@ function popupHtml(x) {
     <div class="preco">${temPreco(x) ? brl(x.vista) + (x.revenda ? ' <small>à vista ' + ROT_REVENDA + '</small>' : x.tabela ? ' <small>valor de tabela</small>' : ' <small>à vista</small>') : 'Preço sob consulta'}</div>
     <dl><dt>Metragem</dt><dd>${areaTxt(x)}</dd>${x.pm2 != null && !casa ? `<dt>Valor do m²</dt><dd>${brl(x.pm2)}</dd>` : ''}<dt>Tipo</dt><dd>${t[0]}</dd>
     ${x.prazo && !casa ? `<dt>A prazo</dt><dd>${brl(x.prazo)}${b.notaPrazo ? ' <small>(' + b.notaPrazo + ')</small>' : ''}</dd>` : ''}${condicao}</dl>${b.landing ? `<a class="lnk" href="${b.landing}">Página do empreendimento →</a>` : ''}
-    ${x.obs ? '<div class="obs">' + x.obs + '</div>' : ''}
+    ${x.obs ? '<div class="obs">' + x.obs + '</div>' : ''}${x.ll || x.poly ? '' : '<div class="obs">' + (x.llRevisao ? 'Posição deste lote no mapa em conferência: veja o lote na planta oficial com o corretor.' : 'Este lote ainda não tem posição no mapa: veja na planta com o corretor.') + '</div>'}
     <a class="wa" data-origem="lote" data-lote="${x.id}" href="${wa}" target="_blank" rel="noopener">Falar sobre ${casa ? 'esta casa' : 'este lote'}</a>
     <div class="fonte">${temPreco(x) ? (x.revenda ? 'Preço à vista informado pelo proprietário em ' + x.revenda : (x.tabela ? 'Valor de tabela de ' : 'Preço à vista de ') + (b.tab || 'set/2026') + (b.notaTab ? ' (' + b.notaTab + ')' : '')) + ', sujeito a alteração sem aviso. ' : ''}Posição do pino aproximada.</div></div>`;
 }
+// PINOS EM REVISÃO (15/11/2026): no Parque Zarah, o georreferenciamento de 05/09/2026 pôs os lotes 44 a 47 da
+// quadra 13 da Safira na faixa da quadra 10, e um cliente reservou pelo mapa. Até cada pino ser conferido contra a
+// planta original do loteador, os pinos dos bairros com pinosEmRevisao ficam guardados (llRevisao) e não aparecem:
+// o lote continua na lista e o balão abre pela lista, com o aviso de conferir na planta oficial.
+BAIRROS.filter(b => b.pinosEmRevisao).forEach(b => LOTES.forEach(x => { if (x.b === b.id && x.ll) { x.llRevisao = x.ll; delete x.ll; } }));
 function desenhar() {
   camada.clearLayers();
   LOTES.forEach(x => {
@@ -3124,7 +3129,7 @@ BAIRROS.forEach(b => {
   if (b.oculto) return;   // nem pino de bairro nem planta: o loteamento sai inteiro do mapa
   const ls = LOTES.filter(x => x.b === b.id);
   const pts = ls.flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
-  const centro = pts.length ? L.latLngBounds(pts).getCenter() : (b.centro ? L.latLng(b.centro) : null);
+  const centro = pts.length ? L.latLngBounds(pts).getCenter() : (b.centro ? L.latLng(b.centro) : (b.overlay ? L.latLngBounds(b.overlay.bounds).getCenter() : null));
   if (!centro || !ls.length) return;
   const mk = L.marker(centro, { icon: iconeBairro(b, ls) });
   mk.on('click', () => {
@@ -3372,13 +3377,23 @@ function irParaBairro(id, forcar) {
   const pts = LOTES.filter(x => x.b === id && passa(x)).flatMap(x => x.poly ? x.poly : x.ll ? [x.ll] : []);
   if (pts.length) { mapa.fitBounds(L.latLngBounds(pts).pad(0.35), { maxZoom: 17, animate: false }); if (mapa.getZoom() < ZOOM_LOTES) mapa.setZoom(ZOOM_LOTES, { animate: false }); }
   else if (b.centro) mapa.setView(b.centro, ZOOM_LOTES, { animate: false });
+  else if (b.overlay) mapa.fitBounds(b.overlay.bounds, { animate: false });
   history.replaceState(null, '', '#' + id);
   if (ehCelular()) abrirGaveta(false);
 }
 function irParaLote(x) {
   document.querySelectorAll('.lote').forEach(d => d.classList.toggle('sel', d.dataset.id === x.id));
   const m = marcadores[x.id];
-  if (!m) { alert((ehCasa(x) ? 'Esta casa' : 'Este lote') + ' ainda não tem posição no mapa. Fale conosco pelo WhatsApp para mais detalhes.'); return; }
+  if (!m) {
+    const b = bairroDe(x.b);
+    if (b && b.overlay) {   // sem pino: o balão abre no meio da planta do loteamento
+      mapa.fitBounds(b.overlay.bounds, { animate: false });
+      L.popup({ maxWidth: 320 }).setLatLng(L.latLngBounds(b.overlay.bounds).getCenter()).setContent(popupHtml(x)).openOn(mapa);
+      if (ehCelular()) abrirGaveta(false);
+      return;
+    }
+    alert((ehCasa(x) ? 'Esta casa' : 'Este lote') + ' ainda não tem posição no mapa. Fale conosco pelo WhatsApp para mais detalhes.'); return;
+  }
   const ll = x.ll || (x.poly && L.latLngBounds(x.poly).getCenter());
   mapa.setView(ll, 18, { animate: false });
   setTimeout(() => m.openPopup(), 250);
