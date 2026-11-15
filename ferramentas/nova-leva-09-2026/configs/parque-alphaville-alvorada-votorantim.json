@@ -1,0 +1,493 @@
+{
+  "slug": "parque-alphaville-alvorada-votorantim",
+  "nome": "Parque Alphaville Alvorada",
+  "categoria": "alphaville",
+  "cidade": "Votorantim",
+  "data": "2026-11-13",
+  "atualizado": "2026-11-13",
+  "fonte_tabela": "material recebido em nov/2026, sem tabela vigente",
+  "title": "Parque Alphaville Alvorada | lotes residenciais desde 253 m²",
+  "description": "Parque Alphaville Alvorada, em Votorantim: 630 lotes; no Terras Alpha Alvorada 1 e 2, lotes residenciais desde 253 m². Loteamento registrado em 09/06/2026.",
+  "keywords": "parque alphaville alvorada, alphaville votorantim, terras alpha alvorada, terras alpha alvorada 1, terras alpha alvorada 2, terras alpha votorantim, lote alphaville votorantim, loteamento votorantim, terreno votorantim, lote em votorantim",
+  "schema_tipo": "RealEstateListing",
+  "schema_desc": "Loteamento residencial e comercial da Alphaville em Votorantim/SP, registrado como Loteamento Residencial e Comercial Gleba A27 sob o R.05 da matrícula 32.744 do Registro de Imóveis de Votorantim, em 09/06/2026, com 630 lotes em uma gleba de 662.885,76 m². Os lotes residenciais ficam no Terras Alpha Alvorada 1 (322 lotes, a partir de 253 m²) e no Terras Alpha Alvorada 2 (196 lotes, de 253 a 725 m²), cada um com clube e portaria 24h, segundo a Alphaville. O material recebido em novembro/2026 não traz tabela vigente: preço e disponibilidade são informados no atendimento.",
+  "endereco_schema": "Rodovia SP-79, acesso 103",
+  "preco_min": null,
+  "preco_max": null,
+  "offer_count": null,
+  "lazer": [
+    "Piscina adulta e infantil",
+    "Salão de festas",
+    "Academia",
+    "Churrasqueira",
+    "Playground",
+    "Horta",
+    "Quadra de areia (Terras Alpha Alvorada 1)",
+    "Portaria 24h"
+  ],
+  "marca_topo": [
+    "PARQUE ALPHAVILLE ALVORADA",
+    "Votorantim"
+  ],
+  "nap_privacidade": true,
+  "wa_flutuante": "Olá! Tenho interesse no Parque Alphaville Alvorada em Votorantim. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Parque Alphaville Alvorada com quadra, metragem e valor.",
+  "hero": {
+    "eyebrow": "Votorantim/SP · realização Alphaville",
+    "sub": "Lotes do Terras Alpha Alvorada 1 e 2 em Votorantim",
+    "lead": "O Parque Alphaville Alvorada é um loteamento residencial e comercial da Alphaville em Votorantim, com 630 lotes, registrado em 09/06/2026. Os lotes residenciais ficam em dois residenciais com clube e portaria: o Terras Alpha Alvorada 1, com 322 lotes a partir de 253 m², e o Terras Alpha Alvorada 2, com 196 lotes de 253 a 725 m², segundo a Alphaville. O material que recebemos não traz tabela vigente nem o prazo de entrega dos lotes residenciais: os dois são confirmados no atendimento.",
+    "preco": "Tabela vigente no atendimento",
+    "preco_nota": "o material recebido em nov/2026 só traz condições de pré-lançamento (jul/2026) · custas cartorárias e corretagem à parte",
+    "cta_msg": "Olá! Quero a tabela de lotes do Parque Alphaville Alvorada com quadra, metragem e valor.",
+    "cta_texto": "Pedir a tabela vigente",
+    "cta2": {
+      "msg": "Olá! Quero agendar uma visita ao Parque Alphaville Alvorada.",
+      "texto": "Agendar visita"
+    },
+    "credito": "Imagem ilustrativa (fotomontagem do loteamento)"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Um loteamento de 630 lotes com dois residenciais Terras Alpha",
+      "paragrafos": [
+        "O Parque Alphaville Alvorada é o nome comercial do Loteamento Residencial e Comercial Gleba A27, em Votorantim/SP: 630 lotes em uma gleba de 662.885,76 m². A realização é da Alphaville, e a vendedora é a Alvorada SPE Terrenista Empreendimentos Imobiliários Ltda. (CNPJ 61.840.121/0001-36). O material de divulgação de julho/2026 anunciava o lançamento dos residenciais Terras Alpha Alvorada 1 e 2 para 08/08/2026; as minutas de contrato dos lotes comerciais falam em lançamento do empreendimento ao público em junho de 2026. Confirme no atendimento se os lotes residenciais já estão liberados para venda.",
+        "Os lotes residenciais estão em dois residenciais da linha Terras Alpha, cada um com o seu clube e a sua portaria: o Terras Alpha Alvorada 1, com 322 lotes, e o Terras Alpha Alvorada 2, com 196. O material de venda chama os dois de \"residenciais fechados\", com portaria 24h (no Alvorada 1, \"portaria com segurança 24h\"). Na forma jurídica, o empreendimento é um loteamento: o nome registrado, que o próprio material de venda informa, é Loteamento Residencial e Comercial Gleba A27, e as minutas dos lotes comerciais dizem que o registro foi feito pela Lei 6.766/79.",
+        "Além dos 518 lotes dos dois residenciais, o projeto urbanístico da Alphaville lista 54 lotes comerciais, 35 de uso misto, 19 multifamiliares e 4 lotes da área do clube e apoio, que completam as 630 unidades. Os comerciais, mistos e multifamiliares não têm preço no material recebido; esta página trata dos lotes residenciais."
+      ],
+      "numeros": [
+        {
+          "n": "630",
+          "p": "lotes no loteamento"
+        },
+        {
+          "n": "322",
+          "p": "lotes no Terras Alpha Alvorada 1"
+        },
+        {
+          "n": "196",
+          "p": "lotes no Terras Alpha Alvorada 2"
+        },
+        {
+          "n": "253 m²",
+          "p": "lote mínimo nos dois residenciais"
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "id": "lotes",
+      "classe": "cream",
+      "label": "Lotes",
+      "h2": "Os dois residenciais: lotes a partir de 253 m²",
+      "paragrafos": [
+        "Nos dois residenciais o lote mínimo é de 253 m², com 11,5 m de frente e 22 m de fundo. No Terras Alpha Alvorada 2, a ficha técnica da Alphaville vai até lotes de 725 m²; do Terras Alpha Alvorada 1, o material informa o lote mínimo, mas não o máximo."
+      ],
+      "tabela": {
+        "legenda": "Número de lotes pelo projeto urbanístico da Alphaville; metragens pela ficha técnica e pelo projeto urbanístico; clube pelos mapas ilustrados do material de lançamento.",
+        "cab": [
+          "Residencial",
+          "Lotes",
+          "Metragem",
+          "Clube"
+        ],
+        "num": [
+          1
+        ],
+        "linhas": [
+          [
+            "Terras Alpha Alvorada 1",
+            "322",
+            "a partir de 253 m² (máximo não informado)",
+            "piscina adulta e infantil, salão de festas, academia, churrasqueira, quadra de areia, playground e horta"
+          ],
+          [
+            "Terras Alpha Alvorada 2",
+            "196",
+            "253 a 725 m²",
+            "piscina adulta e infantil, salão de festas, academia, churrasqueira, playground e horta"
+          ]
+        ]
+      },
+      "cards": [
+        {
+          "t": "Regras de construção do Alvorada 2",
+          "p": "Pelo regulamento construtivo da Alphaville: ocupação de até 55% do lote, ao menos 30% de área permeável, coeficiente de aproveitamento 1,0, recuos de 5 m na frente, 1,5 m nas laterais e 2 m no fundo, e até 2 pavimentos."
+        },
+        {
+          "t": "Regras de construção do Alvorada 1",
+          "p": "A ficha do Alvorada 1 não veio no material recebido. Peça o regulamento construtivo do residencial antes de escolher o lote."
+        },
+        {
+          "t": "Associação",
+          "p": "Nas minutas dos lotes comerciais, a filiação à Associação Parque Alphaville Alvorada é obrigatória, com contribuição mensal a partir da posse. Pelas mesmas minutas, ela cuida da administração geral do loteamento, sobretudo das áreas fora do fechamento dos residenciais, e reúne também as associações dos residenciais. A associação e a contribuição do lote residencial são confirmadas no atendimento; o valor não consta do material."
+        },
+        {
+          "t": "Infraestrutura",
+          "p": "Pela planta de implantação, as avenidas 1, 2 e 3 do loteamento têm 32 m de largura, com ciclovia e canteiro central. Os ramais de energia são aéreos e pedidos à concessionária por cada comprador, segundo a Alphaville."
+        },
+        {
+          "t": "Áreas verdes",
+          "p": "O quadro de áreas da planta de implantação reserva 168.349,35 m² para áreas verdes e de preservação permanente, 25,40% da gleba. A vegetação é entregue em mudas, segundo a Alphaville."
+        },
+        {
+          "t": "Construção da casa",
+          "p": "A casa é projetada e construída por quem compra o lote, dentro das regras do regulamento. A ocupação do loteamento depende do que cada comprador construir."
+        }
+      ],
+      "notas": [
+        "Quantidades e metragens são as do projeto. A disponibilidade de cada lote é confirmada no atendimento."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de lotes do Parque Alphaville Alvorada com quadra, metragem e valor.",
+        "texto": "Pedir lotes e metragens"
+      },
+      "depois": "lazer"
+    },
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "Preço: peça a tabela vigente no atendimento",
+      "paragrafos": [
+        "O único valor do material recebido é uma condição de pré-lançamento, de julho/2026, válida só para clientes com ficha completa e cadastro feito antes do pré-lançamento. Por isso esta página não publica preço: peça a tabela vigente, com o lote, a metragem e o plano de pagamento.",
+        "Naquele material de pré-lançamento, os planos iam do pagamento à vista ao parcelamento em até 48 meses, com ato (entrada) e parcelas anuais nos planos parcelados e correção mensal pelo IPCA. Confirme no atendimento quais planos estão valendo hoje."
+      ],
+      "tabela2_titulo": "Custas cartorárias, fora do preço do lote",
+      "tabela2_paragrafos": [
+        "Segundo a Alphaville, as custas da transferência ficam por conta de quem compra e fora do preço do lote. Os percentuais abaixo são os da lista da Alphaville, calculada sobre a tabela de emolumentos cartorários de 2026; a lista não informa sobre qual valor eles incidem."
+      ],
+      "tabela2": {
+        "cab": [
+          "Item",
+          "Percentual"
+        ],
+        "num": [
+          1
+        ],
+        "linhas": [
+          [
+            "ITBI",
+            "2,0%"
+          ],
+          [
+            "Lavratura da escritura",
+            "1,4%"
+          ],
+          [
+            "Lavratura da escritura (alienação)",
+            "1,2%"
+          ],
+          [
+            "Registro",
+            "1,2%"
+          ],
+          [
+            "Registro (alienação)",
+            "1,2%"
+          ],
+          [
+            "Margem e operacional documental",
+            "0,5%"
+          ]
+        ]
+      },
+      "notas": [
+        "Sem os dois itens de alienação, os percentuais somam 5,1%; com eles, 7,5% (conta nossa). A base de cálculo não está no material: confirme no atendimento sobre qual valor eles incidem. Os itens de alienação parecem se referir à alienação fiduciária, que, nas minutas dos lotes comerciais, entra nas compras parceladas de 7 a 48 vezes; confirme quais itens valem para o seu plano.",
+        "No quadro de propostas da Alphaville, as custas e um item chamado ASO são cobrados no processo de compra e podem ser divididos em até 5 vezes no cartão de crédito, no estande. Confirme a condição atual no atendimento.",
+        "Também fica fora do preço a comissão de corretagem: pelo quadro de propostas da Alphaville e pelas minutas dos lotes comerciais, ela é paga pelo comprador separadamente, em dois pagamentos: um por boleto enviado por e-mail ao cliente e outro, o da imobiliária, por boleto ou Pix. O valor aparece no quadro resumo da proposta, assinado pelo comprador, e no contrato.",
+        "As minutas dos lotes comerciais preveem ainda taxa de gestão de contrato de R$ 25 por mês, corrigida uma vez por ano pelo IPCA, e, nas compras parceladas, seguro por morte e invalidez permanente pago pelo comprador. O contrato residencial não veio no material: confirme no atendimento o que vale para o lote residencial."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de lotes do Parque Alphaville Alvorada com quadra, metragem e valor.",
+        "texto": "Pedir a tabela vigente"
+      }
+    },
+    {
+      "id": "registro",
+      "classe": "cream",
+      "label": "Registro e prazos",
+      "h2": "Registrado em 09/06/2026; prazos do contrato residencial a confirmar",
+      "paragrafos": [
+        "O Loteamento Residencial e Comercial Gleba A27, nome registrado do Parque Alphaville Alvorada, está registrado sob o R.05 da matrícula 32.744 do Cartório de Registro de Imóveis de Votorantim, em 09/06/2026. O alvará de licença é o nº 388/2025, emitido em 21/01/2026 pela Secretaria de Obras e Urbanismo de Votorantim (processo 6006/2020).",
+        "Segundo as minutas de contrato dos lotes comerciais, parte dos lotes do loteamento está dada em 1ª hipoteca à Prefeitura de Votorantim e em 2ª hipoteca à Águas de Votorantim, como garantia das obras de infraestrutura; essa garantia só é cancelada depois que a Prefeitura emite o Termo de Vistoria de Obra. Pela numeração, a lista inclui também quadras que não estão entre as dos lotes comerciais, mistos e multifamiliares do regulamento: pergunte no atendimento se o lote escolhido está nela.",
+        "O contrato dos lotes residenciais não veio no material recebido. As minutas de contrato dos lotes comerciais do mesmo loteamento trazem estes prazos:"
+      ],
+      "cards": [
+        {
+          "t": "Infraestrutura",
+          "p": "24 meses contados do alvará de 21/01/2026, prorrogáveis por igual período, nas minutas dos lotes comerciais."
+        },
+        {
+          "t": "Entrega do lote",
+          "p": "39 meses contados do lançamento ao público, que essas minutas datam de junho de 2026, mais 180 dias de carência; o prazo da obra pode ser antecipado em até 180 dias. Regra das minutas dos lotes comerciais."
+        },
+        {
+          "t": "Clube",
+          "p": "Até 12 meses depois da conclusão das obras de infraestrutura, nas minutas dos lotes comerciais."
+        }
+      ],
+      "notas": [
+        "Peça a minuta do contrato residencial e confirme os prazos no atendimento antes de assinar."
+      ]
+    },
+    {
+      "id": "localizacao",
+      "label": "Localização",
+      "h2": "Em Votorantim, com acesso pela Rodovia SP-79",
+      "paragrafos": [
+        "O Parque Alphaville Alvorada fica em Votorantim/SP, com acesso pela Rodovia SP-79, acesso 103, no trecho entre Votorantim e Piedade, segundo a planta de implantação. O material não informa o endereço da portaria: o mapa abaixo marca o centro aproximado da gleba, calculado pela planta, e a rota leva ao trecho em que a gleba encosta na rodovia. O stand de vendas fica na Av. Rogério Cassola, 581, em Votorantim.",
+        "Os tempos de deslocamento abaixo são os divulgados pela Alphaville, sem indicação do meio de transporte nem do horário."
+      ],
+      "cards": [
+        {
+          "t": "Menos de 10 minutos",
+          "p": "Alphaville Nova Esplanada, segundo a Alphaville"
+        },
+        {
+          "t": "10 a 15 minutos",
+          "p": "Centro de Votorantim (10), Tauste Campolim (12), Shopping Iguatemi Esplanada (15) e Parque Ecológico do Matão (15), segundo a Alphaville"
+        },
+        {
+          "t": "22 a 30 minutos",
+          "p": "Centro de Sorocaba (22), Marina Belas Artes (28), Jardim Botânico de Sorocaba (30) e acesso à Rodovia Castello Branco (30), segundo a Alphaville"
+        }
+      ],
+      "cta": {
+        "msg": "Olá! Quero agendar uma visita ao Parque Alphaville Alvorada.",
+        "texto": "Agendar visita ao stand"
+      }
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    }
+  ],
+  "galeria": {
+    "label": "Imagens",
+    "h2": "O loteamento e o clube do Terras Alpha Alvorada 1",
+    "aviso": "Todas as imagens são ilustrativas: fotomontagens e perspectivas do material da Alphaville, com a vegetação em fase adulta (ela é entregue em mudas). As casas e os prédios das fotomontagens mostram uma ocupação possível dos lotes, que depende do que cada comprador construir.",
+    "itens": [
+      {
+        "arq": "hero.jpg",
+        "alt": "Fotomontagem aérea ilustrativa do Parque Alphaville Alvorada, em Votorantim, e do entorno",
+        "w": 1600,
+        "h": 900,
+        "leg": "Fotomontagem aérea do loteamento. Imagem ilustrativa."
+      },
+      {
+        "arq": "fotomontagem-geral.jpg",
+        "alt": "Fotomontagem aérea ilustrativa do Parque Alphaville Alvorada visto de outro ângulo",
+        "w": 1280,
+        "h": 631,
+        "leg": "O loteamento visto de outro ângulo. Imagem ilustrativa."
+      },
+      {
+        "arq": "aerea-clube-alvorada-1.jpg",
+        "alt": "Perspectiva aérea ilustrativa do clube do Terras Alpha Alvorada 1, com piscina, quadra de areia e playground",
+        "w": 1280,
+        "h": 720,
+        "leg": "Clube do Terras Alpha Alvorada 1 visto do alto. Imagem ilustrativa."
+      },
+      {
+        "arq": "portaria-alvorada-1.jpg",
+        "alt": "Perspectiva ilustrativa da portaria do Terras Alpha Alvorada 1",
+        "w": 1280,
+        "h": 720,
+        "leg": "Portaria do Terras Alpha Alvorada 1. Imagem ilustrativa."
+      },
+      {
+        "arq": "piscina-alvorada-1.jpg",
+        "alt": "Perspectiva ilustrativa da piscina do clube do Terras Alpha Alvorada 1, com espreguiçadeiras e guarda-sóis",
+        "w": 1280,
+        "h": 720,
+        "leg": "Piscina do clube do Terras Alpha Alvorada 1. Imagem ilustrativa."
+      },
+      {
+        "arq": "salao-de-festas-alvorada-1.jpg",
+        "alt": "Perspectiva ilustrativa do salão de festas do clube do Terras Alpha Alvorada 1, com mesas e janelas amplas",
+        "w": 1280,
+        "h": 720,
+        "leg": "Salão de festas do Terras Alpha Alvorada 1. Imagem ilustrativa."
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Cada residencial tem o seu clube",
+    "intro": "Pelos mapas ilustrados do material de lançamento, os clubes dos dois residenciais têm os itens abaixo; a quadra de areia aparece só no do Terras Alpha Alvorada 1. As perspectivas do Alvorada 2 mostram ainda um pomar com fogo de chão e uma praça com quadras.",
+    "itens": [
+      "Piscina adulta e infantil",
+      "Salão de festas",
+      "Academia",
+      "Churrasqueira",
+      "Playground",
+      "Horta",
+      "Hall de entrada do clube",
+      "Estacionamento",
+      "Quadra de areia (Alvorada 1)",
+      "Portaria 24h"
+    ],
+    "nota": "Os projetos das edificações do clube, do apoio e da portaria estão em aprovação nos órgãos competentes e podem mudar sem aviso prévio, segundo a Alphaville."
+  },
+  "ficha": [
+    [
+      "Realização",
+      "Alphaville"
+    ],
+    [
+      "Vendedora",
+      "Alvorada SPE Terrenista Empreendimentos Imobiliários Ltda., CNPJ 61.840.121/0001-36"
+    ],
+    [
+      "Nome registrado",
+      "Loteamento Residencial e Comercial Gleba A27"
+    ],
+    [
+      "Tipo",
+      "Loteamento residencial e comercial (nome registrado: Loteamento Residencial e Comercial Gleba A27; registro pela Lei 6.766/79, segundo as minutas dos lotes comerciais); o material de venda chama os residenciais de \"fechados\", com portaria 24h"
+    ],
+    [
+      "Localização",
+      "Votorantim/SP, com acesso pela Rodovia SP-79, acesso 103 (trecho Votorantim–Piedade)"
+    ],
+    [
+      "Stand de vendas",
+      "Av. Rogério Cassola, 581, Votorantim/SP"
+    ],
+    [
+      "Área da gleba",
+      "662.885,76 m²"
+    ],
+    [
+      "Total de lotes",
+      "630"
+    ],
+    [
+      "Terras Alpha Alvorada 1",
+      "322 lotes residenciais, a partir de 253 m²; lote máximo não informado no material; confirme no atendimento"
+    ],
+    [
+      "Terras Alpha Alvorada 2",
+      "196 lotes residenciais, de 253 a 725 m²"
+    ],
+    [
+      "Outros lotes",
+      "54 comerciais, 35 de uso misto, 19 multifamiliares e 4 da área do clube e apoio, pelo projeto urbanístico; os comerciais, mistos e multifamiliares sem preço no material"
+    ],
+    [
+      "Áreas verdes e APP",
+      "168.349,35 m² (25,40% da gleba), pelo quadro de áreas da planta de implantação"
+    ],
+    [
+      "Registro",
+      "R.05 da matrícula 32.744 do Cartório de Registro de Imóveis de Votorantim, em 09/06/2026"
+    ],
+    [
+      "Alvará",
+      "Nº 388/2025, de 21/01/2026 (processo 6006/2020)"
+    ],
+    [
+      "Garantia das obras",
+      "Parte dos lotes em 1ª hipoteca à Prefeitura de Votorantim e em 2ª à Águas de Votorantim até o Termo de Vistoria de Obra, segundo as minutas dos lotes comerciais; confirme o seu lote no atendimento"
+    ],
+    [
+      "Lançamento",
+      "Residenciais anunciados para 08/08/2026 no material de divulgação de jul/2026; as minutas dos lotes comerciais citam lançamento ao público em junho de 2026; confirme no atendimento se os lotes residenciais já estão liberados"
+    ],
+    [
+      "Preço",
+      "Tabela vigente não informada no material; confirme no atendimento"
+    ],
+    [
+      "Custas cartorárias",
+      "Fora do preço, segundo a Alphaville: ITBI 2%, lavratura da escritura 1,4%, registro 1,2% e margem e operacional documental 0,5%, mais 1,2% de lavratura e 1,2% de registro nos itens de alienação, quando houver; base de cálculo não informada"
+    ],
+    [
+      "Corretagem",
+      "Fora do preço, paga pelo comprador à parte, segundo o quadro de propostas da Alphaville e as minutas dos lotes comerciais; o valor consta da proposta"
+    ],
+    [
+      "Contribuição à associação",
+      "Não informada no material; confirme no atendimento"
+    ],
+    [
+      "Entrega dos lotes residenciais",
+      "Não informada no material; confirme no atendimento"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um lote no Parque Alphaville Alvorada?",
+      "a": "O material que recebemos em novembro/2026 não traz tabela vigente: o único valor é uma condição de pré-lançamento de julho/2026, restrita a clientes com ficha completa e cadastro feito antes do pré-lançamento. Por isso não publicamos preço. A tabela vigente, com lote, metragem e plano de pagamento, é enviada no atendimento. As custas cartorárias e a comissão de corretagem ficam fora do preço."
+    },
+    {
+      "q": "Como é o pagamento dos lotes do Parque Alphaville Alvorada?",
+      "a": "A condição atual vem com a tabela vigente, no atendimento. No material de pré-lançamento (julho/2026), os planos iam do pagamento à vista ao parcelamento em até 48 meses, com ato (entrada) e parcelas anuais nos planos parcelados e correção mensal pelo IPCA. Fora do preço ficam as custas cartorárias, segundo a Alphaville (ITBI 2%, lavratura da escritura 1,4%, registro 1,2% e margem e operacional documental 0,5%, mais 1,2% de lavratura e 1,2% de registro nos itens de alienação, quando houver), e a comissão de corretagem, paga pelo comprador à parte, segundo o quadro de propostas da Alphaville. As minutas dos lotes comerciais preveem ainda taxa de gestão de contrato de R$ 25 por mês e, nas compras parceladas, seguro por morte e invalidez; confirme no atendimento o que vale para o lote residencial."
+    },
+    {
+      "q": "Qual o tamanho dos lotes do Parque Alphaville Alvorada?",
+      "a": "Nos dois residenciais o lote mínimo é de 253 m² (11,5 x 22 m). No Terras Alpha Alvorada 2 os lotes vão de 253 a 725 m², pela ficha técnica da Alphaville; do Terras Alpha Alvorada 1 o material não informa o lote máximo. São 322 lotes no Alvorada 1 e 196 no Alvorada 2."
+    },
+    {
+      "q": "O Parque Alphaville Alvorada é condomínio fechado?",
+      "a": "O material de venda da Alphaville chama o Terras Alpha Alvorada 1 e o 2 de residenciais fechados, com portaria 24h (no Alvorada 1, \"portaria com segurança 24h\"). Na forma jurídica, o empreendimento é um loteamento, registrado como Loteamento Residencial e Comercial Gleba A27; as minutas dos lotes comerciais citam a Lei 6.766/79 e a filiação obrigatória à Associação Parque Alphaville Alvorada. O ato municipal que autoriza o controle de acesso e as regras da associação para o lote residencial não constam do material; confirme no atendimento."
+    },
+    {
+      "q": "O Parque Alphaville Alvorada é registrado?",
+      "a": "Sim. O Loteamento Residencial e Comercial Gleba A27, nome registrado do Parque Alphaville Alvorada, está registrado sob o R.05 da matrícula 32.744 do Cartório de Registro de Imóveis de Votorantim, em 09/06/2026. O alvará de licença é o nº 388/2025, de 21/01/2026, da Secretaria de Obras e Urbanismo de Votorantim."
+    },
+    {
+      "q": "Quando os lotes do Parque Alphaville Alvorada serão entregues?",
+      "a": "O contrato dos lotes residenciais não veio no material recebido. Nas minutas dos lotes comerciais do mesmo loteamento, a infraestrutura tem 24 meses contados do alvará de 21/01/2026, prorrogáveis por igual período; a entrega do lote, 39 meses contados do lançamento ao público, que essas minutas datam de junho de 2026, mais 180 dias de carência, com a possibilidade de antecipar a obra em até 180 dias; e o clube, até 12 meses depois da infraestrutura. Confirme os prazos do contrato residencial no atendimento."
+    },
+    {
+      "q": "Que lazer tem o Parque Alphaville Alvorada?",
+      "a": "Cada residencial tem o seu clube. Pelos mapas ilustrados da Alphaville, os dois têm piscina adulta e infantil, salão de festas, academia, churrasqueira, playground, horta e estacionamento, além de portaria 24h (no Alvorada 1, \"portaria com segurança 24h\"); a quadra de areia aparece só no Terras Alpha Alvorada 1. Os projetos do clube, do apoio e da portaria estão em aprovação e podem mudar sem aviso prévio."
+    },
+    {
+      "q": "Onde fica o Parque Alphaville Alvorada?",
+      "a": "Em Votorantim/SP, com acesso pela Rodovia SP-79, acesso 103, no trecho entre Votorantim e Piedade. O stand de vendas fica na Av. Rogério Cassola, 581. Segundo a Alphaville, o loteamento fica a menos de 10 minutos do Alphaville Nova Esplanada, a 10 minutos do Centro de Votorantim, a 15 do Shopping Iguatemi Esplanada e a 22 do Centro de Sorocaba."
+    }
+  ],
+  "cta": {
+    "h2": "Quer a tabela vigente do Parque Alphaville Alvorada?",
+    "p": "Pedimos à Alphaville a tabela vigente e a disponibilidade de lotes dos dois residenciais e enviamos a você, com as condições de pagamento. Também agendamos a sua visita ao stand, na Av. Rogério Cassola, 581, em Votorantim.",
+    "msg": "Olá! Quero a tabela de lotes do Parque Alphaville Alvorada com quadra, metragem e valor.",
+    "texto": "Pedir a tabela vigente",
+    "visita": {
+      "msg": "Olá! Quero agendar uma visita ao Parque Alphaville Alvorada.",
+      "texto": "Agendar visita"
+    }
+  },
+  "rodape": {
+    "marca": "PARQUE ALPHAVILLE ALVORADA",
+    "linha": "Parque Alphaville Alvorada · lotes residenciais no Terras Alpha Alvorada 1 e 2 · Votorantim, SP",
+    "realizacao": "Realização Alphaville",
+    "legal": "Imagens ilustrativas: fotomontagens e perspectivas do material da Alphaville, com a vegetação em fase adulta, entregue em mudas; as casas e os prédios mostram uma ocupação possível dos lotes. Os projetos do clube, do apoio e da portaria estão em aprovação e podem mudar sem aviso prévio. Loteamento Residencial e Comercial Gleba A27, registrado sob o R.05 da matrícula 32.744 do Cartório de Registro de Imóveis de Votorantim em 09/06/2026; vendedora Alvorada SPE Terrenista Empreendimentos Imobiliários Ltda., CNPJ 61.840.121/0001-36. Número de lotes, metragens, lazer e tempos de deslocamento conforme o material da Alphaville. Esta página não publica preço: a tabela vigente, a disponibilidade e as condições de pagamento são confirmadas no atendimento, e as custas cartorárias e a comissão de corretagem são cobradas à parte. Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da Alphaville. Página publicada em nov/2026."
+  },
+  "home": {
+    "tipo": "lote",
+    "preco": null,
+    "lote": "fechado",
+    "status": "lancamento",
+    "constr": "Alphaville",
+    "pm2": "",
+    "badge": "Condomínio fechado",
+    "badge_estilo": "background:#C9A227;color:#161616;",
+    "meta": "Lotes residenciais a partir de 253 m² · Votorantim",
+    "desc": "630 lotes em Votorantim · residenciais Terras Alpha Alvorada 1 (322 lotes) e 2 (196 lotes), cada um com clube e portaria 24h · registrado em 09/06/2026.",
+    "alt": "Fotomontagem aérea ilustrativa do Parque Alphaville Alvorada, em Votorantim",
+    "itemlist": "Parque Alphaville Alvorada — loteamento da Alphaville em Votorantim, 630 lotes, com lotes residenciais a partir de 253 m² no Terras Alpha Alvorada 1 e 2 · tabela vigente no atendimento"
+  },
+  "llms": {
+    "secao": "alphaville",
+    "linha": "loteamento residencial e comercial da Alphaville em Votorantim/SP (não é Indaiatuba), registrado como Loteamento Residencial e Comercial Gleba A27 sob o R.05 da matrícula 32.744 do Registro de Imóveis de Votorantim em 09/06/2026, com 630 lotes em 662.885,76 m². Lotes residenciais no Terras Alpha Alvorada 1 (322 lotes, a partir de 253 m²) e no Terras Alpha Alvorada 2 (196 lotes, de 253 a 725 m²), cada um com clube previsto (piscina adulta e infantil, salão de festas, academia, churrasqueira, playground e horta; quadra de areia no Alvorada 1) e portaria 24h, cujos projetos (clube, apoio e portaria) estão em aprovação e podem mudar sem aviso prévio, segundo a Alphaville; o projeto urbanístico lista também 54 lotes comerciais, 35 de uso misto, 19 multifamiliares e 4 da área do clube e apoio. Lançamento dos residenciais anunciado para 08/08/2026 no material de divulgação de jul/2026 (as minutas dos lotes comerciais citam junho/2026); a liberação dos lotes residenciais é confirmada no atendimento. Acesso pela Rodovia SP-79, acesso 103; stand na Av. Rogério Cassola, 581. O material recebido em nov/2026 não traz tabela vigente: preço, disponibilidade e prazo de entrega no atendimento; custas cartorárias (ITBI 2%, lavratura da escritura 1,4%, registro 1,2%, margem e operacional documental 0,5%, mais itens de alienação quando houver) e comissão de corretagem fora do preço."
+  },
+  "geo": [
+    -23.5861,
+    -47.463123
+  ],
+  "mapa": {
+    "rota": "-23.580737,-47.45908",
+    "embed": "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s-23.5861,-47.463123!6i15"
+  }
+}

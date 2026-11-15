@@ -11,7 +11,7 @@
    - guias que moram fora de /blog/ (GUIAS_FORA_DO_BLOG): card fixo no
      topo, em largura total, com o link para a página deles; título e
      resumo lidos da própria página (headline do Article e meta
-     description) e o selo com a edição do "Atualizado em" dela. Ficam
+     description) e o selo com o mês do "Atualizado em" dela. Ficam
      fora do Blog.blogPost (não são BlogPosting). Página que faltar vira
      aviso e o índice sai sem o card.
 
@@ -105,8 +105,9 @@ for (const d of fs.readdirSync(R + 'blog', { withFileTypes: true })) {
 }
 artigos.sort((a, b) => b.pub.localeCompare(a.pub) || a.headline.localeCompare(b.headline, 'pt-BR'));
 
-// guias fora do blog: mesmos regex dos artigos (headline e description); a edição sai do
-// "Atualizado em mês/ano" da página. Sem a página ou sem esses dados, aviso e sem card.
+// guias fora do blog: mesmos regex dos artigos (headline e description); o selo sai do
+// "Atualizado em mês/ano" da página e diz "Atualizado <MÊS> <ANO>" (não é a edição do
+// Observatório: o hub pode ser atualizado no meio dela). Sem a página ou sem esses dados, aviso e sem card.
 const MESES_LONGOS = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 const fixos = [];
 for (const [slug, g] of Object.entries(GUIAS_FORA_DO_BLOG)) {
@@ -118,11 +119,11 @@ for (const [slug, g] of Object.entries(GUIAS_FORA_DO_BLOG)) {
   if (!headline || !desc) { avisos.push(slug + ': faltando headline/description, o índice sai sem o card fixo'); continue; }
   const m = h.match(/<!--GEN:atualizado-->\s*Atualizado em ([a-zç]+)(?:\/| de )(\d{4})/i) || h.match(/Atualizado em ([a-zç]+)(?:\/| de )(\d{4})/i);
   const mes = m ? MESES_LONGOS.indexOf(m[1].toLowerCase()) + 1 : 0;
-  if (!mes) avisos.push(slug + ': sem "Atualizado em mês/ano", o card fixo sai sem o selo da edição');
+  if (!mes) avisos.push(slug + ': sem "Atualizado em mês/ano", o card fixo sai sem o selo do mês');
   fixos.push({
     slug, href: '/' + slug + '/', headline, desc, tag: g.tag, cat: g.cat, link: g.link,
     destaque: true, fixo: true,
-    edicao: mes ? { iso: m[2] + '-' + String(mes).padStart(2, '0'), txt: 'Edição ' + MESES[mes - 1] + ' ' + m[2] } : null,
+    edicao: mes ? { iso: m[2] + '-' + String(mes).padStart(2, '0'), txt: 'Atualizado ' + MESES[mes - 1] + ' ' + m[2] } : null,
   });
 }
 // no índice: os fixos primeiro, depois os artigos por data

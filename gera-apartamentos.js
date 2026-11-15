@@ -107,7 +107,9 @@ const mesExtenso = EDICAO.mes.toLowerCase() + ' de ' + EDICAO.ano;      // agost
 // nunca é carimbado como mês da tabela nem do estoque de um produto.
 const mesDe = iso => MES_ABREV[iso.slice(5, 7)] + '/' + iso.slice(0, 4);   // 2026-09 -> set/2026
 // conf (fonte única): tabela de mês anterior com os mesmos preços confirmados para um mês depois
-const tabDe = e => e.tab ? 'tabela ' + mesDe(e.tab) + (e.conf ? ', preços confirmados para ' + mesDe(e.conf) : '') : 'tabela de pré-lançamento';
+// tabela sem data impressa (campo tabRec da fonte única): tab é o mês em que foi recebida
+const tabMes = e => (e.tabRec ? 'tabela recebida em ' : 'tabela ') + mesDe(e.tab);
+const tabDe = e => e.tab ? tabMes(e) + (e.conf ? ', preços confirmados para ' + mesDe(e.conf) : '') : 'tabela de pré-lançamento';
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const semTags = s => String(s).replace(/<[^>]+>/g, '');
 
@@ -197,7 +199,7 @@ const semDataEst = ativos.filter(e => typeof e.est === 'number' && !e.estEm);
 // ─── textos de SEO (com guarda de tamanho) ───
 const TITLE = `Apartamentos na Planta em Indaiatuba ${EDICAO.ano} | ${N} Lançamentos`;
 // o preço citado leva o mês da tabela DELE (ou "pré-lançamento"), não o mês da edição
-const DESC = `${N} apartamentos em lançamento em Indaiatuba SP, ${NP} com preço na tela, sem cadastro: a partir de ${mil(menor.p)} (${menor.tab ? 'tabela ' + mesDe(menor.tab) : 'pré-lançamento'}), do popular ao alto padrão.`;
+const DESC = `${N} apartamentos em lançamento em Indaiatuba SP, ${NP} com preço na tela, sem cadastro: a partir de ${mil(menor.p)} (${menor.tab ? tabMes(menor) : 'pré-lançamento'}), do popular ao alto padrão.`;
 // H1 fixo; os números vão na linha logo abaixo (como na home)
 const H1 = 'Apartamentos na planta em Indaiatuba';
 const NUMEROS = `<b>${N}</b> ${N === 1 ? 'lançamento' : 'lançamentos'}, <b>${NP}</b> com preço aberto`;
@@ -277,7 +279,7 @@ const linha = e => `
           <td>${dormsTexto(e)}</td>
           <td class="num">${m2Texto(e)}</td>
           <td class="num">${e.p ? '<strong>' + brl(e.p) + '</strong>' : '<span class="sc">sob consulta</span>'}</td>
-          <td class="num">${e.p ? (e.tab ? mesDe(e.tab) : 'pré-lançamento') : '—'}</td>
+          <td class="num">${e.p ? (e.tab ? (e.tabRec ? 'recebida em ' : '') + mesDe(e.tab) : 'pré-lançamento') : '—'}</td>
           <td>${entregaTexto(e)}</td>
           <td>${esc(e.c)}</td>
         </tr>`;

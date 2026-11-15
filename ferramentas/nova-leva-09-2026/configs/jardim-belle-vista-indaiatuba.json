@@ -1,0 +1,387 @@
+{
+  "slug": "jardim-belle-vista-indaiatuba",
+  "nome": "Jardim Residencial Belle Vista",
+  "categoria": "condominios",
+  "data": "2026-11-13",
+  "atualizado": "2026-11-13",
+  "fonte_tabela": "tabela Kaaba recebida em nov/2026",
+  "title": "Jardim Belle Vista Indaiatuba | lotes R$ 360 mil · nov/2026",
+  "description": "Jardim Residencial Belle Vista, loteamento fechado da Kaaba em Indaiatuba: lote de 300 m² por R$ 360.000 (R$ 1.200/m², tabela recebida em nov/2026).",
+  "keywords": "jardim belle vista indaiatuba, jardim residencial belle vista, belle vista indaiatuba, loteamento jardim belle vista, kaaba empreendimentos indaiatuba, lote 300 m2 indaiatuba, condominio fechado indaiatuba, loteamento fechado indaiatuba, bairro mato dentro indaiatuba",
+  "schema_tipo": "RealEstateListing",
+  "schema_desc": "Loteamento fechado da Kaaba Empreendimentos (assim descrito pela loteadora, com portaria automatizada) no Bairro Mato Dentro, em Indaiatuba/SP, com acesso pela Rodovia Cônego Cyriaco Scaranello Pires (IDT-040). O projeto urbanístico, de arruamento e loteamento, tem 91 lotes residenciais em 8 quadras, de 300,00 a 538,50 m², numa gleba de 60.000 m² com 12.000 m² de áreas verdes. Na tabela Kaaba recebida em nov/2026 o metro quadrado custa R$ 1.200 em todos os lotes; o pool de vendas da Kaaba de 27/10/2026 lista 18 lotes disponíveis, de 300,00 a 518,66 m².",
+  "endereco_schema": "Rodovia Cônego Cyriaco Scaranello Pires (IDT-040), s/nº, Bairro Mato Dentro",
+  "geo": [
+    -23.05299,
+    -47.234229
+  ],
+  "mapa": {
+    "rota": "-23.052990,-47.234229",
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2640.5262402630156!2d-47.23422947622949!3d-23.052989939965254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b199c00edf9f%3A0xca800e05e5f9a007!2sLoteamento%20Jardim%20Belle%20Vista!5e1!3m2!1spt-BR!2sbr!4v1794583829188!5m2!1spt-BR!2sbr"
+  },
+  "preco_min": 360000.0,
+  "preco_max": 622392.0,
+  "offer_count": 18,
+  "oferta_desc": "Tabela Kaaba recebida em nov/2026, sem data impressa, a R$ 1.200 por m² em todos os lotes, cruzada com o pool de vendas da Kaaba de 27/10/2026: 18 lotes disponíveis, de 300,00 a 518,66 m², de R$ 360.000,00 a R$ 622.392,00. Entrada de 10% ou 20% e saldo em 12, 24 ou 36 parcelas, com taxa de 0,5% por período pela tabela Price (periodicidade a confirmar com a Kaaba); a correção monetária das parcelas não é informada.",
+  "produto_nome": "Jardim Residencial Belle Vista — lotes a partir de 300 m² em Indaiatuba",
+  "produto_desc": "Lotes residenciais no Jardim Residencial Belle Vista, da Kaaba Empreendimentos, em Indaiatuba/SP: o pool de vendas da Kaaba de 27/10/2026 lista 18 lotes disponíveis, de 300,00 a 518,66 m², a R$ 1.200 por m² na tabela Kaaba recebida em nov/2026.",
+  "marca": "Kaaba Empreendimentos",
+  "marca_topo": [
+    "BELLE VISTA",
+    "Indaiatuba"
+  ],
+  "lazer": [],
+  "wa_flutuante": "Olá! Tenho interesse no Jardim Residencial Belle Vista em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Jardim Residencial Belle Vista com quadra, metragem e valor.",
+  "hero": {
+    "eyebrow": "Condomínio fechado · Bairro Mato Dentro · Indaiatuba/SP",
+    "sub": "Condomínio fechado com lotes a partir de 300 m² em Indaiatuba",
+    "lead": "Lotes de 300 a 518,66 m² à venda no Bairro Mato Dentro, num loteamento realizado pela Kaaba Empreendimentos, que o descreve como fechado, com portaria automatizada. Na tabela Kaaba recebida em nov/2026 o metro quadrado custa R$ 1.200 e o lote de 300 m² sai por R$ 360.000; o pool de vendas da Kaaba de 27/10/2026 lista 18 lotes disponíveis (o projeto tem 91, de até 538,50 m²). O prazo de conclusão das obras não consta do material: a confirmar com a loteadora.",
+    "preco": "R$ 360.000,00",
+    "preco_nota": "lote de 300,00 m² · R$ 1.200/m² · tabela Kaaba recebida em nov/2026",
+    "cta_msg": "Olá! Quero a tabela de lotes do Jardim Residencial Belle Vista com quadra, metragem e valor.",
+    "cta_texto": "Pedir a tabela",
+    "cta2": {
+      "msg": "Olá! Quero agendar uma visita ao Jardim Residencial Belle Vista.",
+      "texto": "Agendar visita"
+    },
+    "credito": "Foto de drone da apresentação da Kaaba de maio/2025, com as obras em andamento; os conjuntos de casas ao redor ficam fora do loteamento"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "91 lotes em 8 quadras, com 12.000 m² de áreas verdes",
+      "paragrafos": [
+        "No material de vendas, a Kaaba Empreendimentos assina a realização e a incorporação do Jardim Residencial Belle Vista. Fica no Bairro Mato Dentro, em Indaiatuba, com acesso pela Rodovia Cônego Cyriaco Scaranello Pires (IDT-040). A Kaaba o apresenta como loteamento fechado com portaria automatizada.",
+        "Pelo quadro de áreas do projeto urbanístico, a gleba tem 60.000 m²: 29.995,61 m² de lotes, 15.004,39 m² de ruas, 12.000 m² de áreas verdes e 3.000 m² de área institucional. São 91 lotes, todos residenciais, nas quadras A a H. O tamanho mais comum é 300 m², com 54 lotes; o maior, na quadra F, tem 538,50 m².",
+        "O material da loteadora anuncia salão de festas, playground e espaço pet. Esses itens aparecem só em imagens ilustrativas, sem indicação de onde ficam nem de quando ficam prontos, e o quadro de áreas do projeto urbanístico registra 0 m² em sistemas de lazer. Trate-os como previstos no material da loteadora e confirme no atendimento."
+      ],
+      "numeros": [
+        {
+          "n": "91",
+          "p": "lotes residenciais no projeto"
+        },
+        {
+          "n": "300 m²",
+          "p": "área mínima dos lotes"
+        },
+        {
+          "n": "12.000 m²",
+          "p": "de áreas verdes no projeto urbanístico"
+        },
+        {
+          "n": "18",
+          "p": "lotes disponíveis no pool da Kaaba de 27/10/2026"
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "id": "lotes",
+      "label": "Lotes disponíveis",
+      "classe": "cream",
+      "h2": "18 lotes disponíveis no pool da Kaaba (27/10/2026)",
+      "paragrafos": [
+        "A tabela de vendas da Kaaba traz os 91 lotes a R$ 1.200 o metro quadrado e não tem data impressa; nós a recebemos em novembro/2026. A própria tabela manda consultar a disponibilidade no pool de vendas.",
+        "O pool de vendas da Kaaba não tem data impressa; o arquivo que recebemos é de 27/10/2026. Ele lista 18 lotes disponíveis. Outros 2 aparecem como “venda à vista”: F01, de 484,08 m² (R$ 580.896,00), e G01, de 331,68 m² (R$ 398.016,00), pela mesma tabela; o pool não explica se esses dois só são vendidos à vista. A quadra H aparece como 100% vendida. Ao todo, 71 dos 91 lotes do projeto, entre eles os 4 da quadra H, não constam da lista."
+      ],
+      "tabela": {
+        "legenda": "Lotes disponíveis no pool de vendas da Kaaba de 27/10/2026, com o valor à vista da tabela Kaaba recebida em nov/2026 (R$ 1.200/m²).",
+        "cab": [
+          "Lote",
+          "Área",
+          "Valor à vista"
+        ],
+        "num": [
+          1,
+          2
+        ],
+        "linhas": [
+          [
+            "13 lotes: B02, B06, B13, B14, B16, B17, C04, E14, E15, E18, E19, E20 e G06",
+            "300,00 m² cada",
+            "R$ 360.000,00"
+          ],
+          [
+            "A04",
+            "317,11 m²",
+            "R$ 380.532,00"
+          ],
+          [
+            "G13",
+            "331,30 m²",
+            "R$ 397.560,00"
+          ],
+          [
+            "B11",
+            "392,56 m²",
+            "R$ 471.072,00"
+          ],
+          [
+            "F02",
+            "420,27 m²",
+            "R$ 504.324,00"
+          ],
+          [
+            "D01",
+            "518,66 m²",
+            "R$ 622.392,00"
+          ]
+        ]
+      },
+      "figuras": [
+        {
+          "classe": "unica",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "implantacao.jpg",
+              "alt": "Implantação ilustrada do Jardim Residencial Belle Vista com as quadras, as ruas e as áreas verdes",
+              "w": 1600,
+              "h": 729,
+              "leg": "Implantação do material da Kaaba, com as quadras e as áreas verdes; o material não indica onde ficam o salão, o playground e o espaço pet. Imagem ilustrativa."
+            }
+          ]
+        }
+      ],
+      "notas": [
+        "No pool, os lotes D01, E14 e E15 estão marcados como lotes com viela sanitária. A planta do projeto mostra ainda faixas não edificáveis de 3 m no fundo da quadra A e na quadra E, e os lotes B10 e B11 junto à faixa non aedificandi e à rede de esgoto. Peça a planta do lote antes de escolher.",
+        "No lote B11, o pool registra 392,65 m², e a tabela e a planta, 392,56 m²; o valor acima usa a área da tabela. O maior lote do projeto, o F10, de 538,50 m² (R$ 646.200,00 na tabela Kaaba recebida em nov/2026), não está na lista do pool."
+      ]
+    },
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "Entrada de 10% ou 20% e saldo em até 36 parcelas",
+      "paragrafos": [
+        "A tabela Kaaba recebida em nov/2026 tem duas versões: entrada de 10% ou de 20% do valor à vista. O saldo pode ser pago em 12, 24 ou 36 parcelas, num financiamento direto com a loteadora, segundo o material da Kaaba. A tabela calcula as parcelas pela fórmula da tabela Price, com taxa de 0,5% por período; refizemos a conta e as parcelas da tabela conferem. A tabela não escreve que as parcelas são mensais: confirme no atendimento.",
+        "A tabela não informa se as parcelas têm correção monetária, nem por qual índice. Pergunte antes de fechar: com correção, o valor das parcelas muda ao longo do prazo."
+      ],
+      "tabela": {
+        "legenda": "Exemplo com um lote de 300,00 m² (R$ 360.000,00 à vista) na tabela Kaaba recebida em nov/2026: taxa de 0,5% por período pela Price; correção não informada.",
+        "cab": [
+          "Entrada",
+          "Saldo",
+          "12 parcelas",
+          "24 parcelas",
+          "36 parcelas"
+        ],
+        "num": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "linhas": [
+          [
+            "10% · R$ 36.000,00",
+            "R$ 324.000,00",
+            "R$ 27.885,52",
+            "R$ 14.359,88",
+            "R$ 9.856,71"
+          ],
+          [
+            "20% · R$ 72.000,00",
+            "R$ 288.000,00",
+            "R$ 24.787,13",
+            "R$ 12.764,34",
+            "R$ 8.761,52"
+          ]
+        ]
+      },
+      "notas": [
+        "A tabela não traz data impressa nem prazo de validade. Valor, disponibilidade e condições são confirmados com a Kaaba antes de qualquer proposta."
+      ],
+      "cta": {
+        "msg": "Olá! Quero simular o pagamento de um lote do Jardim Residencial Belle Vista.",
+        "texto": "Simular o pagamento"
+      }
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "No Bairro Mato Dentro, pela Rodovia IDT-040",
+      "paragrafos": [
+        "O Jardim Residencial Belle Vista fica na Gleba B1A do Bairro Mato Dentro, em Indaiatuba, com acesso pela Rodovia Cônego Cyriaco Scaranello Pires (IDT-040), conforme o carimbo do projeto urbanístico. No Google Maps, o local aparece como Loteamento Jardim Belle Vista.",
+        "O material da Kaaba diz que o loteamento fica a 5 minutos do centro de Indaiatuba e desenha o trajeto pela rodovia, pela Rua Ricieri Delboni e pelas avenidas João Ambiel, Conceição e Presidente Kennedy, com o Parque Ecológico como referência. O tempo é o informado pela loteadora."
+      ],
+      "cards": [
+        {
+          "t": "Acesso",
+          "p": "Pela Rodovia Cônego Cyriaco Scaranello Pires (IDT-040), s/nº, segundo o projeto urbanístico"
+        },
+        {
+          "t": "Centro",
+          "p": "A 5 minutos, segundo o material da loteadora"
+        },
+        {
+          "t": "Entorno",
+          "p": "O material não informa distâncias até escolas, comércio ou hospitais"
+        }
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Fotos da obra",
+    "h2": "O loteamento durante as obras",
+    "aviso": "Fotos da apresentação da Kaaba de maio/2025, com as obras em andamento; a situação de hoje pode ser outra. A loteadora informa no material que as imagens são meramente ilustrativas. Peça no atendimento fotos atuais da obra.",
+    "itens": [
+      {
+        "arq": "aerea-ruas.jpg",
+        "alt": "Foto aérea vertical do Jardim Residencial Belle Vista com as ruas asfaltadas e os lotes em terraplenagem",
+        "w": 1296,
+        "h": 729,
+        "leg": "Vista de cima: ruas asfaltadas e lotes em terraplenagem (apresentação de maio/2025); os conjuntos de casas ao redor ficam fora do loteamento"
+      },
+      {
+        "arq": "portaria.jpg",
+        "alt": "Portaria do Jardim Residencial Belle Vista em construção",
+        "w": 1600,
+        "h": 1200,
+        "leg": "A portaria em construção (apresentação de maio/2025); foto com retoque da loteadora, imagem ilustrativa"
+      }
+    ]
+  },
+  "ficha": [
+    [
+      "Realização",
+      "Kaaba Empreendimentos (realização e incorporação, segundo o material)"
+    ],
+    [
+      "Tipo",
+      "Loteamento fechado com portaria automatizada, segundo a Kaaba; o projeto urbanístico é de arruamento e loteamento"
+    ],
+    [
+      "Local",
+      "Gleba B1A, Bairro Mato Dentro, Indaiatuba/SP; acesso pela Rod. Cônego Cyriaco Scaranello Pires (IDT-040)"
+    ],
+    [
+      "Área da gleba",
+      "60.000 m² (quadro de áreas do projeto urbanístico)"
+    ],
+    [
+      "Lotes",
+      "91 residenciais, em 8 quadras, de 300,00 a 538,50 m²"
+    ],
+    [
+      "Áreas verdes",
+      "12.000 m² (20% da gleba)"
+    ],
+    [
+      "Área institucional",
+      "3.000 m²"
+    ],
+    [
+      "Valor do m²",
+      "R$ 1.200, igual para os 91 lotes (tabela Kaaba recebida em nov/2026, sem data impressa)"
+    ],
+    [
+      "Disponibilidade",
+      "18 lotes disponíveis e 2 de venda à vista no pool de vendas da Kaaba de 27/10/2026 (data do arquivo; sem data impressa)"
+    ],
+    [
+      "Pagamento",
+      "Entrada de 10% ou 20% e saldo em 12, 24 ou 36 parcelas, com taxa de 0,5% por período pela tabela Price (periodicidade a confirmar com a Kaaba)"
+    ],
+    [
+      "Correção das parcelas",
+      "Não informada no material; confirme no atendimento"
+    ],
+    [
+      "Aprovação",
+      "Certificado Graprohab nº 376/2018, conforme o carimbo do projeto urbanístico"
+    ],
+    [
+      "Matrícula",
+      "109.451 do Cartório de Registro de Imóveis de Indaiatuba; o folheto cita o registro nº 03 dessa matrícula e uma placa da obra mostra “R7/109.451”: peça a certidão atualizada"
+    ],
+    [
+      "Decreto municipal, ato de fechamento e TVO",
+      "Não informados no material; confirme no atendimento"
+    ],
+    [
+      "Lazer",
+      "Salão de festas, playground e espaço pet previstos no material da loteadora, só em imagens ilustrativas"
+    ],
+    [
+      "Infraestrutura e prazo das obras",
+      "Não informados no material; confirme no atendimento"
+    ],
+    [
+      "Muro, associação e taxa mensal",
+      "Não informados no material; confirme no atendimento"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um lote no Jardim Residencial Belle Vista?",
+      "a": "Na tabela Kaaba recebida em nov/2026, todos os lotes custam R$ 1.200 por metro quadrado. Entre os 18 lotes disponíveis no pool de vendas da Kaaba de 27/10/2026, o menor valor é R$ 360.000,00 (300,00 m²) e o maior, R$ 622.392,00 (lote D01, de 518,66 m²). A tabela não tem data impressa: confirme valor e disponibilidade no atendimento."
+    },
+    {
+      "q": "Como funciona o pagamento?",
+      "a": "Entrada de 10% ou de 20% do valor à vista e saldo em 12, 24 ou 36 parcelas, com taxa de 0,5% por período pela tabela Price (periodicidade a confirmar com a Kaaba), financiado direto com a loteadora. Num lote de 300 m² (R$ 360.000,00 na tabela Kaaba recebida em nov/2026), com entrada de R$ 36.000,00 são 36 parcelas de R$ 9.856,71; com entrada de R$ 72.000,00, 36 parcelas de R$ 8.761,52. A tabela não informa se as parcelas têm correção monetária."
+    },
+    {
+      "q": "Qual o tamanho dos lotes?",
+      "a": "O projeto tem 91 lotes residenciais de 300,00 a 538,50 m²; 54 deles têm 300 m². Os 18 lotes disponíveis no pool de vendas da Kaaba de 27/10/2026 vão de 300,00 a 518,66 m², e 13 deles têm 300 m²."
+    },
+    {
+      "q": "Onde fica o Jardim Residencial Belle Vista?",
+      "a": "No Bairro Mato Dentro, em Indaiatuba/SP, com acesso pela Rodovia Cônego Cyriaco Scaranello Pires (IDT-040). Segundo o material da Kaaba, fica a 5 minutos do centro da cidade. No Google Maps, aparece como Loteamento Jardim Belle Vista."
+    },
+    {
+      "q": "O Belle Vista é condomínio ou loteamento fechado?",
+      "a": "Pelo projeto urbanístico, com certificado Graprohab nº 376/2018, é um loteamento, não um condomínio de lotes: é um projeto de arruamento e loteamento, com as ruas, as áreas verdes e a área institucional como áreas públicas. A Kaaba o descreve como loteamento fechado com portaria automatizada. Em lei, loteamento fechado é o loteamento de acesso controlado (Lei 6.766/1979, art. 2º, § 8º), cujo controle de acesso é regulamentado por ato da Prefeitura; esse ato não consta do material que recebemos. Muro, associação de moradores e taxa mensal também não constam: confirme no atendimento."
+    },
+    {
+      "q": "Como conferir a documentação do loteamento?",
+      "a": "O folheto da Kaaba informa que o loteamento está registrado sob o nº 03 da matrícula 109.451 do Cartório de Registro de Imóveis de Indaiatuba; uma placa da obra, numa foto da apresentação de maio/2025, mostra “Registro: R7/109.451”. Como os números não batem, peça a certidão de matrícula atualizada antes de assinar: é ela que confirma o registro do loteamento e quem consta como loteador. Confirme também quem assina o contrato. O decreto de aprovação da Prefeitura não consta do material recebido."
+    },
+    {
+      "q": "O Belle Vista tem área de lazer?",
+      "a": "O material da loteadora prevê salão de festas, playground e espaço pet, além de 12.000 m² de áreas verdes. O salão, o playground e o espaço pet aparecem só em imagens ilustrativas, sem localização nem prazo, e o quadro de áreas do projeto urbanístico registra 0 m² em sistemas de lazer. Confirme no atendimento."
+    },
+    {
+      "q": "Qual o prazo das obras e o que já está pronto?",
+      "a": "O material não informa o prazo de conclusão nem a lista de infraestrutura. As fotos de drone da apresentação de maio/2025 mostram ruas asfaltadas, postes instalados e a portaria em construção. Peça no atendimento a situação atual da obra."
+    }
+  ],
+  "cta": {
+    "h2": "Quer a tabela do Jardim Residencial Belle Vista?",
+    "p": "Mandamos a tabela de lotes recebida da Kaaba em nov/2026, confirmamos com a loteadora quais lotes seguem disponíveis e simulamos a entrada de 10% ou 20% com saldo em 12, 24 ou 36 parcelas.",
+    "msg": "Olá! Quero a tabela de lotes do Jardim Residencial Belle Vista com quadra, metragem e valor.",
+    "texto": "Pedir a tabela",
+    "visita": {
+      "msg": "Olá! Quero agendar uma visita ao Jardim Residencial Belle Vista.",
+      "texto": "Agendar visita"
+    }
+  },
+  "home": {
+    "tipo": "lote",
+    "preco": 360000,
+    "lote": "fechado",
+    "status": "",
+    "constr": "Kaaba",
+    "pm2": "1200",
+    "badge": "Condomínio fechado · Mato Dentro",
+    "meta": "Lotes a partir de 300 m² · R$ 1.200/m²",
+    "desc": "Loteamento fechado da Kaaba no Bairro Mato Dentro · 91 lotes · R$ 1.200/m² na tabela recebida em nov/2026 · entrada de 10% ou 20% e saldo em até 36x.",
+    "alt": "Foto aérea do Jardim Residencial Belle Vista, em Indaiatuba, com a portaria e as ruas em obra",
+    "itemlist": "Jardim Residencial Belle Vista — loteamento fechado da Kaaba em Indaiatuba, 18 lotes de 300 a 518,66 m² no pool de 27/10/2026, a partir de R$ 360.000 (tabela recebida em nov/2026)"
+  },
+  "rodape": {
+    "marca": "JARDIM RESIDENCIAL BELLE VISTA",
+    "linha": "Jardim Residencial Belle Vista · loteamento fechado com 91 lotes de 300 a 538,50 m² · Bairro Mato Dentro, Indaiatuba, SP",
+    "realizacao": "Realização Kaaba Empreendimentos",
+    "legal": "Imagens do material da Kaaba Empreendimentos, que as identifica como meramente ilustrativas; as fotos de obra são da apresentação de maio/2025. Preços e condições conforme a tabela Kaaba recebida em nov/2026, sem data impressa, a R$ 1.200 por m², sujeitos a alteração sem aviso prévio: entrada de 10% ou 20% e saldo em 12, 24 ou 36 parcelas, com taxa de 0,5% por período pela tabela Price (periodicidade a confirmar com a Kaaba); a correção monetária das parcelas não é informada no material. Disponibilidade conforme o pool de vendas da Kaaba de 27/10/2026 (data do arquivo, sem data impressa), confirmada com a loteadora antes de qualquer proposta. Projeto urbanístico com certificado Graprohab nº 376/2018; matrícula 109.451 do Cartório de Registro de Imóveis de Indaiatuba (peça a certidão atualizada antes de assinar). Salão de festas, playground e espaço pet previstos no material da loteadora."
+  },
+  "llms": {
+    "secao": "condominios",
+    "linha": "Loteamento da Kaaba Empreendimentos no Bairro Mato Dentro, em Indaiatuba, com acesso pela Rodovia Cônego Cyriaco Scaranello Pires (IDT-040); a loteadora o descreve como loteamento fechado com portaria automatizada. Projeto urbanístico de arruamento e loteamento (certificado Graprohab nº 376/2018) com 91 lotes residenciais em 8 quadras, de 300,00 a 538,50 m², numa gleba de 60.000 m² com 12.000 m² de áreas verdes e 3.000 m² de área institucional. Tabela Kaaba recebida em nov/2026, sem data impressa: R$ 1.200/m² em todos os lotes; o pool de vendas da Kaaba de 27/10/2026 lista 18 lotes disponíveis, de R$ 360.000,00 (300,00 m²) a R$ 622.392,00 (518,66 m²), e 2 marcados como venda à vista. Entrada de 10% ou 20% e saldo em 12, 24 ou 36 parcelas, com taxa de 0,5% por período pela tabela Price (periodicidade a confirmar com a Kaaba); correção das parcelas não informada. Salão de festas, playground e espaço pet previstos no material da loteadora. Matrícula 109.451 do CRI de Indaiatuba; prazo das obras, decreto municipal e taxa mensal não informados."
+  }
+}

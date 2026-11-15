@@ -4,7 +4,7 @@
   "categoria": "condominios",
   "data": "2026-09-16",
   "atualizado": "2026-10-15",
-  "fonte_tabela": "tabela de vendas Alphaville de out/2026",
+  "fonte_tabela": "tabela de vendas Alphaville de out/2026, mesmos valores em nov/2026",
   "title": "Alphaville Indaiatuba | lotes desde R$ 908 mil · Itaici",
   "description": "Alphaville Indaiatuba, no Itaici: condomínio fechado com 126 lotes à venda de 511 a 1.205 m² em out/2026, desde R$ 908.480. Ato de 20% e saldo em 60 meses.",
   "keywords": "alphaville indaiatuba, lote alphaville indaiatuba, condominio fechado itaici, lote 1000 m2 indaiatuba, terreno alphaville itaici, condominio de lotes indaiatuba, alphaville lancamento 2026",
@@ -30,7 +30,7 @@
     "sub": "Condomínio fechado de lotes · Grupo Alphaville",
     "lead": "Lotes a partir de 510 m² e de 1.000 m² em um condomínio fechado com clube, piscina climatizada de raias semiolímpicas, quadras e 245 mil m² de áreas verdes e de lazer. Em 07/10/2026, pelo quadro de vendas da Alphaville, são 126 lotes disponíveis.",
     "preco": "A partir de R$ 908.480,37",
-    "preco_nota": "tabela de vendas de outubro/2026 · custas de escrituração à parte",
+    "preco_nota": "tabela de vendas de outubro/2026, mesmos valores em novembro/2026 · custas de escrituração à parte",
     "cta_msg": "Olá! Quero a tabela de lotes do Alphaville Indaiatuba com quadra, metragem e valor.",
     "cta_texto": "Ver lotes e valores"
   },
@@ -67,7 +67,7 @@
       "classe": "cream",
       "h2": "Duas linhas: lotes de 510 m² e de 1.000 m²",
       "paragrafos": [
-        "O book chama as linhas de lotes de 510 m² e de 1.000 m², mas as metragens da tabela variam lote a lote. A Alphaville manteve na tabela de vendas de outubro/2026 os valores de setembro. No quadro de vendas de 07/10/2026, os lotes E-30 e O-05 aparecem como reservados e voltam à lista se a reserva cair; os disponíveis nessa data são estes:"
+        "O book chama as linhas de lotes de 510 m² e de 1.000 m², mas as metragens da tabela variam lote a lote. A Alphaville manteve na tabela de vendas de outubro/2026 os valores de setembro, e a tabela de novembro/2026 repete os mesmos valores. A disponibilidade abaixo é a do último quadro de vendas recebido, de 07/10/2026. No quadro de vendas de 07/10/2026, os lotes E-30 e O-05 aparecem como reservados e voltam à lista se a reserva cair; os disponíveis nessa data são estes:"
       ],
       "tabela": {
         "legenda": "Lotes disponíveis no quadro de vendas de 07/10/2026, com os valores da tabela de vendas Alphaville de outubro/2026, por linha. Valores sem as custas de escrituração.",

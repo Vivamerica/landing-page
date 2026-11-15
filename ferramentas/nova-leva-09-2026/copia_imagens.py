@@ -8,7 +8,7 @@ import os, sys
 from PIL import Image
 Image.MAX_IMAGE_PIXELS = None   # material local da incorporadora; a implantação do 360 tem 200 MP
 sys.stdout.reconfigure(encoding='utf-8')
-RAIZ = 'C:/Users/Usuario/Desktop/landing-page/'
+RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))).replace(os.sep, '/') + '/'   # a raiz do site onde este script esta (worktree incluido)
 slug, origem = sys.argv[1], sys.argv[2].rstrip('/\\') + '/'
 dest = RAIZ + slug + '/images/'
 os.makedirs(dest, exist_ok=True)

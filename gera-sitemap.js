@@ -52,6 +52,7 @@ const TABELA = [
   ['apartamentos-na-planta-indaiatuba', 'weekly', '0.9'],
   ['alphaville', 'weekly', '0.8'],
   ['casas-alphaville-dom-pedro-0-campinas', 'weekly', '0.9'],
+  ['parque-alphaville-alvorada-votorantim', 'weekly', '0.9'],
   ['aurora-indaiatuba', 'weekly', '0.9'],
   ['manai-bosque-indaiatuba', 'weekly', '0.9'],
   ['reserva-botanica-indaiatuba', 'weekly', '0.9'],

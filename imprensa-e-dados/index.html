@@ -29,7 +29,7 @@
     "@type": "Dataset",
     "name": "Observatório de Preços de Lançamentos em Indaiatuba — edição outubro/2026",
     "alternateName": "Dados de lançamentos imobiliários em Indaiatuba/SP, outubro de 2026",
-    "description": "Um registro por empreendimento (38 lançamentos imobiliários de Indaiatuba/SP: 25 apartamentos e 13 loteamentos e condomínios fechados de lotes) com incorporadora, preço \"a partir de\", área e R$/m² da menor unidade com preço, mês da tabela de origem e estoque com a data da contagem, conforme as tabelas oficiais das incorporadoras. Edição de outubro/2026 do Observatório de Preços de Lançamentos em Indaiatuba, publicado mensalmente pela Imobiliária Viv'América.",
+    "description": "Um registro por empreendimento (42 lançamentos imobiliários de Indaiatuba/SP: 25 apartamentos e 17 loteamentos e condomínios fechados de lotes) com incorporadora, preço \"a partir de\", área e R$/m² da menor unidade com preço, mês da tabela de origem e estoque com a data da contagem, conforme as tabelas oficiais das incorporadoras. Edição de outubro/2026 do Observatório de Preços de Lançamentos em Indaiatuba, publicado mensalmente pela Imobiliária Viv'América.",
     "url": "https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/",
     "isBasedOn": "https://lancamentos.imoveisvivamerica.com.br/precos-lancamentos-indaiatuba/",
     "license": "https://creativecommons.org/licenses/by/4.0/deed.pt-br",
@@ -43,7 +43,7 @@
       "apartamentos na planta",
       "dados abertos"
     ],
-    "temporalCoverage": "2025-07/2026-10",
+    "temporalCoverage": "2025-07/2026-11",
     "datePublished": "2026-09-07",
     "dateModified": "2026-11-13",
     "spatialCoverage": {
@@ -92,7 +92,7 @@
       {
         "@type": "PropertyValue",
         "name": "mes_tabela",
-        "description": "Mês da tabela de origem, no formato AAAA-MM; vazio quando a página do empreendimento não informa a data"
+        "description": "Mês da tabela de origem, no formato AAAA-MM; quando a tabela não traz data impressa, o mês em que foi recebida (a coluna fonte diz quando é esse o caso); vazio quando a página do empreendimento não informa a data"
       },
       {
         "@type": "PropertyValue",
@@ -509,7 +509,7 @@
   <div class="content-section">
 
     <h2>O que é o Observatório</h2>
-    <p>O <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços de Lançamentos em Indaiatuba</a> é uma tabela <strong>mensal</strong>, aberta e sem cadastro, com o preço "a partir de" dos lançamentos imobiliários que a Imobiliária Viv'América representa na cidade — apartamentos, loteamentos e condomínios fechados de lotes. A edição de outubro/2026 acompanha <strong>38 empreendimentos</strong> de 18 incorporadoras e loteadoras; 38 têm preço aberto, nas tabelas de 18 delas.</p>
+    <p>O <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços de Lançamentos em Indaiatuba</a> é uma tabela <strong>mensal</strong>, aberta e sem cadastro, com o preço "a partir de" dos lançamentos imobiliários que a Imobiliária Viv'América representa na cidade — apartamentos, loteamentos e condomínios fechados de lotes. A edição de outubro/2026 acompanha <strong>42 empreendimentos</strong> de 19 incorporadoras e loteadoras; 42 têm preço aberto, nas tabelas de 19 delas.</p>
     <p>Os valores vêm das <strong>tabelas oficiais das incorporadoras</strong>, sempre com o mês da tabela registrado ao lado do preço. Cada edição mostra também o que mudou entre as duas últimas tabelas de cada empreendimento, o R$/m² de lote e de apartamento (pela menor unidade com preço) e o estoque nos empreendimentos que têm relatório oficial de unidades.</p>
     <div class="highlight-box">
       <p><strong>O que o Observatório não faz:</strong> não projeta preço, não promete valorização nem retorno e não avalia imóveis. Publica o preço da tabela, a metragem e o mês; a comparação é de quem lê.</p>
@@ -524,7 +524,7 @@
     <p>Em texto corrido basta o crédito "Observatório de Preços de Lançamentos em Indaiatuba / Imobiliária Viv'América" com link para o Observatório. As fotos e perspectivas dos empreendimentos pertencem às incorporadoras e não estão cobertas por esta licença.</p>
 
     <h2>Baixar os dados</h2>
-    <p>Um registro por empreendimento (38 linhas), com incorporadora, preço "a partir de", área e R$/m² da menor unidade com preço, mês da tabela de origem, estoque com a data da contagem e o link da página de cada um. Edição outubro/2026, com dados apurados até 29/10/2026.</p>
+    <p>Um registro por empreendimento (42 linhas), com incorporadora, preço "a partir de", área e R$/m² da menor unidade com preço, mês da tabela de origem, estoque com a data da contagem e o link da página de cada um. Edição outubro/2026, com dados apurados até 13/11/2026.</p>
     <div class="dl-grid">
       <div class="dl-card">
         <h4>CSV</h4>
@@ -549,7 +549,7 @@
           <tr><td><code>preco_a_partir_de</code></td><td>Menor preço da tabela oficial, em reais, sem separador de milhar. Vazio (CSV) ou <code>null</code> (JSON) quando a tabela ainda não foi liberada.</td></tr>
           <tr><td><code>m2_menor_unidade</code></td><td>Área privativa, em m², da unidade com o menor preço (nos lotes, a área do lote de menor preço da tabela, que nem sempre é o menor lote). Vazio quando a tabela não identifica qual unidade tem o menor preço.</td></tr>
           <tr><td><code>preco_m2</code></td><td><code>preco_a_partir_de</code> dividido por <code>m2_menor_unidade</code>, arredondado, em reais por m². Não é a média de todas as unidades.</td></tr>
-          <tr><td><code>mes_tabela</code></td><td>Mês da tabela de origem, no formato <code>AAAA-MM</code>, conforme a página do empreendimento. Vazio quando a página não informa a data da tabela.</td></tr>
+          <tr><td><code>mes_tabela</code></td><td>Mês da tabela de origem, no formato <code>AAAA-MM</code>, conforme a página do empreendimento. Quando a tabela não traz data impressa, é o mês em que ela foi recebida, e a coluna <code>fonte</code> diz isso ("sem data impressa, recebida em …"). Vazio quando a página não informa a data da tabela.</td></tr>
           <tr><td><code>estoque</code></td><td>Unidades disponíveis na data de <code>data_estoque</code> (relatório de estoque, espelho ou tabela com disponibilidade). Vazio quando não há relatório oficial.</td></tr>
           <tr><td><code>data_estoque</code></td><td>Data da contagem do estoque, conforme o relatório ou a tabela de origem: <code>AAAA-MM-DD</code>, ou <code>AAAA-MM</code> quando a fonte só informa o mês. Vazio quando não há estoque informado.</td></tr>
           <tr><td><code>spec</code></td><td>Resumo das características informadas: metragem, dormitórios, estoque conferido (com mês), previsão de entrega informada pela incorporadora.</td></tr>
@@ -564,25 +564,25 @@
 
     <figure class="grafico" id="grafico-m2-lote">
       <h3>Preço do m² de lote por loteamento — outubro/2026</h3>
-      <p class="sub">Preço "a partir de" dividido pela área do lote de menor preço da tabela, em R$/m². Os 13 loteamentos e condomínios fechados do Observatório.</p>
-      <div class="grafico-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 516" role="img" aria-labelledby="grafico-m2-lote-t grafico-m2-lote-d" font-family="'Josefin Sans', system-ui, sans-serif">
+      <p class="sub">Preço "a partir de" dividido pela área do lote de menor preço da tabela, em R$/m². Os 17 loteamentos e condomínios fechados do Observatório.</p>
+      <div class="grafico-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 660" role="img" aria-labelledby="grafico-m2-lote-t grafico-m2-lote-d" font-family="'Josefin Sans', system-ui, sans-serif">
   <title id="grafico-m2-lote-t">Preço do m² de lote por loteamento — outubro/2026</title>
-  <desc id="grafico-m2-lote-d">Porteira de Ferro R$ 2.500/m²; Jardim Dona Maria Cândida R$ 2.000/m²; Residencial Vila Fahl R$ 1.933/m²; Lagos de Helvetia R$ 1.800/m²; Alphaville Indaiatuba R$ 1.776/m²; Ville de Provence R$ 1.770/m²; Residencial Ravello R$ 1.700/m²; Alpnach Residence R$ 1.700/m²; Terras de San Marino R$ 1.650/m²; Reserva Botânica R$ 1.567/m²; Parque Zarah R$ 1.407/m²; Jardim Di Italia R$ 1.400/m²; Residencial Monte Carmelo R$ 967/m².</desc>
-  <rect x="0" y="0" width="700" height="516" fill="#F7F5F0"/>
-  <text x="200" y="504" text-anchor="middle" font-size="12" fill="#6b6559">0</text>
-  <line x1="261.7" y1="14" x2="261.7" y2="482" stroke="#e3ddcd" stroke-width="1"/>
-  <text x="261.7" y="504" text-anchor="middle" font-size="12" fill="#6b6559">R$ 500</text>
-  <line x1="323.3" y1="14" x2="323.3" y2="482" stroke="#e3ddcd" stroke-width="1"/>
-  <text x="323.3" y="504" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1.000</text>
-  <line x1="385.0" y1="14" x2="385.0" y2="482" stroke="#e3ddcd" stroke-width="1"/>
-  <text x="385.0" y="504" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1.500</text>
-  <line x1="446.7" y1="14" x2="446.7" y2="482" stroke="#e3ddcd" stroke-width="1"/>
-  <text x="446.7" y="504" text-anchor="middle" font-size="12" fill="#6b6559">R$ 2.000</text>
-  <line x1="508.3" y1="14" x2="508.3" y2="482" stroke="#e3ddcd" stroke-width="1"/>
-  <text x="508.3" y="504" text-anchor="middle" font-size="12" fill="#6b6559">R$ 2.500</text>
-  <line x1="570.0" y1="14" x2="570.0" y2="482" stroke="#e3ddcd" stroke-width="1"/>
-  <text x="570.0" y="504" text-anchor="middle" font-size="12" fill="#6b6559">R$ 3.000</text>
-  <line x1="200" y1="14" x2="200" y2="482" stroke="#161616" stroke-width="1"/>
+  <desc id="grafico-m2-lote-d">Porteira de Ferro R$ 2.500/m²; Jardim Dona Maria Cândida R$ 2.000/m²; Residencial Vila Fahl R$ 1.933/m²; Lagos de Helvetia R$ 1.800/m²; Alphaville Indaiatuba R$ 1.776/m²; Ville de Provence R$ 1.770/m²; Residencial Ravello R$ 1.700/m²; Alpnach Residence R$ 1.700/m²; Terras de San Marino R$ 1.650/m²; Reserva Botânica R$ 1.567/m²; Terras de Obwalden R$ 1.450/m²; Parque Zarah R$ 1.407/m²; Jardim Di Italia R$ 1.400/m²; Reserva da Colina R$ 1.335/m²; Jardim Residencial Belle Vista R$ 1.200/m²; Jardim Siena R$ 1.200/m²; Residencial Monte Carmelo R$ 967/m².</desc>
+  <rect x="0" y="0" width="700" height="660" fill="#F7F5F0"/>
+  <text x="200" y="648" text-anchor="middle" font-size="12" fill="#6b6559">0</text>
+  <line x1="261.7" y1="14" x2="261.7" y2="626" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="261.7" y="648" text-anchor="middle" font-size="12" fill="#6b6559">R$ 500</text>
+  <line x1="323.3" y1="14" x2="323.3" y2="626" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="323.3" y="648" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1.000</text>
+  <line x1="385.0" y1="14" x2="385.0" y2="626" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="385.0" y="648" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1.500</text>
+  <line x1="446.7" y1="14" x2="446.7" y2="626" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="446.7" y="648" text-anchor="middle" font-size="12" fill="#6b6559">R$ 2.000</text>
+  <line x1="508.3" y1="14" x2="508.3" y2="626" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="508.3" y="648" text-anchor="middle" font-size="12" fill="#6b6559">R$ 2.500</text>
+  <line x1="570.0" y1="14" x2="570.0" y2="626" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="570.0" y="648" text-anchor="middle" font-size="12" fill="#6b6559">R$ 3.000</text>
+  <line x1="200" y1="14" x2="200" y2="626" stroke="#161616" stroke-width="1"/>
   <g>
     <title>Porteira de Ferro (GPCI) · lote de 520 m² · R$ 1.300.000 · R$ 2.500/m²</title>
     <rect x="0" y="14" width="700" height="36" fill="transparent"/>
@@ -654,28 +654,56 @@
     <text x="401.3" y="356" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.567/m²</text>
   </g>
   <g>
-    <title>Parque Zarah (Zarin) · lote de 150 m² · R$ 211.050 · R$ 1.407/m²</title>
+    <title>Terras de Obwalden (Kaaba) · lote de 300 m² · R$ 435.000 · R$ 1.450/m²</title>
     <rect x="0" y="374" width="700" height="36" fill="transparent"/>
-    <path d="M200,382 h169.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-169.5 z" fill="#C9A227"/>
-    <text x="190" y="392" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Parque Zarah</text>
-    <text x="381.5" y="392" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.407/m²</text>
+    <path d="M200,382 h174.8 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-174.8 z" fill="#C9A227"/>
+    <text x="190" y="392" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Terras de Obwalden</text>
+    <text x="386.8" y="392" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.450/m²</text>
+  </g>
+  <g>
+    <title>Parque Zarah (Zarin) · lote de 150 m² · R$ 211.050 · R$ 1.407/m²</title>
+    <rect x="0" y="410" width="700" height="36" fill="transparent"/>
+    <path d="M200,418 h169.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-169.5 z" fill="#C9A227"/>
+    <text x="190" y="428" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Parque Zarah</text>
+    <text x="381.5" y="428" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.407/m²</text>
   </g>
   <g>
     <title>Jardim Di Italia (Dominium) · lote de 150 m² · R$ 210.000 · R$ 1.400/m²</title>
-    <rect x="0" y="410" width="700" height="36" fill="transparent"/>
-    <path d="M200,418 h168.7 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-168.7 z" fill="#C9A227"/>
-    <text x="190" y="428" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Jardim Di Italia</text>
-    <text x="380.7" y="428" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.400/m²</text>
+    <rect x="0" y="446" width="700" height="36" fill="transparent"/>
+    <path d="M200,454 h168.7 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-168.7 z" fill="#C9A227"/>
+    <text x="190" y="464" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Jardim Di Italia</text>
+    <text x="380.7" y="464" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.400/m²</text>
+  </g>
+  <g>
+    <title>Reserva da Colina (Kaaba) · lote de 300 m² · R$ 400.500 · R$ 1.335/m²</title>
+    <rect x="0" y="482" width="700" height="36" fill="transparent"/>
+    <path d="M200,490 h160.7 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-160.7 z" fill="#C9A227"/>
+    <text x="190" y="500" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Reserva da Colina</text>
+    <text x="372.6" y="500" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.335/m²</text>
+  </g>
+  <g>
+    <title>Jardim Residencial Belle Vista (Kaaba) · lote de 300 m² · R$ 360.000 · R$ 1.200/m²</title>
+    <rect x="0" y="518" width="700" height="36" fill="transparent"/>
+    <path d="M200,526 h144.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-144.0 z" fill="#C9A227"/>
+    <text x="190" y="536" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Jardim Residencial Belle Vista</text>
+    <text x="356.0" y="536" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.200/m²</text>
+  </g>
+  <g>
+    <title>Jardim Siena (Kaaba) · lote de 250 m² · R$ 300.000 · R$ 1.200/m²</title>
+    <rect x="0" y="554" width="700" height="36" fill="transparent"/>
+    <path d="M200,562 h144.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-144.0 z" fill="#C9A227"/>
+    <text x="190" y="572" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Jardim Siena</text>
+    <text x="356.0" y="572" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 1.200/m²</text>
   </g>
   <g>
     <title>Residencial Monte Carmelo (Dominium) · lote de 150 m² · R$ 145.000 · R$ 967/m²</title>
-    <rect x="0" y="446" width="700" height="36" fill="transparent"/>
-    <path d="M200,454 h115.3 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-115.3 z" fill="#C9A227"/>
-    <text x="190" y="464" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Residencial Monte Carmelo</text>
-    <text x="327.3" y="464" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 967/m²</text>
+    <rect x="0" y="590" width="700" height="36" fill="transparent"/>
+    <path d="M200,598 h115.3 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-115.3 z" fill="#C9A227"/>
+    <text x="190" y="608" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Residencial Monte Carmelo</text>
+    <text x="327.3" y="608" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 967/m²</text>
   </g>
 </svg></div>
-      <p class="leitura">Em outubro/2026 o m² de lote em Indaiatuba vai de R$ 967 (Residencial Monte Carmelo) a R$ 2.500 (Porteira de Ferro); a média dos 13 loteamentos é R$ 1.705/m². Os 2 loteamentos abertos ficam entre R$ 967 e R$ 1.400/m²; os 11 loteamentos fechados e condomínios de lotes ficam entre R$ 1.407 e R$ 2.500/m².</p>
+      <p class="leitura">Em outubro/2026 o m² de lote em Indaiatuba vai de R$ 967 (Residencial Monte Carmelo) a R$ 2.500 (Porteira de Ferro); a média dos 17 loteamentos é R$ 1.609/m². Os 2 loteamentos abertos ficam entre R$ 967 e R$ 1.400/m²; os 15 loteamentos fechados e condomínios de lotes ficam entre R$ 1.200 e R$ 2.500/m².</p>
       <details class="tabela-twin"><summary>Ver como tabela</summary><div class="tabela-wrap"><table>
 <thead><tr><th>Loteamento</th><th>Loteadora</th><th class="num">Lote de menor preço</th><th class="num">A partir de</th><th class="num">R$/m²</th></tr></thead>
 <tbody>
@@ -689,10 +717,14 @@
 <tr><td><a href="/alpnach-indaiatuba/">Alpnach Residence</a></td><td>Dominium</td><td class="num">300 m²</td><td class="num">R$ 510.000</td><td class="num">R$ 1.700</td></tr>
 <tr><td><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a></td><td>Armigh · Best Business</td><td class="num">150 m²</td><td class="num">R$ 247.500</td><td class="num">R$ 1.650</td></tr>
 <tr><td><a href="/reserva-botanica-indaiatuba/">Reserva Botânica</a></td><td>Zarin</td><td class="num">410 m²</td><td class="num">R$ 642.375</td><td class="num">R$ 1.567</td></tr>
+<tr><td><a href="/terras-de-obwalden-indaiatuba/">Terras de Obwalden</a></td><td>Kaaba</td><td class="num">300 m²</td><td class="num">R$ 435.000</td><td class="num">R$ 1.450</td></tr>
 <tr><td><a href="/parque-zarah-indaiatuba/">Parque Zarah</a></td><td>Zarin</td><td class="num">150 m²</td><td class="num">R$ 211.050</td><td class="num">R$ 1.407</td></tr>
 <tr><td><a href="/di-italia-indaiatuba/">Jardim Di Italia</a></td><td>Dominium</td><td class="num">150 m²</td><td class="num">R$ 210.000</td><td class="num">R$ 1.400</td></tr>
+<tr><td><a href="/reserva-da-colina-indaiatuba/">Reserva da Colina</a></td><td>Kaaba</td><td class="num">300 m²</td><td class="num">R$ 400.500</td><td class="num">R$ 1.335</td></tr>
+<tr><td><a href="/jardim-belle-vista-indaiatuba/">Jardim Residencial Belle Vista</a></td><td>Kaaba</td><td class="num">300 m²</td><td class="num">R$ 360.000</td><td class="num">R$ 1.200</td></tr>
+<tr><td><a href="/jardim-siena-indaiatuba/">Jardim Siena</a></td><td>Kaaba</td><td class="num">250 m²</td><td class="num">R$ 300.000</td><td class="num">R$ 1.200</td></tr>
 <tr><td><a href="/monte-carmelo-indaiatuba/">Residencial Monte Carmelo</a></td><td>Dominium</td><td class="num">150 m²</td><td class="num">R$ 145.000</td><td class="num">R$ 967</td></tr>
-<tr><td colspan="4"><strong>Média dos 13 loteamentos</strong></td><td class="num"><strong>R$ 1.705</strong></td></tr>
+<tr><td colspan="4"><strong>Média dos 17 loteamentos</strong></td><td class="num"><strong>R$ 1.609</strong></td></tr>
 </tbody></table></div></details>
     </figure>
 
@@ -953,7 +985,7 @@
     <text x="372.4" y="124" dy="0.35em" font-size="13" font-weight="600" fill="#161616">8 empreendimentos</text>
   </g>
 </svg></div>
-      <p class="leitura">Dos 25 apartamentos com tabela publicada em outubro/2026, 16 têm preço de entrada entre R$ 300 mil e R$ 600 mil; só o Uni Residencial (R$ 279.990) fica abaixo de R$ 300 mil, 8 começam acima de R$ 600 mil.</p>
+      <p class="leitura">Dos 25 apartamentos com tabela na edição de outubro/2026, 16 têm preço de entrada entre R$ 300 mil e R$ 600 mil; só o Uni Residencial (R$ 279.990) fica abaixo de R$ 300 mil, 8 começam acima de R$ 600 mil.</p>
       <details class="tabela-twin"><summary>Ver como tabela</summary><div class="tabela-wrap"><table>
 <thead><tr><th>Faixa do preço de entrada</th><th class="num">Empreendimentos</th><th>Quais</th></tr></thead>
 <tbody>
@@ -967,16 +999,16 @@
     <figure class="grafico" id="grafico-menor-preco-incorporadora">
       <h3>Menor preço de entrada por incorporadora — outubro/2026</h3>
       <p class="sub">O menor preço "a partir de" entre todos os empreendimentos de cada incorporadora ou loteadora, apartamentos e lotes juntos. A etiqueta ao lado do valor diz se é lote ou apartamento.</p>
-      <div class="grafico-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 696" role="img" aria-labelledby="grafico-menor-preco-incorporadora-t grafico-menor-preco-incorporadora-d" font-family="'Josefin Sans', system-ui, sans-serif">
+      <div class="grafico-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 732" role="img" aria-labelledby="grafico-menor-preco-incorporadora-t grafico-menor-preco-incorporadora-d" font-family="'Josefin Sans', system-ui, sans-serif">
   <title id="grafico-menor-preco-incorporadora-t">Menor preço de entrada por incorporadora — outubro/2026</title>
-  <desc id="grafico-menor-preco-incorporadora-d">Dominium R$ 145.000 (Residencial Monte Carmelo); Zarin R$ 211.050 (Parque Zarah); Armigh · Best Business R$ 247.500 (Terras de San Marino); Masotti R$ 279.990 (Uni Residencial); Vila Fahl · iBen R$ 290.000 (Residencial Vila Fahl); Pinheiro · RDZ · iBen R$ 306.650 (Viva Parque Aura); GPCI R$ 309.120 (Residencial Parque das Águas); Mingardi &amp; Elias R$ 312.046 (Pertenze Residencial); VIC Engenharia R$ 325.000 (Gran Vic Tangará); Lógica Empreendimentos R$ 403.846 (Vila Plaza Residence); Emmar R$ 519.900 (Lumina Residencial); HINC R$ 546.274 (360 Home Office Mall); Asseplan Narezzi R$ 600.000 (Jardim Dona Maria Cândida); Urban Square R$ 637.200 (Ville de Provence); Alphaville R$ 908.480 (Alphaville Indaiatuba); Congesa R$ 921.000 (Storia Congesa); Lofts R$ 924.108 (Lina Residence); PERPLAN R$ 991.005 (Areté Home).</desc>
-  <rect x="0" y="0" width="700" height="696" fill="#F7F5F0"/>
-  <text x="200" y="684" text-anchor="middle" font-size="12" fill="#6b6559">0</text>
-  <line x1="385.0" y1="14" x2="385.0" y2="662" stroke="#e3ddcd" stroke-width="1"/>
-  <text x="385.0" y="684" text-anchor="middle" font-size="12" fill="#6b6559">R$ 500 mil</text>
-  <line x1="570.0" y1="14" x2="570.0" y2="662" stroke="#e3ddcd" stroke-width="1"/>
-  <text x="570.0" y="684" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1,0 mi</text>
-  <line x1="200" y1="14" x2="200" y2="662" stroke="#161616" stroke-width="1"/>
+  <desc id="grafico-menor-preco-incorporadora-d">Dominium R$ 145.000 (Residencial Monte Carmelo); Zarin R$ 211.050 (Parque Zarah); Armigh · Best Business R$ 247.500 (Terras de San Marino); Masotti R$ 279.990 (Uni Residencial); Vila Fahl · iBen R$ 290.000 (Residencial Vila Fahl); Kaaba R$ 300.000 (Jardim Siena); Pinheiro · RDZ · iBen R$ 306.650 (Viva Parque Aura); GPCI R$ 309.120 (Residencial Parque das Águas); Mingardi &amp; Elias R$ 312.046 (Pertenze Residencial); VIC Engenharia R$ 325.000 (Gran Vic Tangará); Lógica Empreendimentos R$ 403.846 (Vila Plaza Residence); Emmar R$ 519.900 (Lumina Residencial); HINC R$ 546.274 (360 Home Office Mall); Asseplan Narezzi R$ 600.000 (Jardim Dona Maria Cândida); Urban Square R$ 637.200 (Ville de Provence); Alphaville R$ 908.480 (Alphaville Indaiatuba); Congesa R$ 921.000 (Storia Congesa); Lofts R$ 924.108 (Lina Residence); PERPLAN R$ 991.005 (Areté Home).</desc>
+  <rect x="0" y="0" width="700" height="732" fill="#F7F5F0"/>
+  <text x="200" y="720" text-anchor="middle" font-size="12" fill="#6b6559">0</text>
+  <line x1="385.0" y1="14" x2="385.0" y2="698" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="385.0" y="720" text-anchor="middle" font-size="12" fill="#6b6559">R$ 500 mil</text>
+  <line x1="570.0" y1="14" x2="570.0" y2="698" stroke="#e3ddcd" stroke-width="1"/>
+  <text x="570.0" y="720" text-anchor="middle" font-size="12" fill="#6b6559">R$ 1,0 mi</text>
+  <line x1="200" y1="14" x2="200" y2="698" stroke="#161616" stroke-width="1"/>
   <g>
     <title>Dominium: R$ 145.000 — Residencial Monte Carmelo (lote)</title>
     <rect x="0" y="14" width="700" height="36" fill="transparent"/>
@@ -1013,98 +1045,105 @@
     <text x="315.3" y="176" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 290.000<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
   </g>
   <g>
-    <title>Pinheiro · RDZ · iBen: R$ 306.650 — Viva Parque Aura (apartamento)</title>
+    <title>Kaaba: R$ 300.000 — Jardim Siena (lote)</title>
     <rect x="0" y="194" width="700" height="36" fill="transparent"/>
-    <path d="M200,202 h109.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-109.5 z" fill="#C9A227"/>
-    <text x="190" y="212" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Pinheiro · RDZ · iBen</text>
-    <text x="321.5" y="212" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 306.650<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <path d="M200,202 h107.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-107.0 z" fill="#C9A227"/>
+    <text x="190" y="212" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Kaaba</text>
+    <text x="319.0" y="212" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 300.000<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
+  </g>
+  <g>
+    <title>Pinheiro · RDZ · iBen: R$ 306.650 — Viva Parque Aura (apartamento)</title>
+    <rect x="0" y="230" width="700" height="36" fill="transparent"/>
+    <path d="M200,238 h109.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-109.5 z" fill="#C9A227"/>
+    <text x="190" y="248" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Pinheiro · RDZ · iBen</text>
+    <text x="321.5" y="248" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 306.650<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>GPCI: R$ 309.120 — Residencial Parque das Águas (apartamento)</title>
-    <rect x="0" y="230" width="700" height="36" fill="transparent"/>
-    <path d="M200,238 h110.4 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-110.4 z" fill="#C9A227"/>
-    <text x="190" y="248" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">GPCI</text>
-    <text x="322.4" y="248" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 309.120<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="266" width="700" height="36" fill="transparent"/>
+    <path d="M200,274 h110.4 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-110.4 z" fill="#C9A227"/>
+    <text x="190" y="284" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">GPCI</text>
+    <text x="322.4" y="284" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 309.120<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>Mingardi &amp; Elias: R$ 312.046 — Pertenze Residencial (apartamento)</title>
-    <rect x="0" y="266" width="700" height="36" fill="transparent"/>
-    <path d="M200,274 h111.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-111.5 z" fill="#C9A227"/>
-    <text x="190" y="284" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Mingardi &amp; Elias</text>
-    <text x="323.5" y="284" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 312.046<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="302" width="700" height="36" fill="transparent"/>
+    <path d="M200,310 h111.5 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-111.5 z" fill="#C9A227"/>
+    <text x="190" y="320" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Mingardi &amp; Elias</text>
+    <text x="323.5" y="320" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 312.046<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>VIC Engenharia: R$ 325.000 — Gran Vic Tangará (apartamento)</title>
-    <rect x="0" y="302" width="700" height="36" fill="transparent"/>
-    <path d="M200,310 h116.3 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-116.3 z" fill="#C9A227"/>
-    <text x="190" y="320" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">VIC Engenharia</text>
-    <text x="328.3" y="320" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 325.000<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="338" width="700" height="36" fill="transparent"/>
+    <path d="M200,346 h116.3 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-116.3 z" fill="#C9A227"/>
+    <text x="190" y="356" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">VIC Engenharia</text>
+    <text x="328.3" y="356" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 325.000<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>Lógica Empreendimentos: R$ 403.846 — Vila Plaza Residence (apartamento)</title>
-    <rect x="0" y="338" width="700" height="36" fill="transparent"/>
-    <path d="M200,346 h145.4 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-145.4 z" fill="#C9A227"/>
-    <text x="190" y="356" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Lógica Empreendimentos</text>
-    <text x="357.4" y="356" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 403.846<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="374" width="700" height="36" fill="transparent"/>
+    <path d="M200,382 h145.4 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-145.4 z" fill="#C9A227"/>
+    <text x="190" y="392" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Lógica Empreendimentos</text>
+    <text x="357.4" y="392" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 403.846<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>Emmar: R$ 519.900 — Lumina Residencial (apartamento)</title>
-    <rect x="0" y="374" width="700" height="36" fill="transparent"/>
-    <path d="M200,382 h188.4 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-188.4 z" fill="#C9A227"/>
-    <text x="190" y="392" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Emmar</text>
-    <text x="400.4" y="392" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 519.900<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="410" width="700" height="36" fill="transparent"/>
+    <path d="M200,418 h188.4 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-188.4 z" fill="#C9A227"/>
+    <text x="190" y="428" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Emmar</text>
+    <text x="400.4" y="428" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 519.900<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>HINC: R$ 546.274 — 360 Home Office Mall (apartamento)</title>
-    <rect x="0" y="410" width="700" height="36" fill="transparent"/>
-    <path d="M200,418 h198.1 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-198.1 z" fill="#C9A227"/>
-    <text x="190" y="428" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">HINC</text>
-    <text x="410.1" y="428" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 546.274<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="446" width="700" height="36" fill="transparent"/>
+    <path d="M200,454 h198.1 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-198.1 z" fill="#C9A227"/>
+    <text x="190" y="464" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">HINC</text>
+    <text x="410.1" y="464" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 546.274<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>Asseplan Narezzi: R$ 600.000 — Jardim Dona Maria Cândida (lote)</title>
-    <rect x="0" y="446" width="700" height="36" fill="transparent"/>
-    <path d="M200,454 h218.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-218.0 z" fill="#C9A227"/>
-    <text x="190" y="464" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Asseplan Narezzi</text>
-    <text x="430.0" y="464" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 600.000<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
+    <rect x="0" y="482" width="700" height="36" fill="transparent"/>
+    <path d="M200,490 h218.0 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-218.0 z" fill="#C9A227"/>
+    <text x="190" y="500" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Asseplan Narezzi</text>
+    <text x="430.0" y="500" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 600.000<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
   </g>
   <g>
     <title>Urban Square: R$ 637.200 — Ville de Provence (lote)</title>
-    <rect x="0" y="482" width="700" height="36" fill="transparent"/>
-    <path d="M200,490 h231.8 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-231.8 z" fill="#C9A227"/>
-    <text x="190" y="500" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Urban Square</text>
-    <text x="443.8" y="500" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 637.200<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
+    <rect x="0" y="518" width="700" height="36" fill="transparent"/>
+    <path d="M200,526 h231.8 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-231.8 z" fill="#C9A227"/>
+    <text x="190" y="536" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Urban Square</text>
+    <text x="443.8" y="536" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 637.200<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
   </g>
   <g>
     <title>Alphaville: R$ 908.480 — Alphaville Indaiatuba (lote)</title>
-    <rect x="0" y="518" width="700" height="36" fill="transparent"/>
-    <path d="M200,526 h332.1 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-332.1 z" fill="#C9A227"/>
-    <text x="190" y="536" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Alphaville</text>
-    <text x="544.1" y="536" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 908.480<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
+    <rect x="0" y="554" width="700" height="36" fill="transparent"/>
+    <path d="M200,562 h332.1 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-332.1 z" fill="#C9A227"/>
+    <text x="190" y="572" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Alphaville</text>
+    <text x="544.1" y="572" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 908.480<tspan font-weight="400" fill="#6b6559"> · lote</tspan></text>
   </g>
   <g>
     <title>Congesa: R$ 921.000 — Storia Congesa (apartamento)</title>
-    <rect x="0" y="554" width="700" height="36" fill="transparent"/>
-    <path d="M200,562 h336.8 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-336.8 z" fill="#C9A227"/>
-    <text x="190" y="572" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Congesa</text>
-    <text x="548.8" y="572" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 921.000<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="590" width="700" height="36" fill="transparent"/>
+    <path d="M200,598 h336.8 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-336.8 z" fill="#C9A227"/>
+    <text x="190" y="608" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Congesa</text>
+    <text x="548.8" y="608" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 921.000<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>Lofts: R$ 924.108 — Lina Residence (apartamento)</title>
-    <rect x="0" y="590" width="700" height="36" fill="transparent"/>
-    <path d="M200,598 h337.9 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-337.9 z" fill="#C9A227"/>
-    <text x="190" y="608" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Lofts</text>
-    <text x="549.9" y="608" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 924.108<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="626" width="700" height="36" fill="transparent"/>
+    <path d="M200,634 h337.9 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-337.9 z" fill="#C9A227"/>
+    <text x="190" y="644" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">Lofts</text>
+    <text x="549.9" y="644" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 924.108<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
   <g>
     <title>PERPLAN: R$ 991.005 — Areté Home (apartamento)</title>
-    <rect x="0" y="626" width="700" height="36" fill="transparent"/>
-    <path d="M200,634 h362.7 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-362.7 z" fill="#C9A227"/>
-    <text x="190" y="644" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">PERPLAN</text>
-    <text x="574.7" y="644" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 991.005<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
+    <rect x="0" y="662" width="700" height="36" fill="transparent"/>
+    <path d="M200,670 h362.7 a4,4 0 0 1 4,4 v12 a4,4 0 0 1 -4,4 h-362.7 z" fill="#C9A227"/>
+    <text x="190" y="680" dy="0.35em" text-anchor="end" font-size="14" fill="#161616">PERPLAN</text>
+    <text x="574.7" y="680" dy="0.35em" font-size="13" font-weight="600" fill="#161616">R$ 991.005<tspan font-weight="400" fill="#6b6559"> · apto</tspan></text>
   </g>
 </svg></div>
-      <p class="leitura">Entre as 18 incorporadoras e loteadoras com tabela publicada em outubro/2026, o menor preço de entrada é o da Dominium (R$ 145.000, lote no Residencial Monte Carmelo); em apartamentos, a Masotti tem o menor preço de entrada (R$ 279.990, Uni Residencial), enquanto Lofts e PERPLAN começam em R$ 924.108 e R$ 991.005.</p>
+      <p class="leitura">Entre as 19 incorporadoras e loteadoras com tabela na edição de outubro/2026, o menor preço de entrada é o da Dominium (R$ 145.000, lote no Residencial Monte Carmelo); em apartamentos, a Masotti tem o menor preço de entrada (R$ 279.990, Uni Residencial), enquanto Lofts e PERPLAN começam em R$ 924.108 e R$ 991.005.</p>
       <details class="tabela-twin"><summary>Ver como tabela</summary><div class="tabela-wrap"><table>
 <thead><tr><th>Incorporadora</th><th class="num">Menor preço de entrada</th><th>Empreendimento</th><th>Tipo</th></tr></thead>
 <tbody>
@@ -1113,6 +1152,7 @@
 <tr><td>Armigh · Best Business</td><td class="num">R$ 247.500</td><td><a href="/terras-de-san-marino-indaiatuba/">Terras de San Marino</a></td><td>lote</td></tr>
 <tr><td>Masotti</td><td class="num">R$ 279.990</td><td><a href="/uni-residencial-indaiatuba/">Uni Residencial</a></td><td>apartamento</td></tr>
 <tr><td>Vila Fahl · iBen</td><td class="num">R$ 290.000</td><td><a href="/vila-fahl-indaiatuba/">Residencial Vila Fahl</a></td><td>lote</td></tr>
+<tr><td>Kaaba</td><td class="num">R$ 300.000</td><td><a href="/jardim-siena-indaiatuba/">Jardim Siena</a></td><td>lote</td></tr>
 <tr><td>Pinheiro · RDZ · iBen</td><td class="num">R$ 306.650</td><td><a href="/viva-parque-aura-indaiatuba/">Viva Parque Aura</a></td><td>apartamento</td></tr>
 <tr><td>GPCI</td><td class="num">R$ 309.120</td><td><a href="/parque-das-aguas-indaiatuba/">Residencial Parque das Águas</a></td><td>apartamento</td></tr>
 <tr><td>Mingardi & Elias</td><td class="num">R$ 312.046</td><td><a href="/pertenze-residencial-indaiatuba/">Pertenze Residencial</a></td><td>apartamento</td></tr>
@@ -1131,12 +1171,12 @@
 
     <h2>Release — edição outubro/2026</h2>
     <div class="tiles">
-      <div class="tile"><b>38</b><span>lançamentos monitorados</span><small>25 apartamentos e 13 loteamentos · 38 com preço · outubro/2026</small></div>
-      <div class="tile"><b>R$ 967 a R$ 2.500</b><span>preço do m² de lote</span><small>média de R$ 1.705/m² nos 13 loteamentos · outubro/2026</small></div>
+      <div class="tile"><b>42</b><span>lançamentos monitorados</span><small>25 apartamentos e 17 loteamentos · 42 com preço · outubro/2026</small></div>
+      <div class="tile"><b>R$ 967 a R$ 2.500</b><span>preço do m² de lote</span><small>média de R$ 1.609/m² nos 17 loteamentos · outubro/2026</small></div>
       <div class="tile"><b>R$ 6.422 a R$ 13.750</b><span>preço do m² de apartamento</span><small>pela menor unidade com preço · média R$ 9.159/m² em 22 empreendimentos</small></div>
-      <div class="tile"><b>12 + 16</b><span>mudaram o preço de entrada + entraram no site ou ganharam tabela</span><small>variações de −6,1% a +22,3% · outubro/2026</small></div>
+      <div class="tile"><b>12 + 20</b><span>mudaram o preço de entrada + entraram no site ou ganharam tabela</span><small>variações de −6,1% a +22,3% · outubro/2026</small></div>
     </div>
-    <p><strong>Contexto.</strong> Na edição de outubro/2026, o Observatório acompanha 38 lançamentos imobiliários em Indaiatuba/SP (25 apartamentos e 13 loteamentos e condomínios de lotes), 38 com preço aberto. O menor preço de entrada entre os lotes é o do Residencial Monte Carmelo (Dominium), R$ 145.000 por um lote de 150 m²; entre os apartamentos, o do Uni Residencial (Masotti), R$ 279.990, enquadrado no Minha Casa Minha Vida (MCMV). Entre os 25 apartamentos com preço, o "a partir de" vai até R$ 1.809.776 (Reserva Luiza Tomaselli), com média de R$ 629.734 e mediana de R$ 429.961; pela menor unidade com preço, o m² vai de R$ 6.422 (Pertenze Residencial) a R$ 13.750 (360 Home Office Mall), média de R$ 9.159, em 22 empreendimentos. Das 12 variações de preço de entrada confirmadas em documentos oficiais das construtoras, 9 são altas (Itamaracá Residencial, +1,5%, Parque Zarah, +22,3%, Reserva Botânica, +20,6%, Gran Vic Colibri, +0,7%, Viva Parque Aura, +1,9%, Viva Parque Sense, +0,9%, Manai Bosque, +2,9%, Gran Vic Canário, +0,7% e Residencial Vila Fahl, +5,9%) e 3 são quedas (Spazio Italia, −4,2%, Gran Vic Tangará, −1,5% e Storia Congesa, −6,1%). 15 empreendimentos entraram no site nesta edição com tabela (Residencial Parque das Águas, Izzi Residence, Artemis Residencial, Jardim Dona Maria Cândida, Ville de Provence, Alphaville Indaiatuba, Lagos de Helvetia, Espaço Conceição, Porteira de Ferro, 360 Home Office Mall, Pertenze Residencial, Vila Plaza Residence, Lumina Residencial, Lina Residence e Reserva Luiza Tomaselli), e o Congesa Seasons, que já estava no site sem preço, ganhou tabela pública. O Gran Vic Andorinha saiu da lista de disponíveis (sem unidades em out/2026: as 2 unidades da Torre 01, aptos 1204 e 1304, saíram da lista, e a VIC não enviou tabela do Andorinha em outubro).</p>
+    <p><strong>Contexto.</strong> Na edição de outubro/2026, o Observatório acompanha 42 lançamentos imobiliários em Indaiatuba/SP (25 apartamentos e 17 loteamentos e condomínios de lotes), 42 com preço aberto. O menor preço de entrada entre os lotes é o do Residencial Monte Carmelo (Dominium), R$ 145.000 por um lote de 150 m²; entre os apartamentos, o do Uni Residencial (Masotti), R$ 279.990, enquadrado no Minha Casa Minha Vida (MCMV). Entre os 25 apartamentos com preço, o "a partir de" vai até R$ 1.809.776 (Reserva Luiza Tomaselli), com média de R$ 629.734 e mediana de R$ 429.961; pela menor unidade com preço, o m² vai de R$ 6.422 (Pertenze Residencial) a R$ 13.750 (360 Home Office Mall), média de R$ 9.159, em 22 empreendimentos. Das 12 variações de preço de entrada confirmadas em documentos oficiais das construtoras, 9 são altas (Itamaracá Residencial, +1,5%, Parque Zarah, +22,3%, Reserva Botânica, +20,6%, Gran Vic Colibri, +0,7%, Viva Parque Aura, +1,9%, Viva Parque Sense, +0,9%, Manai Bosque, +2,9%, Gran Vic Canário, +0,7% e Residencial Vila Fahl, +5,9%) e 3 são quedas (Spazio Italia, −4,2%, Gran Vic Tangará, −1,5% e Storia Congesa, −6,1%). 19 empreendimentos entraram no site nesta edição com tabela (Residencial Parque das Águas, Izzi Residence, Artemis Residencial, Jardim Dona Maria Cândida, Ville de Provence, Alphaville Indaiatuba, Lagos de Helvetia, Espaço Conceição, Porteira de Ferro, 360 Home Office Mall, Pertenze Residencial, Vila Plaza Residence, Lumina Residencial, Lina Residence, Reserva Luiza Tomaselli, Jardim Siena, Jardim Residencial Belle Vista, Reserva da Colina e Terras de Obwalden), e o Congesa Seasons, que já estava no site sem preço, ganhou tabela pública. O Gran Vic Andorinha saiu da lista de disponíveis (sem unidades em out/2026: as 2 unidades da Torre 01, aptos 1204 e 1304, saíram da lista, e a VIC não enviou tabela do Andorinha em outubro).</p>
     <p><strong>Estoque.</strong> Nos 11 empreendimentos que já tinham uma medição de estoque anterior, o número anterior e o atual, cada um com a data do relatório ou da tabela. O intervalo entre as duas medições não é o mesmo em todos (as medições anteriores vão de julho a setembro de 2026), por isso as datas vão em cada linha. O Observatório mostra quantas unidades saíram da lista de disponíveis entre as duas medições; sair da lista não é venda confirmada (pode ser reserva). Quando a incorporadora informa o motivo, ou quando entram lotes na lista, a linha diz.</p>
     <ul>
       <li><strong>Gran Vic Andorinha</strong>: de 2 unidades (02/09/2026) para 0 (out/2026) — 2 a menos na lista (sem unidades em out/2026: as 2 unidades da Torre 01, aptos 1204 e 1304, saíram da lista, e a VIC não enviou tabela do Andorinha em outubro).</li>
@@ -1151,7 +1191,7 @@
       <li><strong>Residencial Ravello</strong>: de 185 lotes (02/09/2026) para 180 (09/10/2026) — 5 a menos na lista (10 lotes saíram da lista de disponíveis e 5 entraram entre os dois relatórios).</li>
       <li><strong>Residencial Monte Carmelo</strong>: de 568 lotes (02/09/2026) para 579 (09/10/2026) — o relatório de 30/09/2026 tirou 7 lotes da lista e pôs 20 novos (581); o de 01/10/2026 listava 585; o de 09/10/2026 lista 579 (6 saíram, nenhum entrou) — nenhum preço mudou.</li>
     </ul>
-    <p>Todos os números acima estão na edição de outubro/2026 do <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a>, apurada até 29/10/2026, e no CSV desta página. Preços são os "a partir de" das tabelas oficiais e podem mudar sem aviso; o Observatório não faz projeção nem promete valorização.</p>
+    <p>Todos os números acima estão na edição de outubro/2026 do <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a>, apurada até 13/11/2026, e no CSV desta página. Preços são os "a partir de" das tabelas oficiais e podem mudar sem aviso; o Observatório não faz projeção nem promete valorização.</p>
 
     <h2>Contato para imprensa</h2>
     <div class="vantagem-grid">

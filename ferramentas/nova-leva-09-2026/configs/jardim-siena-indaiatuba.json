@@ -1,0 +1,649 @@
+{
+  "slug": "jardim-siena-indaiatuba",
+  "nome": "Jardim Siena",
+  "categoria": "condominios",
+  "data": "2026-11-13",
+  "atualizado": "2026-11-13",
+  "fonte_tabela": "tabela e pool de vendas Kaaba sem data, recebidos em nov/2026",
+  "title": "Jardim Siena Indaiatuba | lotes desde R$ 300 mil · nov/2026",
+  "description": "Jardim Siena, condomínio fechado da Kaaba em Itaici, Indaiatuba: 77 lotes de 250 a 607,94 m², desde R$ 300 mil (R$ 1.200/m², tabela recebida em nov/2026).",
+  "keywords": "jardim siena indaiatuba, condominio jardim siena, jardim siena itaici, kaaba empreendimentos, lote 250 m2 indaiatuba, condominio fechado itaici, lotes itaici indaiatuba, condominio fechado indaiatuba",
+  "schema_tipo": "RealEstateListing",
+  "schema_desc": "Condomínio fechado da Kaaba Empreendimentos na Rua Avelino Marqui, em Itaici, Indaiatuba/SP, com 77 lotes de 250,00 a 607,94 m² em 4 quadras, portaria automatizada, salão de festas, playground e espaço pet; o projeto urbanístico lista 14.493,82 m² de áreas verdes públicas. Segundo a loteadora, as obras estão 100% entregues e os lotes, liberados para construção. Na tabela e no pool de vendas da Kaaba recebidos em novembro/2026, sem data impressa, o m² custa R$ 1.200.",
+  "endereco_schema": "Rua Avelino Marqui, Itaici",
+  "geo": [
+    -23.106689,
+    -47.18523
+  ],
+  "mapa": {
+    "rota": "-23.106689,-47.185230",
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1319.7359461056067!2d-47.185230161725606!3d-23.1066894809067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf4bf72a9c798b%3A0x7052b4704aee7001!2sCondom%C3%ADnio%20Jardim%20Siena!5e1!3m2!1spt-BR!2sbr!4v1794584022454!5m2!1spt-BR!2sbr"
+  },
+  "preco_min": 300000.0,
+  "preco_max": 531348.0,
+  "offer_count": 24,
+  "oferta_desc": "O pool de vendas da Kaaba (sem data, recebido em nov/2026) lista 24 lotes disponíveis, de R$ 300.000,00 (250,00 m²) a R$ 531.348,00 (442,79 m²), pela tabela Kaaba recebida em novembro/2026, sem data impressa, a R$ 1.200 por m². Entrada de 15% ou de 30% e saldo em 12, 24, 36 ou 48 parcelas; a planilha traz também 60 parcelas com entrada de 15%, prazo a confirmar com a Kaaba. A planilha não informa juros nem índice de correção.",
+  "produto_nome": "Jardim Siena — lotes de 250 a 607,94 m² em Indaiatuba",
+  "produto_desc": "Lotes no condomínio fechado Jardim Siena, da Kaaba Empreendimentos, em Itaici, Indaiatuba/SP: de 250,00 a 607,94 m², a R$ 1.200 por m² na tabela Kaaba recebida em novembro/2026, sem data impressa.",
+  "marca": "Kaaba Empreendimentos",
+  "marca_topo": [
+    "JARDIM SIENA",
+    "Indaiatuba"
+  ],
+  "lazer": [
+    "Portaria automatizada",
+    "Salão de festas",
+    "Playground",
+    "Espaço pet"
+  ],
+  "wa_flutuante": "Olá! Tenho interesse no Jardim Siena em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Jardim Siena com quadra, metragem e valor.",
+  "hero": {
+    "eyebrow": "Condomínio fechado · Itaici · Indaiatuba/SP",
+    "sub": "Condomínio fechado com lotes a partir de 250 m² em Indaiatuba · Itaici",
+    "lead": "Condomínio fechado da Kaaba Empreendimentos na Rua Avelino Marqui, em Itaici, com 77 lotes de 250,00 a 607,94 m². Na tabela e no pool de vendas da Kaaba recebidos em novembro/2026, sem data impressa, o m² custa R$ 1.200, e o pool lista 24 lotes disponíveis, a partir de R$ 300.000. Segundo a loteadora, as obras estão 100% entregues e os lotes, liberados para construção.",
+    "preco": "A partir de R$ 300.000,00",
+    "preco_nota": "lote de 250,00 m² · R$ 1.200/m² · tabela Kaaba recebida em nov/2026, sem data impressa",
+    "cta_msg": "Olá! Quero a tabela de lotes do Jardim Siena com quadra, metragem e valor.",
+    "cta_texto": "Pedir a tabela",
+    "cta2": {
+      "msg": "Olá! Quero agendar uma visita ao Jardim Siena.",
+      "texto": "Agendar visita"
+    },
+    "credito": "Portaria do Jardim Siena · foto da apresentação da Kaaba de ago/2024"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "77 lotes em 4 quadras, em Itaici",
+      "paragrafos": [
+        "O Jardim Siena é um condomínio fechado da Kaaba Empreendimentos na Rua Avelino Marqui, em Itaici, Indaiatuba. Pelo projeto urbanístico, são 77 lotes em 4 quadras (16 na quadra A, 30 na B, 11 na C e 20 na D), de 250,00 a 607,94 m².",
+        "Na apresentação da Kaaba de agosto/2024, o empreendimento aparece como “100% entregue” e “liberado para construção”; o pool de vendas repete a segunda frase. O folheto da loteadora cita portaria automatizada, e as fotos do material mostram ruas asfaltadas com guia e sarjeta, iluminação pública e sinalização.",
+        "O projeto urbanístico lista como áreas públicas 14.493,82 m² de áreas verdes (duas áreas, de 2.665,35 m² e 11.828,47 m²), um sistema de lazer de 254,80 m² e uma área institucional de 2.466,59 m², destinada a equipamentos comunitários."
+      ],
+      "numeros": [
+        {
+          "n": "77",
+          "p": "lotes em 4 quadras, pelo projeto urbanístico"
+        },
+        {
+          "n": "250 m²",
+          "p": "área do menor lote; 26 dos 77 têm essa medida"
+        },
+        {
+          "n": "R$ 1.200",
+          "p": "por m² na tabela e no pool da Kaaba recebidos em nov/2026"
+        },
+        {
+          "n": "14.493,82",
+          "p": "m² de áreas verdes públicas no projeto urbanístico"
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "id": "lotes",
+      "label": "Os lotes",
+      "classe": "cream",
+      "h2": "De 250,00 a 607,94 m², a R$ 1.200 o metro quadrado",
+      "paragrafos": [
+        "A tabela Kaaba recebida em novembro/2026 cobra R$ 1.200 por m² nos 77 lotes, então o valor depende só da área; o pool de vendas repete esse valor do m². Nenhum dos dois arquivos traz data impressa. O pool, recebido em novembro/2026, lista 31 lotes: 24 disponíveis, 3 reservados e 4 marcados como “venda à vista”, situação que o arquivo não explica. Os outros 46 lotes não aparecem no pool, e o arquivo não informa a situação deles.",
+        "Pelo projeto urbanístico, os lotes D13 a D20 são de uso misto (residencial e comercial) e os demais, de uso residencial; no pool, D13, D15, D16, D17 e D18 aparecem marcados como comerciais. O C02 aparece no pool com viela sanitária."
+      ],
+      "tabela": {
+        "legenda": "Lotes por faixa de área: projeto urbanístico (77 lotes) e pool de vendas da Kaaba, sem data, recebido em nov/2026.",
+        "cab": [
+          "Faixa de área",
+          "Lotes no projeto",
+          "Disponíveis no pool"
+        ],
+        "num": [
+          1,
+          2
+        ],
+        "linhas": [
+          [
+            "250,00 m²",
+            "26",
+            "2"
+          ],
+          [
+            "mais de 250 e menos de 300 m²",
+            "21",
+            "10"
+          ],
+          [
+            "de 300 a 399,99 m²",
+            "25",
+            "11"
+          ],
+          [
+            "de 400 a 499,99 m²",
+            "3",
+            "1"
+          ],
+          [
+            "500 m² ou mais",
+            "2",
+            "0"
+          ]
+        ]
+      },
+      "cards": [
+        {
+          "t": "Lotes de uso misto",
+          "p": "Pelo projeto urbanístico, os lotes D13 a D20 são de uso misto (residencial e comercial) e os demais, de uso residencial. O pool marca D13, D15, D16, D17 e D18 como comerciais. Recuos, gabarito e o que cada uso permite não constam do material."
+        },
+        {
+          "t": "Viela sanitária",
+          "p": "O C02 aparece no pool com a marcação de viela sanitária. O material não diz se outros lotes têm viela; pergunte no atendimento."
+        },
+        {
+          "t": "Regras de construção",
+          "p": "Recuos, taxa de ocupação e gabarito não constam do material recebido. Peça o regulamento antes de fechar."
+        },
+        {
+          "t": "Taxa mensal",
+          "p": "O material não informa associação nem o valor de uma taxa mensal. Confirme no atendimento."
+        },
+        {
+          "t": "Registro do loteamento",
+          "p": "O material não traz o registro do loteamento; o projeto urbanístico de jan/2019 cita só a matrícula 120.285 da gleba, e o campo de aprovação da via recebida está em branco. Peça a certidão de matrícula atualizada."
+        },
+        {
+          "t": "Água, esgoto e energia",
+          "p": "As ligações não são citadas em texto no material da Kaaba. Confirme no atendimento antes de planejar a obra."
+        }
+      ],
+      "tabela2_titulo": "Os 24 lotes que o pool (recebido em nov/2026) lista como disponíveis",
+      "tabela2_paragrafos": [
+        "Valores da tabela Kaaba recebida em nov/2026, a R$ 1.200 por m²; situação conforme o pool de vendas da Kaaba, sem data, recebido em nov/2026. O próprio pool pede para consultar a disponibilidade do lote escolhido: confirmamos com a loteadora antes de qualquer proposta."
+      ],
+      "tabela2": {
+        "cab": [
+          "Lote",
+          "Área",
+          "Valor de tabela",
+          "Observação no pool"
+        ],
+        "num": [
+          1,
+          2
+        ],
+        "linhas": [
+          [
+            "B07",
+            "250,00 m²",
+            "R$ 300.000,00",
+            "—"
+          ],
+          [
+            "B13",
+            "250,00 m²",
+            "R$ 300.000,00",
+            "—"
+          ],
+          [
+            "D13",
+            "260,38 m²",
+            "R$ 312.456,00",
+            "uso misto no projeto; “comercial” no pool"
+          ],
+          [
+            "A12",
+            "261,31 m²",
+            "R$ 313.572,00",
+            "—"
+          ],
+          [
+            "D15",
+            "263,93 m²",
+            "R$ 316.716,00",
+            "uso misto no projeto; “comercial” no pool"
+          ],
+          [
+            "A11",
+            "264,25 m²",
+            "R$ 317.100,00",
+            "—"
+          ],
+          [
+            "A10",
+            "265,63 m²",
+            "R$ 318.756,00",
+            "—"
+          ],
+          [
+            "A05",
+            "268,10 m²",
+            "R$ 321.720,00",
+            "—"
+          ],
+          [
+            "A06",
+            "268,98 m²",
+            "R$ 322.776,00",
+            "—"
+          ],
+          [
+            "C02",
+            "273,19 m²",
+            "R$ 327.828,00",
+            "marcado com viela sanitária"
+          ],
+          [
+            "D16",
+            "294,08 m²",
+            "R$ 352.896,00",
+            "uso misto no projeto; “comercial” no pool"
+          ],
+          [
+            "B28",
+            "298,31 m²",
+            "R$ 357.972,00",
+            "—"
+          ],
+          [
+            "D04",
+            "303,54 m²",
+            "R$ 364.248,00",
+            "—"
+          ],
+          [
+            "D03",
+            "304,00 m²",
+            "R$ 364.800,00",
+            "—"
+          ],
+          [
+            "D02",
+            "306,53 m²",
+            "R$ 367.836,00",
+            "—"
+          ],
+          [
+            "D17",
+            "324,73 m²",
+            "R$ 389.676,00",
+            "uso misto no projeto; “comercial” no pool"
+          ],
+          [
+            "D09",
+            "333,25 m²",
+            "R$ 399.900,00",
+            "—"
+          ],
+          [
+            "C09",
+            "337,67 m²",
+            "R$ 405.204,00",
+            "—"
+          ],
+          [
+            "D18",
+            "355,86 m²",
+            "R$ 427.032,00",
+            "uso misto no projeto; “comercial” no pool"
+          ],
+          [
+            "A02",
+            "359,42 m²",
+            "R$ 431.304,00",
+            "—"
+          ],
+          [
+            "C05",
+            "370,00 m²",
+            "R$ 444.000,00",
+            "—"
+          ],
+          [
+            "C06",
+            "370,00 m²",
+            "R$ 444.000,00",
+            "—"
+          ],
+          [
+            "A01",
+            "387,47 m²",
+            "R$ 464.964,00",
+            "—"
+          ],
+          [
+            "C10",
+            "442,79 m²",
+            "R$ 531.348,00",
+            "—"
+          ]
+        ]
+      },
+      "figuras": [
+        {
+          "classe": "duo",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "implantacao.jpg",
+              "alt": "Desenho da implantação do Jardim Siena com as quadras A, B, C e D e as áreas verdes",
+              "w": 1600,
+              "h": 980,
+              "leg": "Implantação das quadras A a D (imagem ilustrativa, desenho da apresentação da Kaaba)"
+            },
+            {
+              "arq": "rua-lotes.jpg",
+              "alt": "Rua asfaltada do Jardim Siena com lotes vazios e postes de iluminação",
+              "w": 1280,
+              "h": 960,
+              "leg": "Rua interna com lotes ainda vazios (foto da apresentação da Kaaba, ago/2024)"
+            }
+          ]
+        }
+      ],
+      "depois": "lazer"
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "Entrada de 15% ou de 30% e saldo em 12, 24, 36 ou 48 parcelas",
+      "paragrafos": [
+        "A tabela Kaaba recebida em novembro/2026 tem duas versões, sem data impressa. Com entrada de 15% ou de 30%, o saldo aparece dividido em 12, 24, 36 ou 48 parcelas. A versão de 15% traz também uma coluna de 60 parcelas, mas a mesma planilha tem colunas recolhidas de 60 a 120 meses com cálculo de juros e sem a taxa; por isso o prazo de 60 meses é confirmado com a Kaaba. O folheto fala em financiamento direto com a empreendedora.",
+        "Os valores de parcela são os da planilha da Kaaba, que não informa juros nem índice de correção; isso não quer dizer que a parcela seja fixa. Antes de qualquer proposta, confirmamos com a Kaaba o valor do m², se há juros e correção e a partir de quando."
+      ],
+      "tabela": {
+        "legenda": "Exemplo com o lote B07 (ou o B13), de 250,00 m² e R$ 300.000,00, na tabela Kaaba recebida em nov/2026. Saldo de R$ 255.000,00 com entrada de 15% e de R$ 210.000,00 com entrada de 30%. A linha de 60 parcelas é confirmada com a Kaaba.",
+        "cab": [
+          "Parcelas do saldo",
+          "Com entrada de 15% (R$ 45.000,00)",
+          "Com entrada de 30% (R$ 90.000,00)"
+        ],
+        "num": [
+          1,
+          2
+        ],
+        "linhas": [
+          [
+            "12 parcelas",
+            "R$ 21.250,00",
+            "R$ 17.500,00"
+          ],
+          [
+            "24 parcelas",
+            "R$ 10.625,00",
+            "R$ 8.750,00"
+          ],
+          [
+            "36 parcelas",
+            "R$ 7.083,33",
+            "R$ 5.833,33"
+          ],
+          [
+            "48 parcelas",
+            "R$ 5.312,50",
+            "R$ 4.375,00"
+          ],
+          [
+            "60 parcelas",
+            "R$ 4.250,00 (a confirmar)",
+            "sem valor na planilha"
+          ]
+        ]
+      },
+      "notas": [
+        "Desconto para pagamento à vista não consta do material. Os valores podem mudar sem aviso; confirmamos com a Kaaba o preço e a disponibilidade do lote escolhido antes de qualquer proposta."
+      ],
+      "cta": {
+        "msg": "Olá! Quero simular o pagamento de um lote do Jardim Siena.",
+        "texto": "Simular o pagamento"
+      }
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Rua Avelino Marqui, em Itaici",
+      "paragrafos": [
+        "O Jardim Siena fica na Rua Avelino Marqui, em Itaici, Indaiatuba; o número não consta do material. No mapa ilustrado da apresentação, o acesso é pela Av. Coronel Antônio Estanislau do Amaral, seguindo pela Rua Joaquim Pedroso Alvarenga até a Rua Avelino Marqui.",
+        "Segundo o folheto da Kaaba, o condomínio fica a 5 km do centro de Indaiatuba, perto de residenciais fechados, mercados, padarias, postos de combustível, farmácias, restaurantes, bares, escolas e UBS. O mapa abaixo mostra o ponto cadastrado no Google como Condomínio Jardim Siena."
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Fotos",
+    "h2": "O condomínio nas fotos da Kaaba",
+    "aviso": "Fotos da apresentação da Kaaba de ago/2024, recortadas para tirar os logos; o folheto da loteadora avisa que suas imagens são meramente ilustrativas. Móveis e equipamentos que aparecem nas fotos não constam em texto como itens entregues.",
+    "itens": [
+      {
+        "arq": "portaria.jpg",
+        "alt": "Portaria do Jardim Siena com cancelas, portão e a placa do condomínio",
+        "w": 1280,
+        "h": 960,
+        "leg": "Portaria com cancelas e portão"
+      },
+      {
+        "arq": "salao-festas.jpg",
+        "alt": "Salão de festas do Jardim Siena visto da rua interna",
+        "w": 1280,
+        "h": 960,
+        "leg": "Salão de festas visto da rua"
+      },
+      {
+        "arq": "pergolado.jpg",
+        "alt": "Pergolado de madeira ao lado do salão de festas do Jardim Siena",
+        "w": 1280,
+        "h": 960,
+        "leg": "Pergolado ao lado do salão"
+      },
+      {
+        "arq": "salao-interno.jpg",
+        "alt": "Salão de festas do Jardim Siena por dentro, com mesas redondas e janelas",
+        "w": 1280,
+        "h": 960,
+        "leg": "Salão de festas por dentro"
+      },
+      {
+        "arq": "salao-bancada.jpg",
+        "alt": "Salão de festas do Jardim Siena com mesas e a bancada ao fundo",
+        "w": 1280,
+        "h": 960,
+        "leg": "Salão com a bancada ao fundo"
+      },
+      {
+        "arq": "cozinha.jpg",
+        "alt": "Churrasqueira, bancada com cooktop e geladeira no salão de festas do Jardim Siena",
+        "w": 1280,
+        "h": 960,
+        "leg": "Churrasqueira e bancada no salão"
+      },
+      {
+        "arq": "playground.jpg",
+        "alt": "Playground no gramado do Jardim Siena, com escorregador e balanço",
+        "w": 1280,
+        "h": 960,
+        "leg": "Playground no gramado"
+      },
+      {
+        "arq": "playground-areia.jpg",
+        "alt": "Playground de areia do Jardim Siena, com escorregador e gangorras",
+        "w": 1280,
+        "h": 960,
+        "leg": "Playground de areia"
+      },
+      {
+        "arq": "espaco-pet.jpg",
+        "alt": "Espaço pet do Jardim Siena, com rampa, pneu e troncos",
+        "w": 1280,
+        "h": 960,
+        "leg": "Espaço pet"
+      },
+      {
+        "arq": "rua-mata.jpg",
+        "alt": "Rua interna do Jardim Siena com a mata ao fundo",
+        "w": 1280,
+        "h": 960,
+        "leg": "Rua interna com a mata ao fundo"
+      },
+      {
+        "arq": "cruzamento.jpg",
+        "alt": "Cruzamento de ruas asfaltadas e sinalizadas dentro do Jardim Siena",
+        "w": 1280,
+        "h": 960,
+        "leg": "Cruzamento com sinalização"
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Salão de festas, playground e espaço pet",
+    "intro": "Os quatro primeiros itens estão em texto na apresentação e no folheto da Kaaba; os outros aparecem nas fotos do material.",
+    "itens": [
+      "Portaria automatizada",
+      "Salão de festas",
+      "Playground",
+      "Espaço pet",
+      "Pergolado ao lado do salão (nas fotos)",
+      "Churrasqueira e bancada com cooktop no salão (nas fotos)",
+      "Playground no gramado e na areia (nas fotos)"
+    ],
+    "nota": "O que aparece só nas fotos não consta em texto como item entregue. As áreas verdes e o sistema de lazer do projeto urbanístico são áreas públicas (veja “O empreendimento”). Associação e taxa mensal não constam do material recebido; confirme no atendimento."
+  },
+  "ficha": [
+    [
+      "Realização",
+      "Kaaba Empreendimentos"
+    ],
+    [
+      "Tipo",
+      "Condomínio fechado, como a loteadora o apresenta; o projeto urbanístico (jan/2019) é de loteamento, com ruas e áreas verdes públicas; o fechamento não é documentado no material; confirme no atendimento"
+    ],
+    [
+      "Endereço",
+      "Rua Avelino Marqui, Itaici, Indaiatuba/SP (número não informado no material)"
+    ],
+    [
+      "Lotes no projeto",
+      "77, em 4 quadras: A (16), B (30), C (11) e D (20)"
+    ],
+    [
+      "Área dos lotes",
+      "de 250,00 a 607,94 m²; 26 lotes com 250 m²"
+    ],
+    [
+      "Valor do m²",
+      "R$ 1.200, igual em toda a tabela; o pool de vendas repete o valor (tabela e pool recebidos em nov/2026, sem data impressa)"
+    ],
+    [
+      "A partir de",
+      "R$ 300.000,00, lote de 250,00 m² (B07 ou B13)"
+    ],
+    [
+      "Disponibilidade",
+      "o pool de vendas da Kaaba, sem data, recebido em nov/2026, lista 24 lotes disponíveis, 3 reservados e 4 como “venda à vista”"
+    ],
+    [
+      "Uso misto",
+      "D13 a D20 (residencial e comercial), pelo projeto urbanístico; no pool, D13 e D15 a D18 aparecem como comerciais"
+    ],
+    [
+      "Pagamento",
+      "entrada de 15% ou de 30% e saldo em 12, 24, 36 ou 48 parcelas; 60 parcelas (com entrada de 15%) a confirmar; juros e correção não informados na planilha; confirme no atendimento"
+    ],
+    [
+      "Áreas verdes",
+      "14.493,82 m², áreas públicas pelo projeto urbanístico"
+    ],
+    [
+      "Lazer",
+      "portaria automatizada, salão de festas, playground e espaço pet"
+    ],
+    [
+      "Obras",
+      "“100% entregue” e “liberado para construção”, segundo a Kaaba"
+    ],
+    [
+      "Água, esgoto e energia",
+      "não informado no material; confirme no atendimento"
+    ],
+    [
+      "Registro do loteamento",
+      "não informado no material; o projeto urbanístico (jan/2019) cita a matrícula 120.285 da gleba no Cartório de Registro de Imóveis de Indaiatuba, e o campo de aprovação da via recebida está em branco; peça a certidão atualizada"
+    ],
+    [
+      "Associação e taxa mensal",
+      "não informado no material; confirme no atendimento"
+    ],
+    [
+      "Regras de construção",
+      "não informado no material; confirme no atendimento"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um lote no Jardim Siena?",
+      "a": "Na tabela Kaaba recebida em novembro/2026, o metro quadrado custa R$ 1.200 em todos os lotes; o pool de vendas repete o valor. O menor lote que o pool lista como disponível, de 250,00 m² (B07 ou B13), sai por R$ 300.000,00; o maior disponível no pool, o C10, de 442,79 m², por R$ 531.348,00. Nem a tabela nem o pool têm data impressa: confirme o valor no atendimento."
+    },
+    {
+      "q": "Como funciona o pagamento do lote?",
+      "a": "Pela planilha da Kaaba, há entrada de 15% ou de 30% com saldo em 12, 24, 36 ou 48 parcelas; a versão de 15% traz também 60 parcelas, prazo que confirmamos com a Kaaba. No lote de R$ 300.000,00, a entrada de 15% é de R$ 45.000,00 e o saldo fica em 48 parcelas de R$ 5.312,50 na planilha. A planilha não informa juros nem índice de correção, o que não quer dizer que a parcela seja fixa: antes de qualquer proposta, confirmamos com a Kaaba se há juros e correção e a partir de quando."
+    },
+    {
+      "q": "Quantos lotes ainda estão disponíveis?",
+      "a": "O pool de vendas da Kaaba, sem data e recebido em novembro/2026, lista 24 lotes disponíveis, 3 reservados e 4 marcados como “venda à vista”, num total de 31 dos 77 lotes do projeto. Os outros 46 não aparecem no pool, e o arquivo não diz a situação deles. O próprio pool pede para consultar a disponibilidade do lote escolhido."
+    },
+    {
+      "q": "Qual o tamanho dos lotes do Jardim Siena?",
+      "a": "De 250,00 a 607,94 m². Pelo projeto urbanístico, 26 dos 77 lotes têm 250 m², 21 têm mais de 250 e menos de 300 m², 25 ficam entre 300 e 400 m², 3 entre 400 e 500 m² e 2 passam de 500 m²; o maior é o C11, de 607,94 m²."
+    },
+    {
+      "q": "O Jardim Siena é um condomínio fechado?",
+      "a": "É assim que a Kaaba o apresenta: o mapa da apresentação o chama de Condomínio Jardim Siena e o folheto cita portaria automatizada. O projeto urbanístico de jan/2019 é de loteamento (parcelamento do solo): ruas, área institucional, áreas verdes e sistema de lazer aparecem como áreas públicas. O material não traz a autorização de fechamento (loteamento de acesso controlado) nem informa associação ou taxa mensal. Peça a documentação no atendimento antes de decidir."
+    },
+    {
+      "q": "O loteamento tem registro em cartório?",
+      "a": "O material que recebemos não traz o número de registro do loteamento nem a aprovação municipal: na via do projeto urbanístico, de janeiro de 2019, o campo de aprovação está em branco. O projeto cita a matrícula 120.285 do Cartório de Registro de Imóveis de Indaiatuba, que é a matrícula da gleba. Antes de assinar, peça a certidão de matrícula atualizada."
+    },
+    {
+      "q": "O que o Jardim Siena tem de lazer e de infraestrutura?",
+      "a": "A apresentação da Kaaba lista salão de festas, playground e espaço pet, e o folheto cita portaria automatizada; nas fotos, o salão tem churrasqueira e bancada com cooktop. Segundo a loteadora, as obras estão 100% entregues e os lotes, liberados para construção; as fotos do material mostram ruas asfaltadas, iluminação pública e sinalização. Água, esgoto e energia não são citados em texto no material."
+    },
+    {
+      "q": "Onde fica o Jardim Siena?",
+      "a": "Na Rua Avelino Marqui, em Itaici, Indaiatuba/SP. O folheto da Kaaba informa que o condomínio fica a 5 km do centro da cidade; pelo mapa da apresentação, o acesso é pela Av. Coronel Antônio Estanislau do Amaral e pela Rua Joaquim Pedroso Alvarenga."
+    }
+  ],
+  "cta": {
+    "h2": "Quer a tabela do Jardim Siena?",
+    "p": "Mandamos a tabela Kaaba com a área e o valor de cada lote, confirmamos com a loteadora quais seguem disponíveis e simulamos o pagamento com entrada de 15% ou de 30%.",
+    "msg": "Olá! Quero a tabela de lotes do Jardim Siena com quadra, metragem e valor.",
+    "texto": "Pedir a tabela",
+    "visita": {
+      "msg": "Olá! Quero agendar uma visita ao Jardim Siena.",
+      "texto": "Agendar visita"
+    }
+  },
+  "rodape": {
+    "marca": "JARDIM SIENA",
+    "linha": "Jardim Siena · condomínio fechado com 77 lotes de 250 a 607,94 m² · Itaici, Indaiatuba, SP",
+    "realizacao": "Realização Kaaba Empreendimentos",
+    "legal": "Fotos da apresentação da Kaaba Empreendimentos de ago/2024, recortadas para tirar os logos; a implantação é um desenho ilustrativo, e o folheto da loteadora avisa que suas imagens são meramente ilustrativas. Preços e condições conforme a tabela Kaaba recebida em novembro/2026, sem data impressa, a R$ 1.200 por m², sujeitos a alteração sem aviso prévio; a planilha não informa juros nem índice de correção, e o prazo de 60 parcelas é confirmado com a Kaaba. A disponibilidade segue o pool de vendas da Kaaba, sem data, recebido em novembro/2026, e é confirmada com a loteadora a cada proposta. O material recebido não traz o registro do loteamento; peça a certidão de matrícula atualizada antes de assinar."
+  },
+  "home": {
+    "tipo": "lote",
+    "preco": 300000,
+    "lote": "fechado",
+    "status": "pronto",
+    "constr": "Kaaba",
+    "pm2": "1200",
+    "badge": "Condomínio fechado · Itaici",
+    "meta": "Lotes de 250 a 607,94 m² · 15% ou 30% + até 48x",
+    "desc": "Condomínio fechado da Kaaba em Itaici · 77 lotes; o pool de vendas recebido em nov/2026 lista 24 disponíveis · R$ 1.200/m² · entrada de 15% ou 30% e saldo em até 48x (60x a confirmar).",
+    "alt": "Portaria do Jardim Siena, em Itaici, Indaiatuba",
+    "itemlist": "Jardim Siena — condomínio fechado da Kaaba em Itaici, Indaiatuba, 77 lotes de 250 a 607,94 m² · a partir de R$ 300.000 (tabela recebida em nov/2026)"
+  },
+  "llms": {
+    "secao": "condominios",
+    "linha": "Condomínio fechado da Kaaba Empreendimentos na Rua Avelino Marqui, em Itaici, com 77 lotes de 250,00 a 607,94 m² em 4 quadras; pelo projeto urbanístico (jan/2019), de loteamento, os lotes D13 a D20 são de uso misto e as ruas, as áreas verdes (14.493,82 m²) e o sistema de lazer são áreas públicas. Portaria automatizada, salão de festas, playground e espaço pet; segundo a loteadora, obras 100% entregues e lotes liberados para construção. Tabela e pool de vendas Kaaba recebidos em nov/2026, sem data impressa: R$ 1.200/m², de R$ 300.000,00 (250,00 m²) a R$ 729.528,00 (607,94 m²); o pool lista 24 lotes disponíveis, até R$ 531.348,00. Entrada de 15% ou 30% e saldo em 12, 24, 36 ou 48 parcelas (60, com entrada de 15%, a confirmar); a planilha não informa juros nem correção. Registro do loteamento não informado no material; o folheto situa o condomínio a 5 km do centro de Indaiatuba."
+  }
+}

@@ -4,7 +4,9 @@ const OUT = require('path').join(__dirname, 'folheto-lancamentos.html');   // ra
 // Campos: n nome · c construtora · p preço "a partir de" (null = sob consulta) ·
 // m2 área em m² da MENOR unidade com preço (nos lotes, o menor lote) — só quando a
 // landing diz qual unidade tem o menor preço · tab mês da tabela de origem (AAAA-MM),
-// só quando a landing informa a data · est unidades disponíveis na data da fonte ·
+// só quando a landing informa a data · tabRec true quando a tabela não traz data impressa:
+// aí tab é o mês em que a tabela sem data impressa foi recebida, e todo texto que cita o mês
+// diz "tabela recebida em <mês>", nunca "tabela de <mês>" · est unidades disponíveis na data da fonte ·
 // estEm data da contagem de est (dd/mm/aaaa; mmm/aaaa quando a fonte só traz o mês):
 // todo est leva estEm, e selo de "últimas N" só sai com essa data ·
 // prox situação de quem ainda não tem tabela definitiva (com data ou "não divulgada") ·
@@ -77,7 +79,14 @@ const APTOS = [
 // ItemList da home dizer só "condomínio fechado", sem o "de lotes" do CC art. 1.358-A). Jardim Dona Maria
 // Cândida e Residencial Vila Fahl passaram a 'Cond. fechado' em 17/10/2026, por confirmação do Fabio, com
 // "Condomínio fechado ·" no s: o rótulo é da comercialização; o regime não foi lido em decreto nem matrícula.
+// Os 4 da Kaaba (13/11/2026) levam "Condomínio fechado ·" no s pelo mesmo motivo: nenhum documento recebido
+// diz "condomínio de lotes" e o decreto não veio, então o ItemList não pode dizer "de lotes". Estão sem est/estEm: o pool da
+// Kaaba lista só parte dos lotes e não explica a marca "venda à vista", então não há total para o selo.
 const LOTES = [
+  { n:'Jardim Siena', c:'Kaaba', p:300000, m2:250, tab:'2026-11', tabRec:true, img:'jardim-siena-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Itaici · 77 lotes de 250 a 607,94 m² · R$ 1.200/m²', t:'Cond. fechado', slug:'jardim-siena-indaiatuba' },
+  { n:'Jardim Residencial Belle Vista', c:'Kaaba', p:360000, m2:300, tab:'2026-11', tabRec:true, img:'jardim-belle-vista-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Mato Dentro · 18 lotes disponíveis no pool da Kaaba (27/10/2026) · até 36x', t:'Cond. fechado', slug:'jardim-belle-vista-indaiatuba' },
+  { n:'Reserva da Colina', c:'Kaaba', p:400500, m2:300, tab:'2026-11', tabRec:true, img:'reserva-da-colina-indaiatuba/images/hero.jpg', s:'Condomínio fechado · 123 lotes a partir de 300 m² · portaria e muro · 33 disponíveis no pool da Kaaba (26/10/2026)', t:'Cond. fechado', slug:'reserva-da-colina-indaiatuba' },
+  { n:'Terras de Obwalden', c:'Kaaba', p:435000, m2:300, tab:'2026-11', tabRec:true, img:'terras-de-obwalden-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Bela Vista · 239 lotes de 300 a 479 m² · portaria · 54 disponíveis (pool Kaaba, 26/10/2026)', t:'Cond. fechado', slug:'terras-de-obwalden-indaiatuba' },
   { n:'Jardim Dona Maria Cândida', c:'Asseplan Narezzi', p:600000, m2:300, tab:'2025-07', conf:'2026-10', img:'maria-candida-indaiatuba/images/portaria-card.jpg',
     s:'Condomínio fechado · obras concluídas · 166 lotes disponíveis (16/10/2026)', t:'Cond. fechado', est:166, estEm:'16/10/2026', slug:'maria-candida-indaiatuba' },
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, tab:'2026-10', img:'monte-carmelo-indaiatuba/images/hero2.jpg',
@@ -98,7 +107,7 @@ const LOTES = [
     s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:180, estEm:'09/10/2026', slug:'residencial-ravello-indaiatuba' },
   { n:'Ville de Provence', c:'Urban Square', p:637200, m2:360, tab:'2026-10', img:'ville-de-provence-indaiatuba/images/hero.jpg',
     s:'Loteamento fechado · 307 lotes de 360 a 617 m² · sinal de 10% e saldo em até 96x', t:'Cond. fechado', est:307, estEm:'03/10/2026', slug:'ville-de-provence-indaiatuba' },
-  { n:'Alphaville Indaiatuba', c:'Alphaville', p:908480, m2:511.5, tab:'2026-10', img:'alphaville-indaiatuba/images/terreno.jpg', s:'Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias', t:'Cond. fechado', est:126, estEm:'07/10/2026', slug:'alphaville-indaiatuba' },
+  { n:'Alphaville Indaiatuba', c:'Alphaville', p:908480, m2:511.5, tab:'2026-10', conf:'2026-11', img:'alphaville-indaiatuba/images/terreno.jpg', s:'Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias', t:'Cond. fechado', est:126, estEm:'07/10/2026', slug:'alphaville-indaiatuba' },
   { n:'Lagos de Helvetia', c:'GPCI', p:901800, m2:501, tab:'2026-10', img:'lagos-de-helvetia-indaiatuba/images/hero.jpg', s:'Helvetia · 36 lotes de 501 a 2.015 m² · lago e clube', t:'Cond. fechado', slug:'lagos-de-helvetia-indaiatuba' },
   { n:'Porteira de Ferro', c:'GPCI', p:1300000, m2:520, tab:'2026-09', conf:'2026-10', img:'porteira-de-ferro-indaiatuba/images/hero.jpg', s:'Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m²', t:'Cond. fechado', slug:'porteira-de-ferro-indaiatuba' },
 ];

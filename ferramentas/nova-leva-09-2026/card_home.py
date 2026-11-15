@@ -7,9 +7,10 @@ Idempotente: se o card já existir, não faz nada.
 O card entra antes do primeiro card de preço maior (ou no fim da grade de cards, se preco for null).
 """
 import json, re, sys
+import os
 from urllib.parse import quote
 sys.stdout.reconfigure(encoding='utf-8')
-P = 'C:/Users/Usuario/Desktop/landing-page/index.html'
+P = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))).replace(os.sep, '/') + '/' + 'index.html'   # o da raiz do site onde este script esta
 BASE = 'https://lancamentos.imoveisvivamerica.com.br/'
 c = json.load(open(sys.argv[1], encoding='utf-8'))
 slug, h = c['slug'], c['home']

@@ -6,8 +6,9 @@ Lê do config: "llms": {"secao": "apartamentos" | "condominios" | "loteamentos",
 Idempotente.
 """
 import json, re, sys, subprocess, datetime
+import os
 sys.stdout.reconfigure(encoding='utf-8')
-R = 'C:/Users/Usuario/Desktop/landing-page/'
+R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))).replace(os.sep, '/') + '/'   # a raiz do site onde este script esta (worktree incluido)
 BASE = 'https://lancamentos.imoveisvivamerica.com.br/'
 HOJE = datetime.date.today().isoformat()
 c = json.load(open(sys.argv[1], encoding='utf-8'))

@@ -350,6 +350,62 @@
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
   {
+    "nome": "Jardim Siena",
+    "tipo": "lote",
+    "incorporadora": "Kaaba",
+    "preco_a_partir_de": 300000,
+    "m2_menor_unidade": 250,
+    "preco_m2": 1200,
+    "mes_tabela": "2026-11",
+    "estoque": null,
+    "data_estoque": null,
+    "spec": "Condomínio fechado · Itaici · 77 lotes de 250 a 607,94 m² · R$ 1.200/m²",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/jardim-siena-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, sem data impressa, recebida em novembro/2026"
+  },
+  {
+    "nome": "Jardim Residencial Belle Vista",
+    "tipo": "lote",
+    "incorporadora": "Kaaba",
+    "preco_a_partir_de": 360000,
+    "m2_menor_unidade": 300,
+    "preco_m2": 1200,
+    "mes_tabela": "2026-11",
+    "estoque": null,
+    "data_estoque": null,
+    "spec": "Condomínio fechado · Mato Dentro · 18 lotes disponíveis no pool da Kaaba (27/10/2026) · até 36x",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/jardim-belle-vista-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, sem data impressa, recebida em novembro/2026"
+  },
+  {
+    "nome": "Reserva da Colina",
+    "tipo": "lote",
+    "incorporadora": "Kaaba",
+    "preco_a_partir_de": 400500,
+    "m2_menor_unidade": 300,
+    "preco_m2": 1335,
+    "mes_tabela": "2026-11",
+    "estoque": null,
+    "data_estoque": null,
+    "spec": "Condomínio fechado · 123 lotes a partir de 300 m² · portaria e muro · 33 disponíveis no pool da Kaaba (26/10/2026)",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/reserva-da-colina-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, sem data impressa, recebida em novembro/2026"
+  },
+  {
+    "nome": "Terras de Obwalden",
+    "tipo": "lote",
+    "incorporadora": "Kaaba",
+    "preco_a_partir_de": 435000,
+    "m2_menor_unidade": 300,
+    "preco_m2": 1450,
+    "mes_tabela": "2026-11",
+    "estoque": null,
+    "data_estoque": null,
+    "spec": "Condomínio fechado · Bela Vista · 239 lotes de 300 a 479 m² · portaria · 54 disponíveis (pool Kaaba, 26/10/2026)",
+    "url": "https://lancamentos.imoveisvivamerica.com.br/terras-de-obwalden-indaiatuba/",
+    "fonte": "tabela oficial da incorporadora, sem data impressa, recebida em novembro/2026"
+  },
+  {
     "nome": "Jardim Dona Maria Cândida",
     "tipo": "lote",
     "incorporadora": "Asseplan Narezzi",
@@ -501,7 +557,7 @@
     "data_estoque": "2026-10-07",
     "spec": "Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias",
     "url": "https://lancamentos.imoveisvivamerica.com.br/alphaville-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, outubro/2026, com os preços confirmados para novembro/2026"
   },
   {
     "nome": "Lagos de Helvetia",

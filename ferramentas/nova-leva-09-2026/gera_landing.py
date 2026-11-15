@@ -36,7 +36,7 @@ import json, os, re, sys, html
 from urllib.parse import quote
 
 sys.stdout.reconfigure(encoding='utf-8')
-RAIZ = 'C:/Users/Usuario/Desktop/landing-page/'
+RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))).replace(os.sep, '/') + '/'   # a raiz do site onde este script esta (worktree incluido)
 BASE = 'https://lancamentos.imoveisvivamerica.com.br/'
 WA = 'https://wa.me/5519989769457?text='
 MODELO = RAIZ + 'espaco-conceicao-indaiatuba/index.html'

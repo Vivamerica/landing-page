@@ -161,7 +161,9 @@ const waInteresse = n => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('
 const mesDe = iso => MES_ABREV[iso.slice(5, 7)] + '/' + iso.slice(0, 4);   // 2026-09 -> set/2026
 // tabela de mês anterior com os preços confirmados para um mês depois (campo conf da fonte única)
 const confTxt = e => e.conf ? ', preços confirmados para ' + mesDe(e.conf) : '';
-const tabDe = e => e.tab ? 'tabela de ' + mesDe(e.tab) + confTxt(e) : 'tabela de pré-lançamento';
+// tabela sem data impressa (campo tabRec da fonte única): tab é o mês em que foi recebida
+const tabMes = e => (e.tabRec ? 'tabela recebida em ' : 'tabela de ') + mesDe(e.tab);
+const tabDe = e => e.tab ? tabMes(e) + confTxt(e) : 'tabela de pré-lançamento';
 
 // ─── região: empreendimentos fora de Indaiatuba com página própria ───
 // Linhas do ALPHAVILLE (gera-alphaville.js) com slug, cidade diferente de Indaiatuba e sem
@@ -329,7 +331,7 @@ const itemList = JSON.stringify({
     url: 'https://lancamentos.imoveisvivamerica.com.br/' + e.slug + '/',
   })),
 });
-// "Condomínio fechado ·" no início do s = rótulo da comercialização, sem regime lido (não afirma o "de lotes")
+// "Condomínio fechado ·" no início do s = rótulo do card, sem regime lido (não afirma o "de lotes")
 function tipoLoteSchema(e) { return /^Loteamento fechado/i.test(e.s) ? 'loteamento fechado' : /^Condomínio fechado/i.test(e.s) ? 'condomínio fechado' : e.t === 'Cond. fechado' ? 'condomínio fechado de lotes' : /fechado/i.test(e.s) ? 'loteamento fechado' : 'loteamento aberto'; }
 let itemListOk = false;
 h = h.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (bloco, corpo) => {
@@ -566,9 +568,9 @@ const seloEst = e => (typeof e.est === 'number' && e.est <= 60 && e.estEm)
 // (no card, só quando as specs ainda não dizem de que tabela é o dado); a confirmação de preços
 // para um mês depois (conf) entra uma vez só, também quando as specs já trazem a data da tabela
 const tabLote = e => !e.tab ? ''
-  : !/tabela de /i.test(e.s || '') ? ' · tabela de ' + mesDe(e.tab) + confTxt(e)
+  : !/tabela (de|recebida) /i.test(e.s || '') ? ' · ' + tabMes(e) + confTxt(e)
   : (e.conf && !/confirmad/i.test(e.s || '') ? ' · preços confirmados para ' + mesDe(e.conf) : '');
-const virgTab = e => e.tab ? ', tabela de ' + mesDe(e.tab) + confTxt(e) : '';
+const virgTab = e => e.tab ? ', ' + tabMes(e) + confTxt(e) : '';
 const comTab = e => esc(e.n) + virgTab(e);
 // as specs já dizem a metragem dos lotes? então o card não repete "lotes a partir de N m²"
 // (N é o lote de menor preço, que pode não ser o menor lote do empreendimento)
@@ -662,7 +664,7 @@ const tarjaLotes = LOTES_F.filter(e => SD.comTarja(e.slug)).sort((a, b) => a.n.l
 const abertosV = tarjaLotes.filter(e => tipoLote(e) === 'Loteamento aberto');
 const fechadosV = tarjaLotes.filter(e => tipoLote(e) !== 'Loteamento aberto');
 // Hub de condomínios: todos os fechados, isto é, condomínios de lotes E loteamentos
-// fechados, cada card com o rótulo que a loteadora usa. Texto com contagem diz os
+// fechados, cada card com o rótulo de tipoLote (que não define o regime). Texto com contagem diz os
 // dois nomes ("condomínios e loteamentos fechados"); o title fica sem contagem.
 const conds = fechados;
 if (!conds.length) throw new Error('GERA-HOME: a lista "sem disponibilidade" deixou nenhum condomínio ou loteamento fechado à venda; o hub de condomínios não tem o que mostrar. Confira a lista da Central; nada foi gravado.');
@@ -695,13 +697,13 @@ const HUBS = [
     arq: 'loteamentos-em-indaiatuba/index.html',
     title: `Loteamentos em Indaiatuba: ${LOTES.length} lançamentos desde ${mil(menorLote)}`,
     desc: `Os ${LOTES.length} loteamentos e condomínios de lotes em lançamento em Indaiatuba, com preço aberto: lote desde ${mil(menorLote)}, m² de ${brl(Math.round(sL.min.p / sL.min.m2))} a ${brl(Math.round(sL.max.p / sL.max.m2))} (edição ${mesAbrev}).`,
-    h1: `Loteamentos em Indaiatuba: ${LOTES.length} com lote a partir de ${mil(menorLote)}${loteMin.tab ? ' (' + mesDe(loteMin.tab) + ')' : ''}`,
+    h1: `Loteamentos em Indaiatuba: ${LOTES.length} com lote a partir de ${mil(menorLote)}${loteMin.tab ? ' (' + (loteMin.tabRec ? 'tabela recebida em ' : '') + mesDe(loteMin.tab) + ')' : ''}`,
     grid: `
     ${gradeAbertos}
     <div class="listings-grid">${porM2(abertos).map(cardLoteamentos).join('')}${abertosV.map(cardLoteamentosV).join('')}
     </div>
     <h2 id="loteamentos-fechados">Loteamentos fechados e condomínios de lotes em Indaiatuba: ${fechados.length} com preço aberto</h2>
-    <p style="color:var(--gray);line-height:1.8;">Portaria, ruas de uso restrito e lazer interno já no preço: o m² vai de ${m2De(sF.min)} (${comTab(sF.min)}) a ${m2De(sF.max)} (${comTab(sF.max)}). O rótulo de cada card é o da comercialização (loteamento fechado ou condomínio fechado).</p>
+    <p style="color:var(--gray);line-height:1.8;">Portaria e lazer interno já entram no preço: o m² vai de ${m2De(sF.min)} (${comTab(sF.min)}) a ${m2De(sF.max)} (${comTab(sF.max)}). O que o material de cada um informa sobre portaria, lazer e regime está na página do empreendimento; o rótulo do card não define o regime jurídico.</p>
     <div class="listings-grid">${porM2(fechados).map(cardLoteamentos).join('')}${fechadosV.map(cardLoteamentosV).join('')}
     </div>
     `,

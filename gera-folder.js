@@ -106,6 +106,8 @@ const edicao = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;            // outubr
 
 const MES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 const mesDe = iso => MES[+iso.slice(5, 7) - 1] + '/' + iso.slice(0, 4);  // 2026-10 → out/2026
+// tabela sem data impressa (campo tabRec da fonte única): tab é o mês em que foi recebida
+const tabMes = e => (e.tabRec ? 'tabela recebida em ' : 'tabela ') + mesDe(e.tab);
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
 const mil = n => n % 1000 === 0 ? 'R$ ' + (n / 1000).toLocaleString('pt-BR') + ' mil' : brl(n);  // nunca arredonda preço
 const m2 = n => n.toLocaleString('pt-BR') + ' m²';
@@ -215,7 +217,7 @@ function linhaCons(e, lote) {
 }
 function ficha(e, lote) {
   const sel = selos(e, lote).map(esc).join(' · ');
-  const tab = e.tab ? 'tabela ' + mesDe(e.tab) + (e.conf ? '<sup>†</sup>' : '')
+  const tab = e.tab ? tabMes(e) + (e.conf ? '<sup>†</sup>' : '')
             : e.prox ? 'pré-lançamento<sup>*</sup>' : '';
   const pz = e.p
     ? `<p class="rot"><span>a partir de</span><span>${tab}</span></p><p class="pr">${brl(e.p)}</p>`
@@ -471,7 +473,7 @@ const p1 = `
       <div class="nums">
         <div><strong>${total}</strong><span>empreendimentos</span></div>
         <div><strong>${construtoras}</strong><span>construtoras</span></div>
-        <div><strong>${mil(menorDatado.p)}</strong><span>${LOTES.includes(menorDatado) ? 'lotes a partir de' : 'a partir de'}<br>tabela ${mesDe(menorDatado.tab)}</span></div>
+        <div><strong>${mil(menorDatado.p)}</strong><span>${LOTES.includes(menorDatado) ? 'lotes a partir de' : 'a partir de'}<br>${tabMes(menorDatado)}</span></div>
       </div>
     </div>
   </div>
@@ -789,7 +791,7 @@ process.on('SIGINT', () => { limpa(); process.exit(130); });
     const v = n => String(n).replace('.', ',');
     console.log('Folder — 214 × 152 mm (210 × 148 aberto + 2 mm de sangria), 1 dobra, fechado 105 × 148');
     console.log('  frente = p4 contracapa | p1 capa · verso = p2 ' + APTOS.length + ' apartamentos | p3 ' + LOTES.length + ' lotes e condomínios');
-    console.log('  capa: ' + total + ' empreendimentos · ' + construtoras + ' construtoras · a partir de ' + mil(menorDatado.p) + ' (' + menorDatado.n + ', tabela ' + mesDe(menorDatado.tab) + ') · edição ' + edicao);
+    console.log('  capa: ' + total + ' empreendimentos · ' + construtoras + ' construtoras · a partir de ' + mil(menorDatado.p) + ' (' + menorDatado.n + ', ' + tabMes(menorDatado) + ') · edição ' + edicao);
     console.log('  apartamentos: ' + gruposApto.map(g => (g.titulo || 'sem faixas, do menor ao maior preço') + ' ' + g.itens.length).join(' | '));
     console.log('  lotes: ' + gruposLote.map(g => (g.titulo || 'sem tipos, do menor ao maior preço') + ' ' + g.itens.length).join(' | '));
     console.log('  folga (mm): ' + Object.entries(M.folgas).map(([k, f]) => k + ' ' + f.map(v).join(' e ')).join(' · '));

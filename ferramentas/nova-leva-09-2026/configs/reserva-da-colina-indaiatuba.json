@@ -1,0 +1,535 @@
+{
+  "slug": "reserva-da-colina-indaiatuba",
+  "nome": "Reserva da Colina",
+  "categoria": "condominios",
+  "data": "2026-11-13",
+  "atualizado": "2026-11-13",
+  "fonte_tabela": "tabela Kaaba recebida em nov/2026 · pool de vendas de 26/10/2026",
+  "title": "Reserva da Colina Indaiatuba | lotes R$ 400,5 mil · nov/2026",
+  "description": "Loteamento da Kaaba em Indaiatuba: 123 lotes desde 300 m² e R$ 400.500 (tabela recebida em nov/2026). Entrada 15% e saldo em até 24x com juros e correção.",
+  "keywords": "reserva da colina indaiatuba, reserva da colina kaaba, loteamento reserva da colina, kaaba empreendimentos indaiatuba, lote 300 m2 indaiatuba, rua joao otto steffen indaiatuba, loteamento indaiatuba, terreno indaiatuba",
+  "schema_tipo": "RealEstateListing",
+  "schema_desc": "Loteamento da Kaaba Empreendimentos na Rua João Otto Steffen, em Indaiatuba/SP, com 123 lotes residenciais a partir de 300 m² em sete quadras, numa gleba de 120.759 m² da qual 55.111,72 m² são área verde e área de preservação permanente (11.370,05 m² de APP). O material da loteadora mostra portaria com portões e muro e lista salão de festas, espaço pet, playground, quadra de beach tennis e área zen. Na tabela da Kaaba recebida em nov/2026 o metro quadrado custa R$ 1.335.",
+  "endereco_schema": "Rua João Otto Steffen",
+  "geo": [-23.064577, -47.24479],
+  "mapa": {
+    "rota": "-23.064577,-47.244790",
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1320.1494636462883!2d-47.24479004595722!3d-23.064577327011257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b3d5f42df95b%3A0x55699bde8b3b8ba4!2sLoteamento%20Reserva%20da%20Colina!5e1!3m2!1spt-BR!2sbr!4v1794584087803!5m2!1spt-BR!2sbr"
+  },
+  "preco_min": 400500.00,
+  "preco_max": 611470.05,
+  "offer_count": 33,
+  "oferta_desc": "Tabela de vendas da Kaaba recebida em nov/2026, sem data impressa, a R$ 1.335 por m², e pool de vendas de 26/10/2026 com 33 lotes marcados como disponíveis, de 300,00 a 458,03 m²; 32 deles constam da tabela, de R$ 400.500,00 a R$ 611.470,05. Entrada de 15% e saldo em 10, 15, 18, 20 ou 24 parcelas, direto com a loteadora. A nota da tabela diz que as parcelas já incluem juros de 1% ao mês e que a correção é mensal, pelo índice da poupança, mas os valores de parcela da planilha são só o saldo dividido pelo prazo: o valor da parcela e a taxa são confirmados no atendimento.",
+  "produto_nome": "Reserva da Colina — lotes a partir de 300 m² em Indaiatuba",
+  "produto_desc": "Lotes residenciais a partir de 300 m² no loteamento Reserva da Colina, da Kaaba Empreendimentos, em Indaiatuba/SP, a R$ 1.335 por m² na tabela recebida em nov/2026.",
+  "marca": "Kaaba Empreendimentos",
+  "marca_topo": [
+    "RESERVA DA COLINA",
+    "Indaiatuba"
+  ],
+  "lazer": [
+    "Portaria",
+    "Salão de festas",
+    "Espaço pet",
+    "Playground",
+    "Quadra de beach tennis",
+    "Área zen"
+  ],
+  "wa_flutuante": "Olá! Tenho interesse no Reserva da Colina em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Reserva da Colina com quadra, metragem e valor.",
+  "hero": {
+    "eyebrow": "Kaaba Empreendimentos · Indaiatuba/SP",
+    "sub": "Loteamento com portaria e lotes a partir de 300 m² em Indaiatuba",
+    "lead": "Loteamento da Kaaba Empreendimentos na Rua João Otto Steffen, com 123 lotes em sete quadras, a partir de 300 m². Na tabela da Kaaba recebida em nov/2026 o metro quadrado custa R$ 1.335, e o pool de vendas de 26/10/2026 lista 33 lotes disponíveis. As fotos da loteadora mostram ruas asfaltadas, portaria e áreas de lazer construídas; o prazo e o termo de recebimento das obras não constam do material.",
+    "preco": "A partir de R$ 400.500,00",
+    "preco_nota": "lote de 300 m² · R$ 1.335/m² · tabela Kaaba recebida em nov/2026 · confirme valor e disponibilidade no atendimento",
+    "cta_msg": "Olá! Quero a tabela de lotes do Reserva da Colina com quadra, metragem e valor.",
+    "cta_texto": "Pedir a tabela",
+    "cta2": {
+      "msg": "Olá! Quero agendar uma visita ao Reserva da Colina.",
+      "texto": "Agendar visita"
+    },
+    "credito": "Foto aérea do material da Kaaba Empreendimentos"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "123 lotes em sete quadras, a partir de 300 m²",
+      "paragrafos": [
+        "O Reserva da Colina é um loteamento da Kaaba Empreendimentos em Indaiatuba, com acesso pela Rua João Otto Steffen. O projeto urbanístico divide uma gleba de 120.759 m² em 123 lotes residenciais, distribuídos em sete quadras (A a G), com metragem mínima de 300 m²: os lotes típicos medem 12 x 25 m na quadra B e 10 x 30 m na quadra A.",
+        "Pelo quadro de áreas do projeto, 45,64% da gleba (55.111,72 m²) é área verde e área de preservação permanente; a APP, sozinha, tem 11.370,05 m². As ruas ocupam 20.045,34 m² e as áreas institucionais, 6.042,49 m².",
+        "As fotos da apresentação da Kaaba, de jun/2025, mostram ruas asfaltadas com guias, calçadas e postes de iluminação, o muro de divisa, a portaria e as áreas de lazer, além de uma casa em obra. O material não traz o prazo das obras nem o termo de recebimento pela Prefeitura."
+      ],
+      "numeros": [
+        {
+          "n": "123",
+          "p": "lotes no projeto urbanístico"
+        },
+        {
+          "n": "300 m²",
+          "p": "área mínima dos lotes"
+        },
+        {
+          "n": "33",
+          "p": "lotes disponíveis no pool de 26/10/2026"
+        },
+        {
+          "n": "55 mil",
+          "p": "m² de área verde e APP, 11,4 mil deles de APP"
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "id": "precos",
+      "label": "Lotes e preços",
+      "classe": "cream",
+      "h2": "R$ 1.335 o metro quadrado, em toda a tabela",
+      "paragrafos": [
+        "A tabela de vendas da Kaaba que recebemos em nov/2026 lista 81 lotes, todos a R$ 1.335 o metro quadrado: o valor depende só da área. A planilha não traz data impressa, e o pool de vendas de 26/10/2026 repete o mesmo valor do metro. O lote de 300 m² sai por R$ 400.500,00.",
+        "O pool de vendas da Kaaba, planilha gravada em 26/10/2026 (a data não vem impressa), lista 51 lotes: 33 marcados como disponíveis e 18 como “venda à vista”. A própria planilha avisa: “consultar disponibilidade do lote escolhido”. A tabela abaixo mostra os disponíveis que constam da tabela de preços."
+      ],
+      "tabela": {
+        "legenda": "Lotes marcados como disponíveis no pool de vendas da Kaaba de 26/10/2026, com o valor da tabela recebida em nov/2026 (R$ 1.335/m²).",
+        "cab": [
+          "Área",
+          "Quadra e lote",
+          "Valor de tabela"
+        ],
+        "num": [
+          0,
+          2
+        ],
+        "linhas": [
+          [
+            "300,00 m²",
+            "22 lotes nas quadras A, B, C e G",
+            "R$ 400.500,00"
+          ],
+          [
+            "300,00 m²",
+            "Quadra E · lotes 8, 9, 12, 13 e 14 (com viela sanitária)",
+            "R$ 400.500,00"
+          ],
+          [
+            "342,00 m²",
+            "Quadra C · lote 1",
+            "R$ 456.570,00"
+          ],
+          [
+            "382,06 m²",
+            "Quadra D · lote 6",
+            "R$ 510.050,10"
+          ],
+          [
+            "404,55 m²",
+            "Quadra E · lote 15 (com viela sanitária)",
+            "R$ 540.074,25"
+          ],
+          [
+            "445,59 m²",
+            "Quadra C · lote 13",
+            "R$ 594.862,65"
+          ],
+          [
+            "458,03 m²",
+            "Quadra F · lote 1",
+            "R$ 611.470,05"
+          ]
+        ]
+      },
+      "cards": [
+        {
+          "t": "Lotes com viela sanitária",
+          "p": "O pool marca 8 lotes da quadra E como “com viela sanitária”: os lotes 6, 8, 9 e 11 a 15. Seis deles (8, 9, 12, 13, 14 e 15) estão entre os disponíveis. O material não diz que restrição a viela impõe ao lote: pergunte antes de escolher."
+        },
+        {
+          "t": "Faixa não edificável",
+          "p": "O projeto urbanístico marca faixas non aedificandi em alguns lotes junto à área de preservação. Peça a planta do lote escolhido para ver se ela o atinge."
+        },
+        {
+          "t": "“Venda à vista”",
+          "p": "18 lotes do pool de 26/10/2026 trazem essa marcação, e 11 deles não constam da tabela de preços. A planilha não explica se são lotes vendidos à vista ou que só se vendem à vista: confirme no atendimento."
+        },
+        {
+          "t": "Lotes fora do pool",
+          "p": "72 dos 123 lotes do projeto não aparecem no pool de 26/10/2026, e a planilha não diz se foram vendidos ou reservados."
+        },
+        {
+          "t": "Lote fora da tabela",
+          "p": "O lote 11 da quadra C, de 300 m², aparece como disponível no pool, mas não consta da tabela de preços. Peça o valor no atendimento."
+        },
+        {
+          "t": "Maior lote da tabela",
+          "p": "O lote 18 da quadra B, de 527,38 m², está na tabela recebida em nov/2026 por R$ 704.052,30, mas não aparece no pool de 26/10/2026."
+        }
+      ],
+      "notas": [
+        "A tabela não traz data impressa nem prazo de validade. Confirme valor e disponibilidade do lote no atendimento antes de qualquer proposta."
+      ]
+    },
+    {
+      "label": "Pagamento",
+      "h2": "Entrada de 15% e saldo em até 24 parcelas",
+      "paragrafos": [
+        "A condição da tabela é entrada de 15% do valor e saldo em 10, 15, 18, 20 ou 24 parcelas. O flyer da Kaaba fala em financiamento direto com a loteadora. A nota da tabela diz que as parcelas já incluem juros de 1% ao mês e que a correção é mensal, pelo índice da poupança.",
+        "Os valores de parcela impressos na planilha, porém, são só o saldo dividido pelo número de parcelas, sem os juros que a nota menciona. Por isso não publicamos valor de parcela: pergunte no atendimento o valor da parcela e a taxa de juros, e mandamos a simulação para o lote que interessa."
+      ],
+      "tabela": {
+        "legenda": "Exemplo com o lote de 300 m², pela tabela da Kaaba recebida em nov/2026.",
+        "cab": [
+          "Item",
+          "Valor"
+        ],
+        "linhas": [
+          [
+            "Valor de tabela (300,00 m² a R$ 1.335/m²)",
+            "R$ 400.500,00"
+          ],
+          [
+            "Entrada de 15%",
+            "R$ 60.075,00"
+          ],
+          [
+            "Saldo a parcelar",
+            "R$ 340.425,00"
+          ],
+          [
+            "Prazos do saldo",
+            "10, 15, 18, 20 ou 24 parcelas"
+          ],
+          [
+            "Juros (nota da tabela)",
+            "1% ao mês, incluídos nas parcelas segundo a nota; os valores de parcela da planilha não os aplicam"
+          ],
+          [
+            "Correção (nota da tabela)",
+            "mensal, pelo índice da poupança"
+          ],
+          [
+            "Valor da parcela e taxa de juros",
+            "pergunte no atendimento"
+          ]
+        ]
+      },
+      "cta": {
+        "msg": "Olá! Quero simular o pagamento de um lote do Reserva da Colina.",
+        "texto": "Simular o pagamento"
+      },
+      "depois": "lazer"
+    },
+    {
+      "label": "Perspectivas",
+      "classe": "cream",
+      "h2": "Como a Kaaba desenhou as áreas comuns",
+      "paragrafos": [
+        "Perspectivas do material da loteadora: são desenhos, não fotos. Acabamento, mobiliário e vegetação podem ser diferentes do que foi construído; as fotos do local estão mais acima."
+      ],
+      "figuras": [
+        {
+          "classe": "galeria",
+          "itens": [
+            {
+              "arq": "portaria-ilustrativa.jpg",
+              "alt": "Perspectiva ilustrada da portaria do Reserva da Colina",
+              "w": 1440,
+              "h": 810,
+              "leg": "Portaria · imagem ilustrativa"
+            },
+            {
+              "arq": "salao-ilustrativo.jpg",
+              "alt": "Perspectiva ilustrada da fachada do salão de festas",
+              "w": 1440,
+              "h": 810,
+              "leg": "Salão de festas · imagem ilustrativa"
+            },
+            {
+              "arq": "salao-varanda-ilustrativa.jpg",
+              "alt": "Perspectiva ilustrada da varanda do salão de festas com mesas",
+              "w": 1440,
+              "h": 810,
+              "leg": "Varanda do salão de festas · imagem ilustrativa"
+            },
+            {
+              "arq": "beach-tennis-ilustrativa.jpg",
+              "alt": "Perspectiva ilustrada da quadra de beach tennis",
+              "w": 1440,
+              "h": 810,
+              "leg": "Quadra de beach tennis · imagem ilustrativa"
+            },
+            {
+              "arq": "playground-ilustrativo.jpg",
+              "alt": "Perspectiva ilustrada do playground",
+              "w": 1440,
+              "h": 810,
+              "leg": "Playground · imagem ilustrativa"
+            },
+            {
+              "arq": "pet-place-ilustrativo.jpg",
+              "alt": "Perspectiva ilustrada do espaço pet",
+              "w": 1440,
+              "h": 810,
+              "leg": "Espaço pet · imagem ilustrativa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "documentacao",
+      "label": "Documentação",
+      "h2": "Registro, aprovações e regime de acesso",
+      "paragrafos": [
+        "O flyer da Kaaba cita, no rodapé, o nº 339.761 da matrícula nº 19.533 do Cartório de Registro de Imóveis de Indaiatuba; o texto não deixa claro se esse número é o registro do loteamento na matrícula (R.x) ou um protocolo. O material recebido não traz o certificado do Graprohab, o decreto de aprovação nem o termo de recebimento das obras.",
+        "O projeto urbanístico é um projeto de loteamento, com as ruas, as áreas institucionais e a área verde como áreas públicas. As fotos mostram portaria com portões e muro, mas o material não usa as palavras condomínio, fechado ou associação, nem informa a base legal do controle de acesso ou uma taxa mensal.",
+        "As áreas citadas nesta página vêm do projeto urbanístico recebido da Kaaba, um arquivo de abr/2019 sem carimbo nem número de aprovação. O material não informa o CNPJ de quem vende, e esse projeto traz outra empresa como proprietária da gleba.",
+        "Antes de qualquer proposta, peça a certidão de matrícula atualizada e o CNPJ de quem vende, e confirme quem é o loteador e quem assina o contrato."
+      ],
+      "cards": [
+        {
+          "t": "Registro",
+          "p": "Segundo o flyer: nº 339.761 da matrícula nº 19.533 do Cartório de Registro de Imóveis de Indaiatuba. Peça a certidão para conferir."
+        },
+        {
+          "t": "Tipo",
+          "p": "Loteamento com portaria e muro (fotos da loteadora); regime de acesso a confirmar."
+        },
+        {
+          "t": "Regras de construção",
+          "p": "Recuos, gabarito e taxa de ocupação não constam do material. Peça o regulamento antes de fechar."
+        }
+      ],
+      "depois": "ficha"
+    },
+    {
+      "id": "localizacao",
+      "label": "Localização",
+      "h2": "Na Rua João Otto Steffen, em Indaiatuba",
+      "paragrafos": [
+        "O acesso ao Reserva da Colina é pela Rua João Otto Steffen, em Indaiatuba; o material da Kaaba não informa o bairro nem o número da portaria. Pelo projeto urbanístico, do outro lado da rua fica o loteamento Altos da Bela Vista.",
+        "Segundo o flyer da loteadora, o empreendimento fica entre a Estrada Didi Martins e a Rota dos Cavaleiros, a 4 minutos da Avenida do Parque Ecológico. O mapa abaixo mostra o local cadastrado no Google."
+      ],
+      "cards": [
+        {
+          "t": "Acesso",
+          "p": "Pela Rua João Otto Steffen; número e CEP não informados no material"
+        },
+        {
+          "t": "Vizinhança",
+          "p": "O loteamento Altos da Bela Vista fica do outro lado da rua, conforme o projeto urbanístico"
+        },
+        {
+          "t": "Referências do flyer",
+          "p": "Entre a Estrada Didi Martins e a Rota dos Cavaleiros; 4 minutos até a Avenida do Parque Ecológico"
+        }
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Fotos",
+    "h2": "O que as fotos da loteadora mostram",
+    "aviso": "Fotos da apresentação da Kaaba Empreendimentos (jun/2025), que identifica as imagens do seu material como meramente ilustrativas. As perspectivas desenhadas estão mais abaixo, marcadas como imagem ilustrativa.",
+    "itens": [
+      {
+        "arq": "aerea-quadras.jpg",
+        "alt": "Foto aérea das ruas e quadras do Reserva da Colina, com mata ao redor; no alto aparecem outros loteamentos, um deles além do muro",
+        "w": 1440,
+        "h": 900,
+        "leg": "Ruas e quadras do Reserva da Colina, em primeiro plano; além do muro, no alto à esquerda, e ao fundo, à direita, ficam outros loteamentos"
+      },
+      {
+        "arq": "aerea-ruas.jpg",
+        "alt": "Foto aérea das ruas, de uma casa em obra e da portaria do Reserva da Colina",
+        "w": 810,
+        "h": 580,
+        "leg": "Ruas, casa em obra e portaria"
+      },
+      {
+        "arq": "portaria.jpg",
+        "alt": "Foto da portaria do Reserva da Colina com o totem do nome e os portões",
+        "w": 1600,
+        "h": 1200,
+        "leg": "Portaria com portões e muro"
+      },
+      {
+        "arq": "portaria-noite.jpg",
+        "alt": "Foto da portaria do Reserva da Colina à noite",
+        "w": 1600,
+        "h": 900,
+        "leg": "Portaria à noite"
+      },
+      {
+        "arq": "portaria-aerea-noite.jpg",
+        "alt": "Foto aérea noturna da portaria e das ruas iluminadas do Reserva da Colina",
+        "w": 1494,
+        "h": 953,
+        "leg": "Portaria e ruas iluminadas, vistas do alto"
+      },
+      {
+        "arq": "salao-de-festas.jpg",
+        "alt": "Foto do salão de festas do Reserva da Colina, com o entorno ainda em terra",
+        "w": 1600,
+        "h": 900,
+        "leg": "Salão de festas (entorno ainda em terra na foto)"
+      },
+      {
+        "arq": "pet-place.jpg",
+        "alt": "Foto do pet place do Reserva da Colina junto ao muro",
+        "w": 1600,
+        "h": 900,
+        "leg": "Pet place"
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Portaria, salão de festas, beach tennis e espaço pet",
+    "intro": "A lista segue a apresentação (jun/2025) e o flyer da Kaaba. Nas fotos da apresentação aparecem a portaria, o salão de festas, a quadra de beach tennis, o pet place e a área zen; o playground não tem foto própria (aparece em perspectiva, e um escorregador surge ao fundo da foto do salão).",
+    "itens": [
+      "Portaria com portões",
+      "Salão de festas",
+      "Espaço pet (pet place)",
+      "Playground",
+      "Quadra de beach tennis",
+      "Área zen"
+    ],
+    "nota": "A taxa mensal, a existência de associação e as regras de uso das áreas comuns não constam do material recebido. Confirme no atendimento."
+  },
+  "ficha": [
+    [
+      "Realização",
+      "Kaaba Empreendimentos (flyer)"
+    ],
+    [
+      "CNPJ de quem vende",
+      "não informado no material; peça no atendimento"
+    ],
+    [
+      "Tipo",
+      "Loteamento com portaria e muro (fotos da loteadora); regime de acesso a confirmar"
+    ],
+    [
+      "Endereço",
+      "Rua João Otto Steffen, Indaiatuba/SP; bairro e número não informados no material"
+    ],
+    [
+      "Gleba",
+      "120.759 m² (projeto urbanístico)"
+    ],
+    [
+      "Lotes no projeto",
+      "123 residenciais, em 7 quadras (A a G)"
+    ],
+    [
+      "Área dos lotes",
+      "a partir de 300 m²; o maior da tabela tem 527,38 m²"
+    ],
+    [
+      "Área verde e APP",
+      "55.111,72 m², dos quais 11.370,05 m² de APP (projeto urbanístico)"
+    ],
+    [
+      "Ruas",
+      "perfis de 14, 15 e 25 m de largura (projeto urbanístico)"
+    ],
+    [
+      "Valor do m²",
+      "R$ 1.335, igual nos 81 lotes da tabela recebida em nov/2026"
+    ],
+    [
+      "Disponibilidade",
+      "o pool de vendas da Kaaba de 26/10/2026 lista 33 lotes disponíveis"
+    ],
+    [
+      "Pagamento",
+      "entrada de 15% e saldo em 10, 15, 18, 20 ou 24 parcelas, direto com a loteadora; a nota da tabela cita juros de 1% ao mês incluídos nas parcelas e correção mensal pela poupança, mas os valores de parcela da planilha não aplicam os juros; parcela e taxa: confirme no atendimento"
+    ],
+    [
+      "Registro",
+      "o flyer cita o nº 339.761 da matrícula nº 19.533 do CRI de Indaiatuba; peça a certidão"
+    ],
+    [
+      "Projeto urbanístico",
+      "arquivo de abr/2019, sem carimbo nem número de aprovação; traz outra empresa como proprietária da gleba"
+    ],
+    [
+      "Aprovações",
+      "Graprohab, decreto e termo de recebimento das obras não informados no material; confirme no atendimento"
+    ],
+    [
+      "Entrega das obras",
+      "não informada no material; confirme no atendimento"
+    ],
+    [
+      "Taxa mensal e associação",
+      "não informadas no material; confirme no atendimento"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um lote no Reserva da Colina?",
+      "a": "Na tabela da Kaaba recebida em nov/2026 o metro quadrado custa R$ 1.335 em todos os 81 lotes listados. O lote de 300 m² sai por R$ 400.500,00; entre os marcados como disponíveis no pool de vendas de 26/10/2026, o maior é o lote 1 da quadra F, de 458,03 m², por R$ 611.470,05. A tabela não traz data impressa: confirme valor e disponibilidade no atendimento."
+    },
+    {
+      "q": "Como funciona o pagamento?",
+      "a": "Entrada de 15% do valor e saldo em 10, 15, 18, 20 ou 24 parcelas, com financiamento direto com a loteadora, segundo a tabela e o flyer da Kaaba. A nota da tabela diz que as parcelas já incluem juros de 1% ao mês e que a correção é mensal, pelo índice da poupança, mas os valores de parcela da planilha são só o saldo dividido pelo prazo. Pela tabela da Kaaba recebida em nov/2026, no lote de 300 m² a entrada é de R$ 60.075,00 e o saldo, de R$ 340.425,00. Pergunte o valor da parcela e a taxa de juros no atendimento: confirmamos os dois com a Kaaba antes de qualquer proposta."
+    },
+    {
+      "q": "Quantos lotes ainda estão disponíveis?",
+      "a": "O projeto tem 123 lotes. O pool de vendas da Kaaba, planilha gravada em 26/10/2026 (sem data impressa), lista 51: 33 marcados como disponíveis e 18 como “venda à vista”, marcação que a planilha não explica. Os outros 72 lotes do projeto não aparecem no pool, e a planilha não diz por quê. A disponibilidade muda a cada venda, e o próprio pool pede para consultar a disponibilidade do lote escolhido: confirme no atendimento."
+    },
+    {
+      "q": "Qual o tamanho dos lotes?",
+      "a": "A partir de 300 m². Pelo projeto urbanístico, os lotes típicos medem 12 x 25 m na quadra B e 10 x 30 m na quadra A. Dos 33 lotes marcados como disponíveis no pool de 26/10/2026, 28 têm 300 m² e os outros vão de 342,00 a 458,03 m². O maior da tabela, de 527,38 m², não aparece no pool."
+    },
+    {
+      "q": "O Reserva da Colina é um condomínio fechado?",
+      "a": "O projeto urbanístico é de loteamento, com as ruas e as áreas verdes e institucionais como áreas públicas. As fotos da Kaaba mostram portaria com portões e muro, mas o material não usa as palavras condomínio, fechado ou associação, nem informa a base legal do controle de acesso, se existe associação ou o valor de uma taxa mensal: confirme no atendimento antes de decidir."
+    },
+    {
+      "q": "O loteamento tem matrícula e documentos da Prefeitura?",
+      "a": "O flyer da Kaaba cita o nº 339.761 da matrícula nº 19.533 do Cartório de Registro de Imóveis de Indaiatuba, que no projeto urbanístico aparece como a matrícula da gleba. O material não informa se esse número é o registro (R.x) do loteamento ou um protocolo. O projeto urbanístico recebido (arquivo de abr/2019) não tem carimbo de aprovação, e o material não traz Graprohab, decreto de aprovação nem termo de recebimento das obras. Peça a certidão de matrícula atualizada antes de assinar."
+    },
+    {
+      "q": "O que tem de lazer?",
+      "a": "Portaria, salão de festas, espaço pet, playground, quadra de beach tennis e área zen, segundo a apresentação e o flyer da Kaaba. Nas fotos da apresentação de jun/2025 aparecem a portaria, o salão de festas, a quadra de beach tennis, o pet place e a área zen; o playground não tem foto própria na apresentação (aparece em perspectiva ilustrativa, e um escorregador surge ao fundo da foto do salão)."
+    },
+    {
+      "q": "Onde fica o Reserva da Colina?",
+      "a": "Na Rua João Otto Steffen, em Indaiatuba/SP. O material não informa o bairro nem o número; pelo projeto urbanístico, do outro lado da rua fica o loteamento Altos da Bela Vista. Segundo o flyer da Kaaba, o empreendimento fica entre a Estrada Didi Martins e a Rota dos Cavaleiros, a 4 minutos da Avenida do Parque Ecológico."
+    }
+  ],
+  "cta": {
+    "h2": "Quer a tabela do Reserva da Colina?",
+    "p": "Mandamos a tabela com quadra, metragem e valor, confirmamos com a Kaaba quais lotes seguem disponíveis e simulamos a entrada de 15% com o saldo em até 24 parcelas.",
+    "msg": "Olá! Quero a tabela de lotes do Reserva da Colina com quadra, metragem e valor.",
+    "texto": "Pedir a tabela",
+    "visita": {
+      "msg": "Olá! Quero agendar uma visita ao Reserva da Colina.",
+      "texto": "Agendar visita"
+    }
+  },
+  "rodape": {
+    "marca": "RESERVA DA COLINA",
+    "linha": "Reserva da Colina · loteamento com 123 lotes a partir de 300 m² · Rua João Otto Steffen · Indaiatuba, SP",
+    "realizacao": "Realização Kaaba Empreendimentos",
+    "legal": "Fotos e perspectivas do material da Kaaba Empreendimentos, que identifica suas imagens como meramente ilustrativas; as perspectivas desenhadas estão marcadas como imagem ilustrativa. Preço de R$ 1.335 por m² conforme a tabela de vendas da Kaaba recebida em nov/2026, sem data impressa, e disponibilidade conforme o pool de vendas de 26/10/2026, sujeitos a alteração sem aviso prévio; valor, disponibilidade, parcela e juros são confirmados com a loteadora no atendimento. O flyer da Kaaba cita o nº 339.761 da matrícula nº 19.533 do Cartório de Registro de Imóveis de Indaiatuba, sem dizer se é o registro do loteamento ou um protocolo; peça a certidão de matrícula atualizada antes de assinar. Página publicada em nov/2026."
+  },
+  "home": {
+    "tipo": "lote",
+    "preco": 400500,
+    "lote": "fechado",
+    "status": "",
+    "constr": "Kaaba",
+    "pm2": "1335",
+    "badge": "Condomínio fechado",
+    "badge_estilo": "background:#C9A227;color:#161616;",
+    "meta": "Lotes a partir de 300 m² em 7 quadras",
+    "desc": "123 lotes no projeto · o pool da Kaaba de 26/10/2026 lista 33 disponíveis · portaria e lazer nas fotos da loteadora · entrada de 15% e saldo em até 24x com juros e correção.",
+    "alt": "Foto aérea do Reserva da Colina, em Indaiatuba",
+    "itemlist": "Reserva da Colina — loteamento com portaria da Kaaba em Indaiatuba, 123 lotes a partir de 300 m² por R$ 400.500 (tabela recebida em nov/2026)"
+  },
+  "llms": {
+    "secao": "condominios",
+    "linha": "Loteamento da Kaaba Empreendimentos na Rua João Otto Steffen, em Indaiatuba (bairro não informado no material), com 123 lotes residenciais em 7 quadras, a partir de 300 m², numa gleba de 120.759 m² com 55.111,72 m² de área verde e APP (11.370,05 m² de APP). As fotos da loteadora mostram portaria com portões, muro e ruas asfaltadas; o lazer listado no material é salão de festas, espaço pet, playground, quadra de beach tennis e área zen. O regime de acesso não é informado. Tabela da Kaaba recebida em nov/2026, sem data impressa: R$ 1.335/m² em 81 lotes, R$ 400.500,00 no lote de 300 m²; o pool de vendas de 26/10/2026 lista 33 lotes disponíveis (de 300,00 a 458,03 m², até R$ 611.470,05) e 18 marcados como venda à vista. Entrada de 15% e saldo em 10, 15, 18, 20 ou 24 parcelas direto com a loteadora; a nota da tabela diz que as parcelas incluem juros de 1% ao mês e que a correção é mensal pela poupança, mas os valores de parcela da planilha são o saldo dividido pelo prazo: parcela e taxa confirmadas no atendimento. O flyer cita o nº 339.761 da matrícula 19.533 do CRI de Indaiatuba; o projeto urbanístico recebido (arquivo de abr/2019) não tem carimbo de aprovação; prazo de obras, aprovações, CNPJ de quem vende e taxa mensal não informados."
+  }
+}

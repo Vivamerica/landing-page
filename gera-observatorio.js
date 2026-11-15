@@ -35,7 +35,7 @@ const R = __dirname + '/';
 // menu do site (fonte única: gera-menu.js); as duas páginas já saem com ele
 const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
-const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-10-29' };
+const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-11-13' };
 
 // estoque da MEDIÇÃO ANTERIOR (em geral a da edição de setembro/2026; o Jardim Dona Maria Cândida
 // foi medido em 08/09/2026 e publicado em 12/10/2026), para o "antes e depois"
@@ -109,6 +109,11 @@ const ENTRADAS = [
   { n: 'Lumina Residencial',          c: 'Emmar', para: 519900, causa: 'novo no site — últimas 6 unidades (28/10/2026), de 1 suíte com 39,44 m² a 3 suítes com 111,65 m², num prédio de 19 andares no Centro', fonte: 'tabela fluxo Emmar de outubro/2026' },
   { n: 'Lina Residence',              c: 'Lofts', para: 924108, causa: 'novo no site — 2 suítes ou 3 dormitórios de 85,28 a 101,15 m², em 2 torres na Cidade Nova I; 106 unidades nas tabelas das duas torres', fonte: 'tabela Lofts de outubro/2026' },
   { n: 'Reserva Luiza Tomaselli',     c: 'Lofts', para: 1809776, causa: 'novo no site — prédio pronto (habite-se em agosto/2024) na Vila Castelo Branco; 2 apartamentos de 3 suítes com 154,99 m² com depósito na tabela', fonte: 'tabela Lofts de outubro/2026' },
+  // 13/11/2026: novos no site (Kaaba); as tabelas da Kaaba não trazem data impressa
+  { n: 'Jardim Siena',                c: 'Kaaba', para: 300000, causa: 'novo no site — condomínio fechado no Itaici, 77 lotes de 250 a 607,94 m² a R$ 1.200/m²', fonte: 'tabela Kaaba recebida em nov/2026' },
+  { n: 'Jardim Residencial Belle Vista', c: 'Kaaba', para: 360000, causa: 'novo no site — loteamento fechado no Mato Dentro, 91 lotes de 300 a 538,50 m² a R$ 1.200/m²; 18 disponíveis no pool da Kaaba de 27/10/2026', fonte: 'tabela Kaaba recebida em nov/2026' },
+  { n: 'Reserva da Colina',           c: 'Kaaba', para: 400500, causa: 'novo no site — loteamento com portaria e muro, 123 lotes a partir de 300 m² a R$ 1.335/m²; 33 disponíveis no pool da Kaaba de 26/10/2026', fonte: 'tabela Kaaba recebida em nov/2026' },
+  { n: 'Terras de Obwalden',          c: 'Kaaba', para: 435000, causa: 'novo no site — loteamento com portaria no Bairro Bela Vista, 239 lotes de 300 a 479,41 m² a R$ 1.450/m²; 54 disponíveis no pool da Kaaba de 26/10/2026', fonte: 'tabela Kaaba recebida em nov/2026' },
 ];
 // entrou no site sem tabela pública (não entra em ENTRADAS: não há preço).
 // 16/10/2026: o 360 Home Office Mall, que estava aqui, ganhou tabela e foi para ENTRADAS.
@@ -181,7 +186,7 @@ APTOS_F.concat(LOTES_F).filter(e => SD.saiNaEdicao(e.slug, EDICAO.iso)).forEach(
   const lote = LOTES_F.includes(e);
   SAIDAS.push({ n: e.n, c: e.c, slug: e.slug, de: e.p || null, antes: typeof e.est === 'number' ? e.est : null, data: e.estEm || '', em: SD.desdeBR(e.slug),
     causa: (lote ? 'sem lotes à venda desde ' : 'sem unidades à venda desde ') + SD.desdeBR(e.slug) + (lote ? ': todos os lotes vendidos, conforme informou a loteadora' : ': todas as unidades vendidas, conforme informou a construtora'),
-    fonte: `informação da Viv'América de ${SD.desdeBR(e.slug)}` + (e.tab ? '; último preço: tabela de ' + ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'][+e.tab.slice(5, 7) - 1] + '/' + e.tab.slice(0, 4) : '') });
+    fonte: `informação da Viv'América de ${SD.desdeBR(e.slug)}` + (e.tab ? '; último preço: ' + (e.tabRec ? 'tabela recebida em ' : 'tabela de ') + ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'][+e.tab.slice(5, 7) - 1] + '/' + e.tab.slice(0, 4) : '') });
 });
 // nota da linha na edição em que a marcação ainda não tira o empreendimento das contas
 const notaVendido = e => SD.vendido(e.slug) ? '<br><span class="nd" style="font-size:.78em">100% vendido desde ' + SD.desdeBR(e.slug) + '; a linha registra a tabela desta edição</span>' : '';
@@ -200,7 +205,8 @@ const hojeBR = EDICAO.lastmod.split('-').reverse().join('/');     // 12/10/2026
 // edições anteriores já no disco (ficam disponíveis para download); a mais recente é "a edição anterior"
 const ANTERIORES = (fs.existsSync(R + 'imprensa-e-dados') ? fs.readdirSync(R + 'imprensa-e-dados') : []).map(f => (f.match(/^dados-lancamentos-indaiatuba-(\d{4}-\d{2})\.csv$/) || [])[1]).filter(m => m && m < EDICAO.iso).sort().reverse();
 const edAnterior = ANTERIORES.length ? 'edição de ' + mesLongoDe(ANTERIORES[0]) : 'edição anterior';   // edição de setembro/2026
-const tabDe = e => e.tab ? 'pela tabela de ' + mesAbrevDe(e.tab) : (e.p ? 'pela tabela de pré-lançamento da ' + e.c.split(' · ')[0] : 'sem tabela pública');
+// tabela sem data impressa (campo tabRec da fonte única): tab é o mês em que foi recebida
+const tabDe = e => e.tab ? (e.tabRec ? 'pela tabela recebida em ' : 'pela tabela de ') + mesAbrevDe(e.tab) : (e.p ? 'pela tabela de pré-lançamento da ' + e.c.split(' · ')[0] : 'sem tabela pública');
 const URL = 'https://lancamentos.imoveisvivamerica.com.br/precos-lancamentos-indaiatuba/';
 const URL_DADOS = 'https://lancamentos.imoveisvivamerica.com.br/imprensa-e-dados/';
 const ARQ_BASE = 'dados-lancamentos-indaiatuba-' + EDICAO.iso;    // + .csv / .json
@@ -208,6 +214,10 @@ const ARQ_BASE = 'dados-lancamentos-indaiatuba-' + EDICAO.iso;    // + .csv / .j
 // ─── números calculados ───
 const todos = APTOS.concat(LOTES);
 const total = todos.length;
+// cobertura do Dataset: do mês de tabela mais antigo ao mais novo dos dados distribuídos; o fim acompanha
+// o maior mes_tabela quando ele passa do mês da edição (tabela recebida depois do mês que dá nome à edição)
+const mesesTab = todos.map(e => e.tab).filter(Boolean).sort();
+const fimCobertura = mesesTab.length && mesesTab[mesesTab.length - 1] > EDICAO.iso ? mesesTab[mesesTab.length - 1] : EDICAO.iso;
 const comPrecoTotal = todos.filter(e => e.p).length;
 const incDe = e => e.c.split(' · ')[0].trim();
 const construtoras = new Set(todos.map(incDe)).size;                              // todas as monitoradas, com ou sem tabela
@@ -253,6 +263,10 @@ const FAIXAS_LOTE_FRASE = FAIXAS_LOTE.charAt(0).toUpperCase() + FAIXAS_LOTE.slic
 // tabela de mês anterior com os mesmos preços confirmados para um mês depois (campo conf da fonte única):
 // a coluna "Tabela" segue com o mês do documento e ganha a confirmação embaixo
 const confDe = e => e.conf ? '<br><span class="nd" style="font-size:.78em">preços confirmados para ' + mesAbrevDe(e.conf) + '</span>' : '';
+// coluna "Tabela": mês do documento; sem data impressa (tabRec), o mês em que a tabela foi recebida, dito assim
+const mesTabDe = e => e.tabRec
+  ? 'recebida em ' + mesAbrevDe(e.tab) + '<br><span class="nd" style="font-size:.78em">sem data impressa</span>'
+  : mesAbrevDe(e.tab);
 const linhaApto = e => `
       <tr>
         <td><a href="/${e.slug}/">${e.n}</a>${notaVendido(e)}</td>
@@ -261,7 +275,7 @@ const linhaApto = e => `
         <td class="num">${e.p && e.m2 ? fm2(e.m2) + ' m²' : '<span class="nd">não informada</span>'}</td>
         <td class="num">${e.p ? '<strong>' + brl(e.p) + '</strong>' : '<span class="sc">sob consulta</span>'}</td>
         <td class="num">${e.p && e.m2 ? brl(Math.round(e.p / e.m2)) + '/m²' : '<span class="nd">—</span>'}</td>
-        <td class="num">${e.tab ? mesAbrevDe(e.tab) + confDe(e) : (e.p ? '<span class="nd">pré-lançamento</span>' : '<span class="nd">—</span>')}</td>
+        <td class="num">${e.tab ? mesTabDe(e) + confDe(e) : (e.p ? '<span class="nd">pré-lançamento</span>' : '<span class="nd">—</span>')}</td>
         <td class="obs">${e.s}</td>
       </tr>`;
 
@@ -273,7 +287,7 @@ const linhaLote = e => `
         <td class="num">${e.m2.toLocaleString('pt-BR')} m²</td>
         <td class="num"><strong>${brl(e.p)}</strong></td>
         <td class="num">${brl(Math.round(e.p / e.m2))}/m²</td>
-        <td class="num">${e.tab ? mesAbrevDe(e.tab) + confDe(e) : '<span class="nd">—</span>'}</td>
+        <td class="num">${e.tab ? mesTabDe(e) + confDe(e) : '<span class="nd">—</span>'}</td>
       </tr>`;
 
 const comEst = todos.filter(e => typeof e.est === 'number');
@@ -409,7 +423,7 @@ const jsonDataset = JSON.stringify({
   name: 'Preços de lançamentos imobiliários em Indaiatuba/SP — ' + EDICAO.mes + ' de ' + EDICAO.ano,
   description: 'Tabela mensal com o preço "a partir de" dos ' + total + ' lançamentos imobiliários de Indaiatuba/SP: apartamentos, loteamentos e condomínios fechados, com preço por m² dos lotes e dos apartamentos (pela menor unidade com preço) e variações mensais. Fonte: tabelas oficiais das construtoras.',
   url: URL,
-  temporalCoverage: EDICAO.iso,
+  temporalCoverage: fimCobertura > EDICAO.iso ? EDICAO.iso + '/' + fimCobertura : EDICAO.iso,
   spatialCoverage: { '@type': 'Place', name: 'Indaiatuba, São Paulo, Brasil' },
   creator: { '@type': 'Organization', name: "Imobiliária Viv'América", url: 'https://lancamentos.imoveisvivamerica.com.br/' },
   license: 'https://creativecommons.org/licenses/by/4.0/deed.pt-br',
@@ -708,7 +722,7 @@ fs.writeFileSync(R + 'precos-lancamentos-indaiatuba/index.html', HTML, 'utf8');
    DADOS ABERTOS — imprensa-e-dados/ (CSV + JSON + página com gráficos)
    ═══════════════════════════════════════════════════════════════════ */
 const fonteDe = e => e.p
-  ? (e.tab ? 'tabela oficial da incorporadora, ' + mesLongoDe(e.tab) + (e.conf ? ', com os preços confirmados para ' + mesLongoDe(e.conf) : '') : 'tabela de pré-lançamento da incorporadora')
+  ? (e.tab ? 'tabela oficial da incorporadora, ' + (e.tabRec ? 'sem data impressa, recebida em ' : '') + mesLongoDe(e.tab) + (e.conf ? ', com os preços confirmados para ' + mesLongoDe(e.conf) : '') : 'tabela de pré-lançamento da incorporadora')
   : 'sob consulta — tabela não liberada pela incorporadora';
 const registro = (e, tipo) => ({
   nome: e.n, tipo, incorporadora: e.c,
@@ -729,7 +743,7 @@ const CSV = [COLUNAS.join(';')].concat(REGISTROS.map(r => COLUNAS.map(c => campo
 fs.mkdirSync(R + 'imprensa-e-dados', { recursive: true });
 fs.writeFileSync(R + 'imprensa-e-dados/' + ARQ_BASE + '.csv', CSV, 'utf8');
 fs.writeFileSync(R + 'imprensa-e-dados/' + ARQ_BASE + '.json', JSON.stringify(REGISTROS, null, 2) + '\n', 'utf8');
-const temporal = REGISTROS.map(r => r.mes_tabela).filter(Boolean).sort()[0] + '/' + EDICAO.iso;
+const temporal = REGISTROS.map(r => r.mes_tabela).filter(Boolean).sort()[0] + '/' + fimCobertura;
 
 // ─── gráficos de barras horizontais (SVG estático, mesma geometria em todos) ───
 function grafico({ id, titulo, sub, itens, passo, fmtEixo, rowH = 36, leitura, tabela }) {
@@ -798,7 +812,7 @@ const G2 = grafico({
   sub: `Quantos empreendimentos têm o menor preço da tabela em cada faixa. Dos ${APTOS.length} apartamentos monitorados, ${aptosComPreco.length} têm tabela publicada.`,
   itens: FAIXAS.map(x => ({ rotulo: x.r, valor: x.its.length, texto: x.its.length + (x.its.length === 1 ? ' empreendimento' : ' empreendimentos'), descValor: '= ' + x.its.length, title: x.r + ': ' + x.its.map(e => e.n).join(', ') })),
   passo: 2, fmtEixo: v => String(v), rowH: 44,
-  leitura: `Dos ${aptosComPreco.length} apartamentos com tabela publicada em ${edLongo}, ${FAIXAS[1].its.length} têm preço de entrada entre R$ 300 mil e R$ 600 mil; ${FAIXAS[0].its.length === 1 ? 'só o ' + FAIXAS[0].its[0].n + ' (' + brl(FAIXAS[0].its[0].p) + ') fica' : FAIXAS[0].its.length + ' ficam'} abaixo de R$ 300 mil, ${FAIXAS[2].its.length} começam acima de R$ 600 mil${aptosSemPreco.length ? ' e ' + lista(aptosSemPreco.map(e => 'o ' + e.n)) + (aptosSemPreco.length === 1 ? ' segue' : ' seguem') + ' sob consulta' : ''}.`,
+  leitura: `Dos ${aptosComPreco.length} apartamentos com tabela na edição de ${edLongo}, ${FAIXAS[1].its.length} têm preço de entrada entre R$ 300 mil e R$ 600 mil; ${FAIXAS[0].its.length === 1 ? 'só o ' + FAIXAS[0].its[0].n + ' (' + brl(FAIXAS[0].its[0].p) + ') fica' : FAIXAS[0].its.length + ' ficam'} abaixo de R$ 300 mil, ${FAIXAS[2].its.length} começam acima de R$ 600 mil${aptosSemPreco.length ? ' e ' + lista(aptosSemPreco.map(e => 'o ' + e.n)) + (aptosSemPreco.length === 1 ? ' segue' : ' seguem') + ' sob consulta' : ''}.`,
   tabela: `<table>
 <thead><tr><th>Faixa do preço de entrada</th><th class="num">Empreendimentos</th><th>Quais</th></tr></thead>
 <tbody>
@@ -819,7 +833,7 @@ const G3 = grafico({
   sub: `O menor preço "a partir de" entre todos os empreendimentos de cada incorporadora ou loteadora, apartamentos e lotes juntos. A etiqueta ao lado do valor diz se é lote ou apartamento.`,
   itens: INCS.map(e => ({ rotulo: e.c, valor: e.p, texto: brl(e.p) + '<tspan font-weight="400" fill="#6b6559"> · ' + (tipoDe(e) === 'lote' ? 'lote' : 'apto') + '</tspan>', descValor: brl(e.p) + ' (' + e.n + ')', title: `${e.c}: ${brl(e.p)} — ${e.n} (${tipoDe(e)})` })),
   passo: 500000, fmtEixo: fmtMil,
-  leitura: `Entre as ${INCS.length} incorporadoras e loteadoras com tabela publicada em ${edLongo}, o menor preço de entrada é o da ${INCS[0].c} (${brl(INCS[0].p)}, ${tipoDe(INCS[0])} no ${INCS[0].n}); em apartamentos, a ${incMenorApto.c} tem o menor preço de entrada (${brl(incMenorApto.p)}, ${incMenorApto.n}), enquanto ${INCS[INCS.length - 2].c} e ${INCS[INCS.length - 1].c} começam em ${brl(INCS[INCS.length - 2].p)} e ${brl(INCS[INCS.length - 1].p)}.`,
+  leitura: `Entre as ${INCS.length} incorporadoras e loteadoras com tabela na edição de ${edLongo}, o menor preço de entrada é o da ${INCS[0].c} (${brl(INCS[0].p)}, ${tipoDe(INCS[0])} no ${INCS[0].n}); em apartamentos, a ${incMenorApto.c} tem o menor preço de entrada (${brl(incMenorApto.p)}, ${incMenorApto.n}), enquanto ${INCS[INCS.length - 2].c} e ${INCS[INCS.length - 1].c} começam em ${brl(INCS[INCS.length - 2].p)} e ${brl(INCS[INCS.length - 1].p)}.`,
   tabela: `<table>
 <thead><tr><th>Incorporadora</th><th class="num">Menor preço de entrada</th><th>Empreendimento</th><th>Tipo</th></tr></thead>
 <tbody>
@@ -899,7 +913,7 @@ const jsonDatasetD = JSON.stringify({
     { '@type': 'PropertyValue', name: 'preco_a_partir_de', description: 'Menor preço da tabela oficial, em reais (vazio quando a tabela não foi liberada)', unitText: 'BRL' },
     { '@type': 'PropertyValue', name: 'm2_menor_unidade', description: 'Área privativa, em m², da unidade com o menor preço (nos lotes, a área do lote de menor preço); vazio quando a tabela não identifica a unidade', unitText: 'MTK' },
     { '@type': 'PropertyValue', name: 'preco_m2', description: 'preco_a_partir_de dividido por m2_menor_unidade, em reais por m²', unitText: 'BRL' },
-    { '@type': 'PropertyValue', name: 'mes_tabela', description: 'Mês da tabela de origem, no formato AAAA-MM; vazio quando a página do empreendimento não informa a data' },
+    { '@type': 'PropertyValue', name: 'mes_tabela', description: 'Mês da tabela de origem, no formato AAAA-MM; quando a tabela não traz data impressa, o mês em que foi recebida (a coluna fonte diz quando é esse o caso); vazio quando a página do empreendimento não informa a data' },
     { '@type': 'PropertyValue', name: 'estoque', description: 'Unidades disponíveis na data de data_estoque; vazio sem relatório oficial de estoque' },
     { '@type': 'PropertyValue', name: 'data_estoque', description: 'Data da contagem do estoque, no formato AAAA-MM-DD, ou AAAA-MM quando a fonte só informa o mês; vazio sem estoque' },
     { '@type': 'PropertyValue', name: 'spec', description: 'Resumo das características informadas na tabela' },
@@ -1110,7 +1124,7 @@ ${MENU_HTML}
           <tr><td><code>preco_a_partir_de</code></td><td>Menor preço da tabela oficial, em reais, sem separador de milhar. Vazio (CSV) ou <code>null</code> (JSON) quando a tabela ainda não foi liberada.</td></tr>
           <tr><td><code>m2_menor_unidade</code></td><td>Área privativa, em m², da unidade com o menor preço (nos lotes, a área do lote de menor preço da tabela, que nem sempre é o menor lote). Vazio quando a tabela não identifica qual unidade tem o menor preço.</td></tr>
           <tr><td><code>preco_m2</code></td><td><code>preco_a_partir_de</code> dividido por <code>m2_menor_unidade</code>, arredondado, em reais por m². Não é a média de todas as unidades.</td></tr>
-          <tr><td><code>mes_tabela</code></td><td>Mês da tabela de origem, no formato <code>AAAA-MM</code>, conforme a página do empreendimento. Vazio quando a página não informa a data da tabela.</td></tr>
+          <tr><td><code>mes_tabela</code></td><td>Mês da tabela de origem, no formato <code>AAAA-MM</code>, conforme a página do empreendimento. Quando a tabela não traz data impressa, é o mês em que ela foi recebida, e a coluna <code>fonte</code> diz isso ("sem data impressa, recebida em …"). Vazio quando a página não informa a data da tabela.</td></tr>
           <tr><td><code>estoque</code></td><td>Unidades disponíveis na data de <code>data_estoque</code> (relatório de estoque, espelho ou tabela com disponibilidade). Vazio quando não há relatório oficial.</td></tr>
           <tr><td><code>data_estoque</code></td><td>Data da contagem do estoque, conforme o relatório ou a tabela de origem: <code>AAAA-MM-DD</code>, ou <code>AAAA-MM</code> quando a fonte só informa o mês. Vazio quando não há estoque informado.</td></tr>
           <tr><td><code>spec</code></td><td>Resumo das características informadas: metragem, dormitórios, estoque conferido (com mês), previsão de entrega informada pela incorporadora.</td></tr>

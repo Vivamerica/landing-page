@@ -174,6 +174,8 @@ const edicao = EDICAO.mes.toLowerCase() + '/' + EDICAO.ano;            // outubr
 
 const MES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 const mesDe = iso => MES[+iso.slice(5, 7) - 1] + '/' + iso.slice(0, 4);  // 2026-10 → out/2026
+// tabela sem data impressa (campo tabRec da fonte única): tab é o mês em que foi recebida
+const tabMes = e => (e.tabRec ? 'tabela recebida em ' : 'tabela ') + mesDe(e.tab);
 const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
 const mil = n => n % 1000 === 0 ? 'R$ ' + (n / 1000).toLocaleString('pt-BR') + ' mil' : brl(n);  // nunca arredonda preço
 const m2 = n => n.toLocaleString('pt-BR') + ' m²';
@@ -311,7 +313,7 @@ function linhaCons(e, lote) {
 }
 function ficha(e, lote) {
   const sel = selos(e, lote).map(esc).join(' · ');
-  const tab = e.tab ? 'tabela ' + mesDe(e.tab) + (e.conf ? '<sup>†</sup>' : '')
+  const tab = e.tab ? tabMes(e) + (e.conf ? '<sup>†</sup>' : '')
             : e.prox ? 'pré-lançamento' : '';
   const pz = e.p
     ? `<p class="rot"><span class="tb">${tab}</span><span class="ap">a partir de</span></p><p class="pr">${brl(e.p)}</p>`
@@ -559,7 +561,7 @@ const capa = () => painel('frente', 2, 'escuro capa', 'capa', `
       <div class="nums">
         <div><strong>${total}</strong><span>empreendimentos</span></div>
         <div><strong>${construtoras}</strong><span>construtoras</span></div>
-        <div class="n3"><span>${LOTES.includes(menorDatado) ? 'lotes a partir de' : 'a partir de'}<br>tabela ${mesDe(menorDatado.tab)}</span></div>
+        <div class="n3"><span>${LOTES.includes(menorDatado) ? 'lotes a partir de' : 'a partir de'}<br>${tabMes(menorDatado)}</span></div>
         <div class="n3"><strong>${mil(menorDatado.p)}</strong></div>
       </div>
     </div>`);
@@ -1149,7 +1151,7 @@ process.on('SIGINT', () => { limpa(); process.exit(130); });
       transborda: [...rF.M.transborda.map(t => ({ ...t, face: 'frente' })), ...rV.M.transborda.map(t => ({ ...t, face: 'verso' }))] };
     console.log('Folder 2 dobras — ' + G.larg + ' × ' + G.alt + ' mm (210 × 148 aberto + 2 mm de sangria), dobra em rolo, fechado 71 × 148');
     console.log('  frente = aba 68 | contracapa 71 | capa 71 (dobras a 70,0 e 141,0 mm) · verso = esquerda 71 | meio 71 | direita 68 (dobras a 73,0 e 144,0 mm)');
-    console.log('  capa: ' + total + ' empreendimentos · ' + construtoras + ' construtoras · a partir de ' + mil(menorDatado.p) + ' (' + menorDatado.n + ', tabela ' + mesDe(menorDatado.tab) + ') · edição ' + edicao);
+    console.log('  capa: ' + total + ' empreendimentos · ' + construtoras + ' construtoras · a partir de ' + mil(menorDatado.p) + ' (' + menorDatado.n + ', ' + tabMes(menorDatado) + ') · edição ' + edicao);
     for (const nome of Object.keys(MIOLO)) console.log(`  ${nome} (${MIOLO[nome].face}): ${conteudoDe(nome)}`);
     console.log('  folga (mm): ' + Object.entries(M.folgas).map(([k, f]) => k + ' ' + f.map(v).join(' e ') + (k in folga1 && RESPIRO[k] ? ' (antes do respiro ' + v(folga1[k][0]) + ')' : '')).join(' · '));
     console.log('  respiro por card (mm, acima e abaixo): ' + Object.entries(RESPIRO).map(([k, r]) => k + ' ' + v(r) + (respiroLivre[k] !== r ? ' (sem o ritmo comum: ' + v(respiroLivre[k]) + ')' : '')).join(' · ')
@@ -1172,7 +1174,7 @@ process.on('SIGINT', () => { limpa(); process.exit(130); });
     if (EDICAO.iso !== hoje) console.log(`  aviso para a tiragem: a edição é ${edicao} (EDICAO do gera-observatorio.js), mas estamos em ${mesDe(hoje)}`);
     const antigas = [...APTOS, ...LOTES].filter(e => e.p && e.tab && e.tab < EDICAO.iso && e.conf !== EDICAO.iso);
     if (antigas.length) console.log(`  aviso para a tiragem: ${antigas.length} card(s) com tabela anterior à edição e sem confirmação para ${mesDe(EDICAO.iso)}: `
-      + antigas.map(e => e.n + ' (tabela ' + mesDe(e.tab) + (e.conf ? ', confirmada para ' + mesDe(e.conf) : '') + ')').join(', '));
+      + antigas.map(e => e.n + ' (' + tabMes(e) + (e.conf ? ', confirmada para ' + mesDe(e.conf) : '') + ')').join(', '));
 
     // PDF: só com a checagem do HTML aprovada; caixas regravadas e conferidas; renderizado (pdf2png) e conferido nos
     // pixels. Tudo na pasta temporária: a pasta de saída só é tocada com tudo aprovado.

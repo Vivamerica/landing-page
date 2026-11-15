@@ -5,8 +5,9 @@ Uso: python registra_fonte.py APTOS "{ n:'Izzi Residence', c:'GPCI', p:371862, i
 Idempotente: se o slug já estiver na lista, não faz nada. p:null vai para o fim da lista.
 """
 import re, sys
+import os
 sys.stdout.reconfigure(encoding='utf-8')
-P = 'C:/Users/Usuario/Desktop/landing-page/gera-folheto.js'
+P = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))).replace(os.sep, '/') + '/' + 'gera-folheto.js'   # o da raiz do site onde este script esta
 lista, entrada = sys.argv[1], sys.argv[2].strip()
 if not entrada.endswith(','):
     entrada += ','
