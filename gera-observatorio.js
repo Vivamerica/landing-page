@@ -59,7 +59,7 @@ const ESTOQUE_ANTERIOR = {
   'gran-vic-canario-indaiatuba':     { n: 3,   data: '02/09/2026', fonte: 'tabela VIC de 02/09/2026; atual: comunicado da VIC de 09/10/2026 (as mesmas 3 unidades da Torre 03)', est: 3 },
   // Gran Vic Andorinha (2 unidades em 02/09/2026) saiu da fonte única em 16/10/2026, sem unidades:
   // a saída está em SAIDAS, abaixo (a linha daqui ficaria órfã e foi removida).
-  'itamaraca-indaiatuba':            { n: 206, data: 'jul/2026', fonte: 'tabela Zarin de julho/2026; atual: tabela de outubro/2026 emitida em 11/10/2026 (166 disponíveis)', est: 166, saida: ['a menos na lista', 'a menos na lista'], nota: 'a tabela de julho listava as 206 unidades do projeto como disponíveis; a emitida em 11/10/2026 traz 166 disponíveis, 2 reservadas e 38 vendidas' },
+  'itamaraca-indaiatuba':            { n: 206, data: 'jul/2026', fonte: 'tabela Zarin de julho/2026; atual: tabela de novembro/2026 emitida em 12/11/2026 (162 disponíveis)', est: 162, saida: ['a menos na lista', 'a menos na lista'], nota: 'a tabela de julho listava as 206 unidades do projeto como disponíveis; a emitida em 11/10/2026 trazia 166 disponíveis, 2 reservadas e 38 vendidas, e a de 12/11/2026 lista 162 disponíveis' },
   'maria-candida-indaiatuba':        { n: 180, data: '08/09/2026', fonte: 'lista de disponíveis de 08/09/2026; atual: quadro de disponíveis recebido em 16/10/2026', est: 166, saida: ['a menos na lista', 'a menos na lista'], nota: '12 lotes saíram da lista, 6 estão reservados (voltam se a reserva cair) e 4 voltaram (D-14 a D-17)' },
   // 1ª medição em outubro/2026 (sem série anterior): Ville de Provence (307, tabela de outubro/2026 —
   // documento de 03/10/2026) e Alphaville Indaiatuba (126 disponíveis no quadro de vendas de
