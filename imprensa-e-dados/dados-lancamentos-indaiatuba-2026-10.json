@@ -118,12 +118,12 @@
     "preco_a_partir_de": 371862,
     "m2_menor_unidade": 39.9,
     "preco_m2": 9320,
-    "mes_tabela": "2026-09",
+    "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
     "spec": "39,90 a 66,47 m² · Centro · mall no térreo · entrega jun/2028",
     "url": "https://lancamentos.imoveisvivamerica.com.br/izzi-residence-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, setembro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Vila Plaza Residence",
@@ -174,12 +174,12 @@
     "preco_a_partir_de": 555171,
     "m2_menor_unidade": 63.85,
     "preco_m2": 8695,
-    "mes_tabela": "2026-10",
+    "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
     "spec": "3 dorm c/ suíte · 63,85 e 64,44 m² · Park Meraki · entrega abr/2028 (Torre 1) e set/2028 (Torre 2)",
     "url": "https://lancamentos.imoveisvivamerica.com.br/artemis-residencial-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Aurora — Park Meraki",
@@ -426,20 +426,20 @@
     "preco_a_partir_de": 145000,
     "m2_menor_unidade": 150,
     "preco_m2": 967,
-    "mes_tabela": "2026-10",
-    "estoque": 579,
-    "data_estoque": "2026-10-09",
+    "mes_tabela": "2026-11",
+    "estoque": 570,
+    "data_estoque": "2026-11-17",
     "spec": "Loteamento aberto · entrada de R$ 16.000 · 96x · previsão de entrega em 08/2028",
     "url": "https://lancamentos.imoveisvivamerica.com.br/monte-carmelo-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Parque Zarah",
     "tipo": "lote",
     "incorporadora": "Zarin",
-    "preco_a_partir_de": 173363,
+    "preco_a_partir_de": 211050,
     "m2_menor_unidade": 150,
-    "preco_m2": 1156,
+    "preco_m2": 1407,
     "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
@@ -454,12 +454,12 @@
     "preco_a_partir_de": 210000,
     "m2_menor_unidade": 150,
     "preco_m2": 1400,
-    "mes_tabela": "2026-10",
+    "mes_tabela": "2026-11",
     "estoque": 45,
-    "data_estoque": "2026-10-09",
-    "spec": "Loteamento aberto · infraestrutura concluída · entrada R$ 44.000 · 60x · previsão de entrega em 10/2026",
+    "data_estoque": "2026-11-17",
+    "spec": "Loteamento aberto · infraestrutura concluída · à vista ou 60x (6 dos 45 lotes) · previsão de entrega em 10/2026",
     "url": "https://lancamentos.imoveisvivamerica.com.br/di-italia-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Terras de San Marino",
@@ -496,12 +496,12 @@
     "preco_a_partir_de": 510000,
     "m2_menor_unidade": 300,
     "preco_m2": 1700,
-    "mes_tabela": "2026-10",
-    "estoque": 19,
-    "data_estoque": "2026-10-09",
-    "spec": "322 lotes · 19 disponíveis (09/10/2026) · piscina coberta · mini mercado 24h · previsão de entrega em 07/2027",
+    "mes_tabela": "2026-11",
+    "estoque": 16,
+    "data_estoque": "2026-11-17",
+    "spec": "322 lotes · 16 no relatório (17/11/2026) · piscina coberta · mini mercado 24h · previsão de entrega em 07/2027",
     "url": "https://lancamentos.imoveisvivamerica.com.br/alpnach-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Reserva Botânica",
@@ -524,12 +524,12 @@
     "preco_a_partir_de": 714000,
     "m2_menor_unidade": 420,
     "preco_m2": 1700,
-    "mes_tabela": "2026-10",
-    "estoque": 180,
-    "data_estoque": "2026-10-09",
+    "mes_tabela": "2026-11",
+    "estoque": 164,
+    "data_estoque": "2026-11-17",
     "spec": "710 lotes · 27 itens: SPA, Wine Bar, Fire Pit · previsão de entrega em 07/2027",
     "url": "https://lancamentos.imoveisvivamerica.com.br/residencial-ravello-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Ville de Provence",
@@ -552,12 +552,12 @@
     "preco_a_partir_de": 908480,
     "m2_menor_unidade": 511.5,
     "preco_m2": 1776,
-    "mes_tabela": "2026-10",
+    "mes_tabela": "2026-11",
     "estoque": 126,
     "data_estoque": "2026-10-07",
     "spec": "Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias · previsão de entrega em 07/2029",
     "url": "https://lancamentos.imoveisvivamerica.com.br/alphaville-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026, com os preços confirmados para novembro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Lagos de Helvetia",

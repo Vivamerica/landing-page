@@ -16,31 +16,44 @@
 # de parcelado para so a vista (e o contrario). Trocando campo a campo sobrariam
 # `prazo`/`nx` de uma condicao que nao existe mais.
 #
+# Parcela: o relatorio nao traz. Ela sai de regras_parcela.py, que tem uma regra
+# por bairro (Tabela Price com a taxa da planilha de cada um: Monte Carmelo,
+# Alpnach, Di Italia, Ravello, Park Vista Real e Park Gran Reserve). Bairro sem
+# regra la continua com o saldo dividido direto. Nos bairros com regra a condicao
+# gravada e a NORMALIZADA pela planilha (valor a prazo = area x m2, entrada = %
+# minima exata, parcela pela Price), e o que o relatorio trazia diferente sai na
+# lista de divergencias: ver o bloco da regra, mais abaixo. A linha gravada no
+# mapa tambem e conferida: se alguem gravou outra conta, o lote aparece em
+# MUDARAM e a linha e refeita.
+#
 # Uso: python dominium-atualiza.py <bairro> <relatorio.pdf> [--gravar]
 import io, json, math, os, re, subprocess, sys
 sys.stdout.reconfigure(encoding='utf-8')
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-P = 'C:/Users/Usuario/Desktop/landing-page/mapa-lotes-indaiatuba/index.html'
+sys.path.insert(0, AQUI)
+import regras_parcela as RP
+P = os.path.join(os.path.dirname(os.path.dirname(AQUI)), 'mapa-lotes-indaiatuba', 'index.html')   # relativo: vale em qualquer worktree
 BAIRRO, PDF = sys.argv[1], sys.argv[2]
 TMP = os.environ['TEMP'] + '/dominium-%s.json' % BAIRRO
 
 # ── le o relatorio com o parser que ja existe ────────────────────────
-subprocess.run([sys.executable, os.path.join(AQUI, 'dominium-disp.py'), PDF, TMP],
+# -I: o PDF vem de fora; o leitor nao carrega nada da pasta corrente nem do ambiente
+subprocess.run([sys.executable, '-I', os.path.join(AQUI, 'dominium-disp.py'), PDF, TMP],
                check=True, stdout=subprocess.DEVNULL)
 novo = {(d['q'], str(d['l'])): d for d in json.load(open(TMP))}
 print('%s | relatorio: %d lotes' % (BAIRRO, len(novo)))
 
-# ── condicao impossivel no relatorio ─────────────────────────────────
+# ── condicao impossivel no relatorio (bairro SEM regra) ──────────────
 # Em 01/10/2026 o Di Italia F-027 veio com entrada de R$ 440.000,00 num lote de
 # R$ 210.000,00 a vista — um zero a mais: todos os lotes iguais trazem R$ 44.000.
-# A parcela sairia NEGATIVA. O valor a vista desse lote confere com os irmaos,
-# entao o lote fica, mas so a vista: publicamos o que e verificavel e deixamos
-# de fora a condicao que o proprio relatorio contradiz. Corrigir para 44.000
-# seria inventar numero.
+# A parcela sairia NEGATIVA. Em bairro sem regra nao ha planilha para refazer a
+# condicao: o lote fica, mas so a vista. Em bairro com regra (o Di Italia tem) a
+# normalizacao abaixo refaz a entrada pela % minima e o lote vai para a lista de
+# divergencias.
 suspeitos = []
 for k, d in novo.items():
-    if not d.get('nx'):
+    if not d.get('nx') or RP.tem_regra(BAIRRO):
         continue
     if d['entrada'] >= d['prazo'] or (d['prazo'] - d['entrada']) / d['nx'] <= 0:
         suspeitos.append((k, dict(d)))
@@ -52,6 +65,86 @@ if suspeitos:
         print('   %s-%s: a vista R$ %.2f, mas entrada R$ %.2f para um a prazo de R$ %.2f (%dx)'
               % (k[0], k[1], d['vista'], d['entrada'], d['prazo'], d['nx']))
     print('   -> confirmar a condicao com a Dominium antes de anunciar parcelamento nesses lotes.')
+
+# ── regra de parcela do bairro (regras_parcela.py): normalizacao ─────
+# O relatorio da Dominium vem, mes a mes, com erro de digitacao no valor a prazo
+# (o Ravello C-5 de 10/2026 com o m2 a R$ 1.700 no lugar de R$ 1.800) e com
+# entrada que nao acompanhou o preco do lote (19,7%, 20,1%, 22,3%...). A condicao
+# gravada e a da planilha, RP.normaliza(): valor a prazo = area x m2 da faixa
+# (onde ha conta por m2), entrada = exatamente a % minima, parcela pela Price. O
+# lote continua parcelado e o que o relatorio trazia diferente sai em
+# DIVERGENCIAS DO RELATORIO, para conferir com a Dominium. Excecoes:
+#  · tipo sem taxa na regra (um COMERCIAL onde so ha residencial e misto) PARA:
+#    taxa adivinhada e parcela errada publicada;
+#  · parcelas acima do maximo do tipo (ou valor a prazo zero): a planilha nao
+#    calcula e outro prazo seria inventado. O lote entra so a vista e vai para a lista;
+#  · cara de tabela nova (RP.tabela_nova(): valor a prazo fora de area x m2 em
+#    mais de RP.PRAZO_ISOLADO lotes do tipo, ou sem RP.PRAZO_CONFIRMA lotes dentro
+#    da conta; ou a maioria com a mesma entrada fora do minimo): quem ficou velha
+#    foi a regra. O ensaio mostra, e o --gravar para sem gravar (mapa intocado)
+#    ate a regra mudar em regras_parcela.py ou a Dominium confirmar.
+tabela_velha, divergentes, so_vista = [], [], []
+if RP.tem_regra(BAIRRO):
+    sem_taxa = sorted({d['tipo'] for d in novo.values() if d.get('nx')} - set(RP.PRICE[BAIRRO]['tipos']))
+    if sem_taxa:
+        print('\nPAROU: o relatorio traz lote parcelado do tipo %s, sem taxa na regra de %s (regras_parcela.py)'
+              % (', '.join(sem_taxa), BAIRRO))
+        sys.exit(1)
+
+    def _faixas(r):
+        t = '%.1f%% a.m. ate %dx' % (float(r['juros']) * 100, r['max_nx'])
+        c = r.get('curto')
+        return t if not c else '%.1f%% a.m. ate %dx, %.1f%% a.m. de %d a %dx' % (
+            float(c['juros']) * 100, c['ate_nx'], float(r['juros']) * 100, c['ate_nx'] + 1, r['max_nx'])
+    print('parcela pela regra do bairro: %s; entrada %s %d%% do valor a prazo' % (
+        ', '.join('%s %s' % (t, _faixas(r)) for t, r in sorted(RP.PRICE[BAIRRO]['tipos'].items())),
+        'de exatamente' if RP.PRICE[BAIRRO]['entrada_exata'] else 'de no minimo',
+        RP.PRICE[BAIRRO]['entrada_min'] * 100))
+    ordem = sorted(novo.items(), key=lambda kv: (kv[0][0], int(kv[0][1])))
+    tabela_velha = RP.tabela_nova(BAIRRO, [('%s-%s' % k, d['tipo'], d['m2'], d['prazo'], d['entrada'], d['nx'])
+                                           for k, d in ordem if d.get('nx')])
+    for k, d in ordem:
+        if not d.get('nx'):
+            continue
+        cond, div = RP.normaliza(BAIRRO, d['tipo'], d['m2'], d['prazo'], d['entrada'], d['nx'])
+        if cond is None:
+            so_vista.append(('%s-%s' % k, '; '.join(x[3] for x in div)))
+            for c in ('nx', 'prazo', 'entrada'):
+                d.pop(c, None)
+            continue
+        if div:
+            divergentes.append(('%s-%s' % k, d['nx'], d['prazo'], d['entrada'], cond, div))
+        d['prazo'], d['entrada'] = float(cond['prazo']), float(cond['entrada'])
+    brl = lambda v: 'R$ ' + format(float(v), ',.2f').replace(',', '_').replace('.', ',').replace('_', '.')
+    if divergentes:
+        print('\nDIVERGENCIAS DO RELATORIO — %d lote(s) com a condicao normalizada pela planilha (%s):'
+              % (len(divergentes), 'com cara de tabela nova, nada sera gravado: ver abaixo' if tabela_velha
+                 else 'ficam parcelados; lista para conferir com a Dominium'))
+        for ident, nx, prazo, entrada, cond, div in divergentes:
+            mud = []
+            if '%.2f' % prazo != '%.2f' % cond['prazo']:
+                mud.append('a prazo %s -> %s' % (brl(prazo), brl(cond['prazo'])))
+            if '%.2f' % entrada != '%.2f' % cond['entrada']:
+                mud.append('entrada %s -> %s' % (brl(entrada), brl(cond['entrada'])))
+            print('   %-8s %2dx  %s  (parcela %s)' % (ident, nx, '; '.join(mud), brl(cond['parcela'])))
+            for x in div:
+                print('            %s' % x[3])
+    if so_vista:
+        print('\n!! SEM CONDICAO QUE A PLANILHA CALCULE (parcelas acima do maximo do tipo ou sem valor a prazo)'
+              ' — %d lote(s) entram SO A VISTA:' % len(so_vista))
+        for ident, a in so_vista:
+            print('   %s: %s' % (ident, a))
+        print('   -> confirmar a condicao com a Dominium antes de anunciar parcelamento nesses lotes.')
+    if tabela_velha:
+        print('\n!! CARA DE TABELA NOVA — muitos lotes fora da planilha ao mesmo tempo; com --gravar, NADA e gravado:')
+        for m in tabela_velha:
+            print('   ' + m)
+        print('   -> planilha nova: mude o preco do m2 / a entrada minima em regras_parcela.py; senao, confirme com a Dominium.')
+
+
+def parcela_de(d):
+    return RP.parcela(BAIRRO, d['tipo'], d['prazo'], d['entrada'], d['nx'])
+
 
 # ── le o mapa ────────────────────────────────────────────────────────
 s = io.open(P, encoding='utf-8', newline='').read()
@@ -85,6 +178,12 @@ for k in sorted(set(novo) & set(linhas), key=lambda k: (k[0], int(k[1]))):
         if val is None and atual is not None: dif.append((nome, atual, None)); continue
         if val is not None and atual is None: dif.append((nome, None, val)); continue
         if abs(atual - val) > 0.01: dif.append((nome, atual, val))
+    # a parcela e derivada; so nos bairros com regra ela e cobrada contra a conta
+    # (nos outros vale o que sempre valeu e nada muda)
+    if RP.tem_regra(BAIRRO) and d.get('nx'):
+        val, atual = parcela_de(d), campo(linha, 'parcela')
+        if atual is None or '%.2f' % atual != '%.2f' % val:
+            dif.append(('parcela', atual, val))
     if dif: mudaram[k] = dif
 if mudaram:
     print('\nMUDARAM (%d lotes):' % len(mudaram))
@@ -142,7 +241,7 @@ def monta(k, d, pos, indent='  '):
     t = ("{ b:'%s', q:'%s', l:'%s', m2:%.2f, tipo:'%s', pm2:%d, vista:%.2f"
          % (BAIRRO, k[0], k[1], d['m2'], d['tipo'], round(d['vista'] / d['m2']), d['vista']))
     if d.get('nx'):
-        parcela = (d['prazo'] - d['entrada']) / d['nx']
+        parcela = parcela_de(d)
         t += (', prazo:%.2f, entrada:%.2f, parcela:%.2f, nx:%d, ep:%d'
               % (d['prazo'], d['entrada'], parcela, d['nx'], round(d['entrada'] / d['prazo'] * 100)))
     if pos: t += ', ll:[%.6f,%.6f]' % pos
@@ -163,10 +262,14 @@ if saem:
     print('\nSAEM: %s' % ', '.join('%s-%s' % k for k in saem))
 
 if '--gravar' not in sys.argv:
-    print('\n(conferencia apenas — rode com --gravar para aplicar)')
+    print('\n(conferencia apenas — rode com --gravar para aplicar%s)'
+          % ('; com cara de tabela nova, o --gravar recusa' if tabela_velha else ''))
     sys.exit(0)
+if tabela_velha:
+    print('\nNAO GRAVOU: %s com cara de tabela nova (lista acima). Mapa intocado.' % BAIRRO)
+    sys.exit(1)
 
-# ── grava ────────────────────────────────────────────────────────────
+# ── monta o mapa novo (em memoria) ───────────────────────────────────
 for k in saem:
     s = s.replace(linhas[k], '', 1)
 for k in mudaram:
@@ -183,13 +286,30 @@ for k in sorted(novas, key=lambda k: (k[0], int(k[1]))):
     assert ancora in s, k
     s = s.replace(ancora, ancora + novas[k], 1)
 
-io.open(P, 'w', encoding='utf-8', newline='').write(s)
-
-# ── confere o que ficou gravado ──────────────────────────────────────
-gr = re.findall(r"^ *\{ b:'%s'[^\n]*\n" % re.escape(BAIRRO), io.open(P, encoding='utf-8', newline='').read(), re.M)
-assert len(gr) == len(novo), ('contagem final', len(gr), len(novo))
+# ── confere ANTES de gravar: nada que o confere-coerencia.py reprove ─
+gr = re.findall(r"^ *\{ b:'%s'[^\n]*\n" % re.escape(BAIRRO), s, re.M)
+erros = []
+if len(gr) != len(novo):
+    erros.append('contagem final %d, relatorio %d' % (len(gr), len(novo)))
 for g in gr:   # nenhum lote pode ficar sem preco nem com condicao pela metade
-    assert 'vista:' in g, ('linha sem vista', g)
-    assert ('soVista:true' in g) != ('nx:' in g), ('condicao incoerente', g)
+    if 'vista:' not in g:
+        erros.append('linha sem vista: ' + g.strip())
+    if ('soVista:true' in g) == ('nx:' in g):
+        erros.append('condicao incoerente: ' + g.strip())
+    elif RP.tem_regra(BAIRRO) and 'nx:' in g:   # parcela gravada = a da regra do bairro, lote dentro da regra
+        f = lambda n: float(re.search(r'\b' + n + r':([\d.]+)', g).group(1))
+        tipo = re.search(r"tipo:'([^']+)'", g).group(1)
+        esp = RP.parcela(BAIRRO, tipo, f('prazo'), f('entrada'), int(f('nx')))
+        if '%.2f' % f('parcela') != '%.2f' % esp:
+            erros.append('parcela fora da regra: ' + g.strip())
+        for a in RP.confere(BAIRRO, tipo, f('m2'), f('prazo'), f('entrada'), int(f('nx'))):
+            erros.append('lote fora da regra (%s): %s' % (a, g.strip()))
+if erros:
+    print('\nNAO GRAVOU — o mapa resultante nao passaria na conferencia (%d problema(s)):' % len(erros))
+    for e in erros[:12]:
+        print('   ' + e)
+    sys.exit(1)
+
+io.open(P, 'w', encoding='utf-8', newline='').write(s)
 v = [float(re.search(r'vista:([\d.]+)', g).group(1)) for g in gr]
 print('\ngravado: %d lotes | piso R$ %.2f | teto R$ %.2f' % (len(gr), min(v), max(v)))
