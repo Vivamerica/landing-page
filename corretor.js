@@ -743,7 +743,7 @@
     window.__vmFaixaGancho = true;
     var s = document.createElement('script');
     s.async = true;
-    s.src = '/faixa.js?v=20261113';
+    s.src = '/faixa.js?v=20261117';
     (document.head || document.documentElement).appendChild(s);
   } catch (e) {}
 })();
