@@ -10,6 +10,7 @@ Uso (Python do venv, fora do scratchpad):
     python gera_landing.py configs/izzi-residence-indaiatuba.json
 
 Campos opcionais do config (quem não usa nenhum sai idêntico ao que saía antes):
+    uf                padrão "SP"; entra no addressRegion do schema (BA, CE...: Alphaville de outros estados)
     cidade            padrão "Indaiatuba"; entra no addressLocality, no título do iframe do mapa e no "name" do
                       schema (só quando o nome do empreendimento ainda não traz a cidade)
     categoria         "apartamentos", "alphaville" (breadcrumb visível e BreadcrumbList pelo /alphaville/) ou
@@ -254,7 +255,7 @@ def main(caminho_cfg):
     principal['address'] = {"@type": "PostalAddress"}
     if c.get('endereco_schema'):
         principal['address']['streetAddress'] = c['endereco_schema']
-    principal['address'].update({"addressLocality": cidade, "addressRegion": "SP", "addressCountry": "BR"})
+    principal['address'].update({"addressLocality": cidade, "addressRegion": c.get("uf", "SP"), "addressCountry": "BR"})
     if c.get('preco_min') is not None:
         oferta = {"@type": "AggregateOffer", "availability": "https://schema.org/InStock", "priceCurrency": "BRL",
                   "lowPrice": c['preco_min'], "highPrice": c['preco_max'], "description": c['oferta_desc']}

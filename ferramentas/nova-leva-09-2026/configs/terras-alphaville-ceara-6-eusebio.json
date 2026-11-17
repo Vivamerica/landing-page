@@ -1,0 +1,468 @@
+{
+  "slug": "terras-alphaville-ceara-6-eusebio",
+  "nome": "Terras Alphaville Ceará 6",
+  "categoria": "alphaville",
+  "cidade": "Eusébio",
+  "uf": "CE",
+  "data": "2026-11-17",
+  "atualizado": "2026-11-17",
+  "fonte_tabela": "material recebido em nov/2026, sem tabela de preços",
+  "title": "Terras Alphaville Ceará 6 | lotes desde 275 m² no Eusébio",
+  "description": "Terras Alphaville Ceará 6, na Cidade Alpha, Eusébio (CE): 571 lotes na planta de vendas, desde 275 m², clube com piscina e 8 praças. Preço no atendimento.",
+  "keywords": "terras alphaville ceará 6, terras alphaville ceara 6, terras alpha ceará 6, cidade alpha ceará, cidade alpha eusébio, lote alphaville ceará, lote cidade alpha, loteamento eusébio, terreno eusébio, lote em eusébio",
+  "schema_tipo": "RealEstateListing",
+  "schema_desc": "Loteamento de acesso controlado da Alphaville, da linha Terras Alpha, na Cidade Alpha, no Eusébio/CE, com entrada pela Avenida José Amora Sá. A planta geral de vendas, de agosto/2025, mostra 571 lotes residenciais em 19 quadras. Segundo o book da Alphaville, o lote mínimo tem 275 m², o médio 285 m² e o máximo 368,04 m², numa gleba de 282.204 m² com clube de 13.637,81 m², 42.330,65 m² de áreas verdes e 8 praças. O material recebido em novembro/2026 não traz tabela de preços nem previsão de entrega: preço, disponibilidade e prazos são informados no atendimento.",
+  "endereco_schema": "Avenida José Amora Sá (lado par), Cidade Alpha",
+  "preco_min": null,
+  "preco_max": null,
+  "offer_count": null,
+  "lazer": [
+    "Piscina adulto com raias e piscina infantil",
+    "Salão de festas",
+    "Churrasqueiras",
+    "Academia",
+    "Sala de jogos",
+    "Playground",
+    "Quadra de tênis",
+    "Quadra de areia",
+    "Quadra poliesportiva",
+    "Campo de futebol",
+    "Horta",
+    "Bicicletário",
+    "Pomar",
+    "Redário",
+    "Pet place",
+    "Ginástica ao ar livre"
+  ],
+  "marca_topo": [
+    "TERRAS ALPHAVILLE CEARÁ 6",
+    "Eusébio"
+  ],
+  "nap_privacidade": true,
+  "wa_flutuante": "Olá! Tenho interesse no Terras Alphaville Ceará 6, no Eusébio. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela de lotes do Terras Alphaville Ceará 6 com quadra, metragem e valor.",
+  "hero": {
+    "eyebrow": "Eusébio, Ceará · realização Alphaville",
+    "sub": "Lotes residenciais na Cidade Alpha, no Eusébio",
+    "lead": "O Terras Alphaville Ceará 6 é um loteamento de acesso controlado da Alphaville na Cidade Alpha, bairro planejado do Eusébio, na Grande Fortaleza (CE). A planta de vendas mostra 571 lotes residenciais. Segundo o book, o menor tem 275 m², e o clube tem piscina, academia, quadras e campo de futebol. O material que recebemos não traz preço nem previsão de entrega: os dois se confirmam no atendimento.",
+    "preco": "Tabela no atendimento",
+    "preco_nota": "o material recebido em nov/2026 traz o mapa de lotes, sem valores · condições de pagamento confirmadas no atendimento",
+    "cta_msg": "Olá! Quero a tabela de lotes do Terras Alphaville Ceará 6 com quadra, metragem e valor.",
+    "cta_texto": "Pedir a tabela de preços",
+    "cta2": {
+      "msg": "Olá! Quero saber quais lotes do Terras Alphaville Ceará 6 estão livres, com quadra e metragem.",
+      "texto": "Consultar lotes livres"
+    },
+    "credito": "Imagem ilustrativa (fotomontagem aérea do book da Alphaville)"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "571 lotes na planta de vendas, na Cidade Alpha, no Eusébio",
+      "paragrafos": [
+        "O Terras Alphaville Ceará 6 é um loteamento da Alphaville no Eusébio, município da Grande Fortaleza. Fica na Cidade Alpha, um bairro planejado, com entrada pela Avenida José Amora Sá. Na planta geral de vendas, de agosto/2025, o nome completo é Loteamento de Acesso Controlado Terras Alphaville Ceará 6.",
+        "A planta mostra 571 lotes, todos residenciais, em 19 quadras, da A6 à S6. A gleba tem 282.204 m²: o clube ocupa 13.637,81 m² e as áreas verdes somam 42.330,65 m², segundo a ficha técnica do book. O projeto arquitetônico, urbanístico e paisagístico é do Grupo Alphaville.",
+        "A Cidade Alpha tem outros residenciais da Alphaville com nomes parecidos, como o Alphaville Ceará 5 e o Terras Alphaville Ceará 5. São empreendimentos diferentes, cada um com o seu material e, quando houver, a sua tabela. O mapa do book mostra ainda, na região, o Alphaville Eusébio e o Alphaville Fortaleza, que também são outros empreendimentos. Esta página trata só do Terras Alphaville Ceará 6."
+      ],
+      "numeros": [
+        {
+          "n": "571",
+          "p": "lotes residenciais na planta de vendas"
+        },
+        {
+          "n": "275 m²",
+          "p": "lote mínimo, segundo o book"
+        },
+        {
+          "n": "13.637,81 m²",
+          "p": "de clube, segundo o book"
+        },
+        {
+          "n": "8",
+          "p": "praças no projeto, segundo o book"
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "id": "lotes",
+      "classe": "cream",
+      "label": "Lotes",
+      "h2": "Lotes a partir de 275 m², com média de 285 m²",
+      "paragrafos": [
+        "Pela ficha técnica do book, o lote mínimo tem 275 m², o médio tem 285 m² e o máximo tem 368,04 m². Na planta de vendas, o lote de 275 m² mede 11 m de frente por 25 m de fundo. Os lotes maiores ficam nas pontas das quadras e na quadra curva do lado oposto à portaria.",
+        "A planta traz um lote de 368,74 m² (o M612), um pouco acima do máximo do book. A própria planta pede que as medidas sejam conferidas na planta individual e no memorial descritivo do lote antes da assinatura do contrato.",
+        "As alamedas internas terminam em balão de retorno. Segundo o book, essas ruas sem saída foram desenhadas para diminuir o fluxo de carros e deixar o acesso mais controlado."
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "planta-conceitual.jpg",
+              "alt": "Planta conceitual ilustrada do Terras Alphaville Ceará 6 sobre fotomontagem aérea, com as quadras de lotes e o clube junto à avenida",
+              "w": 1444,
+              "h": 1101,
+              "leg": "Planta conceitual sobre fotomontagem aérea, do book: as quadras de lotes em amarelo e, junto à avenida, a portaria e o clube. Imagem ilustrativa."
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "t": "Só lotes residenciais",
+          "p": "Os 571 lotes da planta são residenciais. Não há lote comercial nem de uso misto dentro do loteamento; as áreas comerciais da Cidade Alpha ficam fora dele."
+        },
+        {
+          "t": "Segurança",
+          "p": "Segundo o book: portaria monitorada 24h, câmeras, controle de acesso informatizado e limite de velocidade nas vias. A planta mostra gradil no perímetro do loteamento."
+        },
+        {
+          "t": "Construção da casa",
+          "p": "A casa é projetada e construída por quem compra o lote. As regras de construção (recuos, ocupação e altura) não vieram no material: peça o regulamento antes de escolher o lote."
+        },
+        {
+          "t": "Associação",
+          "p": "O material não fala em associação de moradores nem em contribuição mensal. Pergunte no atendimento antes de fechar."
+        }
+      ],
+      "notas": [
+        "Número de lotes e medidas pela planta de vendas de agosto/2025; metragens mínima, média e máxima pelo book. A disponibilidade de cada lote é confirmada no atendimento."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de lotes do Terras Alphaville Ceará 6 com quadra, metragem e valor.",
+        "texto": "Pedir lotes e metragens"
+      },
+      "depois": "lazer"
+    },
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "Preço: peça a tabela no atendimento",
+      "paragrafos": [
+        "O material que recebemos em novembro/2026 é o book e um mapa de disponibilidade. Nenhum dos dois traz preço, entrada, parcelas ou índice de correção. Por isso esta página não publica valor.",
+        "O mapa marca cada lote com uma cor, mas não traz a legenda das cores. Pedimos à Alphaville a tabela vigente e a situação de cada lote e enviamos a você, com quadra, metragem e plano de pagamento.",
+        "Pergunte também o que fica fora do preço: escritura, registro, ITBI (Imposto sobre a Transmissão de Bens Imóveis, cobrado pela prefeitura na compra do imóvel) e comissão de corretagem. O material não informa quem paga cada um."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela de lotes do Terras Alphaville Ceará 6 com quadra, metragem e valor.",
+        "texto": "Pedir a tabela de preços"
+      }
+    },
+    {
+      "id": "entrega",
+      "classe": "cream",
+      "label": "Entrega e documentos",
+      "h2": "Previsão de entrega e registro: confirme no atendimento",
+      "paragrafos": [
+        "O book e a planta não informam a previsão de entrega dos lotes e do clube, o registro do loteamento em cartório nem a empresa que vende os lotes. No catálogo da Alphaville que consultamos em 09/10/2026, o Terras Alphaville Ceará 6 aparece como em construção.",
+        "Antes de assinar, peça a matrícula do loteamento, a minuta do contrato, o regulamento de construção e a previsão de entrega por escrito."
+      ],
+      "cta": {
+        "msg": "Olá! Quero saber a previsão de entrega e a documentação do Terras Alphaville Ceará 6.",
+        "texto": "Perguntar sobre entrega e documentos"
+      }
+    },
+    {
+      "id": "sustentabilidade",
+      "label": "Sustentabilidade",
+      "h2": "Energia solar no apoio e recarga de carro elétrico no clube",
+      "paragrafos": [
+        "Segundo o book, o bloco de apoio terá captação de energia solar, e o estacionamento do clube terá um totem para recarga de carro elétrico. Os dois ficam nas áreas comuns, não nos lotes.",
+        "O book lista também 12 práticas e programas ambientais:"
+      ],
+      "lista": [
+        "Conservação e controle da qualidade do ar",
+        "Gerenciamento ambiental da obra",
+        "Gerenciamento dos resíduos da construção civil",
+        "Monitoramento do ar e controle de ruídos",
+        "Monitoramento e controle de erosão",
+        "Resgate, afugentamento e monitoramento da fauna",
+        "Transplante de espécies vegetais",
+        "Monitoramento arqueológico",
+        "Educação ambiental para os trabalhadores da obra",
+        "Comunicação com os vizinhos da obra e os órgãos públicos",
+        "Plano de emergência ambiental",
+        "Parcerias com cooperativas de reciclagem"
+      ]
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Na Avenida José Amora Sá, na Cidade Alpha",
+      "paragrafos": [
+        "Pela planta de vendas, o loteamento fica na Avenida José Amora Sá, lado par, no bairro Cidade Alpha, no Eusébio (CE). A portaria e o clube ficam do lado da avenida. O material não informa o número do endereço.",
+        "Segundo o book, a Cidade Alpha nasceu em 2012, de uma parceria do Grupo Alphaville com o Grupo Dias Branco, numa área de 18,5 milhões de m². O book conta 18 fases lançadas no bairro, com mais de 5.700 lotes residenciais e 182 lotes comerciais.",
+        "Os tempos abaixo são os do book, sem indicação do meio de transporte nem do horário. A BR-116 é uma rodovia federal (o prefixo BR indica estrada federal). O Quarto Anel Viário é, segundo o book, o acesso principal."
+      ],
+      "cards": [
+        {
+          "t": "5 a 8 minutos",
+          "p": "Centro do Eusébio (5), acesso principal pelo Quarto Anel Viário (6) e BR-116 (8), segundo o book"
+        },
+        {
+          "t": "10 a 15 minutos",
+          "p": "Shopping Eusébio (10), Terrazo Shopping (12) e Praia do Futuro (15), segundo o book"
+        }
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "mapa-localizacao.jpg",
+              "alt": "Mapa ilustrado da região do Eusébio e de Fortaleza com o Terras Alphaville Ceará 6 marcado em azul dentro da Cidade Alpha",
+              "w": 1356,
+              "h": 1502,
+              "leg": "Mapa ilustrado do book (sem perspectiva): o Terras Alphaville Ceará 6 em azul, dentro da Cidade Alpha. Imagem ilustrativa."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "msg": "Olá! Quero saber mais sobre a localização do Terras Alphaville Ceará 6, no Eusébio.",
+        "texto": "Perguntar sobre a região"
+      }
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    }
+  ],
+  "galeria": {
+    "label": "Imagens",
+    "h2": "O loteamento, a portaria e o clube",
+    "aviso": "Todas as imagens são ilustrativas: uma fotomontagem aérea e perspectivas do book da Alphaville. Vegetação, mobiliário e casas aparecem só como ilustração; a ocupação dos lotes depende do que cada comprador construir.",
+    "itens": [
+      {
+        "arq": "hero.jpg",
+        "alt": "Fotomontagem aérea ilustrativa do Terras Alphaville Ceará 6, no Eusébio, com as quadras de lotes e as ruas internas",
+        "w": 1444,
+        "h": 812,
+        "leg": "Fotomontagem aérea do loteamento. Imagem ilustrativa."
+      },
+      {
+        "arq": "portaria.jpg",
+        "alt": "Perspectiva ilustrada da portaria do Terras Alphaville Ceará 6, com guarita e cancela",
+        "w": 1444,
+        "h": 1083,
+        "leg": "Portaria. Perspectiva ilustrada."
+      },
+      {
+        "arq": "mapa-do-clube.jpg",
+        "alt": "Perspectiva ilustrada do clube visto de cima, com piscina, quadras, campo de futebol e estacionamento",
+        "w": 1327,
+        "h": 995,
+        "leg": "O clube visto de cima. Perspectiva ilustrada."
+      },
+      {
+        "arq": "piscina.jpg",
+        "alt": "Perspectiva ilustrada da piscina do clube, com raia, deck com espreguiçadeiras e playground ao fundo",
+        "w": 1285,
+        "h": 964,
+        "leg": "Piscina do clube. Perspectiva ilustrada."
+      },
+      {
+        "arq": "academia.jpg",
+        "alt": "Perspectiva ilustrada da academia do clube, com esteiras e aparelhos de musculação",
+        "w": 1444,
+        "h": 822,
+        "leg": "Academia. Perspectiva ilustrada."
+      },
+      {
+        "arq": "churrasqueira.jpg",
+        "alt": "Perspectiva ilustrada da churrasqueira do clube, com bancada e mesas",
+        "w": 1443,
+        "h": 825,
+        "leg": "Churrasqueira. Perspectiva ilustrada."
+      },
+      {
+        "arq": "praca-kids.jpg",
+        "alt": "Perspectiva ilustrada da praça kids, com brinquedo de madeira e piso colorido",
+        "w": 1280,
+        "h": 960,
+        "leg": "Praça kids. Perspectiva ilustrada."
+      },
+      {
+        "arq": "pet-place.jpg",
+        "alt": "Perspectiva ilustrada do pet place, gramado cercado com obstáculos para cães",
+        "w": 1280,
+        "h": 960,
+        "leg": "Pet place. Perspectiva ilustrada."
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "O clube e as 8 praças",
+    "intro": "O mapa do clube, no book, numera 15 itens, da portaria à sala de jogos. A ficha técnica lista ainda 8 praças. Abaixo, o que o projeto prevê para uso dos moradores.",
+    "itens": [
+      "Piscina adulto com raias e piscina infantil",
+      "Salão de festas",
+      "Churrasqueiras",
+      "Academia",
+      "Sala de jogos",
+      "Playground",
+      "Quadra de tênis",
+      "Quadra de areia",
+      "Quadra poliesportiva",
+      "Campo de futebol",
+      "Horta",
+      "Bicicletário e estacionamento do clube",
+      "Bosque Plantando Raízes, Praça Central e Pomar",
+      "Praça linear com ginástica ao ar livre, playground teen, redário e pet place",
+      "Playground kids"
+    ],
+    "nota": "Itens do mapa do clube e da ficha técnica do book. As imagens são perspectivas ilustradas: acabamento, mobiliário e vegetação podem mudar. O material não informa quando o clube fica pronto."
+  },
+  "ficha": [
+    [
+      "Realização",
+      "Alphaville"
+    ],
+    [
+      "Projeto",
+      "Arquitetônico, urbanístico e paisagístico do Grupo Alphaville, segundo o book"
+    ],
+    [
+      "Tipo",
+      "Loteamento de acesso controlado, pelo nome na planta de vendas; os documentos de registro não vieram no material"
+    ],
+    [
+      "Linha",
+      "Terras Alphaville"
+    ],
+    [
+      "Localização",
+      "Avenida José Amora Sá, lado par, bairro Cidade Alpha, Eusébio/CE"
+    ],
+    [
+      "Área da gleba",
+      "282.204,00 m²"
+    ],
+    [
+      "Total de lotes",
+      "571 residenciais em 19 quadras (A6 a S6), pela planta de vendas de ago/2025"
+    ],
+    [
+      "Metragem dos lotes",
+      "Mínimo 275,0 m², médio 285,0 m² e máximo 368,04 m², pelo book; a planta traz um lote de 368,74 m² (M612)"
+    ],
+    [
+      "Clube",
+      "13.637,81 m²"
+    ],
+    [
+      "Áreas verdes",
+      "42.330,65 m²"
+    ],
+    [
+      "Praças",
+      "8"
+    ],
+    [
+      "Segurança",
+      "Portaria monitorada 24h, câmeras, controle de acesso informatizado e limite de velocidade nas vias, segundo o book"
+    ],
+    [
+      "Sustentabilidade",
+      "Energia solar no bloco de apoio e totem de recarga de carro elétrico no estacionamento do clube, segundo o book"
+    ],
+    [
+      "Preço",
+      "Sem tabela no material recebido em nov/2026; confirme no atendimento"
+    ],
+    [
+      "Disponibilidade",
+      "Mapa recebido em nov/2026 (planta-base de ago/2025), sem legenda das cores; confirme no atendimento"
+    ],
+    [
+      "Fase",
+      "Em construção, no catálogo da Alphaville consultado em 09/10/2026"
+    ],
+    [
+      "Previsão de entrega",
+      "Não informada no material; confirme no atendimento"
+    ],
+    [
+      "Registro do loteamento",
+      "Não informado no material"
+    ],
+    [
+      "Empresa vendedora",
+      "Não identificada no material"
+    ],
+    [
+      "Contribuição à associação",
+      "Não informada no material"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um lote no Terras Alphaville Ceará 6?",
+      "a": "O material que recebemos em novembro/2026 não traz tabela de preços, por isso não publicamos valor. Pedimos à Alphaville a tabela vigente e enviamos a você, com quadra, metragem e plano de pagamento. Pergunte também o que fica fora do preço, como escritura, registro, ITBI e corretagem."
+    },
+    {
+      "q": "Qual o tamanho dos lotes do Terras Alphaville Ceará 6?",
+      "a": "Segundo o book, o lote mínimo tem 275 m², o médio 285 m² e o máximo 368,04 m². Na planta de vendas, o lote de 275 m² mede 11 m de frente por 25 m de fundo, e há um lote de 368,74 m² (M612), um pouco acima do máximo do book. Confira a metragem do lote escolhido na planta individual e no memorial descritivo."
+    },
+    {
+      "q": "Quantos lotes tem o Terras Alphaville Ceará 6?",
+      "a": "A planta geral de vendas, de agosto/2025, mostra 571 lotes, todos residenciais, em 19 quadras (A6 a S6), pela nossa contagem lote a lote; o book não informa o total, e a Alphaville ainda não o confirmou. Quantos ainda estão à venda se confirma no atendimento."
+    },
+    {
+      "q": "Onde fica o Terras Alphaville Ceará 6?",
+      "a": "Na Avenida José Amora Sá, lado par, no bairro Cidade Alpha, no Eusébio (CE), na Grande Fortaleza, pela planta de vendas. Segundo o book, fica a 5 minutos do centro do Eusébio, a 8 da BR-116 e a 15 da Praia do Futuro, sem indicação do meio de transporte."
+    },
+    {
+      "q": "Que lazer tem o Terras Alphaville Ceará 6?",
+      "a": "Pelo mapa do clube do book: piscina adulto com raias e piscina infantil, salão de festas, churrasqueiras, academia, sala de jogos, playground, quadras de tênis, de areia e poliesportiva, campo de futebol, horta e bicicletário. A ficha técnica lista ainda 8 praças, com pomar, redário, pet place, playground teen e ginástica ao ar livre. O material não informa quando o clube fica pronto."
+    },
+    {
+      "q": "O Terras Alphaville Ceará 6 é condomínio fechado?",
+      "a": "A planta de vendas chama o empreendimento de Loteamento de Acesso Controlado Terras Alphaville Ceará 6. Segundo o book, ele tem portaria monitorada 24h, câmeras e controle de acesso informatizado, e a planta mostra gradil no perímetro. O registro do loteamento e as regras da associação não vieram no material; confirme no atendimento."
+    },
+    {
+      "q": "Quando o Terras Alphaville Ceará 6 será entregue?",
+      "a": "O material recebido não informa a previsão de entrega dos lotes nem do clube. No catálogo da Alphaville consultado em 09/10/2026, o empreendimento aparece como em construção. Peça a previsão por escrito no atendimento."
+    },
+    {
+      "q": "O Terras Alphaville Ceará 6 é o mesmo que o Alphaville Ceará 5?",
+      "a": "Não. São empreendimentos diferentes da Alphaville, na mesma Cidade Alpha, no Eusébio. O Terras Alphaville Ceará 6 é da linha Terras Alpha e tem material próprio; a tabela de preços, quando a Alphaville enviar, é só dele."
+    }
+  ],
+  "cta": {
+    "h2": "Quer a tabela do Terras Alphaville Ceará 6?",
+    "p": "Pedimos à Alphaville a tabela vigente e a situação dos lotes e enviamos a você, com quadra, metragem e condições de pagamento. A Viv'América fica em Indaiatuba (SP) e atende pelo WhatsApp.",
+    "msg": "Olá! Quero a tabela de lotes do Terras Alphaville Ceará 6 com quadra, metragem e valor.",
+    "texto": "Pedir a tabela de preços"
+  },
+  "rodape": {
+    "marca": "TERRAS ALPHAVILLE CEARÁ 6",
+    "linha": "Terras Alphaville Ceará 6 · lotes residenciais na Cidade Alpha · Eusébio, CE",
+    "realizacao": "Realização Alphaville",
+    "legal": "Imagens ilustrativas: fotomontagem aérea e perspectivas do book da Alphaville; vegetação, mobiliário e casas aparecem só como ilustração. Número de lotes e medidas pela planta geral de vendas de agosto/2025; metragens mínima, média e máxima, áreas, lazer e tempos de deslocamento conforme o book da Alphaville. O material recebido em nov/2026 não traz tabela de preços, previsão de entrega nem dados de registro do loteamento: preço, disponibilidade, prazos e condições são confirmados no atendimento. Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da Alphaville. Página publicada em nov/2026."
+  },
+  "home": {
+    "tipo": "lote",
+    "preco": null,
+    "lote": "fechado",
+    "status": "obras",
+    "constr": "Alphaville",
+    "pm2": "",
+    "badge": "Condomínio fechado",
+    "badge_estilo": "background:#C9A227;color:#161616;",
+    "meta": "Lotes residenciais desde 275 m² · Eusébio/CE",
+    "desc": "571 lotes residenciais na planta de vendas, na Cidade Alpha (Eusébio/CE) · clube com piscina, academia, quadras e campo de futebol · 8 praças · tabela no atendimento.",
+    "alt": "Fotomontagem aérea ilustrativa do Terras Alphaville Ceará 6, no Eusébio",
+    "itemlist": "Terras Alphaville Ceará 6 — loteamento da Alphaville na Cidade Alpha, Eusébio/CE, 571 lotes residenciais desde 275 m² · tabela no atendimento"
+  },
+  "llms": {
+    "secao": "alphaville",
+    "linha": "loteamento de acesso controlado da Alphaville (linha Terras Alpha) na Cidade Alpha, Eusébio/CE (não é Indaiatuba), com entrada pela Avenida José Amora Sá. Pela planta geral de vendas (ago/2025), 571 lotes residenciais em 19 quadras (A6 a S6); pelo book, lote mínimo de 275 m², médio de 285 m² e máximo de 368,04 m² (a planta traz um lote de 368,74 m²), gleba de 282.204 m², clube de 13.637,81 m² (piscina adulto com raias e infantil, salão de festas, churrasqueiras, academia, sala de jogos, playground, quadras de tênis, de areia e poliesportiva, campo de futebol, horta e bicicletário), 42.330,65 m² de áreas verdes e 8 praças; portaria monitorada 24h; energia solar no bloco de apoio e recarga de carro elétrico no clube. Não confundir com o Alphaville Ceará 5, o Terras Alphaville Ceará 5, o Alphaville Eusébio nem o Alphaville Fortaleza. O material recebido em nov/2026 não traz tabela de preços, previsão de entrega, registro nem empresa vendedora: preço, disponibilidade e condições no atendimento; o catálogo da Alphaville (consulta de 09/10/2026) lista o empreendimento em construção."
+  },
+  "geo": null,
+  "mapa": null
+}

@@ -91,9 +91,9 @@ const APTOS = [
 // arredondado (misto de 150 m² da Pérola, Q14 L12, tabela de nov/2026 gerada em 12/11/2026).
 const LOTES = [
   { n:'Jardim Siena', c:'Kaaba', p:300000, m2:250, tab:'2026-11', tabRec:true, img:'jardim-siena-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Itaici · 77 lotes de 250 a 607,94 m² · R$ 1.200/m²', t:'Cond. fechado', prev:'entregue', slug:'jardim-siena-indaiatuba' },
-  { n:'Jardim Residencial Belle Vista', c:'Kaaba', p:360000, m2:300, tab:'2026-11', tabRec:true, img:'jardim-belle-vista-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Mato Dentro · 18 lotes disponíveis no pool da Kaaba (27/10/2026) · até 36x', t:'Cond. fechado', prev:'consulte', slug:'jardim-belle-vista-indaiatuba' },
-  { n:'Reserva da Colina', c:'Kaaba', p:400500, m2:300, tab:'2026-11', tabRec:true, img:'reserva-da-colina-indaiatuba/images/hero.jpg', s:'Condomínio fechado · 123 lotes a partir de 300 m² · portaria e muro · 33 disponíveis no pool da Kaaba (26/10/2026)', t:'Cond. fechado', prev:'consulte', slug:'reserva-da-colina-indaiatuba' },
-  { n:'Terras de Obwalden', c:'Kaaba', p:435000, m2:300, tab:'2026-11', tabRec:true, img:'terras-de-obwalden-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Bela Vista · 239 lotes de 300 a 479 m² · portaria · 54 disponíveis (pool Kaaba, 26/10/2026)', t:'Cond. fechado', prev:'consulte', slug:'terras-de-obwalden-indaiatuba' },
+  { n:'Jardim Residencial Belle Vista', c:'Kaaba', p:360000, m2:300, tab:'2026-11', tabRec:true, img:'jardim-belle-vista-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Mato Dentro · 18 lotes disponíveis no pool da Kaaba (27/10/2026) · até 36x', t:'Cond. fechado', prev:'2026-12', slug:'jardim-belle-vista-indaiatuba' },
+  { n:'Reserva da Colina', c:'Kaaba', p:400500, m2:300, tab:'2026-11', tabRec:true, img:'reserva-da-colina-indaiatuba/images/hero.jpg', s:'Condomínio fechado · 123 lotes a partir de 300 m² · portaria e muro · 33 disponíveis no pool da Kaaba (26/10/2026)', t:'Cond. fechado', prev:'entregue', slug:'reserva-da-colina-indaiatuba' },
+  { n:'Terras de Obwalden', c:'Kaaba', p:435000, m2:300, tab:'2026-11', tabRec:true, img:'terras-de-obwalden-indaiatuba/images/hero.jpg', s:'Condomínio fechado · Bela Vista · 239 lotes de 300 a 479 m² · portaria · 54 disponíveis (pool Kaaba, 26/10/2026)', t:'Cond. fechado', prev:'2026-12', slug:'terras-de-obwalden-indaiatuba' },
   { n:'Jardim Dona Maria Cândida', c:'Asseplan Narezzi', p:600000, m2:300, tab:'2025-07', conf:'2026-10', img:'maria-candida-indaiatuba/images/portaria-card.jpg',
     s:'Condomínio fechado · obras concluídas · 166 lotes disponíveis (16/10/2026)', t:'Cond. fechado', est:166, estEm:'16/10/2026', prev:'entregue', slug:'maria-candida-indaiatuba' },
   { n:'Residencial Monte Carmelo', c:'Dominium', p:145000, m2:150, tab:'2026-10', img:'monte-carmelo-indaiatuba/images/hero2.jpg',
@@ -113,10 +113,10 @@ const LOTES = [
   { n:'Residencial Ravello', c:'Dominium', p:714000, m2:420, tab:'2026-10', img:'residencial-ravello-indaiatuba/images/hero.jpg',
     s:'710 lotes · 27 itens: SPA, Wine Bar, Fire Pit', t:'Cond. fechado', est:180, estEm:'09/10/2026', prev:'2027-07', slug:'residencial-ravello-indaiatuba' },
   { n:'Ville de Provence', c:'Urban Square', p:637200, m2:360, tab:'2026-10', img:'ville-de-provence-indaiatuba/images/hero.jpg',
-    s:'Loteamento fechado · 307 lotes de 360 a 617 m² · sinal de 10% e saldo em até 96x', t:'Cond. fechado', est:307, estEm:'03/10/2026', prev:'consulte', slug:'ville-de-provence-indaiatuba' },
+    s:'Loteamento fechado · 307 lotes de 360 a 617 m² · sinal de 10% e saldo em até 96x', t:'Cond. fechado', est:307, estEm:'03/10/2026', prev:'2027-06', slug:'ville-de-provence-indaiatuba' },
   { n:'Alphaville Indaiatuba', c:'Alphaville', p:908480, m2:511.5, tab:'2026-10', conf:'2026-11', img:'alphaville-indaiatuba/images/terreno.jpg', s:'Itaici · 126 lotes de 511 a 1.205 m² · clube com piscina de raias', t:'Cond. fechado', est:126, estEm:'07/10/2026', prev:'2029-07', slug:'alphaville-indaiatuba' },
-  { n:'Lagos de Helvetia', c:'GPCI', p:901800, m2:501, tab:'2026-10', img:'lagos-de-helvetia-indaiatuba/images/hero.jpg', s:'Helvetia · 36 lotes de 501 a 2.015 m² · lago e clube', t:'Cond. fechado', prev:'consulte', slug:'lagos-de-helvetia-indaiatuba' },
-  { n:'Porteira de Ferro', c:'GPCI', p:1300000, m2:520, tab:'2026-09', conf:'2026-10', img:'porteira-de-ferro-indaiatuba/images/hero.jpg', s:'Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m²', t:'Cond. fechado', prev:'consulte', slug:'porteira-de-ferro-indaiatuba' },
+  { n:'Lagos de Helvetia', c:'GPCI', p:901800, m2:501, tab:'2026-10', img:'lagos-de-helvetia-indaiatuba/images/hero.jpg', s:'Helvetia · 36 lotes de 501 a 2.015 m² · lago e clube', t:'Cond. fechado', prev:'2028-06', slug:'lagos-de-helvetia-indaiatuba' },
+  { n:'Porteira de Ferro', c:'GPCI', p:1300000, m2:520, tab:'2026-09', conf:'2026-10', img:'porteira-de-ferro-indaiatuba/images/hero.jpg', s:'Loteamento fechado · último lote (tabela de 17/09/2026) · 103 lotes a partir de 500 m²', t:'Cond. fechado', prev:'2027-06', slug:'porteira-de-ferro-indaiatuba' },
 ];
 
 

@@ -4,8 +4,9 @@
 
    O que faz, pelo caminho da pagina (location.pathname) e pela hora de Brasilia:
    - ate' 30/11/2026 23:59:59 (Brasilia, UTC-3); depois disso nao mostra nada, em pagina nenhuma.
-   - paginas que PARTICIPAM (/alphaville-indaiatuba/ e a pagina do Parque Alphaville Alvorada, caminho com
-     "alphaville" e "alvorada"): faixa + secao id="alpha-week" com as regras oficiais, inserida logo depois do hero
+   - paginas que PARTICIPAM (/alphaville-indaiatuba/, a pagina do Parque Alphaville Alvorada, caminho com
+     "alphaville" e "alvorada", e desde 17/11/2026 as do Alphaville Guarajuba 4, Alphaville Ceara 5 e Terras
+     Alphaville Ceara 6, que estao na pagina 4 do folder oficial): faixa + secao id="alpha-week" com as regras oficiais, inserida logo depois do hero
      (se a pagina ainda nao tiver um elemento com esse id). Com #alpha-week na URL, rola ate' a secao.
      No Alphaville Indaiatuba o desconto e' 20% FIXO em qualquer lote residencial (arte da Alphaville para ele,
      13/11/2026); no Alvorada e nas paginas gerais fica o "ate' 20%" do folder nacional dos 11 empreendimentos.
@@ -34,6 +35,13 @@
 
   var HOST = String(location.hostname || '').toLowerCase();
   var LOCAL = HOST === '' || HOST === 'localhost' || HOST === '127.0.0.1' || HOST === '[::1]' || HOST === '::1' || /\.localhost$/.test(HOST);
+
+  // outros empreendimentos da campanha com pagina neste site (folder oficial, p. 4): caminho -> nome
+  var PARTICIPA_OUTROS = {
+    'alphaville-guarajuba-4-camacari': 'Alphaville Guarajuba 4',
+    'alphaville-ceara-5-eusebio': 'Alphaville Cear\u00E1 5',
+    'terras-alphaville-ceara-6-eusebio': 'Terras Alphaville Cear\u00E1 6'
+  };
 
   var T_FORTE = 'Alpha Week Alphaville';
   var TEXTOS = {
@@ -122,10 +130,13 @@
     // "alvorada" so' junto com "alphaville": ha' um bairro Alvorada em Indaiatuba que NAO e' da Alphaville.
     var m = /^\/([a-z0-9-]+)\/$/.exec(p);
     if (m && (m[1].indexOf('alphaville-indaiatuba') >= 0 || (m[1].indexOf('alphaville') >= 0 && m[1].indexOf('alvorada') >= 0))) return 'participa';
+    if (m && PARTICIPA_OUTROS[m[1]]) return 'participa';
     return '';
   }
 
   function nomeDoEmpreendimento(p) {
+    var m = /^\/([a-z0-9-]+)\/$/.exec(p);
+    if (m && PARTICIPA_OUTROS[m[1]]) return PARTICIPA_OUTROS[m[1]];
     return p.indexOf('alvorada') >= 0 ? 'Parque Alphaville Alvorada' : 'Alphaville Indaiatuba';
   }
 

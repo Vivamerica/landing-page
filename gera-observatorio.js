@@ -176,6 +176,9 @@ function extrair(nome) {
 //    tratamento das SAIDAS escritas à mão.
 // Os arquivos de edições passadas nunca são regravados (este gerador só escreve os da EDICAO).
 const SD = require('./sem-disponibilidade-regras.js').carregar();
+const PREV = require('./previsao.js');   // entrega dos loteamentos (campo prev da fonte única)
+const mmaaaa = p => p.slice(5, 7) + '/' + p.slice(0, 4);
+const entregaTxt = e => !e.prev ? '' : e.prev === 'entregue' ? 'já entregue' : 'previsão de entrega em ' + [e.prev].concat(e.prev2 ? [e.prev2] : []).map(mmaaaa).join(' e ');
 const saiuDaEdicao = e => SD.foraDaEdicao(e.slug, EDICAO.iso);
 const APTOS_F = extrair('APTOS'), LOTES_F = extrair('LOTES');
 const APTOS = APTOS_F.filter(e => !saiuDaEdicao(e));
@@ -288,6 +291,7 @@ const linhaLote = e => `
         <td class="num"><strong>${brl(e.p)}</strong></td>
         <td class="num">${brl(Math.round(e.p / e.m2))}/m²</td>
         <td class="num">${e.tab ? mesTabDe(e) + confDe(e) : '<span class="nd">—</span>'}</td>
+        <td>${PREV.rotulo(e) || '<span class="nd">—</span>'}</td>
       </tr>`;
 
 const comEst = todos.filter(e => typeof e.est === 'number');
@@ -617,7 +621,7 @@ ${MENU_HTML}
   <div class="tabela-wrap">
     <table>
       <caption>Os ${LOTES.length} loteamentos e condomínios de lotes em Indaiatuba, do menor ao maior R$/m² — tabelas oficiais das loteadoras, edição de ${edLongo}. "Lote de menor preço" = área do lote mais barato da tabela, que nem sempre é o menor; R$/m² = preço "a partir de" ÷ essa área.</caption>
-      <thead><tr><th>Loteamento</th><th>Loteadora</th><th>Tipo</th><th>Lote de menor preço</th><th>A partir de</th><th>Preço/m²</th><th>Tabela</th></tr></thead>
+      <thead><tr><th>Loteamento</th><th>Loteadora</th><th>Tipo</th><th>Lote de menor preço</th><th>A partir de</th><th>Preço/m²</th><th>Tabela</th><th>Entrega</th></tr></thead>
       <tbody>${lotesM2.map(linhaLote).join('')}
       </tbody>
     </table>
@@ -732,7 +736,7 @@ const registro = (e, tipo) => ({
   mes_tabela: e.tab || null,
   estoque: typeof e.est === 'number' ? e.est : null,
   data_estoque: typeof e.est === 'number' ? (dataIsoDe(estEmDe(e)) || estEmDe(e) || null) : null,
-  spec: e.s,
+  spec: tipo === 'lote' && entregaTxt(e) ? e.s + ' · ' + entregaTxt(e) : e.s,
   url: 'https://lancamentos.imoveisvivamerica.com.br/' + e.slug + '/',
   fonte: fonteDe(e),
 });

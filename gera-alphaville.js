@@ -73,15 +73,24 @@ const ALPHAVILLE = [
     p:3306135, tabela:'out/2026', nota:'intermediação imobiliária incluída',
     s:'Casas de 288 a 362 m² em área reservada do residencial Alphaville Dom Pedro 0 · 5 casas na tabela de out/2026 · realização Alphaville e Incorpi' },
   { n:'Parque Alphaville Campinas', cidade:'Campinas', uf:'SP', linha:'Alphaville', tipo:'Lotes comerciais', fase:'Em construção', preparo:true },
-  { n:'Parque Alphaville Alvorada', cidade:'Votorantim', uf:'SP', linha:'Terras Alpha', tipo:'Lotes residenciais e comerciais', fase:'Breve lançamento',
-    obs:'lotes residenciais ainda não liberados',
+  { n:'Parque Alphaville Alvorada', cidade:'Votorantim', uf:'SP', linha:'Terras Alpha', tipo:'Lotes residenciais e comerciais', fase:'Lançamento',   // 'Breve lançamento' no catálogo de 09/10; a tabela de 10/08/2026 é 'Pós Lançamento' (Fabio, 17/11/2026)
+    obs:'518 lotes residenciais na tabela de vendas de 10/08/2026',
     prev:'2029-09', slug:'parque-alphaville-alvorada-votorantim', img:'parque-alphaville-alvorada-votorantim/images/hero.jpg', ilustrativa:true,
-    s:'Lotes residenciais a partir de 253 m² no Terras Alpha Alvorada 1 e 2 · 630 lotes no loteamento · registrado em 09/06/2026' },
+    p:291012, tabela:'ago/2026', nota:'custas de escrituração e corretagem à parte',
+    s:'Lotes residenciais de 229,23 a 825,28 m² no Terras Alpha Alvorada 1 e 2 · 518 lotes na tabela de 10/08/2026 · registrado em 09/06/2026' },
   { n:'Terras Alpha Ribeirão Preto', cidade:'Ribeirão Preto', uf:'SP', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção' },
-  { n:'Alphaville Guarajuba 4', cidade:'Camaçari', uf:'BA', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção', preparo:true },
+  { n:'Alphaville Guarajuba 4', cidade:'Camaçari', uf:'BA', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção',
+    slug:'alphaville-guarajuba-4-camacari', img:'alphaville-guarajuba-4-camacari/images/hero.jpg', ilustrativa:true,
+    p:459023.98, tabela:'nov/2026', nota:'custas e corretagem não informadas na tabela',
+    s:'Lotes residenciais de 420 a 517,78 m² em Guarajuba, Camaçari · 126 residenciais e 16 de uso misto na tabela de nov/2026' },
   { n:'Alphaville Litoral Norte 4', cidade:'Camaçari', uf:'BA', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção', preparo:true },
-  { n:'Alphaville Ceará 5', cidade:'Eusébio', uf:'CE', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção' },
-  { n:'Terras Alphaville Ceará 6', cidade:'Eusébio', uf:'CE', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção' },
+  { n:'Alphaville Ceará 5', cidade:'Eusébio', uf:'CE', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção',
+    slug:'alphaville-ceara-5-eusebio', img:'alphaville-ceara-5-eusebio/images/hero.jpg', ilustrativa:true,
+    p:583442.12, tabela:'nov/2026', nota:'custas e corretagem não informadas na tabela',
+    s:'Lotes de 450 a 731,14 m² na Cidade Alpha, em Eusébio · 79 lotes na tabela de nov/2026' },
+  { n:'Terras Alphaville Ceará 6', cidade:'Eusébio', uf:'CE', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção',
+    slug:'terras-alphaville-ceara-6-eusebio', img:'terras-alphaville-ceara-6-eusebio/images/hero.jpg', ilustrativa:true,
+    s:'Lotes residenciais a partir de 275 m² na Cidade Alpha, em Eusébio, segundo o book · tabela de preços no atendimento' },
   { n:'Comercial Ceará 7 e 8', cidade:'Fortaleza', uf:'CE', linha:'Alphaville', tipo:'Lotes comerciais', fase:'Em construção' },
   { n:'Terras Alphaville Teresina 2', cidade:'Teresina', uf:'PI', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção' },
   { n:'Terras Alphaville Teresina 3', cidade:'Teresina', uf:'PI', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção' },
@@ -162,7 +171,10 @@ const porSlug = s => { const e = comPagina.find(x => x.slug === s); if (!e) thro
 const IND = porSlug('alphaville-indaiatuba');
 const DP0 = porSlug('casas-alphaville-dom-pedro-0-campinas');
 const ALV = porSlug('parque-alphaville-alvorada-votorantim');
-const COM_TEXTO = [IND, DP0, ALV];
+const GJ4 = porSlug('alphaville-guarajuba-4-camacari');      // Bahia, desde 17/11/2026: pergunta própria
+const CE5 = porSlug('alphaville-ceara-5-eusebio');           // Ceará, desde 17/11/2026: uma pergunta para os dois
+const CE6 = porSlug('terras-alphaville-ceara-6-eusebio');
+const COM_TEXTO = [IND, DP0, ALV, GJ4, CE5, CE6];
 if (comPagina.length !== COM_TEXTO.length) throw new Error('gera-alphaville: ' + comPagina.length + ' linhas com pagina, e a abertura e o FAQ foram escritos para ' + COM_TEXTO.length + ' (' + COM_TEXTO.map(e => e.n).join(', ') + ')');
 const noSite = comPagina.filter(e => !ocu(e));          // cards, ItemList e abertura
 const algumVendido = comPagina.some(vend);
@@ -176,7 +188,7 @@ const MSG_HUB = 'Olá! Vi a página dos empreendimentos Alphaville e quero saber
 const TITLE = "Todos os Empreendimentos Alphaville à Venda | Viv'América";
 const H1 = 'Empreendimentos Alphaville';
 const DESC = !vend(IND) && !vend(DP0)
-  ? `Alphaville à venda com a Viv'América: lotes em Indaiatuba a partir de ${brl(IND.p)} (${IND.tabela}) e casas em Campinas a partir de ${brl(DP0.p)} (${DP0.tabela}).`
+  ? `Alphaville com a Viv'América: lotes em Indaiatuba, Votorantim, Camaçari (BA) e Eusébio (CE) e casas em Campinas, com a ficha e a tabela de cada um.`
   : vend(IND) && vend(DP0)
     ? `Empreendimentos Alphaville com a Viv'América: o Alphaville Indaiatuba e as casas do Dom Pedro 0, em Campinas, estão 100% vendidos. Veja o catálogo da marca.`
     : vend(IND)
@@ -258,6 +270,7 @@ const linhaTabela = e => `
 
 // ─── FAQ (o mesmo array vira o HTML e o FAQPage) ───
 const REGIAO = ['Indaiatuba', 'Campinas'];
+const outrosDaUF = uf => EMP.filter(e => !e.slug && e.uf === uf);   // do catálogo, sem página aqui
 const regiaoSemPagina = EMP.filter(e => !e.slug && REGIAO.includes(e.cidade));
 const terrasExemplo = EMP.find(e => e.linha === 'Terras Alpha');
 const FAQ = [
@@ -277,8 +290,16 @@ const FAQ = [
     a: vend(ALV)
       ? `Sim. O ${linkOu(ALV, ALV.n)} é um loteamento da Alphaville em ${ALV.cidade}. Todos os lotes foram vendidos, conforme informou a incorporadora: está sem lotes à venda desde ${desdeDe(ALV)}.`
       : `Sim. O <a href="/${ALV.slug}/">${esc(ALV.n)}</a> é um loteamento da Alphaville em ${ALV.cidade}, da linha ${ALV.linha}, com os residenciais Terras Alpha Alvorada 1 e 2, que o material de venda da Alphaville chama de residenciais fechados, com portaria 24h. ${ALV.p ? `Na tabela de ${ALV.tabela}, os lotes partem de ${brl(ALV.p)}.` : 'A tabela vigente é enviada no atendimento.'} A <a href="/${ALV.slug}/">página do ${esc(ALV.n)}</a> traz o registro, os tamanhos de lote e os custos de escritura.` },
+  { q: 'Tem Alphaville na Bahia?',
+    a: vend(GJ4)
+      ? `Sim. O ${linkOu(GJ4, GJ4.n)} fica em Guarajuba, no município de Camaçari/BA. Todos os lotes foram vendidos, conforme informou a incorporadora: está sem lotes à venda desde ${desdeDe(GJ4)}.`
+      : `Sim. O <a href="/${GJ4.slug}/">${esc(GJ4.n)}</a> fica em Guarajuba, praia do município de Camaçari/BA; segundo o book da Alphaville, Guarajuba fica a 42 km de Salvador, com acesso pela Estrada do Coco (BA-099). Na tabela de vendas de ${GJ4.tabela}, os lotes residenciais partem de ${brl(GJ4.p)}. A página traz a ficha técnica, o clube e as condições da tabela.` +
+        (outrosDaUF('BA').length ? ` O catálogo oficial da Alphaville, consultado em ${CONSULTA}, mostra ainda ${outrosDaUF('BA').map(e => 'o ' + e.n + ', em ' + e.cidade + ' (' + minusc(e.tipo) + ', ' + minusc(e.fase) + ')').join(' e ')}.` : '') },
+  { q: 'Tem Alphaville no Ceará?',
+    a: `Sim. A Alphaville tem vários residenciais na Cidade Alpha, em Eusébio/CE, e dois têm página aqui: o ${linkOu(CE5, CE5.n)}, da linha Alphaville, ${vend(CE5) ? `100% vendido desde ${desdeDe(CE5)}` : `com lotes a partir de ${brl(CE5.p)} na tabela de vendas de ${CE5.tabela}`}, e o ${linkOu(CE6, CE6.n)}, da linha Terras Alpha, ${vend(CE6) ? `100% vendido desde ${desdeDe(CE6)}` : CE6.p ? `com lotes a partir de ${brl(CE6.p)} na tabela de vendas de ${CE6.tabela}` : 'com lotes a partir de 275 m², segundo o book; a tabela de preços dele é enviada no atendimento'}.` +
+       (outrosDaUF('CE').length ? ` O catálogo oficial da Alphaville, consultado em ${CONSULTA}, mostra ainda ${outrosDaUF('CE').map(e => 'o ' + e.n + ', em ' + e.cidade + ' (' + minusc(e.tipo) + ', ' + minusc(e.fase) + ')').join(' e ')}.` : '') },
   { q: `As ${DP0.n} são prontas?`,
-    a: `O residencial Alphaville Dom Pedro 0, onde as casas ficam, foi entregue em outubro de 2025, e o conjunto das casas em dezembro de 2025, segundo a divulgação de resultados da Alphaville do 4º trimestre de 2025; no catálogo da companhia, o Casas Alphaville Dom Pedro 0 aparece como entregue. A situação de cada casa, incluindo o habite-se (a autorização da prefeitura para ocupar o imóvel), não consta da tabela de vendas e é confirmada no atendimento.${vend(DP0) ? ` Todas as casas foram vendidas, conforme informou a incorporadora: sem unidades à venda desde ${desdeDe(DP0)}.${ocu(DP0) ? '' : ` A <a href="/${DP0.slug}/">página das ${DP0.n}</a> fica como registro do empreendimento.`}` : ` A <a href="/${DP0.slug}/">página das ${DP0.n}</a> traz as casas da tabela de ${DP0.tabela}.`}` },
+    a: `Sim, já entregues. A situação de cada casa, incluindo o habite-se (a autorização da prefeitura para ocupar o imóvel), não consta da tabela de vendas e é confirmada no atendimento.${vend(DP0) ? ` Todas as casas foram vendidas, conforme informou a incorporadora: sem unidades à venda desde ${desdeDe(DP0)}.${ocu(DP0) ? '' : ` A <a href="/${DP0.slug}/">página das ${DP0.n}</a> fica como registro do empreendimento.`}` : ` A <a href="/${DP0.slug}/">página das ${DP0.n}</a> traz as casas da tabela de ${DP0.tabela}.`}` },
 ];
 
 // ─── schemas ───
@@ -314,7 +335,7 @@ if (fs.existsSync(ARQ)) {
 
 const juntaE = l => l.length < 2 ? l.join('') : l.slice(0, -1).join(', ') + ' e ' + l[l.length - 1];
 const listaPaginas = juntaE(noSite.map(e => `o <a href="/${e.slug}/">${esc(e.n)}</a> (${esc(minusc(e.tipo))} em ${esc(e.praca)}${vend(e) ? '; 100% vendido desde ' + esc(desdeDe(e)) : ''})`));
-const quantosTem = n => n === 1 ? 'um tem' : n === 2 ? 'dois têm' : n === 3 ? 'três têm' : n + ' têm';
+const quantosTem = n => (['', 'um tem', 'dois têm', 'três têm', 'quatro têm', 'cinco têm', 'seis têm', 'sete têm', 'oito têm', 'nove têm'][n]) || n + ' têm';
 const plural = (n, um, varios) => n + ' ' + (n === 1 ? um : varios);
 const juntaOu = l => l.length < 2 ? l.join('') : l.slice(0, -1).join(', ') + ' ou ' + l[l.length - 1];
 // o que as páginas completas trazem, pelo que o card mostra: preço da tabela, "Sob consulta" ou "100% vendido"
@@ -524,7 +545,7 @@ ${MENU_HTML}
 
     <section class="sec" id="proximas-paginas">
       <h2>Próximas páginas <small>${emPreparo.length} em preparo</small></h2>
-      <p class="sub">Estes empreendimentos estão no catálogo oficial e ainda não têm página aqui. O material de cada um está sendo preparado; enquanto isso, o atendimento passa o que já existe. Preço, total de lotes e metragem só entram quando chegar a tabela de vendas.</p>
+      <p class="sub">Estes empreendimentos estão no catálogo oficial e ainda não têm página aqui. O material de cada um está sendo preparado; enquanto isso, o atendimento passa o que já existe. Preço, total de lotes e metragem só entram quando chegar o material de venda.</p>
       <div class="grid-prep">${emPreparo.map(cardPreparo).join('')}
       </div>
     </section>
@@ -566,7 +587,7 @@ ${FAQ.map(f => `      <details><summary>${esc(f.q)}</summary><p>${f.a}</p></deta
 
     <div class="cta">
       <strong>Quer saber o que está à venda?</strong>
-      <p>Diga qual empreendimento ou cidade interessa. Enviamos a tabela dos que já têm página e o material disponível dos demais.</p>
+      <p>Diga qual empreendimento ou cidade interessa. Enviamos a tabela dos que já têm tabela liberada e o material disponível dos demais.</p>
       <a class="btn" href="${wa(MSG_HUB)}" target="_blank" rel="noopener">Falar no WhatsApp</a>
     </div>
 

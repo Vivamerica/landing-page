@@ -10,7 +10,7 @@
      prev:'2027-07'      →  Previsão: 07/2027
      prev:'2026-12', prev2:'2028-05'  →  Previsão: 12/2026 e 05/2028 (duas fases)
      prev:'entregue'     →  Entregue
-     prev:'consulte'     →  Previsão: consulte (a loteadora ainda não informou)
+     ('consulte' deixou de valer em 17/11/2026: todo loteamento tem data ou está entregue)
 
    Todo loteamento de LOTES precisa de prev: o gera-folheto.js para sem ele (validarLotes).
 
@@ -26,7 +26,8 @@ function validar(e) {
     if (e && e.prev2 != null) throw new Error('PREVISAO: ' + e.n + ' tem prev2 sem prev');
     return;
   }
-  if (e.prev !== 'entregue' && e.prev !== 'consulte' && !RE_MES.test(e.prev)) throw new Error('PREVISAO: ' + e.n + ' tem prev "' + e.prev + '" (use AAAA-MM, "entregue" ou "consulte")');
+  if (e.prev === 'consulte') throw new Error('PREVISAO: ' + e.n + ' está com prev "consulte": desde 17/11/2026 todo loteamento leva a data (AAAA-MM) ou "entregue" (fonte: Desktop/prazos-entrega-loteamentos.txt)');
+  if (e.prev !== 'entregue' && !RE_MES.test(e.prev)) throw new Error('PREVISAO: ' + e.n + ' tem prev "' + e.prev + '" (use AAAA-MM ou "entregue")');
   if (e.prev2 != null && (!RE_MES.test(e.prev) || !RE_MES.test(e.prev2))) throw new Error('PREVISAO: ' + e.n + ' tem prev2 "' + e.prev2 + '" (AAAA-MM, só junto de um prev com mês)');
 }
 
@@ -36,7 +37,6 @@ function rotulo(e) {
   validar(e);
   if (!e || !e.prev) return '';
   if (e.prev === 'entregue') return 'Entregue';
-  if (e.prev === 'consulte') return 'Previsão: consulte';
   return 'Previsão: ' + [e.prev].concat(e.prev2 ? [e.prev2] : []).map(mmaaaa).join(' e ');
 }
 
@@ -71,10 +71,10 @@ function garanteCss(html, extra) {
   return html.slice(0, i) + '    ' + bloco + '\n  ' + html.slice(i);
 }
 
-// todo loteamento tem etiqueta: sem prev, o gerador para (Fabio, 15/11/2026: o que falta apurar mostra "Previsão: consulte")
+// todo loteamento tem etiqueta: sem prev, o gerador para (Fabio, 17/11/2026: só data ou Entregue, fonte Desktop/prazos-entrega-loteamentos.txt)
 function validarLotes(lista) {
   const sem = lista.filter(e => e.prev == null).map(e => e.n);
-  if (sem.length) throw new Error('PREVISAO: loteamento sem prev na fonte única (use AAAA-MM, "entregue" ou "consulte"): ' + sem.join(', '));
+  if (sem.length) throw new Error('PREVISAO: loteamento sem prev na fonte única (use AAAA-MM ou "entregue"): ' + sem.join(', '));
   lista.forEach(validar);
 }
 

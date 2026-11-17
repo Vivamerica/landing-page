@@ -48,7 +48,7 @@
      de tarja; card com preço na fonte única e "sob consulta" na home vira aviso
 
    REGIÃO: as linhas do ALPHAVILLE (gera-alphaville.js) com página própria e
-   cidade diferente de Indaiatuba viram card na home (seção "Casas em
+   cidade de SP diferente de Indaiatuba (BA e CE ficam só na /alphaville/) viram card na home (seção "Casas em
    condomínio") e entram na linha do hero, nos selos, no ItemList e no filtro
    de cidade. NUNCA entram em APTOS/LOTES, que alimentam folheto,
    Observatório, hubs e a página de apartamentos. Linha com preço e sem o mês
@@ -175,7 +175,8 @@ const MES_NUM = {};
 Object.keys(MES_ABREV).forEach(n => { MES_NUM[MES_ABREV[n]] = n; });
 const ALPHAVILLE = fs.existsSync(R + 'gera-alphaville.js') ? extrairDe('gera-alphaville.js', 'ALPHAVILLE') : [];
 const REGIAO_F = ALPHAVILLE
-  .filter(e => e.slug && e.cidade && e.cidade !== 'Indaiatuba' && !e.fonte && fs.existsSync(R + e.slug + '/index.html'))
+  // só de SP (Campinas, Votorantim): Alphaville de outro estado (BA, CE, desde 17/11/2026) fica só na /alphaville/
+  .filter(e => e.slug && e.cidade && e.cidade !== 'Indaiatuba' && (e.uf || 'SP') === 'SP' && !e.fonte && fs.existsSync(R + e.slug + '/index.html'))
   .map(e => {
     const m = /^([a-z]{3})\/(\d{4})$/.exec(e.tabela || '');
     if (e.p && !(m && MES_NUM[m[1]])) throw new Error('GERA-HOME: ' + e.n + ' tem preço sem o mês da tabela (campo tabela, formato "out/2026", no gera-alphaville.js)');

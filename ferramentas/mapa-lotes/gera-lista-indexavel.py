@@ -87,7 +87,7 @@ for m in re.finditer(r"\{ id:'([^']+)'", bl):
     fim = ini + 5 + nxt.start() if nxt else len(bl)
     t = bl[ini:fim]
     d = {'id': m.group(1)}
-    for k in ('nome', 'sub', 'landing', 'tab', 'cidade'):
+    for k in ('nome', 'sub', 'landing', 'tab', 'cidade', 'prev'):
         r = re.search(r"\b%s:'([^']*)'" % k, t)
         if r:
             d[k] = r.group(1)
@@ -173,6 +173,28 @@ for b in bairros:
     g = grupos.setdefault(chave, {'chave': chave, 'bairros': [], 'landing': b.get('landing'), 'fechado': b['fechado']})
     g['bairros'].append(b)
 
+def rotulo_prev(p):
+    # o mesmo rótulo do balão e dos cards (previsao.js): 'Entregue' ou 'Previsão: MM/AAAA'
+    if p == 'entregue':
+        return 'Entregue'
+    if p and re.match(r'^\d{4}-\d{2}$', p):
+        return 'Previsão: %s/%s' % (p[5:7], p[:4])
+    return ''
+
+
+def entrega_de(bs):
+    # uma fase: o rótulo; várias fases com datas diferentes: 'Previsão: 12/2026 (Safira) e 05/2028 (Rubi e Pérola)'
+    por = {}
+    for b in bs:
+        r = rotulo_prev(b.get('prev'))
+        if r:
+            por.setdefault(r, []).append(b['nome'].split(' — ')[1].split(' (')[0] if ' — ' in b['nome'] else b['nome'])
+    if len(por) <= 1:
+        return next(iter(por), '')
+    partes = [r.replace('Previsão: ', '') + ' (' + ' e '.join(ns) + ')' for r, ns in por.items()]
+    return 'Previsão: ' + ' e '.join(partes)
+
+
 linhas = []
 todos = []                      # (pm2, lote, bairro) de todo lote com preço
 for g in grupos.values():
@@ -194,6 +216,7 @@ for g in grupos.values():
         'min_pm2': min(p for p, _, _ in pm2s) if pm2s else None,
         'min_vista': min(x['vista'] for x in com) if com else None,
         'data': ' e '.join(datas) if datas else None,
+        'entrega': entrega_de(bs),
     })
 linhas.sort(key=lambda r: (r['min_pm2'] is None, r['min_pm2'] or 0, r['nome']))
 
@@ -289,18 +312,18 @@ resumo = '''
 ''' % (num_pt(n_preco), n_grupos, txt_barato)
 
 # ── bloco 2: lista, FAQ e JSON-LD (logo depois do resumo) ─────────────
-th = ['Loteamento', 'Tipo', 'Lotes no mapa', 'R$/m² a partir de', 'Lote a partir de', 'Tabela', 'Pedir a tabela']
+th = ['Loteamento', 'Tipo', 'Lotes no mapa', 'R$/m² a partir de', 'Lote a partir de', 'Tabela', 'Entrega', 'Pedir a tabela']
 trs = []
 itens = []
 for k, r in enumerate(linhas, 1):
     nome_cel = link_nome(r)
     if r['fases']:
         nome_cel += '<br><small>fases %s</small>' % esc(', '.join(r['fases']))
-    trs.append('        <tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td><a class="wa-lin" data-origem="lista" href="%s" target="_blank" rel="noopener">WhatsApp</a></td></tr>' % (
+    trs.append('        <tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td><a class="wa-lin" data-origem="lista" href="%s" target="_blank" rel="noopener">WhatsApp</a></td></tr>' % (
         nome_cel, 'Fechado' if r['fechado'] else 'Aberto', num_pt(r['n']),
         brl0(r['min_pm2']) if r['min_pm2'] else 'sob consulta',
         brl0(r['min_vista']) if r['min_vista'] else 'sob consulta',
-        esc(r['data']) if r['data'] else '—', wa_tabela(r['nome'])))
+        esc(r['data']) if r['data'] else '—', esc(r['entrega']) or '—', wa_tabela(r['nome'])))
     itens.append({'@type': 'ListItem', 'position': k, 'name': r['nome'],
                   'url': ('https://lancamentos.imoveisvivamerica.com.br' + r['landing']) if r['landing'] else (URL + '#' + r['ids'][0])})
 
