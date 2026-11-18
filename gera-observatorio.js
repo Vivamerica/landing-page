@@ -114,6 +114,9 @@ const ENTRADAS = [
   { n: 'Jardim Residencial Belle Vista', c: 'Kaaba', para: 360000, causa: 'novo no site — loteamento fechado no Mato Dentro, 91 lotes de 300 a 538,50 m² a R$ 1.200/m²; 18 disponíveis no pool da Kaaba de 27/10/2026', fonte: 'tabela Kaaba recebida em nov/2026' },
   { n: 'Reserva da Colina',           c: 'Kaaba', para: 400500, causa: 'novo no site — loteamento com portaria e muro, 123 lotes a partir de 300 m² a R$ 1.335/m²; 33 disponíveis no pool da Kaaba de 26/10/2026', fonte: 'tabela Kaaba recebida em nov/2026' },
   { n: 'Terras de Obwalden',          c: 'Kaaba', para: 435000, causa: 'novo no site — loteamento com portaria no Bairro Bela Vista, 239 lotes de 300 a 479,41 m² a R$ 1.450/m²; 54 disponíveis no pool da Kaaba de 26/10/2026', fonte: 'tabela Kaaba recebida em nov/2026' },
+  // 17/11/2026: novos no site (Longitude); tabelas de novembro/2026, geradas em 13/11/2026
+  { n: 'Elev Residence',              c: 'Longitude', para: 326000, causa: 'novo no site — 1 e 2 dormitórios de 40,42 a 46,56 m², com garden no térreo, em 3 torres no Bairro Buru; 91 unidades na tabela de novembro/2026; Minha Casa Minha Vida conforme a renda', fonte: 'tabela de vendas Longitude de novembro/2026' },
+  { n: 'Vettia Residence',            c: 'Longitude', para: 379500, causa: 'novo no site — 1 dormitório com suíte e 2 dormitórios com suíte de 44,34 a 52,49 m², com garden no térreo, em 2 torres nas Chácaras Alvorada; 135 unidades na tabela de novembro/2026', fonte: 'tabela de vendas Longitude de novembro/2026' },
 ];
 // entrou no site sem tabela pública (não entra em ENTRADAS: não há preço).
 // 16/10/2026: o 360 Home Office Mall, que estava aqui, ganhou tabela e foi para ENTRADAS.

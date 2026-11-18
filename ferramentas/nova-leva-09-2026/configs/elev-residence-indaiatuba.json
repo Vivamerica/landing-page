@@ -1,0 +1,608 @@
+{
+  "slug": "elev-residence-indaiatuba",
+  "nome": "Elev Residence",
+  "categoria": "apartamentos",
+  "data": "2026-11-17",
+  "atualizado": "2026-11-17",
+  "fonte_tabela": "tabela de vendas Longitude de nov/2026",
+  "title": "Elev Residence Indaiatuba | Buru · R$ 326 mil · nov/2026",
+  "description": "Elev Residence, da Longitude, no Buru: 3 torres com apartamentos de 1 e 2 dorms com varanda. Tabela nov/2026 a partir de R$ 326.000. Previsão: 01/2028.",
+  "keywords": "elev residence indaiatuba, elev residence longitude, longitude indaiatuba, apartamento buru indaiatuba, apartamento minha casa minha vida indaiatuba, apartamento 2 dormitorios indaiatuba, apartamento com garden indaiatuba, lancamento bairro buru indaiatuba",
+  "schema_tipo": "ApartmentComplex",
+  "schema_desc": "Três torres de térreo + 17 pavimentos, com 2 elevadores cada, na Avenida Manoel Ruz Peres, Bairro Buru, em Indaiatuba/SP, em terreno de 20.396,97 m² e com 24.830,40 m² de área construída. 428 apartamentos com varanda e 1 banheiro: 2 dormitórios com 46,05 m² (Tipo Meio) e 46,56 m² (Tipo Ponta), 1 dormitório em suíte para pessoa com deficiência (46,56 m²) e, no térreo, plantas com garden de 14,70 a 23,02 m². Lazer com piscina adulto e infantil, Smart Gym, rooftop de festas com terraço, espaço churras, arena gourmet, campo de futebol, quadra de areia, play pet, playground e play baby. Incorporação Longitude. Previsão de entrega: 01/2028.",
+  "unidades_total": 428,
+  "endereco_schema": "Avenida Manoel Ruz Peres — Bairro Buru",
+  "preco_min": 326000,
+  "preco_max": 381000,
+  "offer_count": 91,
+  "oferta_desc": "91 unidades constam na tabela de vendas da Longitude de novembro/2026 (33 na Torre 1, 23 na Torre 2 e 35 na Torre 3), com valor de venda de R$ 326.000 a R$ 381.000. Condições de novembro/2026: pró-soluto de 10%, ato mínimo de R$ 500, parcelamento em 60x e financiamento pela Caixa, sujeito à análise de crédito. Tabela sujeita a alteração sem aviso prévio. Previsão de entrega: 01/2028.",
+  "produto_nome": "Elev Residence Indaiatuba — apartamento de 2 dormitórios com 46,05 m² no Bairro Buru",
+  "produto_desc": "Apartamentos de 1 e 2 dormitórios com varanda, de 46,05 e 46,56 m², e plantas com garden no térreo, no Bairro Buru, em Indaiatuba/SP. Incorporação Longitude. Tabela de vendas de novembro/2026.",
+  "marca": "Longitude",
+  "lazer": [
+    "Piscina adulto com raia",
+    "Piscina infantil",
+    "Smart Gym",
+    "Rooftop de festas com terraço na Torre 01",
+    "Espaço churras",
+    "Arena gourmet",
+    "Campo de futebol",
+    "Quadra de areia",
+    "Play pet",
+    "Playground",
+    "Play baby",
+    "Ponto de recarga para veículos elétricos",
+    "Vagas para visitantes"
+  ],
+  "marca_topo": [
+    "ELEV",
+    "Residence"
+  ],
+  "wa_flutuante": "Olá! Tenho interesse no Elev Residence em Indaiatuba. Pode me enviar mais informações?",
+  "wa_topo": "Olá! Quero a tabela do Elev Residence com as unidades disponíveis.",
+  "hero": {
+    "eyebrow": "Bairro Buru · Indaiatuba/SP",
+    "sub": "Apartamentos de 1 e 2 dormitórios com varanda no Bairro Buru, em Indaiatuba",
+    "lead": "Três torres de térreo mais 17 andares da Longitude na Avenida Manoel Ruz Peres, com 428 apartamentos de 1 e 2 dormitórios, todos com varanda, e garden nas unidades do térreo. Na tabela de vendas da Longitude de novembro/2026 constam 91 unidades, com valor de venda de R$ 326.000 a R$ 381.000. A previsão de entrega é janeiro de 2028.",
+    "preco": "A partir de R$ 326.000",
+    "preco_nota": "apartamento 204 da Torre 1, 46,05 m² (pela metragem, planta Tipo Meio de 2 dormitórios) · tabela de vendas Longitude de nov/2026 · Previsão: 01/2028",
+    "cta_msg": "Olá! Quero a tabela do Elev Residence com as unidades disponíveis.",
+    "cta_texto": "Receber a tabela",
+    "cta2": {
+      "msg": "Olá! Quero simular a parcela do Elev Residence pela Caixa.",
+      "texto": "Simular a parcela"
+    },
+    "credito": "Perspectiva ilustrada da fachada, do book da Longitude"
+  },
+  "secoes": [
+    {
+      "label": "O empreendimento",
+      "h2": "Três torres de térreo + 17 andares no Bairro Buru, com 428 apartamentos",
+      "paragrafos": [
+        "O Elev Residence é um condomínio vertical da Longitude na Avenida Manoel Ruz Peres, no Bairro Buru, em Indaiatuba. São três torres, cada uma com térreo mais 17 pavimentos e 2 elevadores, num terreno de 20.396,97 m², com 24.830,40 m² de área construída e 428 unidades no total. Na Torre 01, o último pavimento tem só 4 apartamentos e divide o andar com o rooftop de festas.",
+        "Todos os apartamentos têm varanda, cozinha integrada à sala de jantar e estar, área de serviço e 1 banheiro, e os do térreo têm garden. O book da Longitude descreve quatro tipos de planta: Tipo Ponta e Tipo Meio, de 2 dormitórios; Tipo Meio de 1 dormitório; e Tipo Meio de 1 dormitório para pessoa com deficiência (PCD), com o dormitório em suíte. O chuveiro é a gás em todos os apartamentos.",
+        "O book também cita dispositivos economizadores de água, sensor de presença no hall de entrada, coleta seletiva com lixeiras para orgânico e reciclável e ponto de recarga para veículos elétricos, sem dizer onde ficam nem quantos são. As vagas de garagem são vinculadas aos apartamentos, e há 39 vagas para visitantes."
+      ],
+      "numeros": [
+        {
+          "n": "3",
+          "p": "torres de térreo + 17 andares, com 2 elevadores cada"
+        },
+        {
+          "n": "428",
+          "p": "apartamentos no total"
+        },
+        {
+          "n": "91",
+          "p": "unidades constam na tabela de nov/2026"
+        },
+        {
+          "n": "01/2028",
+          "p": "previsão de entrega (condições de nov/2026)"
+        }
+      ],
+      "depois": "galeria"
+    },
+    {
+      "label": "Plantas",
+      "classe": "cream",
+      "h2": "Plantas de 1 e 2 dormitórios, de 40,42 a 46,56 m², com garden no térreo",
+      "paragrafos": [
+        "O book da Longitude traz seis plantas. Nos andares, a Tipo Meio tem 2 dormitórios em 46,05 m², a Tipo Ponta tem 2 dormitórios em 46,56 m² e a Tipo Meio PCD tem 1 dormitório em suíte em 46,56 m². No térreo, todos os apartamentos têm garden: Tipo Meio Garden de 2 dormitórios (46,05 m² mais 23,02 m² de garden), Tipo Ponta Garden de 2 dormitórios (46,56 m² mais 18,44 m²) e Tipo Meio Garden de 1 dormitório (40,42 m² mais 14,70 m²). O material não diz se as áreas são privativas.",
+        "Pelo texto do book, o banheiro do Tipo Ponta e do PCD tem ventilação natural, e o do Tipo Meio, de 1 ou 2 dormitórios, tem ventilação mecânica. O book anuncia porta de 2,8 m entre a sala e a varanda; as plantas não trazem essa medida. As plantas marcam com tracejado as paredes de alvenaria de vedação: nas de 2 dormitórios, entre os dois quartos e entre o quarto e a circulação; nas de 1 dormitório, entre o quarto e a sala. O material não diz se essas paredes podem ser retiradas.",
+        "A tabela de vendas não informa a planta de cada unidade. Nesta página, a unidade é ligada à planta pela metragem: 46,05 m² é a área do Tipo Meio de 2 dormitórios; 46,56 m² serve tanto para o Tipo Ponta, de 2 dormitórios, quanto para o Tipo Meio PCD, de 1 dormitório; e, no térreo, a metragem da tabela é a soma do apartamento com o garden. A planta de cada unidade se confirma com a Longitude no atendimento."
+      ],
+      "tabela": {
+        "legenda": "Plantas do book da Longitude (julho/2026); áreas como o book apresenta",
+        "cab": [
+          "Planta",
+          "Dormitórios",
+          "Área",
+          "Pavimento"
+        ],
+        "num": [
+          1
+        ],
+        "linhas": [
+          [
+            "Tipo Meio",
+            "2",
+            "46,05 m²",
+            "Andares"
+          ],
+          [
+            "Tipo Ponta",
+            "2",
+            "46,56 m²",
+            "Andares"
+          ],
+          [
+            "Tipo Meio PCD",
+            "1 (suíte)",
+            "46,56 m²",
+            "Andares"
+          ],
+          [
+            "Tipo Meio Garden",
+            "2",
+            "46,05 m² + 23,02 m² de garden",
+            "Térreo"
+          ],
+          [
+            "Tipo Ponta Garden",
+            "2",
+            "46,56 m² + 18,44 m² de garden",
+            "Térreo"
+          ],
+          [
+            "Tipo Meio Garden",
+            "1",
+            "40,42 m² + 14,70 m² de garden",
+            "Térreo"
+          ]
+        ]
+      },
+      "cards": [
+        {
+          "t": "Acabamento nas plantas",
+          "p": "As legendas indicam bancada da cozinha em granito, piso cerâmico no banheiro, na cozinha e na varanda, esquadrias de alumínio, portas com amortecimento de impacto e bacia com caixa acoplada. A bancada do banheiro em mármore aparece em todas as plantas, menos na do PCD. O piso da sala e dos quartos não é informado."
+        },
+        {
+          "t": "Gás e ar-condicionado",
+          "p": "Chuveiro com aquecimento a gás em todos os apartamentos. As plantas marcam previsão para ar-condicionado na sala e no dormitório principal, sem dizer o que vem instalado. O tipo de gás e a água quente na cozinha não constam no material."
+        },
+        {
+          "t": "Garden do térreo",
+          "p": "Entregue gramado, com ponto de torneira e ponto de tomada, segundo as legendas das plantas: 23,02 m² no Tipo Meio Garden de 2 dormitórios, 18,44 m² no Tipo Ponta Garden e 14,70 m² no Tipo Meio Garden de 1 dormitório."
+        },
+        {
+          "t": "Ponto de TV",
+          "p": "As plantas marcam ponto de TV na sala e nos dormitórios."
+        },
+        {
+          "t": "Vaga de garagem",
+          "p": "Todas as vagas são vinculadas aos apartamentos, de tipos A, A com moto, B coberta, B descoberta e PCD; o book não explica a diferença entre A e B. Vaga PCD não quer dizer apartamento PCD: as 4 unidades da tabela de nov/2026 com essa vaga têm 46,05 m², a metragem do Tipo Meio de 2 dormitórios."
+        },
+        {
+          "t": "Varanda",
+          "p": "Todos os apartamentos têm varanda. O book anuncia porta de 2,8 m entre a sala e a varanda, na página da perspectiva do apartamento decorado; as plantas não trazem essa medida. O book não cita churrasqueira na varanda."
+        }
+      ],
+      "figuras": [
+        {
+          "classe": "plantas",
+          "ampliar": true,
+          "itens": [
+            {
+              "arq": "planta-tipo-meio-2-dorms.jpg",
+              "alt": "Planta ilustrada do apartamento Tipo Meio de 2 dormitórios do Elev Residence, com sala e cozinha integradas, varanda com área de serviço, dois quartos e um banheiro",
+              "w": 888,
+              "h": 476,
+              "leg": "Tipo Meio, 2 dormitórios, 46,05 m² (planta ilustrada)"
+            },
+            {
+              "arq": "planta-tipo-ponta-2-dorms.jpg",
+              "alt": "Planta ilustrada do apartamento Tipo Ponta de 2 dormitórios do Elev Residence, com sala e cozinha integradas, varanda, dois quartos e um banheiro",
+              "w": 920,
+              "h": 521,
+              "leg": "Tipo Ponta, 2 dormitórios, 46,56 m² (planta ilustrada)"
+            },
+            {
+              "arq": "planta-tipo-meio-pcd-1-dorm.jpg",
+              "alt": "Planta ilustrada do apartamento Tipo Meio PCD do Elev Residence, com sala e cozinha integradas, varanda, um dormitório e banheiro amplo",
+              "w": 910,
+              "h": 506,
+              "leg": "Tipo Meio PCD, 1 dormitório em suíte, 46,56 m² (planta ilustrada)"
+            },
+            {
+              "arq": "planta-meio-garden-2-dorms.jpg",
+              "alt": "Planta ilustrada do apartamento Tipo Meio Garden de 2 dormitórios do Elev Residence, com garden gramado em L, ao lado do segundo quarto e em frente à varanda",
+              "w": 853,
+              "h": 564,
+              "leg": "Tipo Meio Garden, 2 dormitórios, 46,05 m² + 23,02 m² de garden (planta ilustrada)"
+            },
+            {
+              "arq": "planta-ponta-garden-2-dorms.jpg",
+              "alt": "Planta ilustrada do apartamento Tipo Ponta Garden de 2 dormitórios do Elev Residence, com garden gramado junto à varanda",
+              "w": 888,
+              "h": 624,
+              "leg": "Tipo Ponta Garden, 2 dormitórios, 46,56 m² + 18,44 m² de garden (planta ilustrada)"
+            },
+            {
+              "arq": "planta-meio-garden-1-dorm.jpg",
+              "alt": "Planta ilustrada do apartamento Tipo Meio Garden de 1 dormitório do Elev Residence, com sala, cozinha, quarto e garden gramado",
+              "w": 857,
+              "h": 607,
+              "leg": "Tipo Meio Garden, 1 dormitório, 40,42 m² + 14,70 m² de garden (planta ilustrada)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "skip": true,
+      "depois": "lazer"
+    },
+    {
+      "skip": true,
+      "depois": "ficha"
+    },
+    {
+      "id": "precos",
+      "label": "Preços e condições",
+      "h2": "91 unidades na tabela de novembro/2026, de R$ 326.000 a R$ 381.000",
+      "paragrafos": [
+        "A tabela de vendas da Longitude de novembro/2026 lista 91 unidades: 33 na Torre 1, 23 na Torre 2 e 35 na Torre 3. A tabela não traz validade, e as condições do mesmo mês avisam que ela pode mudar sem aviso prévio; por isso, a disponibilidade de cada unidade se confirma no atendimento.",
+        "Nos andares, os valores de venda vão de R$ 326.000 a R$ 335.000. O menor é o do apartamento 204 da Torre 1, no 2º andar, com 46,05 m²; o seguinte, R$ 330.000, vale para 26 unidades. Os 9 apartamentos do térreo, com garden, vão de R$ 354.990 a R$ 381.000. Na mesma metragem, o preço muda de uma torre para outra: os de 46,05 m² do 12º ao 14º andar estão a R$ 330.000 na Torre 2 e a R$ 335.000 nas Torres 1 e 3."
+      ],
+      "tabela": {
+        "legenda": "Unidades da tabela de vendas Longitude de nov/2026 por metragem · valor de venda · planta deduzida pela metragem (a confirmar com a Longitude)",
+        "cab": [
+          "Metragem na tabela",
+          "Planta, pela metragem",
+          "Pavimento",
+          "Unidades",
+          "De",
+          "Até"
+        ],
+        "num": [
+          0,
+          3,
+          4,
+          5
+        ],
+        "linhas": [
+          [
+            "46,05 m²",
+            "Tipo Meio, 2 dormitórios",
+            "Andares",
+            "62",
+            "R$ 326.000",
+            "R$ 335.000"
+          ],
+          [
+            "46,56 m²",
+            "Tipo Ponta (2 dormitórios) ou Tipo Meio PCD (1 dormitório)",
+            "Andares",
+            "20",
+            "R$ 330.000",
+            "R$ 335.000"
+          ],
+          [
+            "55,12 m²",
+            "Tipo Meio Garden, 1 dormitório (40,42 + 14,70 m²)",
+            "Térreo",
+            "1",
+            "R$ 354.990",
+            "R$ 354.990"
+          ],
+          [
+            "65,00 m²",
+            "Tipo Ponta Garden, 2 dormitórios (46,56 + 18,44 m²)",
+            "Térreo",
+            "7",
+            "R$ 377.000",
+            "R$ 377.000"
+          ],
+          [
+            "69,07 m²",
+            "Tipo Meio Garden, 2 dormitórios (46,05 + 23,02 m²)",
+            "Térreo",
+            "1",
+            "R$ 381.000",
+            "R$ 381.000"
+          ]
+        ]
+      },
+      "tabela2_titulo": "Condições de novembro/2026",
+      "tabela2_paragrafos": [
+        "Condições comerciais da Longitude para novembro/2026, recebidas pela imobiliária em 17/11/2026. O financiamento é pela Caixa Econômica Federal (Caixa) e depende da análise de crédito do banco. Pró-soluto é a parte do preço paga direto à incorporadora, fora do financiamento; ITBI é o Imposto sobre a Transmissão de Bens Imóveis. O que o texto das condições não detalha está na última coluna e se confirma com a Longitude."
+      ],
+      "tabela2": {
+        "cab": [
+          "Item",
+          "Condição de nov/2026",
+          "A confirmar com a Longitude"
+        ],
+        "linhas": [
+          [
+            "Pró-soluto",
+            "10%",
+            "Se há correção ou juros"
+          ],
+          [
+            "Ato mínimo",
+            "R$ 500,00",
+            "Se o ato entra nos 10%"
+          ],
+          [
+            "Parcelamento",
+            "60x",
+            "O que é parcelado em 60x"
+          ],
+          [
+            "Parcela Caixa + parcela Longitude",
+            "45% da renda do cliente, sem fiador",
+            "Como os 45% se aplicam às duas parcelas"
+          ],
+          [
+            "Taxa Caixa",
+            "R$ 1.500,00",
+            "O que a taxa cobre"
+          ],
+          [
+            "Documentação",
+            "50% registro e ITBI grátis (MCMV)",
+            "Se são 50% do registro com o ITBI inteiro, ou 50% dos dois"
+          ]
+        ]
+      },
+      "notas": [
+        "Minha Casa Minha Vida (MCMV): o book da Longitude traz o selo do programa com a Caixa, mas não informa a faixa do empreendimento. Pela regra em vigor apurada em setembro/2026, a Faixa 3 atende renda familiar bruta de R$ 5.000,01 a R$ 9.600,00 e imóvel de até R$ 400.000, teto acima de todos os valores de venda da tabela de nov/2026. Esses valores passam do teto das Faixas 1 e 2 (no máximo R$ 275.000); família com renda de até R$ 5.000 pode usar o teto de R$ 400.000, mas sem os descontos e sem os juros reduzidos da faixa. O enquadramento, o uso do Fundo de Garantia do Tempo de Serviço (FGTS) e as condições do financiamento dependem da renda e da análise da Caixa.",
+        "Valores de venda da tabela da Longitude de novembro/2026, sujeitos a alteração sem aviso prévio. O menor valor depende de uma única unidade, o apartamento 204 da Torre 1; se ela for vendida, o valor seguinte da tabela é R$ 330.000."
+      ],
+      "cta": {
+        "msg": "Olá! Quero a tabela do Elev Residence com as unidades disponíveis.",
+        "texto": "Pedir a tabela completa"
+      }
+    },
+    {
+      "id": "localizacao",
+      "classe": "cream",
+      "label": "Localização",
+      "h2": "Na Avenida Manoel Ruz Peres, no Bairro Buru",
+      "paragrafos": [
+        "O endereço do Elev Residence, segundo o book da Longitude, é a Avenida Manoel Ruz Peres, no Bairro Buru, em Indaiatuba/SP. O número e o CEP não constam no material, por isso o mapa abaixo mostra a avenida, e não o terreno exato.",
+        "Numa imagem de drone do book, a incorporadora marca estes tempos até o entorno, sem dizer o meio de transporte: Parque Buru a 2 minutos; Posto Shell a 5; Supermercado São Vicente a 10; Drogaria São Paulo a 11; Parque das Crianças e Parque Ecológico a 12; Assaí Atacadista a 13; Polo Shopping a 14; e Aeroporto de Viracopos a 26."
+      ],
+      "figuras": [
+        {
+          "classe": "duo",
+          "itens": [
+            {
+              "arq": "mapa-drone.jpg",
+              "alt": "Imagem de drone do Bairro Buru com o marcador do Elev Residence, as três torres ilustradas e os tempos até pontos da cidade marcados pela incorporadora",
+              "w": 1083,
+              "h": 619,
+              "leg": "Imagem de drone com marcações da incorporadora; as torres são ilustradas"
+            },
+            {
+              "arq": "fachada.jpg",
+              "alt": "Perspectiva ilustrada das três torres do Elev Residence vistas de baixo, ao entardecer, com varandas em todos os andares",
+              "w": 1083,
+              "h": 1401,
+              "leg": "As torres vistas de baixo (perspectiva ilustrada)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "galeria": {
+    "label": "Perspectivas",
+    "h2": "O lazer e o apartamento nas perspectivas do book",
+    "aviso": "Perspectivas ilustradas do book da Longitude (julho/2026), sem caráter contratual. Móveis, objetos e decoração são sugestão. O material não informa se as áreas comuns são entregues equipadas e decoradas: isso se confirma no memorial descritivo, com a incorporadora.",
+    "itens": [
+      {
+        "arq": "piscina.jpg",
+        "alt": "Perspectiva ilustrada da piscina adulto com raia e da piscina infantil do Elev Residence, com deck, guarda-sóis e as torres ao fundo",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Piscina adulto e infantil"
+      },
+      {
+        "arq": "terraco-rooftop.jpg",
+        "alt": "Perspectiva ilustrada do terraço do rooftop de festas, com pergolado de madeira, mesa alta com banquetas e vista da cidade",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Terraço do rooftop de festas"
+      },
+      {
+        "arq": "rooftop-festas.jpg",
+        "alt": "Perspectiva ilustrada do salão do rooftop de festas, com mesas redondas, bancada com banquetas e janelas para a cidade",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Rooftop de festas, no último andar da Torre 01"
+      },
+      {
+        "arq": "espaco-churras.jpg",
+        "alt": "Perspectiva ilustrada do espaço churras coberto, com mesas de madeira, cadeiras de metal, geladeira e prateleiras",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Espaço churras"
+      },
+      {
+        "arq": "arena-gourmet.jpg",
+        "alt": "Perspectiva ilustrada da arena gourmet, com churrasqueira, forno e bancada com banquetas azuis junto à torre",
+        "w": 818,
+        "h": 913,
+        "leg": "Arena gourmet"
+      },
+      {
+        "arq": "campo-futebol.jpg",
+        "alt": "Perspectiva ilustrada do campo de futebol gramado, com trave, cones e bola",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Campo de futebol"
+      },
+      {
+        "arq": "quadra-areia.jpg",
+        "alt": "Perspectiva ilustrada da quadra de areia com rede, raquetes de beach tennis e uma das torres ao fundo",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Quadra de areia para beach tennis e vôlei"
+      },
+      {
+        "arq": "play-pet.jpg",
+        "alt": "Perspectiva ilustrada do play pet gramado, com obstáculos para cães, banco e árvores",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Play pet"
+      },
+      {
+        "arq": "playground.jpg",
+        "alt": "Perspectiva ilustrada do playground e do play baby, com pista desenhada no piso e brinquedos, junto a uma das torres",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Playground e play baby"
+      },
+      {
+        "arq": "sala-cozinha-varanda.jpg",
+        "alt": "Perspectiva ilustrada de um apartamento decorado, com sala, mesa de jantar e cozinha integradas e porta de vidro para a varanda",
+        "w": 1083,
+        "h": 1209,
+        "leg": "Sala e cozinha integradas à varanda (apartamento decorado)"
+      }
+    ]
+  },
+  "lazer_bloco": {
+    "h2": "Lazer no condomínio e um rooftop de festas na Torre 01",
+    "intro": "A lista segue o book da Longitude, de julho/2026. O material não diz se as áreas comuns são entregues equipadas e decoradas; isso se confirma no memorial descritivo.",
+    "itens": [
+      "Piscina adulto com raia",
+      "Piscina infantil",
+      "Smart Gym",
+      "Rooftop de festas, no último andar da Torre 01",
+      "Terraço do rooftop",
+      "Espaço churras",
+      "Arena gourmet",
+      "Campo de futebol",
+      "Quadra de areia para beach tennis e vôlei",
+      "Play pet",
+      "Playground",
+      "Play baby",
+      "Ponto de recarga para veículos elétricos",
+      "39 vagas para visitantes"
+    ],
+    "nota": "O rooftop de festas fica no último pavimento da Torre 01; o book não diz onde ficam os demais espaços. Quantidade, local e forma de cobrança do ponto de recarga não constam no material."
+  },
+  "ficha": [
+    [
+      "Incorporação",
+      "Longitude"
+    ],
+    [
+      "Endereço",
+      "Avenida Manoel Ruz Peres — Bairro Buru, Indaiatuba/SP; número e CEP não informados no material"
+    ],
+    [
+      "Terreno",
+      "20.396,97 m²"
+    ],
+    [
+      "Área construída",
+      "24.830,40 m²"
+    ],
+    [
+      "Torres",
+      "3, com térreo + 17 pavimentos e 2 elevadores cada"
+    ],
+    [
+      "Unidades",
+      "428; na Torre 01, o último pavimento tem 4 apartamentos e o rooftop de festas"
+    ],
+    [
+      "Plantas",
+      "Tipo Meio, 2 dormitórios, 46,05 m²; Tipo Ponta, 2 dormitórios, 46,56 m²; Tipo Meio PCD, 1 dormitório em suíte, 46,56 m²; no térreo, com garden: 46,05 + 23,02 m², 46,56 + 18,44 m² e 40,42 + 14,70 m² (1 dormitório)"
+    ],
+    [
+      "Banheiros",
+      "1 por apartamento"
+    ],
+    [
+      "Vagas",
+      "Vinculadas aos apartamentos, de tipos A, A com moto, B coberta, B descoberta e PCD; 39 para visitantes. A vaga de cada unidade se confirma no atendimento"
+    ],
+    [
+      "Preço a partir de",
+      "R$ 326.000 · tabela de vendas Longitude de nov/2026"
+    ],
+    [
+      "Unidades na tabela",
+      "91 na tabela de nov/2026 (33 na Torre 1, 23 na Torre 2 e 35 na Torre 3)"
+    ],
+    [
+      "Financiamento",
+      "Caixa Econômica Federal (Caixa), com o selo do Minha Casa Minha Vida (MCMV) no book; enquadramento conforme a renda e a análise da Caixa"
+    ],
+    [
+      "Registro de incorporação",
+      "O número do registro e a matrícula não constam no material recebido"
+    ],
+    [
+      "Entrega",
+      "Previsão: 01/2028, pelas condições de nov/2026; tolerância e datas por torre não informadas"
+    ]
+  ],
+  "faq": [
+    {
+      "q": "Quanto custa um apartamento no Elev Residence?",
+      "a": "Na tabela de vendas da Longitude de novembro/2026 constam 91 unidades, com valor de venda de R$ 326.000 a R$ 381.000. Nos andares, os valores vão de R$ 326.000 a R$ 335.000, e o menor é o do apartamento 204 da Torre 1, com 46,05 m². No térreo, com garden, vão de R$ 354.990 a R$ 381.000. A tabela pode mudar sem aviso prévio, e a disponibilidade de cada unidade se confirma no atendimento."
+    },
+    {
+      "q": "Quais são as plantas do Elev Residence?",
+      "a": "O book da Longitude, de julho/2026, traz apartamentos de 2 dormitórios com 46,05 m² (Tipo Meio) e 46,56 m² (Tipo Ponta), de 1 dormitório em suíte para pessoa com deficiência (PCD), com 46,56 m², e, no térreo, plantas com garden: 46,05 m² + 23,02 m² e 46,56 m² + 18,44 m², de 2 dormitórios, e 40,42 m² + 14,70 m², de 1 dormitório. Todos têm varanda, cozinha integrada à sala, área de serviço e 1 banheiro."
+    },
+    {
+      "q": "Quando o Elev Residence será entregue?",
+      "a": "Pelas condições comerciais da Longitude de novembro/2026, a previsão de entrega é janeiro de 2028 (Previsão: 01/2028). O material não informa prazo de tolerância nem data por torre; o prazo que vale é o do contrato de compra."
+    },
+    {
+      "q": "O Elev Residence é Minha Casa Minha Vida?",
+      "a": "O book da Longitude traz o selo do Minha Casa Minha Vida (MCMV) com a Caixa, mas não informa a faixa. Pela regra apurada em setembro/2026, a Faixa 3 atende renda familiar bruta de R$ 5.000,01 a R$ 9.600,00 e imóvel de até R$ 400.000, teto acima de todos os valores da tabela de novembro/2026 (R$ 326.000 a R$ 381.000). Esses valores passam do teto das Faixas 1 e 2; família com renda de até R$ 5.000 pode usar o teto de R$ 400.000, mas sem os descontos e sem os juros reduzidos da faixa. O enquadramento, o uso do Fundo de Garantia do Tempo de Serviço (FGTS) e as condições dependem da renda e da análise da Caixa."
+    },
+    {
+      "q": "Como é o pagamento do Elev Residence?",
+      "a": "Pelas condições da Longitude de novembro/2026: pró-soluto de 10% (a parte do preço paga direto à incorporadora, fora do financiamento), ato mínimo de R$ 500,00, parcelamento em 60x e parcela Caixa mais parcela Longitude de 45% da renda do cliente, sem fiador. Há uma taxa Caixa de R$ 1.500,00. Sobre a documentação, as condições dizem apenas “50% registro e ITBI grátis (MCMV)”, sendo ITBI o Imposto sobre a Transmissão de Bens Imóveis; como a frase admite mais de uma leitura, o benefício se confirma com a Longitude. O que é parcelado em 60x e se há correção também se confirmam no atendimento; o financiamento depende da aprovação da Caixa."
+    },
+    {
+      "q": "Onde fica o Elev Residence?",
+      "a": "Na Avenida Manoel Ruz Peres, no Bairro Buru, em Indaiatuba/SP; o número e o CEP não constam no material. Na imagem de drone do book de julho/2026, a Longitude marca o Parque Buru a 2 minutos, o Supermercado São Vicente a 10, o Polo Shopping a 14 e o Aeroporto de Viracopos a 26, sem dizer o meio de transporte."
+    },
+    {
+      "q": "Que lazer tem o Elev Residence?",
+      "a": "Pelo book da Longitude, de julho/2026: piscina adulto com raia e piscina infantil, Smart Gym, rooftop de festas com terraço no último andar da Torre 01, espaço churras, arena gourmet, campo de futebol, quadra de areia para beach tennis e vôlei, play pet, playground e play baby, além de ponto de recarga para veículos elétricos. O material não diz se as áreas são entregues equipadas e decoradas."
+    },
+    {
+      "q": "O Elev Residence tem registro de incorporação?",
+      "a": "O book de julho/2026 e a tabela de vendas de novembro/2026 não trazem o número do registro de incorporação, a matrícula nem o alvará de aprovação. Antes de qualquer proposta, pedimos esses dados à Longitude."
+    }
+  ],
+  "cta": {
+    "h2": "Quer ver as unidades do Elev Residence?",
+    "p": "Pelo WhatsApp, enviamos as unidades da tabela de novembro/2026 com torre, andar, metragem e valor de venda, confirmamos com a Longitude a planta e a vaga de cada uma e fazemos a simulação pela Caixa conforme a sua renda.",
+    "msg": "Olá! Quero a tabela do Elev Residence com as unidades disponíveis.",
+    "texto": "Pedir a tabela",
+    "visita": {
+      "msg": "Olá! Quero simular a parcela do Elev Residence pela Caixa.",
+      "texto": "Simular a parcela"
+    }
+  },
+  "rodape": {
+    "marca": "ELEV RESIDENCE",
+    "linha": "Elev Residence · 3 torres e 428 apartamentos de 1 e 2 dormitórios com varanda · Avenida Manoel Ruz Peres · Bairro Buru · Indaiatuba, SP",
+    "realizacao": "Incorporação Longitude",
+    "legal": "Perspectivas e plantas ilustrativas do book da Longitude (julho/2026), sem caráter contratual; móveis, objetos e decoração são sugestão. Valores de venda conforme a tabela de vendas da Longitude de novembro/2026 e condições comerciais do mesmo mês, sujeitos a alteração sem aviso prévio; a disponibilidade de cada unidade é confirmada no atendimento. Financiamento sujeito à análise de crédito da Caixa; enquadramento no Minha Casa Minha Vida conforme a renda. O número do registro de incorporação não consta no material recebido. Previsão de entrega: 01/2028. Página publicada em nov/2026."
+  },
+  "home": {
+    "tipo": "apartamento",
+    "preco": 326000,
+    "dorms": "2",
+    "mcmv": "1",
+    "status": "lancamento",
+    "constr": "Longitude",
+    "badge": "Lançamento · MCMV",
+    "meta": "40,42 a 46,56 m² · 1 e 2 dorms · garden no térreo",
+    "desc": "3 torres no Bairro Buru · 1 e 2 dorms com varanda · piscina com raia, rooftop de festas e quadra de areia · MCMV conforme a renda · Previsão: 01/2028.",
+    "alt": "Perspectiva ilustrada das torres do Elev Residence",
+    "itemlist": "Elev Residence — 3 torres da Longitude no Bairro Buru, 428 apartamentos de 1 e 2 dormitórios com varanda · a partir de R$ 326.000 (tabela nov/2026)"
+  },
+  "llms": {
+    "secao": "apartamentos",
+    "linha": "Incorporação Longitude na Avenida Manoel Ruz Peres, Bairro Buru, Indaiatuba (número e CEP não informados). Três torres de térreo + 17 pavimentos, 2 elevadores por torre, terreno de 20.396,97 m², 24.830,40 m² construídos e 428 unidades, todas com varanda e 1 banheiro: Tipo Meio 2 dormitórios 46,05 m², Tipo Ponta 2 dormitórios 46,56 m², Tipo Meio PCD 1 dormitório em suíte 46,56 m² e, no térreo, plantas com garden (46,05 + 23,02 m², 46,56 + 18,44 m² e 40,42 + 14,70 m² de 1 dormitório). Lazer: piscina adulto com raia e infantil, Smart Gym, rooftop de festas com terraço na Torre 01, espaço churras, arena gourmet, campo de futebol, quadra de areia, play pet, playground, play baby e ponto de recarga para veículos elétricos; 39 vagas de visitantes. Tabela de vendas Longitude de novembro/2026: 91 unidades constam (33 na Torre 1, 23 na Torre 2, 35 na Torre 3), valor de venda de R$ 326.000 a R$ 381.000 (andares de R$ 326.000 a R$ 335.000; térreo com garden de R$ 354.990 a R$ 381.000). Condições de novembro/2026: pró-soluto de 10%, ato mínimo de R$ 500, parcelamento em 60x, parcela Caixa + parcela Longitude de 45% da renda, sem fiador, taxa Caixa de R$ 1.500. Book com selo do Minha Casa Minha Vida com a Caixa; faixa não informada, enquadramento conforme a renda e a análise da Caixa. Previsão de entrega: 01/2028. O material não informa o registro de incorporação."
+  },
+  "mapa": {
+    "rota": "Avenida Manoel Ruz Peres, Buru, Indaiatuba - SP",
+    "embed": "https://maps.google.com/maps?q=Avenida%20Manoel%20Ruz%20Peres%2C%20Buru%2C%20Indaiatuba%20-%20SP&z=15&hl=pt-BR&output=embed"
+  }
+}

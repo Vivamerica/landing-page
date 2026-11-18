@@ -28,6 +28,7 @@ const APTOS = [
   { n:'Gran Vic Tangará', c:'VIC Engenharia', p:325000, m2:47.22, tab:'2026-10', img:'gran-vic-tangara-indaiatuba/images/hero.jpg',
     s:'2 dorm · 47,22 m² · 74 unidades (05/10/2026) · entrega nov/2028 (Módulo 01)', t:'MCMV · FGTS',
     vend:{ tot:312, disp:74, em:'05/10/2026' }, slug:'gran-vic-tangara-indaiatuba' },
+  { n:'Elev Residence', c:'Longitude', p:326000, m2:46.05, tab:'2026-11', img:'elev-residence-indaiatuba/images/hero.jpg', alt:'Perspectiva ilustrada das torres do Elev Residence', s:'1 e 2 dorm com varanda · 3 torres · Bairro Buru · garden no térreo · previsão de entrega jan/2028', t:'MCMV · FGTS', slug:'elev-residence-indaiatuba' },
   { n:'Gran Vic Colibri', c:'VIC Engenharia', p:336686, m2:51.42, tab:'2026-10', img:'gran-vic-colibri-indaiatuba/images/hero.jpg',
     s:'2 dorm c/ suíte · 51,42 m² · 81 unidades (05/10/2026) · entrega dez/2028 (Módulo 01)', t:'MCMV · FGTS',
     vend:{ tot:256, disp:81, em:'05/10/2026' }, slug:'gran-vic-colibri-indaiatuba' },
@@ -42,6 +43,7 @@ const APTOS = [
   // Gran Vic Andorinha saiu daqui em 16/10/2026: a VIC não mandou tabela em outubro, sem unidades
   // (regra do Fabio: "se algum não veio tabela é porque não tem mais"). A ficha segue no ar como
   // esgotado (EXTRAS_APTOS do gera-relacionados.js) e a saída está em SAIDAS do gera-observatorio.js.
+  { n:'Vettia Residence', c:'Longitude', p:379500, m2:51.76, tab:'2026-11', img:'vettia-residence-indaiatuba/images/hero.jpg', alt:'Perspectiva ilustrada das torres do Vettia Residence', s:'1 e 2 dorm c/ suíte · 44,34 a 52,49 m² · garden no térreo · Chácaras Alvorada · previsão de entrega abr/2029', t:'MCMV · FGTS', slug:'vettia-residence-indaiatuba' },
   { n:'Vila Plaza Residence', c:'Lógica Empreendimentos', p:403846, m2:38.89, tab:'2026-10', img:'vila-plaza-residence-indaiatuba/images/hero.jpg', s:'studio, studio duplex e 2 suítes · 38,89 a 76,53 m² · Jd. São Conrado', t:'Lançamento', slug:'vila-plaza-residence-indaiatuba' },
   { n:'Spazio Italia', c:'Zarin', p:429961, m2:59.5, tab:'2026-10', img:'spazio-italia-indaiatuba/images/hero.jpg',
     s:'59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer', t:'Lançamento', slug:'spazio-italia-indaiatuba' },

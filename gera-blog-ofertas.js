@@ -228,10 +228,11 @@ function miniatura(img) {
   const d = leve !== img && fs.existsSync(R + leve) ? dimWebp(R + leve) : null;
   return d ? { src: leve, w: d.w, h: d.h } : null;
 }
-// a <img> do card: mesma tag de sempre; com o .webp no disco, muda o src e entram width e height
+// a <img> do card: mesma tag de sempre; com o .webp no disco, muda o src e entram width e height.
+// Com o campo alt na fonte única (render de lançamento: "Perspectiva ilustrada ..."), ele entra no lugar do nome.
 function imgCard(e) {
   const m = miniatura(e.img);
-  return `<img loading="lazy" decoding="async" src="/${m ? m.src : e.img}" alt="${e.n} — Indaiatuba"${m ? ` width="${m.w}" height="${m.h}"` : ''}>`;
+  return `<img loading="lazy" decoding="async" src="/${m ? m.src : e.img}" alt="${e.alt || e.n} — Indaiatuba"${m ? ` width="${m.w}" height="${m.h}"` : ''}>`;
 }
 
 // ─── HTML dos cards ───
