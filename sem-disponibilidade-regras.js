@@ -63,7 +63,7 @@ const MAPA_POR_SLUG = {
 
 // páginas que um gerador escreve INTEIRAS a cada rodada: o leitor não mexe nelas (o
 // gerador já respeita a lista) e não as lista nos avisos de "link escrito à mão"
-const PAGINAS_GERADAS = ['apartamentos-na-planta-indaiatuba/index.html', 'precos-lancamentos-indaiatuba/index.html',
+const PAGINAS_GERADAS = ['apartamentos-na-planta-indaiatuba/index.html', 'empreendimentos-minha-casa-minha-vida-indaiatuba/index.html', 'precos-lancamentos-indaiatuba/index.html',
   'imprensa-e-dados/index.html', 'alphaville/index.html', 'blog/index.html', 'folheto-lancamentos.html'];
 const FORA = /^(ferramentas|qrcode|quermesse|seo|node_modules|\.git|\.claude|folder|treinamento)(\/|$)/;
 

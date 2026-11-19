@@ -50,6 +50,7 @@ const TABELA = [
   ['condominios-fechados-indaiatuba', 'monthly', '0.8'],
   ['mapa-lotes-indaiatuba', 'weekly', '0.8'],
   ['apartamentos-na-planta-indaiatuba', 'weekly', '0.9'],
+  ['empreendimentos-minha-casa-minha-vida-indaiatuba', 'weekly', '0.9'],
   ['alphaville', 'weekly', '0.8'],
   ['casas-alphaville-dom-pedro-0-campinas', 'weekly', '0.9'],
   ['parque-alphaville-alvorada-votorantim', 'weekly', '0.9'],

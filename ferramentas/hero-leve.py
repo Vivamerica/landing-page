@@ -85,6 +85,7 @@ FORA = re.compile(r'^(ferramentas|qrcode|quermesse|seo|node_modules|\.git|\.clau
 # páginas escritas por inteiro por um gerador: as <img> delas saem do gerador
 GERADAS = {
     'apartamentos-na-planta-indaiatuba/index.html',
+    'empreendimentos-minha-casa-minha-vida-indaiatuba/index.html',
     'alphaville/index.html',
     'blog/index.html',
     'precos-lancamentos-indaiatuba/index.html',

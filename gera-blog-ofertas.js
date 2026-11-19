@@ -142,7 +142,9 @@ const TEMAS = [
   // MCMV vem ANTES de FGTS: "como-comprar-apartamento-sem-fgts" é artigo de
   // quem NÃO tem FGTS — a mensagem de FGTS estaria errada ali
   { re: /minha-casa|mcmv|quem-tem-direito|como-comprar-apartamento|casa-propria-motorista/, nome: 'MCMV', card: 'emp', msg: MSG.mcmv,
-    url: '/?f=mcmv', chamada: 'Apartamentos Minha Casa Minha Vida disponíveis em Indaiatuba', curta: 'Apartamentos MCMV com preço',
+    // desde 18/11/2026 o CTA leva à página dos empreendimentos MCMV (gera-mcmv.js), não mais ao filtro da home
+    url: '/empreendimentos-minha-casa-minha-vida-indaiatuba/', chamada: 'Empreendimentos Minha Casa Minha Vida em Indaiatuba, com preço',
+    curta: 'Apartamentos MCMV com preço', botao: 'Ver os empreendimentos',
     pega: () => mcmv().slice(0, 4) },
   // Programa Classe Média do FGTS: vem ANTES de /fgts/, que também casa com o slug
   // "fgts-classe-media-…" e levaria o artigo para o filtro MCMV, com a mensagem de

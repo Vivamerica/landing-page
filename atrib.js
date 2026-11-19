@@ -93,6 +93,7 @@
                             'condominios-fechados-indaiatuba',
                             'loteamentos-em-indaiatuba',
                             'apartamentos-na-planta-indaiatuba',
+                            'empreendimentos-minha-casa-minha-vida-indaiatuba',
                             'precos-lancamentos-indaiatuba'];
 
   function nomeDoEmpreendimento() {

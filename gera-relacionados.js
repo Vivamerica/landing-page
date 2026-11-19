@@ -67,6 +67,7 @@ const alpha = (fs.existsSync(R + 'alphaville/index.html')
 
 const GUIAS = [
   ['Apartamentos na planta', '/apartamentos-na-planta-indaiatuba/'],
+  ['Empreendimentos Minha Casa Minha Vida', '/empreendimentos-minha-casa-minha-vida-indaiatuba/'],
   ['Loteamentos', '/loteamentos-em-indaiatuba/'],
   ['Condomínios fechados', '/condominios-fechados-indaiatuba/'],
   ['Morar em Indaiatuba', '/blog/morar-em-indaiatuba/'],
@@ -125,9 +126,10 @@ function malhaPara(slugAtual) {
 }
 
 // páginas de categoria também recebem a malha (02/09/2026): os dois hubs de
-// lote e a página de apartamentos na planta. O hub /lancamentos-indaiatuba/
+// lote e a página de apartamentos na planta (e, desde 18/11/2026, a dos
+// empreendimentos Minha Casa Minha Vida). O hub /lancamentos-indaiatuba/
 // não existe mais (301 para a home).
-const CATEGORIAS = ['apartamentos-na-planta-indaiatuba', 'loteamentos-em-indaiatuba', 'condominios-fechados-indaiatuba', 'alphaville']
+const CATEGORIAS = ['apartamentos-na-planta-indaiatuba', 'empreendimentos-minha-casa-minha-vida-indaiatuba', 'loteamentos-em-indaiatuba', 'condominios-fechados-indaiatuba', 'alphaville']
   .filter(s => fs.existsSync(R + s + '/index.html'));
 
 const alvos = aptosTodos.concat(lotesTodos).concat(alphaForaTodos).map(e => e.slug).concat(CATEGORIAS);

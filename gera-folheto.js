@@ -18,7 +18,10 @@ const OUT = require('path').join(__dirname, 'folheto-lancamentos.html');   // ra
 // truncado, floor((1 − disp/tot) × 100), e "vendido" aqui é o que está fora da lista de
 // disponíveis, sempre com a data; com est, disp/em têm de ser iguais a est/estEm ·
 // tarja aviso comercial com data (ex.: desconto de lançamento), que vai para o selo do card
-// da home e da página de apartamentos; sem " · " dentro (é o separador do selo).
+// da home e da página de apartamentos; sem " · " dentro (é o separador do selo) ·
+// obsMcmv nota curta, com o mês da tabela, sobre o enquadramento no Minha Casa Minha Vida (ex.:
+// quantas unidades da tabela ficam até o teto da Faixa 3), mostrada no card e no FAQ da página
+// /empreendimentos-minha-casa-minha-vida-indaiatuba/ (gera-mcmv.js).
 const APTOS = [
   { n:'Uni Residencial', c:'Masotti', p:279990, img:'uni-residencial-indaiatuba/images/hero.jpg',
     s:'1 dormitório · sacada · vaga para carro', t:'MCMV · FGTS', slug:'uni-residencial-indaiatuba',
@@ -43,7 +46,8 @@ const APTOS = [
   // Gran Vic Andorinha saiu daqui em 16/10/2026: a VIC não mandou tabela em outubro, sem unidades
   // (regra do Fabio: "se algum não veio tabela é porque não tem mais"). A ficha segue no ar como
   // esgotado (EXTRAS_APTOS do gera-relacionados.js) e a saída está em SAIDAS do gera-observatorio.js.
-  { n:'Vettia Residence', c:'Longitude', p:379500, m2:51.76, tab:'2026-11', img:'vettia-residence-indaiatuba/images/hero.jpg', alt:'Perspectiva ilustrada das torres do Vettia Residence', s:'1 e 2 dorm c/ suíte · 44,34 a 52,49 m² · garden no térreo · Chácaras Alvorada · previsão de entrega abr/2029', t:'MCMV · FGTS', slug:'vettia-residence-indaiatuba' },
+  { n:'Vettia Residence', c:'Longitude', p:379500, m2:51.76, tab:'2026-11', img:'vettia-residence-indaiatuba/images/hero.jpg', alt:'Perspectiva ilustrada das torres do Vettia Residence', s:'1 e 2 dorm c/ suíte · 44,34 a 52,49 m² · garden no térreo · Chácaras Alvorada · previsão de entrega abr/2029', t:'MCMV · FGTS',
+    obsMcmv:'das 135 unidades da tabela de nov/2026, só 36 ficam até R$ 400.000', slug:'vettia-residence-indaiatuba' },
   { n:'Vila Plaza Residence', c:'Lógica Empreendimentos', p:403846, m2:38.89, tab:'2026-10', img:'vila-plaza-residence-indaiatuba/images/hero.jpg', s:'studio, studio duplex e 2 suítes · 38,89 a 76,53 m² · Jd. São Conrado', t:'Lançamento', slug:'vila-plaza-residence-indaiatuba' },
   { n:'Spazio Italia', c:'Zarin', p:429961, m2:59.5, tab:'2026-10', img:'spazio-italia-indaiatuba/images/hero.jpg',
     s:'59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer', t:'Lançamento', slug:'spazio-italia-indaiatuba' },
