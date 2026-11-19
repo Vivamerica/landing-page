@@ -3,13 +3,13 @@
   "nome": "Elev Residence",
   "categoria": "apartamentos",
   "data": "2026-11-17",
-  "atualizado": "2026-11-17",
+  "atualizado": "2026-11-19",
   "fonte_tabela": "tabela de vendas Longitude de nov/2026",
   "title": "Elev Residence Indaiatuba | Buru · R$ 326 mil · nov/2026",
   "description": "Elev Residence, da Longitude, no Buru: 3 torres com apartamentos de 1 e 2 dorms com varanda. Tabela nov/2026 a partir de R$ 326.000. Previsão: 01/2028.",
   "keywords": "elev residence indaiatuba, elev residence longitude, longitude indaiatuba, apartamento buru indaiatuba, apartamento minha casa minha vida indaiatuba, apartamento 2 dormitorios indaiatuba, apartamento com garden indaiatuba, lancamento bairro buru indaiatuba",
   "schema_tipo": "ApartmentComplex",
-  "schema_desc": "Três torres de térreo + 17 pavimentos, com 2 elevadores cada, na Avenida Manoel Ruz Peres, Bairro Buru, em Indaiatuba/SP, em terreno de 20.396,97 m² e com 24.830,40 m² de área construída. 428 apartamentos com varanda e 1 banheiro: 2 dormitórios com 46,05 m² (Tipo Meio) e 46,56 m² (Tipo Ponta), 1 dormitório em suíte para pessoa com deficiência (46,56 m²) e, no térreo, plantas com garden de 14,70 a 23,02 m². Lazer com piscina adulto e infantil, Smart Gym, rooftop de festas com terraço, espaço churras, arena gourmet, campo de futebol, quadra de areia, play pet, playground e play baby. Incorporação Longitude. Previsão de entrega: 01/2028.",
+  "schema_desc": "Três torres de térreo + 17 pavimentos, com 2 elevadores cada, na Avenida Manoel Ruz Peres, Bairro Buru, em Indaiatuba/SP, em terreno de 20.396,97 m² e com 24.830,40 m² de área construída. 428 apartamentos com varanda e 1 banheiro: 2 dormitórios com 46,05 m² (Tipo Meio) e 46,56 m² (Tipo Ponta), 1 dormitório em suíte para pessoa com deficiência (46,56 m²) e, no térreo, plantas com garden de 14,70 a 23,02 m². Lazer com piscina adulto e infantil, Smart Gym, rooftop de festas com terraço, espaço churras, arena gourmet, campo de futebol, quadra de areia, play pet, playground e play baby. Incorporação Longitude, registrada sob o R.3 da matrícula nº 130.016 do Cartório de Registro de Imóveis de Indaiatuba/SP. Previsão de entrega: 01/2028.",
   "unidades_total": 428,
   "endereco_schema": "Avenida Manoel Ruz Peres — Bairro Buru",
   "preco_min": 326000,
@@ -527,7 +527,7 @@
     ],
     [
       "Registro de incorporação",
-      "O número do registro e a matrícula não constam no material recebido"
+      "R.3 da matrícula nº 130.016 do Cartório de Registro de Imóveis de Indaiatuba/SP"
     ],
     [
       "Entrega",
@@ -565,7 +565,7 @@
     },
     {
       "q": "O Elev Residence tem registro de incorporação?",
-      "a": "O book de julho/2026 e a tabela de vendas de novembro/2026 não trazem o número do registro de incorporação, a matrícula nem o alvará de aprovação. Antes de qualquer proposta, pedimos esses dados à Longitude."
+      "a": "Sim. A incorporação do Elev Residence está registrada sob o R.3 da matrícula nº 130.016 do Cartório de Registro de Imóveis de Indaiatuba/SP, conforme a Lei nº 4.591/64. O book de julho/2026 e a tabela de vendas de novembro/2026 não trazem o alvará de aprovação. Antes de assinar qualquer proposta, peça no atendimento a certidão atualizada da matrícula."
     }
   ],
   "cta": {
@@ -582,7 +582,7 @@
     "marca": "ELEV RESIDENCE",
     "linha": "Elev Residence · 3 torres e 428 apartamentos de 1 e 2 dormitórios com varanda · Avenida Manoel Ruz Peres · Bairro Buru · Indaiatuba, SP",
     "realizacao": "Incorporação Longitude",
-    "legal": "Perspectivas e plantas ilustrativas do book da Longitude (julho/2026), sem caráter contratual; móveis, objetos e decoração são sugestão. Valores de venda conforme a tabela de vendas da Longitude de novembro/2026 e condições comerciais do mesmo mês, sujeitos a alteração sem aviso prévio; a disponibilidade de cada unidade é confirmada no atendimento. Financiamento sujeito à análise de crédito da Caixa; enquadramento no Minha Casa Minha Vida conforme a renda. O número do registro de incorporação não consta no material recebido. Previsão de entrega: 01/2028. Página publicada em nov/2026."
+    "legal": "Perspectivas e plantas ilustrativas do book da Longitude (julho/2026), sem caráter contratual; móveis, objetos e decoração são sugestão. Valores de venda conforme a tabela de vendas da Longitude de novembro/2026 e condições comerciais do mesmo mês, sujeitos a alteração sem aviso prévio; a disponibilidade de cada unidade é confirmada no atendimento. Financiamento sujeito à análise de crédito da Caixa; enquadramento no Minha Casa Minha Vida conforme a renda. Incorporação registrada sob o R.3 da matrícula nº 130.016 do Cartório de Registro de Imóveis de Indaiatuba/SP (Lei nº 4.591/64). Previsão de entrega: 01/2028. Página publicada em nov/2026."
   },
   "home": {
     "tipo": "apartamento",
@@ -599,7 +599,7 @@
   },
   "llms": {
     "secao": "apartamentos",
-    "linha": "Incorporação Longitude na Avenida Manoel Ruz Peres, Bairro Buru, Indaiatuba (número e CEP não informados). Três torres de térreo + 17 pavimentos, 2 elevadores por torre, terreno de 20.396,97 m², 24.830,40 m² construídos e 428 unidades, todas com varanda e 1 banheiro: Tipo Meio 2 dormitórios 46,05 m², Tipo Ponta 2 dormitórios 46,56 m², Tipo Meio PCD 1 dormitório em suíte 46,56 m² e, no térreo, plantas com garden (46,05 + 23,02 m², 46,56 + 18,44 m² e 40,42 + 14,70 m² de 1 dormitório). Lazer: piscina adulto com raia e infantil, Smart Gym, rooftop de festas com terraço na Torre 01, espaço churras, arena gourmet, campo de futebol, quadra de areia, play pet, playground, play baby e ponto de recarga para veículos elétricos; 39 vagas de visitantes. Tabela de vendas Longitude de novembro/2026: 91 unidades constam (33 na Torre 1, 23 na Torre 2, 35 na Torre 3), valor de venda de R$ 326.000 a R$ 381.000 (andares de R$ 326.000 a R$ 335.000; térreo com garden de R$ 354.990 a R$ 381.000). Condições de novembro/2026: pró-soluto de 10%, ato mínimo de R$ 500, parcelamento em 60x, parcela Caixa + parcela Longitude de 45% da renda, sem fiador, taxa Caixa de R$ 1.500. Book com selo do Minha Casa Minha Vida com a Caixa; faixa não informada, enquadramento conforme a renda e a análise da Caixa. Previsão de entrega: 01/2028. O material não informa o registro de incorporação."
+    "linha": "Incorporação Longitude na Avenida Manoel Ruz Peres, Bairro Buru, Indaiatuba (número e CEP não informados). Três torres de térreo + 17 pavimentos, 2 elevadores por torre, terreno de 20.396,97 m², 24.830,40 m² construídos e 428 unidades, todas com varanda e 1 banheiro: Tipo Meio 2 dormitórios 46,05 m², Tipo Ponta 2 dormitórios 46,56 m², Tipo Meio PCD 1 dormitório em suíte 46,56 m² e, no térreo, plantas com garden (46,05 + 23,02 m², 46,56 + 18,44 m² e 40,42 + 14,70 m² de 1 dormitório). Lazer: piscina adulto com raia e infantil, Smart Gym, rooftop de festas com terraço na Torre 01, espaço churras, arena gourmet, campo de futebol, quadra de areia, play pet, playground, play baby e ponto de recarga para veículos elétricos; 39 vagas de visitantes. Tabela de vendas Longitude de novembro/2026: 91 unidades constam (33 na Torre 1, 23 na Torre 2, 35 na Torre 3), valor de venda de R$ 326.000 a R$ 381.000 (andares de R$ 326.000 a R$ 335.000; térreo com garden de R$ 354.990 a R$ 381.000). Condições de novembro/2026: pró-soluto de 10%, ato mínimo de R$ 500, parcelamento em 60x, parcela Caixa + parcela Longitude de 45% da renda, sem fiador, taxa Caixa de R$ 1.500. Book com selo do Minha Casa Minha Vida com a Caixa; faixa não informada, enquadramento conforme a renda e a análise da Caixa. Previsão de entrega: 01/2028. Incorporação registrada sob o R.3 da matrícula 130.016 do Cartório de Registro de Imóveis de Indaiatuba/SP."
   },
   "mapa": {
     "rota": "Avenida Manoel Ruz Peres, Buru, Indaiatuba - SP",

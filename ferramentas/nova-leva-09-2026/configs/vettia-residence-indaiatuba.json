@@ -3,13 +3,13 @@
   "nome": "Vettia Residence",
   "categoria": "apartamentos",
   "data": "2026-11-17",
-  "atualizado": "2026-11-17",
+  "atualizado": "2026-11-19",
   "fonte_tabela": "tabela de vendas Longitude de nov/2026",
   "title": "Vettia Residence Indaiatuba | R$ 379,5 mil · nov/2026",
   "description": "Vettia Residence, da Longitude, nas Chácaras Alvorada: 184 aptos de 1 e 2 dorms com varanda. Tabela nov/2026 a partir de R$ 379.500. Previsão: 04/2029.",
   "keywords": "vettia residence indaiatuba, vettia longitude, longitude indaiatuba, apartamento minha casa minha vida indaiatuba, apartamento 2 dormitorios indaiatuba, apartamento com suite indaiatuba, apartamento helvetia indaiatuba, apartamento chacaras alvorada indaiatuba, apartamento com garden indaiatuba, lancamento longitude indaiatuba",
   "schema_tipo": "ApartmentComplex",
-  "schema_desc": "Duas torres de térreo mais 11 pavimentos na Estrada Municipal José Costa de Mesquita, nas Chácaras Alvorada, região de Helvetia, em Indaiatuba/SP, em terreno de 9.306,00 m² e com 12.982,74 m² de área construída. 184 apartamentos, 8 por andar: 1 dormitório (suíte) de 44,34 m² e 2 dormitórios com 1 suíte de 51,76 e 52,49 m², todos com varanda, e garden de 13,83 a 20,89 m² nos apartamentos do térreo. Lazer com piscina adulto com raia e infantil, deck com solário, rooftop com salão de festas e terraço na Torre 1, espaço churras, garden churras, quadra de areia, garrafão de esportes, playground, play baby, car wash e ponto de recarga de carro elétrico. Incorporação e construção Longitude. Entrega prevista para abril de 2029.",
+  "schema_desc": "Duas torres de térreo mais 11 pavimentos na Estrada Municipal José Costa de Mesquita, nas Chácaras Alvorada, região de Helvetia, em Indaiatuba/SP, em terreno de 9.306,00 m² e com 12.982,74 m² de área construída. 184 apartamentos, 8 por andar: 1 dormitório (suíte) de 44,34 m² e 2 dormitórios com 1 suíte de 51,76 e 52,49 m², todos com varanda, e garden de 13,83 a 20,89 m² nos apartamentos do térreo. Lazer com piscina adulto com raia e infantil, deck com solário, rooftop com salão de festas e terraço na Torre 1, espaço churras, garden churras, quadra de areia, garrafão de esportes, playground, play baby, car wash e ponto de recarga de carro elétrico. Incorporação e construção Longitude, com a incorporação registrada sob o R.3 da matrícula nº 154.419 do Cartório de Registro de Imóveis de Indaiatuba/SP. Entrega prevista para abril de 2029.",
   "unidades_total": 184,
   "endereco_schema": "Estrada Municipal José Costa de Mesquita, Lote 02U, Quadra 02 — Chácaras Alvorada",
   "preco_min": 379500.0,
@@ -525,7 +525,7 @@
     ],
     [
       "Registro de incorporação",
-      "O book diz que a venda só ocorre após o registro do memorial de incorporação, mas não traz o número do registro"
+      "R.3 da matrícula nº 154.419 do Cartório de Registro de Imóveis de Indaiatuba/SP"
     ],
     [
       "Entrega",
@@ -563,7 +563,7 @@
     },
     {
       "q": "O Vettia Residence tem registro de incorporação?",
-      "a": "O book diz que o empreendimento só será comercializado após o registro do memorial de incorporação, conforme a Lei nº 4.591/64, mas não traz o número do registro, a matrícula nem o cartório. Antes de qualquer proposta, pedimos esses dados à Longitude."
+      "a": "Sim. A incorporação do Vettia Residence está registrada sob o R.3 da matrícula nº 154.419 do Cartório de Registro de Imóveis de Indaiatuba/SP, conforme a Lei nº 4.591/64. Antes de assinar qualquer proposta, peça no atendimento a certidão atualizada da matrícula."
     }
   ],
   "cta": {
@@ -576,7 +576,7 @@
     "marca": "VETTIA RESIDENCE",
     "linha": "Vettia Residence · 2 torres, 184 apartamentos de 1 e 2 dormitórios de 44,34 a 52,49 m², com garden no térreo · Estrada Municipal José Costa de Mesquita, Lote 02U, Quadra 02 · Chácaras Alvorada · Indaiatuba, SP",
     "realizacao": "Incorporação e construção Longitude",
-    "legal": "Perspectivas, plantas e implantação ilustrativas, do book da Longitude (versão de agosto/2025), sem caráter contratual; mobiliário, equipamentos e itens decorativos não fazem parte do contrato de compra e venda, e materiais e cores podem sofrer pequenas alterações. O que é entregue segue o memorial descritivo. Valores de venda conforme a tabela de vendas Longitude e as condições comerciais de novembro/2026, sujeitos a alteração sem aviso prévio; a disponibilidade das unidades é confirmada no atendimento. Enquadramento no Minha Casa Minha Vida, uso do FGTS e financiamento dependem da renda e da análise de crédito da Caixa. Empresa do empreendimento: Longitude Indaiatuba MCMV 11 Empreendimentos Imobiliários SPE Ltda., CNPJ 53.564.656/0001-01. Segundo o book, o empreendimento só será comercializado após o registro do memorial de incorporação (Lei nº 4.591/64); o número do registro não consta no material. Entrega prevista para abril de 2029. Página publicada em nov/2026."
+    "legal": "Perspectivas, plantas e implantação ilustrativas, do book da Longitude (versão de agosto/2025), sem caráter contratual; mobiliário, equipamentos e itens decorativos não fazem parte do contrato de compra e venda, e materiais e cores podem sofrer pequenas alterações. O que é entregue segue o memorial descritivo. Valores de venda conforme a tabela de vendas Longitude e as condições comerciais de novembro/2026, sujeitos a alteração sem aviso prévio; a disponibilidade das unidades é confirmada no atendimento. Enquadramento no Minha Casa Minha Vida, uso do FGTS e financiamento dependem da renda e da análise de crédito da Caixa. Empresa do empreendimento: Longitude Indaiatuba MCMV 11 Empreendimentos Imobiliários SPE Ltda., CNPJ 53.564.656/0001-01. Incorporação registrada sob o R.3 da matrícula nº 154.419 do Cartório de Registro de Imóveis de Indaiatuba/SP (Lei nº 4.591/64). Entrega prevista para abril de 2029. Página publicada em nov/2026."
   },
   "home": {
     "tipo": "apartamento",
@@ -593,7 +593,7 @@
   },
   "llms": {
     "secao": "apartamentos",
-    "linha": "Incorporação e construção Longitude (empresa do empreendimento: Longitude Indaiatuba MCMV 11 Empreendimentos Imobiliários SPE Ltda., CNPJ 53.564.656/0001-01) na Estrada Municipal José Costa de Mesquita, Lote 02U, Quadra 02, Chácaras Alvorada, região de Helvetia, Indaiatuba. Duas torres de térreo + 11 pavimentos (o último da Torre 1 é o rooftop), terreno de 9.306,00 m², 12.982,74 m² construídos, 184 apartamentos, 8 por andar: 1 dormitório (suíte) de 44,34 m² e 2 dormitórios com 1 suíte de 51,76 m² (meio) e 52,49 m² (ponta), com varanda; garden de 13,83 a 20,89 m² nos apartamentos do térreo. Lazer: piscina adulto com raia e infantil, deck com solário, rooftop com salão de festas e terraço, espaço churras, garden churras, quadra de areia, garrafão de esportes, praça de convivência, playground, play baby, lounge, car wash e ponto de recarga de carro elétrico. Book com selo do Minha Casa Minha Vida com a Caixa; faixa não informada. Tabela de vendas Longitude de novembro/2026: 135 unidades (61 na Torre 1, 74 na Torre 2), valor de venda de R$ 379.500,00 a R$ 454.990,00; 2 dorms 51,76 m² de R$ 379.500,00 a R$ 444.990,00, 2 dorms 52,49 m² de R$ 384.500,00 a R$ 449.990,00, 1 dorm garden R$ 419.990,00, 2 dorms garden de R$ 450.000,00 a R$ 454.990,00. Condições de nov/2026: pró-soluto de 6%, ato mínimo de R$ 500,00, 52x, parcela Caixa + parcela Longitude de 40% da renda sem fiador, taxa Caixa de R$ 1.500,00. Entrega prevista para abril de 2029. O material não traz o número do registro de incorporação."
+    "linha": "Incorporação e construção Longitude (empresa do empreendimento: Longitude Indaiatuba MCMV 11 Empreendimentos Imobiliários SPE Ltda., CNPJ 53.564.656/0001-01) na Estrada Municipal José Costa de Mesquita, Lote 02U, Quadra 02, Chácaras Alvorada, região de Helvetia, Indaiatuba. Duas torres de térreo + 11 pavimentos (o último da Torre 1 é o rooftop), terreno de 9.306,00 m², 12.982,74 m² construídos, 184 apartamentos, 8 por andar: 1 dormitório (suíte) de 44,34 m² e 2 dormitórios com 1 suíte de 51,76 m² (meio) e 52,49 m² (ponta), com varanda; garden de 13,83 a 20,89 m² nos apartamentos do térreo. Lazer: piscina adulto com raia e infantil, deck com solário, rooftop com salão de festas e terraço, espaço churras, garden churras, quadra de areia, garrafão de esportes, praça de convivência, playground, play baby, lounge, car wash e ponto de recarga de carro elétrico. Book com selo do Minha Casa Minha Vida com a Caixa; faixa não informada. Tabela de vendas Longitude de novembro/2026: 135 unidades (61 na Torre 1, 74 na Torre 2), valor de venda de R$ 379.500,00 a R$ 454.990,00; 2 dorms 51,76 m² de R$ 379.500,00 a R$ 444.990,00, 2 dorms 52,49 m² de R$ 384.500,00 a R$ 449.990,00, 1 dorm garden R$ 419.990,00, 2 dorms garden de R$ 450.000,00 a R$ 454.990,00. Condições de nov/2026: pró-soluto de 6%, ato mínimo de R$ 500,00, 52x, parcela Caixa + parcela Longitude de 40% da renda sem fiador, taxa Caixa de R$ 1.500,00. Entrega prevista para abril de 2029. Incorporação registrada sob o R.3 da matrícula 154.419 do Cartório de Registro de Imóveis de Indaiatuba/SP."
   },
   "mapa": {
     "rota": "Estrada Municipal José Costa de Mesquita, Chácaras Alvorada, Indaiatuba - SP",
