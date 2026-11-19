@@ -51,7 +51,7 @@
     "mes_tabela": "2026-10",
     "estoque": null,
     "data_estoque": null,
-    "spec": "2 dorm · 47,22 m² · 74 unidades (05/10/2026) · entrega nov/2028 (Módulo 01)",
+    "spec": "2 dorm · 47,22 m² · 74 unidades (05/10/2026) · previsão de entrega nov/2028 (Módulo 01)",
     "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-tangara-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
@@ -79,7 +79,7 @@
     "mes_tabela": "2026-10",
     "estoque": null,
     "data_estoque": null,
-    "spec": "2 dorm c/ suíte · 51,42 m² · 81 unidades (05/10/2026) · entrega dez/2028 (Módulo 01)",
+    "spec": "2 dorm c/ suíte · 51,42 m² · 81 unidades (05/10/2026) · previsão de entrega dez/2028 (Módulo 01)",
     "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-colibri-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
@@ -107,7 +107,7 @@
     "mes_tabela": "2026-10",
     "estoque": 3,
     "data_estoque": "2026-10-09",
-    "spec": "2 dorm · 47,22 m² · últimas 3 unidades (09/10/2026) · entrega mai/2028",
+    "spec": "2 dorm · 47,22 m² · últimas 3 unidades (09/10/2026) · previsão de entrega mai/2028",
     "url": "https://lancamentos.imoveisvivamerica.com.br/gran-vic-canario-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, outubro/2026"
   },
@@ -135,7 +135,7 @@
     "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
-    "spec": "39,90 a 66,47 m² · Centro · mall no térreo · entrega jun/2028",
+    "spec": "39,90 a 66,47 m² · Centro · mall no térreo · previsão de entrega jun/2028",
     "url": "https://lancamentos.imoveisvivamerica.com.br/izzi-residence-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
@@ -205,7 +205,7 @@
     "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
-    "spec": "3 dorm c/ suíte · 63,85 e 64,44 m² · Park Meraki · entrega abr/2028 (Torre 1) e set/2028 (Torre 2)",
+    "spec": "3 dorm c/ suíte · 63,85 e 64,44 m² · Park Meraki · previsão de entrega abr/2028 (Torre 1) e set/2028 (Torre 2)",
     "url": "https://lancamentos.imoveisvivamerica.com.br/artemis-residencial-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
@@ -289,7 +289,7 @@
     "mes_tabela": "2026-09",
     "estoque": null,
     "data_estoque": null,
-    "spec": "3 suítes · 120,18 m² · 2 ou 3 vagas · entrega mar/2027",
+    "spec": "3 suítes · 120,18 m² · 2 ou 3 vagas · previsão de entrega mar/2027",
     "url": "https://lancamentos.imoveisvivamerica.com.br/helade-indaiatuba/",
     "fonte": "tabela oficial da incorporadora, setembro/2026"
   },
