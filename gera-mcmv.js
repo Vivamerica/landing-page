@@ -38,7 +38,8 @@
    Topo como os outros hubs: trilha, H1 fixo, linha de contagem e
    "Atualizado em mês/ano" (class atualizado: o gera-sitemap.js troca por
    dd/mm/aaaa quando o lastmod cai em outro mês). Grade logo depois; guia
-   em section#guia e FAQ em div.faq-item > h3 + p embaixo.
+   em section#guia e FAQ em div.faq-item > h3 + p embaixo. Depois das duas
+   seções, a assinatura da lista (assinatura.js, desde 21/11/2026).
    <!--GEN:malha--> (gera-relacionados.js) e <style id="marca">
    (identidade.js) são preservados entre rodadas (hub-comum.js).
 
@@ -58,6 +59,8 @@ const PAGINA = 'empreendimentos Minha Casa Minha Vida em Indaiatuba';   // nome 
 // entidade única e tag GA4 (identidade.js); menu do site (gera-menu.js)
 const { blocoEntidade, GA4, REF_IMOB } = require('./identidade.js');
 const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
+// assinatura da lista ("Levantamento Viv'América · tabelas de … · atualizado em … · CRECI"), depois das duas seções
+const ASS = require('./assinatura.js');
 
 // ─── seleção ───
 const porPreco = (a, b) => (a.p || 9e12) - (b.p || 9e12);
@@ -252,6 +255,7 @@ ${MENU_HTML}
 
   <div class="section">
 ${SECOES.map(secao).join('\n')}
+    ${ASS.bloco(SELO.concat(TETO))}
 
     <section class="sec guia" id="guia">
       <h2>Faixas e tetos do Minha Casa Minha Vida</h2>

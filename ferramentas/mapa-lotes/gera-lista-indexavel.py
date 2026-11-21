@@ -380,6 +380,39 @@ ld_faq = {'@context': 'https://schema.org', '@type': 'FAQPage',
           'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faq]}
 ld = lambda o: json.dumps(o, ensure_ascii=False, separators=(',', ':'))
 
+# ── assinatura (21/11/2026): a mesma linha das outras listas do site (assinatura.js), com os dados do mapa ──
+# "Levantamento Viv'América · tabelas de out a nov/2026 · atualizado em <data da lista> · CRECI 47394-J".
+# A faixa de meses sai da coluna Tabela (uma ou mais datas por linha); a data é a da própria lista, que só
+# avança quando o conteúdo muda. Fica entre <!--GEN:assinatura--> e <!--/GEN:assinatura-->: é moldura (o
+# gera-sitemap.js e a comparação abaixo a ignoram), então pôr ou trocar a linha não muda a data da lista.
+def iso_mes(d):
+    """'17/11/2026' -> '2026-11'; 'out/2026' -> '2026-10'; outra coisa -> None."""
+    r = re.match(r'\d{2}/(\d{2})/(\d{4})$', d)
+    if r:
+        return r.group(2) + '-' + r.group(1)
+    r = re.match(r'([a-z]{3})/(\d{4})$', d)
+    return (r.group(2) + '-%02d' % (ABREV.index(r.group(1)) + 1)) if r and r.group(1) in ABREV else None
+
+
+meses_tab = sorted({iso_mes(d.strip()) for r in linhas if r['data'] for d in r['data'].split(' e ')} - {None})
+if not meses_tab:
+    faixa_tab = ''
+elif meses_tab[0] == meses_tab[-1]:
+    faixa_tab = 'tabela de %s/%s · ' % (ABREV[int(meses_tab[0][5:]) - 1], meses_tab[0][:4])
+else:
+    a, b = meses_tab[0], meses_tab[-1]
+    faixa_tab = 'tabelas de %s a %s/%s · ' % (ABREV[int(a[5:]) - 1] + ('' if a[:4] == b[:4] else '/' + a[:4]),
+                                              ABREV[int(b[5:]) - 1], b[:4])
+assinatura = ('\n    <!--GEN:assinatura--><p class="assinatura" style="font-size:.78rem;letter-spacing:.03em;line-height:1.5;opacity:.85;margin:1rem 0 0">'
+              'Levantamento Viv\'América · %satualizado em %s · CRECI 47394-J</p><!--/GEN:assinatura-->' % (faixa_tab, MARCA_DATABR))
+RE_MOLDURA = re.compile(r'\n[ \t]*<!--GEN:(assinatura|redes)-->[\s\S]*?<!--/GEN:\1-->')
+RE_REDES = re.compile(r'\n[ \t]*<!--GEN:redes-->[\s\S]*?<!--/GEN:redes-->')   # do identidade.js, logo depois da linha NAP
+
+
+def sem_moldura(bloco):
+    return RE_MOLDURA.sub('', bloco)
+
+
 nota_casas = ''
 if casas_vis:
     b = casas_vis[0]
@@ -401,7 +434,7 @@ lista = '''
 %s
         </tbody>
       </table>
-    </div>%s
+    </div>%s%s
     <h2>Perguntas frequentes sobre o mapa de lotes</h2>
 %s
     <p class="links">Veja também: <a href="/loteamentos-em-indaiatuba/">Loteamentos em Indaiatuba, com preços</a> · <a href="/condominios-fechados-indaiatuba/">Condomínios fechados de lotes</a> · <a href="/precos-lancamentos-indaiatuba/">Observatório de Preços</a> · <a href="/loteamentos-e-bairros-de-indaiatuba/">Lista oficial A–Z dos loteamentos e bairros</a> · <a href="/imprensa-e-dados/">Dados abertos do Observatório (CSV e JSON)</a> · <a href="/">Todos os lançamentos de Indaiatuba</a></p>
@@ -412,7 +445,7 @@ lista = '''
   <script type="application/ld+json">%s</script>
   <script type="application/ld+json">%s</script>
 </section>
-''' % (MARCA_DATA, MARCA_DATABR, n_grupos, num_pt(n_preco), MARCA_DATABR, ''.join('<th>%s</th>' % h for h in th), '\n'.join(trs), nota_casas, faq_html,
+''' % (MARCA_DATA, MARCA_DATABR, n_grupos, num_pt(n_preco), MARCA_DATABR, ''.join('<th>%s</th>' % h for h in th), '\n'.join(trs), assinatura, nota_casas, faq_html,
        ld(ld_pagina), ld(ld_lista), ld(ld_faq))
 
 
@@ -497,7 +530,8 @@ iso_antigo = gerado.group(1) if gerado else None
 # Compara o bloco do arquivo com a lista de agora carimbada na data ANTIGA. Trocar
 # a data por marcador dentro do bloco antigo trocaria junto uma data de tabela igual
 # à data de geração (tabela carregada e publicada no mesmo dia), e a lista pareceria mudada.
-mudou = (not iso_antigo) or (com_marca(s[il:jl]) != com_marca(lista_em(iso_antigo))) or (s[ia:ja] != resumo)
+# A moldura (a assinatura daqui e o GEN:redes que o identidade.js põe depois da linha NAP) não conta.
+mudou = (not iso_antigo) or (sem_moldura(com_marca(s[il:jl])) != sem_moldura(com_marca(lista_em(iso_antigo)))) or (s[ia:ja] != resumo)
 def iso_do_publicado():
     """Data da lista na versão do último commit (HEAD), se a lista de agora for igual à de lá.
     Uma lista que mudou e voltou ao que estava publicado (ex.: bairro oculto pela lista "sem
@@ -513,7 +547,7 @@ def iso_do_publicado():
     except ValueError:
         return None
     g = re.search(r'data-gerado="(\d{4}-\d{2}-\d{2})"', h[hil:hjl])
-    if g and com_marca(h[hil:hjl]) == com_marca(lista_em(g.group(1))) and h[hia:hja] == resumo:
+    if g and sem_moldura(com_marca(h[hil:hjl])) == sem_moldura(com_marca(lista_em(g.group(1)))) and h[hia:hja] == resumo:
         return g.group(1)
     return None
 
@@ -526,6 +560,15 @@ if mudou:
 else:
     data_iso = iso_antigo           # nada mudou: o bloco fica como está, com o dateModified que está lá
     novo = s
+    alvo = lista_em(iso_antigo)
+    if com_marca(RE_REDES.sub('', s[il:jl])) != com_marca(alvo):
+        # só a assinatura mudou (entrou, ou a faixa de meses do texto dela): reescreve o bloco com a MESMA
+        # data da lista e o mesmo dateModified que estava (esse é do gera-sitemap.js)
+        dm = RE_DATEMOD.search(s[il:jl])
+        if dm:
+            val = s[il:jl][dm.end(1):dm.start(2)]
+            alvo = RE_DATEMOD.sub(lambda m: m.group(1) + val + m.group(2), alvo)
+        novo = s[:il] + alvo + s[jl:]
 assert bloco_no_painel(novo)
 if novo != s_arquivo:
     io.open(P, 'w', encoding='utf-8', newline='').write(novo)

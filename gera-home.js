@@ -86,6 +86,19 @@
    gera-apartamentos → gera-alphaville → gera-blog-ofertas →
    gera-blog-indice → gera-relacionados → identidade.js (último).
 
+   Desde 21/11/2026 também:
+   - <!--GEN:quem-->       no hero, logo depois da linha de números: o que a
+                           Viv'América é, numa linha (imobiliária de Indaiatuba
+                           especializada em lançamentos e imóveis na planta, CRECI)
+   - <!--GEN:quem-resumo--> na seção #resumo, depois da resposta direta: a mesma
+                           identidade com os fatos que se conferem na página
+                           (quantos empreendimentos, quantos com preço, de quantas
+                           construtoras, revisão mensal das tabelas, CRECI)
+   - <!--GEN:assinatura--> na home (#resumo) e nos dois hubs de lote (depois da
+                           grade): "Levantamento Viv'América · tabelas de … ·
+                           atualizado em … · CRECI" (assinatura.js)
+   - /sobre/: <!--GEN:quem--> no "O que fazemos", com os mesmos números
+
    ÚNICO dado manual daqui: AVAL (nota e nº de avaliações do Google —
    não existe API conectada; o Fabio avisa quando mudar).
    ═══════════════════════════════════════════════════════════════════ */
@@ -93,7 +106,14 @@
 const fs = require('fs');
 const R = __dirname + '/';
 
-const AVAL = { nota: '5,0', n: 9 };   // Google Business — atualizar à mão
+// Nota e nº de avaliações do Perfil da Empresa no Google, como o Google mostra, e o MÊS da leitura
+// (mes, AAAA-MM): o selo sai "★ 4,9 no Google · 17 avaliações (nov/2026)" e nunca parece mais novo do
+// que é. Não há API conectada: quem lê é o Fabio (ou a rotina das avaliações) e troca os três campos.
+// Leitura com mais de 2 meses vira ATENÇÃO na saída deste gerador (o selo continua com o mês dela).
+// Lido em 19/11/2026: 17 avaliações, nota 4,9 (antes: 5,0 com 9, de ago/2026).
+const AVAL = { nota: '4,9', n: 17, mes: '2026-11' };
+const ASS = require('./assinatura.js');   // assinatura das listas
+const CRECI_IMOB = require('./identidade.js').ENTIDADE.identifier.value;   // 47394-J
 
 // ─── fontes ───
 function extrairDe(arquivo, nome) {
@@ -241,7 +261,9 @@ function genEm(html, marca, conteudo) {
 }
 
 const HOME_TITLE = `Lançamentos imobiliários em Indaiatuba ${EDICAO.ano}: ${comPreco.length} com preço`;
-const HOME_DESC = `${total} lançamentos em Indaiatuba SP, ${comPreco.length} com preço na tela: de ${mil(menorLote)} (lote) a ${mil(aptoMax.p)} (apartamento), sem cadastro. Tabela atualizada em ${hojeBR}.`;
+// "Tabela atualizada em" = a mesma data da assinatura da página (o dia em que os dados da fonte única
+// mudaram pela última vez, assinatura.js), nunca antes da apuração da edição (EDICAO.lastmod)
+const HOME_DESC = `${total} lançamentos em Indaiatuba SP, ${comPreco.length} com preço na tela: de ${mil(menorLote)} (lote) a ${mil(aptoMax.p)} (apartamento), sem cadastro. Tabela atualizada em ${ASS.dataBR(ASS.dataLevantamento())}.`;
 h = metaVivo(h, 'home', HOME_TITLE, HOME_DESC);
 feitos.push('title/description');
 
@@ -267,8 +289,23 @@ const regiaoFrase = REGIAO.length
   : '';
 gen('lede', `<strong>Resposta direta:</strong> em ${mesExtenso}, a Imobiliária Viv'América representa ${total} lançamentos em Indaiatuba, ${comPreco.length} com preço aberto na tabela. O apartamento mais barato é o ${esc(aptoMin.n)} (${esc(aptoMin.c)}), a partir de ${brl(aptoMin.p)}${mcmvApto}; o lote mais barato é o do ${esc(loteMin.n)} (${esc(loteMin.c)}), a partir de ${brl(loteMin.p)} por ${loteMin.m2} m².${regiaoFrase} Os ${proximos.length} <a href="#proximos-lancamentos">próximos lançamentos</a>, ainda sem tabela definitiva, estão listados abaixo. Apartamentos prontos de revenda ficam no <a href="https://imoveisvivamerica.com.br/site/venda/indaiatuba/apartamentos">site principal</a>.`);
 
+// a identidade numa linha (hero) e com os fatos que se conferem na página (#resumo); a mesma frase de
+// fatos vai para o "O que fazemos" de /sobre/ (fim deste arquivo)
+const QUEM_CURTO = `Imobiliária de Indaiatuba especializada em lançamentos e imóveis na planta · CRECI ${CRECI_IMOB}`;
+gen('quem', `<p class="hero-quem">${esc(QUEM_CURTO)}</p>`);
+const cidadesRegiao = [...new Set(REGIAO.filter(e => !SD.vendido(e.slug)).map(e => e.cidade))];
+const nRegiao = aVendaPag.length - total;
+// "a lista da home tem N", e não "N têm página neste site": os Alphaville de outro estado (BA, CE) e
+// o 100% vendido também têm página, fora da lista da home (revisão de 21/11/2026)
+const quemFatos = sujeito => `${sujeito} ${aVendaPag.length} ${empreendimentos(aVendaPag.length)}${nRegiao > 0 ? ` (${total} em Indaiatuba e ${nRegiao} na região: ${lista(cidadesRegiao.map(esc))})` : ''}, ${comPrecoPag.length === aVendaPag.length ? 'todos com preço aberto' : comPrecoPag.length + ' com preço aberto'}, de ${construtorasPag} construtoras e loteadoras. As tabelas são revistas todo mês; quando uma tabela não muda, a página do empreendimento continua mostrando o mês dela`;
+gen('quem-resumo', `<strong>Quem somos:</strong> a Imobiliária Viv'América (CRECI ${CRECI_IMOB}) é uma imobiliária de Indaiatuba especializada em lançamentos e imóveis na planta: apartamentos, loteamentos e condomínios fechados. ${quemFatos('A lista desta página tem')}. Não prometemos valorização; publicamos o preço, a metragem e as condições de cada tabela. <a href="/sobre/">Quem responde por este site</a>.`);
+gen('assinatura', ASS.conteudo(naPagina.filter(e => !SD.vendido(e.slug))));
+
+// mês da leitura da nota do Google: mais de 2 meses = ATENÇÃO (o selo diz o mês, então não mente; só envelhece)
+const mesesAval = (() => { const d = new Date(); return (d.getFullYear() * 12 + d.getMonth() + 1) - (+AVAL.mes.slice(0, 4) * 12 + +AVAL.mes.slice(5, 7)); })();
+if (mesesAval > 2) falhas.push('nota do Google lida em ' + mesDe(AVAL.mes) + ' (há ' + mesesAval + ' meses): confira no Perfil da Empresa e troque o AVAL');
 gen('selos', `
-          <span class="selo-h"><b>★ ${AVAL.nota}</b> no Google · ${AVAL.n} avaliações</span>
+          <span class="selo-h"><b>★ ${AVAL.nota}</b> no Google · ${AVAL.n} avaliações (${mesDe(AVAL.mes)})</span>
           <span class="selo-h"><b>${aVendaPag.length}</b> lançamentos · <b>${construtorasPag}</b> construtoras</span>
           <span class="selo-h">apartamentos a partir de <b>${mil(menorApto)}</b> · lotes a partir de <b>${mil(menorLote)}</b></span>
         `);
@@ -733,6 +770,7 @@ const HUBS = [
     faqMudou,
     destaque: brl(terras ? terras.p : menorLote),
     secao: 'featured-section',   // "Lançamento em Destaque" (Terras de San Marino), escrito à mão
+    itens: LOTES,                // a assinatura conta os meses das tabelas da grade
   },
   {
     arq: 'condominios-fechados-indaiatuba/index.html',
@@ -747,6 +785,7 @@ const HUBS = [
     faqM2: `Nos ${fechadosEd.length} condomínios e loteamentos fechados em lançamento monitorados no Observatório de Preços (edição de ${mesLongo}), o m² de lote vai de ${m2De(sCe.min)} (${comTab(sCe.min)}) a ${m2De(sCe.max)} (${comTab(sCe.max)}), com média de ${brl(sCe.medio)}/m², já com portaria e lazer interno no preço. O preço é o "a partir de" da menor unidade na data da tabela de cada um.`,
     faqMudou,
     destaque: brl(Math.min(...conds.map(e => e.p))),
+    itens: conds,
   },
 ];
 for (const hub of HUBS) {
@@ -767,6 +806,7 @@ for (const hub of HUBS) {
   g('faq-m2', hub.faqM2);
   g('faq-mudou', hub.faqMudou, true);   // só o hub de loteamentos tem o marcador
   g('destaque', hub.destaque);
+  g('assinatura', ASS.conteudo(hub.itens));
   g('atualizado', 'Atualizado em ' + mesLongo);
   s = s.replace(/"dateModified":\s*"\d{4}-\d{2}-\d{2}"/, '"dateModified": "' + (HUBS_ALTERADOS_EM > EDICAO.lastmod ? HUBS_ALTERADOS_EM : EDICAO.lastmod) + '"');
   s = faqDeVisivel(s);
@@ -782,6 +822,14 @@ for (const hub of HUBS) {
     if (s2 !== null && s2 !== s) { s = s2; fs.writeFileSync(arq, s, 'utf8'); partes.push('atualizado=' + lm.slice(0, 7)); }
   }
   feitos.push(hub.arq.split('/')[0] + ' (' + partes.join(',') + ')');
+}
+// ─── 7. /sobre/: os números da identidade, no "O que fazemos" (o resto da página é escrito à mão) ───
+{
+  const arq = R + 'sobre/index.html';
+  const s = fs.existsSync(arq) ? fs.readFileSync(arq, 'utf8') : '';
+  const novo = s && genEm(s, 'quem', `${quemFatos('Hoje, a lista da <a href="/">página inicial</a> tem')} (levantamento atualizado em ${ASS.dataBR(ASS.dataLevantamento())}).`);
+  if (!novo) falhas.push('sobre/index.html quem');
+  else { if (novo !== s) fs.writeFileSync(arq, novo, 'utf8'); feitos.push('sobre (quem)'); }
 }
 if (fs.existsSync(R + 'lancamentos-indaiatuba')) {
   // Guarda dura: o hub virou 301 para a home (opção B, 02/09/2026). Se a pasta

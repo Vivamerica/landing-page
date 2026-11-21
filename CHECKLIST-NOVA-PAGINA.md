@@ -81,6 +81,15 @@ Cada item é executado pelo Claude automaticamente, exceto onde indicado 👤.
 
 ---
 
+## 1d. ASSINATURA DAS LISTAS, REDES E "QUEM SOMOS" (desde 21/11/2026)
+
+- [ ] **Assinatura das listas** (`assinatura.js`): logo depois da lista da home (`#resumo`), de `/apartamentos-na-planta-indaiatuba/`, de `/empreendimentos-minha-casa-minha-vida-indaiatuba/`, dos hubs de loteamentos e de condomínios e do mapa de lotes sai `Levantamento Viv'América · tabelas de <mês> a <mês>/<ano> · atualizado em dd/mm/aaaa · CRECI 47394-J`, entre `<!--GEN:assinatura-->` e `<!--/GEN:assinatura-->`. Os meses são os da tabela (`tab`, ou `conf`) de cada empreendimento da página; a data é o dia em que os DADOS da fonte única (preço, área, tabela, estoque, % vendido, situação, tarja, previsão, entrada/saída) mudaram pela última vez, lida do `git` (fonte única alterada sem commit = hoje), nunca antes de `EDICAO.lastmod`. Trocar só o texto do card (`s`) não muda a data. No mapa, a linha sai do `gera-lista-indexavel.py`, com os meses da coluna Tabela e a data da própria lista. Nunca escreva a linha à mão; ela é moldura (o `gera-sitemap.js` a ignora), então não mexe no `lastmod`. A home usa a mesma data no "Tabela atualizada em" da description
+- [ ] **Redes no rodapé** (`identidade.js`, `REDES`): toda página com a linha `<p class="nap">` recebe logo depois `<!--GEN:redes-->` com Instagram, Facebook, YouTube e o Perfil da Empresa no Google; é moldura (não mexe no `lastmod`) e a guarda do `identidade.js` exige um bloco por linha NAP. O Perfil da Empresa no Google (`PERFIL_GOOGLE`, preenchido em 21/11/2026) sai no rodapé ("Perfil no Google") e no `sameAs` da entidade: é o destino do link de "Compartilhar perfil" do painel do Google, na forma com o identificador do perfil (`https://www.google.com/search?kgmid=…`), sem os parâmetros de rastreio — nunca uma busca por palavra (`?q=`). `ADIAR_REDES` lista as páginas que um lote aberto em outra janela não deixava tocar: ficam sem o bloco e com o `sameAs` de antes (sem o Perfil do Google); tirou a página de lá, o ritual seguinte põe o bloco e completa o `sameAs`
+- [ ] **Quem somos** (`gera-home.js`): `GEN:quem` no hero da home (uma linha: imobiliária de Indaiatuba especializada em lançamentos e imóveis na planta · CRECI), `GEN:quem-resumo` no `#resumo` (os fatos que se conferem: quantos empreendimentos, quantos com preço, de quantas construtoras, revisão mensal das tabelas) e `GEN:quem` no "O que fazemos" de `/sobre/`, com os mesmos números. Sem promessa de valorização
+- [ ] **Nota do Google** (`AVAL` no `gera-home.js`): nota, número de avaliações e o mês da leitura (`mes: 'AAAA-MM'`); o selo sai `★ 4,9 no Google · 17 avaliações (nov/2026)`. Leitura com mais de 2 meses vira ATENÇÃO na saída do gerador: confira no Perfil e troque os três campos
+
+---
+
 ## 2. SITEMAP
 
 - [ ] Nada a escrever à mão: o `sitemap.xml` é gerado inteiro pelo `node gera-sitemap.js` (passo 12 do ritual). Toda pasta com `index.html` entra sozinha, fora `ferramentas/`, `qrcode/`, `quermesse/` e páginas `noindex`; `lastmod` = data do último commit que mudou o texto principal (página ainda sem commit = hoje)

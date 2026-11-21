@@ -49,6 +49,10 @@
    confere). Os atalhos seguem logo depois do topo; o parágrafo de abertura
    fica embaixo da grade de cards.
 
+   Logo depois da grade, a assinatura da lista (assinatura.js, desde
+   21/11/2026): "Levantamento Viv'América · tabelas de … · atualizado em … ·
+   CRECI", com os meses das tabelas dos apartamentos à venda.
+
    O bloco <!--GEN:malha--> é preenchido pelo gera-relacionados.js (que
    roda DEPOIS deste); ao regerar, o conteúdo anterior da malha é
    preservado para a página não ficar sem malha entre um passo e outro.
@@ -79,6 +83,8 @@ const EXTRAS = extrair('gera-relacionados.js', 'EXTRAS_APTOS')
 const { blocoEntidade, GA4 } = require('./identidade.js');
 // menu do site: fonte única em gera-menu.js
 const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
+// assinatura da lista ("Levantamento Viv'América · tabelas de … · atualizado em … · CRECI"), logo depois da grade
+const ASS = require('./assinatura.js');
 
 // ─── utilitários: brl, mil, mesDe, tabMes, tabDe, esc, semTags, miniatura (hub-comum.js) ───
 
@@ -323,6 +329,7 @@ ${MENU_HTML}
     <p class="sub">Ordem por preço "a partir de", cada um com o mês da tabela da construtora; sem tabela pública ao final${esgotados.length ? '; os esgotados ficam por último, com a página no ar para quem procura o nome' : ''}.</p>
     <div class="grid">${todos.map(card).join('')}
     </div>
+    ${ASS.bloco(ativos)}
 
     <p class="lede">Nesta página estão os apartamentos <strong>na planta, em obras ou recém-entregues</strong> que a Viv'América representa em Indaiatuba — do Minha Casa Minha Vida (MCMV), com uso do Fundo de Garantia do Tempo de Serviço (FGTS), ao alto padrão — com o preço "a partir de" aberto, sem cadastro, e link para a página completa de cada um. Procura apartamento pronto de revenda? Está no site principal: <a href="${SITE_PRONTOS}">apartamentos à venda em Indaiatuba</a>.</p>
 

@@ -20,6 +20,10 @@
      seller/broker/publisher/creator/offeredBy (REF_IMOB) e o author do BlogPosting
      vira a Pessoa (PESSOA). Qualquer RealEstateAgent de topo que outro gerador
      emita é substituído pelo marcador.
+   - os links das redes (REDES; desde 21/11/2026): <!--GEN:redes--> logo depois da
+     linha NAP (<p class="nap">) de toda página, com Instagram, Facebook, YouTube e,
+     quando PERFIL_GOOGLE for preenchido, o Perfil da Empresa no Google. O mesmo
+     conjunto alimenta o sameAs da ENTIDADE.
    Geradores em JS importam daqui:
      const { GA4, blocoEntidade, REF_IMOB, PESSOA } = require('./identidade.js');
 
@@ -105,10 +109,32 @@ const MARCA = `
 // Horário: o que a página /sobre/ publica (seg–sex 08:30–18:00, sáb 09:00–12:00).
 // legalName sem acento, como consta no registro da empresa. sameAs só com perfis
 // da empresa que respondem (Instagram, Facebook, YouTube e LinkedIn, conferidos em
-// 10/10/2026; o perfil no Chaves na Mão ficou fora porque a URL respondia 404).
+// 10/10/2026; Instagram, Facebook e YouTube de novo em 21/11/2026; o perfil no Chaves
+// na Mão ficou fora porque a URL respondia 404) e, desde 21/11/2026, o Perfil da Empresa
+// no Google (PERFIL_GOOGLE, mais abaixo).
 const ID_IMOB = 'https://imoveisvivamerica.com.br/#imobiliaria';
 const NOME_IMOB = "Imobiliária Viv'América";
 const REF_IMOB = { '@type': 'RealEstateAgent', '@id': ID_IMOB, name: NOME_IMOB };
+// Redes da empresa com link VISÍVEL no rodapé de toda página (bloco GEN:redes, logo depois da linha
+// NAP; desde 21/11/2026) e no sameAs da entidade. Só perfil que existe e responde: endereço de perfil
+// não se adivinha. O LinkedIn fica só no sameAs (respondeu em 10/10/2026; em 21/11/2026 devolveu 403
+// para robô e não foi reconferido).
+const REDES = [
+  { nome: 'Instagram', url: 'https://www.instagram.com/imoveisvivamerica' },
+  { nome: 'Facebook', url: 'https://www.facebook.com/imoveisvivamerica' },
+  { nome: 'YouTube', url: 'https://www.youtube.com/@ImoveisVivAmerica' },
+];
+// Perfil da Empresa no Google (preenchido em 21/11/2026): o Fabio copiou o link em "Compartilhar
+// perfil" (https://share.google/SMMDRZ4Xg5jd2ZFxB). Esse link curto redireciona para o perfil pelo
+// identificador dele no Google (kgmid=/g/11l5hgk752) mais parâmetros de rastreio; aqui fica só a forma
+// com o identificador, que é estável e não carrega rastreio (respondeu 200 em 21/11/2026). Entra no
+// sameAs e no rodapé ("Perfil no Google"); trocou o link, rode o ritual. Busca por palavra
+// (…/search?q=…) não serve aqui: não é o perfil. Vazio = sai do sameAs e do rodapé.
+const PERFIL_GOOGLE = 'https://www.google.com/search?kgmid=/g/11l5hgk752';
+const REDES_VISIVEIS = REDES.concat(PERFIL_GOOGLE ? [{ nome: 'Perfil no Google', url: PERFIL_GOOGLE }] : []);
+// sameAs sem o Perfil do Google: a ordem de antes (Instagram, Facebook, YouTube, LinkedIn). É o que as
+// páginas de ADIAR_REDES continuam recebendo (ver blocoEntidade), para não mudarem nem um byte.
+const SAME_AS_BASE = REDES.map(r => r.url).concat(['https://www.linkedin.com/company/imobiliaria-vivamerica']);
 const ENTIDADE = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
@@ -144,12 +170,8 @@ const ENTIDADE = {
     'Condomínios fechados e loteamentos em Indaiatuba',
     'Compra de imóvel na planta em Indaiatuba por brasileiros que moram fora do Brasil',
   ],
-  sameAs: [
-    'https://www.instagram.com/imoveisvivamerica',
-    'https://www.facebook.com/imoveisvivamerica',
-    'https://www.youtube.com/@ImoveisVivAmerica',
-    'https://www.linkedin.com/company/imobiliaria-vivamerica',
-  ],
+  // a ordem de antes (Instagram, Facebook, YouTube, LinkedIn); o Perfil do Google entra no fim quando existir
+  sameAs: SAME_AS_BASE.concat(PERFIL_GOOGLE ? [PERFIL_GOOGLE] : []),
   // contactPoint sem areaServed: o atendimento vale para quem mora fora do Brasil (pelo WhatsApp,
   // em português); declarar 'BR' dizia aos buscadores e às IAs que só vendemos para o Brasil.
   contactPoint: { '@type': 'ContactPoint', telephone: '+5519989769457', contactType: 'sales', availableLanguage: 'Portuguese' },
@@ -167,10 +189,38 @@ const PESSOA = {
   image: DOMINIO + 'images/fabio-correia.jpg',
   worksFor: REF_IMOB,
 };
-function blocoEntidade() {
+// semPerfilGoogle = true só para as páginas de ADIAR_REDES (quem passa é o aplicarEntidade): o nó sai
+// igual ao de antes de 21/11/2026, com o sameAs sem o Perfil do Google. Os geradores de página inteira
+// chamam sem argumento e recebem a entidade completa.
+function blocoEntidade(semPerfilGoogle) {
+  const e = semPerfilGoogle ? Object.assign({}, ENTIDADE, { sameAs: SAME_AS_BASE }) : ENTIDADE;
   return '<!--GEN:entidade-->\n  <script type="application/ld+json">\n  ' +
-    JSON.stringify(ENTIDADE, null, 2).replace(/\n/g, '\n  ') + '\n  </script>\n  <!--/GEN:entidade-->';
+    JSON.stringify(e, null, 2).replace(/\n/g, '\n  ') + '\n  </script>\n  <!--/GEN:entidade-->';
 }
+
+// ─── REDES: links visíveis para os perfis da empresa, logo depois da linha NAP (21/11/2026) ───
+// Toda página do site tem uma linha <p class="nap"> (rodapé; no mapa, o fim do painel). O bloco é
+// tirado e posto de novo a cada rodada, então página regerada por inteiro (hubs, Observatório, blog)
+// volta com ele aqui. É moldura: o gera-sitemap.js ignora o GEN:redes na impressão digital.
+const A_REDES = '<!--GEN:redes-->', B_REDES = '<!--/GEN:redes-->';
+function blocoRedes() {
+  return A_REDES + '<p class="redes">Viv\'América nas redes: ' +
+    REDES_VISIVEIS.map(r => '<a href="' + r.url + '" target="_blank" rel="noopener">' + r.nome + '</a>').join(' · ') +
+    '</p>' + B_REDES;
+}
+const RE_REDES = /\n[ \t]*<!--GEN:redes-->[\s\S]*?<!--\/GEN:redes-->/g;
+const RE_NAP = /([ \t]*)(<p class="nap">[\s\S]*?<\/p>)/g;
+function aplicarRedes(h) {
+  return h.replace(RE_REDES, '').replace(RE_NAP, (m, ind) => m + '\n' + ind + blocoRedes());
+}
+// Páginas que ficam SEM o bloco por enquanto, sem nenhuma mudança: em 21/11/2026 estavam sendo
+// trabalhadas em outro lote (outra janela), e este não podia tocar nelas. Pelo mesmo motivo o nó da
+// entidade delas segue com o sameAs sem o Perfil do Google (blocoEntidade(true)). Quando o lote delas
+// subir, tire a página daqui e rode o ritual: o bloco e o Perfil do Google no sameAs entram sozinhos.
+const ADIAR_REDES = new Set([
+  'pertenze-residencial-indaiatuba/index.html',
+  'parque-alphaville-alvorada-votorantim/index.html',
+]);
 
 // ─── TAG GA4 com guarda — o mesmo bloco em todas as páginas fora do blog ───
 // cta_pos: data-cta (blog), data-origem (mapa) ou a posição inferida pelo
@@ -374,7 +424,7 @@ function aplicarEntidade(h, pagina, aninhados) {
   });
   if (invalidos.length) throw new Error(pagina + ': JSON-LD inválido (' + invalidos.join('; ') + ')');
   if (!colocou) h = h.replace('</head>', () => '  ' + MARCA_ENT + '\n</head>');
-  return h.split(MARCA_ENT).join(blocoEntidade());
+  return h.split(MARCA_ENT).join(blocoEntidade(ADIAR_REDES.has(pagina)));
 }
 
 // Páginas do site: as mesmas que o validador conta (ferramentas, qrcode, seo... ficam fora)
@@ -469,19 +519,21 @@ function main() {
 
   // ─── Fase 3: tag GA4 com guarda + entidade única, em todas as páginas do site ───
   const paginas = listarPaginas();
-  let nGa4 = 0, nEnt = 0, nRob = 0;
+  let nGa4 = 0, nEnt = 0, nRob = 0, nRedes = 0;
   for (const p of paginas) {
     const f = path.join(RAIZ, p);
     const antes = fs.readFileSync(f, 'utf8');
     const comGa4 = aplicarGA4(antes, p);
     const comEnt = aplicarEntidade(comGa4, p, p !== MAPA);
-    const depois = aplicarRobots(comEnt);
+    const comRob = aplicarRobots(comEnt);
+    const depois = ADIAR_REDES.has(p) ? comRob : aplicarRedes(comRob);
     if (comGa4 !== antes) nGa4++;
     if (comEnt !== comGa4) nEnt++;
-    if (depois !== comEnt) nRob++;
-    if (depois !== antes) { grava(f, depois); if (CONFERIR) console.log('  mudaria (GA4/entidade/robots): ' + p); }
+    if (comRob !== comEnt) nRob++;
+    if (depois !== comRob) nRedes++;
+    if (depois !== antes) { grava(f, depois); if (CONFERIR) console.log('  mudaria (GA4/entidade/robots/redes): ' + p); }
   }
-  console.log('ga4: ' + nGa4 + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; entidade: ' + nEnt + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; robots: ' + nRob + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + ' (' + paginas.length + ' paginas do site)');
+  console.log('ga4: ' + nGa4 + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; entidade: ' + nEnt + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; robots: ' + nRob + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + '; redes: ' + nRedes + ' paginas ' + (CONFERIR ? 'a tocar' : 'tocadas') + ' (' + paginas.length + ' paginas do site)');
 
   // GUARDA: acento duplamente codificado ("HÃ©lade", "ImobiliÃ¡ria", "â€”").
   // Em 02/09/2026 havia 453 ocorrencias em 39 paginas, dentro do JSON-LD
@@ -583,6 +635,8 @@ function main() {
       }
     }
     if (topoRea !== 1) errosMed.push(p + ': ' + topoRea + ' RealEstateAgent de topo (esperado 1)');
+    const nNap = (h.match(/<p class="nap">/g) || []).length, nRed = (h.match(/<!--GEN:redes-->/g) || []).length;
+    if (nRed !== nNap && !(ADIAR_REDES.has(p) && nRed === 0)) errosMed.push(p + ': ' + nRed + ' bloco(s) GEN:redes para ' + nNap + ' linha(s) NAP (esperado um logo depois de cada)');
     if (semId.length) errosMed.push(p + ': nó da imobiliária/autor sem @id em ' + semId.join(', '));
     if (RE_NOME_CURVO.test(h)) errosMed.push(p + ': nome da marca com apóstrofo tipográfico dentro de <script> (troque na origem)');
     RE_NOME_CURVO.lastIndex = 0;
@@ -608,4 +662,5 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { ID_IMOB, REF_IMOB, ENTIDADE, ID_PESSOA, PESSOA, GA4, blocoEntidade, aplicarGA4, aplicarEntidade, guardaDatas, listarPaginas };
+module.exports = { ID_IMOB, REF_IMOB, ENTIDADE, ID_PESSOA, PESSOA, GA4, blocoEntidade, aplicarGA4, aplicarEntidade, guardaDatas, listarPaginas,
+  REDES, PERFIL_GOOGLE, blocoRedes, aplicarRedes };

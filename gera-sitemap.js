@@ -9,7 +9,8 @@
       consecutivas e ignora o que não é texto — camada de marca (<style>),
       tag GA4, bloco da entidade, malha de rodapé, menu (GEN:menu e o
       cabeçalho antigo, menos o <h1>), rodapé, botões de WhatsApp (molde e
-      rótulo), cards/CTA/aside gerados no blog, o formato do telefone
+      rótulo), cards/CTA/aside gerados no blog, a assinatura das listas
+      (GEN:assinatura) e os links das redes (GEN:redes), o formato do telefone
       98976-9457 (com ou sem +55) e os próprios campos de data.
       Um commit que só trocou isso não conta. Página alterada
       na árvore de trabalho com mudança de texto recebe a data de hoje.
@@ -180,7 +181,10 @@ function lerBlobs(specs) {
 // ─── impressão digital do texto principal ───
 const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 const RE_DATA_VISIVEL = /(atualizad[oa] em )(\d{2}\/\d{2}\/\d{4}|(?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)(?: de |\/)\d{4})/i;
-const GEN_CHROME = /<!--GEN:(malha|entidade|barra|aside|oferta|cta-topo|atualizado|menu|guias)-->[\s\S]*?<!--\/GEN:\1-->/g;
+// assinatura (assinatura.js: "Levantamento Viv'América · tabelas de … · atualizado em … · CRECI") e redes
+// (identidade.js: links para Instagram, Facebook e YouTube no rodapé) são moldura, como a malha: pôr ou
+// trocar não muda a data da página (21/11/2026)
+const GEN_CHROME = /<!--GEN:(malha|entidade|barra|aside|oferta|cta-topo|atualizado|menu|guias|assinatura|redes)-->[\s\S]*?<!--\/GEN:\1-->/g;
 
 const ehObj = v => !!v && typeof v === 'object' && !Array.isArray(v);
 const tipos = v => String((v && v['@type']) || '');
