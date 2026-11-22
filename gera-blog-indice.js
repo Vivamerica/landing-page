@@ -67,6 +67,9 @@ const TEMA_POR_SLUG = {
   'condominios-em-indaiatuba-por-bairro':            { tag: 'Condomínios por bairro', cat: 'bairros' },
   'comprar-na-planta-ou-pronto-para-morar':          { tag: 'Planta ou pronto',       cat: 'dinheiro' },
   'comprar-imovel-na-planta-indaiatuba-morando-fora': { tag: 'Morando fora do Brasil', cat: 'dinheiro' },
+  // perguntas de compradores (21/11/2026)
+  'casa-minha-casa-minha-vida-indaiatuba':           { tag: 'MCMV · Casa',            cat: 'mcmv' },
+  'comprar-na-planta-indaiatuba-passo-a-passo':      { tag: 'Na planta · Passo a passo', cat: 'dinheiro' },
 };
 const DESTAQUES = new Set([
   'morar-em-indaiatuba', 'minha-casa-minha-vida-indaiatuba', 'como-usar-fgts-comprar-imovel-indaiatuba',

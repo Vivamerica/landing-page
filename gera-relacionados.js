@@ -95,6 +95,7 @@ const DINHEIRO = [
   ['Quanto ganhar para financiar', 'renda-necessaria-financiar-imovel'],
   ['ITBI, escritura e registro', 'itbi-escritura-registro-indaiatuba'],
   ['Na planta ou pronto?', 'comprar-na-planta-ou-pronto-para-morar'],
+  ['Comprar na planta: passo a passo', 'comprar-na-planta-indaiatuba-passo-a-passo'],
   ['Comprar morando fora do Brasil', 'comprar-imovel-na-planta-indaiatuba-morando-fora'],
   ['Condomínio de lotes ou loteamento fechado', 'condominio-de-lotes-ou-loteamento-fechado'],
   ['Quanto custa construir', 'quanto-custa-construir-em-indaiatuba-cub-2026'],
