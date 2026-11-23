@@ -1,5 +1,5 @@
   { b:'alpnach', q:'A', l:'23', m2:395.15, tipo:'RESIDENCIAL', pm2:1700, vista:671755.00, ll:[-23.079995,-47.235563], soVista:true },
-  { b:'alpnach', q:'A', l:'12', m2:300.00, tipo:'RESIDENCIAL', pm2:1700, vista:510000.00, soVista:true },
+  { b:'alpnach', q:'A', l:'12', m2:300.00, tipo:'RESIDENCIAL', pm2:1700, vista:510000.00, ll:[-23.079840,-47.236885], soVista:true },
   { b:'alpnach', q:'B', l:'1', m2:390.56, tipo:'RESIDENCIAL', pm2:1700, vista:663952.00, ll:[-23.079774,-47.235489], soVista:true },
   { b:'alpnach', q:'B', l:'28', m2:390.56, tipo:'RESIDENCIAL', pm2:1700, vista:663952.00, ll:[-23.079427,-47.235428], soVista:true },
   { b:'alpnach', q:'D', l:'5', m2:300.00, tipo:'RESIDENCIAL', pm2:1700, vista:510000.00, ll:[-23.078563,-47.235741], soVista:true },

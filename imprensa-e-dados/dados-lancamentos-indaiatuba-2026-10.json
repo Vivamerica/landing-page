@@ -20,12 +20,12 @@
     "preco_a_partir_de": 309120,
     "m2_menor_unidade": 46.13,
     "preco_m2": 6701,
-    "mes_tabela": "2026-09",
+    "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
     "spec": "2 dorm · 46 a 72 m² · 3 torres · lago e complexo aquático",
     "url": "https://lancamentos.imoveisvivamerica.com.br/parque-das-aguas-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, setembro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Pertenze Residencial",
@@ -174,12 +174,12 @@
     "preco_a_partir_de": 429961,
     "m2_menor_unidade": 59.5,
     "preco_m2": 7226,
-    "mes_tabela": "2026-10",
+    "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
     "spec": "59,5 a 63,58 m² · suíte · 1–2 vagas · 25+ itens de lazer",
     "url": "https://lancamentos.imoveisvivamerica.com.br/spazio-italia-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Lumina Residencial",
@@ -297,29 +297,29 @@
     "nome": "Viva Parque Aura",
     "tipo": "apartamento",
     "incorporadora": "Pinheiro · RDZ · iBen",
-    "preco_a_partir_de": 306650,
-    "m2_menor_unidade": 47.17,
-    "preco_m2": 6501,
-    "mes_tabela": "2026-10",
+    "preco_a_partir_de": 310721,
+    "m2_menor_unidade": 48.24,
+    "preco_m2": 6441,
+    "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
-    "spec": "47 a 85 m² · Torres 3 e 4 (tabela out/2026) · 7.000 m² parque · +30 itens lazer",
+    "spec": "47 a 85 m² · Torres 3 e 4 (tabela nov/2026) · 7.000 m² parque · +30 itens lazer",
     "url": "https://lancamentos.imoveisvivamerica.com.br/viva-parque-aura-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Viva Parque Sense",
     "tipo": "apartamento",
     "incorporadora": "Pinheiro · RDZ · iBen",
-    "preco_a_partir_de": 408328,
+    "preco_a_partir_de": 415486,
     "m2_menor_unidade": 59.93,
-    "preco_m2": 6813,
-    "mes_tabela": "2026-09",
+    "preco_m2": 6933,
+    "mes_tabela": "2026-11",
     "estoque": null,
     "data_estoque": null,
-    "spec": "3 dorm c/ suíte · 59,93 m² · garden 95,99 m² · 8 torres · tabela set/2026",
+    "spec": "3 dorm c/ suíte · 59,93 m² · 8 torres · tabela nov/2026",
     "url": "https://lancamentos.imoveisvivamerica.com.br/viva-parque-sense-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, setembro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Manai Bosque",
@@ -496,12 +496,12 @@
     "preco_a_partir_de": 247500,
     "m2_menor_unidade": 150,
     "preco_m2": 1650,
-    "mes_tabela": "2026-10",
-    "estoque": 13,
-    "data_estoque": "2026-10-09",
-    "spec": "546 lotes · 13 disponíveis (espelho 09/10/2026) · 16.164 m² de lazer resort · previsão de entrega em 01/2028",
+    "mes_tabela": "2026-11",
+    "estoque": 22,
+    "data_estoque": "2026-11-23",
+    "spec": "546 lotes · 22 na tabela (23/11/2026) · 16.164 m² de lazer resort · previsão de entrega em 01/2028",
     "url": "https://lancamentos.imoveisvivamerica.com.br/terras-de-san-marino-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Residencial Vila Fahl",
@@ -566,12 +566,12 @@
     "preco_a_partir_de": 637200,
     "m2_menor_unidade": 360,
     "preco_m2": 1770,
-    "mes_tabela": "2026-10",
-    "estoque": 307,
-    "data_estoque": "2026-10-03",
-    "spec": "Loteamento fechado · 307 lotes de 360 a 617 m² · sinal de 10% e saldo em até 96x · previsão de entrega em 06/2027",
+    "mes_tabela": "2026-11",
+    "estoque": 301,
+    "data_estoque": "2026-11-21",
+    "spec": "Loteamento fechado · 301 lotes de 360 a 617 m² · sinal de 10% e saldo em até 96x · previsão de entrega em 06/2027",
     "url": "https://lancamentos.imoveisvivamerica.com.br/ville-de-provence-indaiatuba/",
-    "fonte": "tabela oficial da incorporadora, outubro/2026"
+    "fonte": "tabela oficial da incorporadora, novembro/2026"
   },
   {
     "nome": "Alphaville Indaiatuba",

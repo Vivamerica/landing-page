@@ -35,7 +35,7 @@ const R = __dirname + '/';
 // menu do site (fonte única: gera-menu.js); as duas páginas já saem com ele
 const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
-const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-11-17' };
+const EDICAO = { mes: 'Outubro', ano: 2026, iso: '2026-10', lastmod: '2026-11-23' };
 
 // estoque da MEDIÇÃO ANTERIOR (em geral a da edição de setembro/2026; o Jardim Dona Maria Cândida
 // foi medido em 08/09/2026 e publicado em 12/10/2026), para o "antes e depois"
@@ -55,15 +55,16 @@ const ESTOQUE_ANTERIOR = {
   'alpnach-indaiatuba':              { n: 28,  data: '04/09/2026', fonte: 'relatório Dominium de 04/09/2026; atual: relatório de 17/11/2026', est: 16, saida: ['a menos na lista', 'a menos na lista'], nota: '14 lotes saíram da lista de disponíveis e 5 entraram até o relatório de 09/10/2026, que listava 19; no de 17/11/2026, saíram 3 e nenhum entrou — nenhum preço mudou' },
   'vivere-indaiatuba':               { n: 5,   data: '04/09/2026', fonte: 'confirmação da Masotti de 04/09/2026; atual: conferência de 12/10/2026 (2 unidades, na Torre 7)', est: 2, saida: ['a menos na lista', 'a menos na lista'], nota: 'entre as que saíram há unidades reservadas — reserva não é venda: a unidade volta à lista de disponíveis se a reserva cair' },
   'reserva-botanica-indaiatuba':     { n: 3,   data: '10/07/2026', fonte: 'tabela Zarin de 10/07/2026; atual: tabela de 29/09/2026, conferida em 12/10/2026', est: 2, saida: ['a menos na tabela', 'a menos na tabela'], nota: 'saiu o lote D-13, de 339,92 m², que era o mais barato' },
-  'terras-de-san-marino-indaiatuba': { n: 19,  data: '02/09/2026', fonte: 'espelho de vendas de 02/09/2026; atual: espelho de 09/10/2026', est: 13, saida: ['a menos na lista', 'a menos na lista'], nota: '9 lotes saíram da lista de disponíveis e 3 entraram entre os dois espelhos' },
+  'terras-de-san-marino-indaiatuba': { n: 19,  data: '02/09/2026', fonte: 'espelho de vendas de 02/09/2026; atual: tabela e espelho de vendas de 23/11/2026', est: 22, nota: 'o espelho de 09/10/2026 listava 13 (9 lotes saíram e 3 entraram); no de 23/11/2026 constam 22: saíram 3 (D-39, K-6 e K-15) e entraram 12, 2 deles numa segunda folha com condição própria — nenhum preço à vista ou a prazo mudou' },
   'gran-vic-canario-indaiatuba':     { n: 3,   data: '02/09/2026', fonte: 'tabela VIC de 02/09/2026; atual: comunicado da VIC de 09/10/2026 (as mesmas 3 unidades da Torre 03)', est: 3 },
   // Gran Vic Andorinha (2 unidades em 02/09/2026) saiu da fonte única em 16/10/2026, sem unidades:
   // a saída está em SAIDAS, abaixo (a linha daqui ficaria órfã e foi removida).
   'itamaraca-indaiatuba':            { n: 206, data: 'jul/2026', fonte: 'tabela Zarin de julho/2026; atual: tabela de novembro/2026 emitida em 12/11/2026 (162 disponíveis)', est: 162, saida: ['a menos na lista', 'a menos na lista'], nota: 'a tabela de julho listava as 206 unidades do projeto como disponíveis; a emitida em 11/10/2026 trazia 166 disponíveis, 2 reservadas e 38 vendidas, e a de 12/11/2026 lista 162 disponíveis' },
   'maria-candida-indaiatuba':        { n: 180, data: '08/09/2026', fonte: 'lista de disponíveis de 08/09/2026; atual: quadro de disponíveis recebido em 16/10/2026', est: 166, saida: ['a menos na lista', 'a menos na lista'], nota: '12 lotes saíram da lista, 6 estão reservados (voltam se a reserva cair) e 4 voltaram (D-14 a D-17)' },
-  // 1ª medição em outubro/2026 (sem série anterior): Ville de Provence (307, tabela de outubro/2026 —
-  // documento de 03/10/2026) e Alphaville Indaiatuba (126 disponíveis no quadro de vendas de
-  // 07/10/2026, tabela de outubro com os valores de setembro). O Jardim Dona Maria Cândida entrou
+  'ville-de-provence-indaiatuba':     { n: 307, data: '03/10/2026', fonte: 'tabela Urban Square de 03/10/2026; atual: tabela de 21/11/2026', est: 301, saida: ['a menos na tabela', 'a menos na tabela'], nota: '14 lotes saíram da tabela e 8 entraram (C-11 a C-14, D-1, E-21, X-7 e X-8); os 293 que estão nas duas tabelas mantêm área e preço, a R$ 1.770/m²' },
+  // 1ª medição em outubro/2026 (sem série anterior): Alphaville Indaiatuba (126 disponíveis no quadro de vendas de
+  // 07/10/2026, tabela de outubro com os valores de setembro). O Ville de Provence entrou como 1ª medição em
+  // outubro/2026 (307, tabela de 03/10/2026) e ganhou a 2ª na tabela de 21/11/2026. O Jardim Dona Maria Cândida entrou
   // como 1ª medição em 12/10/2026 (180, lista de 08/09/2026) e ganhou a 2ª no quadro de 16/10/2026.
 };
 
@@ -71,13 +72,13 @@ const ESTOQUE_ANTERIOR = {
 const MOVIMENTOS = [
   // outubro/2026
   { n: 'Itamaracá Residencial', c: 'Zarin', de: 339990, para: 345107, causa: 'o piso da tabela de outubro subiu: Apto Meio de 48,11 m² no térreo da Torre B; 168 das 206 unidades disponíveis em 01/10/2026', fonte: 'tabela Zarin de outubro/2026 (gerada em 01/10/2026)' },
-  { n: 'Spazio Italia',         c: 'Zarin', de: 448820, para: 429961, causa: 'a Torre 4 (Milão) entrou na tabela com 86 unidades e passou a ter o menor preço — 59,5 m², 1 vaga', fonte: 'tabela Zarin de outubro/26 (documento de 01/10/2026)' },
+  { n: 'Spazio Italia',         c: 'Zarin', de: 448820, para: 429961, causa: 'a Torre 4 (Milão) entrou na tabela de outubro/26 com 86 unidades e passou a ter o menor preço — 59,5 m², 1 vaga (Milão 5); na de novembro/26 o menor preço é o mesmo: as 228 unidades que estão nas duas tabelas mantiveram o valor total e entraram 2 (Florença 11 e Milão 31), 230 na tabela', fonte: 'tabela Zarin de novembro/26 (emitida em 23/11/2026)' },
   { n: 'Parque Zarah',          c: 'Zarin', de: 172500, para: 211050, causa: 'nenhum preço subiu: os lotes mistos de 150 m² da quadra 14, de R$ 172.500, saíram da tabela de 29/09/2026 e o menor passou a ser o misto de 150 m² da quadra 27, de R$ 211.050; um lote da quadra 14 voltou na tabela de 12/11/2026, por R$ 173.362,50, e saiu de novo na de 16/11/2026 — residencial a partir de R$ 218.588', fonte: 'tabelas Zarin de 29/09/2026, 01/10/2026, 12/11/2026 e 16/11/2026 (3 fases)' },
   { n: 'Reserva Botânica',      c: 'Zarin', de: 532563, para: 642375, causa: 'saiu o lote D-13 (339,92 m²), que era o mais barato; o menor disponível agora é o C-1, de 410,01 m² — restam 2 lotes na tabela de 29/09/2026', fonte: 'tabela Zarin de 29/09/2026' },
   { n: 'Gran Vic Tangará',      c: 'VIC Engenharia', de: 330000, para: 325000, causa: 'o apto 1001 da Torre 03, que era o mais barato (R$ 330.000), saiu da tabela; o menor preço agora é o do apto 804 da Torre 05 (47,22 m²), preço de uma única unidade — a seguinte custa R$ 333.761; as 74 unidades da tabela são Faixa 3', fonte: 'tabela VIC de 05/10/2026' },
   { n: 'Gran Vic Colibri',      c: 'VIC Engenharia', de: 334479, para: 336686, causa: 'as duas unidades de menor preço são as mesmas da tabela de setembro (térreo das Torres 01 e 02), com valor reajustado; 81 unidades na tabela', fonte: 'tabela VIC de 05/10/2026' },
-  { n: 'Viva Parque Aura',      c: 'Pinheiro · RDZ · iBen', de: 300854, para: 306650, causa: 'os Apto Meio do 1º andar da Torre 3 não estão na tabela de 01/10/2026; o menor preço passou a ser o Apto Canto de 47,17 m² no 1º andar da Torre 3; a Torre 4 entrou na tabela', fonte: 'tabela Pinheiro de 01/10/2026' },
-  { n: 'Viva Parque Sense',     c: 'Pinheiro · RDZ · iBen', de: 404886, para: 408328, causa: 'a tabela de 03/09/2026 traz o preço de entrada 0,85% acima do da tabela de 01/08/2026; o menor preço continua no 3 dorm c/ suíte de 59,93 m², no 1º andar', fonte: 'tabela Pinheiro de 03/09/2026' },
+  { n: 'Viva Parque Aura',      c: 'Pinheiro · RDZ · iBen', de: 300854, para: 310721, causa: 'na tabela de 01/10/2026 os Apto Meio do 1º andar da Torre 3 já não estavam e o menor preço passou a R$ 306.650 (Apto Canto de 47,17 m² no 1º andar da Torre 3); na de 01/11/2026 esse apto saiu, entraram os Apto Meio da Torre 4 e o menor preço é o Apto Meio de 48,24 m² no 1º andar da Torre 4 (três unidades); as 51 unidades que estão nas duas tabelas subiram 1,0%', fonte: 'tabela Pinheiro de 01/11/2026' },
+  { n: 'Viva Parque Sense',     c: 'Pinheiro · RDZ · iBen', de: 404886, para: 415486, causa: 'a tabela de 03/09/2026 trazia o preço de entrada 0,85% acima do da de 01/08/2026 (R$ 408.328, no 1º andar das Torres 1 e 2); na de 01/11/2026 essas quatro unidades saíram, as 55 que estão nas duas tabelas subiram 0,6% e o menor preço é o 3 dorm c/ suíte de 59,93 m² no 1º andar da Torre 3; a tabela não traz garden', fonte: 'tabela Pinheiro de 01/11/2026' },
   { n: 'Manai Bosque',          c: 'Masotti', de: 505941, para: 520855, causa: 'a tabela de lançamento da Torre 1 de outubro/2026 traz o menor preço em R$ 520.855 (2 dormitórios, 2º andar); em 04/09/2026 a Masotti informava R$ 505.941 — piso e teto 2,9% acima', fonte: 'tabela Masotti de lançamento da Torre 1, de 03/10/2026' },
   { n: 'Storia Congesa',        c: 'Congesa', de: 981000, para: 921000, causa: 'o único 2 dormitórios da tabela de outubro é o apto 124 (70,05 m²), a R$ 921.000; os 3 suítes de 114,89 m² foram de R$ 1.683.000 para R$ 1.715.000', fonte: 'tabela Congesa de outubro/2026' },
   // 16/10/2026 (2ª parte da leva de outubro)
@@ -90,11 +91,11 @@ const MOVIMENTOS = [
 // fora de MOVIMENTOS porque não há "antes" para calcular variação
 // (o gera-home conta altas em MOVIMENTOS e trataria de:null como alta)
 const ENTRADAS = [
-  { n: 'Residencial Parque das Águas', c: 'GPCI', para: 309120, causa: 'novo no site — 2 dormitórios de 46,13 a 50,60 m² e gardens de até 72,30 m², em 3 torres', fonte: 'tabela GPCI de setembro/2026' },
+  { n: 'Residencial Parque das Águas', c: 'GPCI', para: 309120, causa: 'novo no site — 2 dormitórios de 46,13 a 50,60 m² e gardens de até 72,30 m², em 3 torres; nas tabelas de novembro/2026 constam 32 apartamentos (54 nas de setembro) e o menor preço é o mesmo, R$ 309.119,89 no apto 1209 da Torre 2 (46,13 m²); nenhum dos valores publicados em setembro mudou', fonte: 'tabelas GPCI de novembro/2026 (uma por torre, revisão 0)' },
   { n: 'Izzi Residence',              c: 'GPCI', para: 371862, causa: 'novo no site — plantas de 39,90 a 43,97 m² e gardens de 66,43 e 66,47 m², no Centro', fonte: 'tabela GPCI de setembro/2026' },
   { n: 'Artemis Residencial',         c: 'GPCI', para: 555171, causa: 'novo no site — 3 dormitórios com suíte, 63,85 e 64,44 m², no Park Meraki', fonte: 'tabela GPCI de outubro/2026' },
   { n: 'Jardim Dona Maria Cândida',   c: 'Asseplan Narezzi', para: 600000, causa: 'novo no site — loteamento fechado com obras concluídas, lotes de 300 a 471,97 m²; 180 disponíveis na lista de 08/09/2026', fonte: 'tabela válida a partir de 01/07/2025' },
-  { n: 'Ville de Provence',           c: 'Urban Square', para: 637200, causa: 'novo no site — loteamento fechado, 307 lotes de 360 a 616,90 m² a R$ 1.770/m²', fonte: 'tabela Urban Square de outubro/2026 (documento de 03/10/2026)' },
+  { n: 'Ville de Provence',           c: 'Urban Square', para: 637200, causa: 'novo no site — loteamento fechado, 307 lotes de 360 a 616,90 m² a R$ 1.770/m² na tabela de 03/10/2026', fonte: 'tabela Urban Square de outubro/2026 (documento de 03/10/2026)' },
   { n: 'Alphaville Indaiatuba',       c: 'Alphaville', para: 908480, causa: 'novo no site — 126 lotes disponíveis em 07/10/2026, de 511,50 a 1.205,76 m², no Itaici', fonte: 'tabela de vendas Alphaville de outubro/2026 (mesmos valores de setembro) e quadro de vendas de 07/10/2026' },
   { n: 'Lagos de Helvetia',           c: 'GPCI', para: 901800, causa: 'novo no site — 36 lotes de 501 a 2.015 m², todos a R$ 1.800/m²', fonte: 'tabela GPCI de 10/10/2026' },
   { n: 'Espaço Conceição',            c: 'Masotti', para: 1030310, causa: 'novo no site — 3 dormitórios com suíte, de 85 a 108 m², em 2 torres; 46 unidades disponíveis em 12/10/2026', fonte: 'disponibilidade da Masotti consultada em 12/10/2026' },
