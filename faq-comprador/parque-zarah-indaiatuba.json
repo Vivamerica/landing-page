@@ -1,0 +1,128 @@
+{
+  "slug": "parque-zarah-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "De quanto fica a parcela do lote residencial de 150 m²?",
+          "r": "Pela nossa conta (Tabela Price, 1% ao mês, ato de 12% e 180 mensais, tabela de nov/2026): Pérola (R$ 226.125), ato de R$ 27.135 e 180 parcelas de cerca de R$ 2.388,21; Rubi (R$ 227.256), ato de R$ 27.270,72 e cerca de R$ 2.400,16; Safira (R$ 252.873), ato de R$ 30.344,76 e cerca de R$ 2.670,71. Valores antes da correção mensal pelo IPCA; a simulação oficial vem da Zarin.",
+          "fonte": "conta pela Tabela Price de 1% a.m. sobre a tabela Zarin de nov/2026 (gerada em 16/11/2026), conferida com o exemplo impresso de R$ 211.050 (ato R$ 25.326 + 180x R$ 2.229)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto pago no total em 180 parcelas?",
+          "r": "No lote misto de 150 m² da Pérola (R$ 211.050), o ato de R$ 25.326 mais 180 parcelas de R$ 2.229 somam R$ 426.546, antes da correção mensal pelo IPCA. A diferença para o preço de tabela vem dos juros de 1% ao mês.",
+          "fonte": "conta sobre o exemplo da tabela Zarin de nov/2026 (ato + parcelas impressas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O desconto à vista de outubro ainda vale?",
+          "r": "A Zarin publicou essas condições para outubro/2026, sem data final. Antes de fechar, confirmamos com a Zarin se o desconto à vista e o fluxo curto ainda valem.",
+          "fonte": "peça Zarin \"Novas condições comerciais – Outubro – Fase 2 e 3\" (out/2026)",
+          "origem": "base"
+        },
+        {
+          "p": "O preço mudou nos últimos meses?",
+          "r": "Na tabela de novembro/2026, os lotes da Rubi subiram cerca de 0,5%; os da Safira e da Pérola não mudaram de preço. A tabela gerada em 16/11/2026 manteve esses valores.",
+          "fonte": "ficha do site (histórico \"O que mudou nesta página\"); tabelas Zarin de set a nov/2026",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Financiamento",
+      "perguntas": [
+        {
+          "p": "Preciso de banco para parcelar?",
+          "r": "Não. As 180 parcelas são pagas direto à Zarin; a tabela diz que o cadastro é sujeito a análise de crédito.",
+          "fonte": "tabela Zarin de nov/2026 (nota de cadastro sujeito a aprovação de crédito)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "O Parque Zarah está registrado?",
+          "r": "O book da Zarin informa o empreendimento registrado na matrícula nº 137.153 do Cartório de Registro de Imóveis de Indaiatuba, sob o nº R6, em 22/05/2024. O book não diz se esse registro abrange as fases Rubi e Pérola: peça a certidão de matrícula atualizada da fase escolhida antes de assinar.",
+          "fonte": "book Parque Zarah (p. 28, rodapé)",
+          "origem": "base"
+        },
+        {
+          "p": "Que infraestrutura o loteamento terá?",
+          "r": "Segundo o book: pavimentação asfáltica, guias e sarjetas, galeria de águas pluviais, arborização e redes de água, esgoto e energia elétrica.",
+          "fonte": "book Parque Zarah (p. 3)",
+          "origem": "base"
+        },
+        {
+          "p": "Onde fica o stand de vendas?",
+          "r": "Na Av. Eng. Fábio Roberto Barnabé, 1119, no Parque Ecológico, em Indaiatuba, segundo o book. Pelo WhatsApp desta página combinamos a visita ao stand ou ao terreno.",
+          "fonte": "book Parque Zarah (p. 28)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O lote misto fica dentro do condomínio?",
+          "r": "Não. Na implantação da Safira, o muro de fechamento passa pelos fundos da fileira da borda: os lotes mistos (os \"externos\" da tabela) ficam do lado de fora do muro, com frente para a via externa; os residenciais ficam dentro. Na Rubi e na Pérola, conferimos a posição do lote no mapa da fase antes da proposta.",
+          "fonte": "implantação da Safira; book Parque Zarah (p. 4)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o tamanho de cada fase?",
+          "r": "Pelo book, a Safira tem 230.546,61 m² de área total (89.695,58 m² em lotes), a Rubi 242.465,89 m² (86.590,17 m² em lotes) e a Pérola 221.453,48 m² (109.792,08 m² em lotes).",
+          "fonte": "book Parque Zarah (fichas técnicas, p. 9, 13 e 17)",
+          "origem": "base"
+        },
+        {
+          "p": "Quais lotes têm viela sanitária?",
+          "r": "Na tabela de nov/2026, 16 lotes residenciais de 150 m² da Pérola, nas quadras 17 e 23, que saem por R$ 218.588. A viela é uma faixa do lote para a passagem de rede de esgoto ou de drenagem e tem de ficar livre de construção.",
+          "fonte": "ficha do site (tabela Zarin de nov/2026, gerada em 16/11/2026)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Cada fase tem o seu clube?",
+          "r": "Sim. Segundo o book, cada fase tem a sua área de lazer: 5.015,69 m² na Safira, 12.643,69 m² na Rubi e 8.727,02 m² na Pérola. Os itens se repetem, e a Rubi e a Pérola têm também fire place.",
+          "fonte": "book Parque Zarah (p. 9, 11, 13, 15, 17 e 19)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para saber a posição do sol do lote?",
+          "r": "As implantações do book e a da Safira trazem a indicação do norte, então dá para conferir a orientação de cada lote no mapa da fase. Mandamos o mapa da fase escolhida pelo WhatsApp.",
+          "fonte": "implantação da Safira; book Parque Zarah (p. 10, 14 e 18)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem lote de 150 m² mais barato em outro lugar?",
+          "r": "No site: o <a href=\"/monte-carmelo-indaiatuba/\">Residencial Monte Carmelo</a>, loteamento aberto da Dominium, a partir de R$ 145.000 (150 m², tabela de nov/2026); e o <a href=\"/di-italia-indaiatuba/\">Jardim Di Italia</a>, também loteamento aberto, a partir de R$ 210.000 (150 m², tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "E em outro condomínio com lote de 150 m²?",
+          "r": "No site: o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a>, a partir de R$ 247.500 (tabela de out/2026), e o <a href=\"/vila-fahl-indaiatuba/\">Residencial Vila Fahl</a>, a partir de R$ 290.000 (tabela de out/2026), ambos com lote de 150 m².",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A Zarin tem lotes maiores?",
+          "r": "Sim: o <a href=\"/reserva-botanica-indaiatuba/\">Reserva Botânica</a>, com os 2 últimos lotes de 410 a 457 m², a partir de R$ 642.375 (tabela de set/2026, confirmada para out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

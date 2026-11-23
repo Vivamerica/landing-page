@@ -1,0 +1,178 @@
+{
+  "slug": "storia-congesa-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "A incorporação está registrada?",
+          "r": "Sim. O book informa o registro da incorporação na matrícula nº 121.918 (R.7) do Cartório de Registro de Imóveis de Indaiatuba, com o projeto aprovado na Prefeitura no processo nº 1823/2023. Peça a certidão de matrícula atualizada antes de assinar.",
+          "fonte": "Book Storia, pág. 78 (texto legal)",
+          "origem": "base"
+        },
+        {
+          "p": "O lazer é entregue mobiliado?",
+          "r": "Sim. O memorial descritivo diz que as áreas comuns são entregues equipadas, decoradas e mobiliadas, conforme o projeto e o layout de venda, e que o paisagismo é entregue em formação.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, págs. 3 e 12; Book Storia, pág. 68",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O apartamento vem com piso?",
+          "r": "Só em parte. Pelo memorial, cozinha, área de serviço, lavabo, banheiros e terraços recebem porcelanato; sala, jantar, circulação e dormitórios são entregues em laje zero, sem piso, prontos para receber cerâmica, porcelanato ou laminado por conta do comprador.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, págs. 2, 3 e 12",
+          "origem": "base"
+        },
+        {
+          "p": "Que bancadas e louças vêm instaladas?",
+          "r": "Na cozinha, bancada de granito São Gabriel com cuba de inox; no lavabo e nos banheiros, bancada de mármore branco e louças brancas (Celite, Deca ou Roca/Incepa); na área de serviço, tanque de louça com coluna. Os armários da pia não estão incluídos.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, págs. 2, 3 e 12",
+          "origem": "base"
+        },
+        {
+          "p": "As paredes da cozinha e dos banheiros vêm revestidas?",
+          "r": "Em parte. Na cozinha, só um painel da largura da bancada com 0,60 m de altura; na área de serviço, até 0,60 m acima do tanque; nos banheiros, revestimento até o forro no box. As demais paredes recebem pintura.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, págs. 2 e 3",
+          "origem": "base"
+        },
+        {
+          "p": "O aquecedor de água vem instalado?",
+          "r": "Não. O apartamento tem ponto de espera na área de serviço para um aquecedor a gás de passagem, que atende chuveiros e torneiras; o aquecedor é comprado e instalado pelo proprietário.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, pág. 11 (5.5.2)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem gás encanado?",
+          "r": "Sim, gás natural, com pontos para fogão, churrasqueira e aquecedor e medição individual. A conversão do fogão fica por conta do proprietário.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, pág. 12 (5.5.5)",
+          "origem": "base"
+        },
+        {
+          "p": "Água e luz têm medição individual?",
+          "r": "Sim. Água (hidrômetro na área técnica de cada andar), gás e energia elétrica têm medição individual por apartamento.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, págs. 9, 11 e 12",
+          "origem": "base"
+        },
+        {
+          "p": "Vem com ponto de ar-condicionado?",
+          "r": "Sim: 1 ponto em cada dormitório e 1 ou 2 na sala, conforme a planta, com dreno e disjuntor (220 V) entregues. Os aparelhos, a tubulação de cobre e os ajustes de forro ficam por conta do proprietário; as condensadoras vão na laje técnica.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, pág. 10 (5.4.4)",
+          "origem": "base"
+        },
+        {
+          "p": "A varanda tem churrasqueira?",
+          "r": "A varanda gourmet pode ser integrada à sala e tem ponto de gás para churrasqueira; a churrasqueira a gás aparece como possibilidade de instalação, não como item entregue.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, pág. 12; Book Storia, pág. 69",
+          "origem": "base"
+        },
+        {
+          "p": "Como são as janelas?",
+          "r": "Caixilhos de alumínio com pintura cinza, vidro laminado nos banheiros e na área de serviço, gradil de alumínio e vidro nos terraços e persianas de enrolar blackout integradas, com possibilidade de automação.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, págs. 2 e 3; Book Storia, pág. 69",
+          "origem": "base"
+        },
+        {
+          "p": "Tem fechadura eletrônica?",
+          "r": "Sim, com senha, na porta social. O memorial lista também interfone ligado à guarita, tubulação seca para TV e internet na sala e nos dormitórios, e Wi-Fi e tomadas USB nas áreas comuns.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, págs. 3, 9 e 10; Book Storia, pág. 69",
+          "origem": "base"
+        },
+        {
+          "p": "Tem energia solar ou outro item de economia?",
+          "r": "Sim: placas fotovoltaicas para atender pelo menos 50% das áreas comuns (sujeito à concessionária), bacias de duplo acionamento, arejadores, reservatório de retenção de água de chuva, sensores de presença e elevadores com drive regenerativo.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, págs. 1, 9 a 11",
+          "origem": "base"
+        },
+        {
+          "p": "Tem ponto de recarga para carro elétrico?",
+          "r": "Sim, entre as vagas de visitantes nos pavimentos de garagem. A forma de cobrança não é informada.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, pág. 10 (5.4.7); Book Storia, pág. 68",
+          "origem": "base"
+        },
+        {
+          "p": "As vagas são cobertas? Tem vaga de moto?",
+          "r": "Sim. Todas as vagas das unidades são cobertas, há vagas para motos e vagas de visitantes dentro e fora do empreendimento. Se as vagas são livres ou presas não é informado.",
+          "fonte": "Book Storia, págs. 40 a 69; Memorial descritivo básico R00, pág. 1",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos apartamentos e andares tem?",
+          "r": "São 190 apartamentos em 2 torres, uma com 43 e outra com 147, num terreno de 5.905,69 m². O memorial descreve 25 pavimentos, mais sobressolo, térreo, subsolo, ático e cobertura. Pelas plantas, uma torre tem 2 apartamentos por andar e a outra até 8.",
+          "fonte": "Memorial descritivo básico R00 de 15/12/2023, pág. 1; Book Storia, pág. 69; plantas por final",
+          "origem": "base"
+        },
+        {
+          "p": "Tem maison, duplex ou penthouse à venda?",
+          "r": "Na tabela de out/2026, só o penthouse 223, de 151,28 m². O prédio tem também maisons de 88,34 a 139,38 m² e duplex de 158,53 e 218,20 m², mas nenhum está na tabela; perguntamos à Congesa se há algum fora dela.",
+          "fonte": "Book Storia, págs. 40 a 67; tabela Storia de outubro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para personalizar o apartamento?",
+          "r": "O memorial prevê opções de planta e kits de personalização pré-definidos, oferecidos com agendamento, e o book cita o programa Congesa 2U. Custo e prazo não são informados; como a entrega está prevista para dez/2026, confirmamos se ainda há prazo.",
+          "fonte": "Memorial descritivo básico R00, pág. 13 (6.4); Book Storia, págs. 69 e 70",
+          "origem": "base"
+        },
+        {
+          "p": "Quais piscinas tem?",
+          "r": "Piscina adulto com raia de 25 m, solarium, spa e cascata, piscina infantil e sauna com vista para a piscina, no térreo.",
+          "fonte": "Book Storia, págs. 68 e 71; Memorial descritivo básico R00, págs. 4 a 8",
+          "origem": "base"
+        },
+        {
+          "p": "O que tem no último andar de lazer?",
+          "r": "No 23º pavimento, o Skyline: sky lounge, lounge com home cinema, fitness e terraço descoberto.",
+          "fonte": "Book Storia, págs. 68 e 72",
+          "origem": "base"
+        },
+        {
+          "p": "Tem coworking e mini mercado?",
+          "r": "Sim: coworking, espaço para mini mercado e espaço de delivery no térreo.",
+          "fonte": "Book Storia, págs. 68 e 71",
+          "origem": "base"
+        },
+        {
+          "p": "Tem espaço para crianças e pet?",
+          "r": "Sim: playground coberto, brinquedoteca, praça das águas e pet place com espaço para banho.",
+          "fonte": "Book Storia, págs. 68 e 71",
+          "origem": "base"
+        },
+        {
+          "p": "Como é a segurança?",
+          "r": "Guarita com central de interfone, portão da garagem acionado pela guarita, entrada de prestadores separada da de moradores e visitantes e vagas de espera na entrada. O memorial deixa tubulação seca para o sistema de segurança, que é comprado e instalado pelo condomínio. Portaria 24 horas não é informada.",
+          "fonte": "Memorial descritivo básico R00, págs. 3 e 10; Book Storia, pág. 68",
+          "origem": "base"
+        },
+        {
+          "p": "Quem assina a arquitetura e o paisagismo?",
+          "r": "Segundo o book: arquitetura de Oliveira Cotta, interiores de Anderson Leite e paisagismo de Marcelo Vassalo.",
+          "fonte": "Book Storia, págs. 74 a 76",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "A Congesa tem outro lançamento perto?",
+          "r": "Sim: o <a href=\"/seasons-indaiatuba/\">Congesa Seasons</a>, na região da Villa dos Pinheiros, a partir de R$ 1.239.000 (tabela de out/2026), com entrega prevista para fev/2029 e jul/2029.",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "O que mais tem na mesma faixa de preço?",
+          "r": "O <a href=\"/lina-residence-indaiatuba/\">Lina Residence</a>, com 2 suítes ou 3 dormitórios na Cidade Nova I, a partir de R$ 924.108 (tabela de out/2026), e o <a href=\"/espaco-conceicao-indaiatuba/\">Espaço Conceição</a>, com 3 dormitórios com suíte, a partir de R$ 1.030.310 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

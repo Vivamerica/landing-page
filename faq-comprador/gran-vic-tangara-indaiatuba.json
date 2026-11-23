@@ -1,0 +1,142 @@
+{
+ "slug": "gran-vic-tangara-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "distrato",
+  "afetacao",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Preço e pagamento",
+   "perguntas": [
+    {
+     "p": "De quanto fica a parcela mensal durante a obra?",
+     "r": "Na tabela VIC de 05/10/2026, a unidade de R$ 325.000 (Torre 05, apto 804) tem 72 parcelas mensais de R$ 677,08 a partir de 30/10/2026; na unidade seguinte (R$ 333.761,01) são R$ 695,34 por mês.",
+     "fonte": "tabela VIC de 05/10/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Quantas vagas tem cada apartamento?",
+     "r": "Na tabela VIC de 05/10/2026, 73 das 74 unidades têm 2 vagas; só a Torre 05, apto 804 (a de R$ 325.000), tem 1 vaga. No condomínio são 442 vagas demarcadas, 10 delas para pessoa com deficiência, e mais 7 de visitantes.",
+     "fonte": "tabela VIC de 05/10/2026; ficha técnica VIC, p. 1",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Obra, entrega e registro",
+   "perguntas": [
+    {
+     "p": "O Gran Vic Tangará tem registro de incorporação?",
+     "r": "Sim. O memorial de incorporação está registrado no R-4 da matrícula nº 141.265 do Cartório de Registro de Imóveis de Indaiatuba, com o nome de registro Gran Vic Cristal; o CNPJ do empreendimento é 54.484.000/0001-33. Antes de assinar, peça a certidão de matrícula atualizada.",
+     "fonte": "ficha técnica VIC, p. 6; book VIC, p. 15",
+     "origem": "base"
+    },
+    {
+     "p": "Quantos elevadores tem cada torre?",
+     "r": "São 2 elevadores por torre. As Torres 1 e 2 têm 15 andares, e as Torres 3, 4 e 5 têm 16, sempre com 4 apartamentos por andar.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 3",
+     "origem": "base"
+    },
+    {
+     "p": "Qual o tamanho do terreno?",
+     "r": "O terreno do Gran Vic Tangará tem 14.331,12 m², pela ficha técnica da VIC.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "O apartamento vem com piso?",
+     "r": "Sim. Pela ficha técnica, sala e quartos têm piso laminado de madeira, e cozinha, varanda e banheiros têm cerâmica. O banheiro é revestido até o teto.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 14",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a cozinha e a área de serviço?",
+     "r": "A cozinha tem bancada de granito com cuba de inox, e a área de serviço tem tanque de mármore sintético.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 14",
+     "origem": "base"
+    },
+    {
+     "p": "Tem ponto para ar-condicionado?",
+     "r": "A ficha técnica da VIC prevê preparação para ar-condicionado nos quartos. O que vem em cada ponto (dreno, tubulação) não está detalhado no material.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 14",
+     "origem": "base"
+    },
+    {
+     "p": "Como são as janelas dos quartos?",
+     "r": "As janelas dos quartos são em veneziana, pela ficha técnica da VIC.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "A conta de água é individual?",
+     "r": "Há previsão de medição individualizada de água, pela ficha técnica da VIC.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a segurança do condomínio?",
+     "r": "O condomínio tem portaria com sistema de monitoramento e acesso por biometria digital na portaria e na entrada de cada torre.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 4",
+     "origem": "base"
+    },
+    {
+     "p": "Tem wi-fi e tomada USB?",
+     "r": "Há tomada com entrada USB na sala do apartamento e infraestrutura para wi-fi e tomada USB no salão de festas e no espaço gourmet.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Tem itens para economizar água e energia?",
+     "r": "Sim: iluminação LED nas áreas comuns, sensor de presença no hall das torres, bacia com duplo acionamento e torneiras com arejador e redutor de vazão.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Tem bicicletário?",
+     "r": "Sim, o bicicletário está entre os itens de lazer da ficha técnica da VIC. O número de vagas para bicicleta não é informado.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "O que tem perto do Gran Vic Tangará?",
+     "r": "Pelos tempos do book da VIC, sem distância: UBS Jardim Maritacas e EMEB Prof. Cleonice Lemos Naressi a 4 minutos, Parque Ecológico do Buru a 5, Supermercado Sumerbol e Prefeitura a 10, Polo Shopping a 13 e Centro a 15 minutos. O trânsito e o horário mudam esses tempos.",
+     "fonte": "book VIC, p. 5; ficha técnica VIC, p. 6",
+     "origem": "base"
+    },
+    {
+     "p": "Vai ter hospital perto do Parque dos Pássaros?",
+     "r": "A Prefeitura de Indaiatuba lançou em 03/12/2024 a pedra fundamental de um hospital municipal de 58 leitos na Av. Luiz Bruno Petrilli, no loteamento Parque dos Pássaros, com entrega prevista para 2027, segundo a Prefeitura. As obras já começaram (informação da Viv’América, nov/2026); a data de inauguração ainda não foi confirmada. O que foi anunciado está no nosso <a href=\"/blog/hospital-parque-dos-passaros-indaiatuba/\">post sobre o hospital do Parque dos Pássaros</a>.",
+     "fonte": "Prefeitura de Indaiatuba, notícias de 28/11/2024 e 11/12/2025, resumidas no post do blog do site; início das obras: Viv’América, nov/2026",
+     "origem": "ficha"
+    },
+    {
+     "p": "Onde fica o estande de vendas da VIC?",
+     "r": "O mapa do book da VIC marca um “Estande VIC” perto do terreno, fora do condomínio, sem endereço. A gente confirma o local e o horário com a VIC antes de marcar a visita.",
+     "fonte": "book VIC, mapa de localização",
+     "origem": "base"
+    },
+    {
+     "p": "Tem outro apartamento nessa faixa de preço?",
+     "r": "No mesmo complexo, o <a href=\"/gran-vic-colibri-indaiatuba/\">Gran Vic Colibri</a>, com suíte, sai a partir de R$ 336.686 (tabela VIC de 05/10/2026). Fora dele, o <a href=\"/parque-das-aguas-indaiatuba/\">Residencial Parque das Águas</a> começa em R$ 309.120 (tabela GPCI de set/2026) e o <a href=\"/elev-residence-indaiatuba/\">Elev Residence</a> em R$ 326.000 (tabela Longitude de nov/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

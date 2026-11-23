@@ -1,0 +1,93 @@
+{
+  "slug": "porteira-de-ferro-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "O preço de R$ 1.300.000 ainda vale?",
+          "r": "É o valor da tabela GPCI de 17/09/2026, que a GPCI confirmou para outubro/2026. A tabela avisa que o preço pode mudar sem aviso e que o lote pode já ter sido vendido; confirmamos as duas coisas antes de qualquer proposta.",
+          "fonte": "tabela Porteira de Ferro de 17/09/2026, confirmada para out/2026 (fonte única do site)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto pago no total em cada plano?",
+          "r": "Somando o sinal de R$ 455.000,00 às parcelas da tabela de 17/09/2026: em 12 meses, R$ 1.300.000,00; em 24 meses, R$ 1.387.079,36; em 36 meses, R$ 1.430.864,96. Nos planos de 24 e 36 meses ainda entra a correção anual pelo IPCA, que não dá para saber hoje.",
+          "fonte": "conta sobre a tabela Porteira de Ferro de 17/09/2026 (sinal + parcelas impressas)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando o loteamento fica pronto?",
+          "r": "A GPCI informou em novembro/2026 a previsão para o 1º semestre de 2027 (junho de 2027).",
+          "fonte": "ficha técnica do site (previsão de entrega 06/2027); GPCI, nov/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quem é a loteadora?",
+          "r": "A GPCI Empreendimentos, que assina a tabela. No site, ela também tem os apartamentos Residencial Parque das Águas, Izzi Residence e Artemis Residencial.",
+          "fonte": "tabela GPCI de 17/09/2026; fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "base"
+        },
+        {
+          "p": "O projeto ainda pode mudar?",
+          "r": "O book informa que os projetos da portaria e das demais áreas de lazer podem sofrer alterações. Peça o memorial descritivo atualizado antes de assinar.",
+          "fonte": "book da GPCI (citado na ficha do site)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O lote vem com casa?",
+          "r": "Não. O lote é vendido como terreno: o projeto e a obra da casa são por conta de quem compra, dentro das regras do loteamento. Peça o regulamento (recuos, ocupação e prazo para construir) antes de fechar.",
+          "fonte": "ficha do site (seção O lote)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual o tamanho do lago e da área verde?",
+          "r": "Segundo o book, o espelho d'água tem quase 14 mil m² e a área verde, quase 20 mil m², dentro do loteamento. Os 103 lotes ficam em volta do lago.",
+          "fonte": "book da GPCI (ficha técnica do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "As imagens da página são fotos reais?",
+          "r": "Não todas. A incorporadora identifica as imagens do book como meramente ilustrativas: a vegetação aparece em porte adulto e os ambientes seguem o memorial descritivo.",
+          "fonte": "ficha do site (seção Perspectivas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Dá para conhecer o local antes de decidir?",
+          "r": "Fale com a gente pelo WhatsApp desta página: confirmamos com a GPCI como e quando dá para visitar a área e mostramos na implantação onde fica o lote E3.",
+          "fonte": "ficha do site (botão de WhatsApp; implantação)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Como o preço do m² se compara com outros lotes grandes?",
+          "r": "Aqui o m² sai a R$ 2.500 (tabela de 17/09/2026). No <a href=\"/lagos-de-helvetia-indaiatuba/\">Lagos de Helvetia</a>, também da GPCI e com lago e clube, o m² é de R$ 1.800 e o lote começa em R$ 901.800 (501 m², tabela de 10/10/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES); fichas Porteira de Ferro e Lagos de Helvetia",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Se este lote for vendido, o que há parecido?",
+          "r": "No site, com lotes de 400 m² ou mais: o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, em Itaici, a partir de R$ 908.480 (511,5 m², tabela de nov/2026); o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 (420 m², tabela de nov/2026); e o <a href=\"/reserva-botanica-indaiatuba/\">Reserva Botânica</a>, a partir de R$ 642.375 (410 m², tabela de set/2026 confirmada para out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

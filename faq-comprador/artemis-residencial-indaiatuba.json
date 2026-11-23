@@ -1,0 +1,195 @@
+{
+  "slug": "artemis-residencial-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado no Artemis?",
+          "r": "Na unidade de menor preço da tabela GPCI de nov/2026, a planta Meio de 63,85 m² por R$ 555.170,71, são cerca de R$ 8.695 por m² de área privativa (conta nossa).",
+          "fonte": "tabela Artemis novembro/2026 (fonte única do site; conta nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem apartamento Giardino, com garden? Quanto custa?",
+          "r": "Na tabela de nov/2026 há um Giardino: a unidade de ponta da Torre 1, com 64,44 m² de apartamento mais 43,53 m² de garden (107,97 m²), por R$ 683.000,00. Os outros Giardino do projeto, de 92,39 m² (meio, nas duas torres) e de 92,69 m² (ponta da Torre 2), não aparecem na tabela; pergunte pela disponibilidade.",
+          "fonte": "tabela Artemis novembro/2026; caderno técnico (p.4 a 9)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem apartamento de 1 dormitório?",
+          "r": "No 19º andar, o caderno técnico mostra algumas unidades como plantas adaptadas, com 1 dormitório, 2 banheiros e vaga para pessoa com deficiência: 192, 193, 196 e 197 nas duas torres e 194 e 195 na Torre 2. Algumas delas estão entre os valores mais altos da tabela de nov/2026, como a 192 da Torre 1, a R$ 673.236,11.",
+          "fonte": "caderno técnico Artemis (p.4 a 14); tabela Artemis novembro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto preciso de entrada em reais?",
+          "r": "Na unidade de R$ 555.170,71 da tabela de nov/2026, o ato mínimo é de R$ 55.517,07 (10%) na condição financiamento futuro 30/70, ou de R$ 111.034,14 (20%) na condição investidor (conta nossa sobre os percentuais).",
+          "fonte": "condições comerciais Artemis de novembro/2026; tabela de novembro/2026 (conta nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "Posso propor outra forma de pagamento?",
+          "r": "Pode. Pelas condições comerciais de nov/2026, propostas fora das duas modalidades são analisadas pela coordenadora do empreendimento na GPCI. A gente leva a sua proposta e traz a resposta.",
+          "fonte": "condições comerciais Artemis de novembro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Até quando vale a tabela de novembro?",
+          "r": "A tabela de nov/2026 não traz validade e avisa que os valores podem mudar sem aviso prévio e que as unidades anunciadas podem já ter sido vendidas. Antes da proposta, a gente confirma o valor e a unidade com a GPCI.",
+          "fonte": "tabela Artemis novembro/2026 (p.1 a 3)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem é a incorporadora do Artemis?",
+          "r": "A realização é da GPCI e da IBEN. A incorporadora responsável é a Park Meraki 10 Empreendimentos e Participações SPE Ltda., CNPJ 48.834.043/0001-07, com sede em São Paulo/SP.",
+          "fonte": "book Artemis (p.8 e 40); tabela de novembro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quem assina a decoração?",
+          "r": "A decoração das áreas comuns, inclusive da Casa de Campo, e os kits de personalização são da equipe do arquiteto Anderson Leite. Os autores da arquitetura e do paisagismo não são informados no material.",
+          "fonte": "book Artemis (p.22 e 38)",
+          "origem": "base"
+        },
+        {
+          "p": "O lazer é entregue equipado?",
+          "r": "Sim. As áreas comuns são entregues equipadas e decoradas, conforme o memorial descritivo. O material não diz se o lazer fica pronto com a Torre 1 ou com a Torre 2.",
+          "fonte": "book Artemis (p.12 e 40)",
+          "origem": "base"
+        },
+        {
+          "p": "O apartamento vem como nas imagens?",
+          "r": "Não necessariamente. Móveis, objetos e decoração das perspectivas são sugestão e não fazem parte do memorial descritivo, e a vegetação aparece em fase adulta.",
+          "fonte": "página do empreendimento no site (nota das perspectivas)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "As vagas são cobertas?",
+          "r": "São 2 vagas por apartamento, 70% cobertas, segundo a incorporadora. As cobertas ficam no edifício-garagem de 3 subsolos e as descobertas no térreo; a tabela mostra a posição das vagas de cada unidade.",
+          "fonte": "book Artemis (p.12); caderno técnico (p.15 a 23); tabela de novembro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem vaga para visitante?",
+          "r": "Tem: 26 vagas de visitantes, 5 grandes (2,50 x 5,00 m) e 21 médias (2,20 x 4,70 m), pelo caderno técnico.",
+          "fonte": "caderno técnico Artemis (p.15)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem vaga para carro elétrico?",
+          "r": "O projeto tem 12 vagas para carro elétrico. O material não diz se são de uso comum ou ligadas a unidades, nem como a recarga é cobrada.",
+          "fonte": "book Artemis (p.12)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o pé-direito do apartamento?",
+          "r": "2,70 m, pelo caderno técnico; no banheiro e na área de serviço ele pode ser menor.",
+          "fonte": "caderno técnico Artemis (p.5 a 14)",
+          "origem": "base"
+        },
+        {
+          "p": "O apartamento tem persiana automática?",
+          "r": "Sim. Os dormitórios têm persianas automatizadas, segundo o book.",
+          "fonte": "book Artemis (p.30)",
+          "origem": "base"
+        },
+        {
+          "p": "O apartamento tem isolamento acústico?",
+          "r": "O book informa projeto de acústica que atende à norma de desempenho.",
+          "fonte": "book Artemis (p.36 a 38)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem aquecimento a gás?",
+          "r": "Sim. A água é aquecida a gás para cozinha e banheiros, com misturadores de água quente e fria; há gás encanado na cozinha e na varanda gourmet.",
+          "fonte": "book Artemis (p.30)",
+          "origem": "base"
+        },
+        {
+          "p": "O apartamento vem com ar-condicionado?",
+          "r": "Não. As plantas do caderno técnico indicam previsão para ar-condicionado na sala e em dormitórios; aparelhos, rede frigorígena e dreno ficam por conta do proprietário. Confira na planta da unidade quais cômodos têm a previsão.",
+          "fonte": "caderno técnico Artemis (p.5 a 14); book (p.40)",
+          "origem": "base"
+        },
+        {
+          "p": "As contas de água, gás e luz são individuais?",
+          "r": "Sim. O book informa medição individual de água, gás e energia elétrica.",
+          "fonte": "book Artemis (p.30)",
+          "origem": "base"
+        },
+        {
+          "p": "A varanda pode ser fechada com vidro?",
+          "r": "Pode: o fechamento com vidro é um opcional pago à parte, com valor sob consulta. A varanda gourmet tem gás encanado; o material não informa churrasqueira na varanda do apartamento.",
+          "fonte": "book Artemis (p.12 e 30); página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "Como são as bancadas da cozinha e do banheiro?",
+          "r": "Em granito, pelo caderno técnico, com tanque em louça na área de serviço.",
+          "fonte": "caderno técnico Artemis (p.5 a 14)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para escolher o acabamento?",
+          "r": "Há kits de personalização Artemis Signature, em três estilos assinados por Anderson Leite. São opcionais pagos à parte; valor e prazo de escolha não constam no material.",
+          "fonte": "book Artemis (p.30 e 38); página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "Qual final pega sol da manhã?",
+          "r": "A implantação do caderno técnico marca o lado do nascer e do pôr do sol, mas não detalha a posição de cada final. Mandamos a implantação no atendimento para você conferir a unidade.",
+          "fonte": "caderno técnico Artemis (p.3); implantação",
+          "origem": "base"
+        },
+        {
+          "p": "Que lazer tem além da Casa de Campo?",
+          "r": "Piscina adulto e infantil, solário, academia, espaço gourmet, quadra esportiva, playground, brinquedoteca, espaço de jogos, espaço pet, minimercado, espaço delivery e recebidos e espelho d'água, pela implantação do caderno técnico.",
+          "fonte": "caderno técnico Artemis (p.3); book (p.12)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "O que tem perto do Artemis?",
+          "r": "O mapa do book mostra o Clube 9 de Julho, os supermercados Pão de Açúcar e Pague Menos, o Centro e o acesso à Rodovia SP-75, sem distâncias. Fora do condomínio, o Park Meraki tem ciclovia, pista de caminhada, quadras e áreas verdes do próprio bairro.",
+          "fonte": "book Artemis (p.4, 6 e 7); página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "Onde fica a central de vendas?",
+          "r": "Na Av. 9 de Julho, 52, no Park Meraki. Horário e decorado não constam no material: a gente agenda a visita com você.",
+          "fonte": "book Artemis (p.40)",
+          "origem": "base"
+        },
+        {
+          "p": "Que outros lançamentos ficam no Park Meraki?",
+          "r": "No site, o <a href=\"/360-home-office-mall-indaiatuba/\">360 Home Office Mall</a>, a partir de R$ 546.274 (tabela HINC de set/2026, preços confirmados para out/2026); o <a href=\"/arete-home-indaiatuba/\">Areté Home</a>, de 2 e 3 suítes, de R$ 991.005 (tabela PERPLAN de ago/2026); e o <a href=\"/helade-indaiatuba/\">Hélade</a>, de 3 suítes, de R$ 1.391.504 (tabela PERPLAN de set/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem apartamento na mesma faixa de preço em outro bairro?",
+          "r": "Tem. O <a href=\"/lumina-residencial-indaiatuba/\">Lumina Residencial</a>, no Centro, a partir de R$ 519.900 (tabela Emmar de out/2026), e o <a href=\"/manai-bosque-indaiatuba/\">Manai Bosque</a>, de 2 e 3 dormitórios com suíte, a partir de R$ 520.855 (tabela Masotti de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS), 22/11/2026",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

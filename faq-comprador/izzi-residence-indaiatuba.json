@@ -1,0 +1,60 @@
+{
+ "slug": "izzi-residence-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "fgts",
+  "distrato",
+  "afetacao",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Preço e pagamento",
+   "perguntas": [
+    {
+     "p": "Qual o valor dos gardens do térreo?",
+     "r": "Na tabela de nov/2026, o Garden Canto (39,90 m² mais 26,57 m² de garden, 66,47 m²) sai a R$ 400.554,75 e o Garden Meio (39,99 m² mais 26,44 m², 66,43 m²) a R$ 401.391,51, ambos com 1 vaga.",
+     "fonte": "tabela GPCI nov/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Quantas unidades de cada planta estão à venda?",
+     "r": "Na tabela GPCI de nov/2026 são 66: 28 do Tipo Meio, 24 da Suíte, 10 do Tipo Canto, 3 do Garden Canto e 1 do Garden Meio; 52 ficam na Torre 1 e 14 na Torre 2. A própria tabela avisa que alguma pode já ter sido vendida.",
+     "fonte": "tabela GPCI nov/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Até quando vale a tabela de novembro?",
+     "r": "A tabela não traz validade, e os valores são sujeitos a alteração sem aviso prévio. Valor e unidade se confirmam com a GPCI no atendimento.",
+     "fonte": "tabela e condições comerciais GPCI nov/2026",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "Quantas vagas tem cada apartamento?",
+     "r": "Pela tabela de nov/2026, a planta Suíte, de 43,97 m², tem 2 vagas; as plantas Tipo Canto, Tipo Meio e os gardens têm 1 vaga. Se a vaga é coberta e o tamanho não constam na tabela.",
+     "fonte": "tabela GPCI nov/2026",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "Tem outro apartamento nessa faixa de preço?",
+     "r": "Tem: o <a href=\"/vettia-residence-indaiatuba/\">Vettia Residence</a>, a partir de R$ 379.500 (tabela Longitude de nov/2026), e o <a href=\"/vila-plaza-residence-indaiatuba/\">Vila Plaza Residence</a>, com studios, a partir de R$ 403.846 (tabela Lógica de out/2026). No Centro, o <a href=\"/lumina-residencial-indaiatuba/\">Lumina Residencial</a> começa em R$ 519.900 (tabela Emmar de out/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,154 @@
+{
+ "slug": "gran-vic-colibri-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "distrato",
+  "afetacao",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Preço e pagamento",
+   "perguntas": [
+    {
+     "p": "De quanto fica a parcela mensal durante a obra?",
+     "r": "Na tabela VIC de 05/10/2026, na unidade de menor preço (R$ 336.686,16), são 72 parcelas mensais de R$ 701,43, somando 15% do valor, a partir de 30/10/2026 nessa tabela, depois de um sinal de R$ 504,71 (0,15%) na assinatura.",
+     "fonte": "tabela VIC de 05/10/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Quanto vou financiar no banco?",
+     "r": "Pela tabela VIC de 05/10/2026, 80% do valor vão para o financiamento bancário, previsto para 18/12/2028: R$ 269.348,93 na unidade de R$ 336.686,16. O valor aprovado depende da análise de crédito do banco.",
+     "fonte": "tabela VIC de 05/10/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Quanto custa o apartamento com 2 vagas?",
+     "r": "Na tabela VIC de 05/10/2026, os de 51,42 m² com 1 vaga (46 unidades) vão de R$ 336.686,16 a R$ 366.545,18, e os de 51,42 m² com 2 vagas (33 unidades) vão de R$ 370.662,94 a R$ 394.344,94. Os 2 de 54,97 m² custam R$ 336.686,16 e R$ 392.285,70.",
+     "fonte": "tabela VIC de 05/10/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Todas as unidades entram na Faixa 3 do Minha Casa Minha Vida?",
+     "r": "Na tabela VIC de 05/10/2026, 80 das 81 unidades aparecem na Faixa 3; a Torre 04, apto 1004 (R$ 381.720,23), aparece como “Faixa Global”. O enquadramento é sujeito a análise de crédito e às regras do programa na Caixa.",
+     "fonte": "tabela VIC de 05/10/2026 (ficha do site)",
+     "origem": "ficha"
+    }
+   ]
+  },
+  {
+   "titulo": "Obra, entrega e registro",
+   "perguntas": [
+    {
+     "p": "O Gran Vic Colibri tem registro de incorporação?",
+     "r": "Sim. O memorial de incorporação está registrado no R-4 da matrícula nº 141.261 do Cartório de Registro de Imóveis de Indaiatuba, com o nome de registro Gran Vic Safira; o CNPJ do empreendimento é 54.593.160/0001-10. Antes de assinar, peça a certidão de matrícula atualizada.",
+     "fonte": "ficha técnica VIC, p. 6; book VIC, p. 16",
+     "origem": "base"
+    },
+    {
+     "p": "Quem constrói o Gran Vic Colibri?",
+     "r": "A VIC Engenharia faz a incorporação e a construção, pela ficha técnica.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Quantos andares e elevadores tem cada torre?",
+     "r": "São 4 torres de 16 andares, com 4 apartamentos por andar e 2 elevadores por torre, num terreno de 12.799 m².",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 3",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "O apartamento vem com piso?",
+     "r": "Sim. Pela ficha técnica, sala e quartos têm piso laminado de madeira; cozinha, varanda e banheiros têm cerâmica. O banheiro é revestido até o teto.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 15",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a cozinha e a área de serviço?",
+     "r": "A cozinha tem bancada de granito com cuba de inox, e a área de serviço tem tanque de mármore sintético.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 15",
+     "origem": "base"
+    },
+    {
+     "p": "Como são as janelas dos quartos?",
+     "r": "As janelas dos quartos são em veneziana, pela ficha técnica da VIC.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 15",
+     "origem": "base"
+    },
+    {
+     "p": "A conta de água é individual?",
+     "r": "Há previsão de medição individualizada de água, pela ficha técnica da VIC.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Quantas vagas tem o condomínio? Tem vaga de visitante?",
+     "r": "São 363 vagas de carro demarcadas para as unidades, 8 delas para pessoa com deficiência, e mais 6 vagas de visitantes.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Quais são os itens de lazer?",
+     "r": "São 15 itens, entregues decorados e mobiliados: piscina, salão de festas, espaço gourmet, quadra esportiva, academia, espaço fitness, sauna, pet place, bicicletário, playground, área de jogos, redário, mercadinho (em preparação), espaço zen e horta.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 6",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a segurança do condomínio?",
+     "r": "O condomínio tem portaria com sistema de monitoramento e acesso por biometria digital na portaria e na entrada de cada torre.",
+     "fonte": "ficha técnica VIC, p. 1; book VIC, p. 4",
+     "origem": "base"
+    },
+    {
+     "p": "Tem wi-fi e tomada USB?",
+     "r": "Há tomada com entrada USB na sala do apartamento e infraestrutura para wi-fi e tomada USB no salão de festas e no espaço gourmet.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Tem itens para economizar água e energia?",
+     "r": "Sim: iluminação LED nas áreas comuns, sensor de presença no hall das torres, bacia com duplo acionamento e torneiras com arejador e redutor de vazão.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "O que tem perto do Gran Vic Colibri?",
+     "r": "Pelos tempos do book da VIC, sem distância: UBS Jardim Maritacas e EMEB Prof. Cleonice Lemos Naressi a 4 minutos, Parque Ecológico do Buru a 5, Supermercado Sumerbol e Prefeitura a 10, Polo Shopping a 13 e Centro a 15 minutos. O trânsito e o horário mudam esses tempos.",
+     "fonte": "book VIC, p. 5; ficha técnica VIC, p. 6",
+     "origem": "base"
+    },
+    {
+     "p": "Vai ter hospital perto do Parque dos Pássaros?",
+     "r": "A Prefeitura de Indaiatuba lançou em 03/12/2024 a pedra fundamental de um hospital municipal de 58 leitos na Av. Luiz Bruno Petrilli, no loteamento Parque dos Pássaros, com entrega prevista para 2027, segundo a Prefeitura. As obras já começaram (informação da Viv’América, nov/2026); a data de inauguração ainda não foi confirmada. O que foi anunciado está no nosso <a href=\"/blog/hospital-parque-dos-passaros-indaiatuba/\">post sobre o hospital do Parque dos Pássaros</a>.",
+     "fonte": "Prefeitura de Indaiatuba, notícias de 28/11/2024 e 11/12/2025, resumidas no post do blog do site; início das obras: Viv’América, nov/2026",
+     "origem": "ficha"
+    },
+    {
+     "p": "Onde fica o estande de vendas da VIC?",
+     "r": "O mapa do book da VIC marca um “Estande VIC” perto do terreno, fora do condomínio, sem endereço. A gente confirma o local e o horário com a VIC antes de marcar a visita.",
+     "fonte": "book VIC, mapa de localização",
+     "origem": "base"
+    },
+    {
+     "p": "Tem outro apartamento nessa faixa de preço?",
+     "r": "No mesmo complexo, o <a href=\"/gran-vic-tangara-indaiatuba/\">Gran Vic Tangará</a> sai a partir de R$ 325.000 (tabela VIC de 05/10/2026). Fora dele, o <a href=\"/elev-residence-indaiatuba/\">Elev Residence</a> começa em R$ 326.000 (tabela Longitude de nov/2026) e o <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a>, com planta Canto de suíte, em R$ 345.107 (tabela Zarin de nov/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

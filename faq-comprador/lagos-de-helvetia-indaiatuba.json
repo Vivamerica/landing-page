@@ -1,0 +1,129 @@
+{
+  "slug": "lagos-de-helvetia-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quais lotes saem pelo menor preço?",
+          "r": "Oito lotes de 501,00 m² a R$ 901.800,00, nas quadras K e L: K2, K3, K12, K13, K14, L13, L15 e L16, pela tabela de 10/10/2026. A tabela avisa que eles podem não estar mais disponíveis; confirmamos com a GPCI.",
+          "fonte": "tabela Lagos de Helvetia de 10/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto custa o lote de 528 m², o mais comum da tabela?",
+          "r": "R$ 950.400,00. São 10 lotes de 528,00 m² na tabela de 10/10/2026, nas quadras F, G e H.",
+          "fonte": "tabela Lagos de Helvetia de 10/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos lotes ficam abaixo de R$ 1 milhão?",
+          "r": "23 dos 36 lotes da tabela de 10/10/2026: os de 501,00 a 549,50 m², que vão de R$ 901.800,00 a R$ 989.100,00.",
+          "fonte": "tabela Lagos de Helvetia de 10/10/2026 (quadro por faixa de área da ficha)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto custam os lotes maiores?",
+          "r": "Na tabela de 10/10/2026, os 11 lotes de 597,21 a 717,09 m² vão de R$ 1.074.978,00 a R$ 1.290.762,00. Acima disso há o B6, de 858,53 m², por R$ 1.545.354,00, e o A1, de 2.015,04 m², por R$ 3.627.072,00.",
+          "fonte": "tabela Lagos de Helvetia de 10/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "De quanto fica a parcela nos outros prazos?",
+          "r": "No lote de 501,00 m² (R$ 901.800,00), a tabela de 10/10/2026 imprime: ato de R$ 90.180,00 e 12 de R$ 67.635,00; ato de R$ 180.360,00 e 24 de R$ 30.060,00; ou ato de R$ 90.180,00 e 36 de R$ 26.036,54, 48 de R$ 20.429,22 ou 60 de R$ 17.085,22.",
+          "fonte": "tabela Lagos de Helvetia de 10/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Com que frequência a parcela é corrigida?",
+          "r": "Depende do plano, pela tabela de 10/10/2026: em 12 meses não há correção; em 24 e 36 meses, a correção pelo IPCA é anual; acima de 36 meses, é mensal. Os juros de 0,80% ao mês (tabela Price) entram a partir de 36 meses.",
+          "fonte": "tabela Lagos de Helvetia de 10/10/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando o loteamento fica pronto?",
+          "r": "A GPCI informou em novembro/2026 a previsão para o 1º semestre de 2028 (junho de 2028).",
+          "fonte": "ficha técnica do site (previsão de entrega 06/2028); GPCI, nov/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quem é a loteadora?",
+          "r": "A GPCI Empreendimentos. No site, ela também tem os apartamentos Residencial Parque das Águas, Izzi Residence e Artemis Residencial.",
+          "fonte": "tabela Lagos de Helvetia de 10/10/2026 (equipe comercial da GPCI); fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O lote vem com casa?",
+          "r": "Não. O lote é vendido como terreno: a casa é projetada e construída por quem compra. Peça as regras construtivas (recuos, ocupação e fechamentos) antes de fechar.",
+          "fonte": "ficha do site (seção Lotes)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem lote comercial?",
+          "r": "A implantação marca pelo menos dois lotes comerciais junto ao acesso. Na tabela de 10/10/2026 só aparece um deles, o A1, de 2.015,04 m², por R$ 3.627.072,00.",
+          "fonte": "implantação do book da GPCI; tabela de 10/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Como é a portaria?",
+          "r": "A implantação mostra portaria com entrada e saída separadas para moradores e visitantes. Câmeras e tipo de vigilância não constam do material.",
+          "fonte": "implantação do book da GPCI (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "As imagens da página são fotos reais?",
+          "r": "As imagens do lago, do clube e da portaria são perspectivas ilustradas do material da incorporadora. As fotos da região e da paisagem também são do book.",
+          "fonte": "ficha do site (seção Perspectivas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Dá para conhecer o local antes de decidir?",
+          "r": "Fale com a gente pelo WhatsApp desta página: confirmamos com a GPCI como e quando dá para visitar a área e mostramos a implantação com os lotes à venda.",
+          "fonte": "ficha do site (botão de WhatsApp)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Como é a região de Helvetia?",
+          "r": "O book descreve Helvetia como uma região fundada por imigrantes suíços, com haras, campos de polo e golfe e alamedas.",
+          "fonte": "book da GPCI (citado na ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Fica perto do Aeroporto de Viracopos?",
+          "r": "O book menciona a proximidade do Aeroporto de Viracopos e de São Paulo, mas não informa a distância nem o tempo de viagem. Use o botão \"Traçar rota\" do mapa desta página para calcular a partir de onde você está.",
+          "fonte": "book da GPCI (citado na ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "A GPCI tem outro loteamento de lotes grandes?",
+          "r": "Sim: o <a href=\"/porteira-de-ferro-indaiatuba/\">Porteira de Ferro</a>, com 103 lotes a partir de 500 m² em volta de um lago. Na tabela de 17/09/2026 (preços confirmados para out/2026) resta um lote, de 520 m², por R$ 1.300.000.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Que outros lotes grandes o site tem?",
+          "r": "No site: o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, em Itaici, a partir de R$ 908.480 (lote de 511,5 m², tabela de nov/2026); o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 (420 m², tabela de nov/2026); e o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (360 m², tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

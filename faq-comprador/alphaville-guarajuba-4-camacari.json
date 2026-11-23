@@ -1,0 +1,157 @@
+{
+  "slug": "alphaville-guarajuba-4-camacari",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado do lote?",
+          "r": "Na tabela da Alphaville gerada em 13/11/2026 (nov/2026), os lotes residenciais ficam entre R$ 1.061,94 e R$ 1.361,05 por m², em quatro patamares (cerca de R$ 1.062, R$ 1.131, R$ 1.266 e R$ 1.361) que mudam de lote para lote, às vezes na mesma quadra. Nos de uso misto, cerca de R$ 693 por m² (conta nossa).",
+          "fonte": "tabela Alphaville Guarajuba 4 gerada em 13/11/2026 (conta nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "Em qual quadra estão os lotes mais em conta?",
+          "r": "Na tabela de 13/11/2026, a quadra M4 vai de R$ 459.023,98 a R$ 527.784,66, e as quadras O4 e P4 ficam perto de R$ 492.500. Os valores mais altos estão na quadra B4, de R$ 600.741,71 a R$ 704.692,03.",
+          "fonte": "tabela Alphaville Guarajuba 4 gerada em 13/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "A tabela de 13/11/2026 ainda vale?",
+          "r": "A tabela não traz data de validade, e o ato dela vencia em 14/11/2026. Antes de fechar, a gente pede à Alphaville a tabela do dia e confirma se o lote segue à venda.",
+          "fonte": "tabela Alphaville Guarajuba 4 gerada em 13/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem desconto para pagar à vista?",
+          "r": "A tabela de 13/11/2026 não traz desconto à vista: ela tem um plano só, de ato e 60 mensais. Se você quiser pagar à vista, a gente pede a condição à Alphaville antes da proposta.",
+          "fonte": "tabela Alphaville Guarajuba 4 gerada em 13/11/2026; página do empreendimento no site",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Financiamento",
+      "perguntas": [
+        {
+          "p": "Dá para financiar o lote pelo banco?",
+          "r": "A tabela de 13/11/2026 só traz o pagamento parcelado da própria tabela, com ato e 60 mensais; financiamento bancário não aparece no material, e quem recebe as parcelas também não é informado. Se você quiser usar banco, a gente confirma com a Alphaville antes da proposta.",
+          "fonte": "tabela Alphaville Guarajuba 4 gerada em 13/11/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem fez o projeto?",
+          "r": "Concepção urbanística e paisagismo do Grupo Alphaville, projeto arquitetônico do escritório Arquitetura Nacional e interiores de Natalia Salla, segundo a ficha técnica do book.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.17)",
+          "origem": "base"
+        },
+        {
+          "p": "Quem vende e assina o contrato?",
+          "r": "O book traz \"Realização: alphaville\", mas não identifica a empresa que vende os lotes e assina o contrato. Isso é confirmado com a Alphaville antes da proposta.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.19)",
+          "origem": "base"
+        },
+        {
+          "p": "O projeto tem energia solar e reúso de água?",
+          "r": "Segundo o book, sim: placas solares para gerar energia e aquecer água e reaproveitamento de água para irrigar os jardins do clube externo, além de plantio de espécies nativas em áreas degradadas, monitoramento arqueológico e controle de ruídos, resíduos e erosão durante a obra.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.14 e 15)",
+          "origem": "base"
+        },
+        {
+          "p": "O empreendimento vai ficar como nas imagens?",
+          "r": "As imagens são fotomontagens e perspectivas ilustrativas do book da Alphaville. As casas da fotomontagem mostram uma ocupação possível dos lotes, que depende do que cada comprador construir.",
+          "fonte": "página do empreendimento no site (nota da galeria)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Tem regras para construir a casa?",
+          "r": "O material não traz recuos, taxa de ocupação nem altura máxima. A gente pede à Alphaville o regulamento construtivo antes de você escolher o lote.",
+          "fonte": "página do empreendimento no site",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual o tamanho do terreno do empreendimento?",
+          "r": "O book informa uma gleba de 1.883.011,91 m², sem detalhar o que ela inclui. São 495 lotes no projeto: 458 residenciais, 19 comerciais e 18 de uso misto (soma nossa).",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.17)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto de área verde tem?",
+          "r": "Segundo o book, 162.655,24 m² de áreas verdes e 62.736,74 m² de área de preservação, além de 11.840,02 m² de área de lazer e 2 praças.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.17)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o tamanho do clube?",
+          "r": "O book divide o clube em uma parte externa, de 33.369,08 m², e uma interna, de 11.891,11 m², sem dizer quais itens ficam em cada uma.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.17)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem ponto de recarga para carro elétrico?",
+          "r": "O mapa do clube tem um totem para recarga de carro elétrico (item 15). O número de pontos e a forma de cobrança não são informados.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.16)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem escola, mercado e hospital perto?",
+          "r": "O book só traz tempos para o Guarajuba Shopping e o centro comercial de Guarajuba, a 4 minutos, sem dizer o meio de transporte. Escolas, mercados e hospitais não são informados: a gente levanta com você o que existe na região.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.7 e 8)",
+          "origem": "base"
+        },
+        {
+          "p": "O que tem para fazer na região?",
+          "r": "O book cita a praia de Guarajuba, com piscinas naturais na maré baixa; a Praia do Forte, em Mata de São João, com uma base do Projeto Tamar; e a Reserva de Sapiranga, com 600 hectares de mata atlântica.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.7 e 8)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outros Alphaville de praia no site?",
+          "r": "No Ceará, em Eusébio, perto de Fortaleza, o <a href=\"/alphaville-ceara-5-eusebio/\">Alphaville Ceará 5</a> tem lotes a partir de R$ 583.442,12 (tabela de nov/2026), e o <a href=\"/terras-alphaville-ceara-6-eusebio/\">Terras Alphaville Ceará 6</a> tem a tabela enviada no atendimento.",
+          "fonte": "fonte única do site (gera-alphaville.js), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem Alphaville no interior de São Paulo?",
+          "r": "Tem. O <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, no bairro do Itaici, tem lotes a partir de R$ 908.480 (tabela de nov/2026). A lista completa está em <a href=\"/alphaville/\">Empreendimentos Alphaville</a>.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES; gera-alphaville.js), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Moro longe de Camaçari: como vejo os lotes?",
+          "r": "A gente faz a apresentação por vídeo, com o mapa do projeto e a tabela do dia, e confirma com a Alphaville quais lotes seguem à venda. Antes de assinar, pedimos com você a matrícula, a previsão de entrega e a minuta do contrato.",
+          "fonte": "orientação da Viv'América; página do empreendimento no site",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Quanto vou pagar de ITBI?",
+          "r": "O ITBI é um imposto da cidade onde fica o imóvel: em Camaçari/BA, a alíquota e a base de cálculo são as da Prefeitura de Camaçari, não as de Indaiatuba. Antes de você assinar, a gente confere a regra na Prefeitura de Camaçari e coloca o valor na conta dos custos da compra.",
+          "fonte": "regra geral do imposto municipal (texto padrão itbi, variante outra-cidade, do _padrao.json); alíquota a conferir na Prefeitura de Camaçari",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

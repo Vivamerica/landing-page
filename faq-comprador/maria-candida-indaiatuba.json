@@ -1,0 +1,75 @@
+{
+  "slug": "maria-candida-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "De quanto fica a parcela e quanto pago no total em cada prazo?",
+          "r": "No lote de 300 m² (R$ 600.000), com entrada de R$ 60.000: 12 parcelas de R$ 48.600 (total de R$ 643.200), 24 de R$ 25.920 (R$ 682.080), 30 de R$ 21.600 (R$ 708.000), 36 de R$ 18.360 (R$ 720.960), 48 de R$ 14.580 (R$ 759.840) ou 60 de R$ 12.420 (R$ 805.200). Os totais são conta nossa, antes do reajuste pelo IPCA; a tabela não informa a taxa de juros.",
+          "fonte": "ficha do site (seção Pagamento; tabela válida a partir de 01/07/2025, preços confirmados para out/2026); totais: conta sobre as parcelas impressas",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Que infraestrutura já está pronta nas ruas?",
+          "r": "Asfalto, calçada, iluminação e rede de água e esgoto já executados, segundo o material da loteadora; as fotos mostram ruas asfaltadas com guias e sinalização.",
+          "fonte": "ficha do site (material da Asseplan Narezzi)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Os lotes têm viela sanitária?",
+          "r": "Não. O material da loteadora destaca que o traçado não tem vielas sanitárias, as passagens estreitas entre quadras que costumam separar os fundos dos lotes.",
+          "fonte": "ficha do site (material da Asseplan Narezzi)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual o tamanho mais comum do lote?",
+          "r": "Pela planta, a maioria dos lotes tem 300,00 m², com lotes maiores nas esquinas e nas pontas de quadra. As quadras vão de A a Z, mais A1 e B1.",
+          "fonte": "planta de lotes do Jardim Dona Maria Cândida",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto o projeto reserva de área verde e de área para equipamentos públicos?",
+          "r": "A planta traz duas áreas verdes (4.897,34 m² e 12.963,00 m²), um sistema de lazer de 1.740,56 m² e três áreas institucionais (8.592,10 m², 3.035,05 m² e 5.071,11 m²), destinadas a equipamento público comunitário.",
+          "fonte": "planta de lotes do Jardim Dona Maria Cândida; ficha do site",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem lote de 300 m² mais em conta em outro empreendimento?",
+          "r": "No site: o <a href=\"/alpnach-indaiatuba/\">Alpnach Residence</a>, a partir de R$ 510.000 (300 m², tabela de nov/2026); o <a href=\"/terras-de-obwalden-indaiatuba/\">Terras de Obwalden</a>, a partir de R$ 435.000 (300 m²); e o <a href=\"/reserva-da-colina-indaiatuba/\">Reserva da Colina</a>, a partir de R$ 400.500 (300 m²), estes dois pelas tabelas Kaaba recebidas em nov/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "E na mesma faixa de preço, com lote maior?",
+          "r": "No site: o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (360 m², tabela de out/2026); o <a href=\"/reserva-botanica-indaiatuba/\">Reserva Botânica</a>, a partir de R$ 642.375 (410 m², tabela de set/2026 confirmada para out/2026); e o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 (420 m², tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem outro condomínio já entregue?",
+          "r": "Sim, no site: o <a href=\"/jardim-siena-indaiatuba/\">Jardim Siena</a>, em Itaici, a partir de R$ 300.000 (250 m²), e o <a href=\"/reserva-da-colina-indaiatuba/\">Reserva da Colina</a>, a partir de R$ 400.500 (300 m²), ambos da Kaaba, pelas tabelas recebidas em nov/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES: prev entregue)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "slug": "vila-fahl-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": [
+    "documentos",
+    "morando-fora",
+    "itbi",
+    "fgts",
+    "distrato",
+    "afetacao",
+    "renda"
+  ],
+  "blocos": [
+    {
+      "titulo": "Preço e pagamento",
+      "perguntas": [
+        {
+          "p": "Onde vejo os lotes à venda no mapa?",
+          "r": "No [Mapa de lotes](/mapa-lotes-indaiatuba/) do site, com metragem e preço de cada lote da tabela recebida em 16/10/2026. A disponibilidade de cada lote se confirma no atendimento.",
+          "fonte": "ficha do site (link para o mapa de lotes; tabela recebida em 16/10/2026)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem faz o Vila Fahl?",
+          "r": "A empreendedora é a FAHL SPE Indaiatuba Loteamento e Incorporação Imobiliária, CNPJ 34.079.427/0001-49. A realização é de GPCI, Maná, Plantio e Mac Lucer (Benassi), e a construção é da iBen, segundo a contracapa do book.",
+          "fonte": "contracapa do book",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o número do registro do loteamento?",
+          "r": "O material recebido traz a matrícula 132.974 no Registro de Imóveis, mas não o número do registro do loteamento (o R. da matrícula) nem o cartório. Antes de assinar, peça a certidão atualizada dessa matrícula: ela mostra o registro e se os lotes já têm matrícula própria.",
+          "fonte": "contracapa do book (matrícula 132.974); registro e matrículas individuais não informados",
+          "origem": "base"
+        },
+        {
+          "p": "Quais são as regras para construir a casa?",
+          "r": "Ainda não constam no material recebido: recuos, taxa de ocupação, aprovação do projeto da casa e prazo para começar a obra a gente pede à empreendedora antes de você assinar. A previsão de entrega, quando o lote fica liberado para construir, é dez/2027.",
+          "fonte": "previsão informada pelo Fabio (15/11/2026); regras de construção não informadas",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imóvel e o condomínio",
+      "perguntas": [
+        {
+          "p": "Quantos lotes o Vila Fahl tem e quantos estão na tabela?",
+          "r": "O loteamento tem 529 lotes, pelo quadro de áreas do projeto urbanístico (revisão 26). A tabela recebida em 16/10/2026 traz 59 deles: 57 da Fase 1, 1 da Fase 2 e 1 da Fase 3. Quais seguem livres se confirma no atendimento.",
+          "fonte": "projeto urbanístico URB-REV26 (quadro de áreas); tabela recebida em 16/10/2026 (fonte única do site)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual a frente e o fundo dos lotes?",
+          "r": "A maioria dos lotes tem 7,50 m de frente por 20,00 m de fundo (150 m²), pelo projeto urbanístico; os de esquina e de ponta são maiores. Na tabela recebida em 16/10/2026, os residenciais vão de 150 a 499,31 m² e os comerciais de 150 a 234,63 m².",
+          "fonte": "projeto urbanístico URB-REV26; mapa de lotes do site (tabela de 16/10/2026)",
+          "origem": "base"
+        },
+        {
+          "p": "O terreno do loteamento é plano?",
+          "r": "Não é todo plano: o projeto urbanístico traz curvas de nível de cerca de 545 m a 595 m, e o terreno desce das bordas em direção ao córrego e ao espelho d'água no centro da área. A inclinação de cada quadra não consta no material; vale olhar o lote na visita.",
+          "fonte": "projeto urbanístico URB-REV26",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto de área verde o loteamento tem?",
+          "r": "Pelo quadro de áreas do projeto urbanístico, de uma área total de 519.958,37 m², 142.343,86 m² (27,38%) são áreas verdes e de preservação permanente (APP) e 22.636,10 m² (4,35%) são sistemas de lazer, em onze áreas. Os lotes somam 216.080,60 m² (41,55%).",
+          "fonte": "projeto urbanístico URB-REV26 (quadro de áreas)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem lago ou córrego dentro do loteamento?",
+          "r": "Tem: o projeto urbanístico mostra um espelho d'água já existente, com barramento, e um córrego com faixa de preservação permanente (APP). O lago de carpas está na lista de lazer do book.",
+          "fonte": "projeto urbanístico URB-REV26; book (página de diferenciais)",
+          "origem": "base"
+        },
+        {
+          "p": "Passa linha de energia de alta tensão pelo loteamento?",
+          "r": "Passa. O projeto urbanístico mostra uma linha de distribuição de 138 kV da CPFL cruzando a área, com torre e faixa non aedificandi (onde não se pode construir), e o loteamento tem autorização da CPFL para a interferência na linha (Carta 0081/RE/REG/REGM/2022). Antes de escolher, a gente mostra no projeto onde fica essa faixa em relação ao lote.",
+          "fonte": "projeto urbanístico URB-REV26; contracapa do book (autorização CPFL)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o zoneamento da área?",
+          "r": "Pelo projeto urbanístico, 24,87% da área é ZR e 75,13% é ZPR2, conforme a Lei Complementar 10/2010 (art. 9º, § 6º). O que cada zona permite em cada lote e quantas casas cabem num lote não constam no material; isso se confirma na Prefeitura e com a empreendedora.",
+          "fonte": "projeto urbanístico URB-REV26",
+          "origem": "base"
+        },
+        {
+          "p": "Como sei para que lado o lote está virado?",
+          "r": "O projeto urbanístico tem a indicação do norte, então a orientação de cada lote se lê na planta; não há uma lista por quadra. A gente confere com você no desenho a do lote escolhido.",
+          "fonte": "projeto urbanístico URB-REV26",
+          "origem": "base"
+        },
+        {
+          "p": "Tem área reservada para escola ou posto de saúde?",
+          "r": "O quadro de áreas reserva doze áreas institucionais, somando 31.547,12 m² (6,07% da área). O que vai ser construído nelas não consta no material.",
+          "fonte": "projeto urbanístico URB-REV26 (quadro de áreas)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localização e vizinhos",
+      "perguntas": [
+        {
+          "p": "Quais bairros fazem divisa com o Vila Fahl?",
+          "r": "Pelo projeto urbanístico, ao sul o loteamento faz divisa com o Jardins do Império; também confronta com a Av. Gentil Martins e com uma via pública ainda sem nome, anotada no projeto como futuro prolongamento da Pe. Arthur Lupurine Sampaio. O nome do bairro do loteamento não consta no material.",
+          "fonte": "projeto urbanístico URB-REV26 (confrontações)",
+          "origem": "base"
+        },
+        {
+          "p": "Posso visitar o terreno?",
+          "r": "Pode: a visita se agenda pelo WhatsApp da Viv'América, e a gente mostra no local os lotes da tabela. Quem não pode vir, fazemos a visita por vídeo.",
+          "fonte": "ficha do site (\"agenda a visita ao terreno\"); regra da casa (visita por vídeo)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro loteamento com preço parecido?",
+          "r": "No site: o [Jardim Siena](/jardim-siena-indaiatuba/), em Itaici, a partir de R$ 300.000 (lote de 250 m², tabela Kaaba recebida em nov/2026), e o [Terras de San Marino](/terras-de-san-marino-indaiatuba/), com lotes de 150 a 296,56 m² desde R$ 247.500 à vista (espelho de 09/10/2026).",
+          "fonte": "fonte única do site (gera-folheto.js LOTES) e fichas do Jardim Siena e do Terras de San Marino",
+          "origem": "vizinhos"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Quem atende nesta página: a imobiliária ou o plantão de vendas?",
+          "r": "Quem atende é a Imobiliária Viv'América, de Indaiatuba (CRECI 47394-J). Mandamos a tabela, fazemos a simulação, agendamos a visita e confirmamos com a empreendedora o lote escolhido antes de qualquer proposta.",
+          "fonte": "identidade da Viv'América (CRECI 47394-J, linha de procedência e rodapé da ficha)",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

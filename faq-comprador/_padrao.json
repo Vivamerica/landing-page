@@ -1,0 +1,96 @@
+{
+  "documentos": {
+    "apartamento": {
+      "p": "Quais documentos eu preciso para comprar?",
+      "r": "Para a reserva e o contrato, o padrão é: RG e CPF (ou CNH), certidão de nascimento (solteiro) ou de casamento (casado), comprovante de endereço atualizado e comprovante de renda dos 3 últimos meses. Se for financiar pela Caixa, entram também os 2 últimos holerites, a declaração do Imposto de Renda com o recibo de entrega, a Carteira de Trabalho (pode ser a digital), o extrato do FGTS tirado no app FGTS e, se você for casado, os documentos do cônjuge; funcionário público leva ainda a data de admissão publicada no Diário Oficial. Cada construtora ou banco pode pedir algum documento a mais: a lista final a gente confirma na reserva.",
+      "fonte": "lista de documentos da Viv'América (22/11/2026); Caixa, páginas “Aquisição de imóvel novo” e “FGTS para casa própria” (caixa.gov.br, consultadas em 22/11/2026)"
+    },
+    "loteamento": {
+      "p": "Quais documentos eu preciso para comprar o lote?",
+      "r": "Para a reserva e o contrato, o padrão é: RG e CPF (ou CNH), certidão de nascimento (solteiro) ou de casamento (casado), comprovante de endereço atualizado e comprovante de renda dos 3 últimos meses. Se for usar financiamento da Caixa (terreno e construção), entram também os 2 últimos holerites, a declaração do Imposto de Renda com o recibo de entrega, a Carteira de Trabalho (pode ser a digital), o extrato do FGTS tirado no app FGTS e, se você for casado, os documentos do cônjuge. Cada loteadora ou banco pode pedir algum documento a mais: a lista final a gente confirma na reserva.",
+      "fonte": "lista de documentos da Viv'América (22/11/2026); Caixa, páginas “Aquisição de terreno e construção” e “FGTS para casa própria” (caixa.gov.br, consultadas em 22/11/2026)"
+    }
+  },
+  "morando-fora": {
+    "apartamento": {
+      "p": "Dá para comprar morando fora do Brasil?",
+      "r": "Dá. Cada construtora tem o seu critério; o mais comum é pedir conta em banco no Brasil, e a gente confirma com a construtora antes de você assinar. Fazemos a visita por vídeo. O passo a passo está em <a href=\"/blog/comprar-imovel-na-planta-indaiatuba-morando-fora/\">Comprar imóvel na planta morando fora</a> e, em inglês, em <a href=\"/en/buying-property-in-indaiatuba-brazil-from-abroad/\">Buying property in Indaiatuba from abroad</a>.",
+      "fonte": "orientação da Viv'América; artigos do site /blog/comprar-imovel-na-planta-indaiatuba-morando-fora/ e /en/buying-property-in-indaiatuba-brazil-from-abroad/"
+    },
+    "loteamento": {
+      "p": "Dá para comprar o lote morando fora do Brasil?",
+      "r": "Dá. Cada loteadora tem o seu critério; o mais comum é pedir conta em banco no Brasil, e a gente confirma com a loteadora antes de você assinar. Fazemos a visita por vídeo. O passo a passo está em <a href=\"/blog/comprar-imovel-na-planta-indaiatuba-morando-fora/\">Comprar imóvel na planta morando fora</a> e, em inglês, em <a href=\"/en/buying-property-in-indaiatuba-brazil-from-abroad/\">Buying property in Indaiatuba from abroad</a>.",
+      "fonte": "orientação da Viv'América; artigos do site /blog/comprar-imovel-na-planta-indaiatuba-morando-fora/ e /en/buying-property-in-indaiatuba-brazil-from-abroad/"
+    }
+  },
+  "itbi": {
+    "apartamento": {
+      "p": "Quanto vou pagar de ITBI?",
+      "r": "Em Indaiatuba, o ITBI é de 2% sobre a base de cálculo até 15.000 UFESP (R$ 576.300,00 em 2026) e de 2,5% só na parte que passar disso (Lei Complementar municipal 102/2023, art. 137, segundo a página de perguntas frequentes do ITBI da Prefeitura, consultada em 22/11/2026). No exemplo da Prefeitura, uma base de R$ 400.000,00 dá R$ 8.000,00 de imposto. Na planta, ele é pago quando o contrato definitivo (a escritura ou o contrato de financiamento) vai para o cartório; a guia da Prefeitura pode ser parcelada em até 4 vezes, mas o registro na matrícula só sai com tudo quitado. Mais detalhes em <a href=\"/blog/itbi-escritura-registro-indaiatuba/\">ITBI, escritura e registro em Indaiatuba</a>.",
+      "fonte": "Prefeitura de Indaiatuba, Fazenda › Rendas Imobiliárias › Perguntas frequentes sobre o ITBI (indaiatuba.sp.gov.br, consultada em 22/11/2026), citando a LC 102/2023, art. 137"
+    },
+    "loteamento": {
+      "p": "Quanto vou pagar de ITBI no lote?",
+      "r": "Em Indaiatuba, o ITBI é de 2% sobre a base de cálculo até 15.000 UFESP (R$ 576.300,00 em 2026) e de 2,5% só na parte que passar disso (Lei Complementar municipal 102/2023, art. 137, segundo a página de perguntas frequentes do ITBI da Prefeitura, consultada em 22/11/2026). No exemplo da Prefeitura, uma base de R$ 400.000,00 dá R$ 8.000,00 de imposto. Ele é pago quando a escritura ou o contrato definitivo vai para o cartório; na compra parcelada direto com a loteadora, o contrato diz quando a escritura é passada. A guia da Prefeitura pode ser parcelada em até 4 vezes, mas o registro na matrícula só sai com tudo quitado; mais detalhes em <a href=\"/blog/itbi-escritura-registro-indaiatuba/\">ITBI, escritura e registro em Indaiatuba</a>.",
+      "fonte": "Prefeitura de Indaiatuba, Fazenda › Rendas Imobiliárias › Perguntas frequentes sobre o ITBI (indaiatuba.sp.gov.br, consultada em 22/11/2026), citando a LC 102/2023, art. 137"
+    },
+    "outra-cidade": {
+      "p": "Quanto vou pagar de ITBI?",
+      "r": "O ITBI é um imposto da cidade onde fica o imóvel: a alíquota e a base de cálculo são as da Prefeitura de lá, não as de Indaiatuba. Antes de você assinar, a gente confere a regra na Prefeitura do município e coloca o valor na conta dos custos da compra.",
+      "fonte": "regra geral do imposto municipal; alíquota a conferir na Prefeitura do município do empreendimento"
+    }
+  },
+  "fgts": {
+    "apartamento": {
+      "p": "Posso usar o FGTS para comprar?",
+      "r": "Pode, se você e o imóvel cumprirem as regras da Caixa (página “FGTS para casa própria”, consultada em 22/11/2026): pelo menos 3 anos de trabalho sob o regime do FGTS, somando períodos; nenhum financiamento ativo no SFH; não ter imóvel residencial na cidade onde mora ou trabalha, nem nas vizinhas ou da mesma região metropolitana; e imóvel residencial urbano, para a sua moradia, avaliado em até R$ 2.250.000,00. Na planta, o FGTS entra na hora em que o financiamento é contratado com o banco, como parte da entrada; o sinal e as parcelas pagas à construtora antes disso saem do seu bolso. Não vale para imóvel comercial nem para comprar para familiares; mais detalhes em <a href=\"/blog/fgts-imovel-na-planta-indaiatuba/\">FGTS para imóvel na planta</a>.",
+      "fonte": "Caixa, página “FGTS para casa própria” e página “Aquisição de imóvel novo” (caixa.gov.br, consultadas em 22/11/2026)"
+    },
+    "loteamento": {
+      "p": "Posso usar o FGTS para comprar o lote?",
+      "r": "Só o lote, não: a Caixa não permite usar o FGTS para comprar terreno sem construção (página “FGTS para casa própria”, consultada em 22/11/2026). O FGTS pode entrar se você financiar o terreno junto com a construção da casa pela linha “Aquisição de terreno e construção” da Caixa, se a loteadora aceitar essa forma de pagamento, com as regras de sempre: 3 anos de FGTS, nenhum financiamento ativo no SFH e não ter imóvel residencial na cidade onde mora ou trabalha. Depois, o FGTS também pode ajudar a construir a casa, mas só com o terreno já registrado no seu nome; na compra parcelada com a loteadora, isso só acontece com a escritura.",
+      "fonte": "Caixa, páginas “FGTS para casa própria” e “Aquisição de terreno e construção” (caixa.gov.br, consultadas em 22/11/2026)"
+    },
+    "comercial": {
+      "p": "Posso usar o FGTS para comprar?",
+      "r": "Em sala ou loja comercial, não: a Caixa não permite usar o FGTS para imóvel comercial; ele só vale para imóvel residencial urbano destinado à moradia de quem usa o saldo (página “FGTS para casa própria”, consultada em 22/11/2026).",
+      "fonte": "Caixa, página “FGTS para casa própria” (caixa.gov.br, consultada em 22/11/2026)"
+    }
+  },
+  "distrato": {
+    "apartamento": {
+      "p": "Se eu desistir da compra, quanto recebo de volta?",
+      "r": "No contrato com a incorporadora, a Lei 4.591/1964, art. 67-A (incluído pela Lei 13.786/2018; texto do planalto.gov.br consultado em 22/11/2026), permite reter multa de até 25% do que você pagou, ou de até 50% se a obra tiver patrimônio de afetação, além de outros descontos que a lei e o contrato preveem; o restante volta corrigido pelo índice do contrato. Com afetação, a devolução sai até 30 dias depois do habite-se; sem afetação, em parcela única 180 dias depois do desfazimento. Se a compra foi feita em estande ou fora da sede da incorporadora, você tem 7 dias para desistir e receber tudo de volta. O quadro-resumo do contrato tem de mostrar essas regras em destaque (art. 35-A, VI).",
+      "fonte": "Lei 4.591/1964, arts. 35-A e 67-A, incluídos pela Lei 13.786/2018 (planalto.gov.br, consultada em 22/11/2026)"
+    },
+    "loteamento": {
+      "p": "Se eu desistir do lote, quanto recebo de volta?",
+      "r": "Pela Lei 6.766/1979, art. 32-A (incluído pela Lei 13.786/2018; texto do planalto.gov.br consultado em 22/11/2026), a loteadora devolve o que você pagou, corrigido pelo índice do contrato, podendo descontar multa e despesas de até 10% do valor atualizado do contrato, além de outros itens que a lei lista, como IPTU e taxas do lote em aberto e, se você já tinha a posse, um valor pelo uso. A devolução é em até 12 parcelas mensais, que começam até 180 dias depois do prazo de conclusão das obras, se o loteamento ainda está em obra, ou até 12 meses depois do desfazimento, se as obras já terminaram. Essa regra vale para o compromisso de compra e venda; contrato com alienação fiduciária segue a Lei 9.514/1997 (art. 32-A, § 3º). O quadro-resumo do contrato tem de mostrar as consequências da desistência em destaque (art. 26-A, V).",
+      "fonte": "Lei 6.766/1979, arts. 26-A e 32-A, incluídos pela Lei 13.786/2018 (planalto.gov.br, consultada em 22/11/2026)"
+    }
+  },
+  "afetacao": {
+    "apartamento": {
+      "p": "Como saber se a obra tem patrimônio de afetação?",
+      "r": "Patrimônio de afetação separa o terreno, a obra e o dinheiro da obra das demais dívidas da incorporadora; ele é opcional (Lei 4.591/1964, art. 31-A; texto do planalto.gov.br consultado em 22/11/2026). Só existe se estiver averbado na matrícula do terreno no Registro de Imóveis (art. 31-B), então o anúncio não basta. Antes de assinar, peça a certidão de matrícula: ali aparecem o registro da incorporação e, se houver, a averbação da afetação; a gente pede junto com você. Mais detalhes em <a href=\"/blog/patrimonio-de-afetacao-como-saber-se-a-obra-esta-protegida/\">Patrimônio de afetação: como saber se a obra está protegida</a>.",
+      "fonte": "Lei 4.591/1964, arts. 31-A e 31-B (planalto.gov.br, consultada em 22/11/2026)"
+    },
+    "loteamento": {
+      "p": "O loteamento tem alguma proteção parecida com o patrimônio de afetação?",
+      "r": "Patrimônio de afetação é regra de incorporação (prédios e casas em condomínio); no loteamento, a proteção é o registro. A Lei 6.766/1979 proíbe vender lote de loteamento não registrado (art. 37) e, para registrar, a loteadora entrega certidões e, se as obras não estiverem prontas, um cronograma de até 4 anos com garantia de execução das obras (art. 18; texto do planalto.gov.br consultado em 22/11/2026). O processo do loteamento no cartório pode ser examinado por qualquer pessoa, sem custo (art. 24). Antes de assinar, a gente pede com você a certidão de matrícula do lote.",
+      "fonte": "Lei 6.766/1979, arts. 18, 24 e 37 (planalto.gov.br, consultada em 22/11/2026)"
+    }
+  },
+  "renda": {
+    "apartamento": {
+      "p": "Qual renda preciso para financiar?",
+      "r": "Na Caixa, a prestação do financiamento não pode passar de 30% da renda familiar bruta, e dá para somar renda com outra pessoa, parente ou não (página “Aquisição de imóvel novo” da Caixa, consultada em 22/11/2026). O valor que o banco libera depende também da entrada, do prazo e da análise de crédito, por isso a conta certa sai na simulação. A gente faz a simulação com você antes da proposta; mais detalhes em <a href=\"/blog/renda-necessaria-financiar-imovel/\">Renda necessária para financiar um imóvel</a>.",
+      "fonte": "Caixa, página “Aquisição de imóvel novo” (caixa.gov.br, consultada em 22/11/2026)"
+    },
+    "loteamento": {
+      "p": "Qual renda preciso para comprar o lote?",
+      "r": "Na compra parcelada direto com a loteadora, cada empresa tem o seu critério de análise de renda e cadastro; a gente confirma com a loteadora antes da proposta. Se for financiar pela Caixa (terreno e construção), a prestação não pode passar de 30% da renda familiar mensal bruta (página “Aquisição de terreno e construção” da Caixa, consultada em 22/11/2026). O valor aprovado sai na simulação e é sujeito a análise de crédito.",
+      "fonte": "Caixa, página “Aquisição de terreno e construção” (caixa.gov.br, consultada em 22/11/2026)"
+    }
+  }
+}

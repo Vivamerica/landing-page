@@ -1,0 +1,112 @@
+{
+ "slug": "espaco-conceicao-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "fgts",
+  "distrato",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Preço e pagamento",
+   "perguntas": [
+    {
+     "p": "Quantas unidades estão disponíveis em cada torre?",
+     "r": "Na disponibilidade da Masotti de 12/10/2026 eram 24 na Torre 1 e 22 na Torre 2: 44 apartamentos tipo e 2 gardens (o final 2 do térreo de cada torre). Unidades reservadas não entram na conta.",
+     "fonte": "espelho de vendas Masotti de 12/10/2026",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Obra, entrega e registro",
+   "perguntas": [
+    {
+     "p": "Quando o Espaço Conceição fica pronto?",
+     "r": "A Masotti ainda não confirmou o prazo atual: a última tabela recebida, de 09/09/2026, trazia uma data de entrega que já passou. Antes da proposta, a gente confirma com a Masotti a situação da obra e o prazo que vai no contrato.",
+     "fonte": "ficha técnica do site (tabela Masotti de 09/09/2026)",
+     "origem": "ficha"
+    },
+    {
+     "p": "Quem é a incorporadora do Espaço Conceição?",
+     "r": "É a Masotti Investimentos de Construções, que assina o book do empreendimento.",
+     "fonte": "book Masotti, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "O Espaço Conceição tem registro de incorporação?",
+     "r": "O número do registro da incorporação não consta no material que recebemos da Masotti. Antes de assinar, peça a certidão atualizada da matrícula 89.997 do Registro de Imóveis de Indaiatuba: é nela que aparecem o registro da incorporação e a averbação da afetação. A gente pede junto com você.",
+     "fonte": "FAQ atual da ficha (matrícula 89.997); base: registro (AV10) e alvará só no site, sem documento na pasta",
+     "origem": "ficha"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "As vagas são cobertas? Qual o tamanho?",
+     "r": "São 2 vagas cobertas por apartamento. No espelho de 12/10/2026, as vagas de cada unidade aparecem com tamanho G, M ou G/M. Se são livres ou presas não consta no material; isso se confere na escolha da unidade.",
+     "fonte": "book Masotti, p. 7; espelho de vendas Masotti de 12/10/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Quais itens posso comprar à parte para o apartamento?",
+     "r": "Há kits opcionais, pagos à parte: churrasqueira, fechadura eletrônica e ar-condicionado. O preço dos kits não consta no material; a gente consulta a Masotti.",
+     "fonte": "book Masotti, p. 9",
+     "origem": "base"
+    },
+    {
+     "p": "Quais são os itens de lazer do Espaço Conceição?",
+     "r": "Piscina adulto com prainha e piscina infantil, solarium e bangalôs, saunas seca e úmida, sala de massagem, academia, salão de festas com lounge, salão de jogos, brinquedoteca, playground, quadra 3x3, pet place, piquenique e redário, duas churrasqueiras, fire place, horta, praça central e coworking.",
+     "fonte": "book Masotti, p. 7 e 8",
+     "origem": "base"
+    },
+    {
+     "p": "Onde fica o lazer do prédio?",
+     "r": "Numa laje no 4º sobressolo, a 16,36 m de altura da rua, em volta das duas torres, com 593 m² de lazer. Embaixo ficam a galeria de lojas e três andares de garagem.",
+     "fonte": "book Masotti, p. 7 e 8",
+     "origem": "base"
+    },
+    {
+     "p": "Tem lojas no prédio?",
+     "r": "Sim. O térreo é uma galeria de lojas com pé-direito duplo, o “Mall”, com fachada para a rua; acima dela ficam três andares de garagem coberta.",
+     "fonte": "book Masotti, p. 7 a 9",
+     "origem": "base"
+    },
+    {
+     "p": "Tem minimercado e espaço para entregas?",
+     "r": "Sim. O lazer tem minimercado, e o condomínio tem espaço delivery junto à portaria.",
+     "fonte": "book Masotti, p. 8; ficha do site",
+     "origem": "base"
+    },
+    {
+     "p": "Tem energia solar?",
+     "r": "Sim. Há placas fotovoltaicas que atendem a área comum e a iluminação das fachadas.",
+     "fonte": "book Masotti, p. 9",
+     "origem": "base"
+    },
+    {
+     "p": "Tem bicicletário?",
+     "r": "Sim. O book lista um bike stop; o número de vagas não é informado.",
+     "fonte": "book Masotti, p. 8",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "Tem outro apartamento de alto padrão nessa faixa de preço?",
+     "r": "Sim: o <a href=\"/lina-residence-indaiatuba/\">Lina Residence</a>, em Cidade Nova I, a partir de R$ 924.108 (tabela Lofts de out/2026); o <a href=\"/arete-home-indaiatuba/\">Areté Home</a>, a partir de R$ 991.005 (tabela PERPLAN de ago/2026); e o <a href=\"/seasons-indaiatuba/\">Congesa Seasons</a>, a partir de R$ 1.239.000 (tabela Congesa de out/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

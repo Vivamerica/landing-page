@@ -1,0 +1,141 @@
+{
+  "slug": "spazio-italia-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa cada planta, e o andar muda o preço?",
+          "r": "Na tabela Zarin de outubro/2026, a planta de canto (59,50 m²) vai de R$ 429.961,17 a R$ 552.713,44 e a de meio (63,58 m²), de R$ 466.102,83 a R$ 590.613,78. O menor preço é do Milão 5, de canto, no térreo; o maior, do Roma 136, de meio, no 13º andar.",
+          "fonte": "tabela de preço Spazio Italia, Zarin, outubro/2026 (emitida em 11/10/2026)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto custa o metro quadrado?",
+          "r": "De cerca de R$ 7.226 a R$ 9.289 por m² de área privativa, conforme a unidade, pela tabela Zarin de outubro/2026: R$ 429.961,17 pelos 59,50 m² do Milão 5 até R$ 590.613,78 pelos 63,58 m² do Roma 136.",
+          "fonte": "conta nossa sobre a tabela Zarin de outubro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem parcela anual (intermediária) durante a obra?",
+          "r": "Não na tabela de outubro/2026: o fluxo é ato de 10%, 42 parcelas mensais que somam 20% e saldo de 70% no financiamento bancário. Ou seja, até o financiamento você paga 30% do valor, corrigido pelo INCC.",
+          "fonte": "tabela Zarin de outubro/2026 (ficha do site)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "A incorporação já está registrada?",
+          "r": "O book informa só o protocolo nº 389034, aberto em 06/11/2024 no Oficial de Registro de Imóveis de Indaiatuba. Protocolo não é o registro: o número do registro e a matrícula não constam no material recebido. Peça a certidão de matrícula antes de assinar.",
+          "fonte": "book Spazio Italia, pág. 28 (rodapé)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Quais finais são de canto e quais são de meio?",
+          "r": "Os finais 1, 4, 5 e 8 são de canto, com 59,50 m² de área privativa; os finais 2, 3, 6 e 7 são de meio, com 63,58 m². As duas plantas têm 2 dormitórios, sendo 1 suíte, banheiro social, sala e jantar, cozinha, área de serviço e varanda.",
+          "fonte": "tabela Zarin de outubro/2026; book, págs. 22 e 26",
+          "origem": "base"
+        },
+        {
+          "p": "Tem apartamento com sol da manhã?",
+          "r": "Sim. A tabela de outubro/2026 indica, unidade por unidade, se o apartamento tem sol da manhã ou sol da tarde. Mandamos a lista com essa informação.",
+          "fonte": "tabela Zarin de outubro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos apartamentos têm só 1 vaga?",
+          "r": "Na tabela de outubro/2026, 19 dos 228: 17 de canto (59,5 m²) e 2 de meio (63,58 m², Milão 12 e 13). Os outros 209 têm 2 vagas. Se as vagas são cobertas ou presas não é informado.",
+          "fonte": "tabela Zarin de outubro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos apartamentos estão à venda em cada torre?",
+          "r": "Na tabela de outubro/2026: 40 na Veneza, 51 na Florença, 51 na Roma e 86 na Milão, 103 de canto e 125 de meio. A tabela não mostra as vendidas; a disponibilidade se confirma antes da proposta.",
+          "fonte": "tabela Zarin de outubro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem garden, cobertura ou duplex?",
+          "r": "Não. A tabela de outubro/2026 só tem as plantas de canto (59,5 m²) e de meio (63,58 m²), sem garden, cobertura, duplex ou studio.",
+          "fonte": "tabela Zarin de outubro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem quadra ou campo para esporte?",
+          "r": "Sim: campo gramado e quadra de areia, nas perspectivas do book da Zarin.",
+          "fonte": "book Spazio Italia, perspectivas (págs. 7 a 19)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem espaço para pet?",
+          "r": "Sim, o book mostra um espaço pet entre as áreas comuns.",
+          "fonte": "book Spazio Italia, perspectivas (págs. 7 a 19)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem hidromassagem?",
+          "r": "Sim: o espaço detox, com hidromassagem, junto da sauna úmida, nas perspectivas do book.",
+          "fonte": "book Spazio Italia, perspectivas (págs. 7 a 19)",
+          "origem": "base"
+        },
+        {
+          "p": "A piscina tem bar e área infantil?",
+          "r": "Sim. O book mostra um complexo aquático com piscina, piscina infantil e bar na piscina.",
+          "fonte": "book Spazio Italia, perspectivas (págs. 7 a 19)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Onde fica a central de vendas?",
+          "r": "A central de vendas da Zarin fica na Avenida Eng. Fábio Roberto Barnabé, 1119, no Parque Ecológico, segundo o book. Horário e decorado não são informados: agendamos a visita pelo WhatsApp.",
+          "fonte": "book Spazio Italia, pág. 28",
+          "origem": "base"
+        },
+        {
+          "p": "O que tem perto do empreendimento?",
+          "r": "O mapa do book marca a Rodovia Santos Dumont, o Colégio Renovação, a Arena Deco20 (futebol) e o Restaurante Amadeu, sem distâncias.",
+          "fonte": "book Spazio Italia, pág. 28 (mapa)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outro apartamento na mesma faixa de preço?",
+          "r": "O <a href=\"/vila-plaza-residence-indaiatuba/\">Vila Plaza Residence</a>, com studio, studio duplex e 2 suítes no Jardim São Conrado, a partir de R$ 403.846 (tabela de out/2026), e o <a href=\"/vettia-residence-indaiatuba/\">Vettia Residence</a>, com 1 e 2 dormitórios com suíte nas Chácaras Alvorada, a partir de R$ 379.500 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem 2 dormitórios abaixo de R$ 350 mil?",
+          "r": "Sim: o <a href=\"/parque-das-aguas-indaiatuba/\">Residencial Parque das Águas</a>, de 2 dormitórios, a partir de R$ 309.120 (tabela de set/2026), e o <a href=\"/gran-vic-tangara-indaiatuba/\">Gran Vic Tangará</a>, de 2 dormitórios, a partir de R$ 325.000 (tabela de out/2026). Financiamento sempre sujeito a análise de crédito.",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "E com 3 dormitórios, perto de R$ 500 mil?",
+          "r": "O <a href=\"/artemis-residencial-indaiatuba/\">Artemis Residencial</a>, com 3 dormitórios com suíte de 63,85 e 64,44 m² no Park Meraki, a partir de R$ 555.171 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Que outros empreendimentos da Zarin estão à venda?",
+          "r": "O <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a>, com apartamentos de 48 a 54 m² a partir de R$ 345.107 (tabela de nov/2026), e, em lotes, o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a>, a partir de R$ 211.050 (tabela de nov/2026), e o <a href=\"/reserva-botanica-indaiatuba/\">Reserva Botânica</a>, a partir de R$ 642.375 (tabela de set/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS e LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

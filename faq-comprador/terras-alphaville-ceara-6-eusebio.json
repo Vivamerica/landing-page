@@ -1,0 +1,142 @@
+{
+  "slug": "terras-alphaville-ceara-6-eusebio",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "fgts", "distrato", "afetacao"],
+  "blocos": [
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "O mapa de lotes mostra quais estão livres?",
+          "r": "Ainda não dá para saber. O mapa recebido em novembro/2026 marca os lotes com cores, mas não traz a legenda, então não dizemos quantos estão livres. Pedimos à Alphaville a situação de cada lote e mandamos junto com a tabela.",
+          "fonte": "mapa de disponibilidade recebido em nov/2026 (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "As fotos da página são do loteamento pronto?",
+          "r": "Não. São uma fotomontagem aérea e perspectivas ilustradas do book da Alphaville; vegetação, mobiliário e casas aparecem só como ilustração.",
+          "fonte": "book Terras Alphaville Ceará 6 (ficha do site)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O que é \"loteamento de acesso controlado\"?",
+          "r": "É o nome que aparece na planta de vendas. Pela Lei 6.766/1979 (art. 2º, § 8º, incluído pela Lei 13.465/2017), é o loteamento cujo controle de acesso é regulamentado pela prefeitura, e não se pode impedir a entrada de pedestres ou motoristas não moradores que estejam identificados ou cadastrados. O registro do loteamento não veio no material: peça a matrícula antes de assinar.",
+          "fonte": "planta geral de vendas (ago/2025); Lei 6.766/1979, art. 2º, § 8º, planalto.gov.br, consultada em 22/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "As ruas internas são sem saída?",
+          "r": "Sim. Segundo o book, as ruas internas são sem saída, para diminuir o fluxo de carros.",
+          "fonte": "book Terras Alphaville Ceará 6, págs. 9 e 10",
+          "origem": "base"
+        },
+        {
+          "p": "Tem lote comercial dentro do loteamento?",
+          "r": "Não. Os 571 lotes da planta de vendas são residenciais; as áreas comerciais da Cidade Alpha ficam fora do loteamento.",
+          "fonte": "planta geral de vendas com mapa de disponibilidade (nov/2026), legenda e planta de situação",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto do loteamento é área verde e clube?",
+          "r": "A gleba tem 282.204 m²: 42.330,65 m² de áreas verdes (cerca de 15%) e 13.637,81 m² de clube (cerca de 4,8%), pela ficha técnica do book. O book arredonda para \"mais de 42 mil m² de áreas verdes\".",
+          "fonte": "book Terras Alphaville Ceará 6, págs. 7 e 16",
+          "origem": "base"
+        },
+        {
+          "p": "Onde fica o clube dentro do loteamento?",
+          "r": "Junto à portaria, do lado da Avenida José Amora Sá, pela planta de vendas e pela planta conceitual do book. Os lotes maiores ficam nas pontas das quadras e na quadra curva do lado oposto à portaria.",
+          "fonte": "planta geral de vendas; planta conceitual do book (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem pista de caminhada?",
+          "r": "Sim. O book traz perspectivas da pista de caminhada, do pergolado, do hall do clube e da praça teen.",
+          "fonte": "book Terras Alphaville Ceará 6, págs. 4, 6, 8, 12 e 13",
+          "origem": "base"
+        },
+        {
+          "p": "Tem energia solar ou recarga de carro elétrico?",
+          "r": "Sim, nas áreas comuns: captação de energia solar no bloco de apoio do clube e um totem de recarga de carro elétrico no estacionamento do clube. A forma de cobrança da recarga não é informada.",
+          "fonte": "book Terras Alphaville Ceará 6, pág. 14",
+          "origem": "base"
+        },
+        {
+          "p": "Que cuidados ambientais a obra tem?",
+          "r": "O book lista 12 práticas, entre elas gerenciamento ambiental da obra e dos resíduos, controle de erosão, de ruído e da qualidade do ar, resgate e monitoramento da fauna, transplante de espécies vegetais, monitoramento arqueológico e parceria com cooperativas de reciclagem.",
+          "fonte": "book Terras Alphaville Ceará 6, págs. 14 e 15",
+          "origem": "base"
+        },
+        {
+          "p": "Quem fez o projeto?",
+          "r": "O projeto arquitetônico, urbanístico e paisagístico é do Grupo Alphaville, segundo o book. A planta geral de vendas foi desenhada pela M.Carrara Urbanismo, de Curitiba.",
+          "fonte": "book Terras Alphaville Ceará 6, pág. 16; rodapé da planta de vendas",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Por onde é a entrada e qual o CEP?",
+          "r": "A portaria fica na entrada pela Alameda Gunga, junto à Avenida José Amora Sá (lado par), no bairro Cidade Alpha, Eusébio/CE, CEP 61766-300, pela planta de vendas. O número não é informado.",
+          "fonte": "planta geral de vendas (quadro de títulos e desenho); book, pág. 11",
+          "origem": "base"
+        },
+        {
+          "p": "O que é a Cidade Alpha?",
+          "r": "Segundo o book, é um bairro planejado criado em 2012 pelo Grupo Alphaville com o Grupo Dias Branco, numa área de 18,5 milhões de m², com 18 fases lançadas, mais de 5.700 lotes residenciais e 182 lotes comerciais.",
+          "fonte": "book Terras Alphaville Ceará 6, pág. 5",
+          "origem": "base"
+        },
+        {
+          "p": "Quais loteamentos ficam ao lado?",
+          "r": "A planta de situação põe o Ceará 6 entre os Terras Alphaville Ceará 1, 2 e 4, com a Avenida Quarto Anel Viário, a CE-040 e as saídas para Fortaleza e Pacajus por perto.",
+          "fonte": "planta geral de vendas (planta de situação)",
+          "origem": "base"
+        },
+        {
+          "p": "A Avenida José Amora Sá leva aonde?",
+          "r": "Segundo o book, é uma das principais vias da Cidade Alpha, com acesso ao centro do Eusébio e à BR-116.",
+          "fonte": "book Terras Alphaville Ceará 6, pág. 11",
+          "origem": "base"
+        },
+        {
+          "p": "Tem shopping perto?",
+          "r": "O book indica 10 minutos até o Shopping Eusébio e 12 até o Terrazo Shopping, sem dizer o meio de transporte; o mapa ilustrado mostra também o Via Sul Shopping e o Shopping Iguatemi.",
+          "fonte": "book Terras Alphaville Ceará 6, pág. 11",
+          "origem": "base"
+        },
+        {
+          "p": "Tem escola e supermercado na região?",
+          "r": "O mapa ilustrado do book mostra o Colégio Christus, os Mercadinhos São Luiz e o Atacadão, além da Arena Castelão e do Beach Park, sem distâncias.",
+          "fonte": "book Terras Alphaville Ceará 6, pág. 11",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outro Alphaville na Cidade Alpha com preço publicado?",
+          "r": "Sim: o <a href=\"/alphaville-ceara-5-eusebio/\">Alphaville Ceará 5</a>, também na Cidade Alpha, com lotes maiores, de 450 a 731,14 m², a partir de R$ 583.442,12 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-alphaville.js)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "E em outro estado do Nordeste?",
+          "r": "O <a href=\"/alphaville-guarajuba-4-camacari/\">Alphaville Guarajuba 4</a>, em Camaçari (BA), tem lotes de 420 a 517,78 m² a partir de R$ 459.023,98 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-alphaville.js)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem Alphaville perto de Indaiatuba, onde fica a Viv'América?",
+          "r": "Sim: o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, em Itaici, com lotes de 511 a 1.205 m² a partir de R$ 908.480 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "slug": "vila-plaza-residence-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": [
+    "documentos",
+    "morando-fora",
+    "itbi",
+    "fgts",
+    "distrato",
+    "afetacao",
+    "renda"
+  ],
+  "blocos": [
+    {
+      "titulo": "Preço e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto preciso no ato para um studio duplex ou um apartamento de 2 suítes?",
+          "r": "Pela regra da tabela da Lógica atualizada em 01/10/2026 (6% no ato, 30% em 12 parcelas e 64% a financiar), a conta nossa dá: no duplex de menor valor, R$ 520.527,87, ato de R$ 31.231,67 e 12 parcelas de R$ 13.013,20; no 2 suítes de menor valor, R$ 746.408,15, ato de R$ 44.784,49 e 12 parcelas de R$ 18.660,20. À vista, com 10% de desconto, ficam em R$ 468.475,08 e R$ 671.767,34. Os 64% restantes vão para financiamento, que depende de análise de crédito.",
+          "fonte": "tabela Lógica atualizada em 01/10/2026 (regra de pagamento e valores); conta da Viv'América",
+          "origem": "ficha"
+        },
+        {
+          "p": "Até quando vale a tabela?",
+          "r": "A tabela da Lógica é a versão 10.2026, atualizada em 01/10/2026, e não traz validade; os valores podem mudar sem aviso. Antes de qualquer proposta, a gente confirma com a Lógica o valor da unidade escolhida.",
+          "fonte": "tabela Lógica out/2026 (pág. 1)",
+          "origem": "base"
+        },
+        {
+          "p": "Quantas unidades de cada tipo ainda estão livres?",
+          "r": "No espelho de vendas recebido em 28/10/2026, das 224 unidades, 118 estavam livres: 52 studios, 25 studios duplex e 41 apartamentos de 2 suítes; 105 estavam vendidas e 1 em reserva. Os studios dos finais 12, 13 e 14 estão vendidos em todos os andares. A disponibilidade de cada unidade se confirma no atendimento.",
+          "fonte": "espelho de vendas Lógica (out/2026); tabela out/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imóvel e o condomínio",
+      "perguntas": [
+        {
+          "p": "Quantos andares e apartamentos por andar tem a torre?",
+          "r": "É uma torre com térreo, 14 andares de apartamentos, um pavimento de rooftop e 4 de garagem, com 3 elevadores. Cada andar tem 13 apartamentos (9 studios e 4 de 2 suítes), e os studios duplex, finais 06 a 11, ocupam dois níveis e são numerados nos andares ímpares. São 224 unidades: 126 studios, 42 duplex e 56 de 2 suítes.",
+          "fonte": "apresentação Lógica (págs. 5 e 9); espelho de vendas",
+          "origem": "base"
+        },
+        {
+          "p": "Qual a altura do pé-direito?",
+          "r": "2,80 m nos apartamentos, segundo a ficha técnica da Lógica. Se há forro rebaixado em algum ambiente não consta no material.",
+          "fonte": "apresentação Lógica (pág. 5, ficha técnica)",
+          "origem": "base"
+        },
+        {
+          "p": "O apartamento vem com infraestrutura de ar-condicionado?",
+          "r": "Vem: a ficha técnica diz que todos os apartamentos são entregues com infraestrutura completa de ar-condicionado. Os aparelhos não são citados no material; o que vem instalado segue o memorial descritivo.",
+          "fonte": "apresentação Lógica (pág. 5, ficha técnica)",
+          "origem": "base"
+        },
+        {
+          "p": "O apartamento vem com piso e revestimento?",
+          "r": "A ficha técnica cita revestimento nas áreas molhadas dos apartamentos, sem dizer a altura. O piso dos outros ambientes não consta no material; o que vale é o memorial descritivo, disponível para consulta com a Lógica.",
+          "fonte": "apresentação Lógica (pág. 5, ficha técnica)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem apartamento com garden ou cobertura?",
+          "r": "Não. As tipologias são studio, studio duplex em dois níveis e 2 dormitórios com 2 suítes; garden e cobertura não constam no material da Lógica.",
+          "fonte": "apresentação Lógica (págs. 9 e 11)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual final pega o sol da manhã?",
+          "r": "Na planta do pavimento da apresentação, o nascer do sol fica do lado dos finais 16 e 17 e o pôr do sol do lado do final 05. A gente confere com você na planta a posição da unidade escolhida.",
+          "fonte": "apresentação Lógica (pág. 9, planta do pavimento)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual lado do prédio fica para o Parque Ecológico?",
+          "r": "Pela planta do pavimento da apresentação, o Parque Ecológico fica do lado dos duplex e dos finais 12 a 14, o Parque Temático do lado dos finais 15 e 16 e o Mercado Dia do lado dos finais 01 a 03. A vista de cada andar não consta no material.",
+          "fonte": "ficha do site (seção Localização, a partir da planta do pavimento da Lógica)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual é o lazer do Vila Plaza?",
+          "r": "No térreo: praça externa, área pet, lobby, academia, salão de festas master com copa, brinquedoteca, playground, coworking, lavanderia e minimercado. No rooftop: duas áreas gourmet com hidromassagem e uma praça. A lista segue a implantação da apresentação da Lógica.",
+          "fonte": "apresentação Lógica (pág. 8, legenda do térreo e do rooftop)",
+          "origem": "base"
+        },
+        {
+          "p": "As áreas comuns são entregues mobiliadas?",
+          "r": "Segundo a ficha técnica da Lógica, a mobília das áreas comuns é entregue pela construtora, e as áreas são entregues equipadas conforme o memorial descritivo. Os móveis e utensílios das ilustrações não fazem parte do contrato.",
+          "fonte": "apresentação Lógica (págs. 5 e 16)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o tamanho do terreno e da área construída?",
+          "r": "Terreno de 3.274,96 m² e 21.677,88 m² de área construída, pela ficha técnica da apresentação da Lógica.",
+          "fonte": "apresentação Lógica (pág. 5, ficha técnica)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localização e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem hospital, faculdade e atacadista perto?",
+          "r": "No mapa ilustrado da Lógica, sem dizer se de carro: Assaí Atacadista a 3 minutos, SESI (Serviço Social da Indústria) a 8, Hospital Augusto de Oliveira Camargo (HAOC) e Rodovia SP-75 a 10 e Faculdade Unimax a 12.",
+          "fonte": "apresentação Lógica (pág. 3, mapa ilustrado)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para visitar um decorado?",
+          "r": "O material recebido não fala em decorado nem traz endereço e horário de plantão de vendas. A visita se agenda pelo WhatsApp da Viv'América, e a gente confirma com a Lógica o que dá para ver. Quem não pode vir, fazemos a visita por vídeo.",
+          "fonte": "material Lógica recebido (central de vendas não informada); regra da casa (visita por vídeo)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro apartamento compacto numa faixa de preço parecida?",
+          "r": "No site: o [Izzi Residence](/izzi-residence-indaiatuba/), no Centro, com plantas de 39,90 a 43,97 m² desde R$ 371.862,27 (tabela GPCI de nov/2026); o [Vettia Residence](/vettia-residence-indaiatuba/), nas Chácaras Alvorada, com 1 e 2 dormitórios desde R$ 379.500,00 (tabela Longitude de nov/2026); e, um pouco acima, o [Spazio Italia](/spazio-italia-indaiatuba/), da Zarin, com 2 dormitórios com suíte a partir de R$ 429.961 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js APTOS) e fichas do Izzi, do Vettia e do Spazio Italia",
+          "origem": "vizinhos"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Como faço a reserva?",
+          "r": "Começa pelo WhatsApp: você escolhe a unidade na tabela do mês, a gente confirma com a Lógica se ela está livre e passa a regra de reserva (sinal e prazo), que não consta no material recebido. O passo a passo geral está em [Comprar na planta em Indaiatuba: passo a passo](/blog/comprar-na-planta-indaiatuba-passo-a-passo/).",
+          "fonte": "post do site /blog/comprar-na-planta-indaiatuba-passo-a-passo/ (22/11/2026); regra de reserva da construtora não informada",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quem atende nesta página: a imobiliária ou o plantão de vendas?",
+          "r": "Quem atende é a Imobiliária Viv'América, de Indaiatuba (CRECI 47394-J). Mandamos a tabela do mês, fazemos a simulação, agendamos a visita e confirmamos com a Lógica a unidade escolhida antes de qualquer proposta.",
+          "fonte": "identidade da Viv'América (CRECI 47394-J, linha de procedência e rodapé da ficha)",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

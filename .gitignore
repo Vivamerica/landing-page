@@ -66,3 +66,8 @@ ferramentas/nova-leva-09-2026/imagens-extraidas/
 # (ficha, nome do empreendimento, pagina, situacao e data), gravada por ferramentas/sem-disponibilidade.js
 # e lida pelos geradores (sem-disponibilidade-regras.js). Nenhum outro .json passa por aqui.
 !/sem-disponibilidade.json
+
+# FAQ do comprador (22/11/2026): excecao nominal. Dados dos blocos "Mais perguntas" das fichas,
+# lidos pelo gera-faq-comprador.js. So' conteudo ja' publicado nas paginas (sem dado de cliente).
+# A pasta e' bloqueada no _redirects (404) para nao ficar aberta por URL.
+!/faq-comprador/*.json

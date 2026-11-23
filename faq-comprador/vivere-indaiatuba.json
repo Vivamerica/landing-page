@@ -1,0 +1,124 @@
+{
+  "slug": "vivere-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": [
+    "documentos",
+    "morando-fora",
+    "itbi",
+    "fgts",
+    "distrato",
+    "afetacao"
+  ],
+  "blocos": [
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "O Vívere tem registro de incorporação?",
+          "r": "Tem: R4/129.353, de 12/11/2021, no Cartório de Registro de Imóveis de Indaiatuba, ou seja, o registro 4 da matrícula 129.353, segundo o texto legal do book. O projeto tem protocolo nº 15344/2018 na Prefeitura de Indaiatuba e certificado GRAPROHAB 299/2021. Antes de assinar, peça a certidão atualizada da matrícula.",
+          "fonte": "book Masotti (pág. 23, texto legal)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual é a empresa do empreendimento?",
+          "r": "A Masotti Vívere Empreendimentos Imobiliários SPE Ltda., CNPJ 37.835.032/0001-17, com sede na Av. Francisco de Paula Leite, 970, Jardim Nely, em Indaiatuba; a construção é da Masotti Investimentos, segundo o book.",
+          "fonte": "book Masotti (págs. 20 e 23)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imóvel e o condomínio",
+      "perguntas": [
+        {
+          "p": "Quantas torres e andares tem o Vívere? Todas têm elevador?",
+          "r": "São 7 torres e 496 apartamentos, 8 por andar. As torres 1 a 6 têm térreo e 7 andares, com 1 elevador cada; a Torre 7 tem térreo e 13 andares, com 2 elevadores, segundo a ficha técnica do book da Masotti.",
+          "fonte": "book Masotti (pág. 20, ficha técnica)",
+          "origem": "base"
+        },
+        {
+          "p": "Quais são as plantas e metragens?",
+          "r": "Todas são de 2 dormitórios, 1 banheiro, sala de estar e jantar, cozinha, lavanderia e 1 vaga: 46,77 m² nas plantas de ponta e 48,36 m² nas de meio. No térreo há gardens de 50,52 m² e 53,63 m².",
+          "fonte": "book Masotti (pág. 20, ficha técnica); espelho Masotti de 22/08/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Os apartamentos à venda pegam sol da manhã ou da tarde?",
+          "r": "Pelo espelho da Masotti de 22/08/2026, os aptos 0001 e 0033 da Torre 7, os da lista desta página, têm sol da tarde. Se outra unidade voltar à venda, a gente confere a posição dela no espelho.",
+          "fonte": "espelho Masotti de 22/08/2026 (posição solar por unidade)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem vaga para visitante?",
+          "r": "Tem 41 vagas de visitantes, e o condomínio soma 515 vagas de automóveis. Cada apartamento tem 1 vaga descoberta e numerada; se a vaga é escriturada não consta no material.",
+          "fonte": "book Masotti (pág. 20, ficha técnica); espelho Masotti de 22/08/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Como é a portaria e a segurança?",
+          "r": "Segurança 24 horas, acesso de serviço separado do de moradores e visitantes, entradas independentes para pedestres e veículos e acesso social de pedestres com pulmão de segurança, segundo o book da Masotti.",
+          "fonte": "book Masotti (págs. 6 e 20)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual é o lazer do Vívere?",
+          "r": "Piscina adulto e infantil, solarium, academia, salão de jogos, salão de festas com copa e lavanderia, 2 churrasqueiras, 2 playgrounds e vestiários feminino, masculino e PNE (pessoa com necessidades especiais) na área das piscinas, além de uma área verde preservada de mais de 8 mil m² no entorno. As áreas comuns foram entregues equipadas, decoradas e com Wi-Fi.",
+          "fonte": "book Masotti (pág. 20, ficha técnica); espelho Masotti de 22/08/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para comprar com o ar-condicionado já instalado?",
+          "r": "O book traz o kit de ar-condicionado instalado como item de personalização, com valor a consultar. Como o prédio já foi entregue, se a opção ainda existe e quanto custa se confirmam com a Masotti.",
+          "fonte": "book Masotti (pág. 20, ficha técnica)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localização e vizinhos",
+      "perguntas": [
+        {
+          "p": "Qual o endereço do Vívere?",
+          "r": "Rua João Manoel Ruz Peres, 490, no Jardim Veneza, em Indaiatuba, ao lado do Jardim Park Real, com acesso pela Av. Manoel Ruz Peres, segundo o book da Masotti. O CEP não consta no material.",
+          "fonte": "book Masotti (págs. 3 e 20)",
+          "origem": "base"
+        },
+        {
+          "p": "O que tem perto e a quantos minutos?",
+          "r": "De carro, segundo o book (Google Maps): Supermercado Cidade Nova a 5 minutos, Parque Ecológico a 7, Supermercado Sumerbol a 8, centro de Indaiatuba a 12 e Polo Shopping a 13.",
+          "fonte": "book Masotti (pág. 3)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para visitar o apartamento antes de comprar?",
+          "r": "Dá: como o prédio está pronto, a visita é no apartamento e no lazer que já funcionam. A gente agenda pelo WhatsApp da Viv'América com a Masotti; quem não pode vir, fazemos a visita por vídeo.",
+          "fonte": "ficha do site (\"você visita o apartamento real\"); regra da casa (visita por vídeo)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro empreendimento na mesma região?",
+          "r": "Na mesma rua, o [Residencial Parque das Águas](/parque-das-aguas-indaiatuba/), da GPCI, com 2 dormitórios desde R$ 309.119,89 (tabela GPCI de set/2026); e, na Av. Manoel Ruz Peres, no Bairro Buru, o [Elev Residence](/elev-residence-indaiatuba/), da Longitude, desde R$ 326.000 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js APTOS) e fichas do Parque das Águas e do Elev",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem outro apartamento de 2 dormitórios numa faixa de preço parecida?",
+          "r": "No site: o [Itamaracá Residencial](/itamaraca-indaiatuba/), da Zarin, desde R$ 345.107 (tabela de nov/2026), e o [Gran Vic Canário](/gran-vic-canario-indaiatuba/), da VIC Engenharia, a partir de R$ 354.459 (valores de 09/10/2026, quando restavam 3 unidades), com entrega prevista para mai/2028.",
+          "fonte": "fonte única do site (gera-folheto.js APTOS) e fichas do Itamaracá e do Gran Vic Canário",
+          "origem": "vizinhos"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Quem atende nesta página: a imobiliária ou o plantão de vendas?",
+          "r": "Quem atende é a Imobiliária Viv'América, de Indaiatuba (CRECI 47394-J). Mandamos a tabela do mês, fazemos a simulação, agendamos a visita e confirmamos com a Masotti a unidade escolhida antes de qualquer proposta.",
+          "fonte": "identidade da Viv'América (CRECI 47394-J, linha de procedência e rodapé da ficha)",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

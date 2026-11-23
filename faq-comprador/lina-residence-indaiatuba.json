@@ -1,0 +1,164 @@
+{
+  "slug": "lina-residence-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto pago até a entrega?",
+          "r": "No apartamento de menor preço (Torre 2, apto 14, R$ 924.108,00 na tabela de out/2026): entrada de R$ 92.410,80, 36 parcelas mensais de R$ 3.850,45, 6 semestrais de R$ 13.861,62 e R$ 36.964,32 na entrega. As parcelas são corrigidas pelo INCC até o habite-se.",
+          "fonte": "tabelas de vendas Lofts, validade out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "A tabela de outubro ainda vale?",
+          "r": "As tabelas de lançamento dizem \"validade: out/26\" e avisam que os valores podem mudar sem aviso. Antes de qualquer proposta, confirmamos com a Lofts a tabela que vale hoje e se o apartamento segue disponível.",
+          "fonte": "tabelas de vendas Lofts Torre 1 e Torre 2, validade out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quais plantas têm mais apartamentos à venda?",
+          "r": "Nas tabelas de out/2026, a Torre 2 tem 19 unidades no final 4, 18 no final 3, 17 no final 1 e 16 no final 2. A Torre 1 tem 16 no final 3, 7 no final 1, 7 no final 2 e 6 no final 4. São 106 no total.",
+          "fonte": "tabelas de vendas Lofts Torre 1 e Torre 2, validade out/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Financiamento",
+      "perguntas": [
+        {
+          "p": "Quanto vou financiar no banco?",
+          "r": "Pela tabela de out/2026, 62% do valor ficam para financiar depois da entrega: R$ 572.946,96 no apartamento 14 da Torre 2. O banco e o momento do repasse não constam da tabela; o financiamento é sujeito a análise de crédito.",
+          "fonte": "tabelas de vendas Lofts, validade out/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quantas torres, andares e elevadores tem o prédio?",
+          "r": "São 2 torres num terreno de 4.845,60 m², cada uma com 22 andares tipo de 4 apartamentos e um 23º andar com 2 apartamentos terraço: 90 unidades por torre, 180 no total. O memorial prevê 5 elevadores: social e de serviço em cada torre e mais um na Torre 1, que segundo o book atende o lazer do mezanino.",
+          "fonte": "book Lina (p. 3 e 21); memorial de construção (p. 9)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O apartamento vem com piso?",
+          "r": "Em parte. Varanda, lavabo, cozinha, área de serviço e banheiros vêm com porcelanato. Sala, suítes, dormitórios e circulação são entregues em contrapiso, preparado para piso cerâmico ou de madeira, que fica por conta do comprador.",
+          "fonte": "memorial de construção Lina (p. 9-12 e 21)",
+          "origem": "base"
+        },
+        {
+          "p": "Quais são as bancadas, louças e metais?",
+          "r": "Cozinha e varanda gourmet com tampo de granito e cuba inox; lavabo e banheiros com tampo de mármore branco rajado nacional e cuba de louça. Louças Deca, Incepa ou Celite e metais Deca, Docol ou Fabrimar, ou similares. Duchas e chuveiros não estão inclusos.",
+          "fonte": "memorial de construção Lina (p. 7 e 9-12)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem infraestrutura para ar-condicionado?",
+          "r": "Sim: tubulação de cobre, ponto elétrico e dreno nos dormitórios e em 1 ponto da sala (2 pontos nos apartamentos terraço). As condensadoras ficam na laje técnica, acessada pela janela da área de serviço. Os aparelhos não estão inclusos.",
+          "fonte": "memorial de construção Lina (p. 8-9)",
+          "origem": "base"
+        },
+        {
+          "p": "Como é o aquecimento da água?",
+          "r": "O apartamento tem infraestrutura para aquecedor de passagem a gás, que não é fornecido, e um ponto 220 V para chuveiro elétrico em um banheiro de suíte.",
+          "fonte": "memorial de construção Lina (p. 7)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual a altura do pé-direito?",
+          "r": "2,70 m na sala, nas suítes, nos dormitórios e na varanda; 2,50 m na cozinha, nos banheiros, na área de serviço, na circulação e no hall. O dado é da prancha da Torre 1; para a Torre 2, confirmamos com a Lofts.",
+          "fonte": "prancha de layout da Torre 1 (rev. 09, 03/02/2026)",
+          "origem": "base"
+        },
+        {
+          "p": "Que tecnologia vem no apartamento?",
+          "r": "Persiana integrada automatizada nas janelas das suítes, interfone, tubulação seca para telefonia, dados e TV, ponto de TV aberta na sala e ponto de água para a geladeira. Os portões abrem por controle remoto, biometria ou tag.",
+          "fonte": "memorial de construção Lina (p. 7-8 e 11); book (p. 16)",
+          "origem": "base"
+        },
+        {
+          "p": "O valor inclui depósito?",
+          "r": "Sim. Cada unidade tem 1 hobby box, e as tabelas trazem a área do apartamento somada à do depósito: no apartamento 14 da Torre 2, 87,18 m².",
+          "fonte": "book Lina (p. 21); tabelas de vendas Lofts, validade out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem vaga para visitante?",
+          "r": "Sim. O memorial prevê 15 vagas de visitantes (5 cobertas no térreo e 10 descobertas), uma delas para pessoa com deficiência e uma para idosos. As vagas dos moradores são cobertas e demarcadas: 2 por apartamento tipo.",
+          "fonte": "memorial de construção Lina (p. 2)",
+          "origem": "base"
+        },
+        {
+          "p": "O lazer é entregue mobiliado?",
+          "r": "Sim, segundo o book: as áreas comuns são entregues decoradas, mobiliadas e equipadas, conforme a lista do memorial. A exceção são a lavanderia e o mercadinho, que recebem só a infraestrutura e terão gestão terceirizada com cobrança por uso.",
+          "fonte": "book Lina (p. 5-12); memorial de construção (p. 4 e 18-21)",
+          "origem": "base"
+        },
+        {
+          "p": "A piscina é aquecida?",
+          "r": "O memorial prevê climatização da água, não aquecimento. A piscina fica no mezanino, com raia de 25 m, prainha e deck molhado.",
+          "fonte": "memorial de construção Lina (p. 6)",
+          "origem": "base"
+        },
+        {
+          "p": "O que tem no rooftop?",
+          "r": "O rooftop fica a 83,10 m de altura, segundo o book. Na Torre 1 está a academia, de 148 m²; na Torre 2, o skylounge com churrasqueira e os fireplaces com churrasqueira.",
+          "fonte": "book Lina (p. 14 e 21); ficha técnica do site",
+          "origem": "base"
+        },
+        {
+          "p": "O que tem para crianças, pets e quem trabalha em casa?",
+          "r": "No mezanino há playground, brinquedoteca, sala gamer e jogos kids, pet place e coworking (na Torre 2).",
+          "fonte": "book Lina; memorial de construção (lista de lazer)",
+          "origem": "base"
+        },
+        {
+          "p": "Como é a portaria e a segurança?",
+          "r": "O book descreve portaria com CFTV, ar-condicionado e vidros blindados, portão automatizado e portões de pedestres com eclusa. O memorial prevê guarita com infraestrutura para câmeras.",
+          "fonte": "book Lina (p. 21); memorial de construção (p. 2 e 8)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem lugar para receber encomendas?",
+          "r": "Sim, o térreo tem um espaço delivery para encomendas.",
+          "fonte": "implantação do book Lina (lista de lazer da ficha)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem hospital e parque perto?",
+          "r": "O mapa do book marca o Hospital Santa Ignes, o Parque Ecológico Prefeito Dr. Clain Ferrari, a Praça Roque Torce Filho (Bosque das Cerejeiras) e a Praça dos Maçons, sem informar as distâncias.",
+          "fonte": "ficha do site (seção Localização: mapa do book Lina, p. 4)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro apartamento na mesma faixa de preço?",
+          "r": "No site: o <a href=\"/storia-congesa-indaiatuba/\">Storia Congesa</a>, a partir de R$ 921.000 (70,05 m², tabela de out/2026); o <a href=\"/arete-home-indaiatuba/\">Areté Home</a>, a partir de R$ 991.005 (93,39 m², tabela de ago/2026); e o <a href=\"/espaco-conceicao-indaiatuba/\">Espaço Conceição</a>, na Cidade Nova II, a partir de R$ 1.030.310 (85,13 m², tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A Lofts tem algum apartamento pronto para morar?",
+          "r": "Sim: o <a href=\"/reserva-luiza-tomaselli-indaiatuba/\">Reserva Luiza Tomaselli</a>, na Vila Castelo Branco, com 3 suítes e 154,99 m² com depósito, a partir de R$ 1.809.776 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

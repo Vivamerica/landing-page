@@ -1,0 +1,147 @@
+{
+  "slug": "manai-bosque-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "De quanto ficam a entrada e as parcelas do apartamento mais barato?",
+          "r": "No apto 23 (R$ 520.855,25 na tabela de 03/10/2026, já com o desconto de 10%): entrada de R$ 52.085,65, 45 mensais de R$ 1.504,69, 3 anuais de R$ 12.153,29 e uma intermediária de R$ 364.598,68 em dez/2029. As datas de vencimento são as dessa versão da tabela.",
+          "fonte": "tabela Masotti Torre I – Lançamento 10.2026, de 03/10/2026 (fonte única do site)",
+          "origem": "base"
+        },
+        {
+          "p": "O desconto de 10% ainda vale?",
+          "r": "A tabela de 03/10/2026 já traz os 10% de desconto da promoção de lançamento, sem data final escrita. Antes de qualquer proposta, confirmamos com a Masotti se o desconto e os preços continuam valendo.",
+          "fonte": "tabela Masotti de 03/10/2026 (\"Desc 10%\"); ficha do site",
+          "origem": "base"
+        },
+        {
+          "p": "O que é a parcela de 70% em dezembro de 2029?",
+          "r": "É a parcela intermediária da tabela de 03/10/2026: 70% do valor, com vencimento em 25/12/2029. A tabela não diz se essa parcela pode ser paga com financiamento bancário; confirmamos com a Masotti antes da proposta.",
+          "fonte": "tabela Masotti de 03/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Por que a tabela mostra uma metragem maior que a das plantas?",
+          "r": "As plantas de divulgação trazem de 65,20 a 91,49 m²; a tabela de 03/10/2026 traz a área total de cada unidade, de 78,625 a 108,169 m². O material não explica a diferença: confirmamos com a Masotti qual área vai no contrato.",
+          "fonte": "tabela Masotti de 03/10/2026; plantas oficiais Meio 65 m² e Canto 80 m²",
+          "origem": "base"
+        },
+        {
+          "p": "Ainda tem apartamento nos andares mais altos?",
+          "r": "Sim. A tabela de 03/10/2026 traz unidades até o 19º andar, como os apartamentos 193 e 194 da Torre I, todos com situação \"Disponível\" naquela data. A disponibilidade se confirma no atendimento.",
+          "fonte": "tabela Masotti de 03/10/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem é a incorporadora?",
+          "r": "A Masotti Investimentos. No site também estão o Uni Residencial, o Vívere Residencial (pronto para morar) e o Aurora, todos da Masotti.",
+          "fonte": "tabela Masotti de 03/10/2026; fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O apartamento vem com piso?",
+          "r": "As plantas oficiais trazem piso cerâmico nos banheiros, com revestimento dentro do box até o teto. Cozinha, lavanderia (em trecho demarcado) e varanda gourmet vêm com contrapiso impermeabilizado. O piso da sala e dos dormitórios não é informado; confirme no memorial descritivo.",
+          "fonte": "plantas oficiais Meio 65 m² e Canto 80 m²",
+          "origem": "base"
+        },
+        {
+          "p": "Como é o aquecimento da água?",
+          "r": "As plantas preveem preparação para aquecedor a gás, aquecimento a gás na torneira da cozinha e ponto para chuveiro a gás.",
+          "fonte": "plantas oficiais Meio 65 m² e Canto 80 m²",
+          "origem": "base"
+        },
+        {
+          "p": "A varanda tem churrasqueira?",
+          "r": "A varanda gourmet vem com ponto de gás para churrasqueira, ralo e guarda-corpo em alumínio. As plantas não dizem que a churrasqueira vem instalada.",
+          "fonte": "plantas oficiais Meio 65 m² e Canto 80 m²",
+          "origem": "base"
+        },
+        {
+          "p": "Que pontos e infraestrutura vêm no apartamento?",
+          "r": "Pelas plantas: ponto para máquina de lavar louça, ponto de água para filtro, ponto de TV também no quarto e laje técnica para a condensadora do ar-condicionado multisplit. Os aparelhos não constam das plantas.",
+          "fonte": "plantas oficiais Meio 65 m² e Canto 80 m²",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para fechar a lavanderia?",
+          "r": "Sim. A lavanderia é entregue com tanque e contrapiso impermeabilizado e com a possibilidade de fechamento; a planta também mostra a opção de nicho embutido no banheiro.",
+          "fonte": "plantas oficiais Meio 65 m² e Canto 80 m²",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o tamanho das vagas? São livres ou presas?",
+          "r": "Na tabela de 03/10/2026, cada vaga é marcada como G ou M, conforme a unidade. Se são livres ou presas, e se são escrituradas, não consta da tabela; confirmamos com a Masotti.",
+          "fonte": "tabela Masotti de 03/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o tamanho do terreno e da mata preservada?",
+          "r": "O terreno tem 37.382,28 m², dos quais 10.312,07 m² são área de preservação permanente, de mata, e 13.891,17 m² são área permeável. A área total construída é de 41.570,08 m².",
+          "fonte": "ficha técnica do site",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem portaria 24 horas?",
+          "r": "Sim. A lista de lazer traz portaria 24h com espaço delivery para encomendas. Câmeras e controle de acesso não são detalhados no material.",
+          "fonte": "ficha do site (lista das 36 áreas de lazer)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O lazer é entregue equipado?",
+          "r": "Sim. Segundo a ficha, as áreas comuns são entregues equipadas e decoradas, do complexo aquático com raia de 25 m às casas de campo com piscina privativa.",
+          "fonte": "ficha do site (seção 36 áreas de lazer)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Dá para visitar o decorado?",
+          "r": "Sim. O decorado fica na Rua Três Marias, 254, no Cidade Nova II; pelo botão \"Agendar visita\" desta página combinamos o dia e o horário com você.",
+          "fonte": "ficha do site (endereço do decorado; botão Agendar visita)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Como é o acesso ao aeroporto e às rodovias?",
+          "r": "A ficha cita, a partir do Cidade Nova II, acesso à Rodovia Santos Dumont, ao Aeroporto de Viracopos e às rodovias Anhanguera e Bandeirantes. O material não informa distâncias nem tempo de viagem.",
+          "fonte": "ficha do site (seção Onde fica)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro 3 dormitórios na mesma faixa de preço?",
+          "r": "No site, o <a href=\"/artemis-residencial-indaiatuba/\">Artemis Residencial</a>, no Park Meraki, tem 3 dormitórios com suíte de 63,85 e 64,44 m², a partir de R$ 555.171 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Que outros lançamentos há no Cidade Nova?",
+          "r": "No site: o <a href=\"/espaco-conceicao-indaiatuba/\">Espaço Conceição</a>, também da Masotti, no Cidade Nova II, a partir de R$ 1.030.310 (85,13 m², tabela de out/2026); e o <a href=\"/lina-residence-indaiatuba/\">Lina Residence</a>, no Cidade Nova I, a partir de R$ 924.108 (85,76 m², tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem outro apartamento por volta de R$ 500 mil?",
+          "r": "No site: o <a href=\"/lumina-residencial-indaiatuba/\">Lumina Residencial</a>, no Centro, a partir de R$ 519.900 (1 suíte com 39,44 m², tabela de out/2026); e o <a href=\"/spazio-italia-indaiatuba/\">Spazio Italia</a>, a partir de R$ 429.961 (59,5 m² com suíte, tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

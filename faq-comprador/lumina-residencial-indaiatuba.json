@@ -1,0 +1,135 @@
+{
+  "slug": "lumina-residencial-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto pago antes das chaves?",
+          "r": "Pela tabela fluxo de out/2026, em valores nominais: na unidade 84 (1 suíte), R$ 187.000,00 até as chaves (sinal, 24 mensais e 4 intermediárias) e R$ 332.900,00 nas chaves. Nas de 3 suítes, R$ 407.000,00 até as chaves e de R$ 912.900,00 a R$ 1.050.900,00 nas chaves. Tudo corrigido todo mês pelo INCC-DI.",
+          "fonte": "tabela fluxo Emmar de out/2026 (soma das parcelas impressas)",
+          "origem": "base"
+        },
+        {
+          "p": "O preço muda conforme o andar?",
+          "r": "Sim, na tabela de out/2026 o mesmo apartamento custa mais nos andares de cima. O de 107,02 m² sai por R$ 1.319.900,00 no 9º andar, R$ 1.344.900,00 no 12º e R$ 1.373.900,00 no 14º; o de 111,65 m², por R$ 1.429.900,00 no 14º e R$ 1.457.900,00 no 16º.",
+          "fonte": "tabela fluxo Emmar de out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto sai o metro quadrado?",
+          "r": "Dividindo o valor da tabela de out/2026 pela área privativa: cerca de R$ 13.182 por m² na unidade 84 (39,44 m²), R$ 12.333 por m² na unidade 96 (107,02 m²) e R$ 13.058 por m² na unidade 162 (111,65 m²).",
+          "fonte": "conta sobre a tabela fluxo Emmar de out/2026 (valor ÷ área privativa)",
+          "origem": "ficha"
+        },
+        {
+          "p": "A tabela de outubro ainda vale?",
+          "r": "A tabela fluxo é de out/2026 e pode ser alterada sem aviso; a própria Emmar pede que a disponibilidade da unidade seja confirmada antes do fechamento. Confirmamos as duas coisas com a Emmar antes de qualquer proposta.",
+          "fonte": "tabela fluxo Emmar de out/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quantos andares, elevadores e apartamentos por andar tem o prédio?",
+          "r": "É um prédio de 19 andares sobre 3 pisos de garagem (22 pavimentos ao todo), com 2 elevadores e 94 apartamentos do 1º ao 17º andar: 6 por andar do 1º ao 10º, 5 do 11º ao 16º e 4 no 17º. O 18º e o 19º são de lazer.",
+          "fonte": "catálogo Emmar (p. 2, 20-35)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O apartamento vem com piso?",
+          "r": "Sim. Pelas legendas das plantas, porcelanato retificado no hall de entrada, no living, na sala de jantar, na cozinha, no lavabo e nos banheiros, e piso laminado nos dormitórios.",
+          "fonte": "catálogo Emmar (legendas das plantas, p. 20-35)",
+          "origem": "base"
+        },
+        {
+          "p": "Vem com bancadas, louças e metais?",
+          "r": "Sim. A cozinha tem bancada de granito e cuba de inox; o lavabo, bancada de granito e cuba de louça; os banheiros vêm com louças, metais e ralo linear no box.",
+          "fonte": "catálogo Emmar (p. 20 e 35)",
+          "origem": "base"
+        },
+        {
+          "p": "A varanda tem churrasqueira?",
+          "r": "A varanda é entregue com bancada de granito, cuba de inox e ponto de gás para churrasqueira. O material não diz que a churrasqueira vem instalada.",
+          "fonte": "catálogo Emmar (p. 35)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem previsão para ar-condicionado?",
+          "r": "Sim: todas as plantas têm área técnica com piso de porcelanato e dreno para instalar o ar-condicionado. Os aparelhos não constam do material.",
+          "fonte": "catálogo Emmar (p. 35)",
+          "origem": "base"
+        },
+        {
+          "p": "Todas as plantas têm área de serviço?",
+          "r": "Pelas legendas do catálogo, só o tipo 71 m² (área de serviço com tanque) e o tipo 111 m² (lavanderia) mostram esse espaço; nos tipos 39 m² e 107 m² ele não aparece. Confirmamos no memorial descritivo, que fica no stand de vendas.",
+          "fonte": "catálogo Emmar (legendas das plantas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem vaga para visitante? As vagas são demarcadas?",
+          "r": "O catálogo prevê 13 vagas de visitantes e PNE (pessoas com necessidades especiais) e vagas demarcadas para os moradores: 1 no tipo 39 m² e 2 nos demais. Na tabela de out/2026, cada unidade de 3 suítes tem duas vagas de mesmo número, A e B.",
+          "fonte": "catálogo Emmar (p. 17 e 35); tabela fluxo de out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem espaço para trabalhar em casa?",
+          "r": "Sim, o Virtual Home Office do 18º andar, com salas individuais, sala de reunião e estúdio com fundo infinito.",
+          "fonte": "catálogo Emmar (p. 5-16)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para juntar os salões para uma festa maior?",
+          "r": "Sim. Segundo o catálogo, o Festa Gourmet e o Petit Gourmet, no 18º andar, podem ser integrados em um ambiente maior.",
+          "fonte": "catálogo Emmar",
+          "origem": "base"
+        },
+        {
+          "p": "Onde vejo o memorial descritivo?",
+          "r": "Segundo o catálogo, o memorial descritivo fica no stand de vendas, na Rua 11 de Junho, 475. Ele prevalece sobre as imagens: peça uma cópia antes de assinar.",
+          "fonte": "ficha do site (seção Memorial descritivo, segundo o catálogo Emmar); tabela fluxo de out/2026 (endereço do stand)",
+          "origem": "ficha"
+        },
+        {
+          "p": "As imagens da página são fotos reais?",
+          "r": "Não. São perspectivas ilustradas do catálogo, sem caráter contratual. Nos apartamentos, móveis, objetos e decoração não são entregues; as áreas comuns seguem o memorial descritivo. A foto aérea do Centro é real.",
+          "fonte": "ficha do site (seções Perspectivas e Localização)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "O que tem por perto?",
+          "r": "O mapa do catálogo marca no entorno os supermercados Covabra e Pistoni, o Shopping Jaraguá, os Correios, as praças Rui Barbosa, Dom Pedro II e Prudente de Moraes, agências do Itaú e do Santander, a Farmácia Drogal, o Magazine Luiza, uma escola municipal, a Academia Fitwork e a escola Alfabeto Educação Infantil, sem informar distâncias.",
+          "fonte": "catálogo Emmar (p. 4 e 36)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outro lançamento no Centro?",
+          "r": "Sim: o <a href=\"/izzi-residence-indaiatuba/\">Izzi Residence</a>, da GPCI, também no Centro, com apartamentos de 39,90 a 66,47 m² e mall no térreo, a partir de R$ 371.862 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem outro apartamento na mesma faixa de preço?",
+          "r": "No site: o <a href=\"/manai-bosque-indaiatuba/\">Manai Bosque</a>, a partir de R$ 520.855 (tabela de out/2026); o <a href=\"/360-home-office-mall-indaiatuba/\">360 Home Office Mall</a>, no Park Meraki, a partir de R$ 546.274 (39,73 m², tabela de set/2026 confirmada para out/2026); e o <a href=\"/artemis-residencial-indaiatuba/\">Artemis Residencial</a>, também no Park Meraki, a partir de R$ 555.171 (63,85 m², tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

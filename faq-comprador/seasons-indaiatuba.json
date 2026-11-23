@@ -1,0 +1,165 @@
+{
+  "slug": "seasons-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quantas unidades de cada tipo estão na tabela?",
+          "r": "Na tabela Congesa de out/2026 são 48: 12 Balcony de 3 dormitórios, 8 de 3 dormitórios, 14 Maisons de 3 dormitórios, 2 Balcony de 3 suítes, 10 Penthouses e 2 Maisons de 3 suítes. Por torre: 2 na Torre 1, 5 na 3, 3 na 4, 14 na 5, 8 na 6, 1 na 7 e 15 na 8.",
+          "fonte": "tabela Seasons de outubro/2026 (11 págs.)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "A incorporação está registrada?",
+          "r": "Sim. O book informa o registro R.03 nas matrículas 151.918, 151.919 e 151.920 do Cartório de Registro de Imóveis de Indaiatuba, com os projetos aprovados na Prefeitura nos processos 14564/2024, 14565/2024 e 14566/2024. Peça a certidão de matrícula atualizada antes de assinar.",
+          "fonte": "Book Seasons, pág. 69 (texto legal)",
+          "origem": "base"
+        },
+        {
+          "p": "Quando foi o lançamento?",
+          "r": "Em novembro/2025, segundo as observações da tabela de out/2026. A fase atual da obra não consta no material.",
+          "fonte": "tabela Seasons de outubro/2026 (observações)",
+          "origem": "base"
+        },
+        {
+          "p": "O lazer é entregue equipado?",
+          "r": "Sim. O book diz que as áreas comuns são entregues equipadas e decoradas, conforme o memorial descritivo de venda. Se o lazer sai junto com as primeiras torres ou só no fim não é informado.",
+          "fonte": "Book Seasons, págs. 66 e 69",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Qual a metragem de cada planta?",
+          "r": "Pelo book: 3 dormitórios Tipo 1 com 90,28 m² e Tipo 2 com 90,97 m²; 3 suítes com 135,55 m²; Maisons de 169,50 a 373,48 m²; Penthouses de 3 suítes com 145,89 e 184,22 m² e de 4 suítes com 257,92 m². O book não diz se é área privativa, e a tabela não traz a metragem de cada unidade.",
+          "fonte": "Book Seasons, págs. 43 a 61",
+          "origem": "base"
+        },
+        {
+          "p": "Quantas torres e quantos andares?",
+          "r": "São 8 torres de 6 a 7 pavimentos, com garagem no subsolo, num terreno de 34.677,31 m². A Torre 2 aparece no croqui da tabela de out/2026, mas sem unidades à venda.",
+          "fonte": "Book Seasons, págs. 65 e 68; tabela Seasons de outubro/2026",
+          "origem": "base"
+        },
+        {
+          "p": "As vagas são cobertas?",
+          "r": "Sim. As vagas são numeradas, determinadas, cobertas e no subsolo. Há também vagas de visitantes perto da entrada e nos subsolos. Se são livres ou presas não é informado.",
+          "fonte": "Book Seasons, pág. 65",
+          "origem": "base"
+        },
+        {
+          "p": "Tem ponto de recarga para carro elétrico?",
+          "r": "Sim, de uso comum, perto da entrada do empreendimento. A forma de cobrança não é informada.",
+          "fonte": "Book Seasons, pág. 65",
+          "origem": "base"
+        },
+        {
+          "p": "Tem bicicletário e lava-carro?",
+          "r": "Sim: 3 bicicletários pelo empreendimento, com acesso pelos subsolos, junto ao Car & Bike Wash.",
+          "fonte": "Book Seasons, págs. 12 e 66",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para personalizar a planta?",
+          "r": "Sim. As plantas de 3 dormitórios e 3 suítes têm versão com varanda ou com varanda integrada à sala, e o programa Congesa 2U permite personalizar durante a obra plantas, pisos, revestimentos, bancadas, metais, automação de persianas e fechamento de varanda. Custo e prazo não são informados.",
+          "fonte": "Book Seasons, págs. 43 a 53, 67 e 69",
+          "origem": "base"
+        },
+        {
+          "p": "A varanda tem churrasqueira?",
+          "r": "O book fala em varanda gourmet que pode ser integrada à sala e em possibilidade de instalar churrasqueira a gás. Não diz que a churrasqueira é entregue.",
+          "fonte": "Book Seasons, págs. 64 e 67",
+          "origem": "base"
+        },
+        {
+          "p": "Vem com infraestrutura de ar-condicionado?",
+          "r": "Sim, infraestrutura completa nos dormitórios e na sala, com laje técnica para as condensadoras. O book não cita os aparelhos.",
+          "fonte": "Book Seasons, págs. 52 a 54 e 64",
+          "origem": "base"
+        },
+        {
+          "p": "A água é aquecida a gás e a medição é individual?",
+          "r": "Sim. O aquecimento de água é a gás, com misturador na cozinha e nos banheiros, e água, gás e energia têm medição individual. Se o aquecedor vem instalado não é informado.",
+          "fonte": "Book Seasons, pág. 64",
+          "origem": "base"
+        },
+        {
+          "p": "Tem fechadura eletrônica e automação?",
+          "r": "O book lista fechadura eletrônica na porta principal, persianas blackout com possibilidade de automação, infraestrutura de internet nas áreas comuns e infraestrutura para geradores.",
+          "fonte": "Book Seasons, págs. 64 e 65",
+          "origem": "base"
+        },
+        {
+          "p": "Tem energia solar ou outro item de economia?",
+          "r": "Sim: placas fotovoltaicas para as áreas comuns, bacia com duplo acionamento, paisagismo com espécies nativas, projeto acústico pela norma de desempenho e 10.972,95 m² de área permeável.",
+          "fonte": "Book Seasons, págs. 40, 64, 65 e 68",
+          "origem": "base"
+        },
+        {
+          "p": "Quais piscinas tem?",
+          "r": "Piscina adulto com deck molhado, spa e solarium, piscina infantil e piscina coberta climatizada com raia de 25 m, além de sauna seca. As Casas de Campo também têm piscina.",
+          "fonte": "Book Seasons, págs. 12 e 66",
+          "origem": "base"
+        },
+        {
+          "p": "Que espaços tem para festa e churrasco?",
+          "r": "Salão de festas, wine lounge, lounge sport bar, praça com lareira, churrasqueira gourmet com cinema ao ar livre e duas Casas de Campo: a Sítio, com 2 churrasqueiras, fogão a lenha, forno de pizza e chopeira, e a Gourmet, com churrasqueira, forno de pizza e lareira.",
+          "fonte": "Book Seasons, págs. 12 e 66",
+          "origem": "base"
+        },
+        {
+          "p": "Tem coworking e mini mercado?",
+          "r": "Sim. O book lista coworking, mini mercado e espaço de delivery e concierge.",
+          "fonte": "Book Seasons, págs. 12 e 66",
+          "origem": "base"
+        },
+        {
+          "p": "Tem espaço para pet e para crianças?",
+          "r": "Sim: área pet separada por porte, com vaga para van de banho e tosa, playground, brinquedoteca e piscina infantil.",
+          "fonte": "Book Seasons, págs. 12 e 66",
+          "origem": "base"
+        },
+        {
+          "p": "Como é a segurança na entrada?",
+          "r": "O book descreve acessos exclusivos para moradores, entradas separadas para prestadores de serviço e visitantes, vagas de espera na entrada e guarita. Portaria 24 horas e câmeras não são informadas.",
+          "fonte": "Book Seasons, pág. 65; perspectiva da guarita",
+          "origem": "base"
+        },
+        {
+          "p": "Quem assina a arquitetura e o paisagismo?",
+          "r": "Segundo o book: arquitetura de Celso Primi, paisagismo de Marcelo Vassalo e decoração e interiores de Anderson Leite. A incorporação e a construção são da Congesa Engenharia e Construções.",
+          "fonte": "Book Seasons, págs. 63 e 68",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "A Congesa tem outro empreendimento perto?",
+          "r": "Sim: o <a href=\"/storia-congesa-indaiatuba/\">Storia Congesa</a>, que o mapa do book do Seasons marca como vizinho, com apartamentos a partir de R$ 921.000 (tabela de out/2026) e entrega prevista para dez/2026.",
+          "fonte": "Book Seasons, pág. 8 (mapa); fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "O que mais tem nessa faixa de preço?",
+          "r": "O <a href=\"/helade-indaiatuba/\">Hélade — Park Meraki</a>, com 3 suítes e 120,18 m², a partir de R$ 1.391.504 (tabela de set/2026), o <a href=\"/espaco-conceicao-indaiatuba/\">Espaço Conceição</a>, a partir de R$ 1.030.310 (tabela de out/2026), e, pronto para morar, o <a href=\"/reserva-luiza-tomaselli-indaiatuba/\">Reserva Luiza Tomaselli</a>, a partir de R$ 1.809.776 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

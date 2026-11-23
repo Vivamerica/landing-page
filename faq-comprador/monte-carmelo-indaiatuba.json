@@ -1,0 +1,141 @@
+{
+  "slug": "monte-carmelo-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto sai o metro quadrado?",
+          "r": "No relatório Dominium de 17/11/2026: lote residencial a R$ 966,67 por m² à vista e R$ 1.066,67 a prazo; lote misto a R$ 1.200 por m² à vista e R$ 1.300 a prazo.",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026 (fonte única do site)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto economizo pagando à vista?",
+          "r": "No lote residencial de 150 m², R$ 145.000 à vista contra R$ 160.000 a prazo: R$ 15.000 a menos, cerca de 9,4%. No misto de 150 m², R$ 180.000 contra R$ 195.000, cerca de 7,7% a menos.",
+          "fonte": "relatório Dominium de 17/11/2026; tabelas de preço Dominium (residencial e misto)",
+          "origem": "base"
+        },
+        {
+          "p": "De quanto fica a parcela em 60, 72 ou 84 meses?",
+          "r": "No lote residencial de 150 m² (R$ 160.000 a prazo, entrada de R$ 16.000), a tabela da Dominium dá 60 parcelas de R$ 3.203,20, 72 de R$ 2.815,23 ou 84 de R$ 2.541,99, antes da correção pelo IPCA.",
+          "fonte": "tabela de preços e planilha de cálculo Dominium (vigência 01/09/2025, preços repetidos no relatório de 17/11/2026)",
+          "origem": "base"
+        },
+        {
+          "p": "E a parcela do lote misto?",
+          "r": "No misto de 150 m² (R$ 195.000 a prazo, entrada de R$ 19.500), com juros de 1,2% ao mês pela Tabela Price: 12 parcelas de R$ 15.790,69, 24 de R$ 8.459,46, 36 de R$ 6.032,33 ou 48 de R$ 4.831,09, antes da correção pelo IPCA. O misto vai até 48 meses.",
+          "fonte": "tabela de preço Monte Carmelo Comercial (vigência 08/09/2025) e planilha de cálculo Dominium",
+          "origem": "base"
+        },
+        {
+          "p": "Todo lote pode ser pago em 96 vezes?",
+          "r": "Não. O relatório de 17/11/2026 limita o prazo lote a lote: dos residenciais, 277 vão até 96 parcelas e 83 até 24; dos mistos, 192 vão até 48 e 17 até 24. Ao escolher o lote, conferimos o prazo dele.",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto pago no total em 96 vezes?",
+          "r": "No lote residencial de 150 m², a entrada de R$ 16.000 mais 96 parcelas de R$ 2.340,41 somam R$ 240.679,36, antes da correção pelo IPCA. Por causa dos juros de 1% ao mês, o total passa do valor a prazo de R$ 160.000.",
+          "fonte": "conta sobre a tabela de preços Dominium (entrada + parcelas impressas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto custa o maior lote misto?",
+          "r": "O F-074, de 286,86 m², sai por R$ 344.232 à vista ou R$ 372.918 a prazo no relatório de 17/11/2026. Os mistos maiores que 150 m² vão de 172,72 a 286,86 m².",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Os preços mudaram recentemente?",
+          "r": "Não. Os preços do relatório de 17/11/2026 são os mesmos das tabelas de preço de setembro/2025, que a Dominium reenviou iguais em novembro/2026. Entre 09/10 e 17/11/2026 só mudou a lista de lotes disponíveis.",
+          "fonte": "relatório Dominium de 17/11/2026; tabelas de 2025; histórico \"O que mudou nesta página\" da ficha",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando o loteamento fica pronto?",
+          "r": "A previsão de entrega é agosto de 2028, conforme o prazo de contrato informado pela Dominium em 30/09/2026.",
+          "fonte": "Dominium, mensagem de 30/09/2026; ficha técnica do site (previsão 08/2028)",
+          "origem": "base"
+        },
+        {
+          "p": "O loteamento está aprovado e registrado?",
+          "r": "As tabelas da Dominium informam a aprovação pela Prefeitura de Indaiatuba pelo Decreto nº 15.457, de 12/06/2025, e o loteamento registrado na matrícula 141606. O cartório e o número do registro não constam do material recebido: peça a certidão de matrícula atualizada antes de assinar.",
+          "fonte": "tabelas de preço Monte Carmelo residencial (vigência 01/09/2025) e comercial (vigência 08/09/2025)",
+          "origem": "base"
+        },
+        {
+          "p": "Com qual empresa é feito o contrato?",
+          "r": "O relatório de lotes é emitido pela Monte Carmelo de Indaiatuba Emp. Imob. SPE Ltda., empresa criada só para o empreendimento; a realização é da Dominium Empreendimentos. O CNPJ não consta do material recebido: conferimos no contrato antes de você assinar.",
+          "fonte": "relatório Lotes Disponíveis de 17/11/2026; artes da Dominium (set/2025); fonte única do site",
+          "origem": "base"
+        },
+        {
+          "p": "As obras já começaram?",
+          "r": "As artes de divulgação da Dominium de setembro/2025 já diziam \"obras já iniciadas\" e \"obras em andamento\". O percentual atual da obra não consta do material recebido.",
+          "fonte": "artes de divulgação Dominium (set/2025)",
+          "origem": "base"
+        },
+        {
+          "p": "Que infraestrutura o loteamento vai ter?",
+          "r": "A arte \"Infraestrutura completa\" da Dominium mostra rede de água, rede de esgoto e drenagem pluvial. Asfalto e calçadas não aparecem por escrito no material; confirmamos com a loteadora.",
+          "fonte": "artes de divulgação Dominium (set/2025)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Posso abrir um comércio no lote?",
+          "r": "Nos lotes mistos, sim: a Dominium os vende como residenciais e comerciais. As atividades permitidas não constam do material; confirmamos com a loteadora antes de você comprar para esse fim.",
+          "fonte": "artes da Dominium; relatório Lotes Disponíveis de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem lote residencial maior que 150 m²?",
+          "r": "Não no relatório de 17/11/2026: os 361 lotes residenciais disponíveis têm 150 m². Os maiores são mistos: 43 lotes de 172,72 a 286,86 m², além de 166 mistos de 150 m².",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Vou pagar taxa de condomínio?",
+          "r": "Não há condomínio: o Monte Carmelo é um loteamento aberto, com ruas públicas, então não existe taxa de condomínio. O material da Dominium não fala em associação de moradores.",
+          "fonte": "artes de divulgação Dominium (\"loteamento aberto\"); ficha do site",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "O que tem perto?",
+          "r": "A arte da Dominium marca ao redor o Smart City, o Parque Campo Bonito, o Jardim das Araras, a Padaria Gianini e as avenidas Heloísa Camargo Braga, Clóvis Ferraz de Camargo e Alpheu Antonio Puccinelli, e diz que fica perto de escolas, padarias, igrejas, indústrias e rodovia. As distâncias não são informadas.",
+          "fonte": "artes de divulgação Dominium (set/2025)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outro lote de 150 m² com preço parecido?",
+          "r": "No site: o <a href=\"/di-italia-indaiatuba/\">Jardim Di Italia</a>, também da Dominium, com infraestrutura concluída, a partir de R$ 210.000 (tabela de nov/2026); o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a>, a partir de R$ 211.050 (tabela de nov/2026); e o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a>, a partir de R$ 247.500 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A Dominium tem lotes maiores em outro empreendimento?",
+          "r": "Sim, no site: o <a href=\"/alpnach-indaiatuba/\">Alpnach Residence</a>, a partir de R$ 510.000 (lote de 300 m², relatório de nov/2026), e o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 (420 m², tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+ "slug": "gran-vic-canario-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "distrato",
+  "afetacao",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Obra, entrega e registro",
+   "perguntas": [
+    {
+     "p": "Quantos andares e apartamentos por andar tem o Gran Vic Canário?",
+     "r": "São 296 apartamentos em 5 torres de 14 e 15 andares, com 4 apartamentos por andar, num terreno de 13.592,89 m².",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "O Gran Vic Canário tem outro nome nos documentos?",
+     "r": "Tem. No memorial descritivo e na tabela da VIC, o Canário se chama Gran Vic Ametista (GV-Ametista). A proponente no memorial é a Gran Vic Ametista Empreendimentos Imobiliários SPE Ltda., e a construtora é a Vic Engenharia S/A.",
+     "fonte": "memorial descritivo VIC, p. 1 e 13; tabela VIC de 05/10/2026",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "O apartamento vem com piso?",
+     "r": "Sim. Pelo memorial descritivo, sala, dormitórios e circulação têm piso laminado de madeira com rodapé laminado; cozinha, área de serviço, banheiro e varanda têm cerâmica esmaltada PEI 4.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Como é o acabamento da cozinha, do banheiro e da área de serviço?",
+     "r": "Pelo memorial: cozinha com bancada de granito de 1,20 x 0,55 m, cuba de inox e bancada passa-prato de granito, e cerâmica até 1,50 m na parede da bancada; banheiro com cerâmica até o teto e lavatório de louça de parede; área de serviço com tanque de mármore sintético de 20 litros e cerâmica até o teto na parede do tanque. As demais paredes e tetos são em textura.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Como são as janelas?",
+     "r": "De alumínio: nos dormitórios, de correr com 3 folhas (1 de vidro e 2 venezianas), de 1,20 x 1,20 m; na cozinha, de correr; no banheiro, maxim-ar. A porta da varanda é de alumínio e vidro, de correr, com 1,50 x 2,10 m.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "O chuveiro é elétrico ou a gás? Tem água quente na cozinha?",
+     "r": "O chuveiro é elétrico: o memorial prevê um ponto para chuveiro de no mínimo 5.400 W. O memorial não prevê ponto de água quente, então cozinha e lavatório são de água fria.",
+     "fonte": "memorial descritivo VIC, p. 9-10",
+     "origem": "base"
+    },
+    {
+     "p": "O gás é encanado da rua?",
+     "r": "Não. Pelo memorial, o gás é armazenado no condomínio (não vem da rede pública), em sistema coletivo, com 1 ponto no apartamento, para o fogão. Não há ponto de gás na varanda.",
+     "fonte": "memorial descritivo VIC, p. 12",
+     "origem": "base"
+    },
+    {
+     "p": "Tem ponto para ar-condicionado?",
+     "r": "O memorial prevê 1 ponto para ar-condicionado em cada um dos 2 dormitórios. A sala não tem previsão, e o memorial não detalha o que vem em cada ponto.",
+     "fonte": "memorial descritivo VIC, p. 9",
+     "origem": "base"
+    },
+    {
+     "p": "A conta de água é individual?",
+     "r": "Sim, há previsão de medição individualizada de água, com os medidores no hall de cada andar. A energia segue as caixas de medidores da concessionária; o gás é coletivo.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Tem interfone e tomada USB?",
+     "r": "Sim. Pelo memorial, cada apartamento tem interfone, tomada com entrada USB na sala e tubulação seca (sem fiação) para antena coletiva na sala e no quarto maior e para telefone na sala.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Tem itens para economizar água e energia?",
+     "r": "Sim: bacia com duplo acionamento, torneiras com arejador e redutor de vazão, medição individual de água, sensor de presença no hall dos andares e nas escadas e iluminação LED nas áreas comuns.",
+     "fonte": "memorial descritivo e ficha técnica VIC",
+     "origem": "base"
+    },
+    {
+     "p": "O que tem na varanda?",
+     "r": "Pelo memorial, a varanda tem 1 ponto de luz, 1 tomada e 1 ponto de esgoto. Churrasqueira na varanda não consta no memorial.",
+     "fonte": "memorial descritivo VIC, p. 9-10",
+     "origem": "base"
+    },
+    {
+     "p": "Tem apartamento adaptado para pessoa com deficiência?",
+     "r": "O memorial prevê unidades para pessoa com deficiência, com portas de 0,80 m, mas não informa a metragem. As 3 unidades à venda em out/2026 ficam na Torre 03.",
+     "fonte": "memorial descritivo VIC; tabela VIC de 05/10/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Quantas vagas tem o condomínio? Tem vaga de visitante?",
+     "r": "São 395 vagas de carro demarcadas para as unidades, 9 delas para pessoa com deficiência, e mais 6 vagas de visitantes.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Tem bicicletário?",
+     "r": "Sim, o bicicletário está entre os 16 itens de lazer da ficha técnica da VIC. O número de vagas para bicicleta não é informado.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "O que vem no lazer mobiliado?",
+     "r": "Pelo memorial: piscina com 6 espreguiçadeiras, 2 mesas, 8 cadeiras e 2 ombrelones; academia com esteira, bicicleta, estação e banco de musculação, halteres e TV; salão de festas com 3 mesas, 12 cadeiras e TV; espaço gourmet com churrasqueira, banquetas, mesas, cadeiras e geladeira; piquenique com 2 mesas; luau com poltronas, sofás e lareira; jogos com futmesa e ping-pong; e redário duplo. O mercadinho vem só como preparação.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a segurança do condomínio?",
+     "r": "O condomínio tem portaria com sistema de monitoramento, aparelho de biometria na portaria e na entrada de cada torre, pelo menos 2 câmeras na portaria ligadas à guarita e portão eletrônico.",
+     "fonte": "ficha técnica VIC; memorial descritivo",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "Vai ter hospital perto do Parque dos Pássaros?",
+     "r": "A Prefeitura de Indaiatuba lançou em 03/12/2024 a pedra fundamental de um hospital municipal de 58 leitos na Av. Luiz Bruno Petrilli, no loteamento Parque dos Pássaros, com entrega prevista para 2027, segundo a Prefeitura. As obras já começaram (informação da Viv’América, nov/2026); a data de inauguração ainda não foi confirmada. O que foi anunciado está no nosso <a href=\"/blog/hospital-parque-dos-passaros-indaiatuba/\">post sobre o hospital do Parque dos Pássaros</a>.",
+     "fonte": "Prefeitura de Indaiatuba, notícias de 28/11/2024 e 11/12/2025, resumidas no post do blog do site; início das obras: Viv’América, nov/2026",
+     "origem": "ficha"
+    },
+    {
+     "p": "Onde fica o estande de vendas da VIC?",
+     "r": "O mapa do book da VIC marca um “Estande VIC” perto do terreno, fora do condomínio, sem endereço. A gente confirma o local e o horário com a VIC antes de marcar a visita.",
+     "fonte": "book VIC, mapa de localização",
+     "origem": "base"
+    },
+    {
+     "p": "Tem outro apartamento nessa faixa fora do Parque dos Pássaros?",
+     "r": "Tem: o <a href=\"/elev-residence-indaiatuba/\">Elev Residence</a>, no Bairro Buru, a partir de R$ 326.000 (tabela Longitude de nov/2026); o <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a>, a partir de R$ 345.107 (tabela Zarin de nov/2026); e o <a href=\"/vivere-indaiatuba/\">Vívere Residencial</a>, pronto para morar, a partir de R$ 352.552 (tabela Masotti de ago/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

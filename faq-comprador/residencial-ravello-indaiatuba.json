@@ -1,0 +1,171 @@
+{
+  "slug": "residencial-ravello-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado?",
+          "r": "R$ 1.700 por m² à vista, R$ 1.750 por m² em até 12 parcelas sem juros e R$ 1.800 por m² acima de 12 parcelas, pela tabela da Dominium (vigente desde 30/01/2025) e pelo relatório de estoque de 17/11/2026.",
+          "fonte": "relatório Lotes Disponíveis de 17/11/2026; tabela de preço Dominium vigência 30/01/2025; planilha de parcelamento",
+          "origem": "base"
+        },
+        {
+          "p": "Em 12 vezes sem juros, quanto fica o lote de 420 m²?",
+          "r": "R$ 735.000 (R$ 1.750 por m²): por exemplo, entrada de R$ 151.200 e 12 parcelas de R$ 48.650, pela tabela da Dominium.",
+          "fonte": "tabela de preço Dominium vigência 30/01/2025 (PDF de nov/2026)",
+          "origem": "base"
+        },
+        {
+          "p": "E em 24 ou 36 parcelas?",
+          "r": "No lote de 420 m² a prazo (R$ 756.000), com entrada de 20% (R$ 151.200): 24 parcelas de R$ 28.470,04 ou 36 de R$ 20.088,01, com juros de 1% ao mês pela Tabela Price, antes da correção pelo IPCA.",
+          "fonte": "tabela de preço Dominium vigência 30/01/2025",
+          "origem": "base"
+        },
+        {
+          "p": "Se eu der 50% de entrada, de quanto fica a parcela?",
+          "r": "No lote de 420 m² (R$ 756.000 a prazo), entrada de R$ 378.000 e 48 parcelas de R$ 9.954,19, pela tabela da Dominium.",
+          "fonte": "tabela de preço Dominium vigência 30/01/2025",
+          "origem": "base"
+        },
+        {
+          "p": "As parcelas são corrigidas por qual índice?",
+          "r": "Pelo IPCA. Até a 36ª parcela a correção é anual; na 37ª entra o índice anual e daí em diante a correção passa a ser mensal. Os juros de 1% ao mês valem só acima de 12 parcelas.",
+          "fonte": "tabela de preço Dominium vigência 30/01/2025; planilha de parcelamento",
+          "origem": "base"
+        },
+        {
+          "p": "Posso escolher o dia de vencimento?",
+          "r": "Só entre dois dias: a tabela da Dominium fixa os vencimentos no dia 08 ou no dia 22 de cada mês.",
+          "fonte": "tabela de preço Dominium vigência 30/01/2025",
+          "origem": "base"
+        },
+        {
+          "p": "Todos os lotes podem ser parcelados?",
+          "r": "Não. Dos 164 lotes do relatório de 17/11/2026, 154 têm a condição de 48 parcelas, 9 só são vendidos à vista e 1 (F-006) aparece sem forma de pagamento. Confirmamos a condição do lote escolhido antes da proposta.",
+          "fonte": "relatório Lotes Disponíveis de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto custa um lote de cerca de 500 m²?",
+          "r": "O lote de 511,23 m² sai por R$ 869.091 à vista ou R$ 920.214 a prazo, com entrada de R$ 184.043 e 48 parcelas de R$ 19.386,21 (juros de 1% ao mês), pela tabela de 17/11/2026.",
+          "fonte": "quadro de preços da ficha (relatório de estoque Dominium de 17/11/2026)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando o loteamento fica pronto para construir?",
+          "r": "A entrega está prevista para julho/2027, segundo a Dominium. O cronograma das obras não consta no material.",
+          "fonte": "Dominium, informado ao Fabio em 15/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "O loteamento está aprovado e registrado?",
+          "r": "Foi aprovado pela Prefeitura de Indaiatuba no processo 15.622/2020, nos termos do Decreto municipal nº 15.251, de 26/08/2024, e o book informa a matrícula 138.377 no Cartório de Registro de Imóveis. O número do registro (R.) não consta no material: peça a certidão de matrícula atualizada antes de assinar.",
+          "fonte": "Ebook Ravello, pág. 18 (rodapé legal); tabela de preço Dominium (rodapé)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual é a empresa do empreendimento (SPE)?",
+          "r": "A Ouro Verde Indaiatuba Empreendimentos Imobiliários SPE Ltda., CNPJ 35.049.038/0001-33, que emite o relatório de estoque e aparece no rodapé legal do book. SPE é a empresa criada só para o empreendimento; a Dominium é a incorporadora. Quem assina o contrato a gente confirma antes da proposta.",
+          "fonte": "Ebook Ravello, pág. 18; relatório Lotes Disponíveis de 17/11/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Qual o tamanho do loteamento?",
+          "r": "332.274,38 m² de área total, com 710 lotes, segundo os dados técnicos do book.",
+          "fonte": "Ebook Ravello, pág. 18 (Dados Técnicos)",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos lotes de 420 m² ainda tem?",
+          "r": "78 dos 164 lotes do relatório de 17/11/2026 têm 420 m². O maior é o A-001, com 1.029,42 m².",
+          "fonte": "relatório Lotes Disponíveis de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos lotes saíram do estoque desde outubro?",
+          "r": "O relatório de 09/10/2026 tinha 180 lotes; o de 17/11/2026 tem 164: saíram 18 e voltaram 2 (L-030 e X-015). O relatório não diz o motivo de cada saída.",
+          "fonte": "relatórios Lotes Disponíveis de 09/10/2026 e 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem lote comercial?",
+          "r": "Os 164 lotes do relatório de 17/11/2026 são todos residenciais. A divisão dos 710 lotes por uso e as regras sobre comércio, home office ou mais de uma casa por lote não constam no material: peça o regulamento.",
+          "fonte": "relatório Lotes Disponíveis de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem área para crianças?",
+          "r": "Sim. O book lista três playgrounds entre os 27 itens de lazer.",
+          "fonte": "Ebook Ravello, págs. 16 e 18 (base E:, diferenciais)",
+          "origem": "base"
+        },
+        {
+          "p": "Que quadras e campos tem?",
+          "r": "Quadra de tênis, quadra poliesportiva, quadra de basquete 1x1, quadra de beach tennis e vôlei e campo de futebol, segundo o book.",
+          "fonte": "Ebook Ravello, págs. 16 e 18 (base E:, diferenciais)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Em que rodovia fica e qual o CEP?",
+          "r": "Na Rodovia João Ceccon, CEP 13331-400, em Indaiatuba, segundo o book. O número não é informado.",
+          "fonte": "Ebook Ravello, pág. 18",
+          "origem": "base"
+        },
+        {
+          "p": "Quais bairros ficam em volta?",
+          "r": "O mapa do book mostra como vizinhos o Jardim Villa Paradiso, o Jardim Amstalden, o Residencial Dona Lucilla e o Residencial Dona Maria José.",
+          "fonte": "Ebook Ravello, pág. 18",
+          "origem": "base"
+        },
+        {
+          "p": "Tem mercado e escola perto?",
+          "r": "O mapa do book marca o Sumerbol Supermercados, o Colégio Objetivo e o Parque Ecológico, sem distâncias.",
+          "fonte": "Ebook Ravello, pág. 18",
+          "origem": "base"
+        },
+        {
+          "p": "Onde vejo o loteamento no mapa?",
+          "r": "O Ravello está no <a href=\"/mapa-lotes-indaiatuba/\">mapa de lotes à venda em Indaiatuba</a> do site, junto com os outros loteamentos que vendemos.",
+          "fonte": "mapa de lotes do site (mapa-lotes-indaiatuba)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O que fica do outro lado da avenida?",
+          "r": "O <a href=\"/alpnach-indaiatuba/\">Alpnach Residence</a>, também da Dominium, do outro lado da Avenida Domingos Ferrarezi, segundo o book do Alpnach. Lá os lotes começam em R$ 510.000 (300 m²), pela tabela de nov/2026.",
+          "fonte": "Ebook Alpnach 3D, pág. 24 (base E:, loc.bairro do Ravello); fonte única do site (LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "O que mais tem na mesma faixa de preço?",
+          "r": "O <a href=\"/reserva-botanica-indaiatuba/\">Reserva Botânica</a>, a partir de R$ 642.375 (lote de 410 m², tabela de set/2026), o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (360 m², tabela de out/2026), e o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, a partir de R$ 908.480 (511,5 m², tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A Dominium tem lote mais em conta?",
+          "r": "Sim, em loteamento aberto: o <a href=\"/di-italia-indaiatuba/\">Jardim Di Italia</a>, a partir de R$ 210.000 (150 m²), e o <a href=\"/monte-carmelo-indaiatuba/\">Residencial Monte Carmelo</a>, a partir de R$ 145.000 (150 m²), pelas tabelas de nov/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

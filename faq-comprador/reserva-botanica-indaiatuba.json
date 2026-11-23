@@ -1,0 +1,129 @@
+{
+  "slug": "reserva-botanica-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Qual é a entrada de cada um dos 2 lotes?",
+          "r": "Pela tabela Zarin de 29/09/2026, a entrada do lote C-1 (410,01 m²) é de R$ 73.423,44 e a do lote B-13 (456,70 m²) é de R$ 81.784,58, cerca de 11,4% do valor. Confirmamos com a Zarin se a tabela segue valendo antes da proposta.",
+          "fonte": "tabela Zarin de 29/09/2026 publicada na ficha (fonte única do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "De quanto fica a parcela em 36, 60 ou 120 meses?",
+          "r": "No lote C-1: 36 parcelas de R$ 18.897,33, 60 de R$ 12.656,01 ou 120 de R$ 8.162,80. No lote B-13: 36 de R$ 21.049,27, 60 de R$ 14.097,22 ou 120 de R$ 9.092,34. Valores da tabela Zarin de 29/09/2026, antes da correção mensal pelo IPCA.",
+          "fonte": "tabela Zarin de 29/09/2026 publicada na ficha",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto pago no total se parcelar em 120 meses?",
+          "r": "No lote C-1, a entrada de R$ 73.423,44 mais 120 parcelas de R$ 8.162,80 somam R$ 1.052.959,44, sem contar a correção mensal pelo IPCA. À vista na tabela, o mesmo lote custa R$ 642.374,83. A diferença vem dos juros de 1% ao mês da Tabela Price.",
+          "fonte": "conta nossa sobre a tabela Zarin de 29/09/2026 publicada na ficha",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto custa o metro quadrado?",
+          "r": "Cerca de R$ 1.567 por m² nos dois lotes: R$ 642.374,83 por 410,01 m² e R$ 715.525,59 por 456,70 m², pela tabela Zarin de 29/09/2026. O preço do metro é o mesmo, então a diferença entre os lotes vem só da área.",
+          "fonte": "conta nossa sobre a tabela Zarin de 29/09/2026 publicada na ficha",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem parcela anual (intermediária) além das mensais?",
+          "r": "Não na tabela publicada: o pagamento é entrada de cerca de 11,4% e saldo em 36, 60 ou 120 parcelas mensais iguais pela Tabela Price, corrigidas pelo IPCA. A tabela Zarin de 29/09/2026 não traz parcelas anuais.",
+          "fonte": "tabela Zarin de 29/09/2026 publicada na ficha",
+          "origem": "ficha"
+        },
+        {
+          "p": "Preciso passar por análise para parcelar direto com a loteadora?",
+          "r": "Sim. A tabela da Zarin avisa que o cadastro é sujeito a aprovação. A gente encaminha o seu cadastro e avisa o resultado.",
+          "fonte": "observação da tabela Zarin de 29/09/2026 publicada na ficha",
+          "origem": "ficha"
+        },
+        {
+          "p": "Esse preço ainda vale? Até quando vale a tabela?",
+          "r": "Os valores são da tabela Zarin de 29/09/2026, e a própria tabela avisa que podem mudar sem aviso prévio. Antes da proposta, confirmamos com a Zarin o preço e se o lote segue livre.",
+          "fonte": "tabela Zarin de 29/09/2026 e conferência de 12/10/2026 (ficha do site)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando posso começar a construir a casa?",
+          "r": "A liberação para construção está prevista para novembro/2026, segundo a Zarin. Ela depende do termo de vistoria de obras da Prefeitura; confirmamos se o termo já saiu antes de você assinar.",
+          "fonte": "Zarin no WhatsApp em 02/10 e 13/10/2026, mantida pelo Fabio em 15/11/2026 (base E:, entrega.previsao)",
+          "origem": "base"
+        },
+        {
+          "p": "O loteamento está registrado em cartório?",
+          "r": "Sim. O ebook da loteadora informa a incorporação registrada sob o nº R.11/132.786, em 02/09/2024, no Oficial de Registro de Imóveis de Indaiatuba. Antes de assinar, peça a certidão de matrícula atualizada do lote.",
+          "fonte": "Ebook Reserva Botânica, pág. 15",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Tem piscina e academia?",
+          "r": "Sim. Além das quadras de tênis, beach tennis e poliesportiva, o ebook lista complexo aquático, academia, academia ao ar livre, salão de festas, quiosques gourmet e fire pit.",
+          "fonte": "Ebook Reserva Botânica, pág. 6",
+          "origem": "base"
+        },
+        {
+          "p": "Tem área para crianças e para pet?",
+          "r": "Sim. O ebook lista playground e espaço pet entre os itens de lazer do loteamento.",
+          "fonte": "Ebook Reserva Botânica, pág. 6",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto de área verde tem o loteamento?",
+          "r": "Mais de 42 mil m² de área verde preservada, segundo o ebook da loteadora. A área de lazer em m² não é informada.",
+          "fonte": "Ebook Reserva Botânica, pág. 11",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Qual é o endereço?",
+          "r": "Estrada Municipal Salvador Canton Garcia, s/n, no bairro Mato Dentro, em Indaiatuba, perto do Condomínio Montreal. O CEP não consta no material.",
+          "fonte": "Ebook Reserva Botânica, pág. 13",
+          "origem": "base"
+        },
+        {
+          "p": "Onde vejo o loteamento no mapa?",
+          "r": "O Reserva Botânica está no <a href=\"/mapa-lotes-indaiatuba/\">mapa de lotes à venda em Indaiatuba</a> do site, junto com os outros loteamentos que vendemos.",
+          "fonte": "mapa de lotes do site (mapa-lotes-indaiatuba)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro loteamento à venda no Mato Dentro?",
+          "r": "Sim: o <a href=\"/jardim-belle-vista-indaiatuba/\">Jardim Residencial Belle Vista</a>, da Kaaba, também no Mato Dentro, com lotes a partir de R$ 360.000 (300 m²), pela tabela recebida em nov/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "O que mais tem na mesma faixa de preço?",
+          "r": "O <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (lote de 360 m², tabela de out/2026), e o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 à vista (lote de 420 m², tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Que outros empreendimentos da Zarin estão à venda?",
+          "r": "No site: o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a>, com lotes a partir de R$ 211.050 (150 m², tabela de nov/2026); o <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a>, apartamentos a partir de R$ 345.107 (tabela de nov/2026); e o <a href=\"/spazio-italia-indaiatuba/\">Spazio Italia</a>, apartamentos a partir de R$ 429.961 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS e LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

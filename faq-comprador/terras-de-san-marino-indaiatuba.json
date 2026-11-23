@@ -1,0 +1,165 @@
+{
+  "slug": "terras-de-san-marino-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "De quanto fica a parcela do lote de 150 m² em 12 a 48 vezes?",
+          "r": "Sobre o valor a prazo de R$ 262.500, com entrada de 20% (R$ 52.500): 12 parcelas de R$ 17.500 sem juros, 24 de R$ 9.885,43, 36 de R$ 6.975,01 ou 48 de R$ 5.530,11, pela tabela de 09/10/2026. Acima de 12 parcelas há juros de 1% ao mês (Price) e correção anual pelo IGP-M.",
+          "fonte": "Tabela e Espelho de Vendas de 09/10/2026, 13h45 (Armigh · Best Business)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto economizo pagando à vista?",
+          "r": "Cerca de 5,7%: o m² à vista é R$ 1.650 e a prazo, R$ 1.750. No lote de 150 m², são R$ 247.500 à vista contra R$ 262.500 a prazo, R$ 15.000 de diferença, pela tabela de 09/10/2026.",
+          "fonte": "Tabela e Espelho de Vendas de 09/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Até quando vale essa tabela?",
+          "r": "A tabela e o espelho de vendas são de 09/10/2026, 13h45, sem prazo de validade, e a loteadora avisa que o valor do m² pode mudar a qualquer momento. Confirmamos preço e disponibilidade antes da proposta.",
+          "fonte": "Tabela e Espelho de Vendas de 09/10/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando posso começar a construir?",
+          "r": "A liberação para construir está prevista para janeiro/2028. O andamento das obras de infraestrutura não consta no material.",
+          "fonte": "previsão informada pelo Fabio em 15/11/2026 (base E:, entrega.previsao)",
+          "origem": "base"
+        },
+        {
+          "p": "Como aprovo o projeto da minha casa?",
+          "r": "Primeiro na Associação, que analisa em 15 dias e aprova ou pede correção (\"comunique-se\"); depois na Prefeitura. Com o alvará, a Associação emite a Autorização de Início de Obra, faz vistorias durante a obra e emite o Certificado de Conclusão. A taxa de aprovação não é informada.",
+          "fonte": "Regulamento do Terras de San Marino, págs. 2, 7 e 8",
+          "origem": "base"
+        },
+        {
+          "p": "Quem pede a ligação de água, esgoto e luz?",
+          "r": "O próprio dono do lote, direto com as concessionárias, segundo o item 12b do regulamento.",
+          "fonte": "Regulamento, pág. 7 (item 12b)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual empresa aparece no regulamento?",
+          "r": "A Terras de San Marino Empreendimento Imobiliário SPE Ltda. (SPE é a empresa criada só para o empreendimento); a realização é da Armigh com o Grupo Best Business. O CNPJ não consta no material.",
+          "fonte": "Regulamento, pág. 9; cabeçalho da tabela de 09/10/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Tem associação de moradores?",
+          "r": "Sim. O regulamento fala na Associação dos Proprietários do Loteamento fechado Terras de San Marino, que aprova projetos e cuida das regras. A administradora e o valor da contribuição mensal não constam no material.",
+          "fonte": "Regulamento, pág. 2",
+          "origem": "base"
+        },
+        {
+          "p": "Como entram pedreiros e prestadores de serviço?",
+          "r": "A equipe de segurança do loteamento cadastra e autoriza a entrada de operários e prestadores, segundo o regulamento.",
+          "fonte": "Regulamento, págs. 2 e 3",
+          "origem": "base"
+        },
+        {
+          "p": "Quais são os recuos da casa?",
+          "r": "Frente: 5,00 m (beiral até 0,80 m); no lote de esquina, 5,00 m no lado menor e 2,00 m no maior. Laterais: 2,00 m quando houver janela ou porta (beiral até 0,50 m), e afastamento mínimo de 1,50 m nas laterais e no fundo.",
+          "fonte": "Regulamento, págs. 4 a 6 (itens 7 a 11)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto do lote posso ocupar?",
+          "r": "A taxa de ocupação máxima é 70%, e pelo menos 15% do lote tem de ficar permeável. O item da área máxima construída tem redação que deixa dúvida (1,0 ou 1,2 vez a área do lote): confirmamos com a Associação antes do projeto.",
+          "fonte": "Regulamento, págs. 4 a 6",
+          "origem": "base"
+        },
+        {
+          "p": "Pode construir sobrado?",
+          "r": "Sim, com no máximo 2 pavimentos (térreo e superior) acima do nível da rua e altura máxima de 9,00 m, contando telhado e caixa d'água.",
+          "fonte": "Regulamento, págs. 4 a 6",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o tamanho mínimo da casa?",
+          "r": "A casa principal precisa ter pelo menos 80 m², segundo o regulamento.",
+          "fonte": "Regulamento, págs. 4 a 6",
+          "origem": "base"
+        },
+        {
+          "p": "Pode fazer edícula?",
+          "r": "Sim, térrea, com pé-direito mínimo de 2,50 m, altura máxima de 3,50 m e até 1/3 da projeção da casa.",
+          "fonte": "Regulamento, págs. 4 a 6",
+          "origem": "base"
+        },
+        {
+          "p": "Posso murar a frente do lote?",
+          "r": "Não no recuo de 5 m da frente, que fica sem fechamento (cerca viva de até 1,20 m é permitida). Os muros de divisa podem ter até 2,00 m.",
+          "fonte": "Regulamento, págs. 4 a 6",
+          "origem": "base"
+        },
+        {
+          "p": "Tem faixa do lote em que não posso construir?",
+          "r": "Sim. O regulamento manda manter desobstruídas as faixas de servidão de 3,00 m, além dos recuos.",
+          "fonte": "Regulamento, págs. 4 a 6",
+          "origem": "base"
+        },
+        {
+          "p": "A calçada fica por conta de quem?",
+          "r": "Do dono do lote. O passeio tem 3,00 m: 0,50 m de grama, 1,50 m de concreto vassourado e 1,00 m de grama, conforme a norma de acessibilidade NBR 9050.",
+          "fonte": "Regulamento, pág. 4 (itens 6b e 6c)",
+          "origem": "base"
+        },
+        {
+          "p": "As ruas são asfaltadas?",
+          "r": "O regulamento fala em ruas com leito pavimentado, guias e sarjetas. A drenagem não é detalhada.",
+          "fonte": "Regulamento, pág. 7 (item 12n)",
+          "origem": "base"
+        },
+        {
+          "p": "Posso juntar dois lotes ou dividir um?",
+          "r": "O regulamento prevê projetos com unificação ou desdobro de lotes, com memorial dos lotes resultantes e planta aprovada pela Prefeitura; as condições não são detalhadas.",
+          "fonte": "Regulamento, pág. 3 (itens 2b e 2e)",
+          "origem": "base"
+        },
+        {
+          "p": "Pode ter comércio, consultório ou escritório no lote?",
+          "r": "Não. O regulamento permite só casa residencial unifamiliar e proíbe prédio de vários apartamentos, comércio, serviços, indústria, escritórios, consultórios, clínicas, escolas, templos e hotéis.",
+          "fonte": "Regulamento, pág. 4 (item 4)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Onde vejo os lotes no mapa?",
+          "r": "O Terras de San Marino está no <a href=\"/mapa-lotes-indaiatuba/\">mapa de lotes à venda em Indaiatuba</a> do site, junto com os outros loteamentos que vendemos.",
+          "fonte": "mapa de lotes do site (mapa-lotes-indaiatuba)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro lote de 150 m² com lazer?",
+          "r": "O <a href=\"/vila-fahl-indaiatuba/\">Residencial Vila Fahl</a>, com lotes residenciais e comerciais e 15 itens de lazer, a partir de R$ 290.000 (tabela de out/2026), e o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a>, a partir de R$ 211.050 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem lote mais barato em loteamento aberto?",
+          "r": "O <a href=\"/di-italia-indaiatuba/\">Jardim Di Italia</a>, a partir de R$ 210.000 (150 m²), e o <a href=\"/monte-carmelo-indaiatuba/\">Residencial Monte Carmelo</a>, a partir de R$ 145.000 (150 m²), pelas tabelas de nov/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

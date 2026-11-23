@@ -1,0 +1,201 @@
+{
+  "slug": "vettia-residence-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": [
+    "documentos",
+    "morando-fora",
+    "itbi",
+    "fgts",
+    "distrato",
+    "afetacao",
+    "renda"
+  ],
+  "blocos": [
+    {
+      "titulo": "Preço e pagamento",
+      "perguntas": [
+        {
+          "p": "O preço muda conforme o andar?",
+          "r": "Muda: em geral sobe com o andar. Na tabela de vendas da Longitude de novembro/2026, o 1º e o 2º andar vão de R$ 379.500,00 a R$ 397.990,00; o 3º e o 4º, de R$ 392.500,00 a R$ 407.990,00; o 5º e o 6º, de R$ 399.000,00 a R$ 424.990,00; o 7º e o 8º, de R$ 407.990,00 a R$ 429.990,00; do 9º ao 11º, de R$ 420.000,00 a R$ 449.990,00; e o térreo com garden, de R$ 419.990,00 a R$ 454.990,00. Os mais baratos, de R$ 379.500,00, são os 105, 201 e 208 da Torre 1 e os 101, 108 e 204 da Torre 2 (2 dormitórios, 51,76 m²).",
+          "fonte": "tabela de vendas Longitude nov/2026 (quadro por andar e coluna VALOR VENDA, na ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quantas unidades de cada planta constam na tabela?",
+          "r": "Na tabela de novembro/2026 constam 135 unidades (61 na Torre 1 e 74 na Torre 2): 69 de 2 dormitórios do meio do andar (51,76 m²), 58 de 2 dormitórios da ponta (52,49 m²), 2 de 1 dormitório com garden e 6 de 2 dormitórios com garden. Constar na tabela não garante que a unidade siga livre: isso se confirma no atendimento.",
+          "fonte": "tabela de vendas Longitude nov/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Até quando vale esta tabela?",
+          "r": "A tabela de vendas da Longitude de novembro/2026 não traz validade, e as condições avisam que ela está sujeita a alteração sem aviso prévio. Antes de qualquer proposta, a gente confirma com a Longitude se o valor da unidade escolhida continua o mesmo.",
+          "fonte": "tabela e condições Longitude nov/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Financiamento",
+      "perguntas": [
+        {
+          "p": "Quantas unidades da tabela custam até R$ 400.000?",
+          "r": "36 das 135 unidades da tabela de novembro/2026 têm valor de venda de até R$ 400.000,00; as outras 99 ficam acima. Se esse valor importa para o seu enquadramento no programa habitacional, a regra vigente e o valor que a Caixa considera se conferem na simulação, sujeito a análise de crédito da Caixa.",
+          "fonte": "tabela de vendas Longitude nov/2026; fonte única do site (obsMcmv do Vettia)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem constrói o Vettia e qual é a empresa do empreendimento?",
+          "r": "A incorporação e a construção são da Longitude. A empresa do empreendimento é a Longitude Indaiatuba MCMV 11 Empreendimentos Imobiliários SPE Ltda., CNPJ 53.564.656/0001-01, uma SPE (Sociedade de Propósito Específico) criada só para esta obra. O \"MCMV\" do nome não garante o enquadramento de cada compra no Minha Casa Minha Vida, que é sujeito a análise de crédito da Caixa.",
+          "fonte": "book Longitude (ago/2025, pág. 23, rodapé legal); confirmação do Fabio (17/11/2026)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imóvel e o condomínio",
+      "perguntas": [
+        {
+          "p": "Quantos andares e apartamentos por andar tem cada torre?",
+          "r": "São 2 torres, cada uma com térreo e 11 pavimentos, e 8 apartamentos por andar, 184 no total. Na Torre 1, o último pavimento é o do rooftop, então os apartamentos vão do térreo ao 10º andar (88 unidades); na Torre 2, do térreo ao 11º (96 unidades). O número de elevadores não consta no material recebido.",
+          "fonte": "book Longitude (págs. 5, 6 e 8); tabela nov/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Como funciona a vaga de garagem?",
+          "r": "As vagas ficam num edifício garagem, e as cobertas estão só no térreo dele, segundo o book. A tabela de novembro/2026 marca o tipo de vaga de cada unidade (\"TIPO B\", \"TIPO B COBERTA\" ou \"TIPO B + TIPO A\"), mas sem legenda: o que cada código quer dizer e quantas vagas vão com a unidade a gente confirma com a Longitude antes da proposta.",
+          "fonte": "book Longitude (pág. 5); tabela nov/2026 (coluna VAGA)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem vaga para visitante?",
+          "r": "Tem: a implantação do book marca vagas de visitantes externas e uma vaga de embarque e desembarque junto à portaria. A quantidade não consta no material.",
+          "fonte": "book Longitude (pág. 8, legenda da implantação)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem ponto para carregar carro elétrico?",
+          "r": "Tem um ponto de recarga de carro elétrico na área comum, perto da via interna, segundo a implantação do book. Quantos pontos são e como a recarga é cobrada não constam no material.",
+          "fonte": "book Longitude (págs. 5, 7, 8 e 18)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para tirar a parede de um dormitório ou fazer closet?",
+          "r": "As plantas marcam uma parede de alvenaria entre a sala e um dos dormitórios que pode ser removida, e o book cita suítes com opção de closet. Custo, prazo e como pedir não constam no material recebido; isso se confirma com a Longitude antes do contrato.",
+          "fonte": "book Longitude (págs. 5 e 20-22, plantas)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual lado pega o sol da manhã?",
+          "r": "Na implantação do book, o nascer do sol fica do lado da Rua Orlando Bersan, junto à Torre 2, e o pôr do sol do lado da Rua Antonio do Amaral Campo. A posição de cada final não consta no material; a gente confere com a Longitude a da unidade que você escolher.",
+          "fonte": "book Longitude (pág. 8, implantação)",
+          "origem": "base"
+        },
+        {
+          "p": "O apartamento vem com piso em todos os cômodos?",
+          "r": "Segundo as plantas do book, banheiro, varanda e cozinha são entregues com piso cerâmico. O piso da sala e dos dormitórios não é informado; o que vale é o memorial descritivo.",
+          "fonte": "book Longitude (págs. 20-22, legenda das plantas)",
+          "origem": "base"
+        },
+        {
+          "p": "Como é o acabamento da cozinha e do banheiro?",
+          "r": "Pelo book: bancada de granito na cozinha, bancadas dos banheiros em mármore, tanque em mármore sintético, revestimento cerâmico no banheiro e na cozinha e bacia sanitária com caixa acoplada. A altura do revestimento, a cuba e os metais não constam no material.",
+          "fonte": "book Longitude (págs. 19-22)",
+          "origem": "base"
+        },
+        {
+          "p": "Como são as janelas e as portas?",
+          "r": "Esquadrias de alumínio com pintura eletrostática, porta de folha tripla da sala para a varanda e portas internas com amortecimento de impacto, segundo o book. Persianas e guarda-corpo não constam no material.",
+          "fonte": "book Longitude (págs. 5, 19 e 20-22)",
+          "origem": "base"
+        },
+        {
+          "p": "A conta de água e de gás é individual?",
+          "r": "É: a ficha técnica do book traz medição individualizada de gás e de água. A medição de energia e o tipo de gás (natural ou GLP) não constam no material.",
+          "fonte": "book Longitude (pág. 6, ficha técnica)",
+          "origem": "base"
+        },
+        {
+          "p": "A varanda tem churrasqueira?",
+          "r": "O material não fala em churrasqueira na varanda. Para churrasco, a área comum tem o espaço churras e o garden churras, segundo o book.",
+          "fonte": "book Longitude (págs. 4, 7 e 8)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem itens de economia de água e coleta seletiva?",
+          "r": "O book cita dispositivos economizadores de água e coleta seletiva, com lixeiras de orgânico e de reciclável. Energia solar e reúso de água não constam no material.",
+          "fonte": "book Longitude (págs. 6 e 8)",
+          "origem": "base"
+        },
+        {
+          "p": "Como é a portaria e a segurança?",
+          "r": "Pelo book, a portaria é envidraçada, com bolsão de segurança, e a entrada e a saída de veículos são independentes. Se a portaria será 24 horas ou remota, o controle de acesso e as câmeras não constam no material.",
+          "fonte": "book Longitude (págs. 8 e 10)",
+          "origem": "base"
+        },
+        {
+          "p": "O condomínio é acessível para cadeirante?",
+          "r": "O book diz que o condomínio é acessível para pessoa com deficiência (PCD). O detalhe de cada área e se há unidade adaptada não constam no material.",
+          "fonte": "book Longitude (legenda da implantação)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual torre fica mais perto da piscina e do playground?",
+          "r": "Na implantação do book, a Torre 1 fica mais perto da entrada, com a piscina e o deck atrás dela; a Torre 2 fica ao fundo, ao lado do playground, da praça de convivência e da quadra de areia. A implantação é ilustrativa e sujeita a modificações.",
+          "fonte": "ficha do site (seção Implantação, a partir do book Longitude)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localização e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem escola, mercado e farmácia perto?",
+          "r": "Nas fotos aéreas do book, com marcações da Longitude, há escola e creche municipal a 3 minutos, farmácia a 5, padaria a 6 e supermercado a 9; o material não diz se os tempos são de carro.",
+          "fonte": "book Longitude (págs. 5 e 6, fotos aéreas)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para visitar o terreno ou um decorado?",
+          "r": "O material recebido não fala em decorado nem traz endereço e horário de plantão de vendas. A visita se agenda pelo WhatsApp da Viv'América, e a gente confirma com a Longitude o que dá para ver. Quem não pode vir, fazemos a visita por vídeo.",
+          "fonte": "material Longitude recebido (central de vendas não informada); regra da casa (visita por vídeo)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro apartamento numa faixa de preço parecida?",
+          "r": "No site, perto dessa faixa: o [Izzi Residence](/izzi-residence-indaiatuba/), no Centro, com plantas compactas desde R$ 371.862,27 (tabela GPCI de nov/2026), e o [Vila Plaza Residence](/vila-plaza-residence-indaiatuba/), no Jardim São Conrado, com studios a partir de R$ 403.846,33 (tabela Lógica atualizada em 01/10/2026).",
+          "fonte": "fonte única do site (gera-folheto.js APTOS) e fichas do Izzi e do Vila Plaza",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A Longitude tem outro empreendimento no site?",
+          "r": "Tem o [Elev Residence](/elev-residence-indaiatuba/), com apartamentos de 1 e 2 dormitórios com varanda no Bairro Buru, desde R$ 326.000 na tabela de vendas da Longitude de novembro/2026, com entrega prevista para jan/2028.",
+          "fonte": "fonte única do site (gera-folheto.js APTOS) e ficha do Elev",
+          "origem": "vizinhos"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Como faço a reserva?",
+          "r": "Começa pelo WhatsApp: você escolhe a unidade na tabela do mês, a gente confirma com a Longitude se ela está livre e passa a regra de reserva (sinal e prazo), que não consta no material recebido. O passo a passo geral está em [Comprar na planta em Indaiatuba: passo a passo](/blog/comprar-na-planta-indaiatuba-passo-a-passo/).",
+          "fonte": "post do site /blog/comprar-na-planta-indaiatuba-passo-a-passo/ (22/11/2026); regra de reserva da construtora não informada",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quem atende nesta página: a imobiliária ou o plantão de vendas?",
+          "r": "Quem atende é a Imobiliária Viv'América, de Indaiatuba (CRECI 47394-J). Mandamos a tabela do mês, fazemos a simulação, agendamos a visita e confirmamos com a Longitude a unidade escolhida antes de qualquer proposta.",
+          "fonte": "identidade da Viv'América (CRECI 47394-J, linha de procedência e rodapé da ficha)",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

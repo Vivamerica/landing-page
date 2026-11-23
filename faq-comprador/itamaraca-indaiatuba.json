@@ -1,0 +1,95 @@
+{
+ "slug": "itamaraca-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "distrato",
+  "afetacao",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Preço e pagamento",
+   "perguntas": [
+    {
+     "p": "Quantas unidades ainda estão à venda?",
+     "r": "Na tabela Zarin de nov/2026, emitida em 12/11/2026, são 162 das 206 unidades: 99 da planta Meio e 63 da planta Canto.",
+     "fonte": "tabela Zarin nov/2026 (ficha do site)",
+     "origem": "ficha"
+    },
+    {
+     "p": "Quantos apartamentos à venda têm segunda vaga?",
+     "r": "Na tabela Zarin de nov/2026, 42 dos 99 aptos Meio e 29 dos 63 aptos Canto disponíveis têm uma segunda vaga, de carro ou de moto. Entre os disponíveis, 1 apto Meio e 4 aptos Canto têm vaga PCD.",
+     "fonte": "tabela Zarin nov/2026 (ficha do site)",
+     "origem": "ficha"
+    },
+    {
+     "p": "Quanto vou financiar pela Caixa?",
+     "r": "O saldo de 80% vai para o financiamento pela Caixa, depois do ato de 2% e das 60 mensais, que somam 18%. No apto de R$ 345.106,85, são R$ 276.085,48 financiados. O valor depende da análise de crédito da Caixa.",
+     "fonte": "tabela Zarin out/2026 (mesmo valor na tabela de nov/2026)",
+     "origem": "base"
+    },
+    {
+     "p": "Depois da entrega, como ficam as parcelas que faltam?",
+     "r": "Pela observação da tabela Zarin, as parcelas pagas direto à construtora (pró-soluto) são corrigidas pelo INCC; as que vencerem depois da entrega passam a ter juros de 1% mais correção pelo IPCA. O contrato traz a regra completa.",
+     "fonte": "tabela Zarin, observações",
+     "origem": "base"
+    },
+    {
+     "p": "Posso parcelar o ITBI e o registro?",
+     "r": "Sim. Pela tabela da Zarin, o ITBI e o registro podem ser parcelados em até 36 vezes direto com a construtora. O valor não está na tabela.",
+     "fonte": "tabela Zarin, p. 13 (observações)",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "Qual final pega sol da manhã?",
+     "r": "Pela tabela da Zarin, os finais pares ficam na face do sol da manhã, e os finais ímpares, na do sol da tarde.",
+     "fonte": "tabela Zarin out/2026",
+     "origem": "base"
+    },
+    {
+     "p": "O apartamento vem com piso na sala e nos quartos?",
+     "r": "Não. O book informa que os pisos são entregues só nas áreas molhadas: banheiro, cozinha e área de serviço têm piso cerâmico; sala e dormitórios vêm sem piso.",
+     "fonte": "book Zarin; ficha do site",
+     "origem": "base"
+    },
+    {
+     "p": "Tem vaga para visitante?",
+     "r": "A implantação da ficha técnica da Zarin marca vagas descobertas de visitante perto da portaria. A quantidade se confirma com a Zarin.",
+     "fonte": "ficha técnica Zarin, p. 04/07 (implantação)",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a segurança do condomínio?",
+     "r": "O book anuncia segurança 24 horas, e a implantação mostra guarita e espaço de entregas na entrada. O tipo de portaria (presencial ou remota) não é informado.",
+     "fonte": "book Zarin; ficha técnica Zarin (implantação)",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "Tem outro apartamento nessa faixa de preço?",
+     "r": "Tem: o <a href=\"/elev-residence-indaiatuba/\">Elev Residence</a>, no Bairro Buru, a partir de R$ 326.000 (tabela Longitude de nov/2026), e o <a href=\"/vivere-indaiatuba/\">Vívere Residencial</a>, pronto para morar, a partir de R$ 352.552 (tabela Masotti de ago/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    },
+    {
+     "p": "Onde mais encontro apartamento com suíte nesse preço?",
+     "r": "Tem: o <a href=\"/gran-vic-colibri-indaiatuba/\">Gran Vic Colibri</a>, no Parque dos Pássaros, com suíte, a partir de R$ 336.686 (tabela VIC de 05/10/2026), e o <a href=\"/vettia-residence-indaiatuba/\">Vettia Residence</a>, de 1 e 2 dormitórios com suíte, a partir de R$ 379.500 (tabela Longitude de nov/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

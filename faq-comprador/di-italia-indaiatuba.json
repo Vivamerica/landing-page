@@ -1,0 +1,116 @@
+{
+  "slug": "di-italia-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado do lote?",
+          "r": "No relatório de estoque da Dominium de 17/11/2026: lote residencial a R$ 1.400 por m² à vista e R$ 1.466,67 por m² a prazo (à vista sai cerca de 4,5% mais barato); lote misto a R$ 1.500 por m² à vista.",
+          "fonte": "relatório Lotes Disponíveis Dominium/GRBU SPE de 17/11/2026; planilha de parcelamento vigente desde 02/09/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto eu pago no total parcelando, com os juros?",
+          "r": "No lote de 150 m² a prazo, a entrada de R$ 44.000 mais 60 parcelas de R$ 3.915,02 somam R$ 278.901,20, antes de qualquer correção (conta nossa sobre o relatório de 17/11/2026 e a planilha da Dominium, com juros de 1% ao mês pela Tabela Price).",
+          "fonte": "relatório Dominium de 17/11/2026; planilha de parcelamento vigente desde 02/09/2026 (conta nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "As parcelas têm correção além dos juros?",
+          "r": "A planilha da Dominium aplica juros de 1% ao mês sobre o saldo, pela Tabela Price, mas não informa índice de correção monetária das parcelas; isso segue o contrato da loteadora e é confirmado antes da proposta.",
+          "fonte": "planilha de parcelamento Dominium vigente desde 02/09/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Até quando valem esses preços?",
+          "r": "O relatório de estoque foi emitido em 17/11/2026 e não traz validade; os preços podem mudar sem aviso prévio. A gente confirma o valor e a disponibilidade do dia com a Dominium antes da proposta.",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem lote residencial maior que 150 m²?",
+          "r": "Tem três, do L-028 ao L-030, de 230,75 a 267,50 m², de R$ 323.050 a R$ 374.500 à vista no relatório de 17/11/2026.",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Financiamento",
+      "perguntas": [
+        {
+          "p": "Dá para financiar o lote pelo banco?",
+          "r": "O material da Dominium só traz o pagamento à vista e o parcelamento direto com a loteadora, em até 60 parcelas e só em 6 dos 45 lotes do relatório de 17/11/2026. Financiamento bancário não aparece; se você quiser usar banco, a gente confirma com a Dominium antes da proposta.",
+          "fonte": "relatório Dominium de 17/11/2026; planilha de parcelamento vigente desde 02/09/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem é a loteadora?",
+          "r": "A Dominium, pela GRBU Empreendimentos Imobiliários SPE Ltda., que emite o relatório de lotes disponíveis.",
+          "fonte": "relatório Lotes Disponíveis Dominium/GRBU SPE de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "O loteamento é registrado?",
+          "r": "O número do registro do loteamento não consta no material recebido da Dominium. Antes de assinar, peça a certidão de matrícula do lote; a gente pede junto com você.",
+          "fonte": "relatório e planilha da Dominium recebidos (sem número de registro); ficha da base, campo registro do loteamento",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Qual a frente e o fundo do lote de 150 m²?",
+          "r": "O lote padrão tem 7,50 m de frente por 20,00 m de fundo, pela planta de lotes. Nos lotes maiores e nos mistos, a medida de cada um se confere no mapa da loteadora.",
+          "fonte": "planta de lotes do Jardim Di Itália (acervo do site); relatório de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "O que posso fazer no lote misto?",
+          "r": "O relatório classifica 15 lotes como mistos, e o material de divulgação fala em lotes residenciais e comerciais. Quais atividades comerciais são permitidas não consta em documento da loteadora: a gente confirma com você na Prefeitura antes da compra.",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026; arte de divulgação do Di Itália",
+          "origem": "base"
+        },
+        {
+          "p": "Tem regras para construir a casa?",
+          "r": "Como é loteamento aberto, sem condomínio, a casa segue as normas da Prefeitura de Indaiatuba, sem regulamento interno de condomínio.",
+          "fonte": "página do empreendimento no site",
+          "origem": "ficha"
+        },
+        {
+          "p": "Já posso começar a construir?",
+          "r": "Ainda depende da Prefeitura. Pela informação mais recente da Dominium (novembro/2026), a infraestrutura está concluída e a liberação para construir, prevista para out/2026, aguarda a vistoria da Prefeitura. A gente confirma a situação do dia antes da proposta.",
+          "fonte": "Dominium, informado ao Fabio por WhatsApp em 05 e 06/11/2026 (ficha da base, situação confirmado)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "A Dominium tem outros loteamentos?",
+          "r": "No site, o <a href=\"/monte-carmelo-indaiatuba/\">Residencial Monte Carmelo</a>, loteamento aberto com lotes a partir de R$ 145.000 (tabela de nov/2026); o <a href=\"/alpnach-indaiatuba/\">Alpnach Residence</a>, de R$ 510.000 (tabela de nov/2026); e o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, de R$ 714.000 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Que outros lotes de 150 m² estão no site na mesma faixa de preço?",
+          "r": "O <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a> tem lotes a partir de R$ 211.050 (tabela Zarin de nov/2026), e o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a>, de R$ 247.500 (tabela de out/2026), os dois com lotes de 150 m².",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES), 22/11/2026",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

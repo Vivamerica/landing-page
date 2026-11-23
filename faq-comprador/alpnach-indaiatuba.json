@@ -1,0 +1,152 @@
+{
+  "slug": "alpnach-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado do lote?",
+          "r": "R$ 1.700 por m² à vista, em todos os 16 lotes do relatório de estoque da Dominium de 17/11/2026, e R$ 1.800 por m² a prazo, pela planilha de cálculo vigente desde 02/09/2026: à vista sai cerca de 5,6% mais barato.",
+          "fonte": "relatório Lotes Disponíveis Dominium/Lugano SPE de 17/11/2026; planilha de parcelamento vigente desde 02/09/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o lote mais barato que dá para parcelar?",
+          "r": "No relatório de 17/11/2026, o H-001, de 372,46 m², por R$ 670.428 a prazo. Os 5 lotes de 300 m², de R$ 510.000, constam só à vista.",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto eu pago no total parcelando, com os juros?",
+          "r": "No H-001, a entrada de R$ 134.085,60 mais 48 parcelas de R$ 14.123,95 somam R$ 812.035,20, antes de qualquer correção (conta nossa sobre o relatório de 17/11/2026 e a planilha da Dominium, com juros de 1% ao mês pela Tabela Price).",
+          "fonte": "relatório Dominium de 17/11/2026; planilha de parcelamento vigente desde 02/09/2026 (conta nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "As parcelas têm correção além dos juros?",
+          "r": "A planilha da Dominium aplica juros de 1% ao mês sobre o saldo, pela Tabela Price, mas não informa índice de correção monetária das parcelas; isso segue o contrato da loteadora e é confirmado antes da proposta.",
+          "fonte": "planilha de parcelamento Dominium vigente desde 02/09/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Até quando valem esses preços?",
+          "r": "O relatório de estoque foi emitido em 17/11/2026 e não traz validade; estoque e preços mudam sem aviso prévio. A gente confirma com a Dominium a disponibilidade e o valor do dia antes da proposta.",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026; página do empreendimento no site",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Financiamento",
+      "perguntas": [
+        {
+          "p": "Dá para financiar o lote pelo banco?",
+          "r": "O material da Dominium só traz o pagamento à vista e o parcelamento direto com a loteadora, em até 48 parcelas e só em 5 dos 16 lotes do relatório de 17/11/2026. Financiamento bancário não aparece; se você quiser usar banco, a gente confirma com a Dominium antes da proposta.",
+          "fonte": "relatório Dominium de 17/11/2026; planilha de parcelamento vigente desde 02/09/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando posso começar a construir?",
+          "r": "A previsão de entrega, que é quando o comprador pode começar a construir, é julho de 2027, segundo a Dominium.",
+          "fonte": "previsão informada pela Dominium em 15/11/2026 (ficha técnica do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O loteamento é registrado?",
+          "r": "O rodapé legal do book diz que o loteamento é registrado na matrícula nº 146.269 e aprovado pela Prefeitura de Indaiatuba. O número do registro e o cartório não constam no material recebido: antes de assinar, peça a certidão de matrícula atualizada; a gente pede junto com você.",
+          "fonte": "e-book do Alpnach (p.25, rodapé legal)",
+          "origem": "base"
+        },
+        {
+          "p": "Quem é a loteadora?",
+          "r": "A Dominium Empreendimentos, pela SPE Lugano Empreendimentos Imobiliários SPE Ltda., CNPJ 49.789.454/0001-82, que também emite o relatório de lotes.",
+          "fonte": "e-book do Alpnach (p.2 e 25); relatório Lotes Disponíveis de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "O lazer vem mobiliado?",
+          "r": "Segundo o book, sim: os ambientes são entregues 100% mobiliados. O prazo de entrega do lazer não é informado.",
+          "fonte": "e-book do Alpnach (p.5)",
+          "origem": "base"
+        },
+        {
+          "p": "O paisagismo vai ser igual ao das imagens?",
+          "r": "Pode mudar: o rodapé do book avisa que as espécies do paisagismo podem ser alteradas de acordo com a CETESB.",
+          "fonte": "e-book do Alpnach (p.25, rodapé legal)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Como são as piscinas?",
+          "r": "Segundo o book, há uma piscina coberta e aquecida com 2 raias de 25 m e uma piscina externa, adulto e com Aquaplay infantil.",
+          "fonte": "e-book do Alpnach (p.5 a 23)",
+          "origem": "base"
+        },
+        {
+          "p": "O salão de festas comporta quantas pessoas?",
+          "r": "O salão de festas é para 80 pessoas, e há 2 churrasqueiras gourmet para 30 pessoas cada, segundo o book.",
+          "fonte": "e-book do Alpnach (p.5 a 23)",
+          "origem": "base"
+        },
+        {
+          "p": "Quais quadras esportivas tem?",
+          "r": "Quadra de tênis, 3 quadras de beach tennis e vôlei e campo de grama sintética, segundo o book.",
+          "fonte": "e-book do Alpnach (p.5 a 23)",
+          "origem": "base"
+        },
+        {
+          "p": "Os lotes são só residenciais?",
+          "r": "Os 16 lotes do relatório de 17/11/2026 são todos classificados como residenciais. Regras sobre comércio, home office ou mais de uma casa por lote não constam no material: a gente confirma com a Dominium.",
+          "fonte": "relatório Lotes Disponíveis Dominium de 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Qual a frente e o fundo dos lotes?",
+          "r": "O relatório de estoque não traz frente e fundo. A gente confere as medidas de cada lote no projeto urbanístico da loteadora antes da proposta.",
+          "fonte": "relatório Dominium de 17/11/2026; projeto urbanístico R46 da loteadora",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Onde fica exatamente o Alpnach?",
+          "r": "Junto à Av. Domingos Ferrarezi, ao lado do Jardim Amstalden e em frente ao Residencial Ravello, pelo mapa do book. O mapa indica ainda a Rod. João Ceccon, a Av. Eng. Fábio R. Barnabé e a Av. Fábio Ferraz Bicudo. Número e CEP não são informados.",
+          "fonte": "e-book do Alpnach (p.24, mapa de localização)",
+          "origem": "base"
+        },
+        {
+          "p": "O que tem perto?",
+          "r": "O mapa do book marca o Sumerbol Supermercados, o Colégio Objetivo e o Parque Ecológico, e diz que há supermercado, padaria, empório, pet shop, lavanderia, drogaria e escola a menos de 10 minutos. Distâncias exatas não são informadas.",
+          "fonte": "e-book do Alpnach (p.24)",
+          "origem": "base"
+        },
+        {
+          "p": "O que fica em frente ao Alpnach?",
+          "r": "O <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, também da Dominium, com lotes a partir de R$ 714.000 (lote de 420 m², tabela Dominium de nov/2026) e 27 itens de lazer.",
+          "fonte": "e-book do Alpnach (p.24); fonte única do site (gera-folheto.js, LOTES), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem outro lote em área fechada na mesma faixa de preço?",
+          "r": "Tem. O <a href=\"/terras-de-obwalden-indaiatuba/\">Terras de Obwalden</a>, condomínio fechado no Bela Vista com lotes de 300 a 479 m², a partir de R$ 435.000 (tabela recebida em nov/2026), e o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, loteamento fechado com lotes de 360 a 617 m², a partir de R$ 637.200 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES), 22/11/2026",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

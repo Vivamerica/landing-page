@@ -205,6 +205,9 @@ function paresVisiveis(html) {
     for (const f of el.filhos) {
       if (CRUS.has(f.tag) || oculto(f)) continue;
       const marca = ehBlocoFaq(f);
+      // tema em cascata do bloco "Mais perguntas" (gera-faq-comprador.js, 23/11/2026):
+      // é só um agrupador; desce nele para achar as perguntas de dentro
+      if (f.tag === 'details' && classes(f).includes('fc-tema')) { andar(f, true); continue; }
       if (f.tag === 'details') {
         const sum = f.filhos.find(x => x.tag === 'summary');
         if (sum && (emFaq || marca || tituloFaqPerto(f))) por(texto(sum.iniDentro, sum.fimDentro), texto(sum.fim, f.fimDentro), 'details', f);

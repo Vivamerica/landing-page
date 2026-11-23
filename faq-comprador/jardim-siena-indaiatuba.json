@@ -1,0 +1,135 @@
+{
+  "slug": "jardim-siena-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quantos lotes disponíveis cabem em cada faixa de preço?",
+          "r": "Dos 24 lotes que o pool lista como disponíveis, 10 custam até R$ 350 mil (de R$ 300.000,00 a R$ 327.828,00), 7 ficam entre R$ 350 mil e R$ 400 mil (de R$ 352.896,00 a R$ 399.900,00) e 7 passam de R$ 400 mil, até R$ 531.348,00 no C10. Valores da tabela Kaaba recebida em novembro/2026.",
+          "fonte": "lista de lotes disponíveis da ficha (tabela e pool Kaaba recebidos em nov/2026)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Com entrada de 30%, de quanto fica a parcela?",
+          "r": "No lote de 250,00 m² (R$ 300.000,00), a entrada de 30% é de R$ 90.000,00 e o saldo de R$ 210.000,00 fica em 12 parcelas de R$ 17.500,00, 24 de R$ 8.750,00, 36 de R$ 5.833,33 ou 48 de R$ 4.375,00, pela planilha da Kaaba recebida em novembro/2026. A planilha não informa juros nem correção; confirmamos isso com a Kaaba antes da proposta.",
+          "fonte": "tabela Kaaba recebida em nov/2026 (quadro de parcelas da ficha)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "O Jardim Siena já está pronto? Posso começar a construir?",
+          "r": "Sim. A apresentação da Kaaba diz que o empreendimento está 100% entregue e liberado para construção, e o pool de vendas recebido em novembro/2026 repete \"liberado para construção\". Antes de começar, peça à loteadora o regulamento de construção (recuos e regras), que não veio no material.",
+          "fonte": "apresentação Jardim Siena da Kaaba (p. 4); pool de vendas Kaaba de nov/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quem é a loteadora do Jardim Siena?",
+          "r": "A Kaaba Empreendimentos, que assina a realização e a incorporação no folheto e na apresentação.",
+          "fonte": "folheto SIENA (p. 2) e apresentação Jardim Siena (p. 1) da Kaaba",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Qual a frente e o fundo do lote de 250 m²?",
+          "r": "O lote padrão de 250,00 m² tem 10,00 m de frente por 25,00 m de fundo, pelas cotas do projeto urbanístico.",
+          "fonte": "projeto urbanístico SIENA (jan/2019)",
+          "origem": "base"
+        },
+        {
+          "p": "Posso abrir um comércio no lote?",
+          "r": "Só nos lotes D13 a D20, que o projeto urbanístico define como de uso misto (residencial e comercial); os demais 69 lotes são residenciais. Recuos, gabarito e o que cada uso permite não constam do material: peça o regulamento antes de fechar.",
+          "fonte": "projeto urbanístico SIENA (quadro de ocupação do solo, jan/2019)",
+          "origem": "base"
+        },
+        {
+          "p": "Quais lotes de uso misto ainda estão à venda e por quanto?",
+          "r": "O pool recebido em novembro/2026 lista como disponíveis, e marcados como comerciais, o D13 (260,38 m², R$ 312.456,00), o D15 (263,93 m², R$ 316.716,00), o D16 (294,08 m², R$ 352.896,00), o D17 (324,73 m², R$ 389.676,00) e o D18 (355,86 m², R$ 427.032,00).",
+          "fonte": "lista de lotes disponíveis da ficha (tabela e pool Kaaba recebidos em nov/2026)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quantos lotes tem em cada quadra e quantos ainda estão à venda?",
+          "r": "Pelo projeto urbanístico, a quadra A tem 16 lotes, a B 30, a C 11 e a D 20. No pool recebido em novembro/2026 estão disponíveis 7 lotes na quadra A, 3 na B, 5 na C e 9 na D.",
+          "fonte": "projeto urbanístico SIENA; pool de vendas Kaaba recebido em nov/2026",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual o tamanho do empreendimento e quanto dele é área verde?",
+          "r": "A área loteada tem 46.060,90 m², com 14.493,82 m² de áreas verdes públicas (31,46%). Somando a outra gleba do projeto, de 17.343,692 m² de área verde, o empreendimento chega a 63.404,592 m².",
+          "fonte": "projeto urbanístico SIENA (quadros de áreas, jan/2019)",
+          "origem": "base"
+        },
+        {
+          "p": "Algum lote tem viela sanitária?",
+          "r": "O pool recebido em novembro/2026 marca o lote C02 (273,19 m², R$ 327.828,00) com viela sanitária. Se for escolher outro lote, confirmamos com a Kaaba se ele tem alguma passagem desse tipo.",
+          "fonte": "pool de vendas Kaaba recebido em nov/2026",
+          "origem": "ficha"
+        },
+        {
+          "p": "O lazer já está construído?",
+          "r": "Sim. As fotos da apresentação da Kaaba (ago/2024) mostram o salão de festas, o playground e o espaço pet prontos, já que o empreendimento foi entregue.",
+          "fonte": "apresentação Jardim Siena da Kaaba (p. 8-18)",
+          "origem": "base"
+        },
+        {
+          "p": "O projeto reserva área para escola, posto de saúde ou praça?",
+          "r": "O projeto urbanístico separa uma área institucional pública de 2.466,59 m², destinada a equipamentos comunitários, e um sistema de lazer público de 254,80 m². O material não diz o que será construído nessas áreas.",
+          "fonte": "projeto urbanístico SIENA (quadros de áreas, jan/2019)",
+          "origem": "base"
+        },
+        {
+          "p": "Como é a portaria?",
+          "r": "O folheto da Kaaba fala em portaria automatizada, e as fotos da apresentação mostram cancelas e portão. Câmeras e vigilância 24 horas não constam do material; confirmamos com a Kaaba.",
+          "fonte": "folheto SIENA (p. 2); apresentação Jardim Siena (fotos)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para ver o lote pessoalmente antes de decidir?",
+          "r": "Sim. Pelo botão \"Agendar visita\" desta página você combina com a gente o dia e o horário; como o empreendimento já está entregue, dá para andar pelas ruas e ver o lote escolhido.",
+          "fonte": "ficha do site (botão Agendar visita; status entregue)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "O que tem por perto?",
+          "r": "Segundo o folheto da Kaaba, o entorno tem residenciais fechados, mercados, padarias, postos de combustível, farmácias, restaurantes, bares, escolas e UBS. O folheto não dá as distâncias de cada um.",
+          "fonte": "folheto SIENA da Kaaba (p. 2)",
+          "origem": "base"
+        },
+        {
+          "p": "A Kaaba tem outros loteamentos à venda em Indaiatuba?",
+          "r": "Sim, no site: o <a href=\"/jardim-belle-vista-indaiatuba/\">Jardim Residencial Belle Vista</a>, no Mato Dentro, a partir de R$ 360.000 (lote de 300 m²); o <a href=\"/reserva-da-colina-indaiatuba/\">Reserva da Colina</a>, a partir de R$ 400.500 (300 m²); e o <a href=\"/terras-de-obwalden-indaiatuba/\">Terras de Obwalden</a>, no Bela Vista, a partir de R$ 435.000 (300 m²). Os três pelas tabelas Kaaba recebidas em novembro/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES), tabelas Kaaba recebidas em nov/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem lote mais em conta em outro empreendimento?",
+          "r": "Com lotes menores, de 150 m²: o <a href=\"/vila-fahl-indaiatuba/\">Residencial Vila Fahl</a> a partir de R$ 290.000 (tabela de out/2026), o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a> a partir de R$ 247.500 (tabela de out/2026) e o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a> a partir de R$ 211.050 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "O que mais está à venda em Itaici?",
+          "r": "No site, o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, também em Itaici, tem lotes de 511 a 1.205 m² a partir de R$ 908.480, pela tabela de novembro/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES); ficha do Alphaville Indaiatuba",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

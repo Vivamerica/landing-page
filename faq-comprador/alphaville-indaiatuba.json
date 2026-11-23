@@ -1,0 +1,159 @@
+{
+  "slug": "alphaville-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado do lote?",
+          "r": "Pela tabela de vendas Alphaville de nov/2026, sem as custas de escrituração: na linha de lotes a partir de 510 m² (quadras A a I), de cerca de R$ 1.284 a R$ 1.858 por m²; na linha a partir de 1.000 m² (quadras J a Q), de R$ 1.136 a R$ 1.335 por m² (conta nossa: valor dividido pela área).",
+          "fonte": "tabela de vendas Alphaville Indaiatuba nov/2026 (conta nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem desconto para pagar à vista ou em menos parcelas?",
+          "r": "Tem desconto por prazo sobre o valor de tabela: 15% à vista, 9% em 12 vezes, 6% em 24 vezes e 4% em 36 vezes. No lote C-11, de R$ 908.480,37 na tabela de nov/2026, os 15% à vista levam o valor para R$ 772.208,31. De 15 a 30/11/2026, na Alpha Week da Alphaville, o desconto para pagamento integral à vista passa de 15% para 20% no total (não soma: são 20%, e não 15% mais 20%), em 5 lotes residenciais participantes, com contrato até 30/11.",
+          "fonte": "condições de venda da Alphaville, citadas na página do empreendimento no site; tabela de vendas nov/2026",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto preciso de entrada em reais?",
+          "r": "O ato é de 20% do valor e pode ser dividido em até 3 vezes. No lote C-11 (R$ 908.480,37 na tabela de nov/2026), os 20% dão R$ 181.696,07 (conta nossa); as custas de escrituração são cobradas à parte.",
+          "fonte": "tabela de vendas Alphaville Indaiatuba nov/2026; condições de venda citadas na página do site",
+          "origem": "base"
+        },
+        {
+          "p": "De quanto ficam as parcelas de um lote?",
+          "r": "No lote A-03 (539,19 m², R$ 957.618,30), a tabela de nov/2026 traz ato de R$ 191.523,66 e, depois, 5 anuais de R$ 38.304,73 mais 60 mensais de R$ 9.576,18, ou só 60 mensais de R$ 12.768,24. As parcelas são corrigidas pelo IPCA.",
+          "fonte": "tabela de vendas Alphaville Indaiatuba nov/2026 (valores impressos para o lote A-03)",
+          "origem": "base"
+        },
+        {
+          "p": "Quando começa a correção das parcelas?",
+          "r": "As parcelas são corrigidas todo mês pelo IPCA/IBGE, com defasagem de dois meses (o índice de dois meses antes). Nos planos com mais de 24 parcelas, a correção começa no terceiro mês.",
+          "fonte": "tabela de vendas Alphaville Indaiatuba nov/2026; condições de venda citadas na página do site",
+          "origem": "base"
+        },
+        {
+          "p": "Quando vence a parcela anual?",
+          "r": "Na opção com anuais, cada anual vale até 4 vezes a parcela mensal e a primeira vence em no máximo 11 meses depois da compra, segundo as condições de venda da Alphaville.",
+          "fonte": "condições de venda da Alphaville, citadas na página do empreendimento no site",
+          "origem": "ficha"
+        },
+        {
+          "p": "O preço mudou na tabela de novembro?",
+          "r": "Não. A tabela de vendas de nov/2026 repete, lote por lote, os valores da tabela anterior, de setembro/2026. Ela não traz data de validade.",
+          "fonte": "tabelas de vendas Alphaville Indaiatuba de out/2026 e nov/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando o loteamento fica pronto para construir?",
+          "r": "A previsão de entrega é julho de 2029, conforme as condições de venda passadas pela Alphaville em 02/10/2026.",
+          "fonte": "condições de venda da Alphaville de 02/10/2026, citadas na ficha técnica do site",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quem fez o projeto?",
+          "r": "O projeto urbanístico e o paisagismo são do próprio Grupo Alphaville; a arquitetura e os interiores do clube e da portaria são do escritório DMDV Arquitetos.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.11)",
+          "origem": "base"
+        },
+        {
+          "p": "O loteamento pode crescer depois?",
+          "r": "Pode. O book informa que a loteadora poderá expandir o empreendimento em área vizinha.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.34)",
+          "origem": "base"
+        },
+        {
+          "p": "O loteamento vai ficar como nas imagens?",
+          "r": "As perspectivas são ilustrativas, com a vegetação em fase adulta. A ocupação do lugar depende das casas que cada comprador construir.",
+          "fonte": "página do empreendimento no site (nota das perspectivas)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "A rede elétrica é subterrânea?",
+          "r": "Sim, nas vias internas, segundo o book da Alphaville. A iluminação pública não é detalhada no material.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.24)",
+          "origem": "base"
+        },
+        {
+          "p": "O projeto tem energia solar e reúso de água?",
+          "r": "Segundo o book, o projeto prevê reaproveitamento de água de chuva, energia solar e paisagismo com espécies nativas em todo o loteamento e em 97% das áreas construídas, além de ações ambientais durante a obra.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.33)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto de área verde tem?",
+          "r": "São 245 mil m² de áreas verdes e de lazer, com uma Área de Preservação Permanente entre os blocos de lotes, segundo o book.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.12, 13 e 21)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem lote comercial?",
+          "r": "O book só traz lotes residenciais, nas duas linhas (a partir de 510 m² e a partir de 1.000 m²); lote comercial não aparece no material.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.13)",
+          "origem": "base"
+        },
+        {
+          "p": "Quem constrói a casa? Tem regras de construção?",
+          "r": "A casa é projetada e construída por quem compra o lote. O regulamento com recuos, ocupação e gabarito não veio no material: a gente pede à Alphaville antes de você fechar.",
+          "fonte": "book de lançamento (p.13 e 34); página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "Tem linha de transmissão ou trem perto?",
+          "r": "Sim. O próprio book informa faixa de servidão de linha de transmissão e linha férrea nos arredores do empreendimento. Vale olhar a posição do lote na implantação antes de escolher.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.8 e 34)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem supermercado e parque perto?",
+          "r": "Pelos tempos do book, sem meio de transporte informado: Parque Ecológico a 8 minutos, Colônia Helvetia a 10, Parque do Mirim e Bosque do Saber de 12 a 15, e os supermercados Pão de Açúcar, Covabra e OBA de 10 a 15 minutos.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.7 a 10)",
+          "origem": "base"
+        },
+        {
+          "p": "Fica longe de Campinas e de São Paulo?",
+          "r": "Pelo book, o acesso à Rodovia Anhanguera fica a 20 minutos, o Centro de Campinas a 25, a Lagoa do Taquaral e o Hopi Hari a 30 e o Shopping Iguatemi Campinas a 35. São Paulo fica a 110 km.",
+          "fonte": "book de lançamento do Alphaville Indaiatuba, fev/2026 (p.7 a 10)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outro condomínio fechado no Itaici?",
+          "r": "No site, o <a href=\"/jardim-siena-indaiatuba/\">Jardim Siena</a>, condomínio fechado no Itaici com lotes de 250 a 607,94 m², a partir de R$ 300.000 (tabela recebida em nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem lote de alto padrão na mesma faixa de preço?",
+          "r": "Tem. O <a href=\"/lagos-de-helvetia-indaiatuba/\">Lagos de Helvetia</a>, na Helvetia, com lotes de 501 a 2.015 m², lago e clube, a partir de R$ 901.800 (tabela GPCI de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Que outros Alphaville estão no site?",
+          "r": "Em Campinas, as <a href=\"/casas-alphaville-dom-pedro-0-campinas/\">Casas Alphaville Dom Pedro 0</a>, casas prontas de 288 a 362 m², a partir de R$ 3.306.135 (tabela de out/2026). No Nordeste, o <a href=\"/alphaville-guarajuba-4-camacari/\">Alphaville Guarajuba 4</a>, na Bahia, e o <a href=\"/alphaville-ceara-5-eusebio/\">Alphaville Ceará 5</a>, no Ceará. A lista completa está em <a href=\"/alphaville/\">Empreendimentos Alphaville</a>.",
+          "fonte": "fonte única do site (gera-alphaville.js), 22/11/2026",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

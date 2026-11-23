@@ -1,0 +1,170 @@
+{
+  "slug": "alphaville-ceara-5-eusebio",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado do lote?",
+          "r": "Na tabela de vendas da Alphaville gerada em 14/11/2026 (nov/2026), o metro quadrado vai de R$ 1.295,61 (lote P515) a R$ 1.730,29 (lote AA502), com metade dos lotes abaixo de R$ 1.416,19 por m² (conta nossa: valor do lote dividido pela área).",
+          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026 (conta nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "De quanto fica a parcela do lote mais barato?",
+          "r": "No lote P515, de 450,32 m² e R$ 583.442,12, a tabela de 14/11/2026 traz um ato de R$ 73.160,33 e 48 mensais de R$ 10.630,87. A tabela não informa índice de correção dessas parcelas: confirme no atendimento.",
+          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto custam os lotes acima de 500 m²?",
+          "r": "Na tabela de 14/11/2026, os 22 lotes de 507,67 a 549,19 m² vão de R$ 657.771,55 a R$ 806.357,24; os 7 de 553,00 a 591,67 m², de R$ 740.953,20 a R$ 940.238,01; e o maior, o P513, de 731,14 m², custa R$ 947.334,42.",
+          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "A tabela de 14/11/2026 ainda vale?",
+          "r": "A tabela não traz data de validade, e o ato dela vencia em 15/11/2026. Os preços podem mudar pela Alphaville; antes de fechar, a gente pede a tabela do dia, com as datas de pagamento atualizadas.",
+          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026; página do empreendimento no site",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem vende os lotes do Alphaville Ceará 5?",
+          "r": "O material traz \"Realização: Alphaville\" e a marca da Alphaville na tabela, mas não informa a empresa vendedora que assina o contrato. Isso é confirmado com a Alphaville antes da proposta.",
+          "fonte": "material atualizado da Alphaville (p.14); planta geral de vendas; tabela de 14/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quem fez o projeto do loteamento e do clube?",
+          "r": "A concepção urbanística, o paisagismo e os interiores são do Grupo Alphaville. O clube é do escritório Lindgren Arquitetos, do arquiteto Marcello Lindgren, em parceria com Ciro Pirondi, e a planta geral de vendas é do escritório M.Carrara Urbanismo.",
+          "fonte": "book do Alphaville Ceará 5 (p.20); material atualizado da Alphaville (p.3); carimbo da planta geral de vendas",
+          "origem": "base"
+        },
+        {
+          "p": "Que cuidados ambientais a obra tem?",
+          "r": "O book lista monitoramento da fauna, da qualidade da água da lagoa e da Área de Preservação Permanente, monitoramento arqueológico, transplante e preservação de árvores nativas, gestão de resíduos e de efluentes, controle de emissões e de ruídos e educação ambiental. São ações informadas pela Alphaville; não recebemos relatórios ambientais.",
+          "fonte": "book do Alphaville Ceará 5 (p.17 e 18)",
+          "origem": "base"
+        },
+        {
+          "p": "O loteamento vai ficar como nas imagens?",
+          "r": "As imagens são perspectivas e uma fotomontagem ilustrativas da Alphaville, com a vegetação em fase adulta; ela é entregue em mudas. As casas que aparecem mostram uma ocupação possível, que depende do que cada comprador construir.",
+          "fonte": "página do empreendimento no site (nota da galeria)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Tem lote comercial no Alphaville Ceará 5?",
+          "r": "Não. Pela ficha técnica do book, os 506 lotes são todos residenciais; a planta de vendas não tem lote comercial nem de uso misto. As áreas comerciais da Cidade Alpha ficam fora do loteamento.",
+          "fonte": "book do Alphaville Ceará 5 (p.20); planta geral de vendas (legenda e planta de situação)",
+          "origem": "base"
+        },
+        {
+          "p": "A rede elétrica é subterrânea?",
+          "r": "Sim. Pelo texto legal da Alphaville, as redes de energia e de iluminação pública serão subterrâneas, inclusive o ramal de ligação de cada lote; a ligação é pedida pelo comprador à concessionária de energia.",
+          "fonte": "texto legal do material atualizado da Alphaville (p.14); book (p.10)",
+          "origem": "base"
+        },
+        {
+          "p": "Como fica o esgoto e a água?",
+          "r": "Pelo texto legal, o esgoto será operado por uma empresa privada com permissão da prefeitura, contratada pela associação dos compradores, e o custo é dividido entre os associados. O material não informa como será o abastecimento de água: confirme no atendimento.",
+          "fonte": "texto legal do material atualizado da Alphaville (p.14)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual o tamanho do loteamento?",
+          "r": "A gleba tem 597.821,31 m². Os 506 lotes somam 257.093,96 m², uma média de cerca de 508 m² por lote (conta nossa).",
+          "fonte": "ficha técnica do book do Alphaville Ceará 5 (p.20)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto de área verde tem?",
+          "r": "São 171.974,9 m² de áreas verdes, cerca de 29% da gleba, dos quais 52.071,58 m² são de preservação, e 7 praças. Na conta da Alphaville, com 3 moradores por lote, dá 113,29 m² de área verde por pessoa.",
+          "fonte": "ficha técnica do book do Alphaville Ceará 5 (p.6 e 20)",
+          "origem": "base"
+        },
+        {
+          "p": "Os lotes têm vista para a lagoa?",
+          "r": "O loteamento fica junto a uma lagoa, e a Alphaville divulga o Ceará 5 como a última fase com vista para ela. Quais lotes têm a vista se confere na planta de vendas, lote a lote, no atendimento.",
+          "fonte": "book do Alphaville Ceará 5 (p.5 e 10); material atualizado da Alphaville",
+          "origem": "base"
+        },
+        {
+          "p": "Como é a portaria?",
+          "r": "Portaria 24 horas, segundo o material atualizado da Alphaville, na entrada pela Alameda Mônaco, e triagem na entrada do clube. Controle de acesso e câmeras não são detalhados no material.",
+          "fonte": "material atualizado da Alphaville (p.9); planta geral de vendas; mapa do clube no book",
+          "origem": "base"
+        },
+        {
+          "p": "Quem constrói a casa? Tem regras de construção?",
+          "r": "A casa é projetada e construída por quem compra o lote. O regulamento de construção, com recuos, ocupação e altura, não veio no material: a gente pede à Alphaville antes de você escolher o lote.",
+          "fonte": "página do empreendimento no site",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quem faz a calçada do lote?",
+          "r": "O próprio comprador: pelo texto legal da Alphaville, cada um faz e mantém a calçada do seu lote quando construir a casa.",
+          "fonte": "texto legal do material atualizado da Alphaville, citado na página do site",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Como se chega a Fortaleza a partir do loteamento?",
+          "r": "Pela planta de situação, a Cidade Alpha se liga à Av. Quarto Anel Viário e à CE-040, que levam a Fortaleza e a Pacajus. Pelos tempos da Alphaville, sem meio de transporte informado, a Rodovia BR-116 fica a 22 minutos.",
+          "fonte": "planta geral de vendas (planta de situação); book do Alphaville Ceará 5 (p.13)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outros Alphaville por perto?",
+          "r": "Sim. O Ceará 5 fica na Cidade Alpha, ao lado do Alphaville Ceará 4, perto dos Alphaville Ceará 1 a 4 e dos Terras Alphaville Ceará 1 a 5. No site também está o <a href=\"/terras-alphaville-ceara-6-eusebio/\">Terras Alphaville Ceará 6</a>, em Eusébio, com lotes a partir de 275 m² segundo o book; a tabela dele é enviada no atendimento.",
+          "fonte": "planta geral de vendas (planta de situação); fonte única do site (gera-alphaville.js), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Que outros Alphaville o site tem em outras cidades?",
+          "r": "Na Bahia, o <a href=\"/alphaville-guarajuba-4-camacari/\">Alphaville Guarajuba 4</a>, em Camaçari, tem lotes a partir de R$ 459.023,98 (tabela de nov/2026). Em São Paulo, o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a> tem lotes a partir de R$ 908.480 (tabela de nov/2026). A lista completa está em <a href=\"/alphaville/\">Empreendimentos Alphaville</a>.",
+          "fonte": "fonte única do site (gera-alphaville.js e gera-folheto.js), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Moro longe de Eusébio: como vejo os lotes?",
+          "r": "A gente faz a apresentação por vídeo, com a planta de vendas e a tabela do dia. Se você for a Eusébio, agendamos a visita ao stand, na Cidade Alpha. Antes de assinar, pedimos com você a matrícula atualizada e a minuta do contrato.",
+          "fonte": "orientação da Viv'América; material atualizado da Alphaville (p.14, endereço do stand)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Que documentos do loteamento devo pedir antes de assinar?",
+          "r": "A matrícula atualizada (o registro é o R.04 da matrícula nº 26986 do 2º Cartório de Registro de Imóveis de Eusébio), a minuta do contrato, a planta individual do lote com o memorial descritivo e o regulamento de construção.",
+          "fonte": "texto legal do material atualizado da Alphaville (p.14); planta geral de vendas (nota sobre medidas)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto vou pagar de ITBI?",
+          "r": "O ITBI é um imposto da cidade onde fica o imóvel: em Eusébio/CE, a alíquota e a base de cálculo são as da Prefeitura de Eusébio, não as de Indaiatuba. Antes de você assinar, a gente confere a regra na Prefeitura de Eusébio e coloca o valor na conta dos custos da compra.",
+          "fonte": "regra geral do imposto municipal (texto padrão itbi, variante outra-cidade, do _padrao.json); alíquota a conferir na Prefeitura de Eusébio",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

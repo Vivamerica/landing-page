@@ -1,0 +1,141 @@
+{
+  "slug": "parque-das-aguas-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "O preço muda de uma torre para outra?",
+          "r": "Sim. Nas tabelas GPCI de setembro/2026, a Torre 1 tem 11 apartamentos de R$ 311.217,71 a R$ 396.797,07; a Torre 2, 16 de R$ 309.119,89 a R$ 359.710,96; e a Torre 3, 27 de R$ 321.608,33 a R$ 399.259,90, no valor de venda final.",
+          "fonte": "tabelas GPCI por torre de set/2026 (fonte única do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto custa um apartamento garden?",
+          "r": "Nas tabelas de setembro/2026, os 3 gardens da planta de 46,13 m² vão de R$ 361.608,48 a R$ 386.921,07, e os 4 da planta de 47,78 m² (mais 24,52 m² de área externa), de R$ 371.974,65 a R$ 398.012,88. Os gardens são entregues com grama.",
+          "fonte": "tabelas GPCI de set/2026; ficha do site (seção Plantas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quantos apartamentos há de cada planta nas tabelas?",
+          "r": "Nas tabelas de setembro/2026: 10 da planta de 46,13 m², 24 da de 47,78 m², 13 da de 50,60 m² com suíte (de R$ 357.598,82 a R$ 399.259,90) e 7 gardens. São 54 no total; a disponibilidade se confirma no atendimento.",
+          "fonte": "tabelas GPCI de set/2026",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem é a incorporadora responsável?",
+          "r": "A realização é da GPCI, com gestão de projetos e obras da IBEN. Os dados da empresa que assina o contrato (razão social e CNPJ) a gente confere com você antes da assinatura.",
+          "fonte": "ficha técnica do site (material da GPCI)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual o tamanho do terreno e quantos elevadores tem?",
+          "r": "O terreno tem 29.581,18 m² e a área construída, 24.647,73 m². Cada uma das três torres tem dois elevadores.",
+          "fonte": "ficha técnica do site (material da GPCI)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "A personalização da planta tem custo?",
+          "r": "Segundo a incorporadora, não: a personalização da planta não tem custo adicional. As regras e os prazos para pedir a mudança são confirmados no atendimento.",
+          "fonte": "ficha do site (seção Plantas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem apartamento adaptado para pessoa com deficiência?",
+          "r": "Sim, a incorporadora cita unidades adaptadas, que não entram na personalização de planta. Quais são e se estão à venda, confirmamos com a GPCI.",
+          "fonte": "ficha do site (seção Plantas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quantas vagas tem cada apartamento? Tem vaga para visitante?",
+          "r": "Cada apartamento tem uma ou duas vagas, conforme a unidade. O estacionamento soma 600 vagas, 42 delas para visitantes.",
+          "fonte": "ficha do site (seção Lazer e ficha técnica)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Como é o acabamento da cozinha e do banheiro?",
+          "r": "Piso cerâmico, bancada e lavatório em granito e revestimento cerâmico até o teto no banheiro, segundo o material da incorporadora.",
+          "fonte": "ficha do site (seção Plantas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "A varanda tem churrasqueira?",
+          "r": "Sim, na opção com varanda: churrasqueira a carvão e piso cerâmico.",
+          "fonte": "ficha do site (seção Plantas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual a altura do pé-direito e como são as janelas?",
+          "r": "Pé-direito de 2,70 m nos ambientes secos e janelas com persiana integrada. Há pontos de TV nos dormitórios e no estar.",
+          "fonte": "ficha do site (seção Plantas)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O que tem de lazer?",
+          "r": "Mais de 30 espaços, entre eles lago com chafariz flutuante, piscina adulto com borda infinita e prainha, solário, salão de festas, área gourmet, quatro churrasqueiras, fire place, academia, academia ao ar livre, quadra recreativa, quadra de areia, pista de caminhada, espaço zen, redário, pomar e mirante. As áreas comuns são entregues equipadas e decoradas, conforme o memorial descritivo.",
+          "fonte": "ficha do site (lista de lazer do material da GPCI)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O que tem para crianças?",
+          "r": "Piscina infantil com brinquedos aquáticos, complexo aquático com aquaplay, playground e brinquedoteca.",
+          "fonte": "ficha do site (lista de lazer do material da GPCI)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Que serviços o condomínio oferece?",
+          "r": "A lista da incorporadora inclui minimercado, car wash, pet place, bicicletário, coworking e um heliponto de drones.",
+          "fonte": "ficha do site (lista de lazer do material da GPCI)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Dá para visitar o stand de vendas?",
+          "r": "Sim. O stand fica na Avenida Fábio Ferraz Bicudo; pelo WhatsApp desta página combinamos com você o dia e o horário da visita.",
+          "fonte": "ficha do site (seção Localização; botão de WhatsApp)",
+          "origem": "ficha"
+        },
+        {
+          "p": "As imagens da página são fotos reais?",
+          "r": "Não. São perspectivas ilustradas do material da incorporadora: móveis, objetos e decoração são sugestão e não fazem parte do memorial descritivo, e a vegetação aparece em fase adulta.",
+          "fonte": "ficha do site (seção Perspectivas)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem outro 2 dormitórios na mesma faixa de preço?",
+          "r": "No site: o <a href=\"/gran-vic-tangara-indaiatuba/\">Gran Vic Tangará</a>, a partir de R$ 325.000 (47,22 m², tabela de out/2026); o <a href=\"/elev-residence-indaiatuba/\">Elev Residence</a>, no Bairro Buru, a partir de R$ 326.000 (46,05 m², tabela de nov/2026); e o <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a>, a partir de R$ 345.107 (48,11 m², tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem 2 dormitórios com suíte mais em conta?",
+          "r": "No site, o <a href=\"/gran-vic-colibri-indaiatuba/\">Gran Vic Colibri</a> tem 2 dormitórios com suíte de 51,42 m² a partir de R$ 336.686 (tabela de out/2026). Aqui, a planta com suíte começa em R$ 357.598,82 (tabela de set/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS); tabelas GPCI de set/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A GPCI tem outros apartamentos à venda?",
+          "r": "Sim, no site: o <a href=\"/izzi-residence-indaiatuba/\">Izzi Residence</a>, no Centro, a partir de R$ 371.862 (39,90 m², tabela de nov/2026), e o <a href=\"/artemis-residencial-indaiatuba/\">Artemis Residencial</a>, no Park Meraki, com 3 dormitórios e suíte, a partir de R$ 555.171 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

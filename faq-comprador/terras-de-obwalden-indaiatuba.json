@@ -1,0 +1,147 @@
+{
+  "slug": "terras-de-obwalden-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Com entrada de 20%, de quanto fica a parcela?",
+          "r": "No lote de 300 m² (R$ 435.000,00), a entrada de 20% é R$ 87.000,00 e o saldo de R$ 348.000,00 fica em 12 parcelas de R$ 30.336,37, 24 de R$ 15.802,66, 36 de R$ 10.969,38, 48 de R$ 8.561,19, 60 de R$ 7.122,99 ou 72 de R$ 6.169,76, pela tabela Kaaba recebida em nov/2026. A tabela não informa índice de correção.",
+          "fonte": "quadro de parcelas da ficha (tabela Kaaba recebida em nov/2026)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto pago a mais parcelando em 72 meses em vez de 12?",
+          "r": "No lote de 300 m² com entrada de 10%, o total pago é R$ 453.041,03 em 12 parcelas e R$ 543.250,55 em 72, sem a correção, que a tabela não informa. A diferença vem dos juros de 0,7% ao mês, cerca de 8,73% ao ano.",
+          "fonte": "quadro de parcelas da ficha (tabela Kaaba recebida em nov/2026)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem desconto à vista ou parcela anual?",
+          "r": "Não. A tabela Kaaba recebida em nov/2026 não traz desconto à vista nem parcela anual: o pagamento é entrada de 10% ou 20% e saldo em parcelas mensais. Pedimos à Kaaba a simulação do lote escolhido.",
+          "fonte": "tabela Kaaba recebida em nov/2026 (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quais lotes maiores que 300 m² estão disponíveis e por quanto?",
+          "r": "No pool de 26/10/2026, a R$ 1.450 o m²: 6 lotes de 300,64 a 325,00 m², de R$ 435.928,00 a R$ 471.250,00, e 4 lotes de 330,74 a 363,75 m², de R$ 479.573,00 a R$ 527.437,50.",
+          "fonte": "tabela de lotes disponíveis da ficha (pool Kaaba de 26/10/2026)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual o maior lote do loteamento e quanto custa?",
+          "r": "O maior tem 479,41 m² e sai por R$ 695.144,50, a R$ 1.450 o m². Ele não está entre os disponíveis do pool de 26/10/2026, em que o maior é o J-18, de 363,75 m².",
+          "fonte": "áreas da tabela de vendas Kaaba (239 lotes) x R$ 1.450/m² da fonte única do site; pool de 26/10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Algum lote só é vendido à vista?",
+          "r": "O pool de 26/10/2026 marca 5 lotes como \"venda à vista\" (D-18, M-3, M-17, N-3 e N-14) e 3 como reservados (J-2, K-11 e N-17). A planilha não explica se os de \"venda à vista\" só aceitam pagamento à vista: confirmamos com a Kaaba.",
+          "fonte": "pool de vendas Kaaba de 26/10/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quando libera para construir?",
+          "r": "A previsão é dezembro/2026. Segundo a Kaaba (16/11/2026), a liberação para construir está em tramitação na Prefeitura; confirmamos a data antes de você assinar.",
+          "fonte": "Kaaba no WhatsApp em 16/11/2026; mês fechado pelo Fabio com a Kaaba em 17/11/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem fotos ou vídeo da obra?",
+          "r": "Sim. A página tem fotos de drone de 30/03, 23/04 e 08/05/2026, e a Kaaba enviou também vídeo de drone de abril/2026, que mandamos pelo WhatsApp.",
+          "fonte": "fotos de drone da ficha; vídeo de drone de 23/04/2026 (pasta 08 da base E:)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual empresa aparece como dona da área?",
+          "r": "O projeto urbanístico traz a Jardim Obwalden SPE Ltda., CNPJ 23.241.175/0001-96, como proprietária (SPE é a empresa criada só para o empreendimento); a Kaaba assina a realização e a incorporação. O material não diz quem assina o contrato: confirmamos antes da proposta.",
+          "fonte": "projeto urbanístico (carimbo); folheto e apresentação da Kaaba",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Quanto do loteamento é área verde e área pública?",
+          "r": "A gleba tem 143.944,96 m²: lotes ocupam 50,99%, ruas 24,01%, área verde e APP 14% (20.152,30 m², em duas APPs de 7.275,11 e 12.877,19 m²), sistemas de lazer 6% e área institucional 5% (7.197,25 m²).",
+          "fonte": "projeto urbanístico (quadro de áreas)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto de área de lazer tem?",
+          "r": "Pelo projeto urbanístico, 8.636,70 m² de sistemas de lazer, em 3 áreas (896,31, 4.262,23 e 3.478,16 m²). O material de venda fala em \"mais de 20.000 m² de puro lazer\"; no projeto, perto disso só está a área verde e APP (20.152,30 m²), que é contada à parte.",
+          "fonte": "projeto urbanístico (quadros); apresentação 2024, pág. 2; folder",
+          "origem": "base"
+        },
+        {
+          "p": "Qual a largura das ruas?",
+          "r": "O projeto tem uma avenida de 24 m com canteiro central e ruas de 14 m. As fotos de maio/2026 mostram as ruas asfaltadas, com guias e postes.",
+          "fonte": "projeto urbanístico; fotos de drone de 08/05/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos lotes tem cada quadra?",
+          "r": "São 239 lotes em 15 quadras: A com 31, B 13, C 17, D 20, E 9, F 16, G 3, H 12, I 16, J 18, K 11, L 21, M 17, N 17 e O 18.",
+          "fonte": "tabela de vendas Kaaba; projeto urbanístico",
+          "origem": "base"
+        },
+        {
+          "p": "A rede de água e esgoto já está pronta?",
+          "r": "A apresentação de 2024 mostrava a rede de água e esgoto, a drenagem e as guias e sarjetas em obra. As fotos de 2026 não permitem conferir as redes, e o material não diz se a ligação é com o SAAE nem traz o termo de conclusão: pedimos à Kaaba antes da proposta.",
+          "fonte": "apresentação Obwalden 2024, págs. 25 a 31",
+          "origem": "base"
+        },
+        {
+          "p": "Em que parte do loteamento fica o clube?",
+          "r": "Na ponta nordeste, no sistema de lazer 03, de 3.478,16 m², que o projeto classifica como espaço livre de uso público.",
+          "fonte": "implantação e projeto urbanístico (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem brinquedoteca e espaço para crianças?",
+          "r": "Estão previstos brinquedoteca e playground, além de academia ao ar livre, segundo a apresentação e o folder da Kaaba. Por enquanto aparecem só em imagens ilustrativas.",
+          "fonte": "apresentação Obwalden 2024, págs. 3 a 18; folder",
+          "origem": "base"
+        },
+        {
+          "p": "Por que o nome Obwalden?",
+          "r": "Obwalden é um cantão da Suíça, e o folheto diz que o conceito arquitetônico se inspira na tradição suíça.",
+          "fonte": "folheto da Kaaba (ficha do site)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem outro loteamento à venda perto?",
+          "r": "Sim: o <a href=\"/reserva-da-colina-indaiatuba/\">Reserva da Colina</a>, também da Kaaba, a cerca de 1,5 km em linha reta (medida nossa entre os pontos do Google Maps, 22/11/2026), já entregue, com lotes a partir de R$ 400.500 (300 m², tabela recebida em nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES); pontos do Google Maps das duas fichas da base",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A Kaaba já entregou outros loteamentos?",
+          "r": "No site, dois loteamentos da Kaaba aparecem como entregues: o <a href=\"/reserva-da-colina-indaiatuba/\">Reserva da Colina</a>, a partir de R$ 400.500 (300 m²), e o <a href=\"/jardim-siena-indaiatuba/\">Jardim Siena</a>, em Itaici, a partir de R$ 300.000 (250 m²), pelas tabelas recebidas em nov/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES, campo prev)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "O que mais tem na mesma faixa de preço?",
+          "r": "O <a href=\"/jardim-belle-vista-indaiatuba/\">Jardim Residencial Belle Vista</a>, da Kaaba, no Mato Dentro, a partir de R$ 360.000 (300 m², tabela recebida em nov/2026), e o <a href=\"/alpnach-indaiatuba/\">Alpnach Residence</a>, da Dominium, a partir de R$ 510.000 (300 m², tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

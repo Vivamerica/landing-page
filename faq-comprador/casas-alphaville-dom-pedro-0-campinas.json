@@ -1,0 +1,158 @@
+{
+  "slug": "casas-alphaville-dom-pedro-0-campinas",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado construído?",
+          "r": "Na tabela de vendas de out/2026, a Casa Amazônia AA13 sai por cerca de R$ 11.500 por m² construído, e a Guarás AA2 e as Abaporu, por cerca de R$ 11.716 por m² (conta nossa: preço dividido pela área construída da tabela).",
+          "fonte": "tabela de vendas Casas Alphaville Dom Pedro 0, out/2026 (conta nossa)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Financiamento",
+      "perguntas": [
+        {
+          "p": "Dá para financiar a casa pelo banco?",
+          "r": "O material da Alphaville não fala em financiamento bancário: a tabela de out/2026 só traz o parcelamento com a vendedora. Se você quiser usar banco, a gente confirma com a Alphaville antes da proposta.",
+          "fonte": "tabela de vendas Casas Alphaville Dom Pedro 0, out/2026",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Qual o tamanho do terreno de cada casa?",
+          "r": "Pela tabela de out/2026: Amazônia AA13, terreno de 413,3 m²; Guarás AA2, 403,8 m²; Abaporu Z08, 414,1 m²; e Abaporu Z12 e Z14, 417,8 m² cada.",
+          "fonte": "tabela de vendas Casas Alphaville Dom Pedro 0, out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos carros cabem na garagem?",
+          "r": "Na Casa Amazônia, garagem coberta para 2 carros e moto; na Guarás e na Abaporu, garagem coberta para 3 carros. Nas três, com acesso social.",
+          "fonte": "book da Casa Abaporu (ficha técnica); página do empreendimento no site (material de divulgação)",
+          "origem": "base"
+        },
+        {
+          "p": "Dá para instalar elevador na casa?",
+          "r": "Na Guarás e na Abaporu, sim: o projeto prevê espaço para instalação de elevador tipo plataforma. Na Amazônia, o material não cita esse espaço.",
+          "fonte": "book da Casa Abaporu (p.12); página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "A casa tem home office?",
+          "r": "Tem nos três modelos à venda. Amazônia: home office, sala de TV íntima e copa. Guarás: home office, home cinema e copa. Abaporu: home cinema, home office e copa.",
+          "fonte": "página do empreendimento no site (material de divulgação da Alphaville)",
+          "origem": "ficha"
+        },
+        {
+          "p": "As suítes têm closet?",
+          "r": "Na Amazônia, 2 das 3 suítes têm closet, e a master tem closet e sala de banho. Na Guarás, as 3 suítes têm closet, e a master tem também estar. Na Abaporu, a master tem estar, closet e sala de banho.",
+          "fonte": "página do empreendimento no site (material de divulgação da Alphaville)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem pé-direito duplo?",
+          "r": "Na sala principal da Guarás e da Abaporu, sim. Na Amazônia, o material não informa pé-direito duplo.",
+          "fonte": "book da Casa Abaporu (ficha técnica); página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "A casa tem lavabo?",
+          "r": "Sim. Nos três modelos à venda, o hall de entrada tem lavabo.",
+          "fonte": "book da Casa Abaporu (ficha técnica); página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "A casa é térrea ou tem dois andares?",
+          "r": "Tem dois pavimentos: o térreo, com salas, cozinha e área gourmet, e o superior, com as 3 suítes e a sala íntima, conforme a tabela de out/2026.",
+          "fonte": "tabela de vendas out/2026; books das casas",
+          "origem": "base"
+        },
+        {
+          "p": "Tem varanda gourmet?",
+          "r": "Na Guarás, as salas de jantar e de estar são integradas à varanda gourmet; na Abaporu, a sala de jantar é integrada à varanda gourmet; na Amazônia, o térreo tem área gourmet, e a unidade AA13 aparece na tabela como térreo com varanda.",
+          "fonte": "book da Casa Abaporu; página do empreendimento no site; tabela de out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "A planta da casa à venda é igual à do material?",
+          "r": "Pode ser diferente. A tabela de out/2026 define a configuração de cada unidade: térreo com varanda na Amazônia AA13 e varanda menor com sala estendida na Guarás AA2 e nas três Abaporu. A gente pede a planta da casa que interessa antes da proposta.",
+          "fonte": "tabela de vendas out/2026; página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "A Abaporu tem mais de uma opção de planta?",
+          "r": "O material de divulgação traz duas variações de térreo para a Abaporu: uma com home office e despensa e outra com a varanda inteira, em que a sala de jantar se integra à varanda gourmet e a um estar externo. A configuração da unidade à venda é a da tabela.",
+          "fonte": "página do empreendimento no site (material de divulgação da Alphaville)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem área de serviço, despensa e depósito?",
+          "r": "Amazônia: cozinha com área de serviço e despensa, e banheiro de serviço. Guarás: área de serviço, banheiro de serviço, despensa e depósito. Abaporu: despensa, área de serviço preparada para 2 máquinas lava e seca, banheiro de serviço e depósito.",
+          "fonte": "book da Casa Abaporu (ficha técnica); página do empreendimento no site",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto de área verde tem o residencial?",
+          "r": "Mais de 200 mil m² de áreas verdes no residencial Alphaville Dom Pedro 0, com árvores centenárias em volta do casarão do clube, segundo os books da Alphaville.",
+          "fonte": "book da Casa Abaporu (p.2)",
+          "origem": "base"
+        },
+        {
+          "p": "O residencial tem portaria?",
+          "r": "Tem. As casas ficam numa área reservada dentro do residencial Alphaville Dom Pedro 0, que tem portaria, segundo os books; a lista de apoio do residencial traz também triagem.",
+          "fonte": "books das casas (p.8); lista de lazer e apoio divulgada pela Alphaville, na página do site",
+          "origem": "base"
+        },
+        {
+          "p": "Em que parte do residencial ficam as casas?",
+          "r": "Na área reservada da planta conceitual, com 42 lotes numerados nas quadras Y (13), Z (17) e AA (12). Na vista aérea do residencial, as casas ficam ao fundo, à direita, junto à mata.",
+          "fonte": "planta conceitual da área reservada; página do empreendimento no site (legenda da vista aérea)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem supermercado perto?",
+          "r": "Pelos tempos da Alphaville, sem meio de transporte informado, o Tauste fica a 1 minuto, o Sam's Club a 2 e a Leroy Merlin a 5.",
+          "fonte": "material da Alphaville, citado na página do empreendimento no site",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro Alphaville na região?",
+          "r": "Tem. Em Indaiatuba, o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, no bairro do Itaici, tem lotes para construir a partir de R$ 908.480 (tabela de nov/2026). A lista completa está em <a href=\"/alphaville/\">Empreendimentos Alphaville</a>.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES; gera-alphaville.js), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem outro imóvel de alto padrão perto, pronto ou para construir?",
+          "r": "Em Indaiatuba, o <a href=\"/reserva-luiza-tomaselli-indaiatuba/\">Reserva Luiza Tomaselli</a>, apartamento de 3 suítes e 154,99 m², pronto para morar, a partir de R$ 1.809.776 (tabela Lofts de out/2026). Para construir, o <a href=\"/lagos-de-helvetia-indaiatuba/\">Lagos de Helvetia</a>, com lotes de 501 a 2.015 m², a partir de R$ 901.800 (tabela GPCI de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS e LOTES), 22/11/2026",
+          "origem": "vizinhos"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Quanto vou pagar de ITBI?",
+          "r": "O ITBI é um imposto da cidade onde fica o imóvel: em Campinas/SP, a alíquota e a base de cálculo são as da Prefeitura de Campinas, não as de Indaiatuba. Antes de você assinar, a gente confere a regra na Prefeitura de Campinas e coloca o valor na conta dos custos da compra.",
+          "fonte": "regra geral do imposto municipal (texto padrão itbi, variante outra-cidade, do _padrao.json); alíquota a conferir na Prefeitura de Campinas",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

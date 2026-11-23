@@ -1,0 +1,173 @@
+{
+ "slug": "helade-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "fgts",
+  "distrato",
+  "afetacao",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Preço e pagamento",
+   "perguntas": [
+    {
+     "p": "Quanto custa o metro quadrado no Hélade?",
+     "r": "Pela tabela PERPLAN de set/2026, dá cerca de R$ 11.579 por m² no 1º andar (R$ 1.391.504 por 120,18 m²) e cerca de R$ 14.260 por m² no 24º e 25º andares (R$ 1.713.742). A conta é nossa, porque todas as unidades têm 120,18 m².",
+     "fonte": "tabela PERPLAN de set/2026 (fonte única do site (gera-folheto.js, 22/11/2026)); conta nossa",
+     "origem": "ficha"
+    },
+    {
+     "p": "Quanto vai ser o condomínio?",
+     "r": "Ainda não há valor: no book, a própria incorporadora responde que a taxa de condomínio ainda não foi determinada.",
+     "fonte": "book PERPLAN, p. 80",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Obra, entrega e registro",
+   "perguntas": [
+    {
+     "p": "O Hélade tem registro de incorporação?",
+     "r": "Sim. O memorial de incorporação foi registrado em 05/09/2023 sob o R4 da matrícula 135.440 do Oficial de Registro de Imóveis de Indaiatuba, em nome da Perplan 51 Empreendimento Imobiliário SPE Ltda. Antes de assinar, peça a certidão de matrícula atualizada.",
+     "fonte": "book PERPLAN, p. 85",
+     "origem": "base"
+    },
+    {
+     "p": "Qual o tamanho do terreno?",
+     "r": "O terreno tem 3.354,40 m². Além dos 25 andares de apartamentos, a torre tem 2 subsolos, térreo, ático, cobertura e reservatórios.",
+     "fonte": "book PERPLAN, p. 27 e 80",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "As vagas são livres ou presas?",
+     "r": "São 232 vagas demarcadas e vinculadas aos apartamentos, nos 2 subsolos e no térreo. Há vagas livres e vagas tipo gaveta, sempre do mesmo apartamento, com 2,50 x 5,00 m ou 2,50 x 4,70 m.",
+     "fonte": "book PERPLAN, p. 28 e 78",
+     "origem": "base"
+    },
+    {
+     "p": "Tem vaga para visitante?",
+     "r": "Sim: 9 vagas externas de visitantes, além de 3 vagas PCD de uso comum e 1 vaga de carga e descarga.",
+     "fonte": "book PERPLAN, p. 32 e 78",
+     "origem": "base"
+    },
+    {
+     "p": "Tem carregador para carro elétrico?",
+     "r": "Há 3 vagas de uso comum no térreo com infraestrutura para a futura instalação de carregador de carro elétrico. O book não cita o carregador como item entregue.",
+     "fonte": "book PERPLAN, p. 28, 30 e 80",
+     "origem": "base"
+    },
+    {
+     "p": "Tem depósito privativo (hobby box)?",
+     "r": "Não. O book informa que não há depósitos privativos nos andares de estacionamento.",
+     "fonte": "book PERPLAN, p. 78",
+     "origem": "base"
+    },
+    {
+     "p": "Tem bicicletário?",
+     "r": "Sim, no 2º subsolo, com bancada e calibrador eletrônico de pneus.",
+     "fonte": "book PERPLAN, p. 30, 32 e 80",
+     "origem": "base"
+    },
+    {
+     "p": "Qual o pé-direito do apartamento?",
+     "r": "São 2,70 m do piso ao teto e 2,92 m de piso a piso, podendo variar onde houver forro ou sanca de gesso.",
+     "fonte": "book PERPLAN, p. 78",
+     "origem": "base"
+    },
+    {
+     "p": "Tem água quente?",
+     "r": "Sim. O apartamento tem infraestrutura completa para aquecedor de passagem a gás, com água quente nos chuveiros de todas as suítes e na torneira da cozinha.",
+     "fonte": "book PERPLAN, p. 79",
+     "origem": "base"
+    },
+    {
+     "p": "As contas de água e gás são individuais?",
+     "r": "O book prevê medidores individuais de gás e de água para cada apartamento.",
+     "fonte": "book PERPLAN, p. 79",
+     "origem": "base"
+    },
+    {
+     "p": "A varanda tem churrasqueira?",
+     "r": "Não de série. Sala e varanda são niveladas, e a churrasqueira elétrica, a bancada, a cuba e os metais da varanda podem ser comprados no kit de personalização.",
+     "fonte": "book PERPLAN, p. 76, 78 e 79",
+     "origem": "base"
+    },
+    {
+     "p": "Posso escolher o acabamento?",
+     "r": "Sim. A PERPLAN oferece um kit de personalização cerca de 1 ano depois do lançamento, com revestimentos de piso e parede, louças, metais, mármores e granitos, além dos itens da varanda. O kit é cobrado à parte da tabela, por boleto.",
+     "fonte": "book PERPLAN, p. 76 e 79",
+     "origem": "base"
+    },
+    {
+     "p": "Tem automação nas persianas?",
+     "r": "Os dormitórios têm janelas com persiana de enrolar e infraestrutura para automação dessas persianas. Há ainda infraestrutura para wi-fi nas áreas comuns, som Bluetooth no fitness e no salão de festas e ponto para filtro de água na cozinha.",
+     "fonte": "book PERPLAN, p. 30 e 78",
+     "origem": "base"
+    },
+    {
+     "p": "Os banheiros têm janela?",
+     "r": "Sim. Pelo book, todos os banheiros têm iluminação e ventilação natural.",
+     "fonte": "book PERPLAN, p. 30",
+     "origem": "base"
+    },
+    {
+     "p": "Quais são os itens de lazer?",
+     "r": "Pelo book: piscina adulto com cascata e piscina infantil, deck molhado e solarium, family club com churrasqueira e spa, lounge com lareira, salão de festas, salão de jogos, brinquedoteca, playground, fitness, fitness class e fitness externo, quadra recreativa gramada, mini market e pet place com grama natural no 1º subsolo.",
+     "fonte": "book PERPLAN, p. 30 e 32",
+     "origem": "base"
+    },
+    {
+     "p": "O lazer é entregue decorado?",
+     "r": "Sim. As áreas comuns são entregues equipadas e decoradas, com os itens listados no Memorial do Cliente, e são climatizadas.",
+     "fonte": "book PERPLAN, p. 30 e 79",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a piscina?",
+     "r": "A piscina adulto tem cascata, 1,20 m de profundidade e sistema “quebra-gelo”; a infantil tem 0,40 m. Ao lado ficam o deck molhado e o solarium.",
+     "fonte": "book PERPLAN, p. 30",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a segurança do prédio?",
+     "r": "O prédio tem clausura de veículos, com um portão único para todos os andares de garagem, clausura social e clausura de serviço, guarita com banheiro e fechamento em vidro, muro de alvenaria e gradis nos portões. O bairro Park Meraki tem câmeras de vigilância.",
+     "fonte": "book PERPLAN, p. 23, 30, 32 e 78",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "Como é o bairro Park Meraki?",
+     "r": "É um bairro planejado com mais de 360 mil m² de terreno, mais de 80 mil m² de área verde e 41 lotes comerciais, com rede elétrica subterrânea, câmeras de vigilância, ciclovia e reserva ambiental, segundo o book.",
+     "fonte": "book PERPLAN, p. 22 e 23",
+     "origem": "base"
+    },
+    {
+     "p": "Tem outros lançamentos no Park Meraki?",
+     "r": "Tem: o <a href=\"/artemis-residencial-indaiatuba/\">Artemis Residencial</a>, de 3 dormitórios com suíte, a partir de R$ 555.171 (tabela GPCI de nov/2026); o <a href=\"/360-home-office-mall-indaiatuba/\">360 Home Office Mall</a>, a partir de R$ 546.274 (tabela HINC de set/2026, confirmada para out/2026); e o <a href=\"/aurora-indaiatuba/\">Aurora — Park Meraki</a>, com tabela de pré-lançamento a partir de R$ 758.850, sujeita a reajuste no lançamento oficial.",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    },
+    {
+     "p": "Tem outro apartamento de alto padrão nessa faixa de preço?",
+     "r": "Tem: o <a href=\"/espaco-conceicao-indaiatuba/\">Espaço Conceição</a>, a partir de R$ 1.030.310,00 (disponibilidade Masotti de 12/10/2026); o <a href=\"/seasons-indaiatuba/\">Congesa Seasons</a>, a partir de R$ 1.239.000 (tabela Congesa de out/2026); e o <a href=\"/reserva-luiza-tomaselli-indaiatuba/\">Reserva Luiza Tomaselli</a>, pronto para morar, a partir de R$ 1.809.776 (tabela Lofts de out/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

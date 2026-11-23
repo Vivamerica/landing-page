@@ -1,0 +1,96 @@
+{
+ "slug": "jardim-belle-vista-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "fgts",
+  "distrato",
+  "afetacao",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Preço e pagamento",
+   "perguntas": [
+    {
+     "p": "Quais lotes ainda estão à venda?",
+     "r": "O pool de vendas da Kaaba de 27/10/2026 lista 18 lotes: 13 de 300 m² a R$ 360.000,00 (B02, B06, B13, B14, B16, B17, C04, E14, E15, E18, E19, E20 e G06), A04 de 317,11 m² a R$ 380.532,00, G13 de 331,30 m² a R$ 397.560,00, B11 de 392,56 m² a R$ 471.072,00, F02 de 420,27 m² a R$ 504.324,00 e D01 de 518,66 m² a R$ 622.392,00, pela tabela Kaaba recebida em nov/2026.",
+     "fonte": "pool de vendas Kaaba de 27/10/2026; tabela Kaaba recebida em nov/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Quanto pago no total se parcelar?",
+     "r": "Num lote de 300 m² (R$ 360.000,00 à vista), com 10% de entrada, o total fica em R$ 370.626,28 em 12 parcelas, R$ 380.637,07 em 24 e R$ 390.841,48 em 36; com 20% de entrada, R$ 369.445,58, R$ 378.344,06 e R$ 387.414,65. Os totais são os da tabela Kaaba recebida em nov/2026, sem correção, que a tabela não informa.",
+     "fonte": "tabela Kaaba recebida em nov/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Quantos lotes já foram vendidos?",
+     "r": "O pool de vendas de 27/10/2026 lista 20 dos 91 lotes: 18 disponíveis e 2 marcados como “venda à vista” (F01 e G01). Os outros 71 não aparecem no pool, e a quadra H está marcada como 100% vendida.",
+     "fonte": "pool de vendas Kaaba de 27/10/2026",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "Qual a frente e o fundo do lote de 300 m²?",
+     "r": "O lote padrão de 300 m² tem 12,00 m de frente por 25,00 m de fundo, pelas cotas do projeto urbanístico.",
+     "fonte": "projeto urbanístico (abr/2018)",
+     "origem": "base"
+    },
+    {
+     "p": "Algum lote tem restrição para construir?",
+     "r": "O pool de 27/10/2026 marca os lotes D01, E14 e E15 como lotes com viela sanitária. As regras de construção não constam no material recebido: peça a planta e as restrições do lote antes de escolher.",
+     "fonte": "pool de vendas Kaaba de 27/10/2026",
+     "origem": "base"
+    },
+    {
+     "p": "Posso construir comércio no lote?",
+     "r": "Pelo quadro “Natureza do loteamento” do projeto urbanístico, os 91 lotes são residenciais; não há lotes comerciais.",
+     "fonte": "projeto urbanístico (abr/2018)",
+     "origem": "base"
+    },
+    {
+     "p": "Como é dividida a área do loteamento?",
+     "r": "A gleba tem 60.000 m²: 29.995,61 m² de lotes (49,99%), 15.004,39 m² de ruas (25,01%), 12.000 m² de áreas verdes (20%), em três áreas de 6.905,10 m², 4.554,45 m² e 540,45 m², e 3.000 m² de área institucional (5%).",
+     "fonte": "projeto urbanístico, quadros de áreas",
+     "origem": "base"
+    },
+    {
+     "p": "Quantos lotes tem em cada quadra?",
+     "r": "São 8 quadras: A com 10 lotes, B com 20, C com 10, D com 3, E com 21, F com 10, G com 13 e H com 4.",
+     "fonte": "tabela Kaaba; projeto urbanístico",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "Qual o caminho do Belle Vista até o Centro?",
+     "r": "O mapa do folheto da Kaaba marca como referências a Rodovia IDT-040, a Rua Ricieri Delboni e as avenidas João Ambiel, Conceição e Presidente Kennedy, além do Parque Ecológico. O material não informa distâncias.",
+     "fonte": "folheto Kaaba, mapa (p. 1)",
+     "origem": "base"
+    },
+    {
+     "p": "A Kaaba tem outros lotes em Indaiatuba?",
+     "r": "Tem: o <a href=\"/jardim-siena-indaiatuba/\">Jardim Siena</a>, em Itaici, com lote de 250 m² a partir de R$ 300.000; o <a href=\"/reserva-da-colina-indaiatuba/\">Reserva da Colina</a>, com lote de 300 m² a partir de R$ 400.500; e o <a href=\"/terras-de-obwalden-indaiatuba/\">Terras de Obwalden</a>, com lote de 300 m² a partir de R$ 435.000, todos pela tabela Kaaba recebida em nov/2026.",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    },
+    {
+     "p": "Tem lote mais barato em Indaiatuba?",
+     "r": "Tem, com lotes de 150 m²: o <a href=\"/monte-carmelo-indaiatuba/\">Residencial Monte Carmelo</a>, loteamento aberto, a partir de R$ 145.000 (tabela Dominium de nov/2026); o <a href=\"/di-italia-indaiatuba/\">Jardim Di Italia</a>, loteamento aberto, a partir de R$ 210.000 (tabela Dominium de nov/2026); e o <a href=\"/vila-fahl-indaiatuba/\">Residencial Vila Fahl</a>, a partir de R$ 290.000 (tabela de out/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

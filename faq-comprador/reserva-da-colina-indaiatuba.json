@@ -1,0 +1,128 @@
+{
+  "slug": "reserva-da-colina-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quais lotes maiores que 300 m² estão disponíveis e por quanto?",
+          "r": "No pool de 26/10/2026, com os valores da tabela recebida em nov/2026: C-1, 342,00 m², R$ 456.570,00; D-6, 382,06 m², R$ 510.050,10; E-15, 404,55 m², R$ 540.074,25 (com viela sanitária); C-13, 445,59 m², R$ 594.862,65; e F-1, 458,03 m², R$ 611.470,05. O maior da tabela, o B-18, de 527,38 m² (R$ 704.052,30), não aparece no pool: confirmamos com a Kaaba se ainda está à venda.",
+          "fonte": "tabela de lotes disponíveis da ficha (pool Kaaba de 26/10/2026 e tabela recebida em nov/2026)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Já posso construir?",
+          "r": "Sim. A Kaaba informou em 16/11/2026 que o empreendimento já foi entregue e que o comprador pode construir. O número e a data do termo de verificação de obras não constam no material: peça a cópia antes de assinar.",
+          "fonte": "Kaaba no WhatsApp, 16/11/2026 (base E:, doc.tvo e entrega.previsao)",
+          "origem": "base"
+        },
+        {
+          "p": "O lazer já está pronto para usar?",
+          "r": "Nas fotos da Kaaba de junho/2025, a portaria está pronta, o salão de festas está construído (sem mobília na foto), o pet place e a área zen estão implantados e a quadra de beach tennis está em obra. O playground aparece só em perspectiva. O material não diz se o lazer é entregue equipado nem quando.",
+          "fonte": "Apresentação Reserva da Colina jun/2025, págs. 6 a 17",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Qual o tamanho do loteamento e quantos lotes tem cada quadra?",
+          "r": "A gleba tem 120.759 m², com 123 lotes em 7 quadras: A com 11, B com 32, C com 17, D com 21, E com 15, F com 4 e G com 23. Os lotes ocupam 39.559,45 m² e as ruas, 20.045,34 m².",
+          "fonte": "projeto urbanístico (quadro de áreas); tabela de 10/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto do loteamento é área verde?",
+          "r": "55.111,72 m², 45,64% da gleba, são área verde e área de preservação permanente (APP); a APP sozinha tem 11.370,05 m². O material de venda arredonda para 55 mil m².",
+          "fonte": "projeto urbanístico (quadro de áreas); apresentação jun/2025, pág. 2",
+          "origem": "base"
+        },
+        {
+          "p": "Tem área reservada para escola ou posto de saúde?",
+          "r": "O projeto reserva 6.042,49 m² de área institucional: 3.927,07 m² para equipamento comunitário e 2.115,42 m² para equipamento urbano. O material não diz o que será construído ali.",
+          "fonte": "projeto urbanístico (quadro de áreas)",
+          "origem": "base"
+        },
+        {
+          "p": "Qual a largura das ruas?",
+          "r": "O projeto urbanístico tem ruas de 14, 15 e 25 metros de largura, somando calçada e pista. As fotos de junho/2025 mostram as ruas asfaltadas, com guias, calçadas e postes.",
+          "fonte": "projeto urbanístico (perfis de rua); apresentação jun/2025, págs. 11 a 15",
+          "origem": "base"
+        },
+        {
+          "p": "O que é viela sanitária e quais lotes têm?",
+          "r": "Em geral, é uma faixa reservada para a passagem de rede de esgoto ou de água de chuva. O pool de 26/10/2026 marca 8 lotes da quadra E com viela sanitária (6, 8, 9 e 11 a 15); seis deles estão disponíveis. O material não diz que restrição isso traz: pergunte antes de escolher um deles.",
+          "fonte": "pool de vendas Kaaba de 26/10/2026 (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Algum lote tem faixa onde não se pode construir?",
+          "r": "Sim. O projeto urbanístico marca faixas não edificáveis (non aedificandi) em alguns lotes junto à área de preservação. Peça a planta do lote escolhido para ver se a faixa o atinge.",
+          "fonte": "projeto urbanístico (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Posso abrir comércio no lote?",
+          "r": "A apresentação da Kaaba descreve os lotes como residenciais, e o projeto não separa lotes comerciais. As regras sobre comércio, home office ou mais de uma casa por lote não constam no material: peça o regulamento.",
+          "fonte": "Apresentação jun/2025, pág. 2; projeto urbanístico",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Por quais avenidas eu chego lá?",
+          "r": "O mapa do book e do folheto da Kaaba cita a Rodovia João Ceccon, a Rua Hércules Florence, a Rua Laércio Longatti e a Avenida Eng. Fábio Roberto Barnabé como acessos da região.",
+          "fonte": "Apresentação jun/2025, pág. 3; folheto Reserva da Colina",
+          "origem": "base"
+        },
+        {
+          "p": "Tem escola perto?",
+          "r": "O mapa do book marca o Colégio Objetivo como referência, junto com a Prefeitura e o Parque Ecológico, mas não dá distâncias.",
+          "fonte": "Apresentação jun/2025, pág. 3; folheto, pág. 2",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outro loteamento à venda perto?",
+          "r": "Sim: o <a href=\"/terras-de-obwalden-indaiatuba/\">Terras de Obwalden</a>, também da Kaaba, no Bairro Bela Vista, a cerca de 1,5 km em linha reta (medida nossa entre os pontos do Google Maps, 22/11/2026), com lotes a partir de R$ 435.000 (300 m², tabela recebida em nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES); pontos do Google Maps das duas fichas da base",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem lote mais em conta da mesma loteadora?",
+          "r": "Sim, da Kaaba: o <a href=\"/jardim-belle-vista-indaiatuba/\">Jardim Residencial Belle Vista</a>, no Mato Dentro, a partir de R$ 360.000 (300 m²), e o <a href=\"/jardim-siena-indaiatuba/\">Jardim Siena</a>, em Itaici, a partir de R$ 300.000 (250 m²), pelas tabelas recebidas em nov/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "E de outra loteadora, na mesma faixa de preço?",
+          "r": "O <a href=\"/alpnach-indaiatuba/\">Alpnach Residence</a>, da Dominium, tem lotes a partir de R$ 510.000 (300 m²), pela tabela de nov/2026.",
+          "fonte": "fonte única do site (gera-folheto.js, LOTES)",
+          "origem": "vizinhos"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Quem vende e quem assina o contrato?",
+          "r": "O folheto e a apresentação trazem a Kaaba Empreendimentos na realização e na incorporação, mas o projeto urbanístico traz outra empresa como proprietária da gleba, e o material não informa o CNPJ de quem vende. Antes de qualquer proposta, peça a certidão de matrícula atualizada e confirme quem assina o contrato.",
+          "fonte": "folheto e apresentação da Kaaba; projeto urbanístico (ficha do site)",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

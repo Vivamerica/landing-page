@@ -1,0 +1,159 @@
+{
+  "slug": "360-home-office-mall-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado no 360?",
+          "r": "No apto R1202, o de menor preço da tabela HINC de 15/09/2026 (preços confirmados para out/2026), são R$ 546.273,99 por 39,73 m²: cerca de R$ 13.750 por metro quadrado de área privativa (conta nossa sobre a tabela).",
+          "fonte": "tabela HINC de 15/09/2026, preços confirmados para out/2026 (fonte única do site)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto custam os apartamentos de 42 a 60 m²?",
+          "r": "Na tabela de 15/09/2026: o de 42,53 m² vai de R$ 584.773,04 a R$ 646.426,68; o de 43,34 m², de R$ 595.910,26 a R$ 658.738,13; o de 49,50 m², de R$ 680.608,17 a R$ 752.365,88; e o de 60,73 m², com dois banheiros, de R$ 835.016,85 a R$ 923.054,14.",
+          "fonte": "tabela HINC de 15/09/2026, preços confirmados para out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Apartamentos da mesma planta têm o mesmo preço?",
+          "r": "Não. O valor muda de unidade para unidade: os 34 apartamentos de 39,75 m² da tabela de 15/09/2026, por exemplo, vão de R$ 546.548,99 a R$ 604.172,60. A tabela unidade por unidade é enviada no atendimento.",
+          "fonte": "tabela HINC de 15/09/2026, preços confirmados para out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto eu pago antes da parcela final de 60%?",
+          "r": "40% do valor: ato (6%), sinal (5%), 40 mensais (15%), 3 anuais (10%) e a parcela única de 30/04/2030 (4%). No apto R1202 (R$ 546.273,99 na tabela de 15/09/2026), isso soma R$ 218.509,60 até abril de 2030; os 60% restantes, R$ 327.764,39, vencem em 31/05/2030. A tabela não diz se essa parcela final é paga com financiamento bancário.",
+          "fonte": "fluxo da tabela HINC de 15/09/2026 (conta nossa sobre os valores impressos)",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos apartamentos ainda estão na tabela?",
+          "r": "A tabela de 15/09/2026 traz 84 das 111 unidades residenciais: 81 apartamentos tipo, do 10º ao 18º andar, e os 3 duplex. Traz também 34 salas da torre office. A situação de cada unidade é confirmada no atendimento.",
+          "fonte": "tabela HINC de 15/09/2026, preços confirmados para out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Até quando vale essa tabela?",
+          "r": "A tabela foi gerada em 15/09/2026, teve os preços confirmados para outubro/2026 e não traz data de validade; os valores podem mudar sem aviso prévio. Antes da proposta, a gente confirma com a HINC a tabela do dia.",
+          "fonte": "tabela HINC de 15/09/2026; página do empreendimento no site",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem incorpora e quem constrói o 360?",
+          "r": "A incorporação é da HINC Incorporações e Loteamentos, do Grupo H2C, e a construção é da HCON Engenharia e Construção. A incorporadora responsável é a 360 Home, Office & Mall SPE Ltda., CNPJ 59.465.382/0001-71.",
+          "fonte": "ficha técnica do site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quem assina o projeto?",
+          "r": "Arquitetura de Paulo Lisboa Arquitetura com a LKS, paisagismo da Takeda Design, iluminação da Noyori Lighting Design e interiores das áreas comuns da Tria Arquitetura e da Eco Arquitetura.",
+          "fonte": "ficha técnica do site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Como é a estrutura do prédio?",
+          "r": "Laje nervurada e protendida, que permite vãos maiores e menos pilares, segundo o material da incorporadora.",
+          "fonte": "página do empreendimento no site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O apartamento vem como nas imagens?",
+          "r": "Não necessariamente. As perspectivas são ilustrativas: pisos elevados, forros das salas, móveis e decoração não fazem parte do memorial descritivo, e a vegetação aparece em porte adulto.",
+          "fonte": "página do empreendimento no site (nota das perspectivas)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Quantos apartamentos tem por andar?",
+          "r": "Do 10º ao 18º andar, cada andar tem 12 apartamentos tipo, dos finais 1 a 12, num total de 108. Os 3 duplex ficam no 8º e no 9º andar.",
+          "fonte": "tabela HINC de 15/09/2026 (finais por andar); ficha técnica do site",
+          "origem": "base"
+        },
+        {
+          "p": "Tem vaga para carro elétrico e bicicletário?",
+          "r": "Sim. Os três subsolos têm vagas para carros elétricos e bicicletário, e um deles é só do residencial.",
+          "fonte": "página do empreendimento no site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O apartamento vem com ar-condicionado?",
+          "r": "Não. Vem com infraestrutura seca para ar-condicionado split; os aparelhos não estão incluídos.",
+          "fonte": "página do empreendimento no site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "A conta de luz é individual?",
+          "r": "Sim. O material informa medição individual de energia, e o prédio tem geradores.",
+          "fonte": "página do empreendimento no site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Como é a segurança do residencial?",
+          "r": "O lobby do residencial tem clausura na entrada, controle de acesso por biometria, reconhecimento facial e cartão, e câmeras em todas as áreas comuns.",
+          "fonte": "página do empreendimento no site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O residencial divide a entrada com as salas e o mall?",
+          "r": "Não. As três torres (residencial, office e corporate) têm lobbies e acessos independentes, e um dos três subsolos é só do residencial.",
+          "fonte": "página do empreendimento no site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Dá para juntar dois apartamentos?",
+          "r": "O material da incorporadora traz sugestões de unir unidades vizinhas em plantas de 82 m², 100 m² e até 120 m². As regras e os custos dessa junção são confirmados com a HINC no atendimento.",
+          "fonte": "página do empreendimento no site (caderno de vendas da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem lugar para receber encomendas?",
+          "r": "Sim. O prédio tem bolsão de delivery e entregas, e um aplicativo do condomínio para reservas, encomendas e câmeras.",
+          "fonte": "página do empreendimento no site (material da incorporadora)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual final pega sol da manhã?",
+          "r": "O material recebido não diz a posição do sol de cada final; a implantação mostra só o norte. Mandamos a implantação para você conferir a posição da unidade.",
+          "fonte": "implantação do térreo do material da incorporadora",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "O que tem perto do 360?",
+          "r": "Pelo book da incorporadora, que dá os tempos como referência ilustrativa e sem dizer o meio de transporte: Clube 9 de Julho, supermercados Roldão e Pão de Açúcar e Hospital Santa Ignês de 1 a 3 minutos; Centro, Rodovia Santos Dumont, Shopping Jaraguá e Polo Shopping de 7 a 10; Aeroporto de Viracopos a 15 e Campinas a 31.",
+          "fonte": "book da incorporadora, citado na página do empreendimento no site",
+          "origem": "ficha"
+        },
+        {
+          "p": "Que outros lançamentos ficam no Park Meraki?",
+          "r": "No site, o <a href=\"/artemis-residencial-indaiatuba/\">Artemis Residencial</a>, de 3 dormitórios com suíte, a partir de R$ 555.171 (tabela GPCI de nov/2026); o <a href=\"/arete-home-indaiatuba/\">Areté Home</a>, de 2 e 3 suítes, de R$ 991.005 (tabela PERPLAN de ago/2026); e o <a href=\"/helade-indaiatuba/\">Hélade</a>, de 3 suítes, de R$ 1.391.504 (tabela PERPLAN de set/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem apartamento na mesma faixa de preço em outro lugar da cidade?",
+          "r": "Tem. O <a href=\"/lumina-residencial-indaiatuba/\">Lumina Residencial</a>, no Centro, a partir de R$ 519.900 (tabela Emmar de out/2026), e o <a href=\"/manai-bosque-indaiatuba/\">Manai Bosque</a>, com 2 e 3 dormitórios com suíte, a partir de R$ 520.855 (tabela Masotti de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS), 22/11/2026",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

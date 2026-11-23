@@ -1,0 +1,147 @@
+{
+  "slug": "reserva-luiza-tomaselli-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado?",
+          "r": "Pela tabela Lofts de out/2026: R$ 11.676,73 por m² no apartamento 33 e R$ 11.874,06 por m² no 44, sobre os 154,99 m² com depósito.",
+          "fonte": "tabela Lofts de out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Qual a diferença entre o apartamento 33 e o 44?",
+          "r": "Na tabela de out/2026 os dois têm a mesma área (154,99 m² com depósito), 3 suítes, 2 vagas e o mesmo upgrade de piso e armários. O 44 custa R$ 30.583,85 a mais. O andar e a posição de cada um se confirmam na visita.",
+          "fonte": "tabela Lofts de out/2026 (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "O upgrade de piso e armários está incluído no preço?",
+          "r": "Sim, os dois apartamentos aparecem na tabela de out/2026 com piso em todos os ambientes e armários planejados, e a tabela não separa o valor desse upgrade do preço.",
+          "fonte": "tabela Lofts de out/2026 (ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Até quando vale essa tabela?",
+          "r": "A tabela Lofts traz só o mês (outubro/2026), sem prazo de validade, e avisa que os valores podem mudar sem aviso prévio. Antes da proposta confirmamos preço e disponibilidade com a Lofts.",
+          "fonte": "tabela Lofts de out/2026 (ficha do site)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Como é a entrega das chaves num prédio já pronto?",
+          "r": "O manual do proprietário descreve a vistoria do apartamento com a assinatura do Termo de Vistoria e o pedido das ligações de luz (CPFL), gás (Comgás) e telefone pelo próprio dono. Para quem compra agora, o procedimento de entrega não está no material: confirmamos com a Lofts.",
+          "fonte": "Manual do proprietário (ago/2024), págs. 7 e 8",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Quantos andares e apartamentos por andar tem o prédio?",
+          "r": "Uma torre com subsolo, térreo, mezanino, 17 pavimentos tipo e cobertura: 4 apartamentos por andar nos pavimentos tipo (finais 1 a 4) e 2 coberturas, 70 apartamentos ao todo.",
+          "fonte": "Manual do proprietário (ago/2024), pág. 3",
+          "origem": "base"
+        },
+        {
+          "p": "Onde ficam as vagas de garagem?",
+          "r": "O prédio tem 149 vagas, no térreo e no subsolo; os apartamentos 33 e 44 têm 2 vagas cada. Se são cobertas, livres ou presas não consta no material: confirmamos na visita.",
+          "fonte": "Manual do proprietário (ago/2024), pág. 3; tabela Lofts de out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Tem depósito (hobby box)?",
+          "r": "Sim. São 71 depósitos no térreo e no subsolo, e a área de 154,99 m² dos apartamentos 33 e 44 já inclui o depósito. A área do depósito sozinho não é informada.",
+          "fonte": "Manual do proprietário (ago/2024), pág. 3; tabela Lofts de out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "Qual é a área de cada suíte e dos outros ambientes?",
+          "r": "Pela planta do apartamento tipo: suíte master com closet de 18,59 m² (banho de 6,97 m²), suíte com closet de 18,34 m² (banho de 5,11 m²), suíte de 14,57 m² (banho de 4,48 m²), cozinha de 10,56 m², área de serviço de 6,48 m², lavabo de 3,15 m² e laje técnica de 2,03 m².",
+          "fonte": "planta do apartamento tipo, finais 1 a 4 (projeto simplificado da Lofts, ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Qual é o porcelanato?",
+          "r": "Porcelanato Eliane: Ártico Alpe 59x59 cm na cozinha e na área de serviço, Place 59x59 cm nos banheiros e Place 59x118 cm no lavabo, segundo o manual do proprietário. Nos apartamentos 33 e 44 a tabela informa piso em todos os ambientes.",
+          "fonte": "Manual do proprietário (ago/2024), págs. 37 e 80; tabela Lofts de out/2026",
+          "origem": "base"
+        },
+        {
+          "p": "As bancadas são de mármore ou de quartzo?",
+          "r": "O manual descreve duas versões: a Tipo Padrão, com mármore branco na cozinha, nos banheiros e no lavabo, e a Tipo Premium, com Ecoquartzo Super Branco na cozinha e no living gourmet e Cinza Prime nos banheiros e no lavabo. Qual das duas está nos apartamentos 33 e 44 não consta na tabela: confirmamos na visita.",
+          "fonte": "Manual do proprietário (ago/2024), pág. 81",
+          "origem": "base"
+        },
+        {
+          "p": "Como são as janelas e as portas?",
+          "r": "Caixilhos de alumínio Rohden, persianas automatizadas integradas às janelas dos dormitórios e suítes, acionadas por controle remoto, e portas de madeira prontas, segundo o manual do proprietário.",
+          "fonte": "Manual do proprietário (ago/2024), págs. 24 e 80",
+          "origem": "base"
+        },
+        {
+          "p": "Tem churrasqueira?",
+          "r": "O living tem espaço gourmet; a churrasqueira (Titan Eletro ou Evol Verona) foi instalada só para quem comprou o kit Premium, segundo o manual. Se os apartamentos 33 e 44 têm churrasqueira não consta na tabela: confirmamos na visita.",
+          "fonte": "Manual do proprietário (ago/2024), págs. 47 e 79",
+          "origem": "base"
+        },
+        {
+          "p": "De quantos BTUs é o ar-condicionado de cada ambiente?",
+          "r": "O manual indica aparelhos de 9.000 e 12.000 BTUs nas suítes e de 18.000 e 24.000 BTUs na sala, ligados a condensadoras bi-split ou tri-split na área técnica. Os aparelhos ficam por conta do proprietário.",
+          "fonte": "Manual do proprietário (ago/2024), págs. 70 e 71",
+          "origem": "base"
+        },
+        {
+          "p": "A conta de luz é individual?",
+          "r": "Sim. A energia tem ligação individual na CPFL, a água tem hidrômetro individual na área técnica do hall de serviço e o gás tem medidor individual no hall social, segundo o manual do proprietário.",
+          "fonte": "Manual do proprietário (ago/2024), págs. 7, 8, 52 e 59",
+          "origem": "base"
+        },
+        {
+          "p": "A fechadura abre pelo celular?",
+          "r": "Sim: o manual do proprietário descreve a fechadura eletrônica com aplicativo. O prédio tem também interfone.",
+          "fonte": "Manual do proprietário (ago/2024), págs. 24, 29 e 128",
+          "origem": "base"
+        },
+        {
+          "p": "Quem fez a arquitetura e a decoração?",
+          "r": "A arquitetura é da Pessotto Alarcon Engenharia e Projetos e a decoração, da Cristiane Barnabé Arquitetura e Interiores, segundo o manual do proprietário. O paisagismo não é informado.",
+          "fonte": "Manual do proprietário (ago/2024), pág. 83",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem outro apartamento de 3 suítes na mesma faixa de preço?",
+          "r": "No site: o <a href=\"/helade-indaiatuba/\">Hélade — Park Meraki</a>, com 3 suítes e 120,18 m², a partir de R$ 1.391.504 (tabela de set/2026), com entrega prevista para mar/2027; e o <a href=\"/seasons-indaiatuba/\">Congesa Seasons</a>, a partir de R$ 1.239.000 (tabela de out/2026), preço do 3 dormitórios com 1 suíte; as plantas de 3 suítes custam mais. A entrega do Seasons está prevista para fev/2029 e jul/2029.",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A Lofts tem outro empreendimento à venda?",
+          "r": "Sim: o <a href=\"/lina-residence-indaiatuba/\">Lina Residence</a>, na Cidade Nova I, com 2 suítes ou 3 dormitórios de 85,28 a 101,15 m², a partir de R$ 924.108 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem algo de alto padrão por menos de R$ 1,1 milhão?",
+          "r": "O <a href=\"/espaco-conceicao-indaiatuba/\">Espaço Conceição</a>, da Masotti, com 3 dormitórios com suíte de 85 a 108 m², a partir de R$ 1.030.310 (tabela de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS)",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+ "slug": "gran-vic-andorinha-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [],
+ "blocos": [
+  {
+   "titulo": "Obra, entrega e registro",
+   "perguntas": [
+    {
+     "p": "O Gran Vic Andorinha tem registro de incorporação?",
+     "r": "Sim. O memorial de incorporação está registrado no R-3 da matrícula nº 141.260 do Cartório de Registro de Imóveis de Indaiatuba, com o nome de registro Gran Vic Esmeralda. A proponente é a Gran Vic Esmeraldas Empreendimentos Imobiliários SPE Ltda., CNPJ 54.690.265/0001-98.",
+     "fonte": "book VIC, p. 17; ficha técnica VIC; memorial descritivo, p. 1",
+     "origem": "base"
+    },
+    {
+     "p": "Quem constrói o Gran Vic Andorinha?",
+     "r": "A Vic Engenharia S/A faz a incorporação e a construção, pela ficha técnica e pelo memorial descritivo.",
+     "fonte": "ficha técnica VIC, p. 1; memorial descritivo, p. 1 e 13",
+     "origem": "base"
+    },
+    {
+     "p": "Qual o tamanho do terreno?",
+     "r": "O terreno do Gran Vic Andorinha tem 16.030,28 m², pela ficha técnica da VIC.",
+     "fonte": "ficha técnica VIC, p. 1",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "Tem apartamento adaptado para pessoa com deficiência?",
+     "r": "Sim. A planta PCD tem 55,15 m² e fica na Torre 5, final 2, nas unidades 202 a 1102. As demais plantas têm 51,42 m².",
+     "fonte": "book VIC, p. 16",
+     "origem": "base"
+    },
+    {
+     "p": "O apartamento vem com piso?",
+     "r": "Sim. Pelo memorial descritivo, sala, dormitórios e circulação têm piso laminado de madeira com rodapé laminado; cozinha, área de serviço, banheiro e varanda têm cerâmica esmaltada PEI 4.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Como é o acabamento da cozinha, do banheiro e da área de serviço?",
+     "r": "Pelo memorial: cozinha com bancada de granito de 1,20 x 0,55 m, cuba de inox e bancada passa-prato de granito, e cerâmica até 1,50 m na parede da bancada; banheiro com cerâmica até o teto e lavatório de louça de parede; área de serviço com tanque de mármore sintético de 20 litros e cerâmica até o teto na parede do tanque. As demais paredes e tetos são em textura.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Como são as janelas?",
+     "r": "De alumínio: nos dormitórios, de correr com 3 folhas (1 de vidro e 2 venezianas), de 1,20 x 1,20 m, e de 1,40 x 1,20 m no dormitório da suíte; na cozinha, de correr; no banheiro, maxim-ar. A porta da varanda é de alumínio e vidro, de correr, com 1,50 x 2,10 m.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "O chuveiro é elétrico ou a gás? Tem água quente na cozinha?",
+     "r": "O chuveiro é elétrico: o memorial prevê um ponto para chuveiro de no mínimo 5.400 W. O memorial não prevê ponto de água quente, então cozinha e lavatório são de água fria.",
+     "fonte": "memorial descritivo VIC, p. 9-10",
+     "origem": "base"
+    },
+    {
+     "p": "O gás é encanado da rua?",
+     "r": "Não. Pelo memorial, o gás é armazenado no condomínio (não vem da rede pública), em sistema coletivo, com 1 ponto no apartamento, para o fogão. Não há ponto de gás na varanda.",
+     "fonte": "memorial descritivo VIC, p. 12",
+     "origem": "base"
+    },
+    {
+     "p": "Tem ponto para ar-condicionado?",
+     "r": "O memorial prevê 1 ponto para ar-condicionado em cada um dos 2 dormitórios. A sala não tem previsão, e o memorial não detalha o que vem em cada ponto.",
+     "fonte": "memorial descritivo VIC, p. 9",
+     "origem": "base"
+    },
+    {
+     "p": "A conta de água é individual?",
+     "r": "Sim, há previsão de medição individualizada de água, com os medidores no hall de cada andar. A energia segue as caixas de medidores da concessionária; o gás é coletivo.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Tem interfone e tomada USB?",
+     "r": "Sim. Pelo memorial, cada apartamento tem interfone, tomada com entrada USB na sala e tubulação seca (sem fiação) para antena coletiva na sala e no quarto maior e para telefone na sala.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Tem itens para economizar água e energia?",
+     "r": "Sim: bacia com duplo acionamento, torneiras com arejador e redutor de vazão, medição individual de água, sensor de presença no hall dos andares e nas escadas e iluminação LED nas áreas comuns.",
+     "fonte": "memorial descritivo e ficha técnica VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Quantos elevadores tem cada torre?",
+     "r": "São 2 elevadores por torre, de marca Atlas Schindler, Otis ou ThyssenKrupp, com piso da cabine em granito, segundo o memorial.",
+     "fonte": "book VIC, p. 3; memorial descritivo, p. 12",
+     "origem": "base"
+    },
+    {
+     "p": "O teto tem forro de gesso?",
+     "r": "O teto é em textura. O memorial prevê rebaixamento em gesso no banheiro, na cozinha e na área de serviço só onde a instalação do apartamento de cima ficar aparente.",
+     "fonte": "memorial descritivo VIC, p. 3",
+     "origem": "base"
+    },
+    {
+     "p": "O que vem no lazer mobiliado?",
+     "r": "Pelo memorial: piscina com 6 espreguiçadeiras, 2 mesas, 8 cadeiras e 2 ombrelones; academia com esteira, bicicleta, estação e banco de musculação, halteres e TV; espaço fitness com gaiola funcional, barras e anilhas; salão de festas com 3 mesas, 12 cadeiras e TV; espaço gourmet com churrasqueira, banquetas, mesa, cadeiras e geladeira; luau com poltronas e lareira; e jogos com futmesa e tênis de mesa. O mercadinho vem só como preparação.",
+     "fonte": "memorial descritivo VIC",
+     "origem": "base"
+    },
+    {
+     "p": "Como é a segurança do condomínio?",
+     "r": "O condomínio tem guarita com sistema de monitoramento, acesso por biometria na portaria e na entrada de cada torre, pelo menos 2 câmeras na portaria ligadas à guarita e portão eletrônico.",
+     "fonte": "ficha técnica VIC; memorial descritivo",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "O que tem perto do Gran Vic Andorinha?",
+     "r": "Pelos tempos do book da VIC, sem distância: UBS Jardim Maritacas e EMEB Prof. Cleonice Lemos Naressi a 4 minutos, Parque Ecológico do Buru a 5, Supermercado Sumerbol e Prefeitura a 10, Polo Shopping a 13 e Centro a 15 minutos. O trânsito e o horário mudam esses tempos.",
+     "fonte": "book VIC, p. 5; ficha técnica VIC, p. 6",
+     "origem": "base"
+    },
+    {
+     "p": "Vai ter hospital perto do Parque dos Pássaros?",
+     "r": "A Prefeitura de Indaiatuba lançou em 03/12/2024 a pedra fundamental de um hospital municipal de 58 leitos na Av. Luiz Bruno Petrilli, no loteamento Parque dos Pássaros, com entrega prevista para 2027, segundo a Prefeitura. As obras já começaram (informação da Viv’América, nov/2026); a data de inauguração ainda não foi confirmada. O que foi anunciado está no nosso <a href=\"/blog/hospital-parque-dos-passaros-indaiatuba/\">post sobre o hospital do Parque dos Pássaros</a>.",
+     "fonte": "Prefeitura de Indaiatuba, notícias de 28/11/2024 e 11/12/2025, resumidas no post do blog do site; início das obras: Viv’América, nov/2026",
+     "origem": "ficha"
+    },
+    {
+     "p": "Onde fica o estande de vendas da VIC?",
+     "r": "O mapa do book da VIC marca um “Estande VIC” perto do terreno, fora do condomínio, sem endereço. A gente confirma o local e o horário com a VIC antes de marcar a visita.",
+     "fonte": "book VIC, mapa de localização",
+     "origem": "base"
+    },
+    {
+     "p": "Tem apartamento com suíte fora do Parque dos Pássaros nessa faixa de preço?",
+     "r": "Tem: o <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a>, com planta Canto de suíte, a partir de R$ 345.107 (tabela Zarin de nov/2026), e o <a href=\"/vettia-residence-indaiatuba/\">Vettia Residence</a>, de 1 e 2 dormitórios com suíte, a partir de R$ 379.500 (tabela Longitude de nov/2026).",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

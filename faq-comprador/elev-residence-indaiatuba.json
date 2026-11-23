@@ -1,0 +1,143 @@
+{
+ "slug": "elev-residence-indaiatuba",
+ "atualizado": "2026-11-22",
+ "padrao": [
+  "documentos",
+  "morando-fora",
+  "itbi",
+  "fgts",
+  "distrato",
+  "afetacao",
+  "renda"
+ ],
+ "blocos": [
+  {
+   "titulo": "Preço e pagamento",
+   "perguntas": [
+    {
+     "p": "Quantos apartamentos ainda estão à venda no Elev Residence?",
+     "r": "Na tabela da Longitude de nov/2026 são 91 das 428 unidades: 33 na Torre 1, 23 na Torre 2 e 35 na Torre 3. A tabela não diz quantas já foram vendidas ou reservadas; a disponibilidade de cada unidade se confirma no atendimento.",
+     "fonte": "tabela de vendas Longitude nov/2026, p. 1 a 3",
+     "origem": "base"
+    },
+    {
+     "p": "Em quais andares ainda tem apartamento?",
+     "r": "Na tabela de nov/2026, a maior oferta está do 12º ao 14º andar (10, 16 e 20 unidades) e no térreo, com garden (9). Nos demais andares há de 1 a 8 unidades, e o 4º, o 5º e o 6º não aparecem na tabela.",
+     "fonte": "tabela de vendas Longitude nov/2026",
+     "origem": "base"
+    },
+    {
+     "p": "O preço muda de uma torre para outra?",
+     "r": "Na mesma metragem, muda. Na tabela de nov/2026, os de 46,05 m² do 12º ao 14º andar estão a R$ 330.000 na Torre 2 e a R$ 335.000 nas Torres 1 e 3.",
+     "fonte": "tabela de vendas Longitude nov/2026 (ficha do site)",
+     "origem": "ficha"
+    },
+    {
+     "p": "Qual o valor da planta de 1 dormitório?",
+     "r": "O garden de 1 dormitório (40,42 m² mais 14,70 m² de garden), no térreo da Torre 3, está a R$ 354.990 na tabela de nov/2026; é a única unidade com essa metragem. O Tipo Meio PCD, de 1 dormitório em suíte, tem 46,56 m², a mesma área do Tipo Ponta de 2 dormitórios, e a tabela não diz qual unidade é qual: isso se confirma com a Longitude.",
+     "fonte": "tabela de vendas Longitude nov/2026; book Longitude jul/2026, p. 18 a 23",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Obra, entrega e registro",
+   "perguntas": [
+    {
+     "p": "Quem é a incorporadora do Elev Residence?",
+     "r": "É a Longitude, que assina o book do empreendimento (jul/2026). Em Indaiatuba, a Longitude também tem o <a href=\"/vettia-residence-indaiatuba/\">Vettia Residence</a>, a partir de R$ 379.500 na tabela de nov/2026.",
+     "fonte": "book Longitude jul/2026, p. 1; fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "base"
+    },
+    {
+     "p": "Quantas torres, andares e elevadores tem o Elev?",
+     "r": "São 3 torres de térreo mais 17 andares, com 2 elevadores em cada torre e 428 apartamentos no total. Na Torre 01, o último andar tem só 4 apartamentos e divide o espaço com o rooftop de festas.",
+     "fonte": "book Longitude jul/2026, p. 4 e 5",
+     "origem": "base"
+    },
+    {
+     "p": "Qual o tamanho do terreno e da área construída?",
+     "r": "O terreno tem 20.396,97 m² e a área construída é de 24.830,40 m², pela ficha técnica do book da Longitude.",
+     "fonte": "book Longitude jul/2026, p. 4",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "O imóvel e o condomínio",
+   "perguntas": [
+    {
+     "p": "O apartamento vem com piso?",
+     "r": "As legendas das plantas indicam piso cerâmico no banheiro, na cozinha e na varanda. O piso da sala e dos quartos não aparece no book; isso se confere no memorial descritivo antes de assinar.",
+     "fonte": "book Longitude jul/2026, p. 18 a 23",
+     "origem": "base"
+    },
+    {
+     "p": "Como é o acabamento da cozinha e do banheiro?",
+     "r": "Pelas legendas das plantas: bancada da cozinha em granito, bancada do banheiro em mármore (menos na planta PCD), bacia com caixa acoplada, esquadrias de alumínio e portas com amortecimento de impacto.",
+     "fonte": "book Longitude jul/2026, p. 18 a 23",
+     "origem": "base"
+    },
+    {
+     "p": "O chuveiro é a gás?",
+     "r": "Sim. Todos os apartamentos têm chuveiro com aquecimento a gás, segundo o book da Longitude.",
+     "fonte": "book Longitude jul/2026, p. 5 e legendas das plantas",
+     "origem": "base"
+    },
+    {
+     "p": "Tem ponto para ar-condicionado?",
+     "r": "As plantas marcam previsão para ar-condicionado na sala e no dormitório de casal. O book não detalha o que vem instalado (ponto elétrico, dreno ou tubulação).",
+     "fonte": "book Longitude jul/2026, p. 18 a 23",
+     "origem": "base"
+    },
+    {
+     "p": "Como é o garden dos apartamentos do térreo?",
+     "r": "O garden é entregue gramado, com ponto de torneira e ponto de tomada: 23,02 m² no Tipo Meio Garden de 2 dormitórios, 18,44 m² no Tipo Ponta Garden e 14,70 m² no Tipo Meio Garden de 1 dormitório.",
+     "fonte": "book Longitude jul/2026, p. 19, 21 e 23",
+     "origem": "base"
+    },
+    {
+     "p": "A vaga é coberta? Tem vaga de moto?",
+     "r": "Na tabela de nov/2026, das 91 unidades: 62 têm vaga tipo B descoberta, 14 vaga tipo A com vaga de moto, 9 (todas do térreo) vaga tipo B coberta, 4 vaga PCD e 2 vaga tipo A descoberta. O material não explica a diferença entre os tipos A e B. O condomínio tem ainda 39 vagas de visitantes.",
+     "fonte": "tabela de vendas Longitude nov/2026; book Longitude jul/2026, p. 4",
+     "origem": "base"
+    },
+    {
+     "p": "Tem apartamento adaptado para pessoa com deficiência?",
+     "r": "Sim, a planta Tipo Meio PCD, de 1 dormitório em suíte, com 46,56 m². Vaga PCD não quer dizer apartamento PCD: as 4 unidades da tabela de nov/2026 com vaga PCD têm 46,05 m², a metragem do Tipo Meio de 2 dormitórios.",
+     "fonte": "book Longitude jul/2026, p. 22; tabela de vendas Longitude nov/2026",
+     "origem": "base"
+    },
+    {
+     "p": "O banheiro tem janela?",
+     "r": "Depende da planta: no Tipo Ponta e no PCD o banheiro tem ventilação natural; no Tipo Meio, de 1 ou 2 dormitórios, a ventilação é mecânica.",
+     "fonte": "book Longitude jul/2026, p. 5",
+     "origem": "base"
+    },
+    {
+     "p": "Tem ponto de recarga para carro elétrico?",
+     "r": "O book da Longitude mostra um ponto de recarga para veículos elétricos nas áreas comuns. Quantidade, local e forma de cobrança não constam no material.",
+     "fonte": "book Longitude jul/2026, p. 10",
+     "origem": "base"
+    },
+    {
+     "p": "Tem itens de sustentabilidade?",
+     "r": "O book cita dispositivos economizadores de água, sensor de presença no hall de entrada e coleta seletiva com lixeiras para lixo orgânico e reciclável.",
+     "fonte": "book Longitude jul/2026, p. 5",
+     "origem": "base"
+    }
+   ]
+  },
+  {
+   "titulo": "Localização e vizinhos",
+   "perguntas": [
+    {
+     "p": "Tem outro apartamento nessa faixa de preço em Indaiatuba?",
+     "r": "No Parque dos Pássaros, o <a href=\"/gran-vic-tangara-indaiatuba/\">Gran Vic Tangará</a> sai a partir de R$ 325.000 e o <a href=\"/gran-vic-colibri-indaiatuba/\">Gran Vic Colibri</a>, com suíte, a partir de R$ 336.686, nas tabelas VIC de 05/10/2026. O <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a> começa em R$ 345.107 na tabela Zarin de nov/2026.",
+     "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
+     "origem": "vizinhos"
+    }
+   ]
+  }
+ ]
+}

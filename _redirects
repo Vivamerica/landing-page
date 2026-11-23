@@ -16,3 +16,6 @@ https://jdmonte-carmelo-indaiatuba.com.br/* https://lancamentos.imoveisvivameric
 # 09/10/2026: folheto de julho saiu do ar (configuracao de produto desatualizada, retirada a pedido
 # da construtora). O link antigo leva ao folheto atual.
 /Folheto-Lancamentos-Indaiatuba-Julho2026.pdf /Folheto-Lancamentos-Indaiatuba.pdf 301
+
+# 22/11/2026: fonte do FAQ do comprador (faq-comprador/*.json) fica no repo, mas nao abre pelo site
+/faq-comprador/* /404.html 404!

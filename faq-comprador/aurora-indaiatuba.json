@@ -1,0 +1,88 @@
+{
+  "slug": "aurora-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": ["documentos", "morando-fora", "itbi", "fgts", "distrato", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa o metro quadrado no Aurora?",
+          "r": "Na tabela de pré-lançamento da Masotti (set/2026), o Kit padrão de 101 m² sai a partir de R$ 758.850: cerca de R$ 7.513 por m² de área privativa (conta nossa). Essa tabela está sujeita a reajuste no lançamento oficial.",
+          "fonte": "tabela de pré-lançamento Masotti, set/2026, conforme a ficha técnica do site (conta nossa)",
+          "origem": "ficha"
+        },
+        {
+          "p": "De quanto ficam as parcelas durante a obra?",
+          "r": "No apartamento de R$ 758.850 da tabela de pré-lançamento de set/2026, o fluxo padrão dá R$ 75.885 de ato (10%), que pode ser dividido em 3 de R$ 25.295; 45 mensais de cerca de R$ 2.192 (13%); e 3 anuais de cerca de R$ 17.706 (7%). Até as chaves são R$ 227.655; os R$ 531.195 restantes (70%) vão para o financiamento na entrega, sujeito a análise de crédito (conta nossa sobre os percentuais). A tabela de pré-lançamento pode ser reajustada no lançamento oficial.",
+          "fonte": "fluxo padrão da tabela de pré-lançamento Masotti, set/2026, na página do site (conta nossa)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "Quantos apartamentos tem por andar?",
+          "r": "São 6 finais por andar: os de canto são os finais 1, 3, 4 e 6, e os de meio, os finais 2 e 5, todos com 101 m² nas plantas padrão.",
+          "fonte": "página do empreendimento no site (seção de plantas, material da Masotti)",
+          "origem": "ficha"
+        },
+        {
+          "p": "A sacada tem churrasqueira?",
+          "r": "Sim. Todas as plantas padrão de 101 m² têm sacada com churrasqueira, com ponto de gás na varanda.",
+          "fonte": "página do empreendimento no site (material da Masotti)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Como é a suíte master?",
+          "r": "Tem cuba dupla, box com revestimento cerâmico até o teto, nichos embutidos e ponto de TV, segundo o material da Masotti.",
+          "fonte": "página do empreendimento no site (material da Masotti)",
+          "origem": "ficha"
+        },
+        {
+          "p": "A cozinha tem ponto para lava-louças?",
+          "r": "Tem. A cozinha vem com ponto preparado para máquina de lavar louças e com água quente na pia.",
+          "fonte": "página do empreendimento no site (material da Masotti)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Como é a portaria?",
+          "r": "A lista de lazer e apoio do Aurora traz portaria 24h e espaço delivery para receber encomendas.",
+          "fonte": "página do empreendimento no site (lista das 32 áreas, material da Masotti)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Como é o bairro Park Meraki?",
+          "r": "É um bairro planejado, com infraestrutura toda subterrânea (fibra óptica, telefone, eletricidade e gás) e mais de 83.000 m² de áreas verdes. Tem 78 lotes residenciais a partir de 360 m² e 41 lotes comerciais, segundo o material da Masotti.",
+          "fonte": "página do empreendimento no site (material da Masotti)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Que outros lançamentos ficam no Park Meraki?",
+          "r": "No site, o <a href=\"/artemis-residencial-indaiatuba/\">Artemis Residencial</a>, a partir de R$ 555.171 (tabela GPCI de nov/2026); o <a href=\"/360-home-office-mall-indaiatuba/\">360 Home Office Mall</a>, de R$ 546.274 (tabela HINC de set/2026, preços confirmados para out/2026); o <a href=\"/arete-home-indaiatuba/\">Areté Home</a>, de R$ 991.005 (tabela PERPLAN de ago/2026); e o <a href=\"/helade-indaiatuba/\">Hélade</a>, de R$ 1.391.504 (tabela PERPLAN de set/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "Tem outro apartamento grande na faixa de R$ 900 mil?",
+          "r": "Tem. O <a href=\"/storia-congesa-indaiatuba/\">Storia Congesa</a>, de 70 a 151 m², a partir de R$ 921.000 (tabela de out/2026), e o <a href=\"/lina-residence-indaiatuba/\">Lina Residence</a>, de 85,28 a 101,15 m², com 2 suítes ou 3 dormitórios, a partir de R$ 924.108 (tabela Lofts de out/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS), 22/11/2026",
+          "origem": "vizinhos"
+        },
+        {
+          "p": "A Masotti tem outros empreendimentos à venda?",
+          "r": "No site, o <a href=\"/espaco-conceicao-indaiatuba/\">Espaço Conceição</a>, de 3 dormitórios com suíte, a partir de R$ 1.030.310 (tabela de out/2026); o <a href=\"/manai-bosque-indaiatuba/\">Manai Bosque</a>, de R$ 520.855 (tabela de out/2026); e o <a href=\"/vivere-indaiatuba/\">Vívere Residencial</a>, pronto para morar, de R$ 352.552 (tabela de ago/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS), 22/11/2026",
+          "origem": "vizinhos"
+        }
+      ]
+    }
+  ]
+}

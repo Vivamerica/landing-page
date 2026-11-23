@@ -1,0 +1,130 @@
+{
+  "slug": "ville-de-provence-indaiatuba",
+  "atualizado": "2026-11-22",
+  "padrao": [
+    "documentos",
+    "morando-fora",
+    "itbi",
+    "fgts",
+    "distrato",
+    "afetacao",
+    "renda"
+  ],
+  "blocos": [
+    {
+      "titulo": "Preço e pagamento",
+      "perguntas": [
+        {
+          "p": "Quanto custa um lote de 400 ou de 500 m²?",
+          "r": "Na tabela de outubro/2026, a R$ 1.770 o m², os lotes de 400 a 499 m² vão de R$ 708.318,60 a R$ 880.291,80, e os de 500 a 599 m², de R$ 901.443,30 a R$ 1.047.645,30. Os dois maiores, acima de 600 m², custam de R$ 1.068.549,00 a R$ 1.091.913,00.",
+          "fonte": "tabela Urban Square de out/2026 (documento de 03/10/2026)",
+          "origem": "base"
+        },
+        {
+          "p": "De quanto fica a parcela do lote de 360 m²?",
+          "r": "No lote de 360,00 m² (R$ 637.200,00 na tabela de outubro/2026), o sinal é de R$ 63.720,00 e o saldo fica em 12 parcelas de R$ 47.790,00 (sem juros e sem correção), 24 de R$ 26.357,44, 36 de R$ 18.397,08, 48 de R$ 14.435,02, 60 de R$ 12.072,19, 72 de R$ 10.508,88, 84 de R$ 9.402,34 ou 96 de R$ 8.581,17. De 24 a 96 parcelas há juros de 0,8% ao mês e correção pelo IPCA.",
+          "fonte": "tabela Urban Square de out/2026 (quadro de parcelas da ficha do site)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Até quando vale a tabela?",
+          "r": "A tabela é um documento de 03/10/2026 e não traz validade impressa; uma nota avisa que o valor de R$ 1.770 o m² vale para poucas unidades, sem dizer quantas. Antes de qualquer proposta, a gente confirma com a Urban Square o valor do lote escolhido.",
+          "fonte": "tabela Urban Square (metadados e nota b)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem é a loteadora?",
+          "r": "A Urban Square, que assina o book e a tabela. A empresa do empreendimento (razão social e CNPJ) e quem executa a obra não constam no material recebido; a gente pede esses dados antes de você assinar.",
+          "fonte": "ebook Urban Square (págs. 3 e 21); construtora e SPE não informadas",
+          "origem": "base"
+        },
+        {
+          "p": "O loteamento já está registrado?",
+          "r": "O material recebido traz a aprovação pela Prefeitura de Indaiatuba (decreto nº 15.336, de 06/12/2024), mas não o número do registro do loteamento. Antes de assinar, peça a certidão de matrícula atualizada, que mostra o registro e se os lotes já têm matrícula própria.",
+          "fonte": "ebook Urban Square (pág. 22); registro do loteamento não informado",
+          "origem": "base"
+        },
+        {
+          "p": "Já existem regras para construir a casa?",
+          "r": "Ainda não no material recebido: recuos, sobrado, aprovação do projeto da casa e prazo para começar a obra a gente pede à Urban Square antes de você assinar. A liberação para construir está prevista para jun/2027, segundo a Urban Square.",
+          "fonte": "Urban Square, previsão informada ao Fabio (17/11/2026); regras de construção não informadas",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "O imóvel e o condomínio",
+      "perguntas": [
+        {
+          "p": "Qual é o lazer do Ville de Provence?",
+          "r": "Pela legenda da implantação no book: complexo de piscinas (raia, piscina recreativa, piscina infantil, piscina de 350 m² com dois spas e prainha), piscina coberta e aquecida com raia de 25 m, vestiários, 2 quadras de tênis, 3 de beach tennis, quadra poliesportiva, academia e academia ao ar livre, pista de skate, bosque com pista de caminhada, salão de jogos e brinquedoteca, playgrounds, 2 pet places, salão de festas, 2 casas de campo, gazebos, alameda food truck e espaço minimercado.",
+          "fonte": "ebook Urban Square (págs. 6, 8, 9 e 14)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto de área verde e de lazer o Ville de Provence tem?",
+          "r": "Segundo o book da Urban Square, mais de 168.000 m² de áreas verdes e mais de 53.000 m² de área de lazer.",
+          "fonte": "ebook Urban Square (pág. 6)",
+          "origem": "base"
+        },
+        {
+          "p": "As árvores vão estar grandes na entrega?",
+          "r": "Não: o book avisa que a vegetação das imagens aparece em porte adulto e será entregue em estágio inicial, conforme projeto específico.",
+          "fonte": "ficha do site (nota das perspectivas, a partir do book Urban Square)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Como é a portaria?",
+          "r": "A implantação tem portaria principal e uma portaria de serviços, com apoio. Se o funcionamento é 24 horas, as câmeras e o controle de acesso não constam no material.",
+          "fonte": "ebook Urban Square (págs. 6 e 7)",
+          "origem": "base"
+        },
+        {
+          "p": "Quem assina o projeto?",
+          "r": "Arquitetura de Antonio Scarpa, paisagismo de Roberto Riscala e interiores de Stefania Pinheiro, segundo o book da Urban Square.",
+          "fonte": "ebook Urban Square (pág. 5)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Localização e vizinhos",
+      "perguntas": [
+        {
+          "p": "Tem escola e hospital perto?",
+          "r": "Pelo book: Red House International School, Oba Hortifruti, farmácias e conveniências a 5 minutos, Parque Ecológico a 8 e Hospital Santa Ignês a 9; o book não diz se os tempos são de carro.",
+          "fonte": "ebook Urban Square (pág. 4)",
+          "origem": "base"
+        },
+        {
+          "p": "Posso visitar o loteamento?",
+          "r": "Pode: a visita se agenda pelo WhatsApp da Viv'América, e a gente combina com a Urban Square. Quem não pode vir, fazemos a visita por vídeo.",
+          "fonte": "regra da casa (agendamento e visita por vídeo)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Tem outro loteamento numa faixa de preço parecida?",
+          "r": "No site: o [Alpnach Residence](/alpnach-indaiatuba/), da Dominium, com lotes de 300 a 450 m² desde R$ 510.000 à vista (relatório de 17/11/2026); o [Reserva Botânica](/reserva-botanica-indaiatuba/), da Zarin, com 2 lotes de 410,01 e 456,70 m² a partir de R$ 642.375 (tabela de 29/09/2026, preços confirmados para out/2026); e o [Residencial Ravello](/residencial-ravello-indaiatuba/), da Dominium, com lotes de 420 m² a partir de R$ 714.000 à vista (relatório de 17/11/2026).",
+          "fonte": "fonte única do site (gera-folheto.js LOTES) e fichas do Alpnach, do Reserva Botânica e do Ravello",
+          "origem": "vizinhos"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "Quem atende nesta página: a imobiliária ou o plantão de vendas?",
+          "r": "Quem atende é a Imobiliária Viv'América, de Indaiatuba (CRECI 47394-J). Mandamos a tabela, fazemos a simulação, agendamos a visita e confirmamos com a Urban Square o lote escolhido antes de qualquer proposta.",
+          "fonte": "identidade da Viv'América (CRECI 47394-J, linha de procedência e rodapé da ficha)",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}
