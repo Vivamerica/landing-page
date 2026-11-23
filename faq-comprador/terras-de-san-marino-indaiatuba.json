@@ -7,21 +7,21 @@
       "titulo": "Preco e pagamento",
       "perguntas": [
         {
-          "p": "De quanto fica a parcela do lote de 150 m² em 12 a 48 vezes?",
-          "r": "Sobre o valor a prazo de R$ 262.500, com entrada de 20% (R$ 52.500): 12 parcelas de R$ 17.500 sem juros, 24 de R$ 9.885,43, 36 de R$ 6.975,01 ou 48 de R$ 5.530,11, pela tabela de 09/10/2026. Acima de 12 parcelas há juros de 1% ao mês (Price) e correção anual pelo IGP-M.",
-          "fonte": "Tabela e Espelho de Vendas de 09/10/2026, 13h45 (Armigh · Best Business)",
+          "p": "De quanto fica a parcela do lote de 150 m² em 12 a 60 vezes?",
+          "r": "Nos lotes de 150 m² na condição padrão da tabela de 23/11/2026, sobre o valor a prazo de R$ 262.500, com entrada de 20% (R$ 52.500): 12 parcelas de R$ 17.500 sem juros, 24 de R$ 9.885,43, 36 de R$ 6.975,01, 48 de R$ 5.530,11 ou 60 de R$ 4.671,33. Acima de 12 parcelas há juros de 1% ao mês (Price) e correção anual pelo IGP-M. Três lotes de 150 m² têm condição própria na mesma tabela: o J-7, com entrada de 50%, e o E-72 e o B-6, somente à vista.",
+          "fonte": "Tabela e Espelho de Vendas de 23/11/2026, 11h56 (Armigh · Best Business)",
           "origem": "base"
         },
         {
           "p": "Quanto economizo pagando à vista?",
-          "r": "Cerca de 5,7%: o m² à vista é R$ 1.650 e a prazo, R$ 1.750. No lote de 150 m², são R$ 247.500 à vista contra R$ 262.500 a prazo, R$ 15.000 de diferença, pela tabela de 09/10/2026.",
-          "fonte": "Tabela e Espelho de Vendas de 09/10/2026",
+          "r": "Cerca de 5,7%: o m² à vista é R$ 1.650 e a prazo, R$ 1.750. No lote de 150 m² na condição padrão, são R$ 247.500 à vista contra R$ 262.500 a prazo, R$ 15.000 de diferença, pela tabela de 23/11/2026.",
+          "fonte": "Tabela e Espelho de Vendas de 23/11/2026",
           "origem": "base"
         },
         {
           "p": "Até quando vale essa tabela?",
-          "r": "A tabela e o espelho de vendas são de 09/10/2026, 13h45, sem prazo de validade, e a loteadora avisa que o valor do m² pode mudar a qualquer momento. Confirmamos preço e disponibilidade antes da proposta.",
-          "fonte": "Tabela e Espelho de Vendas de 09/10/2026",
+          "r": "A tabela e o espelho de vendas são de 23/11/2026, 11h56, sem prazo de validade, e a loteadora avisa que o valor do m² pode mudar a qualquer momento. Confirmamos preço e disponibilidade antes da proposta.",
+          "fonte": "Tabela e Espelho de Vendas de 23/11/2026",
           "origem": "base"
         }
       ]
@@ -50,7 +50,7 @@
         {
           "p": "Qual empresa aparece no regulamento?",
           "r": "A Terras de San Marino Empreendimento Imobiliário SPE Ltda. (SPE é a empresa criada só para o empreendimento); a realização é da Armigh com o Grupo Best Business. O CNPJ não consta no material.",
-          "fonte": "Regulamento, pág. 9; cabeçalho da tabela de 09/10/2026",
+          "fonte": "Regulamento, pág. 9; cabeçalho da tabela de 23/11/2026",
           "origem": "base"
         }
       ]

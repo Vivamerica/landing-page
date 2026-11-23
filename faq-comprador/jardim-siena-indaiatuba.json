@@ -119,7 +119,7 @@
         },
         {
           "p": "Tem lote mais em conta em outro empreendimento?",
-          "r": "Com lotes menores, de 150 m²: o <a href=\"/vila-fahl-indaiatuba/\">Residencial Vila Fahl</a> a partir de R$ 290.000 (tabela de out/2026), o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a> a partir de R$ 247.500 (tabela de out/2026) e o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a> a partir de R$ 211.050 (tabela de nov/2026).",
+          "r": "Com lotes menores, de 150 m²: o <a href=\"/vila-fahl-indaiatuba/\">Residencial Vila Fahl</a> a partir de R$ 290.000 (tabela de out/2026), o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a> a partir de R$ 247.500 (tabela de nov/2026) e o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a> a partir de R$ 211.050 (tabela de nov/2026).",
           "fonte": "fonte única do site (gera-folheto.js, LOTES)",
           "origem": "vizinhos"
         },

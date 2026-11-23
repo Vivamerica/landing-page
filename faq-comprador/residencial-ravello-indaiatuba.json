@@ -155,7 +155,7 @@
         },
         {
           "p": "O que mais tem na mesma faixa de preço?",
-          "r": "O <a href=\"/reserva-botanica-indaiatuba/\">Reserva Botânica</a>, a partir de R$ 642.375 (lote de 410 m², tabela de set/2026), o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (360 m², tabela de out/2026), e o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, a partir de R$ 908.480 (511,5 m², tabela de nov/2026).",
+          "r": "O <a href=\"/reserva-botanica-indaiatuba/\">Reserva Botânica</a>, a partir de R$ 642.375 (lote de 410 m², tabela de set/2026), o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (360 m², tabela de nov/2026), e o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, a partir de R$ 908.480 (511,5 m², tabela de nov/2026).",
           "fonte": "fonte única do site (gera-folheto.js, LOTES)",
           "origem": "vizinhos"
         },

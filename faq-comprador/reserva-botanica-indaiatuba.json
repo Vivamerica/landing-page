@@ -113,13 +113,13 @@
         },
         {
           "p": "O que mais tem na mesma faixa de preço?",
-          "r": "O <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (lote de 360 m², tabela de out/2026), e o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 à vista (lote de 420 m², tabela de nov/2026).",
+          "r": "O <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (lote de 360 m², tabela de nov/2026), e o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 à vista (lote de 420 m², tabela de nov/2026).",
           "fonte": "fonte única do site (gera-folheto.js, LOTES)",
           "origem": "vizinhos"
         },
         {
           "p": "Que outros empreendimentos da Zarin estão à venda?",
-          "r": "No site: o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a>, com lotes a partir de R$ 211.050 (150 m², tabela de nov/2026); o <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a>, apartamentos a partir de R$ 345.107 (tabela de nov/2026); e o <a href=\"/spazio-italia-indaiatuba/\">Spazio Italia</a>, apartamentos a partir de R$ 429.961 (tabela de out/2026).",
+          "r": "No site: o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a>, com lotes a partir de R$ 211.050 (150 m², tabela de nov/2026); o <a href=\"/itamaraca-indaiatuba/\">Itamaracá Residencial</a>, apartamentos a partir de R$ 345.107 (tabela de nov/2026); e o <a href=\"/spazio-italia-indaiatuba/\">Spazio Italia</a>, apartamentos a partir de R$ 429.961 (tabela de nov/2026).",
           "fonte": "fonte única do site (gera-folheto.js, APTOS e LOTES)",
           "origem": "vizinhos"
         }

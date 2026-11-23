@@ -83,7 +83,7 @@
         },
         {
           "p": "Tem outro apartamento numa faixa de preço parecida?",
-          "r": "No site, logo acima do Uni: o [Residencial Parque das Águas](/parque-das-aguas-indaiatuba/), de 2 dormitórios, a partir de R$ 309.119,89 (tabela GPCI de set/2026), e o [Elev Residence](/elev-residence-indaiatuba/), de 1 e 2 dormitórios no Bairro Buru, a partir de R$ 326.000 (tabela Longitude de nov/2026).",
+          "r": "No site, logo acima do Uni: o [Residencial Parque das Águas](/parque-das-aguas-indaiatuba/), de 2 dormitórios, a partir de R$ 309.119,89 (tabela GPCI de nov/2026), e o [Elev Residence](/elev-residence-indaiatuba/), de 1 e 2 dormitórios no Bairro Buru, a partir de R$ 326.000 (tabela Longitude de nov/2026).",
           "fonte": "fonte única do site (gera-folheto.js APTOS) e fichas do Parque das Águas e do Elev",
           "origem": "vizinhos"
         },

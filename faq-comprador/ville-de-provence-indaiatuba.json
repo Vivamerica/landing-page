@@ -16,19 +16,19 @@
       "perguntas": [
         {
           "p": "Quanto custa um lote de 400 ou de 500 m²?",
-          "r": "Na tabela de outubro/2026, a R$ 1.770 o m², os lotes de 400 a 499 m² vão de R$ 708.318,60 a R$ 880.291,80, e os de 500 a 599 m², de R$ 901.443,30 a R$ 1.047.645,30. Os dois maiores, acima de 600 m², custam de R$ 1.068.549,00 a R$ 1.091.913,00.",
-          "fonte": "tabela Urban Square de out/2026 (documento de 03/10/2026)",
+          "r": "Na tabela de novembro/2026, a R$ 1.770 o m², constam 34 lotes de 400 a 499 m², de R$ 708.318,60 a R$ 880.291,80, e 29 de 500 a 599 m², de R$ 901.443,30 a R$ 1.047.645,30. Os dois maiores, acima de 600 m², custam de R$ 1.068.549,00 a R$ 1.091.913,00.",
+          "fonte": "tabela Urban Square de nov/2026 (documento de 21/11/2026)",
           "origem": "base"
         },
         {
           "p": "De quanto fica a parcela do lote de 360 m²?",
-          "r": "No lote de 360,00 m² (R$ 637.200,00 na tabela de outubro/2026), o sinal é de R$ 63.720,00 e o saldo fica em 12 parcelas de R$ 47.790,00 (sem juros e sem correção), 24 de R$ 26.357,44, 36 de R$ 18.397,08, 48 de R$ 14.435,02, 60 de R$ 12.072,19, 72 de R$ 10.508,88, 84 de R$ 9.402,34 ou 96 de R$ 8.581,17. De 24 a 96 parcelas há juros de 0,8% ao mês e correção pelo IPCA.",
-          "fonte": "tabela Urban Square de out/2026 (quadro de parcelas da ficha do site)",
+          "r": "No lote de 360,00 m² (R$ 637.200,00 na tabela de novembro/2026), o sinal é de R$ 63.720,00 e o saldo fica em 12 parcelas de R$ 47.790,00 (sem juros e sem correção), 24 de R$ 26.357,44, 36 de R$ 18.397,08, 48 de R$ 14.435,02, 60 de R$ 12.072,19, 72 de R$ 10.508,88, 84 de R$ 9.402,34 ou 96 de R$ 8.581,17. De 24 a 96 parcelas há juros de 0,8% ao mês e correção pelo IPCA.",
+          "fonte": "tabela Urban Square de nov/2026 (quadro de parcelas da ficha do site)",
           "origem": "ficha"
         },
         {
           "p": "Até quando vale a tabela?",
-          "r": "A tabela é um documento de 03/10/2026 e não traz validade impressa; uma nota avisa que o valor de R$ 1.770 o m² vale para poucas unidades, sem dizer quantas. Antes de qualquer proposta, a gente confirma com a Urban Square o valor do lote escolhido.",
+          "r": "A tabela é um documento de 21/11/2026 e não traz validade impressa; uma nota avisa que o valor de R$ 1.770 o m² vale para poucas unidades, sem dizer quantas. Antes de qualquer proposta, a gente confirma com a Urban Square o valor do lote escolhido.",
           "fonte": "tabela Urban Square (metadados e nota b)",
           "origem": "base"
         }

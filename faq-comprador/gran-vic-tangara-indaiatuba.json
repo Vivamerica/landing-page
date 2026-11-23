@@ -132,7 +132,7 @@
     },
     {
      "p": "Tem outro apartamento nessa faixa de preço?",
-     "r": "No mesmo complexo, o <a href=\"/gran-vic-colibri-indaiatuba/\">Gran Vic Colibri</a>, com suíte, sai a partir de R$ 336.686 (tabela VIC de 05/10/2026). Fora dele, o <a href=\"/parque-das-aguas-indaiatuba/\">Residencial Parque das Águas</a> começa em R$ 309.120 (tabela GPCI de set/2026) e o <a href=\"/elev-residence-indaiatuba/\">Elev Residence</a> em R$ 326.000 (tabela Longitude de nov/2026).",
+     "r": "No mesmo complexo, o <a href=\"/gran-vic-colibri-indaiatuba/\">Gran Vic Colibri</a>, com suíte, sai a partir de R$ 336.686 (tabela VIC de 05/10/2026). Fora dele, o <a href=\"/parque-das-aguas-indaiatuba/\">Residencial Parque das Águas</a> começa em R$ 309.120 (tabela GPCI de nov/2026) e o <a href=\"/elev-residence-indaiatuba/\">Elev Residence</a> em R$ 326.000 (tabela Longitude de nov/2026).",
      "fonte": "fonte única do site (gera-folheto.js, 22/11/2026)",
      "origem": "vizinhos"
     }

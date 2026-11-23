@@ -142,7 +142,7 @@
         },
         {
           "p": "Tem outro lote em área fechada na mesma faixa de preço?",
-          "r": "Tem. O <a href=\"/terras-de-obwalden-indaiatuba/\">Terras de Obwalden</a>, condomínio fechado no Bela Vista com lotes de 300 a 479 m², a partir de R$ 435.000 (tabela recebida em nov/2026), e o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, loteamento fechado com lotes de 360 a 617 m², a partir de R$ 637.200 (tabela de out/2026).",
+          "r": "Tem. O <a href=\"/terras-de-obwalden-indaiatuba/\">Terras de Obwalden</a>, condomínio fechado no Bela Vista com lotes de 300 a 479 m², a partir de R$ 435.000 (tabela recebida em nov/2026), e o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, loteamento fechado com lotes de 360 a 617 m², a partir de R$ 637.200 (tabela de nov/2026).",
           "fonte": "fonte única do site (gera-folheto.js, LOTES), 22/11/2026",
           "origem": "vizinhos"
         }

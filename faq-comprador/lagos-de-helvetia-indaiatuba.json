@@ -119,7 +119,7 @@
         },
         {
           "p": "Que outros lotes grandes o site tem?",
-          "r": "No site: o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, em Itaici, a partir de R$ 908.480 (lote de 511,5 m², tabela de nov/2026); o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 (420 m², tabela de nov/2026); e o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (360 m², tabela de out/2026).",
+          "r": "No site: o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>, em Itaici, a partir de R$ 908.480 (lote de 511,5 m², tabela de nov/2026); o <a href=\"/residencial-ravello-indaiatuba/\">Residencial Ravello</a>, a partir de R$ 714.000 (420 m², tabela de nov/2026); e o <a href=\"/ville-de-provence-indaiatuba/\">Ville de Provence</a>, a partir de R$ 637.200 (360 m², tabela de nov/2026).",
           "fonte": "fonte única do site (gera-folheto.js, LOTES)",
           "origem": "vizinhos"
         }

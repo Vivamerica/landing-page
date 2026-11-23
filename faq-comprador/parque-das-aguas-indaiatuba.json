@@ -8,20 +8,20 @@
       "perguntas": [
         {
           "p": "O preço muda de uma torre para outra?",
-          "r": "Sim. Nas tabelas GPCI de setembro/2026, a Torre 1 tem 11 apartamentos de R$ 311.217,71 a R$ 396.797,07; a Torre 2, 16 de R$ 309.119,89 a R$ 359.710,96; e a Torre 3, 27 de R$ 321.608,33 a R$ 399.259,90, no valor de venda final.",
-          "fonte": "tabelas GPCI por torre de set/2026 (fonte única do site)",
+          "r": "Sim. Nas tabelas GPCI de novembro/2026 constam 5 apartamentos na Torre 1, de R$ 311.217,71 a R$ 396.797,07; 7 na Torre 2, de R$ 309.119,89 a R$ 359.710,96; e 20 na Torre 3, de R$ 321.608,33 a R$ 398.012,88, no valor de venda final.",
+          "fonte": "tabelas GPCI por torre de nov/2026, revisão 0 (fonte única do site)",
           "origem": "ficha"
         },
         {
           "p": "Quanto custa um apartamento garden?",
-          "r": "Nas tabelas de setembro/2026, os 3 gardens da planta de 46,13 m² vão de R$ 361.608,48 a R$ 386.921,07, e os 4 da planta de 47,78 m² (mais 24,52 m² de área externa), de R$ 371.974,65 a R$ 398.012,88. Os gardens são entregues com grama.",
-          "fonte": "tabelas GPCI de set/2026; ficha do site (seção Plantas)",
+          "r": "Nas tabelas de novembro/2026, os 3 gardens da planta de 46,13 m² vão de R$ 361.608,48 a R$ 386.921,07, e os 2 da planta de 47,78 m² (mais 24,52 m² de área externa), de R$ 375.946,19 a R$ 398.012,88. Os gardens são entregues com grama.",
+          "fonte": "tabelas GPCI de nov/2026; ficha do site (seção Plantas)",
           "origem": "ficha"
         },
         {
           "p": "Quantos apartamentos há de cada planta nas tabelas?",
-          "r": "Nas tabelas de setembro/2026: 10 da planta de 46,13 m², 24 da de 47,78 m², 13 da de 50,60 m² com suíte (de R$ 357.598,82 a R$ 399.259,90) e 7 gardens. São 54 no total; a disponibilidade se confirma no atendimento.",
-          "fonte": "tabelas GPCI de set/2026",
+          "r": "Nas tabelas de novembro/2026 constam 10 da planta de 46,13 m², 9 da de 47,78 m², 8 da de 50,60 m² com suíte (de R$ 357.598,82 a R$ 396.797,07) e 5 gardens. São 32 no total; a disponibilidade se confirma no atendimento.",
+          "fonte": "tabelas GPCI de nov/2026",
           "origem": "ficha"
         }
       ]
@@ -48,8 +48,8 @@
       "perguntas": [
         {
           "p": "A personalização da planta tem custo?",
-          "r": "Segundo a incorporadora, não: a personalização da planta não tem custo adicional. As regras e os prazos para pedir a mudança são confirmados no atendimento.",
-          "fonte": "ficha do site (seção Plantas)",
+          "r": "O material da GPCI informava que a personalização não tinha custo adicional. Mas, nas tabelas de novembro/2026, a GPCI informa que nas Torres 1 e 2 a configuração das plantas está fixada (sem varanda, com sala estendida e 2 dormitórios) e, na Torre 3, que a escolha era dentro das formatações propostas até 10/11/2026. O que ainda dá para mudar em cada unidade, confirmamos no atendimento.",
+          "fonte": "ficha do site (seção Plantas); tabelas GPCI de nov/2026, nota 4",
           "origem": "ficha"
         },
         {
@@ -72,8 +72,8 @@
         },
         {
           "p": "A varanda tem churrasqueira?",
-          "r": "Sim, na opção com varanda: churrasqueira a carvão e piso cerâmico.",
-          "fonte": "ficha do site (seção Plantas)",
+          "r": "Sim, na opção com varanda: churrasqueira a carvão e piso cerâmico. Nas tabelas de novembro/2026, as Torres 1 e 2 estão com a planta fixada sem varanda.",
+          "fonte": "ficha do site (seção Plantas); tabelas GPCI de nov/2026, nota 4",
           "origem": "ficha"
         },
         {
@@ -125,8 +125,8 @@
         },
         {
           "p": "Tem 2 dormitórios com suíte mais em conta?",
-          "r": "No site, o <a href=\"/gran-vic-colibri-indaiatuba/\">Gran Vic Colibri</a> tem 2 dormitórios com suíte de 51,42 m² a partir de R$ 336.686 (tabela de out/2026). Aqui, a planta com suíte começa em R$ 357.598,82 (tabela de set/2026).",
-          "fonte": "fonte única do site (gera-folheto.js, APTOS); tabelas GPCI de set/2026",
+          "r": "No site, o <a href=\"/gran-vic-colibri-indaiatuba/\">Gran Vic Colibri</a> tem 2 dormitórios com suíte de 51,42 m² a partir de R$ 336.686 (tabela de out/2026). Aqui, a planta com suíte começa em R$ 357.598,82 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-folheto.js, APTOS); tabelas GPCI de nov/2026",
           "origem": "vizinhos"
         },
         {

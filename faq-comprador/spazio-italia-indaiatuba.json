@@ -8,20 +8,20 @@
       "perguntas": [
         {
           "p": "Quanto custa cada planta, e o andar muda o preço?",
-          "r": "Na tabela Zarin de outubro/2026, a planta de canto (59,50 m²) vai de R$ 429.961,17 a R$ 552.713,44 e a de meio (63,58 m²), de R$ 466.102,83 a R$ 590.613,78. O menor preço é do Milão 5, de canto, no térreo; o maior, do Roma 136, de meio, no 13º andar.",
-          "fonte": "tabela de preço Spazio Italia, Zarin, outubro/2026 (emitida em 11/10/2026)",
+          "r": "Na tabela Zarin de novembro/2026, a planta de canto (59,50 m²) vai de R$ 429.961,17 a R$ 552.713,44 e a de meio (63,58 m²), de R$ 466.102,83 a R$ 590.613,78. O menor preço é do Milão 5, de canto, no térreo; o maior, do Roma 136, de meio, no 13º andar.",
+          "fonte": "tabela de preço Spazio Italia, Zarin, novembro/2026 (emitida em 23/11/2026)",
           "origem": "base"
         },
         {
           "p": "Quanto custa o metro quadrado?",
-          "r": "De cerca de R$ 7.226 a R$ 9.289 por m² de área privativa, conforme a unidade, pela tabela Zarin de outubro/2026: R$ 429.961,17 pelos 59,50 m² do Milão 5 até R$ 590.613,78 pelos 63,58 m² do Roma 136.",
-          "fonte": "conta nossa sobre a tabela Zarin de outubro/2026",
+          "r": "De cerca de R$ 7.226 a R$ 9.289 por m² de área privativa, conforme a unidade, pela tabela Zarin de novembro/2026: R$ 429.961,17 pelos 59,50 m² do Milão 5 até R$ 590.613,78 pelos 63,58 m² do Roma 136.",
+          "fonte": "conta nossa sobre a tabela Zarin de novembro/2026",
           "origem": "base"
         },
         {
           "p": "Tem parcela anual (intermediária) durante a obra?",
-          "r": "Não na tabela de outubro/2026: o fluxo é ato de 10%, 42 parcelas mensais que somam 20% e saldo de 70% no financiamento bancário. Ou seja, até o financiamento você paga 30% do valor, corrigido pelo INCC.",
-          "fonte": "tabela Zarin de outubro/2026 (ficha do site)",
+          "r": "Não na tabela de novembro/2026: o fluxo é ato de 10%, 41 parcelas mensais que somam 20%, a primeira em 01/12/2026, e saldo de 70% no financiamento bancário. Ou seja, até o financiamento você paga 30% do valor, corrigido pelo INCC.",
+          "fonte": "tabela Zarin de novembro/2026 (ficha do site)",
           "origem": "ficha"
         }
       ]
@@ -43,31 +43,31 @@
         {
           "p": "Quais finais são de canto e quais são de meio?",
           "r": "Os finais 1, 4, 5 e 8 são de canto, com 59,50 m² de área privativa; os finais 2, 3, 6 e 7 são de meio, com 63,58 m². As duas plantas têm 2 dormitórios, sendo 1 suíte, banheiro social, sala e jantar, cozinha, área de serviço e varanda.",
-          "fonte": "tabela Zarin de outubro/2026; book, págs. 22 e 26",
+          "fonte": "tabela Zarin de novembro/2026; book, págs. 22 e 26",
           "origem": "base"
         },
         {
           "p": "Tem apartamento com sol da manhã?",
-          "r": "Sim. A tabela de outubro/2026 indica, unidade por unidade, se o apartamento tem sol da manhã ou sol da tarde. Mandamos a lista com essa informação.",
-          "fonte": "tabela Zarin de outubro/2026",
+          "r": "Sim. A tabela de novembro/2026 indica, unidade por unidade, se o apartamento tem sol da manhã ou sol da tarde. Mandamos a lista com essa informação.",
+          "fonte": "tabela Zarin de novembro/2026",
           "origem": "base"
         },
         {
           "p": "Quantos apartamentos têm só 1 vaga?",
-          "r": "Na tabela de outubro/2026, 19 dos 228: 17 de canto (59,5 m²) e 2 de meio (63,58 m², Milão 12 e 13). Os outros 209 têm 2 vagas. Se as vagas são cobertas ou presas não é informado.",
-          "fonte": "tabela Zarin de outubro/2026",
+          "r": "Na tabela de novembro/2026, 20 dos 230: 18 de canto (59,5 m²) e 2 de meio (63,58 m², Milão 12 e 13). Os outros 210 têm 2 vagas. Se as vagas são cobertas ou presas não é informado.",
+          "fonte": "tabela Zarin de novembro/2026",
           "origem": "base"
         },
         {
-          "p": "Quantos apartamentos estão à venda em cada torre?",
-          "r": "Na tabela de outubro/2026: 40 na Veneza, 51 na Florença, 51 na Roma e 86 na Milão, 103 de canto e 125 de meio. A tabela não mostra as vendidas; a disponibilidade se confirma antes da proposta.",
-          "fonte": "tabela Zarin de outubro/2026",
+          "p": "Quantos apartamentos constam na tabela em cada torre?",
+          "r": "Na tabela de novembro/2026 constam 230: 40 na Veneza, 52 na Florença, 51 na Roma e 87 na Milão, 105 de canto e 125 de meio. A tabela não mostra as vendidas; a disponibilidade se confirma antes da proposta.",
+          "fonte": "tabela Zarin de novembro/2026",
           "origem": "base"
         },
         {
           "p": "Tem garden, cobertura ou duplex?",
-          "r": "Não. A tabela de outubro/2026 só tem as plantas de canto (59,5 m²) e de meio (63,58 m²), sem garden, cobertura, duplex ou studio.",
-          "fonte": "tabela Zarin de outubro/2026",
+          "r": "Não. A tabela de novembro/2026 só tem as plantas de canto (59,5 m²) e de meio (63,58 m²), sem garden, cobertura, duplex ou studio.",
+          "fonte": "tabela Zarin de novembro/2026",
           "origem": "base"
         },
         {
@@ -119,7 +119,7 @@
         },
         {
           "p": "Tem 2 dormitórios abaixo de R$ 350 mil?",
-          "r": "Sim: o <a href=\"/parque-das-aguas-indaiatuba/\">Residencial Parque das Águas</a>, de 2 dormitórios, a partir de R$ 309.120 (tabela de set/2026), e o <a href=\"/gran-vic-tangara-indaiatuba/\">Gran Vic Tangará</a>, de 2 dormitórios, a partir de R$ 325.000 (tabela de out/2026). Financiamento sempre sujeito a análise de crédito.",
+          "r": "Sim: o <a href=\"/parque-das-aguas-indaiatuba/\">Residencial Parque das Águas</a>, de 2 dormitórios, a partir de R$ 309.120 (tabela de nov/2026), e o <a href=\"/gran-vic-tangara-indaiatuba/\">Gran Vic Tangará</a>, de 2 dormitórios, a partir de R$ 325.000 (tabela de out/2026). Financiamento sempre sujeito a análise de crédito.",
           "fonte": "fonte única do site (gera-folheto.js, APTOS)",
           "origem": "vizinhos"
         },

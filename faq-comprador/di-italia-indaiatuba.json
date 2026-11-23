@@ -106,7 +106,7 @@
         },
         {
           "p": "Que outros lotes de 150 m² estão no site na mesma faixa de preço?",
-          "r": "O <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a> tem lotes a partir de R$ 211.050 (tabela Zarin de nov/2026), e o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a>, de R$ 247.500 (tabela de out/2026), os dois com lotes de 150 m².",
+          "r": "O <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a> tem lotes a partir de R$ 211.050 (tabela Zarin de nov/2026), e o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a>, de R$ 247.500 (tabela de nov/2026), os dois com lotes de 150 m².",
           "fonte": "fonte única do site (gera-folheto.js, LOTES), 22/11/2026",
           "origem": "vizinhos"
         }

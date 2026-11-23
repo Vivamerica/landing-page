@@ -121,7 +121,7 @@
         },
         {
           "p": "Tem outro loteamento com preço parecido?",
-          "r": "No site: o [Jardim Siena](/jardim-siena-indaiatuba/), em Itaici, a partir de R$ 300.000 (lote de 250 m², tabela Kaaba recebida em nov/2026), e o [Terras de San Marino](/terras-de-san-marino-indaiatuba/), com lotes de 150 a 296,56 m² desde R$ 247.500 à vista (espelho de 09/10/2026).",
+          "r": "No site: o [Jardim Siena](/jardim-siena-indaiatuba/), em Itaici, a partir de R$ 300.000 (lote de 250 m², tabela Kaaba recebida em nov/2026), e o [Terras de San Marino](/terras-de-san-marino-indaiatuba/), com lotes de 150 a 296,56 m² desde R$ 247.500 à vista (tabela e espelho de vendas de 23/11/2026).",
           "fonte": "fonte única do site (gera-folheto.js LOTES) e fichas do Jardim Siena e do Terras de San Marino",
           "origem": "vizinhos"
         }

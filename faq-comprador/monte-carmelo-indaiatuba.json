@@ -125,7 +125,7 @@
         },
         {
           "p": "Tem outro lote de 150 m² com preço parecido?",
-          "r": "No site: o <a href=\"/di-italia-indaiatuba/\">Jardim Di Italia</a>, também da Dominium, com infraestrutura concluída, a partir de R$ 210.000 (tabela de nov/2026); o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a>, a partir de R$ 211.050 (tabela de nov/2026); e o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a>, a partir de R$ 247.500 (tabela de out/2026).",
+          "r": "No site: o <a href=\"/di-italia-indaiatuba/\">Jardim Di Italia</a>, também da Dominium, com infraestrutura concluída, a partir de R$ 210.000 (tabela de nov/2026); o <a href=\"/parque-zarah-indaiatuba/\">Parque Zarah</a>, a partir de R$ 211.050 (tabela de nov/2026); e o <a href=\"/terras-de-san-marino-indaiatuba/\">Terras de San Marino</a>, a partir de R$ 247.500 (tabela de nov/2026).",
           "fonte": "fonte única do site (gera-folheto.js, LOTES)",
           "origem": "vizinhos"
         },
