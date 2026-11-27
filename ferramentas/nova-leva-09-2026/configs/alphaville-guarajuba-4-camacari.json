@@ -5,7 +5,7 @@
   "cidade": "Camaçari",
   "uf": "BA",
   "data": "2026-11-17",
-  "atualizado": "2026-11-17",
+  "atualizado": "2026-11-27",
   "fonte_tabela": "tabela de vendas Alphaville gerada em 13/11/2026",
   "title": "Alphaville Guarajuba 4 | lotes desde R$ 459 mil (nov/2026)",
   "description": "Alphaville Guarajuba 4, em Camaçari/BA: 126 lotes residenciais de 420 a 517,78 m² na tabela de 13/11/2026, desde R$ 459.023,98, com ato e 60 mensais.",
@@ -138,15 +138,15 @@
       "cards": [
         {
           "t": "Comerciais e uso misto",
-          "p": "O book mostra uma perspectiva da área comercial. Na tabela, o lote MI0201 aparece com 2.379,33 m², abaixo do mínimo de 2.432,86 m² que o book dá para o uso misto. O material não diz o que pode ser construído nesses lotes."
+          "p": "O book mostra uma perspectiva da área comercial. Na tabela, o lote MI0201 aparece com 2.379,33 m², abaixo do mínimo de 2.432,86 m² que o book dá para o uso misto. O regulamento construtivo da Alphaville (Anexo B) traz recuos, ocupação e altura só para a área residencial unifamiliar; para os lotes de uso misto, ele não define o que pode ser construído."
         },
         {
           "t": "Regras de construção",
-          "p": "O material não traz recuos, taxa de ocupação nem altura máxima. Peça o regulamento construtivo antes de escolher o lote."
+          "p": "Pelo regulamento construtivo da Alphaville (Anexo B), em cada lote residencial só pode ser construída uma casa, para uma única família, com recuos mínimos de 5,00 m na frente, 1,50 m em cada lateral e 3,00 m no fundo, taxa de ocupação máxima de 60%, área permeável mínima de 40% e área construída mínima de 180 m². A casa pode ter até 2 pavimentos (térreo e superior) e 1 subsolo, com altura máxima de 12,00 m. Casa pré-fabricada fora do canteiro e montada no lote não é permitida; elementos pré-fabricados de vedação, cobertura, pilares e vigas são permitidos, e estrutura aparente depende de aprovação da associação. O projeto passa pela aprovação da associação do loteamento antes da Prefeitura."
         },
         {
-          "t": "Associação e contribuição",
-          "p": "O material não fala em associação de moradores nem em contribuição mensal. Confirme no atendimento."
+          "t": "Associação e taxa de manutenção",
+          "p": "Pelo regulamento construtivo da Alphaville (Anexo B), a área residencial e o clube interno ficam com a Associação Alphaville Guarajuba 4, que aprova os projetos das casas; o clube externo, as áreas comerciais e de uso misto e as áreas externas ficam com a Associação Geral Guarajuba. A taxa de manutenção é definida no estatuto social; o material não diz o valor nem se o dono do lote contribui para as duas. Confirme no atendimento."
         },
         {
           "t": "Áreas do projeto",
@@ -431,11 +431,11 @@
     {
       "id": "registro",
       "label": "Entrega e registro",
-      "h2": "Entrega, registro e contrato",
+      "h2": "Previsão de entrega em dez/2027; registro e contrato",
       "paragrafos": [
-        "O material recebido, o book e a tabela de 13/11/2026, não informa a previsão de entrega, o registro do empreendimento, a empresa vendedora nem o índice de correção das parcelas.",
+        "A previsão de entrega é dez/2027, segundo a Alphaville. Pelo regulamento construtivo da Alphaville (Anexo B), o loteamento está registrado na matrícula nº 56.602 do 1º Cartório de Registro de Imóveis de Camaçari e a vendedora é a Meliá Brasil Empreendimento Alphaville Guarajuba Fase 4 SPE Ltda. O book e a tabela de 13/11/2026 não informam o índice de correção das parcelas.",
         "No catálogo da Alphaville consultado em 09/10/2026, o Alphaville Guarajuba 4 aparecia como \"em construção\". O book descreve ações ambientais que serão feitas durante a obra, sem datas.",
-        "Antes de assinar, peça no atendimento a matrícula, a previsão de entrega e a minuta do contrato."
+        "Antes de assinar, peça no atendimento a matrícula, a minuta do contrato e a previsão de entrega por escrito."
       ]
     },
     {
@@ -508,7 +508,7 @@
   },
   "lazer_bloco": {
     "h2": "O clube: piscinas, quadras e academia",
-    "intro": "A lista segue o mapa do clube do book, com a mesma numeração. O book divide o clube em externo (33.369,08 m²) e interno (11.891,11 m²), mas não diz quais itens ficam em cada parte.",
+    "intro": "A lista segue o mapa do clube do book, com a mesma numeração. O book divide o clube em externo (33.369,08 m²) e interno (11.891,11 m²), mas não diz quais itens ficam em cada parte. Pelo regulamento construtivo (Anexo B), o clube externo fica no lote 01 da quadra U4, pertence à Associação Geral Guarajuba e receberá os equipamentos de forma faseada; ele e o clube interno poderão ser usados por futuras fases da Alphaville.",
     "itens": [
       "1. Playground",
       "2. Churrasqueira",
@@ -602,20 +602,20 @@
       "Não informadas na tabela; confirme no atendimento"
     ],
     [
-      "Associação e contribuição mensal",
-      "O material não fala em associação de moradores nem em contribuição mensal; confirme no atendimento"
+      "Associação e taxa de manutenção",
+      "Associação Alphaville Guarajuba 4 (área residencial e clube interno) e Associação Geral Guarajuba (clube externo e áreas comerciais), segundo o regulamento construtivo da Alphaville (Anexo B); taxa de manutenção definida no estatuto social, valor não informado; confirme no atendimento"
     ],
     [
       "Fase",
       "\"Em construção\" no catálogo da Alphaville consultado em 09/10/2026; o material recebido não informa o andamento da obra"
     ],
     [
-      "Entrega",
-      "Previsão não informada no material; confirme no atendimento"
+      "Previsão de entrega",
+      "Dez/2027, segundo a Alphaville"
     ],
     [
       "Registro",
-      "Não informado no material; peça a matrícula no atendimento"
+      "Matrícula nº 56.602 do 1º Cartório de Registro de Imóveis de Camaçari, segundo o regulamento construtivo da Alphaville (Anexo B); peça a matrícula atualizada no atendimento"
     ]
   ],
   "faq": [
@@ -645,11 +645,11 @@
     },
     {
       "q": "Quando o Alphaville Guarajuba 4 será entregue? Ele é registrado?",
-      "a": "O material recebido não informa a previsão de entrega nem o registro do empreendimento. No catálogo da Alphaville consultado em 09/10/2026, ele aparecia como \"em construção\". Peça no atendimento a matrícula, a previsão de entrega e a minuta do contrato antes de assinar."
+      "a": "A previsão de entrega é dez/2027, segundo a Alphaville. Pelo regulamento construtivo da Alphaville (Anexo B), o loteamento está registrado na matrícula nº 56.602 do 1º Cartório de Registro de Imóveis de Camaçari. No catálogo da Alphaville consultado em 09/10/2026, ele aparecia como \"em construção\". Peça no atendimento a matrícula, a minuta do contrato e a previsão de entrega por escrito antes de assinar."
     },
     {
       "q": "O Alphaville Guarajuba 4 é condomínio fechado?",
-      "a": "O mapa do clube no book mostra portaria e guarita, mas o material não diz se o empreendimento é loteamento fechado, loteamento de acesso controlado ou condomínio de lotes, nem fala em associação de moradores ou contribuição mensal. Confirme no atendimento."
+      "a": "Pelo regulamento construtivo da Alphaville (Anexo B), é um loteamento: o regulamento prevê que a Alphaville feche o perímetro da área residencial e, com o fechamento permitido, que a entrada de pessoas e veículos seja pela portaria, com identificação. A área residencial e o clube interno ficam com a Associação Alphaville Guarajuba 4; o clube externo, as áreas comerciais e de uso misto e as áreas externas ficam com a Associação Geral Guarajuba. A taxa de manutenção é definida no estatuto social, e o material não diz o valor nem se o dono do lote contribui para as duas. Confirme a taxa no atendimento."
     }
   ],
   "cta": {
@@ -662,7 +662,7 @@
     "marca": "ALPHAVILLE GUARAJUBA 4",
     "linha": "Alphaville Guarajuba 4 · lotes residenciais de 420 a 579,32 m² · Guarajuba · Camaçari, BA",
     "realizacao": "Realização Alphaville",
-    "legal": "Imagens: fotomontagem, perspectivas e mapas ilustrados do book da Alphaville, exceto a foto da praia de Guarajuba, que o book indica como imagem real; as casas da fotomontagem mostram uma ocupação possível dos lotes. Quantidades, metragens, áreas, lazer, tempos de deslocamento e práticas de sustentabilidade conforme o book. Preços e condições conforme a tabela de vendas gerada em 13/11/2026, em que constam 126 lotes residenciais e 16 de uso misto; a disponibilidade é confirmada no atendimento. A tabela não informa índice de correção, custas de escritura e registro nem corretagem. Previsão de entrega, registro e empresa vendedora não constam do material recebido. Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da Alphaville. Página publicada em nov/2026."
+    "legal": "Imagens: fotomontagem, perspectivas e mapas ilustrados do book da Alphaville, exceto a foto da praia de Guarajuba, que o book indica como imagem real; as casas da fotomontagem mostram uma ocupação possível dos lotes. Quantidades, metragens, áreas, lazer, tempos de deslocamento e práticas de sustentabilidade conforme o book. Preços e condições conforme a tabela de vendas gerada em 13/11/2026, em que constam 126 lotes residenciais e 16 de uso misto; a disponibilidade é confirmada no atendimento. A tabela não informa índice de correção, custas de escritura e registro nem corretagem. Previsão de entrega dez/2027, segundo a Alphaville; registro na matrícula nº 56.602 do 1º Cartório de Registro de Imóveis de Camaçari e vendedora Meliá Brasil Empreendimento Alphaville Guarajuba Fase 4 SPE Ltda., segundo o regulamento construtivo da Alphaville (Anexo B). Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da Alphaville. Página publicada em nov/2026."
   },
   "home": {
     "tipo": "lote",
@@ -680,8 +680,13 @@
   },
   "llms": {
     "secao": "alphaville",
-    "linha": "lotes da Alphaville em Guarajuba, Camaçari/BA (não é Indaiatuba), com acesso pela Estrada do Coco (BA-099). Segundo o book: 458 lotes residenciais de 420,00 a 579,32 m², 19 comerciais (830,00 a 2.072,71 m²) e 18 de uso misto (2.432,86 a 4.807,44 m²), gleba de 1.883.011,91 m² (o book não detalha o que ela inclui), 162.655,24 m² de áreas verdes, 62.736,74 m² de preservação, clube externo de 33.369,08 m² e interno de 11.891,11 m² (piscina adulto e infantil, academia, churrasqueira, quadras de tênis, poliesportiva e de areia, playground, recarga de carro elétrico) e 2 praças; projeto do Grupo Alphaville (urbanismo e paisagismo), Arquitetura Nacional (arquitetura) e Natalia Salla (interiores). Tabela de vendas gerada em 13/11/2026: 126 lotes residenciais de 420,00 a 517,78 m², de R$ 459.023,98 a R$ 704.692,03, e 16 de uso misto de R$ 1.647.978,21 a R$ 3.329.707,31; ato de cerca de 19,13% e 60 mensais; índice de correção, custas e corretagem não informados; o material não fala em associação de moradores nem em contribuição mensal. Previsão de entrega e registro não constam do material."
+    "linha": "lotes da Alphaville em Guarajuba, Camaçari/BA (não é Indaiatuba), com acesso pela Estrada do Coco (BA-099). Segundo o book: 458 lotes residenciais de 420,00 a 579,32 m², 19 comerciais (830,00 a 2.072,71 m²) e 18 de uso misto (2.432,86 a 4.807,44 m²), gleba de 1.883.011,91 m² (o book não detalha o que ela inclui), 162.655,24 m² de áreas verdes, 62.736,74 m² de preservação, clube externo de 33.369,08 m² e interno de 11.891,11 m² (piscina adulto e infantil, academia, churrasqueira, quadras de tênis, poliesportiva e de areia, playground, recarga de carro elétrico) e 2 praças; projeto do Grupo Alphaville (urbanismo e paisagismo), Arquitetura Nacional (arquitetura) e Natalia Salla (interiores). Tabela de vendas gerada em 13/11/2026: 126 lotes residenciais de 420,00 a 517,78 m², de R$ 459.023,98 a R$ 704.692,03, e 16 de uso misto de R$ 1.647.978,21 a R$ 3.329.707,31; ato de cerca de 19,13% e 60 mensais; índice de correção, custas e corretagem não informados. Regulamento construtivo da Alphaville (Anexo B): uma casa unifamiliar por lote residencial, recuos de 5,00 m (frente), 1,50 m (cada lateral) e 3,00 m (fundo), taxa de ocupação máxima de 60%, área permeável mínima de 40%, área construída mínima de 180 m², até 2 pavimentos e 1 subsolo, altura máxima de 12,00 m, casa pré-fabricada montada no lote não permitida; o projeto de cada casa passa pela aprovação da Associação Alphaville Guarajuba 4 antes da Prefeitura; o clube externo e as áreas comerciais ficam com a Associação Geral Guarajuba; taxa de manutenção definida no estatuto social, sem valor informado. Previsão de entrega dez/2027, segundo a Alphaville; loteamento registrado na matrícula nº 56.602 do 1º Cartório de Registro de Imóveis de Camaçari, segundo o regulamento."
   },
   "geo": null,
-  "mapa": null
+  "mapa": {
+    "lotes": {
+      "url": "/mapa-lotes-indaiatuba/#guarajuba4",
+      "texto": "Ver os 142 lotes da tabela no mapa de lotes"
+    }
+  }
 }

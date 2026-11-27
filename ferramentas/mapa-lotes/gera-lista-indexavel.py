@@ -166,8 +166,16 @@ def esc(t):
 
 # ── agrupa por ficha (as fases do Zarah viram uma linha) ─────────────
 grupos = {}
+
+
+def fora_da_base(b):
+    # o mapa é de Indaiatuba: bairro de outra cidade traz `cidade` (o mesmo foraDaBase do JS do mapa) e, como as
+    # casas do Dom Pedro 0, aparece no mapa mas fica fora da lista, das contagens e do "mais barato por m²"
+    return bool(b.get('cidade')) and b['cidade'] != 'Indaiatuba'
+
+
 for b in bairros:
-    if b['oculto'] or b['casas']:
+    if b['oculto'] or b['casas'] or fora_da_base(b):
         continue
     chave = b.get('landing') or b['id']
     g = grupos.setdefault(chave, {'chave': chave, 'bairros': [], 'landing': b.get('landing'), 'fechado': b['fechado']})
@@ -419,6 +427,13 @@ if casas_vis:
     nota_casas = '\n    <p class="nota">O mapa também mostra %s%s, que são casas e não lotes; por isso ficam fora da tabela.%s</p>' % (
         esc(b['nome']), (' (%s)' % esc(b['cidade'])) if b.get('cidade') else '',
         (' <a href="%s">Ficha das casas</a>.' % b['landing']) if b.get('landing') else '')
+# lotes de outras cidades (Alphaville da Bahia, do Ceará e de Votorantim, desde 27/11/2026): no mapa, fora da tabela
+fora_vis = [b for b in bairros if fora_da_base(b) and not b['oculto'] and not b['casas'] and lotes.get(b['id'])]
+if fora_vis:
+    nomes_fora = ['%s %s (%s)' % (artigo(b['nome']), ('<a href="%s">%s</a>' % (b['landing'], esc(b['nome']))) if b.get('landing') else esc(b['nome']),
+                                  esc(b['cidade'])) for b in fora_vis]
+    nota_casas += '\n    <p class="nota">O mapa também mostra lotes de %s de outras cidades, %s; eles ficam fora da tabela e das contagens desta lista, que são só de Indaiatuba.</p>' % (
+        'um empreendimento' if len(fora_vis) == 1 else '%d empreendimentos' % len(fora_vis), lista_pt(nomes_fora))
 
 lista = '''
 <section class="guia" id="lista-loteamentos" data-gerado="%s">

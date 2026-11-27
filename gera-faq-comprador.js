@@ -75,7 +75,6 @@ const path = require('path');
 // (nem tira bloco). Tirou daqui quando o lote da outra janela subir.
 const ADIAR = new Set([
   'pertenze-residencial-indaiatuba',
-  'parque-alphaville-alvorada-votorantim',
   'viva-parque-aura-indaiatuba',
   'viva-parque-sense-indaiatuba',
 ]);

@@ -73,24 +73,26 @@ const ALPHAVILLE = [
     p:3306135, tabela:'out/2026', nota:'intermediação imobiliária incluída',
     s:'Casas de 288 a 362 m² em área reservada do residencial Alphaville Dom Pedro 0 · 5 casas na tabela de out/2026 · realização Alphaville e Incorpi' },
   { n:'Parque Alphaville Campinas', cidade:'Campinas', uf:'SP', linha:'Alphaville', tipo:'Lotes comerciais', fase:'Em construção', preparo:true },
-  { n:'Parque Alphaville Alvorada', cidade:'Votorantim', uf:'SP', linha:'Terras Alpha', tipo:'Lotes residenciais e comerciais', fase:'Lançamento',   // 'Breve lançamento' no catálogo de 09/10; a tabela de 10/08/2026 é 'Pós Lançamento' (Fabio, 17/11/2026)
-    obs:'518 lotes residenciais na tabela de vendas de 10/08/2026',
+  { n:'Parque Alphaville Alvorada', cidade:'Votorantim', uf:'SP', linha:'Terras Alpha', tipo:'Lotes residenciais e comerciais', fase:'Lançamento',   // 'Breve lançamento' no catálogo de 09/10; a tabela de 19/11/2026 traz 'Lançamento' na capa
+    obs:'518 lotes residenciais constam na tabela de vendas de 19/11/2026',
     prev:'2029-09', slug:'parque-alphaville-alvorada-votorantim', img:'parque-alphaville-alvorada-votorantim/images/hero.jpg', ilustrativa:true,
-    p:291012, tabela:'ago/2026', nota:'custas de escrituração e corretagem à parte',
-    s:'Lotes residenciais de 229,23 a 825,28 m² no Terras Alpha Alvorada 1 e 2 · 518 lotes na tabela de 10/08/2026 · registrado em 09/06/2026' },
+    p:290560, tabela:'nov/2026', nota:'custas de escrituração e corretagem à parte',
+    s:'Lotes residenciais de 229,23 a 825,28 m² no Terras Alpha Alvorada 1 e 2 · 518 lotes constam na tabela de 19/11/2026 · registrado em 09/06/2026' },
   { n:'Terras Alpha Ribeirão Preto', cidade:'Ribeirão Preto', uf:'SP', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção' },
   { n:'Alphaville Guarajuba 4', cidade:'Camaçari', uf:'BA', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção',
+    prev:'2027-12',   // previsão de entrega dez/2027, segundo a Alphaville (informada em 25/11/2026)
     slug:'alphaville-guarajuba-4-camacari', img:'alphaville-guarajuba-4-camacari/images/hero.jpg', ilustrativa:true,
     p:459023.98, tabela:'nov/2026', nota:'custas e corretagem não informadas na tabela',
     s:'Lotes residenciais de 420 a 517,78 m² em Guarajuba, Camaçari · 126 residenciais e 16 de uso misto na tabela de nov/2026' },
   { n:'Alphaville Litoral Norte 4', cidade:'Camaçari', uf:'BA', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção', preparo:true },
   { n:'Alphaville Ceará 5', cidade:'Eusébio', uf:'CE', linha:'Alphaville', tipo:'Lotes residenciais', fase:'Em construção',
     slug:'alphaville-ceara-5-eusebio', img:'alphaville-ceara-5-eusebio/images/hero.jpg', ilustrativa:true,
-    p:583442.12, tabela:'nov/2026', nota:'custas e corretagem não informadas na tabela',
-    s:'Lotes de 450 a 731,14 m² na Cidade Alpha, em Eusébio · 79 lotes na tabela de nov/2026' },
+    p:604292.40, tabela:'nov/2026', nota:'custas e corretagem não informadas na tabela',
+    s:'Lotes de 450 a 731,14 m² na Cidade Alpha, em Eusébio · 72 lotes da tabela de 14/11/2026 seguem no site' },
   { n:'Terras Alphaville Ceará 6', cidade:'Eusébio', uf:'CE', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção',
     slug:'terras-alphaville-ceara-6-eusebio', img:'terras-alphaville-ceara-6-eusebio/images/hero.jpg', ilustrativa:true,
-    s:'Lotes residenciais a partir de 275 m² na Cidade Alpha, em Eusébio, segundo o book · tabela de preços no atendimento' },
+    p:278627.36, tabela:'nov/2026', nota:'custas e corretagem não informadas na tabela',
+    s:'Lotes residenciais de 275 a 330,5 m² na Cidade Alpha, em Eusébio · 255 lotes constam na tabela de 25/11/2026, fora 2 reservados' },
   { n:'Comercial Ceará 7 e 8', cidade:'Fortaleza', uf:'CE', linha:'Alphaville', tipo:'Lotes comerciais', fase:'Em construção' },
   { n:'Terras Alphaville Teresina 2', cidade:'Teresina', uf:'PI', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção' },
   { n:'Terras Alphaville Teresina 3', cidade:'Teresina', uf:'PI', linha:'Terras Alpha', tipo:'Lotes residenciais', fase:'Em construção' },
@@ -113,7 +115,7 @@ const { blocoEntidade, GA4 } = require('./identidade.js');
 const { MENU_CSS, MENU_HTML } = require('./gera-menu.js');
 
 // ─── utilitários ───
-const brl = n => 'R$ ' + n.toLocaleString('pt-BR');
+const brl = n => 'R$ ' + n.toLocaleString('pt-BR', Number.isInteger(n) ? {} : { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const semTags = s => String(s).replace(/<[^>]+>/g, '');
 const wa = texto => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(texto);

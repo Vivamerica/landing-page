@@ -1,0 +1,175 @@
+{
+  "slug": "parque-alphaville-alvorada-votorantim",
+  "atualizado": "2026-11-27",
+  "padrao": ["documentos", "morando-fora", "fgts", "distrato", "afetacao", "renda"],
+  "blocos": [
+    {
+      "titulo": "Preco e pagamento",
+      "perguntas": [
+        {
+          "p": "Qual é o lote de menor valor na tabela?",
+          "r": "Na tabela de vendas da Alphaville de 19/11/2026, é o lote 36 da quadra 17, de 246,49 m², com valor base de R$ 290.560. Logo depois vêm o lote 02 da quadra 32, o de menor metragem da tabela, com 229,23 m² e R$ 290.999, e o lote 07 da quadra 17, de 248,82 m², com R$ 293.306. A tabela não informa a disponibilidade de cada lote: confirme no atendimento se ele segue à venda.",
+          "fonte": "tabela de vendas Alphaville de 19/11/2026 (lotes residenciais)",
+          "origem": "base"
+        },
+        {
+          "p": "Em quais quadras ficam os lotes abaixo de R$ 300 mil?",
+          "r": "Na tabela de 19/11/2026, 46 lotes constam com valor base abaixo de R$ 300.000, de R$ 290.560 a R$ 298.894, nas quadras 08, 09, 17, 27, 32 e 34; 25 deles ficam na quadra 17 (contagem nossa). São lotes de 229,23 a 253,56 m². Os valores não incluem as custas de escrituração.",
+          "fonte": "tabela de vendas Alphaville de 19/11/2026 (contagem nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto ficam o ato e as mensais do lote de menor valor?",
+          "r": "No lote 36 da quadra 17, com valor base de R$ 290.560 na tabela de 19/11/2026, o ato de 15% é de R$ 43.584. O saldo vai, por exemplo, em 60 mensais de R$ 4.116; em 60 mensais de R$ 3.087 mais 5 anuais de R$ 12.349; em 48 mensais de R$ 5.145; ou em 11 mensais de R$ 20.075. Ato e 60 mensais somam R$ 290.544 sem a correção; a diferença de R$ 16 para o valor base vem do arredondamento das parcelas. No plano de 11 mensais, ato e parcelas somam R$ 264.409 sem a correção, 91% do valor base (contas nossas; a tabela não chama essa diferença de desconto). A primeira mensal vence em 30 dias e a primeira anual em 365 dias. As custas de escrituração desse lote, R$ 20.702, ficam fora dessa conta.",
+          "fonte": "tabela de vendas Alphaville de 19/11/2026, linha do lote 36 da quadra 17 e notas (A) e (C) (conta nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "Como funciona a correção pelo IPCA M-2?",
+          "r": "Pela nota (B) da tabela de 19/11/2026, as mensais e as anuais são corrigidas pelo IPCA/IBGE (M-2); a coluna do ato não leva essa nota. M-2 é o critério que usa o índice do segundo mês anterior ao do vencimento: numa parcela que vence em maio, entra o IPCA de março. A tabela traz só a sigla e mostra as parcelas sem a correção, então o valor pago acompanha o índice. Com que frequência a correção é aplicada e desde quando ela conta ficam no contrato, que a gente pede com você antes de assinar.",
+          "fonte": "tabela de vendas Alphaville de 19/11/2026, nota (B); página do empreendimento no site (definição de M-2)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Financiamento",
+      "perguntas": [
+        {
+          "p": "Dá para financiar o lote pelo banco?",
+          "r": "A tabela de 19/11/2026 é de \"Financiamento direto – curto prazo\" e só traz os planos dela, com ato de 15% e saldo em até 60 mensais; financiamento bancário não aparece no material. Nas compras parceladas de 7 a 48 vezes, as minutas dos lotes comerciais preveem alienação fiduciária; o contrato dos lotes residenciais não veio no material. Se você quiser usar banco, a gente confirma com a Alphaville antes da proposta.",
+          "fonte": "tabela de vendas Alphaville de 19/11/2026 (cabeçalho); página do empreendimento no site (minutas dos lotes comerciais)",
+          "origem": "base"
+        }
+      ]
+    },
+    {
+      "titulo": "Obra, entrega e registro",
+      "perguntas": [
+        {
+          "p": "Quem vende os lotes e quem assina o contrato?",
+          "r": "A realização é da Alphaville, e a vendedora é a Alvorada SPE Terrenista Empreendimentos Imobiliários Ltda. (CNPJ 61.840.121/0001-36), segundo a página do empreendimento. A Viv'América (CRECI 47394-J) intermedeia a venda; a página não é o site oficial da Alphaville. Como o contrato dos lotes residenciais não veio no material, quem assina se confirma na proposta.",
+          "fonte": "página do empreendimento no site (texto de apresentação, ficha técnica e rodapé); book de lançamento (p.11, \"Realização\")",
+          "origem": "ficha"
+        },
+        {
+          "p": "Os lotes residenciais já estão liberados para venda?",
+          "r": "A tabela de vendas da Alphaville de 19/11/2026 traz \"Lançamento\" na capa, e 518 lotes residenciais constam nela, mas ela não informa a disponibilidade de cada um. O book anunciava o lançamento do Terras Alpha Alvorada 1 e 2 para 08 de agosto, e as minutas dos lotes comerciais falam em lançamento ao público em junho de 2026. Antes da proposta, a gente confirma com a Alphaville se o lote escolhido segue à venda.",
+          "fonte": "tabela de vendas Alphaville de 19/11/2026 (capa); book de lançamento Terras Alpha Alvorada 1 e 2 (p.1)",
+          "origem": "base"
+        },
+        {
+          "p": "A previsão de entrega é a mesma para o Alvorada 1 e o 2?",
+          "r": "A página do empreendimento traz uma previsão de entrega só, 09/2029, sem separar os dois residenciais. O contrato dos lotes residenciais, que não veio no material, é que define o que fica pronto nessa data e quando a construção das casas pode começar: a gente pede com você antes de assinar.",
+          "fonte": "página do empreendimento no site (registro e prazos; ficha técnica)",
+          "origem": "ficha"
+        },
+        {
+          "p": "A vegetação já vem crescida na entrega?",
+          "r": "Não. Pelo book, o empreendimento será entregue com a vegetação implantada por meio de mudas, conforme o projeto paisagístico; as imagens mostram as espécies em fase adulta.",
+          "fonte": "book de lançamento Terras Alpha Alvorada 1 e 2 (p.11, nota legal)",
+          "origem": "base"
+        },
+        {
+          "p": "O lote pode estar dado em hipoteca?",
+          "r": "Pode. Segundo as minutas dos lotes comerciais, citadas na página, parte dos lotes do loteamento está em 1ª hipoteca à Prefeitura de Votorantim e em 2ª hipoteca à Águas de Votorantim, como garantia das obras de infraestrutura, e essa garantia só é cancelada depois do Termo de Vistoria de Obra da Prefeitura. A lista inclui quadras que não são de lotes comerciais, mistos ou multifamiliares: antes de assinar, a gente confere com você na matrícula se o lote escolhido está nela.",
+          "fonte": "página do empreendimento no site (registro e prazos; minutas dos lotes comerciais)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "O imovel e o condominio",
+      "perguntas": [
+        {
+          "p": "O que são o Terras Alpha Alvorada 1 e o Terras Alpha Alvorada 2?",
+          "r": "São os dois residenciais da linha Terras Alpha onde ficam os lotes residenciais do Parque Alphaville Alvorada, cada um com o seu clube e a sua portaria 24h, segundo a Alphaville: o Terras Alpha Alvorada 1, com 322 lotes, e o Terras Alpha Alvorada 2, com 196, que somam os 518 lotes residenciais. O restante dos 630 lotes do loteamento são 54 comerciais, 35 de uso misto, 19 multifamiliares e 4 da área do clube e apoio, pelo projeto urbanístico.",
+          "fonte": "página do empreendimento no site (projeto urbanístico e ficha técnica); book de lançamento Terras Alpha Alvorada 1 e 2 (p.1, 6 e 10)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Como sei se o lote fica no Alvorada 1 ou no Alvorada 2?",
+          "r": "A tabela de 19/11/2026 não diz a qual residencial cada quadra pertence. Confirme no atendimento o residencial do lote escolhido: dele dependem o clube (a quadra de areia aparece só no do Alvorada 1) e o regulamento de construção.",
+          "fonte": "tabela de vendas Alphaville de 19/11/2026; book de lançamento (p.5 e 10)",
+          "origem": "base"
+        },
+        {
+          "p": "Quantos lotes passam de 253 m²?",
+          "r": "Na tabela de 19/11/2026, 208 dos 518 lotes passam de 253 m² (contagem nossa): 131 têm até 300 m²; 53, de 300 a 400 m²; 18, de 400 a 500 m²; 3, de 500 a 600 m²; e 3 passam de 600 m² (648,59, 725,08 e 825,28 m²). Outros 301 têm 253,00 m², e 9 têm menos que isso.",
+          "fonte": "tabela de vendas Alphaville de 19/11/2026 (contagem nossa)",
+          "origem": "base"
+        },
+        {
+          "p": "Quais são as regras para construir no Alvorada 2?",
+          "r": "Pelo regulamento construtivo da Alphaville, citado na página: ocupação de até 55% do lote, ao menos 30% de área permeável, coeficiente de aproveitamento 1,0, recuos de 5 m na frente, 1,5 m nas laterais e 2 m no fundo, e até 2 pavimentos. A ficha do Alvorada 1 não veio no material: peça o regulamento do residencial antes de escolher o lote. A casa é projetada e construída por quem compra.",
+          "fonte": "página do empreendimento no site (cards de regras de construção)",
+          "origem": "ficha"
+        },
+        {
+          "p": "A rede de energia é subterrânea?",
+          "r": "Não. Pelo book, a energia vem por posteamento aéreo, inclusive os ramais individuais de ligação, que devem ser pedidos à concessionária local.",
+          "fonte": "book de lançamento Terras Alpha Alvorada 1 e 2 (p.11, nota legal)",
+          "origem": "base"
+        },
+        {
+          "p": "Quanto é a contribuição para a associação?",
+          "r": "O valor não consta do material. Nas minutas dos lotes comerciais, a filiação à Associação Parque Alphaville Alvorada é obrigatória, com contribuição mensal a partir da posse; para o lote residencial, a associação e a contribuição se confirmam no atendimento.",
+          "fonte": "página do empreendimento no site (card Associação; ficha técnica)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Quanto do loteamento é área verde?",
+          "r": "Pelo quadro de áreas da planta de implantação, 168.349,35 m² são áreas verdes e de preservação permanente, 25,40% da gleba de 662.885,76 m².",
+          "fonte": "página do empreendimento no site (quadro de áreas da planta de implantação; ficha técnica)",
+          "origem": "ficha"
+        }
+      ]
+    },
+    {
+      "titulo": "Localizacao e vizinhos",
+      "perguntas": [
+        {
+          "p": "Quanto tempo leva até Sorocaba e a Castello Branco?",
+          "r": "Pelos tempos divulgados pela Alphaville, sem meio de transporte nem horário: Centro de Sorocaba a 22 minutos, Marina Belas Artes a 28, Jardim Botânico de Sorocaba e acesso à Rodovia Castello Branco a 30. Até o Tauste Campolim são 12 minutos e até o Parque Ecológico do Matão, 15.",
+          "fonte": "book de lançamento Terras Alpha Alvorada 1 e 2 (p.11)",
+          "origem": "base"
+        },
+        {
+          "p": "Tem outros Alphaville no site?",
+          "r": "Tem. Os empreendimentos Alphaville que a Viv'América apresenta, cada um com a sua página, estão em <a href=\"/alphaville/\">Empreendimentos Alphaville</a>. Em Indaiatuba, onde fica a imobiliária, há o <a href=\"/alphaville-indaiatuba/\">Alphaville Indaiatuba</a>.",
+          "fonte": "páginas do site /alphaville/ e /alphaville-indaiatuba/",
+          "origem": "vizinhos"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos e custos",
+      "perguntas": [
+        {
+          "p": "O ITBI entra nas custas de escrituração?",
+          "r": "Pela lista da Alphaville citada na página, sim: o ITBI aparece com 2,0% entre os itens das custas da transferência, ao lado da lavratura da escritura (1,4%) e do registro (1,2%), mais itens de alienação quando houver. A lista não diz sobre qual valor os percentuais incidem, e as somas dela não batem com a coluna de custas da tabela de 19/11/2026, que dá 7,125% do valor base em todos os lotes (conta nossa). O ITBI é imposto de Votorantim, com alíquota e base de cálculo da Prefeitura de Votorantim: a gente confere antes de você assinar.",
+          "fonte": "página do empreendimento no site (lista de custas da Alphaville); tabela de vendas Alphaville de 19/11/2026, coluna \"Custas Escrituração\" (conta nossa)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Dá para parcelar as custas de escrituração?",
+          "r": "No quadro de propostas da Alphaville, citado na página, as custas e um item chamado ASO são cobrados no processo de compra e podem ser divididos em até 5 vezes no cartão de crédito, no estande. No lote 36 da quadra 17, as custas são de R$ 20.702 na tabela de 19/11/2026. Confirme a condição atual no atendimento.",
+          "fonte": "página do empreendimento no site (quadro de propostas); tabela de vendas Alphaville de 19/11/2026",
+          "origem": "ficha"
+        },
+        {
+          "p": "Que documentos do loteamento devo pedir antes de assinar?",
+          "r": "A certidão da matrícula 32.744 do Cartório de Registro de Imóveis de Votorantim, onde está o registro do loteamento (R.05, de 09/06/2026), com a situação do lote escolhido; a minuta do contrato dos lotes residenciais, que não veio no material; o regulamento construtivo do residencial do lote (o do Alvorada 1 não veio); a confirmação de que o lote não está entre os lotes dados em hipoteca como garantia das obras; e o valor da contribuição à associação. A gente pede esses documentos com você.",
+          "fonte": "página do empreendimento no site (registro e prazos; ficha técnica); book de lançamento (p.11)",
+          "origem": "ficha"
+        },
+        {
+          "p": "Como reservo um lote com a Viv'América?",
+          "r": "Pelo WhatsApp da página: a gente pede à Alphaville a tabela vigente e a disponibilidade dos lotes dos dois residenciais, envia a você com as condições de pagamento e agenda a sua visita ao stand, na Av. Rogério Cassola, 581, em Votorantim. Com o lote escolhido, a compra começa pela proposta da Alphaville, com um quadro resumo assinado por você, e depois vem o contrato.",
+          "fonte": "página do empreendimento no site (chamada final e notas de preços); book de lançamento (p.11, stand)",
+          "origem": "ficha"
+        }
+      ]
+    }
+  ]
+}

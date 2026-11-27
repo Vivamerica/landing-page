@@ -1,15 +1,15 @@
 {
   "slug": "terras-alphaville-ceara-6-eusebio",
-  "atualizado": "2026-11-22",
+  "atualizado": "2026-11-27",
   "padrao": ["documentos", "morando-fora", "fgts", "distrato", "afetacao"],
   "blocos": [
     {
       "titulo": "Obra, entrega e registro",
       "perguntas": [
         {
-          "p": "O mapa de lotes mostra quais estão livres?",
-          "r": "Ainda não dá para saber. O mapa recebido em novembro/2026 marca os lotes com cores, mas não traz a legenda, então não dizemos quantos estão livres. Pedimos à Alphaville a situação de cada lote e mandamos junto com a tabela.",
-          "fonte": "mapa de disponibilidade recebido em nov/2026 (ficha do site)",
+          "p": "Dá para saber quais lotes estão livres?",
+          "r": "A tabela de vendas de 25/11/2026 traz a situação de cada lote: dos 257 que constam nela, 2 aparecem como reservados. A situação muda com as vendas: confirmamos com a Alphaville o lote escolhido antes da proposta.",
+          "fonte": "tabela de vendas Alphaville de 25/11/2026 (ficha do site)",
           "origem": "ficha"
         },
         {
@@ -119,8 +119,8 @@
           "origem": "base"
         },
         {
-          "p": "Tem outro Alphaville na Cidade Alpha com preço publicado?",
-          "r": "Sim: o <a href=\"/alphaville-ceara-5-eusebio/\">Alphaville Ceará 5</a>, também na Cidade Alpha, com lotes maiores, de 450 a 731,14 m², a partir de R$ 583.442,12 (tabela de nov/2026).",
+          "p": "Tem outro Alphaville na Cidade Alpha no site?",
+          "r": "Sim: o <a href=\"/alphaville-ceara-5-eusebio/\">Alphaville Ceará 5</a>, também na Cidade Alpha, com lotes maiores, de 450 a 731,14 m², a partir de R$ 604.292,40 (tabela de nov/2026).",
           "fonte": "fonte única do site (gera-alphaville.js)",
           "origem": "vizinhos"
         },

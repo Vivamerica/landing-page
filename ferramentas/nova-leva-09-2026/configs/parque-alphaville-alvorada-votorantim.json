@@ -4,20 +4,20 @@
   "categoria": "alphaville",
   "cidade": "Votorantim",
   "data": "2026-11-13",
-  "atualizado": "2026-11-17",
-  "fonte_tabela": "tabela de vendas Alphaville de 10/08/2026",
+  "atualizado": "2026-11-27",
+  "fonte_tabela": "tabela de vendas Alphaville de 19/11/2026",
   "title": "Parque Alphaville Alvorada | lotes de 229 a 825 m²",
-  "description": "Parque Alphaville Alvorada, em Votorantim: 518 lotes residenciais na tabela de 10/08/2026, de 229 a 825 m², desde R$ 291.012. Ato de 15% e até 48 meses.",
+  "description": "Parque Alphaville Alvorada, em Votorantim: 518 lotes residenciais na tabela de 19/11/2026, de 229 a 825 m², desde R$ 290.560. Ato de 15% e até 60 meses.",
   "keywords": "parque alphaville alvorada, alphaville votorantim, terras alpha alvorada, terras alpha alvorada 1, terras alpha alvorada 2, terras alpha votorantim, lote alphaville votorantim, loteamento votorantim, terreno votorantim, lote em votorantim",
   "schema_tipo": "RealEstateListing",
-  "schema_desc": "Loteamento residencial e comercial da Alphaville em Votorantim/SP, registrado como Loteamento Residencial e Comercial Gleba A27 sob o R.05 da matrícula 32.744 do Registro de Imóveis de Votorantim, em 09/06/2026, com 630 lotes em uma gleba de 662.885,76 m². Os lotes residenciais ficam no Terras Alpha Alvorada 1 (322 lotes, a partir de 253 m² pela ficha técnica) e no Terras Alpha Alvorada 2 (196 lotes, de 253 a 725 m² pela ficha técnica), cada um com clube e portaria 24h, segundo a Alphaville. A tabela de vendas da Alphaville de 10/08/2026 (lotes residenciais, financiamento direto de curto prazo) traz 518 lotes residenciais, de 229,23 a 825,28 m², com valor base de R$ 291.012 a R$ 972.848, ato de 15% e saldo em até 48 meses corrigido pelo IPCA (índice oficial de inflação do IBGE) no critério M-2 (índice do segundo mês anterior ao do vencimento); as custas de escrituração e a comissão de corretagem ficam fora do valor base. A tabela não informa a disponibilidade de cada lote nem a validade dos valores.",
+  "schema_desc": "Loteamento residencial e comercial da Alphaville em Votorantim/SP, registrado como Loteamento Residencial e Comercial Gleba A27 sob o R.05 da matrícula 32.744 do Registro de Imóveis de Votorantim, em 09/06/2026, com 630 lotes em uma gleba de 662.885,76 m². Os lotes residenciais ficam no Terras Alpha Alvorada 1 (322 lotes, a partir de 253 m² pela ficha técnica) e no Terras Alpha Alvorada 2 (196 lotes, de 253 a 725 m² pela ficha técnica), cada um com clube e portaria 24h, segundo a Alphaville. Na tabela de vendas da Alphaville de 19/11/2026 (lotes residenciais, financiamento direto de curto prazo) constam 518 lotes residenciais, de 229,23 a 825,28 m², com valor base de R$ 290.560 a R$ 972.831, ato de 15% e saldo em até 60 meses corrigido pelo IPCA (índice oficial de inflação do IBGE) no critério M-2 (índice do segundo mês anterior ao do vencimento); as custas de escrituração e a comissão de corretagem ficam fora do valor base. A tabela não informa a disponibilidade de cada lote nem a validade dos valores.",
   "endereco_schema": "Rodovia SP-79, acesso 103",
-  "preco_min": 291012,
-  "preco_max": 972848,
+  "preco_min": 290560,
+  "preco_max": 972831,
   "offer_count": null,
-  "oferta_desc": "Tabela de vendas da Alphaville de 10/08/2026 (lotes residenciais, financiamento direto de curto prazo), com 518 lotes de R$ 291.012 (lote 02 da quadra 32, de 229,23 m²) a R$ 972.848 (lote 30 da quadra 09, de 825,28 m²), em valor base. Ato de 15% e saldo em 11 a 48 mensais, com ou sem anuais, corrigidos pelo IPCA (índice oficial de inflação do IBGE) no critério M-2 (índice do segundo mês anterior ao do vencimento). Custas de escrituração e corretagem à parte. A tabela não informa disponibilidade nem validade.",
+  "oferta_desc": "Tabela de vendas da Alphaville de 19/11/2026 (lotes residenciais, financiamento direto de curto prazo), em que constam 518 lotes, de R$ 290.560 (lote 36 da quadra 17, de 246,49 m²) a R$ 972.831 (lote 30 da quadra 09, de 825,28 m²), em valor base. Ato de 15% e saldo em 11 a 60 mensais, com ou sem anuais, corrigidos pelo IPCA (índice oficial de inflação do IBGE) no critério M-2 (índice do segundo mês anterior ao do vencimento). Custas de escrituração e corretagem à parte. A tabela não informa disponibilidade nem validade.",
   "produto_nome": "Parque Alphaville Alvorada — lote residencial de 229 a 825 m² em Votorantim",
-  "produto_desc": "Lotes residenciais de 229,23 a 825,28 m² nos residenciais Terras Alpha Alvorada 1 e 2, em Votorantim/SP. Tabela de vendas da Alphaville de 10/08/2026.",
+  "produto_desc": "Lotes residenciais de 229,23 a 825,28 m² nos residenciais Terras Alpha Alvorada 1 e 2, em Votorantim/SP. Tabela de vendas da Alphaville de 19/11/2026.",
   "marca": "Alphaville",
   "lazer": [
     "Piscina adulta e infantil",
@@ -39,9 +39,9 @@
   "hero": {
     "eyebrow": "Votorantim/SP · realização Alphaville",
     "sub": "Lotes do Terras Alpha Alvorada 1 e 2 em Votorantim",
-    "lead": "O Parque Alphaville Alvorada é um loteamento residencial e comercial da Alphaville em Votorantim, com 630 lotes, registrado em 09/06/2026. Os lotes residenciais ficam em dois residenciais com clube e portaria: o Terras Alpha Alvorada 1, com 322 lotes, e o Terras Alpha Alvorada 2, com 196, segundo a Alphaville. A tabela de vendas da Alphaville de 10/08/2026 traz os 518 lotes residenciais, de 229,23 a 825,28 m², sem separar os dois residenciais. Previsão de entrega em 09/2029.",
-    "preco": "A partir de R$ 291.012",
-    "preco_nota": "valor base na tabela de vendas de ago/2026 (10/08/2026) · lote 02 da quadra 32, de 229,23 m² · custas de escrituração e corretagem à parte",
+    "lead": "O Parque Alphaville Alvorada é um loteamento residencial e comercial da Alphaville em Votorantim, com 630 lotes, registrado em 09/06/2026. Os lotes residenciais ficam em dois residenciais com clube e portaria: o Terras Alpha Alvorada 1, com 322 lotes, e o Terras Alpha Alvorada 2, com 196, segundo a Alphaville. Os 518 lotes residenciais, de 229,23 a 825,28 m², constam na tabela de vendas da Alphaville de 19/11/2026, que não separa os dois residenciais. Previsão de entrega em 09/2029.",
+    "preco": "A partir de R$ 290.560",
+    "preco_nota": "valor base na tabela de 19/11/2026 (nov/2026) · lote 36 da quadra 17, de 246,49 m² · custas de escrituração e corretagem à parte",
     "cta_msg": "Olá! Quero a tabela de lotes do Parque Alphaville Alvorada com quadra, metragem e valor.",
     "cta_texto": "Pedir a tabela vigente",
     "cta2": {
@@ -74,7 +74,7 @@
         },
         {
           "n": "229 a 825 m²",
-          "p": "lotes na tabela de 10/08/2026"
+          "p": "lotes na tabela de 19/11/2026"
         }
       ],
       "depois": "galeria"
@@ -86,7 +86,7 @@
       "h2": "Os dois residenciais: lotes de 229 a 825 m² na tabela",
       "paragrafos": [
         "Pela ficha técnica da Alphaville, o lote mínimo dos dois residenciais é de 253 m², com 11,5 m de frente e 22 m de fundo, e o Terras Alpha Alvorada 2 vai até 725 m²; do Terras Alpha Alvorada 1, o material informa o lote mínimo, mas não o máximo.",
-        "A tabela de vendas de 10/08/2026 traz os 518 lotes residenciais, em 23 quadras, de 229,23 a 825,28 m²: 301 deles têm 253,00 m², 9 têm menos de 253 m² (o menor, o lote 02 da quadra 32, tem 229,23 m²) e o maior, o lote 30 da quadra 09, tem 825,28 m². A tabela não diz a qual residencial cada quadra pertence: confirme no atendimento o residencial e a metragem do lote escolhido."
+        "Os 518 lotes residenciais constam na tabela de vendas de 19/11/2026, em 23 quadras, de 229,23 a 825,28 m²: 301 deles têm 253,00 m², 9 têm menos de 253 m² (o menor, o lote 02 da quadra 32, tem 229,23 m²) e o maior, o lote 30 da quadra 09, tem 825,28 m². A tabela não diz a qual residencial cada quadra pertence: confirme no atendimento o residencial e a metragem do lote escolhido."
       ],
       "tabela": {
         "legenda": "Número de lotes pelo projeto urbanístico da Alphaville; metragens pela ficha técnica e pelo projeto urbanístico; clube pelos mapas ilustrados do material de lançamento.",
@@ -152,15 +152,15 @@
     {
       "id": "precos",
       "label": "Preços e condições",
-      "h2": "Tabela de 10/08/2026: ato de 15% e saldo em até 48 meses",
+      "h2": "Tabela de 19/11/2026: ato de 15% e saldo em até 60 meses",
       "paragrafos": [
-        "Na tabela de vendas da Alphaville de 10/08/2026, para os lotes residenciais em financiamento direto de curto prazo, constam 518 lotes, com valor base (a coluna \"Valor do lote – Base Financiamento\" da tabela) de R$ 291.012 (lote 02 da quadra 32, de 229,23 m²) a R$ 972.848 (lote 30 da quadra 09, de 825,28 m²). Os lotes de 253,00 m², 301 na tabela, aparecem com valor base de R$ 307.655, R$ 321.190 ou R$ 336.726. Pela nossa conta, o valor base vai de R$ 1.178,71 a R$ 1.330,99 por m².",
+        "Na tabela de vendas da Alphaville de 19/11/2026, para os lotes residenciais em financiamento direto de curto prazo, constam 518 lotes, com valor base (a coluna \"Valor do lote – Base Financiamento\" da tabela) de R$ 290.560 (lote 36 da quadra 17, de 246,49 m²) a R$ 972.831 (lote 30 da quadra 09, de 825,28 m²). Os lotes de 253,00 m², 301 na tabela, aparecem com valor base de R$ 298.234, R$ 321.175 ou R$ 336.724. Pela nossa conta, o valor base vai de R$ 1.178,79 a R$ 1.330,93 por m².",
         "A tabela não informa a disponibilidade de cada lote nem até quando os valores valem: confirme no atendimento se ela segue valendo e quais lotes estão livres.",
-        "Todos os planos começam com ato (a entrada) de 15% do valor base. O restante vai em 11 mensais; em 24 mensais, com ou sem 2 anuais; em 36 mensais, com ou sem 3 anuais; ou em 48 mensais, com ou sem 4 anuais. A primeira mensal vence em 30 dias e a primeira anual em 365 dias. As parcelas são corrigidas pelo IPCA (Índice Nacional de Preços ao Consumidor Amplo, a inflação oficial medida pelo IBGE), no critério M-2, que usa o índice do segundo mês anterior ao do vencimento (a tabela traz só a sigla; confirme no contrato). A tabela não traz pagamento à vista.",
-        "Somando o ato e as parcelas, sem a correção, os planos de 48 mensais dão o valor base do lote; os de 36 mensais, 97% dele; os de 24 mensais, 94%; e o de 11 mensais, 91% (conta nossa sobre a tabela, que não chama essa diferença de desconto). Nos planos com anuais, cada anual vale quatro mensais."
+        "Todos os planos começam com ato (a entrada) de 15% do valor base. O restante vai em 11 mensais; em 24 mensais, com ou sem 2 anuais; em 36 mensais, com ou sem 3 anuais; em 48 mensais, com ou sem 4 anuais; ou em 60 mensais, com ou sem 5 anuais. A primeira mensal vence em 30 dias e a primeira anual em 365 dias. As parcelas são corrigidas pelo IPCA (Índice Nacional de Preços ao Consumidor Amplo, a inflação oficial medida pelo IBGE), no critério M-2, que usa o índice do segundo mês anterior ao do vencimento (a tabela traz só a sigla; confirme no contrato). A tabela não traz pagamento à vista.",
+        "Somando o ato e as parcelas, sem a correção, os planos de 48 e de 60 mensais dão o valor base do lote; os de 36 mensais, 97% dele; os de 24 mensais, 94%; e o de 11 mensais, 91% (conta nossa sobre a tabela, que não chama essa diferença de desconto). Nos planos com anuais, cada anual vale quatro mensais."
       ],
       "tabela": {
-        "legenda": "Exemplo: lote 04 da quadra 04, de 253,00 m², com valor base de R$ 321.190 na tabela de 10/08/2026; os 204 lotes de 253,00 m² com esse valor base têm as mesmas parcelas. Soma sem a correção pelo IPCA (conta nossa). Custas de escrituração à parte: R$ 22.885 nesse lote.",
+        "legenda": "Exemplo: lote 04 da quadra 04, de 253,00 m², com valor base de R$ 321.175 na tabela de 19/11/2026; os 204 lotes de 253,00 m² com esse valor base têm as mesmas parcelas. Soma sem a correção pelo IPCA (conta nossa). Custas de escrituração à parte: R$ 22.884 nesse lote.",
         "cab": [
           "Plano",
           "Ato (15%)",
@@ -175,58 +175,72 @@
         "linhas": [
           [
             "11 mensais",
-            "R$ 48.178",
-            "11 de R$ 22.191",
+            "R$ 48.176",
+            "11 de R$ 22.190",
             "—",
-            "R$ 292.279"
+            "R$ 292.266"
           ],
           [
             "24 mensais + 2 anuais",
-            "R$ 48.178",
+            "R$ 48.176",
             "24 de R$ 7.929",
-            "2 de R$ 31.717",
-            "R$ 301.908"
+            "2 de R$ 31.716",
+            "R$ 301.904"
           ],
           [
             "24 mensais",
-            "R$ 48.178",
+            "R$ 48.176",
             "24 de R$ 10.572",
             "—",
-            "R$ 301.906"
+            "R$ 301.904"
           ],
           [
             "36 mensais + 3 anuais",
-            "R$ 48.178",
+            "R$ 48.176",
             "36 de R$ 5.487",
-            "3 de R$ 21.948",
-            "R$ 311.554"
+            "3 de R$ 21.947",
+            "R$ 311.549"
           ],
           [
             "36 mensais",
-            "R$ 48.178",
+            "R$ 48.176",
             "36 de R$ 7.316",
             "—",
-            "R$ 311.554"
+            "R$ 311.552"
           ],
           [
             "48 mensais + 4 anuais",
-            "R$ 48.178",
+            "R$ 48.176",
             "48 de R$ 4.266",
-            "4 de R$ 17.063",
-            "R$ 321.198"
+            "4 de R$ 17.062",
+            "R$ 321.192"
           ],
           [
             "48 mensais",
-            "R$ 48.178",
-            "48 de R$ 5.688",
+            "R$ 48.176",
+            "48 de R$ 5.687",
             "—",
-            "R$ 321.202"
+            "R$ 321.152"
+          ],
+          [
+            "60 mensais + 5 anuais",
+            "R$ 48.176",
+            "60 de R$ 3.412",
+            "5 de R$ 13.650",
+            "R$ 321.146"
+          ],
+          [
+            "60 mensais",
+            "R$ 48.176",
+            "60 de R$ 4.550",
+            "—",
+            "R$ 321.176"
           ]
         ]
       },
       "tabela2_titulo": "Custas de escrituração, fora do valor base",
       "tabela2_paragrafos": [
-        "A tabela de 10/08/2026 traz as custas de escrituração de cada lote em coluna própria, fora do valor base: de R$ 20.735 a R$ 69.315, o equivalente a 7,125% do valor base em todos os lotes (conta nossa). Uma lista separada da Alphaville, calculada sobre a tabela de emolumentos cartorários de 2026, detalha os itens das custas da transferência, que ficam por conta de quem compra; ela não informa sobre qual valor os percentuais incidem."
+        "A tabela de 19/11/2026 traz as custas de escrituração de cada lote em coluna própria, fora do valor base: de R$ 20.702 a R$ 69.314, o equivalente a 7,125% do valor base em todos os lotes (conta nossa). Uma lista separada da Alphaville, calculada sobre a tabela de emolumentos cartorários de 2026, detalha os itens das custas da transferência, que ficam por conta de quem compra; ela não informa sobre qual valor os percentuais incidem."
       ],
       "tabela2": {
         "cab": [
@@ -264,7 +278,7 @@
         ]
       },
       "notas": [
-        "Sem os dois itens de alienação, os percentuais da lista somam 5,1%; com eles, 7,5% (conta nossa); nenhuma das duas somas bate com a coluna \"Custas Escrituração\" da tabela de 10/08/2026, que dá 7,125% do valor base em todos os lotes (conta nossa). Confirme no atendimento o valor das custas do seu lote. Os itens de alienação parecem se referir à alienação fiduciária, que, nas minutas dos lotes comerciais, entra nas compras parceladas de 7 a 48 vezes; confirme quais itens valem para o seu plano.",
+        "Sem os dois itens de alienação, os percentuais da lista somam 5,1%; com eles, 7,5% (conta nossa); nenhuma das duas somas bate com a coluna \"Custas Escrituração\" da tabela de 19/11/2026, que dá 7,125% do valor base em todos os lotes (conta nossa). Confirme no atendimento o valor das custas do seu lote. Os itens de alienação parecem se referir à alienação fiduciária, que, nas minutas dos lotes comerciais, entra nas compras parceladas de 7 a 48 vezes; confirme quais itens valem para o seu plano.",
         "No quadro de propostas da Alphaville, as custas e um item chamado ASO são cobrados no processo de compra e podem ser divididos em até 5 vezes no cartão de crédito, no estande. Confirme a condição atual no atendimento.",
         "Também fica fora do preço a comissão de corretagem: pelo quadro de propostas da Alphaville e pelas minutas dos lotes comerciais, ela é paga pelo comprador separadamente, em dois pagamentos: um por boleto enviado por e-mail ao cliente e outro, o da imobiliária, por boleto ou Pix. O valor aparece no quadro resumo da proposta, assinado pelo comprador, e no contrato.",
         "As minutas dos lotes comerciais preveem ainda taxa de gestão de contrato de R$ 25 por mês, corrigida uma vez por ano pelo IPCA, e, nas compras parceladas, seguro por morte e invalidez permanente pago pelo comprador. O contrato residencial não veio no material: confirme no atendimento o que vale para o lote residencial."
@@ -428,8 +442,8 @@
       "196 lotes residenciais, de 253 a 725 m² pela ficha técnica"
     ],
     [
-      "Lotes na tabela de 10/08/2026",
-      "518 lotes residenciais em 23 quadras, de 229,23 a 825,28 m² (301 de 253,00 m²); a tabela não separa os dois residenciais nem informa disponibilidade"
+      "Lotes na tabela de 19/11/2026",
+      "518 lotes residenciais constam na tabela de 19/11/2026, em 23 quadras, de 229,23 a 825,28 m² (301 de 253,00 m²); a tabela não separa os dois residenciais nem informa disponibilidade"
     ],
     [
       "Outros lotes",
@@ -457,15 +471,15 @@
     ],
     [
       "Preço",
-      "Valor base de R$ 291.012 a R$ 972.848 na tabela de vendas da Alphaville de 10/08/2026, sem as custas de escrituração e a corretagem; confirme no atendimento se a tabela segue valendo"
+      "Valor base de R$ 290.560 a R$ 972.831 na tabela de vendas da Alphaville de 19/11/2026, sem as custas de escrituração e a corretagem; confirme no atendimento se a tabela segue valendo"
     ],
     [
       "Pagamento",
-      "Ato de 15% do valor base + 11 mensais, ou 24, 36 ou 48 mensais, com ou sem 2, 3 ou 4 anuais; 1ª mensal em 30 dias e 1ª anual em 365 dias; correção pelo IPCA/IBGE (M-2); sem pagamento à vista na tabela"
+      "Ato de 15% do valor base + 11 mensais, ou 24, 36, 48 ou 60 mensais, com ou sem 2, 3, 4 ou 5 anuais; 1ª mensal em 30 dias e 1ª anual em 365 dias; correção pelo IPCA/IBGE (M-2); sem pagamento à vista na tabela"
     ],
     [
       "Custas de escrituração",
-      "Fora do valor base, em coluna própria da tabela de 10/08/2026: de R$ 20.735 a R$ 69.315 (7,125% do valor base, conta nossa); a lista da Alphaville detalha ITBI 2%, lavratura da escritura 1,4%, registro 1,2% e margem e operacional documental 0,5%, mais 1,2% de lavratura e 1,2% de registro nos itens de alienação, quando houver"
+      "Fora do valor base, em coluna própria da tabela de 19/11/2026: de R$ 20.702 a R$ 69.314 (7,125% do valor base, conta nossa); a lista da Alphaville detalha ITBI 2%, lavratura da escritura 1,4%, registro 1,2% e margem e operacional documental 0,5%, mais 1,2% de lavratura e 1,2% de registro nos itens de alienação, quando houver"
     ],
     [
       "Corretagem",
@@ -483,15 +497,15 @@
   "faq": [
     {
       "q": "Quanto custa um lote no Parque Alphaville Alvorada?",
-      "a": "Na tabela de vendas da Alphaville de 10/08/2026, os 518 lotes residenciais têm valor base de R$ 291.012 (lote 02 da quadra 32, de 229,23 m²) a R$ 972.848 (lote 30 da quadra 09, de 825,28 m²). Os lotes de 253,00 m², a metragem mais comum na tabela, aparecem com R$ 307.655, R$ 321.190 ou R$ 336.726. As custas de escrituração vêm em coluna própria, fora do valor base (R$ 22.885 num lote de R$ 321.190), e a comissão de corretagem também é cobrada à parte. A tabela não informa a disponibilidade de cada lote nem a validade dos valores: confirme no atendimento."
+      "a": "Na tabela de vendas da Alphaville de 19/11/2026, os 518 lotes residenciais que constam nela têm valor base de R$ 290.560 (lote 36 da quadra 17, de 246,49 m²) a R$ 972.831 (lote 30 da quadra 09, de 825,28 m²). Os lotes de 253,00 m², a metragem mais comum na tabela, aparecem com R$ 298.234, R$ 321.175 ou R$ 336.724. As custas de escrituração vêm em coluna própria, fora do valor base (R$ 22.884 num lote de R$ 321.175), e a comissão de corretagem também é cobrada à parte. A tabela não informa a disponibilidade de cada lote nem a validade dos valores: confirme no atendimento."
     },
     {
       "q": "Como é o pagamento dos lotes do Parque Alphaville Alvorada?",
-      "a": "Pela tabela de 10/08/2026, o ato (a entrada) é de 15% do valor base, e o restante vai em 11 mensais; em 24 mensais, com ou sem 2 anuais; em 36 mensais, com ou sem 3 anuais; ou em 48 mensais, com ou sem 4 anuais. A primeira mensal vence em 30 dias e a primeira anual em 365 dias, e as parcelas são corrigidas pelo IPCA, o índice oficial de inflação do IBGE, no critério M-2, que usa o índice do segundo mês anterior ao do vencimento (a tabela traz só a sigla; confirme no contrato). Num lote de 253,00 m² com valor base de R$ 321.190, por exemplo, o ato é de R$ 48.178 e o saldo vai em 48 mensais de R$ 5.688 ou em 11 mensais de R$ 22.191. Somando ato e parcelas, sem a correção, os planos de 48 mensais dão o valor base, e os de 36, 24 e 11 mensais dão 97%, 94% e 91% dele (conta nossa). A tabela não traz pagamento à vista. Fora do valor base ficam as custas de escrituração e a comissão de corretagem, paga pelo comprador à parte, segundo o quadro de propostas da Alphaville; as minutas dos lotes comerciais preveem ainda taxa de gestão de contrato de R$ 25 por mês e, nas compras parceladas, seguro por morte e invalidez. Confirme no atendimento o que vale para o lote residencial."
+      "a": "Pela tabela de 19/11/2026, o ato (a entrada) é de 15% do valor base, e o restante vai em 11 mensais; em 24 mensais, com ou sem 2 anuais; em 36 mensais, com ou sem 3 anuais; em 48 mensais, com ou sem 4 anuais; ou em 60 mensais, com ou sem 5 anuais. A primeira mensal vence em 30 dias e a primeira anual em 365 dias, e as parcelas são corrigidas pelo IPCA, o índice oficial de inflação do IBGE, no critério M-2, que usa o índice do segundo mês anterior ao do vencimento (a tabela traz só a sigla; confirme no contrato). Num lote de 253,00 m² com valor base de R$ 321.175, por exemplo, o ato é de R$ 48.176 e o saldo vai em 60 mensais de R$ 4.550, em 48 mensais de R$ 5.687 ou em 11 mensais de R$ 22.190. Somando ato e parcelas, sem a correção, os planos de 48 e de 60 mensais dão o valor base, e os de 36, 24 e 11 mensais dão 97%, 94% e 91% dele (conta nossa). A tabela não traz pagamento à vista. Fora do valor base ficam as custas de escrituração e a comissão de corretagem, paga pelo comprador à parte, segundo o quadro de propostas da Alphaville; as minutas dos lotes comerciais preveem ainda taxa de gestão de contrato de R$ 25 por mês e, nas compras parceladas, seguro por morte e invalidez. Confirme no atendimento o que vale para o lote residencial."
     },
     {
       "q": "Qual o tamanho dos lotes do Parque Alphaville Alvorada?",
-      "a": "Na tabela de vendas de 10/08/2026, os 518 lotes residenciais vão de 229,23 a 825,28 m², e 301 deles têm 253,00 m². Pela ficha técnica da Alphaville, o lote mínimo dos dois residenciais é de 253 m² (11,5 x 22 m) e o Terras Alpha Alvorada 2 vai até 725 m², mas a tabela traz 9 lotes com menos de 253 m² e não diz a qual residencial cada quadra pertence. São 322 lotes no Alvorada 1 e 196 no Alvorada 2."
+      "a": "Na tabela de vendas de 19/11/2026, os 518 lotes residenciais que constam nela vão de 229,23 a 825,28 m², e 301 deles têm 253,00 m². Pela ficha técnica da Alphaville, o lote mínimo dos dois residenciais é de 253 m² (11,5 x 22 m) e o Terras Alpha Alvorada 2 vai até 725 m², mas a tabela traz 9 lotes com menos de 253 m² e não diz a qual residencial cada quadra pertence. São 322 lotes no Alvorada 1 e 196 no Alvorada 2."
     },
     {
       "q": "O Parque Alphaville Alvorada é condomínio fechado?",
@@ -528,25 +542,25 @@
     "marca": "PARQUE ALPHAVILLE ALVORADA",
     "linha": "Parque Alphaville Alvorada · lotes residenciais no Terras Alpha Alvorada 1 e 2 · Votorantim, SP",
     "realizacao": "Realização Alphaville",
-    "legal": "Imagens ilustrativas: fotomontagens e perspectivas do material da Alphaville, com a vegetação em fase adulta, entregue em mudas; as casas e os prédios mostram uma ocupação possível dos lotes. Os projetos do clube, do apoio e da portaria estão em aprovação e podem mudar sem aviso prévio. Loteamento Residencial e Comercial Gleba A27, registrado sob o R.05 da matrícula 32.744 do Cartório de Registro de Imóveis de Votorantim em 09/06/2026; vendedora Alvorada SPE Terrenista Empreendimentos Imobiliários Ltda., CNPJ 61.840.121/0001-36. Número de lotes, metragens, lazer e tempos de deslocamento conforme o material da Alphaville. Preços e condições conforme a tabela de vendas da Alphaville de 10/08/2026 (lotes residenciais, financiamento direto de curto prazo), em valor base, sem as custas de escrituração e a comissão de corretagem, cobradas à parte; parcelas corrigidas pelo IPCA/IBGE (M-2). A tabela não informa a disponibilidade de cada lote nem a validade dos valores: confirme ambas no atendimento. Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da Alphaville. Página publicada em nov/2026."
+    "legal": "Imagens ilustrativas: fotomontagens e perspectivas do material da Alphaville, com a vegetação em fase adulta, entregue em mudas; as casas e os prédios mostram uma ocupação possível dos lotes. Os projetos do clube, do apoio e da portaria estão em aprovação e podem mudar sem aviso prévio. Loteamento Residencial e Comercial Gleba A27, registrado sob o R.05 da matrícula 32.744 do Cartório de Registro de Imóveis de Votorantim em 09/06/2026; vendedora Alvorada SPE Terrenista Empreendimentos Imobiliários Ltda., CNPJ 61.840.121/0001-36. Número de lotes, metragens, lazer e tempos de deslocamento conforme o material da Alphaville. Preços e condições conforme a tabela de vendas da Alphaville de 19/11/2026 (lotes residenciais, financiamento direto de curto prazo), em valor base, sem as custas de escrituração e a comissão de corretagem, cobradas à parte; parcelas corrigidas pelo IPCA/IBGE (M-2). A tabela não informa a disponibilidade de cada lote nem a validade dos valores: confirme ambas no atendimento. Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da Alphaville. Página publicada em nov/2026."
   },
   "home": {
     "tipo": "lote",
-    "preco": 291012,
+    "preco": 290560,
     "lote": "fechado",
     "status": "lancamento",
     "constr": "Alphaville",
-    "pm2": "1270",
+    "pm2": "1179",
     "badge": "Condomínio fechado",
     "badge_estilo": "background:#C9A227;color:#161616;",
     "meta": "Lotes residenciais de 229 a 825 m² · Votorantim",
-    "desc": "630 lotes em Votorantim · 518 lotes residenciais na tabela de 10/08/2026, de 229 a 825 m² · residenciais Terras Alpha Alvorada 1 e 2, cada um com clube e portaria 24h.",
+    "desc": "630 lotes em Votorantim · 518 lotes residenciais constam na tabela de 19/11/2026, de 229 a 825 m² · residenciais Terras Alpha Alvorada 1 e 2, cada um com clube e portaria 24h.",
     "alt": "Fotomontagem aérea ilustrativa do Parque Alphaville Alvorada, em Votorantim",
-    "itemlist": "Parque Alphaville Alvorada — loteamento da Alphaville em Votorantim, 630 lotes, com 518 lotes residenciais de 229 a 825 m² no Terras Alpha Alvorada 1 e 2 · a partir de R$ 291.012 (tabela de 10/08/2026)"
+    "itemlist": "Parque Alphaville Alvorada — loteamento da Alphaville em Votorantim, 630 lotes, com 518 lotes residenciais de 229 a 825 m² no Terras Alpha Alvorada 1 e 2 · a partir de R$ 290.560 (tabela de 19/11/2026)"
   },
   "llms": {
     "secao": "alphaville",
-    "linha": "loteamento residencial e comercial da Alphaville em Votorantim/SP (não é Indaiatuba), registrado como Loteamento Residencial e Comercial Gleba A27 sob o R.05 da matrícula 32.744 do Registro de Imóveis de Votorantim em 09/06/2026, com 630 lotes em 662.885,76 m². Lotes residenciais no Terras Alpha Alvorada 1 (322 lotes, a partir de 253 m² pela ficha técnica) e no Terras Alpha Alvorada 2 (196 lotes, de 253 a 725 m² pela ficha técnica), cada um com clube previsto (piscina adulta e infantil, salão de festas, academia, churrasqueira, playground e horta; quadra de areia no Alvorada 1) e portaria 24h, cujos projetos (clube, apoio e portaria) estão em aprovação e podem mudar sem aviso prévio, segundo a Alphaville; o projeto urbanístico lista também 54 lotes comerciais, 35 de uso misto, 19 multifamiliares e 4 da área do clube e apoio. Lançamento dos residenciais anunciado para 08/08/2026 no material de divulgação de jul/2026 (as minutas dos lotes comerciais citam junho/2026); a liberação dos lotes residenciais é confirmada no atendimento. Acesso pela Rodovia SP-79, acesso 103; stand na Av. Rogério Cassola, 581. Tabela de vendas da Alphaville de 10/08/2026 (lotes residenciais, financiamento direto de curto prazo): 518 lotes em 23 quadras, de 229,23 a 825,28 m² (301 de 253,00 m²), com valor base de R$ 291.012 (quadra 32, lote 02) a R$ 972.848 (quadra 09, lote 30); ato de 15% e saldo em 11 mensais, ou 24, 36 ou 48 mensais com ou sem 2, 3 ou 4 anuais, corrigidos pelo IPCA/IBGE no critério M-2 (índice do segundo mês anterior ao do vencimento); sem pagamento à vista na tabela; a tabela não separa os dois residenciais nem informa disponibilidade ou validade. Custas de escrituração em coluna própria, fora do valor base (7,125% do valor base, conta nossa; a lista da Alphaville cita ITBI 2%, lavratura da escritura 1,4%, registro 1,2%, margem e operacional documental 0,5%, mais itens de alienação quando houver), e comissão de corretagem à parte. Previsão de entrega em 09/2029."
+    "linha": "loteamento residencial e comercial da Alphaville em Votorantim/SP (não é Indaiatuba), registrado como Loteamento Residencial e Comercial Gleba A27 sob o R.05 da matrícula 32.744 do Registro de Imóveis de Votorantim em 09/06/2026, com 630 lotes em 662.885,76 m². Lotes residenciais no Terras Alpha Alvorada 1 (322 lotes, a partir de 253 m² pela ficha técnica) e no Terras Alpha Alvorada 2 (196 lotes, de 253 a 725 m² pela ficha técnica), cada um com clube previsto (piscina adulta e infantil, salão de festas, academia, churrasqueira, playground e horta; quadra de areia no Alvorada 1) e portaria 24h, cujos projetos (clube, apoio e portaria) estão em aprovação e podem mudar sem aviso prévio, segundo a Alphaville; o projeto urbanístico lista também 54 lotes comerciais, 35 de uso misto, 19 multifamiliares e 4 da área do clube e apoio. Lançamento dos residenciais anunciado para 08/08/2026 no material de divulgação de jul/2026 (as minutas dos lotes comerciais citam junho/2026); a liberação dos lotes residenciais é confirmada no atendimento. Acesso pela Rodovia SP-79, acesso 103; stand na Av. Rogério Cassola, 581. Tabela de vendas da Alphaville de 19/11/2026 (lotes residenciais, financiamento direto de curto prazo): 518 lotes constam na tabela, em 23 quadras, de 229,23 a 825,28 m² (301 de 253,00 m²), com valor base de R$ 290.560 (quadra 17, lote 36) a R$ 972.831 (quadra 09, lote 30); ato de 15% e saldo em 11 mensais, ou 24, 36, 48 ou 60 mensais com ou sem 2, 3, 4 ou 5 anuais, corrigidos pelo IPCA/IBGE no critério M-2 (índice do segundo mês anterior ao do vencimento); sem pagamento à vista na tabela; a tabela não separa os dois residenciais nem informa disponibilidade ou validade. Custas de escrituração em coluna própria, fora do valor base (7,125% do valor base, conta nossa; a lista da Alphaville cita ITBI 2%, lavratura da escritura 1,4%, registro 1,2%, margem e operacional documental 0,5%, mais itens de alienação quando houver), e comissão de corretagem à parte. Previsão de entrega em 09/2029."
   },
   "geo": [
     -23.5861,
@@ -554,6 +568,10 @@
   ],
   "mapa": {
     "rota": "-23.580737,-47.45908",
-    "embed": "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s-23.5861,-47.463123!6i15"
+    "embed": "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s-23.5861,-47.463123!6i15",
+    "lotes": {
+      "url": "/mapa-lotes-indaiatuba/#alvorada-votorantim",
+      "texto": "Ver os 518 lotes da tabela no mapa de lotes"
+    }
   }
 }

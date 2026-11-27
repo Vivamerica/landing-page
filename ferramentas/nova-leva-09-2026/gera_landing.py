@@ -57,6 +57,10 @@ def bloco_modelo():
     # o <style id="landing-extra"> do modelo é só dele: o da ficha é escrito em main(). Copiado,
     # a ficha saía com dois blocos e a regra do menu repetida.
     estilo = re.sub(r'[ \t]*<style id="landing-extra">[\s\S]*?</style>\r?\n', '', estilo)
+    # o <style id="faq-comprador-css"> é do gera-faq-comprador.js, que o põe (e tira) só onde há o bloco de
+    # perguntas; copiado do modelo, a ficha sem perguntas ficava com o estilo solto e a com perguntas, com ele
+    # fora do lugar em que o gerador o grava
+    estilo = re.sub(r'[ \t]*<style id="faq-comprador-css">[\s\S]*?</style>\r?\n', '', estilo)
     # o menu do site é do gera-menu.js (o ritual põe o <style id="menu-site-css"> e preenche o
     # GEN:menu; "menu-site" é o nome antigo do mesmo estilo); o <style id="nav-site"> é do cabeçalho
     # antigo. Nenhum deles vem do modelo.
@@ -189,6 +193,10 @@ def bloco_mapa(m, nome, cidade='Indaiatuba'):
     # opcional: link para o bairro no mapa de lotes do site (mapa.lotes = {url, texto})
     lotes = m.get('lotes')
     extra = ('    <p><a class="mapa-rota" href="%s">%s &rarr;</a></p>\n' % (e(lotes['url']), e(lotes['texto']))) if lotes else ''
+    if not m.get('embed'):
+        # sem coordenada no material (Alphaville da Bahia e do Ceará, 27/11/2026): sem o mapa do Google, só o link
+        # para o bairro no mapa de lotes, cuja planta foi encaixada no satélite
+        return extra
     return ('    <div class="mapa-box" data-src="%s" data-titulo="%s">\n'
             '      <button class="mapa-btn" type="button" aria-label="Carregar o mapa do %s">\n'
             '        <span class="mapa-ic" aria-hidden="true"></span>\n'
@@ -249,7 +257,7 @@ def main(caminho_cfg):
         principal['numberOfAccommodationUnits'] = c['unidades_total']
     if c.get('geo'):
         principal['geo'] = {"@type": "GeoCoordinates", "latitude": c['geo'][0], "longitude": c['geo'][1]}
-    if c.get('mapa'):
+    if c.get('mapa') and c['mapa'].get('embed'):
         from urllib.parse import quote
         principal['hasMap'] = 'https://www.google.com/maps/search/?api=1&query=' + quote(c['mapa'].get('rota', c['nome']), safe='')
     principal['address'] = {"@type": "PostalAddress"}
@@ -377,7 +385,7 @@ def main(caminho_cfg):
     out.append('<p class="nap">Imobiliária Viv\'América · CRECI 47394-J · Av. Higienópolis, 70 – Jardim União, Indaiatuba/SP · '
                '<a href="https://wa.me/5519989769457">+55 19 98976-9457</a> · <a href="/sobre/">Sobre a imobiliária</a>%s</p>\n</footer>\n\n'
                % (' · <a href="https://imoveisvivamerica.com.br/politica-de-privacidade">Política de Privacidade</a>' if c.get('nap_privacidade', True) else ''))
-    if c.get('mapa') and js_mapa:
+    if c.get('mapa') and c['mapa'].get('embed') and js_mapa:
         js = js_mapa.replace("f.title = 'Mapa do Espaço Conceição, Rua Três Marias, 254, Indaiatuba';",
                              "f.title = this.dataset.titulo || 'Mapa';")
         assert 'dataset.titulo' in js, 'script do mapa no modelo mudou'

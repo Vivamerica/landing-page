@@ -1,6 +1,6 @@
 {
   "slug": "alphaville-guarajuba-4-camacari",
-  "atualizado": "2026-11-22",
+  "atualizado": "2026-11-27",
   "padrao": ["documentos", "morando-fora", "fgts", "distrato", "afetacao", "renda"],
   "blocos": [
     {
@@ -54,8 +54,8 @@
         },
         {
           "p": "Quem vende e assina o contrato?",
-          "r": "O book traz \"Realização: alphaville\", mas não identifica a empresa que vende os lotes e assina o contrato. Isso é confirmado com a Alphaville antes da proposta.",
-          "fonte": "book digital do Alphaville Guarajuba 4 (p.19)",
+          "r": "Pelo regulamento construtivo da Alphaville (Anexo B), a vendedora dos lotes é a Meliá Brasil Empreendimento Alphaville Guarajuba Fase 4 SPE Ltda.; o book traz \"Realização: alphaville\". Quem assina o contrato é confirmado com a Alphaville antes da proposta.",
+          "fonte": "regulamento construtivo da Alphaville, Anexo B (p.4 e 7); book digital do Alphaville Guarajuba 4 (p.19)",
           "origem": "base"
         },
         {
@@ -77,9 +77,9 @@
       "perguntas": [
         {
           "p": "Tem regras para construir a casa?",
-          "r": "O material não traz recuos, taxa de ocupação nem altura máxima. A gente pede à Alphaville o regulamento construtivo antes de você escolher o lote.",
-          "fonte": "página do empreendimento no site",
-          "origem": "ficha"
+          "r": "Sim. Pelo regulamento construtivo da Alphaville (Anexo B), em cada lote residencial só pode ser construída uma casa, para uma única família, sem edícula, com recuos mínimos de 5,00 m na frente, 1,50 m em cada lateral e 3,00 m no fundo, taxa de ocupação máxima de 60%, área permeável mínima de 40% e área construída mínima de 180 m². São até 2 pavimentos (térreo e superior) mais 1 subsolo, com altura máxima de 12,00 m, e muros de divisa de até 2,00 m. Casa pré-fabricada montada no lote não é permitida; elementos pré-fabricados de vedação, cobertura, pilares e vigas são permitidos, e estrutura aparente depende de aprovação da associação. O projeto passa primeiro pela associação do loteamento e depois pela Prefeitura, e o regulamento não fixa prazo para construir.",
+          "fonte": "regulamento construtivo da Alphaville, Anexo B (p.8 a 14, 23 e 30-31)",
+          "origem": "base"
         },
         {
           "p": "Qual o tamanho do terreno do empreendimento?",
@@ -95,8 +95,8 @@
         },
         {
           "p": "Qual o tamanho do clube?",
-          "r": "O book divide o clube em uma parte externa, de 33.369,08 m², e uma interna, de 11.891,11 m², sem dizer quais itens ficam em cada uma.",
-          "fonte": "book digital do Alphaville Guarajuba 4 (p.17)",
+          "r": "O book divide o clube em uma parte externa, de 33.369,08 m², e uma interna, de 11.891,11 m², sem dizer quais itens ficam em cada uma. Pelo regulamento construtivo (Anexo B), o clube externo fica no lote 01 da quadra U4, pertence à Associação Geral Guarajuba e receberá os equipamentos de forma faseada; ele e o clube interno poderão ser usados por futuras fases da Alphaville.",
+          "fonte": "book digital do Alphaville Guarajuba 4 (p.17); regulamento construtivo da Alphaville, Anexo B (p.3, 4 e 7)",
           "origem": "base"
         },
         {
@@ -124,8 +124,8 @@
         },
         {
           "p": "Tem outros Alphaville de praia no site?",
-          "r": "No Ceará, em Eusébio, perto de Fortaleza, o <a href=\"/alphaville-ceara-5-eusebio/\">Alphaville Ceará 5</a> tem lotes a partir de R$ 583.442,12 (tabela de nov/2026), e o <a href=\"/terras-alphaville-ceara-6-eusebio/\">Terras Alphaville Ceará 6</a> tem a tabela enviada no atendimento.",
-          "fonte": "fonte única do site (gera-alphaville.js), 22/11/2026",
+          "r": "No Ceará, em Eusébio, perto de Fortaleza, o <a href=\"/alphaville-ceara-5-eusebio/\">Alphaville Ceará 5</a> tem lotes a partir de R$ 604.292,40 (tabela de nov/2026), e o <a href=\"/terras-alphaville-ceara-6-eusebio/\">Terras Alphaville Ceará 6</a>, lotes a partir de R$ 278.627,36 (tabela de nov/2026).",
+          "fonte": "fonte única do site (gera-alphaville.js), 27/11/2026",
           "origem": "vizinhos"
         },
         {

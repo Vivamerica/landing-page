@@ -1,6 +1,6 @@
 {
   "slug": "alphaville-ceara-5-eusebio",
-  "atualizado": "2026-11-22",
+  "atualizado": "2026-11-27",
   "padrao": ["documentos", "morando-fora", "fgts", "distrato", "afetacao", "renda"],
   "blocos": [
     {
@@ -8,20 +8,20 @@
       "perguntas": [
         {
           "p": "Quanto custa o metro quadrado do lote?",
-          "r": "Na tabela de vendas da Alphaville gerada em 14/11/2026 (nov/2026), o metro quadrado vai de R$ 1.295,61 (lote P515) a R$ 1.730,29 (lote AA502), com metade dos lotes abaixo de R$ 1.416,19 por m² (conta nossa: valor do lote dividido pela área).",
-          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026 (conta nossa)",
+          "r": "Nos 72 lotes da tabela de vendas da Alphaville gerada em 14/11/2026 (nov/2026) que seguem no site, o metro quadrado vai de R$ 1.295,61 (lote V506) a R$ 1.730,29 (lote AA502), e o valor do meio (mediana) é de R$ 1.416,19 por m² (conta nossa: valor do lote dividido pela área).",
+          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026; planta de vendas de 26/11/2026 (conta nossa)",
           "origem": "base"
         },
         {
           "p": "De quanto fica a parcela do lote mais barato?",
-          "r": "No lote P515, de 450,32 m² e R$ 583.442,12, a tabela de 14/11/2026 traz um ato de R$ 73.160,33 e 48 mensais de R$ 10.630,87. A tabela não informa índice de correção dessas parcelas: confirme no atendimento.",
-          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026",
+          "r": "No lote W514, de 466,40 m² e R$ 604.292,40, a tabela de 14/11/2026 traz um ato de R$ 75.774,83 e 48 mensais de R$ 11.010,78. A tabela não informa índice de correção dessas parcelas: confirme no atendimento.",
+          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026; planta de vendas de 26/11/2026",
           "origem": "base"
         },
         {
           "p": "Quanto custam os lotes acima de 500 m²?",
-          "r": "Na tabela de 14/11/2026, os 22 lotes de 507,67 a 549,19 m² vão de R$ 657.771,55 a R$ 806.357,24; os 7 de 553,00 a 591,67 m², de R$ 740.953,20 a R$ 940.238,01; e o maior, o P513, de 731,14 m², custa R$ 947.334,42.",
-          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026",
+          "r": "Entre os lotes da tabela de 14/11/2026 que seguem no site, os 21 de 507,67 a 549,19 m² vão de R$ 657.771,55 a R$ 806.357,24; os 6 de 553,00 a 591,67 m², de R$ 740.953,20 a R$ 856.471,08; e o maior, o P513, de 731,14 m², custa R$ 947.334,42.",
+          "fonte": "tabela Alphaville Ceará 5 gerada em 14/11/2026; planta de vendas de 26/11/2026",
           "origem": "base"
         },
         {
@@ -108,8 +108,8 @@
         },
         {
           "p": "Quem constrói a casa? Tem regras de construção?",
-          "r": "A casa é projetada e construída por quem compra o lote. O regulamento de construção, com recuos, ocupação e altura, não veio no material: a gente pede à Alphaville antes de você escolher o lote.",
-          "fonte": "página do empreendimento no site",
+          "r": "A casa é projetada e construída por quem compra o lote, seguindo as regras informadas pela Alphaville (nov/2026): recuo frontal de 5 m, de fundo de 4 m e lateral de 1,5 m, altura máxima de 11 m e tamanho mínimo da casa de 150 m². A taxa de ocupação não foi informada: a gente confirma no regulamento antes de você escolher o lote.",
+          "fonte": "regras de construção informadas pela Alphaville, 27/11/2026",
           "origem": "ficha"
         },
         {
@@ -131,8 +131,8 @@
         },
         {
           "p": "Tem outros Alphaville por perto?",
-          "r": "Sim. O Ceará 5 fica na Cidade Alpha, ao lado do Alphaville Ceará 4, perto dos Alphaville Ceará 1 a 4 e dos Terras Alphaville Ceará 1 a 5. No site também está o <a href=\"/terras-alphaville-ceara-6-eusebio/\">Terras Alphaville Ceará 6</a>, em Eusébio, com lotes a partir de 275 m² segundo o book; a tabela dele é enviada no atendimento.",
-          "fonte": "planta geral de vendas (planta de situação); fonte única do site (gera-alphaville.js), 22/11/2026",
+          "r": "Sim. O Ceará 5 fica na Cidade Alpha, ao lado do Alphaville Ceará 4, perto dos Alphaville Ceará 1 a 4 e dos Terras Alphaville Ceará 1 a 5. No site também está o <a href=\"/terras-alphaville-ceara-6-eusebio/\">Terras Alphaville Ceará 6</a>, em Eusébio, com lotes de 275 a 330,5 m² na tabela, a partir de R$ 278.627,36 (tabela de nov/2026).",
+          "fonte": "planta geral de vendas (planta de situação); fonte única do site (gera-alphaville.js), 27/11/2026",
           "origem": "vizinhos"
         },
         {

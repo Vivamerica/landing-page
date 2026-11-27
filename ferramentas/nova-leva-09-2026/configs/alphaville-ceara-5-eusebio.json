@@ -5,20 +5,20 @@
   "cidade": "Eusébio",
   "uf": "CE",
   "data": "2026-11-17",
-  "atualizado": "2026-11-17",
+  "atualizado": "2026-11-27",
   "fonte_tabela": "tabela de vendas Alphaville de nov/2026, gerada em 14/11/2026",
-  "title": "Alphaville Ceará 5 | lotes desde R$ 583 mil (nov/2026)",
-  "description": "Alphaville Ceará 5, em Eusébio/CE: 79 lotes residenciais de 450 a 731 m² na tabela de 14/11/2026, de R$ 583.442 a R$ 947.334, com ato e 48 mensais.",
+  "title": "Alphaville Ceará 5 | lotes desde R$ 604 mil (nov/2026)",
+  "description": "Alphaville Ceará 5, em Eusébio/CE: 72 lotes residenciais de 450 a 731 m² da tabela de 14/11/2026, de R$ 604.292 a R$ 947.334, com ato e 48 mensais.",
   "keywords": "alphaville ceará 5, alphaville ceara 5, cidade alpha eusébio, lote alphaville eusébio, loteamento eusébio, lote em eusébio, terreno eusébio ce, condomínio fechado eusébio",
   "schema_tipo": "RealEstateListing",
-  "schema_desc": "Loteamento de acesso controlado da Alphaville na Cidade Alpha, em Eusébio/CE, registrado sob o R.04 da matrícula 26986 do 2º Cartório de Registro de Imóveis de Eusébio em 21/11/2023, segundo o texto legal da Alphaville. Pelo book, são 506 lotes residenciais de 450,00 a 794,90 m² em uma gleba de 597.821,31 m², com 171.974,9 m² de áreas verdes, clube e sete praças. A tabela de vendas gerada em 14/11/2026 traz 79 lotes, de 450,00 a 731,14 m², de R$ 583.442,12 a R$ 947.334,42, com ato de cerca de 12,54% do valor e 48 parcelas mensais.",
+  "schema_desc": "Loteamento de acesso controlado da Alphaville na Cidade Alpha, em Eusébio/CE, registrado sob o R.04 da matrícula 26986 do 2º Cartório de Registro de Imóveis de Eusébio em 21/11/2023, segundo o texto legal da Alphaville. Pelo book, são 506 lotes residenciais de 450,00 a 794,90 m² em uma gleba de 597.821,31 m², com 171.974,9 m² de áreas verdes, clube e sete praças. Da tabela de vendas gerada em 14/11/2026, 72 lotes seguem no site (7 aparecem vendidos na planta de 26/11/2026), de 450,00 a 731,14 m², de R$ 604.292,40 a R$ 947.334,42, com ato de cerca de 12,54% do valor e 48 parcelas mensais.",
   "endereco_schema": null,
-  "preco_min": 583442.12,
+  "preco_min": 604292.4,
   "preco_max": 947334.42,
-  "offer_count": 79,
-  "oferta_desc": "Tabela de vendas da Alphaville, gerada em 14/11/2026, com 79 lotes residenciais de R$ 583.442,12 (lote P515, 450,32 m²) a R$ 947.334,42 (lote P513, 731,14 m²). Ato de cerca de 12,54% e 48 parcelas mensais de cerca de 1,82% do valor. Índice de correção, custas e corretagem não informados na tabela.",
-  "produto_nome": "Alphaville Ceará 5 — lote de 450,32 m² em Eusébio/CE",
-  "produto_desc": "Lote residencial de 450,32 m² (P515) no Alphaville Ceará 5, loteamento de acesso controlado da Alphaville na Cidade Alpha, em Eusébio/CE. Tabela de vendas gerada em 14/11/2026.",
+  "offer_count": 72,
+  "oferta_desc": "Tabela de vendas da Alphaville, gerada em 14/11/2026, com 72 lotes residenciais no site (7 aparecem vendidos na planta de 26/11/2026), de R$ 604.292,40 (lote W514, 466,40 m²) a R$ 947.334,42 (lote P513, 731,14 m²). Ato de cerca de 12,54% e 48 parcelas mensais de cerca de 1,82% do valor. Índice de correção, custas e corretagem não informados na tabela.",
+  "produto_nome": "Alphaville Ceará 5 — lote de 466,40 m² em Eusébio/CE",
+  "produto_desc": "Lote residencial de 466,40 m² (W514) no Alphaville Ceará 5, loteamento de acesso controlado da Alphaville na Cidade Alpha, em Eusébio/CE. Tabela de vendas gerada em 14/11/2026.",
   "marca": "Alphaville",
   "lazer": [
     "Piscina adulto",
@@ -49,9 +49,9 @@
   "hero": {
     "eyebrow": "Eusébio/CE · Cidade Alpha · realização Alphaville",
     "sub": "Lotes residenciais em Eusébio, no Ceará",
-    "lead": "O Alphaville Ceará 5 é um loteamento de acesso controlado da Alphaville na Cidade Alpha, em Eusébio, ao lado de uma lagoa. Pelo book, são 506 lotes residenciais de 450 a 794,90 m², com clube e sete praças. A tabela de vendas gerada em 14/11/2026 traz 79 lotes, de 450 a 731,14 m².",
-    "preco": "A partir de R$ 583.442,12",
-    "preco_nota": "tabela de nov/2026, gerada em 14/11/2026 · lote P515, de 450,32 m² · ato de cerca de 12,54% e 48 mensais · custas e corretagem não informadas",
+    "lead": "O Alphaville Ceará 5 é um loteamento de acesso controlado da Alphaville na Cidade Alpha, em Eusébio, ao lado de uma lagoa. Pelo book, são 506 lotes residenciais de 450 a 794,90 m², com clube e sete praças. Da tabela de vendas gerada em 14/11/2026, 72 lotes seguem no site (7 aparecem vendidos na planta de 26/11/2026), de 450 a 731,14 m².",
+    "preco": "A partir de R$ 604.292,40",
+    "preco_nota": "tabela de nov/2026, gerada em 14/11/2026 · lote W514, de 466,40 m² · ato de cerca de 12,54% e 48 mensais · custas e corretagem não informadas",
     "cta_msg": "Olá! Quero a tabela de lotes do Alphaville Ceará 5 com quadra, metragem e valor.",
     "cta_texto": "Ver lotes e valores",
     "cta2": {
@@ -76,8 +76,8 @@
           "p": "lotes residenciais, segundo o book"
         },
         {
-          "n": "79",
-          "p": "lotes na tabela de 14/11/2026"
+          "n": "72",
+          "p": "lotes da tabela de 14/11/2026 no site"
         },
         {
           "n": "450 a 794,90 m²",
@@ -94,14 +94,14 @@
       "id": "lotes",
       "classe": "cream",
       "label": "Lotes",
-      "h2": "79 lotes na tabela de 14/11/2026, de 450 a 731,14 m²",
+      "h2": "72 lotes da tabela de 14/11/2026 no site, de 450 a 731,14 m²",
       "paragrafos": [
-        "79 lotes residenciais constam na tabela de vendas da Alphaville, gerada em 14/11/2026, em 18 quadras. A tabela pode estar desatualizada: a situação de cada lote é confirmada no atendimento.",
-        "A planta geral de vendas que veio com a tabela marca 79 lotes em verde e 427 em vermelho, que somam os 506 do projeto. Conferimos as metragens: os lotes em verde são os 79 da tabela. A planta não traz legenda para as cores.",
+        "72 lotes residenciais da tabela de vendas da Alphaville gerada em 14/11/2026 seguem no site, em 17 quadras; os outros 7 aparecem vendidos na planta de vendas de 26/11/2026. A tabela pode estar desatualizada: a situação de cada lote é confirmada no atendimento.",
+        "A planta geral de vendas que veio com a tabela de 14/11/2026 marca em verde os lotes dessa tabela (conferimos as metragens) e em vermelho os outros 427 dos 506 do projeto. Essa planta não traz legenda para as cores.",
         "Nessa planta, os lotes de 450 m² têm 15 m de frente e 30 m de fundo. O preço muda de lote para lote, mesmo entre lotes de igual metragem na mesma quadra: na tabela de 14/11/2026, os lotes de 450,00 m² vão de R$ 618.046,27 a R$ 778.630,03, e na quadra Q5 há lotes de 450 m² por R$ 637.287,06 e por R$ 669.038,02."
       ],
       "tabela": {
-        "legenda": "Lotes da tabela de vendas gerada em 14/11/2026, por faixa de metragem. A tabela não informa custas de escritura e registro nem se a corretagem está incluída no valor.",
+        "legenda": "Lotes da tabela de vendas gerada em 14/11/2026 que seguem no site, por faixa de metragem. A tabela não informa custas de escritura e registro nem se a corretagem está incluída no valor.",
         "cab": [
           "Metragem",
           "Lotes",
@@ -116,21 +116,21 @@
         "linhas": [
           [
             "450,00 a 499,54 m²",
-            "49",
-            "R$ 583.442,12",
+            "44",
+            "R$ 604.292,40",
             "R$ 835.035,53"
           ],
           [
             "507,67 a 549,19 m²",
-            "22",
+            "21",
             "R$ 657.771,55",
             "R$ 806.357,24"
           ],
           [
             "553,00 a 591,67 m²",
-            "7",
+            "6",
             "R$ 740.953,20",
-            "R$ 940.238,01"
+            "R$ 856.471,08"
           ],
           [
             "731,14 m² (lote P513)",
@@ -155,7 +155,7 @@
         },
         {
           "t": "Construção da casa",
-          "p": "A casa é projetada e construída por quem compra o lote. O regulamento de construção (recuos, ocupação e altura) não veio no material: peça antes de escolher o lote."
+          "p": "A casa é projetada e construída por quem compra o lote. Pelas regras informadas pela Alphaville: recuo frontal de 5 m, de fundo de 4 m e lateral de 1,5 m, altura máxima de 11 m e tamanho mínimo da casa de 150 m². A taxa de ocupação não foi informada: confirme no regulamento antes de escolher o lote."
         },
         {
           "t": "Associação",
@@ -212,7 +212,7 @@
       "label": "Preços e condições",
       "h2": "Tabela de 14/11/2026: ato e 48 parcelas mensais",
       "paragrafos": [
-        "Na tabela gerada em 14/11/2026, os 79 lotes vão de R$ 583.442,12 (lote P515, com 450,32 m²) a R$ 947.334,42 (lote P513, com 731,14 m²). O metro quadrado sai de cerca de R$ 1.296 a R$ 1.730 (conta nossa sobre a tabela).",
+        "Na tabela gerada em 14/11/2026, os 72 lotes que seguem no site vão de R$ 604.292,40 (lote W514, com 466,40 m²) a R$ 947.334,42 (lote P513, com 731,14 m²). O metro quadrado sai de cerca de R$ 1.296 a R$ 1.730 (conta nossa sobre a tabela).",
         "A condição é a mesma em todos os lotes: um ato (a entrada), de cerca de 12,54% do valor, e o restante em 48 parcelas mensais, todas com o mesmo valor na tabela, de cerca de 1,82% do valor cada (percentuais: conta nossa sobre a tabela; a tabela não informa índice de correção). Nessa tabela, o ato vencia em 15/11/2026 e a primeira mensal vence em 10/02/2027. Conferimos lote a lote: o ato mais as 48 mensais dá o valor do lote, com diferença de centavos por arredondamento.",
         "A tabela tem uma coluna de valor com juros, igual ao valor total em todos os lotes. Ela não informa índice de correção das parcelas, desconto à vista, custas de escritura e registro, ITBI (Imposto sobre a Transmissão de Bens Imóveis, cobrado pela prefeitura na compra) nem a comissão de corretagem. Confirme tudo isso no atendimento."
       ],
@@ -236,14 +236,14 @@
         ],
         "linhas": [
           [
-            "P515 (menor valor)",
-            "450,32 m²",
-            "R$ 583.442,12",
-            "R$ 73.160,33",
-            "R$ 10.630,87"
+            "W514 (menor valor)",
+            "466,40 m²",
+            "R$ 604.292,40",
+            "R$ 75.774,83",
+            "R$ 11.010,78"
           ],
           [
-            "O505",
+            "P506",
             "450,00 m²",
             "R$ 618.046,27",
             "R$ 77.499,49",
@@ -514,7 +514,7 @@
     ],
     [
       "Tabela de vendas",
-      "Gerada em 14/11/2026: 79 lotes de 450,00 a 731,14 m², de R$ 583.442,12 a R$ 947.334,42"
+      "Gerada em 14/11/2026; 72 lotes seguem no site (7 aparecem vendidos na planta de 26/11/2026), de 450,00 a 731,14 m², de R$ 604.292,40 a R$ 947.334,42"
     ],
     [
       "Pagamento na tabela",
@@ -544,7 +544,7 @@
   "faq": [
     {
       "q": "Quanto custa um lote no Alphaville Ceará 5?",
-      "a": "Na tabela de vendas da Alphaville, gerada em 14/11/2026, os 79 lotes vão de R$ 583.442,12 (lote P515, 450,32 m²) a R$ 947.334,42 (lote P513, 731,14 m²). Os lotes de 450,00 m² vão de R$ 618.046,27 a R$ 778.630,03: o preço muda de lote para lote, mesmo dentro da mesma quadra. A tabela não informa custas de escritura e registro, ITBI (Imposto sobre a Transmissão de Bens Imóveis) nem corretagem."
+      "a": "Na tabela de vendas da Alphaville, gerada em 14/11/2026, os 72 lotes que seguem no site vão de R$ 604.292,40 (lote W514, 466,40 m²) a R$ 947.334,42 (lote P513, 731,14 m²). Os lotes de 450,00 m² vão de R$ 618.046,27 a R$ 778.630,03: o preço muda de lote para lote, mesmo dentro da mesma quadra. A tabela não informa custas de escritura e registro, ITBI (Imposto sobre a Transmissão de Bens Imóveis) nem corretagem."
     },
     {
       "q": "Como é o pagamento dos lotes do Alphaville Ceará 5?",
@@ -552,11 +552,11 @@
     },
     {
       "q": "Qual o tamanho dos lotes do Alphaville Ceará 5?",
-      "a": "Pelo book, os 506 lotes residenciais vão de 450,00 a 794,90 m². Na tabela de 14/11/2026, os 79 lotes vão de 450,00 a 731,14 m², e 49 deles têm menos de 500 m². Na planta geral de vendas, os lotes de 450 m² têm 15 m de frente e 30 m de fundo."
+      "a": "Pelo book, os 506 lotes residenciais vão de 450,00 a 794,90 m². Dos lotes da tabela de 14/11/2026, os 72 que seguem no site vão de 450,00 a 731,14 m², e 44 deles têm menos de 500 m². Na planta geral de vendas, os lotes de 450 m² têm 15 m de frente e 30 m de fundo."
     },
     {
       "q": "Quantos lotes do Alphaville Ceará 5 constam na tabela?",
-      "a": "79 lotes constam na tabela de vendas gerada em 14/11/2026, em 18 quadras. Pela nossa conferência das metragens, os 79 lotes em verde na planta geral de vendas são os da tabela; a planta não tem legenda nem data. A tabela pode estar desatualizada: a situação de cada lote é confirmada no atendimento."
+      "a": "72 lotes da tabela de vendas gerada em 14/11/2026 seguem no site, em 17 quadras; os outros 7 da tabela aparecem vendidos na planta de vendas de 26/11/2026. Pela nossa conferência das metragens, os lotes da tabela de 14/11/2026 são os que a planta geral de vendas recebida com ela marca em verde; essa planta não tem legenda nem data. A tabela pode estar desatualizada: a situação de cada lote é confirmada no atendimento."
     },
     {
       "q": "O Alphaville Ceará 5 é condomínio fechado?",
@@ -597,7 +597,7 @@
   },
   "home": {
     "tipo": "lote",
-    "preco": 583442,
+    "preco": 604292,
     "lote": "fechado",
     "status": "obras",
     "constr": "Alphaville",
@@ -605,14 +605,19 @@
     "badge": "Condomínio fechado",
     "badge_estilo": "background:#C9A227;color:#161616;",
     "meta": "Lotes de 450 a 731 m² · Eusébio/CE",
-    "desc": "79 lotes na tabela de 14/11/2026 · Cidade Alpha, em Eusébio · clube com piscina de raias semiolímpicas e parquinho aquático · 7 praças · ato e 48 mensais.",
+    "desc": "72 lotes da tabela de 14/11/2026 no site · Cidade Alpha, em Eusébio · clube com piscina de raias semiolímpicas e parquinho aquático · 7 praças · ato e 48 mensais.",
     "alt": "Perspectiva ilustrada aérea do clube do Alphaville Ceará 5, com a lagoa ao fundo",
-    "itemlist": "Alphaville Ceará 5 — loteamento da Alphaville em Eusébio/CE, 79 lotes de 450 a 731 m² na tabela de 14/11/2026 · a partir de R$ 583.442 (tabela de nov/2026)"
+    "itemlist": "Alphaville Ceará 5 — loteamento da Alphaville em Eusébio/CE, 72 lotes de 450 a 731 m² da tabela de 14/11/2026 no site · a partir de R$ 604.292 (tabela de nov/2026)"
   },
   "llms": {
     "secao": "alphaville",
-    "linha": "loteamento de acesso controlado da Alphaville na Cidade Alpha, em Eusébio/CE (não é Indaiatuba), registrado sob o R.04 da matrícula 26986 do 2º Cartório de Registro de Imóveis de Eusébio em 21/11/2023, segundo o texto legal da Alphaville. Pelo book: 506 lotes residenciais de 450,00 a 794,90 m² em 597.821,31 m² de gleba, 171.974,9 m² de áreas verdes, 7 praças e clube com 17 itens no mapa, 15 deles de lazer (piscina adulto com raias semiolímpicas, piscina infantil, parquinho aquático, academia, salão de festas, salão de jogos, espaço kids, churrasqueira, campo de futebol e quadras de tênis, beach tennis e poliesportiva), com projeto da Lindgren Arquitetos e Ciro Pirondi; rede elétrica subterrânea pelo texto legal; portaria 24 horas. Tabela de vendas gerada em 14/11/2026: 79 lotes de 450,00 a 731,14 m², de R$ 583.442,12 a R$ 947.334,42, com ato de cerca de 12,54% e 48 mensais de cerca de 1,82% (índice de correção, custas, ITBI e corretagem não informados). Previsão de entrega não informada no material; em construção pelo catálogo da Alphaville de 09/10/2026. Stand na Av. Alameda Mediterrâneo, Cidade Alpha."
+    "linha": "loteamento de acesso controlado da Alphaville na Cidade Alpha, em Eusébio/CE (não é Indaiatuba), registrado sob o R.04 da matrícula 26986 do 2º Cartório de Registro de Imóveis de Eusébio em 21/11/2023, segundo o texto legal da Alphaville. Pelo book: 506 lotes residenciais de 450,00 a 794,90 m² em 597.821,31 m² de gleba, 171.974,9 m² de áreas verdes, 7 praças e clube com 17 itens no mapa, 15 deles de lazer (piscina adulto com raias semiolímpicas, piscina infantil, parquinho aquático, academia, salão de festas, salão de jogos, espaço kids, churrasqueira, campo de futebol e quadras de tênis, beach tennis e poliesportiva), com projeto da Lindgren Arquitetos e Ciro Pirondi; rede elétrica subterrânea pelo texto legal; portaria 24 horas. Tabela de vendas gerada em 14/11/2026: 72 lotes seguem no site (7 aparecem vendidos na planta de 26/11/2026), de 450,00 a 731,14 m², de R$ 604.292,40 a R$ 947.334,42, com ato de cerca de 12,54% e 48 mensais de cerca de 1,82% (índice de correção, custas, ITBI e corretagem não informados). Previsão de entrega não informada no material; em construção pelo catálogo da Alphaville de 09/10/2026. Stand na Av. Alameda Mediterrâneo, Cidade Alpha. Regras de construção informadas pela Alphaville (nov/2026): recuo frontal de 5 m, de fundo de 4 m e lateral de 1,5 m, altura máxima de 11 m e tamanho mínimo da casa de 150 m²; taxa de ocupação não informada."
   },
   "geo": null,
-  "mapa": null
+  "mapa": {
+    "lotes": {
+      "url": "/mapa-lotes-indaiatuba/#ceara5",
+      "texto": "Ver os 72 lotes da tabela no mapa de lotes"
+    }
+  }
 }

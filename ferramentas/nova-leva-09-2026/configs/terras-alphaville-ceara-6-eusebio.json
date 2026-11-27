@@ -5,17 +5,21 @@
   "cidade": "Eusébio",
   "uf": "CE",
   "data": "2026-11-17",
-  "atualizado": "2026-11-17",
-  "fonte_tabela": "material recebido em nov/2026, sem tabela de preços",
-  "title": "Terras Alphaville Ceará 6 | lotes desde 275 m² no Eusébio",
-  "description": "Terras Alphaville Ceará 6, na Cidade Alpha, Eusébio (CE): 571 lotes na planta de vendas, desde 275 m², clube com piscina e 8 praças. Preço no atendimento.",
+  "atualizado": "2026-11-27",
+  "fonte_tabela": "tabela de vendas Alphaville de nov/2026, de 25/11/2026",
+  "title": "Terras Alphaville Ceará 6 | lote desde R$ 278 mil (nov/2026)",
+  "description": "Terras Alphaville Ceará 6, no Eusébio/CE: 255 lotes de 275 a 330,5 m² na tabela de 25/11/2026, de R$ 278.627 a R$ 399.387, com ato de 15% e 60 mensais.",
   "keywords": "terras alphaville ceará 6, terras alphaville ceara 6, terras alpha ceará 6, cidade alpha ceará, cidade alpha eusébio, lote alphaville ceará, lote cidade alpha, loteamento eusébio, terreno eusébio, lote em eusébio",
   "schema_tipo": "RealEstateListing",
-  "schema_desc": "Loteamento de acesso controlado da Alphaville, da linha Terras Alpha, na Cidade Alpha, no Eusébio/CE, com entrada pela Avenida José Amora Sá. A planta geral de vendas, de agosto/2025, mostra 571 lotes residenciais em 19 quadras. Segundo o book da Alphaville, o lote mínimo tem 275 m², o médio 285 m² e o máximo 368,04 m², numa gleba de 282.204 m² com clube de 13.637,81 m², 42.330,65 m² de áreas verdes e 8 praças. O material recebido em novembro/2026 não traz tabela de preços nem previsão de entrega: preço, disponibilidade e prazos são informados no atendimento.",
+  "schema_desc": "Loteamento de acesso controlado da Alphaville, da linha Terras Alpha, na Cidade Alpha, no Eusébio/CE, com entrada pela Avenida José Amora Sá. A planta geral de vendas, de agosto/2025, mostra 571 lotes residenciais em 19 quadras. Segundo o book da Alphaville, o lote mínimo tem 275 m², o médio 285 m² e o máximo 368,04 m², numa gleba de 282.204 m² com clube de 13.637,81 m², 42.330,65 m² de áreas verdes e 8 praças. Na tabela de vendas de 25/11/2026 constam 255 lotes de 275 a 330,5 m², de R$ 278.627,36 a R$ 399.386,99, além de 2 reservados, com ato de 15% e 60 mensais; o material não informa a previsão de entrega.",
   "endereco_schema": "Avenida José Amora Sá (lado par), Cidade Alpha",
-  "preco_min": null,
-  "preco_max": null,
-  "offer_count": null,
+  "preco_min": 278627.36,
+  "preco_max": 399386.99,
+  "offer_count": 255,
+  "oferta_desc": "Tabela de vendas da Alphaville de 25/11/2026, em que constam 255 lotes residenciais de R$ 278.627,36 (lote N633, 275 m²) a R$ 399.386,99 (lote B620, 330,5 m²), além de 2 reservados. Ato de 15% e 60 parcelas mensais de cerca de 1,42% do valor. Índice de correção, custas e corretagem não informados na tabela.",
+  "produto_nome": "Terras Alphaville Ceará 6 — lote de 275 m² no Eusébio/CE",
+  "produto_desc": "Lote residencial de 275 m² (N633) no Terras Alphaville Ceará 6, loteamento de acesso controlado da Alphaville na Cidade Alpha, no Eusébio/CE. Tabela de vendas de 25/11/2026.",
+  "marca": "Alphaville",
   "lazer": [
     "Piscina adulto com raias e piscina infantil",
     "Salão de festas",
@@ -44,11 +48,11 @@
   "hero": {
     "eyebrow": "Eusébio, Ceará · realização Alphaville",
     "sub": "Lotes residenciais na Cidade Alpha, no Eusébio",
-    "lead": "O Terras Alphaville Ceará 6 é um loteamento de acesso controlado da Alphaville na Cidade Alpha, bairro planejado do Eusébio, na Grande Fortaleza (CE). A planta de vendas mostra 571 lotes residenciais. Segundo o book, o menor tem 275 m², e o clube tem piscina, academia, quadras e campo de futebol. O material que recebemos não traz preço nem previsão de entrega: os dois se confirmam no atendimento.",
-    "preco": "Tabela no atendimento",
-    "preco_nota": "o material recebido em nov/2026 traz o mapa de lotes, sem valores · condições de pagamento confirmadas no atendimento",
+    "lead": "O Terras Alphaville Ceará 6 é um loteamento de acesso controlado da Alphaville na Cidade Alpha, bairro planejado do Eusébio, na Grande Fortaleza (CE). A planta de vendas mostra 571 lotes residenciais. Segundo o book, o menor tem 275 m², e o clube tem piscina, academia, quadras e campo de futebol. Na tabela de vendas de 25/11/2026 constam 255 lotes de 275 a 330,5 m², de R$ 278.627,36 a R$ 399.386,99, além de 2 reservados. O material não traz previsão de entrega: ela se confirma no atendimento.",
+    "preco": "A partir de R$ 278.627,36",
+    "preco_nota": "tabela de nov/2026, de 25/11/2026 · lote N633, de 275 m² · ato de 15% e 60 mensais · custas e corretagem não informadas",
     "cta_msg": "Olá! Quero a tabela de lotes do Terras Alphaville Ceará 6 com quadra, metragem e valor.",
-    "cta_texto": "Pedir a tabela de preços",
+    "cta_texto": "Ver lotes e valores",
     "cta2": {
       "msg": "Olá! Quero saber quais lotes do Terras Alphaville Ceará 6 estão livres, com quadra e metragem.",
       "texto": "Consultar lotes livres"
@@ -62,7 +66,7 @@
       "paragrafos": [
         "O Terras Alphaville Ceará 6 é um loteamento da Alphaville no Eusébio, município da Grande Fortaleza. Fica na Cidade Alpha, um bairro planejado, com entrada pela Avenida José Amora Sá. Na planta geral de vendas, de agosto/2025, o nome completo é Loteamento de Acesso Controlado Terras Alphaville Ceará 6.",
         "A planta mostra 571 lotes, todos residenciais, em 19 quadras, da A6 à S6. A gleba tem 282.204 m²: o clube ocupa 13.637,81 m² e as áreas verdes somam 42.330,65 m², segundo a ficha técnica do book. O projeto arquitetônico, urbanístico e paisagístico é do Grupo Alphaville.",
-        "A Cidade Alpha tem outros residenciais da Alphaville com nomes parecidos, como o Alphaville Ceará 5 e o Terras Alphaville Ceará 5. São empreendimentos diferentes, cada um com o seu material e, quando houver, a sua tabela. O mapa do book mostra ainda, na região, o Alphaville Eusébio e o Alphaville Fortaleza, que também são outros empreendimentos. Esta página trata só do Terras Alphaville Ceará 6."
+        "A Cidade Alpha tem outros residenciais da Alphaville com nomes parecidos, como o Alphaville Ceará 5 e o Terras Alphaville Ceará 5. São empreendimentos diferentes, cada um com o seu material e a sua tabela. O mapa do book mostra ainda, na região, o Alphaville Eusébio e o Alphaville Fortaleza, que também são outros empreendimentos. Esta página trata só do Terras Alphaville Ceará 6."
       ],
       "numeros": [
         {
@@ -139,15 +143,61 @@
     {
       "id": "precos",
       "label": "Preços e condições",
-      "h2": "Preço: peça a tabela no atendimento",
+      "h2": "Tabela de 25/11/2026: ato de 15% e 60 parcelas mensais",
       "paragrafos": [
-        "O material que recebemos em novembro/2026 é o book e um mapa de disponibilidade. Nenhum dos dois traz preço, entrada, parcelas ou índice de correção. Por isso esta página não publica valor.",
-        "O mapa marca cada lote com uma cor, mas não traz a legenda das cores. Pedimos à Alphaville a tabela vigente e a situação de cada lote e enviamos a você, com quadra, metragem e plano de pagamento.",
-        "Pergunte também o que fica fora do preço: escritura, registro, ITBI (Imposto sobre a Transmissão de Bens Imóveis, cobrado pela prefeitura na compra do imóvel) e comissão de corretagem. O material não informa quem paga cada um."
+        "Na tabela de vendas da Alphaville de 25/11/2026 constam 257 lotes: 2 deles aparecem como reservados, e os outros 255 vão de R$ 278.627,36 (lote N633, com 275 m²) a R$ 399.386,99 (lote B620, com 330,5 m²). O metro quadrado sai de cerca de R$ 1.013 a R$ 1.208, conforme a quadra (conta nossa sobre a tabela): R$ 1.208 nas quadras A6 a D6, R$ 1.134 nas E6 a J6 e R$ 1.091 nas K6, L6, M6 e O6; as quadras N6 e Q6 têm um lote cada na tabela, e a R6 tem um além do reservado, a cerca de R$ 1.013 e R$ 1.021.",
+        "A condição é a mesma em todos os lotes: um ato (a entrada) de 15% do valor e o restante em 60 parcelas mensais, todas com o mesmo valor na tabela, de cerca de 1,42% do valor cada (percentuais: conta nossa sobre a tabela; a tabela não informa índice de correção). Nessa tabela, o ato vencia em 26/11/2026 e a primeira mensal vence em 10/02/2027. Conferimos lote a lote: o ato mais as 60 mensais dá o valor do lote, com diferença de centavos por arredondamento.",
+        "A tabela tem uma coluna de valor com juros, igual ao valor total em todos os lotes. Ela não informa índice de correção das parcelas, desconto à vista, custas de escritura e registro, ITBI (Imposto sobre a Transmissão de Bens Imóveis, cobrado pela prefeitura na compra do imóvel) nem a comissão de corretagem. Confirme tudo isso no atendimento."
+      ],
+      "tabela2_titulo": "Três lotes da tabela de 25/11/2026",
+      "tabela2_paragrafos": [
+        "Valores impressos na tabela para cada lote."
+      ],
+      "tabela2": {
+        "cab": [
+          "Lote",
+          "Metragem",
+          "Valor",
+          "Ato (1x)",
+          "Mensal (60x)"
+        ],
+        "num": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "linhas": [
+          [
+            "N633 (menor valor)",
+            "275,00 m²",
+            "R$ 278.627,36",
+            "R$ 41.797,21",
+            "R$ 3.947,17"
+          ],
+          [
+            "A605",
+            "275,00 m²",
+            "R$ 332.326,45",
+            "R$ 49.852,67",
+            "R$ 4.707,90"
+          ],
+          [
+            "B620 (maior valor)",
+            "330,50 m²",
+            "R$ 399.386,99",
+            "R$ 59.912,50",
+            "R$ 5.657,91"
+          ]
+        ]
+      },
+      "notas": [
+        "As datas de vencimento são as da tabela de 25/11/2026: o ato dela vencia em 26/11/2026. Peça a tabela do dia, com as datas atualizadas, antes de fechar.",
+        "Os preços podem mudar pela Alphaville. A situação e o preço de cada lote são confirmados no atendimento."
       ],
       "cta": {
-        "msg": "Olá! Quero a tabela de lotes do Terras Alphaville Ceará 6 com quadra, metragem e valor.",
-        "texto": "Pedir a tabela de preços"
+        "msg": "Olá! Quero a tabela do dia do Terras Alphaville Ceará 6, com as datas de pagamento atualizadas.",
+        "texto": "Pedir a tabela do dia"
       }
     },
     {
@@ -372,11 +422,11 @@
     ],
     [
       "Preço",
-      "Sem tabela no material recebido em nov/2026; confirme no atendimento"
+      "Tabela de 25/11/2026: 255 lotes de R$ 278.627,36 a R$ 399.386,99, além de 2 reservados; ato de 15% e 60 mensais; custas e corretagem não informadas"
     ],
     [
       "Disponibilidade",
-      "Mapa recebido em nov/2026 (planta-base de ago/2025), sem legenda das cores; confirme no atendimento"
+      "A tabela de 25/11/2026 traz 2 dos 257 lotes como reservados; a situação de cada lote é confirmada no atendimento"
     ],
     [
       "Fase",
@@ -402,7 +452,7 @@
   "faq": [
     {
       "q": "Quanto custa um lote no Terras Alphaville Ceará 6?",
-      "a": "O material que recebemos em novembro/2026 não traz tabela de preços, por isso não publicamos valor. Pedimos à Alphaville a tabela vigente e enviamos a você, com quadra, metragem e plano de pagamento. Pergunte também o que fica fora do preço, como escritura, registro, ITBI e corretagem."
+      "a": "Na tabela de vendas da Alphaville de 25/11/2026, os 255 lotes que não estão reservados vão de R$ 278.627,36 (lote N633, de 275 m²) a R$ 399.386,99 (lote B620, de 330,5 m²). Os lotes de 275 m² saem por R$ 332.326,45 nas quadras A6 a D6, R$ 311.714,36 nas E6 a J6 e R$ 299.967,68 nas K6, L6, M6 e O6. O pagamento é um ato de 15% e 60 mensais; a tabela não informa índice de correção, custas de escritura e registro, ITBI nem corretagem."
     },
     {
       "q": "Qual o tamanho dos lotes do Terras Alphaville Ceará 6?",
@@ -410,7 +460,7 @@
     },
     {
       "q": "Quantos lotes tem o Terras Alphaville Ceará 6?",
-      "a": "A planta geral de vendas, de agosto/2025, mostra 571 lotes, todos residenciais, em 19 quadras (A6 a S6), pela nossa contagem lote a lote; o book não informa o total, e a Alphaville ainda não o confirmou. Quantos ainda estão à venda se confirma no atendimento."
+      "a": "A planta geral de vendas, de agosto/2025, mostra 571 lotes, todos residenciais, em 19 quadras (A6 a S6), pela nossa contagem lote a lote; o book não informa o total, e a Alphaville ainda não o confirmou. Na tabela de vendas de 25/11/2026 constam 257 lotes, 2 deles reservados; a situação de cada lote se confirma no atendimento."
     },
     {
       "q": "Onde fica o Terras Alphaville Ceará 6?",
@@ -430,39 +480,44 @@
     },
     {
       "q": "O Terras Alphaville Ceará 6 é o mesmo que o Alphaville Ceará 5?",
-      "a": "Não. São empreendimentos diferentes da Alphaville, na mesma Cidade Alpha, no Eusébio. O Terras Alphaville Ceará 6 é da linha Terras Alpha e tem material próprio; a tabela de preços, quando a Alphaville enviar, é só dele."
+      "a": "Não. São empreendimentos diferentes da Alphaville, na mesma Cidade Alpha, no Eusébio. O Terras Alphaville Ceará 6 é da linha Terras Alpha e tem material e tabela de preços próprios."
     }
   ],
   "cta": {
-    "h2": "Quer a tabela do Terras Alphaville Ceará 6?",
-    "p": "Pedimos à Alphaville a tabela vigente e a situação dos lotes e enviamos a você, com quadra, metragem e condições de pagamento. A Viv'América fica em Indaiatuba (SP) e atende pelo WhatsApp.",
+    "h2": "Quer a tabela do dia do Terras Alphaville Ceará 6?",
+    "p": "Pedimos à Alphaville a tabela atualizada e enviamos a você, com a quadra, a metragem, o valor e as datas de pagamento de cada lote. A Viv'América fica em Indaiatuba (SP) e atende pelo WhatsApp.",
     "msg": "Olá! Quero a tabela de lotes do Terras Alphaville Ceará 6 com quadra, metragem e valor.",
-    "texto": "Pedir a tabela de preços"
+    "texto": "Pedir a tabela do dia"
   },
   "rodape": {
     "marca": "TERRAS ALPHAVILLE CEARÁ 6",
     "linha": "Terras Alphaville Ceará 6 · lotes residenciais na Cidade Alpha · Eusébio, CE",
     "realizacao": "Realização Alphaville",
-    "legal": "Imagens ilustrativas: fotomontagem aérea e perspectivas do book da Alphaville; vegetação, mobiliário e casas aparecem só como ilustração. Número de lotes e medidas pela planta geral de vendas de agosto/2025; metragens mínima, média e máxima, áreas, lazer e tempos de deslocamento conforme o book da Alphaville. O material recebido em nov/2026 não traz tabela de preços, previsão de entrega nem dados de registro do loteamento: preço, disponibilidade, prazos e condições são confirmados no atendimento. Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da Alphaville. Página publicada em nov/2026."
+    "legal": "Imagens ilustrativas: fotomontagem aérea e perspectivas do book da Alphaville; vegetação, mobiliário e casas aparecem só como ilustração. Número de lotes e medidas pela planta geral de vendas de agosto/2025; metragens mínima, média e máxima, áreas, lazer e tempos de deslocamento conforme o book da Alphaville. Preços e condições conforme a tabela de vendas de 25/11/2026, em que constam 257 lotes, 2 deles reservados, sujeitos a mudança; a tabela não informa correção das parcelas, custas, ITBI nem corretagem, e a situação de cada lote é confirmada no atendimento. Previsão de entrega e dados de registro do loteamento não constam do material recebido. Alphaville é marca da Alphaville S.A. Esta página é da Imobiliária Viv'América (CRECI 47394-J), que intermedeia a venda, e não é o site oficial da Alphaville. Página publicada em nov/2026."
   },
   "home": {
     "tipo": "lote",
-    "preco": null,
+    "preco": 278627,
     "lote": "fechado",
     "status": "obras",
     "constr": "Alphaville",
-    "pm2": "",
+    "pm2": "1013",
     "badge": "Condomínio fechado",
     "badge_estilo": "background:#C9A227;color:#161616;",
     "meta": "Lotes residenciais desde 275 m² · Eusébio/CE",
-    "desc": "571 lotes residenciais na planta de vendas, na Cidade Alpha (Eusébio/CE) · clube com piscina, academia, quadras e campo de futebol · 8 praças · tabela no atendimento.",
+    "desc": "255 lotes constam na tabela de 25/11/2026, fora 2 reservados · Cidade Alpha (Eusébio/CE) · clube com piscina, academia, quadras e campo de futebol · 8 praças · ato de 15% e 60 mensais.",
     "alt": "Fotomontagem aérea ilustrativa do Terras Alphaville Ceará 6, no Eusébio",
-    "itemlist": "Terras Alphaville Ceará 6 — loteamento da Alphaville na Cidade Alpha, Eusébio/CE, 571 lotes residenciais desde 275 m² · tabela no atendimento"
+    "itemlist": "Terras Alphaville Ceará 6 — loteamento da Alphaville na Cidade Alpha, Eusébio/CE, 255 lotes de 275 a 330,5 m² na tabela de 25/11/2026 · a partir de R$ 278.627 (tabela de nov/2026)"
   },
   "llms": {
     "secao": "alphaville",
-    "linha": "loteamento de acesso controlado da Alphaville (linha Terras Alpha) na Cidade Alpha, Eusébio/CE (não é Indaiatuba), com entrada pela Avenida José Amora Sá. Pela planta geral de vendas (ago/2025), 571 lotes residenciais em 19 quadras (A6 a S6); pelo book, lote mínimo de 275 m², médio de 285 m² e máximo de 368,04 m² (a planta traz um lote de 368,74 m²), gleba de 282.204 m², clube de 13.637,81 m² (piscina adulto com raias e infantil, salão de festas, churrasqueiras, academia, sala de jogos, playground, quadras de tênis, de areia e poliesportiva, campo de futebol, horta e bicicletário), 42.330,65 m² de áreas verdes e 8 praças; portaria monitorada 24h; energia solar no bloco de apoio e recarga de carro elétrico no clube. Não confundir com o Alphaville Ceará 5, o Terras Alphaville Ceará 5, o Alphaville Eusébio nem o Alphaville Fortaleza. O material recebido em nov/2026 não traz tabela de preços, previsão de entrega, registro nem empresa vendedora: preço, disponibilidade e condições no atendimento; o catálogo da Alphaville (consulta de 09/10/2026) lista o empreendimento em construção."
+    "linha": "loteamento de acesso controlado da Alphaville (linha Terras Alpha) na Cidade Alpha, Eusébio/CE (não é Indaiatuba), com entrada pela Avenida José Amora Sá. Pela planta geral de vendas (ago/2025), 571 lotes residenciais em 19 quadras (A6 a S6); pelo book, lote mínimo de 275 m², médio de 285 m² e máximo de 368,04 m² (a planta traz um lote de 368,74 m²), gleba de 282.204 m², clube de 13.637,81 m² (piscina adulto com raias e infantil, salão de festas, churrasqueiras, academia, sala de jogos, playground, quadras de tênis, de areia e poliesportiva, campo de futebol, horta e bicicletário), 42.330,65 m² de áreas verdes e 8 praças; portaria monitorada 24h; energia solar no bloco de apoio e recarga de carro elétrico no clube. Não confundir com o Alphaville Ceará 5, o Terras Alphaville Ceará 5, o Alphaville Eusébio nem o Alphaville Fortaleza. Tabela de vendas da Alphaville de 25/11/2026: 255 lotes de 275 a 330,5 m², de R$ 278.627,36 a R$ 399.386,99 (além de 2 reservados), com ato de 15% e 60 mensais de cerca de 1,42% (índice de correção, custas e corretagem não informados). Previsão de entrega, registro e empresa vendedora não constam do material; o catálogo da Alphaville (consulta de 09/10/2026) lista o empreendimento em construção."
   },
   "geo": null,
-  "mapa": null
+  "mapa": {
+    "lotes": {
+      "url": "/mapa-lotes-indaiatuba/#terras6",
+      "texto": "Ver os 255 lotes da tabela no mapa de lotes"
+    }
+  }
 }
