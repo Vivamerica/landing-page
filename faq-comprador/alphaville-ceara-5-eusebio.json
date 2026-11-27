@@ -108,7 +108,7 @@
         },
         {
           "p": "Quem constrói a casa? Tem regras de construção?",
-          "r": "A casa é projetada e construída por quem compra o lote, seguindo as regras informadas pela Alphaville (nov/2026): recuo frontal de 5 m, de fundo de 4 m e lateral de 1,5 m, altura máxima de 11 m e tamanho mínimo da casa de 150 m². A taxa de ocupação não foi informada: a gente confirma no regulamento antes de você escolher o lote.",
+          "r": "A casa é projetada e construída por quem compra o lote, seguindo as regras informadas pela Alphaville (nov/2026): recuo frontal de 5 m, de fundo de 4 m e lateral de 1,5 m de cada lado, altura máxima de 11 m e área mínima da casa de 150 m². Pelos recuos, num lote de 15 x 30 m (450 m²) a casa ocupa no máximo 12 x 21 m, ou 252 m² por pavimento, cerca de 56% do lote (conta nossa).",
           "fonte": "regras de construção informadas pela Alphaville, 27/11/2026",
           "origem": "ficha"
         },
